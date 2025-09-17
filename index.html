@@ -1,21 +1,31 @@
 ﻿<!DOCTYPE html>
 <html lang="fr">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
-  <title>⟁URNELCY</title>
-
+  <title>
+    ⟁URNELCY
+  </title>
 
   <script>
-    // Get theme before anything renders
     (function () {
       const savedTheme = localStorage.getItem('theme') || 'light';
       document.documentElement.setAttribute('data-theme', savedTheme);
-      // Prevent flash by hiding content until styles are loaded
       document.documentElement.style.visibility = 'hidden';
     })();
+
+    window.addEventListener('load', function () {
+      document.documentElement.classList.add('theme-loaded');
+    });
+
+    function toggleTheme() {
+      const root = document.documentElement;
+      const currentTheme = root.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    }
   </script>
 
   <!--(BASIC CSS STYLES)-->
@@ -153,73 +163,24 @@
       transform: rotate(90deg);
     }
 
-    .progressive-scale-a span:nth-child(1) {
-      font-size: 50%;
-    }
+    .progressive-scale-a span:nth-child(1) {font-size: 50%;}
+    .progressive-scale-a span:nth-child(2) {font-size: 60%;}
+    .progressive-scale-a span:nth-child(3) {font-size: 70%;}
+    .progressive-scale-a span:nth-child(4) {font-size: 80%;}
+    .progressive-scale-a span:nth-child(5) {font-size: 90%;}
+    .progressive-scale-a span:nth-child(6) {font-size: 95%;}
+    .progressive-scale-a span:nth-child(7) {font-size: 100%;}
+    .progressive-scale-a span:nth-child(8) {font-size: 80%;}
 
-    .progressive-scale-a span:nth-child(2) {
-      font-size: 60%;
-    }
-
-    .progressive-scale-a span:nth-child(3) {
-      font-size: 70%;
-    }
-
-    .progressive-scale-a span:nth-child(4) {
-      font-size: 80%;
-    }
-
-    .progressive-scale-a span:nth-child(5) {
-      font-size: 90%;
-    }
-
-    .progressive-scale-a span:nth-child(6) {
-      font-size: 95%;
-    }
-
-    .progressive-scale-a span:nth-child(7) {
-      font-size: 100%;
-    }
-
-    .progressive-scale-a span:nth-child(8) {
-      font-size: 80%;
-    }
-
-    .progressive-scale-b span:nth-child(1) {
-      font-size: 100%;
-    }
-
-    .progressive-scale-b span:nth-child(2) {
-      font-size: 95%;
-    }
-
-    .progressive-scale-b span:nth-child(3) {
-      font-size: 90%;
-    }
-
-    .progressive-scale-b span:nth-child(4) {
-      font-size: 85%;
-    }
-
-    .progressive-scale-b span:nth-child(5) {
-      font-size: 80%;
-    }
-
-    .progressive-scale-b span:nth-child(6) {
-      font-size: 75%;
-    }
-
-    .progressive-scale-b span:nth-child(7) {
-      font-size: 70%;
-    }
-
-    .progressive-scale-b span:nth-child(8) {
-      font-size: 65%;
-    }
-
-    .progressive-scale-b span:nth-child(9) {
-      font-size: 60%;
-    }
+    .progressive-scale-b span:nth-child(1) {font-size: 100%;}
+    .progressive-scale-b span:nth-child(2) {font-size: 95%;}
+    .progressive-scale-b span:nth-child(3) {font-size: 90%;}
+    .progressive-scale-b span:nth-child(4) {font-size: 85%;}
+    .progressive-scale-b span:nth-child(5) {font-size: 80%;}
+    .progressive-scale-b span:nth-child(6) {font-size: 75%;}
+    .progressive-scale-b span:nth-child(7) {font-size: 70%;}
+    .progressive-scale-b span:nth-child(8) {font-size: 65%;}
+    .progressive-scale-b span:nth-child(9) {font-size: 60%;}
 
     #themeToggle {
       position: fixed;
@@ -254,20 +215,6 @@
     }
   </style>
 
-  <script>
-    window.addEventListener('load', function () {
-      document.documentElement.classList.add('theme-loaded');
-    });
-
-    function toggleTheme() {
-      const root = document.documentElement;
-      const currentTheme = root.getAttribute('data-theme');
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      root.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    }
-  </script>
-
 </head>
 
 <body>
@@ -284,28 +231,14 @@
     </div>
   </div>
 
-
   <div class="nav-buttons" style="margin-top: 64px; margin-bottom: 128px;">
-    <button onclick="scrollToSection('Mapnel')" class="nav-button">
-      <span>Mapnel</span>
-    </button>
-    <button onclick="scrollToSection('IUVALCY')" class="nav-button">
-      <span>IUVALCY</span>
-    </button>
-    <button onclick="scrollToSection('ARc⟁diA')" class="nav-button">
-      <span>ARc⟁diA</span>
-    </button>
-    <button onclick="scrollToSection('Aursyl')" class="nav-button">
-      <span>Aursyl</span>
-      </button>
-      <button onclick="scrollToSection('Lysrua')" class="nav-button">
-        <span>Lysrua</span>
-      </button>
-    <button onclick="scrollToSection('DOMINO')" class="nav-button">
-      <span>DOMINO</span>
-    </button>
+    <button onclick="scrollToSection('Mapnel')" class="nav-button"><span>Mapnel</span></button>
+    <button onclick="scrollToSection('IUVALCY')" class="nav-button"><span>IUVALCY</span></button>
+    <button onclick="scrollToSection('ARc⟁diA')" class="nav-button"><span>ARc⟁diA</span></button>
+    <button onclick="scrollToSection('Aursyl')" class="nav-button"><span>Aursyl</span></button>
+    <button onclick="scrollToSection('Lysrua')" class="nav-button"><span>Lysrua</span></button>
+    <button onclick="scrollToSection('DOMINO')" class="nav-button"><span>DOMINO</span></button>
   </div>
-
 
   <!--(LIGHT MODE/DARK MODE/LIGHT THEME/DARK THEME)-->
 
@@ -314,7 +247,6 @@
   <!--(NAVIGATION CHAPTERS)-->
 
   <style>
-
     .nav-buttons-2 {
       display: flex;
       flex-wrap: wrap;
@@ -329,7 +261,7 @@
       top: 0;
       z-index: 10;
     }
-    
+
     .nav-buttons {
       display: flex;
       flex-wrap: nowrap;
@@ -507,14 +439,14 @@
 
   <div id="navToggleBtn" title="Chapitres"></div>
 
-  <button id="openDictionaryBtn" class="category-tag" style="
-  position:fixed;
-  top:20px;
-  left:20px;
-  z-index:2000;
-  font-size:1em;">🕮</button>
+  <button id="openDictionaryBtn" class="category-tag"
+    style="position: fixed; top: 20px; left: 20px; z-index: 2000; font-size:1em;">
+    🕮
+  </button>
 
-  <div style="font-size: 4em; text-align: center;">⟁URNELCY</div>
+  <div style="font-size: 4em; text-align: center;">
+    ⟁URNELCY
+  </div>
 
   <hr style="margin: 150px auto;">
 
@@ -545,15 +477,15 @@
       width: 100%;
     }
 
-  .dirsou-verse {
-    font-size: 1.40em;
-  }
-
-  @media screen and (max-width: 768px) {
     .dirsou-verse {
-      font-size: 1.10em;
+      font-size: 1.40em;
     }
-  }
+
+    @media screen and (max-width: 768px) {
+      .dirsou-verse {
+        font-size: 1.10em;
+      }
+    }
 
     .fluid-grid {
       display: grid;
@@ -678,15 +610,15 @@
     }
 
     .p-kwhite {
-    color: #EDEAE0;
-    text-shadow: 0px 0px 5px #EDEAE0;
+      color: #EDEAE0;
+      text-shadow: 0px 0px 5px #EDEAE0;
     }
 
     .p-kblack {
       color: black;
       text-shadow: 0px 0px 5px black;
-      }
-      
+    }
+
     .p-kgrey {
       color: gray;
       text-shadow: 0px 0px 5px gray;
@@ -768,16 +700,19 @@
       font-size: 0.70em;
       padding-left: 5em;
     }
+
     @media (max-width: 768px) {
       .sfirole1 {
         font-size: 0.65em;
         padding-right: 1em;
       }
+
       .sfirole2 {
         font-size: 0.65em;
         padding-left: 1em;
       }
     }
+
     .duel {
       font-size: large;
       text-align: justify;
@@ -796,7 +731,7 @@
       border: 1px solid var(--table-border);
       border-radius: 10px;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
     }
 
     .verb th,
@@ -847,6 +782,7 @@
       gap: 2em;
       margin: 2em 0;
     }
+
     @media screen and (max-width: 768px) {
       .tirtro-4x4 {
         grid-template-columns: 1fr !important;
@@ -878,9 +814,9 @@
       }
     }
 
-      .snewlc-table {
-        min-width: 100%
-      }
+    .snewlc-table {
+      min-width: 100%
+    }
 
     @media (max-width: 768px) {
       .snewlc-table {
@@ -1033,7 +969,7 @@
       margin: 2em 0;
     }
 
-    .gorap-grid-3x3 {
+    .MnP_gorap-grid-3x3 {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: auto auto auto;
@@ -1046,7 +982,7 @@
         grid-template-columns: 1fr;
       }
 
-      .gorap-grid-3x3 {
+      .MnP_gorap-grid-3x3 {
         grid-template-columns: 1fr;
       }
     }
@@ -1078,15 +1014,38 @@
     }
 
     @keyframes phantomizing {
-      0% { opacity: 0.2; transform: translateY(0); }
-      30% { opacity: 0.8; transform: translateY(-2px); }
-      60% { opacity: 0.3; transform: translateY(1px); }
-      100% { opacity: 0.2; transform: translateY(0); }
+      0% {
+        opacity: 0.2;
+        transform: translateY(0);
+      }
+
+      30% {
+        opacity: 0.8;
+        transform: translateY(-2px);
+      }
+
+      60% {
+        opacity: 0.3;
+        transform: translateY(1px);
+      }
+
+      100% {
+        opacity: 0.2;
+        transform: translateY(0);
+      }
     }
 
-    .phantom-letter:nth-child(2n) { --i: 2; }
-    .phantom-letter:nth-child(3n) { --i: 3; }
-    .phantom-letter:nth-child(5n) { --i: 5; }
+    .phantom-letter:nth-child(2n) {
+      --i: 2;
+    }
+
+    .phantom-letter:nth-child(3n) {
+      --i: 3;
+    }
+
+    .phantom-letter:nth-child(5n) {
+      --i: 5;
+    }
 
     .langod-trigger {
       cursor: pointer;
@@ -1147,29 +1106,17 @@
 
 
     .gliobe-table td:nth-child(1),
-    .gliobe-table th:nth-child(1) {
-      width: 14%;
-    }
+    .gliobe-table th:nth-child(1),
     .gliobe-table td:nth-child(2),
-    .gliobe-table th:nth-child(2) {
-      width: 14%;
-    }
+    .gliobe-table th:nth-child(2),
     .gliobe-table td:nth-child(3),
-    .gliobe-table th:nth-child(3) {
-      width: 14%;
-    }
+    .gliobe-table th:nth-child(3),
     .gliobe-table td:nth-child(4),
-    .gliobe-table th:nth-child(4) {
-      width: 14%;
-    }
+    .gliobe-table th:nth-child(4),
     .gliobe-table td:nth-child(5),
-    .gliobe-table th:nth-child(5) {
-      width: 14%;
-    }
+    .gliobe-table th:nth-child(5),
     .gliobe-table td:nth-child(6),
-    .gliobe-table th:nth-child(6) {
-      width: 14%;
-    }
+    .gliobe-table th:nth-child(6),
     .gliobe-table td:nth-child(7),
     .gliobe-table th:nth-child(7) {
       width: 14%;
@@ -1280,12 +1227,13 @@
         flex-direction: column;
         gap: 24px;
       }
+
       .zoozaze-2nd-item {
         width: 100%;
       }
     }
 
-    .domaines-grid {
+    .domains-grid {
       display: grid !important;
       grid-template-columns: repeat(3, 1fr);
       gap: 2em;
@@ -1298,17 +1246,24 @@
       margin: 2em auto;
       max-width: 900px;
     }
+
     .mindmap ul {
       list-style: none;
       padding-left: 1.5em;
       border-left: 2px solid #ccc;
       margin: 0.5em 0 0.5em 0.5em;
     }
-    .mindmap > ul { border: none; padding-left: 0; }
+
+    .mindmap>ul {
+      border: none;
+      padding-left: 0;
+    }
+
     .mindmap li {
       margin: 0.3em 0;
       position: relative;
     }
+
     .mindmap li::before {
       content: "";
       position: absolute;
@@ -1319,32 +1274,53 @@
       background: #ccc;
       display: block;
     }
-    .mindmap li:first-child::before { display: none; }
-    .mindmap .discipline { color: #FF2400; font-weight: bold; font-size: 0.88em; }
-    .mindmap .societe { color: #7F00FF;; font-weight: bold; font-size: 2.3em; }
-    .mindmap .arts { color: #00FFFF; font-weight: bold; font-size: 1.45em; }
+
+    .mindmap li:first-child::before {
+      display: none;
+    }
+
+    .mindmap .discipline {
+      color: #FF2400;
+      font-weight: bold;
+      font-size: 0.88em;
+    }
+
+    .mindmap .societe {
+      color: #7F00FF;
+      ;
+      font-weight: bold;
+      font-size: 2.3em;
+    }
+
+    .mindmap .arts {
+      color: #00FFFF;
+      font-weight: bold;
+      font-size: 1.45em;
+    }
 
     @media (max-width: 768px) {
-      .Domaines-grid > div {
+      .domains-grid>div {
         width: 100%;
         padding: 0 2vw;
       }
 
-    .mindmap .discipline { font-size: 0.75em; }
-    .mindmap .societe { font-size: 1.8em; }
-    .mindmap .arts { font-size: 1.23em; }
+      .mindmap .discipline {
+        font-size: 0.75em;
+      }
+
+      .mindmap .societe {
+        font-size: 1.8em;
+      }
+
+      .mindmap .arts {
+        font-size: 1.23em;
+      }
     }
 
     .oae {
 
-      td:nth-child(1) {
-        width: 50px;
-      }
-
-      td:nth-child(2) {
-        width: 50px;
-      }
-
+      td:nth-child(1),
+      td:nth-child(2),
       td:nth-child(3) {
         width: 50px;
       }
@@ -1384,27 +1360,30 @@
       margin: 32px auto;
       max-width: 700px;
     }
+
     .card-carousel-btn {
       font-size: 2em;
-      background: var(--bg-color, #f5f5f5);
-      border: 1px solid var(--border-color, #bbb);
+      background: var(--bg-color);
+      border: 1px solid var(--border-color);
       border-radius: 50%;
       width: 48px;
       height: 48px;
       cursor: pointer;
       transition: background 0.2s;
-      color: var(--text-color, #222);
+      color: var(--text-color);
     }
+
     .card-carousel-btn:active {
-      background: var(--bg-hover, #e0e0e0);
+      background: var(--bg-hover);
     }
+
     .card-carousel-card {
       width: 420px;
       aspect-ratio: 16/9;
-      border: 2px solid var(--border-color, #222);
+      border: 2px solid var(--border-color);
       border-radius: 16px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      background: var(--card-bg, #fff);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+      background: var(--card-bg);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -1412,49 +1391,58 @@
       padding: 24px;
       text-align: center;
       transition: box-shadow 0.2s, background 0.2s, color 0.2s;
-      color: var(--text-color, #222);
+      color: var(--text-color);
     }
+
     .card-carousel-card h2 {
       margin: 0 0 12px 0;
       font-size: 1.5em;
-      color: var(--text-color, #222);
+      color: var(--text-color);
     }
+
     .card-carousel-card p {
       margin: 0;
       font-size: 1.1em;
-      color: var(--text-secondary, #444);
+      color: var(--text-secondary);
     }
+
     .card-carousel-indicator {
       margin-top: 12px;
       font-size: 1em;
-      color: var(--indicator-color, #888);
+      color: var(--indicator-color);
       letter-spacing: 0.1em;
     }
+
     @media (prefers-color-scheme: dark) {
       .card-carousel-btn {
-        background: var(--bg-color, #222);
-        border-color: var(--border-color, #444);
-        color: var(--text-color, #eee);
+        background: var(--bg-color);
+        border-color: var(--border-color);
+        color: var(--text-color);
       }
+
       .card-carousel-btn:active {
-        background: var(--bg-hover, #333);
+        background: var(--bg-hover);
       }
+
       .card-carousel-card {
-        background: var(--card-bg, #181818);
-        border-color: var(--border-color, #444);
-        color: var(--text-color, #eee);
+        background: var(--card-bg);
+        border-color: var(--border-color);
+        color: var(--text-color);
       }
+
       .card-carousel-card h2 {
-        color: var(--text-color, #eee);
+        color: var(--text-color);
       }
+
       .card-carousel-card p {
-        color: var(--text-secondary, #ccc);
+        color: var(--text-secondary);
       }
+
       .card-carousel-indicator {
-        color: var(--indicator-color, #aaa);
+        color: var(--indicator-color);
       }
     }
-    
+
     .calendar {
       width: 100%;
 
@@ -1463,95 +1451,99 @@
       }
     }
 
+    .story-content {
+      width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .story-content p {
+      margin: 1.5vh;
+      line-height: 1.6;
+      text-align: justify;
+    }
+
+    .story-content div {
+      margin: 2vh;
+    }
+
+    @media screen and (max-width: 768px) {
       .story-content {
-        width: 800px;
-        margin: 0 auto;
-        padding: 20px;
+        width: 90%;
       }
 
       .story-content p {
-        margin: 1.5vh;
-        line-height: 1.6;
-        text-align: justify;
+        margin: 0vh;
       }
 
       .story-content div {
-        margin: 2vh;
+        margin: 0vh;
       }
+    }
 
-      @media screen and (max-width: 768px) {
-        .story-content {
-          width: 90%;
-        }
+    .timeline {
+      position: relative;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 10px 0;
+    }
 
-        .story-content p {
-          margin: 0vh;
-        }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--line);
+    }
 
-        .story-content div {
-          margin: 0vh;
-        }
+    .event {
+      position: relative;
+      margin: 20px 0 20px 60px;
+      padding: 10px 20px;
+      background: var(--event-bg);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px var(--shadow);
+    }
+
+    .event::before {
+      content: '';
+      position: absolute;
+      left: -38px;
+      top: 18px;
+      width: 16px;
+      height: 16px;
+      background: var(--dot);
+      border-radius: 50%;
+      border: 3px solid var(--dot-border);
+    }
+
+    .event .date {
+      font-size: 0.9em;
+      color: #888;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .numerology {
+      font-size: 1.2em;
+      width: 250%;
+    }
+
+    @media screen and (max-width: 768px) {
+      .numerology {
+        width: 600%;
       }
-
-      .timeline {
-          position: relative;
-          max-width: 600px;
-          margin: 40px auto;
-          padding: 10px 0;
-        }
-        .timeline::before {
-          content: '';
-          position: absolute;
-          left: 30px;
-          top: 0;
-          bottom: 0;
-          width: 4px;
-          background: var(--line);
-        }
-        .event {
-          position: relative;
-          margin: 20px 0 20px 60px;
-          padding: 10px 20px;
-          background: var(--event-bg);
-          border-radius: 8px;
-          box-shadow: 0 2px 8px var(--shadow);
-        }
-        .event::before {
-          content: '';
-          position: absolute;
-          left: -38px;
-          top: 18px;
-          width: 16px;
-          height: 16px;
-          background: var(--dot);
-          border-radius: 50%;
-          border: 3px solid var(--dot-border);
-        }
-        .event .date {
-          font-size: 0.9em;
-          color: #888;
-          margin-bottom: 5px;
-          display: block;
-        }
-
-        .numerology {
-          font-size: 1.2em;
-          width: 250%;
-        }
-
-        @media screen and (max-width: 768px) {
-          .numerology {
-            width: 600%;
-          }
-        }
+    }
 
     /*DICTIONNARY CSS*/
 
-      #vocabulary-section {
-        max-height: 80vh;
-        overflow-y: auto;
-        position: relative;
-      }
+    #vocabulary-section {
+      max-height: 80vh;
+      overflow-y: auto;
+      position: relative;
+    }
 
     :root[data-theme="light"] {
       --bg-color: #ffffff;
@@ -1652,223 +1644,238 @@
 
     /*EUREKA CSS*/
 
-        .cult-refs-container {
-          width: auto;
-          overflow-x: auto;
-          -webkit-overflow-scrolling: touch;
-          margin: 1vh;
-          position: relative;
-          border: 1px solid var(--table-border);
-        }
+    .cult-refs-container {
+      width: auto;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 1vh;
+      position: relative;
+      border: 1px solid var(--table-border);
+    }
 
-        .cult-refs {
-          font-size: 1.2em;
-          width: auto;
-          border-collapse: collapse;
-          margin: 0 auto;
-          text-align: left;
-          border: 1px solid var(--table-border);
-        }
+    .cult-refs {
+      font-size: 1.2em;
+      width: auto;
+      border-collapse: collapse;
+      margin: 0 auto;
+      text-align: left;
+      border: 1px solid var(--table-border);
+    }
 
-        .cult-refs th,
-        .cult-refs td {
-          white-space: normal;
-          word-wrap: break-word;
-        }
+    .cult-refs th,
+    .cult-refs td {
+      white-space: normal;
+      word-wrap: break-word;
+    }
 
-        .external-refs {
-          width: 100%;
-          overflow-x: auto;
-          -webkit-overflow-scrolling: touch;
-        }
+    .external-refs {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
 
-        @media screen and (max-width: 768px) {
-          .external-refs {
-            margin: 0;
-            padding: 0;
-          }
+    @media screen and (max-width: 768px) {
+      .external-refs {
+        margin: 0;
+        padding: 0;
+      }
 
-          .cult-refs {
-            min-width: max-content;
-            margin: 0;
-          }
+      .cult-refs {
+        min-width: max-content;
+        margin: 0;
+      }
 
-          .cult-refs th,
-          .cult-refs td {
-            padding: 6px;
-            white-space: nowrap;
-          }
-        }
+      .cult-refs th,
+      .cult-refs td {
+        padding: 6px;
+        white-space: nowrap;
+      }
+    }
 
-        @media screen and (max-width: 768px) {
-          .cult-refs-container {
-            margin: 0;
-            width: auto;
-            padding: 0 10px;
-          }
+    @media screen and (max-width: 768px) {
+      .cult-refs-container {
+        margin: 0;
+        width: auto;
+        padding: 0 10px;
+      }
 
-          .cult-refs {
-            font-size: 14px;
-            min-width: auto;
-          }
+      .cult-refs {
+        font-size: 14px;
+        min-width: auto;
+      }
 
-          .cult-refs th,
-          .cult-refs td {
-            padding: 6px;
-          }
-        }
+      .cult-refs th,
+      .cult-refs td {
+        padding: 6px;
+      }
+    }
 
-        .featuring {
-          text-align: left;
-          margin: 2vh;
-        }
+    .featuring {
+      text-align: left;
+      margin: 2vh;
+    }
 
-        .search-container {
-          text-align: center;
-          margin: 20px auto;
-          max-width: 600px;
-          position: relative;
-        }
+    .search-container {
+      text-align: center;
+      margin: 20px auto;
+      max-width: 600px;
+      position: relative;
+    }
 
-        #searchInput {
-          width: 80%;
-          padding: 10px;
-          font-size: 16px;
-          border: 1px solid var(--table-border);
-          border-radius: 5px;
-          background: var(--bg-color);
-          color: var(--text-color);
-        }
+    #searchInput {
+      width: 80%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid var(--table-border);
+      border-radius: 5px;
+      background: var(--bg-color);
+      color: var(--text-color);
+    }
 
-        .highlight {
-          background-color: yellow;
-          color: black;
-        }
+    .highlight {
+      background-color: yellow;
+      color: black;
+    }
 
-        .tag-system {
-          display: flex;
-          flex-direction: column;
-          gap: 2em;
-          margin: 2vh;
-        }
+    .tag-system {
+      display: flex;
+      flex-direction: column;
+      gap: 2em;
+      margin: 2vh;
+    }
 
-        .tag-container {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.5em;
-          padding: 1em;
-        }
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      padding: 1em;
+    }
 
-        .tag {
-          padding: 0.5em 1em;
-          border: 1px solid var(--text-color);
-          border-radius: 4px;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          background: var(--bg-color);
-          color: var(--text-color);
-        }
+    .tag {
+      padding: 0.5em 1em;
+      border: 1px solid var(--text-color);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: var(--bg-color);
+      color: var(--text-color);
+    }
 
-        .tag.active {
-          background: var(--text-color);
-          color: var(--bg-color);
-        }
+    .tag.active {
+      background: var(--text-color);
+      color: var(--bg-color);
+    }
 
-        .tag-section {
-          border: 1px solid var(--text-color);
-          padding: 1em;
-          border-radius: 8px;
-        }
+    .tag-section {
+      border: 1px solid var(--text-color);
+      padding: 1em;
+      border-radius: 8px;
+    }
 
-        .tag-section h4 {
-          margin-top: 0;
-          margin-bottom: 1em;
-          text-align: center;
-        }
+    .tag-section h4 {
+      margin-top: 0;
+      margin-bottom: 1em;
+      text-align: center;
+    }
 
-        .eureka-tags-group {
-          margin: 2em 0;
-          padding: 1.5em 1em;
-          border: 1px solid #bbb;
-          border-radius: 12px;
-          background: var(--bg-color, #fff);
-        }
+    .eureka-tags-group {
+      margin: 2em 0;
+      padding: 1.5em 1em;
+      border: 1px solid #bbb;
+      border-radius: 12px;
+      background: var(--bg-color, #fff);
+    }
 
-        .eureka-tags-title {
-          font-size: 1.2em;
-          font-weight: bold;
-          margin-bottom: 1em;
-        }
+    .eureka-tags-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 1em;
+    }
 
-        .eureka-tags-list {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 8px;
-          padding: 0;
-          margin: 0 0 10px 0;
-          border: none;
-          background: none;
-          min-height: 0;
-        }
+    .eureka-tags-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0;
+      margin: 0 0 10px 0;
+      border: none;
+      background: none;
+      min-height: 0;
+    }
 
-        .eureka-tag {
-          display: inline-block;
-          padding: 6px 14px;
-          font-size: 1em;
-          border: 1px solid var(--text-color);
-          background: var(--bg-color);
-          color: var(--text-color);
-          cursor: pointer;
-          transition: background 0.15s, color 0.15s, border-color 0.15s;
-          user-select: none;
-          outline: none;
-        }
+    .eureka-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      font-size: 1em;
+      border: 1px solid var(--text-color);
+      background: var(--bg-color);
+      color: var(--text-color);
+      cursor: pointer;
+      transition: background 0.15s, color 0.15s, border-color 0.15s;
+      user-select: none;
+      outline: none;
+    }
 
-        .eureka-tag.active,
-        .eureka-tag:focus,
-        .eureka-tag:hover {
-          background: var(--text-color);
-          color: var(--bg-color);
-          border-color: var(--text-color);
-        }
+    .eureka-tag.active,
+    .eureka-tag:focus,
+    .eureka-tag:hover {
+      background: var(--bg-color);
+      color: var(--text-color);
+      border-color: var(--text-color);
+    }
 
-        .eureka-tag:hover,
-        .eureka-tag.active[data-theme="dark"] {
-            background: #333333;
-            color: #7F00FF;
-            border-color: #7F00FF;
-        }
+    .eureka-tag:hover,
+    .eureka-tag.active[data-theme="dark"] {
+      background: var(--bg-color);
+      color: #00FFFF;
+      border-color: #00FFFF;
+    }
 
 
-        @media (max-width: 600px) {
-          .eureka-tags-list {
-            gap: 8px;
-          }
+    @media (max-width: 600px) {
+      .eureka-tags-list {
+        gap: 8px;
+      }
 
-          .eureka-tag {
-            font-size: 0.95em;
-            padding: 6px 10px;
-          }
-        }
+      .eureka-tag {
+        font-size: 0.95em;
+        padding: 6px 10px;
+      }
+    }
 
-        .active-tags-container {
-            min-height: 100px;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 8px;
-            background: var(--bg-color, #fff);
-        }
+    .active-tags-container {
+      min-height: 100px;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 8px;
+      background: var(--bg-color, #fff);
+    }
 
-        .active-tags-container.drag-over {
-            background: rgba(127, 0, 255, 0.1);
-        }
+    .active-tags-container.drag-over {
+      background: rgba(127, 0, 255, 0.1);
+    }
 
-        .eureka-tag.dragging {
-            opacity: 0.5;
-            cursor: grabbing;
-        }
-
+    .eureka-tag.dragging {
+      opacity: 0.5;
+      cursor: grabbing;
+    }
   </style>
+  
+  <details style="margin: 64px;">
+    <summary style="text-align: center;">
+      Note pour nouveaux arrivants
+    </summary>
+
+    ⟁URNELCY est un univers cosmogonique expérimental avec un ton poétique mythologique.
+    La lecture du contenu nécessite d'abord le français puis l'anglais.
+    Il y a par ailleurs des néologismes qui s'introduisent petit à petit ce qui je l'avoue n'est pas forcément agréable à tous quand on creuse loin et trop vite.
+    Je dois vraiment insister sur le vocabulaire car le dictionnaire se trouve en haut à gauche pour voir l'étendue[🕮], une ellipse milieu haut pour les chapitres et le mode clair/sombre en haut à droite [◐] toujours disponibles.
+    En défilant tout en bas, vous pouvez revenir aux titres dont vous vous êtes arrêté et trouver des semblances d'inspiration avec la culture de tout ordre pour simplifier la navigation et la compréhension.
+    Cette littérature s'adresse selon moi non-pas à une certaine élite qui amenuise la qualité de vie terrestre mais à toute personne qui s'est demandé quelle genre de "retaliation" nous remettrait mieux.
+    Pour autant n'espérez pas une réponse dans le marbre mais un machin qui enrichirait peut-être quelques perspectives, je trouve ça dommage de s'auto-confirmer une image identitaire de pécheur.
+    Bien sûr, on peut considérer ce contenu comme utopique idéel, mais je doute qu'on se trouve ok de se standardiser soi-même dans le circuit qui est à l'heure actuelle dans la section lambda de la concrète réalité, se représentant selon un tel.
+    
+  </details>
 
   <!--(MAPNEL THEOREM)-->
 
@@ -1880,10 +1887,12 @@
 
     <div class="author">【Vydnitt】</div>
 
-    <div style="text-align: center; font-size: large;">
+    <div style="text-align: center; font-size: x-large;">
 
       <dd><b><u>Monoa-Polyz</u></b>: 
-        Processus des courants énergiques Monom&amp;Polyp et Monop%Polym.</dd><br>
+        Processus des courants énergiques Monom&amp;Polyp et Monop%Polym.<br>
+        Animation originale[-] Au format vedette[Polyz] À toile de fond[Monoa].<br>
+        <i>Simplifiant - Matière Corde Passage</i></dd><br>
 
     </div>
 
@@ -1895,8 +1904,7 @@
           Éternité Homogène Singulière/Sensation vivante d'expérimenter une manifestation perpétuelle.<br>
           Une fermeture des coulisses n'achève pas la vie.<br>
           Monom implique Polyp (Monom&amp;Polyp)<br>
-          <i>Simplifiant - Être Mouvant</i>
-        </dd><br>
+          <i>Simplifiant - Être Mouvant</i></dd><br>
 
         <dd><b><u>Polyp/Poly-Projection</u></b>: 
           Recommencement Hétérogène Pluriel /Sensation vivante d'expérimenter une actualisation cordiale.<br>
@@ -1909,16 +1917,15 @@
           Régulatrice de la sensation vivante expériencielle.</dd><br>
 
         <dd style="font-size: large;"><b><u>Monom&amp;Polyp</u></b>: 
-          État/Dynamique intemporelle où être et devenir sont entrelacés dans une danse harmonieuse.<br>
-          <i>Simplifiant - Mémoire nourricière permanente &amp; Projection épisodique cyclique</i>
-        </dd><br>
+          État/Dynamique intemporelle où être et devenir sont entrelacés dans une communion harmonieuse.<br>
+          <i>Simplifiant - Mémoire nourricière permanente &amp; Projection épisodique cyclique</i></dd><br>
 
       </div>
 
       <div>
 
-        <dd><b><u>Monop/Mono-Paralysie</u></b>: 
-          Éternité Inhibée Figée/Non-réconciliation rugueuse avec la finitude physique.<br>
+        <dd><b><u>Monop/Mono-Prohibition</u></b>: 
+          Éternité Inhibée Figée/Non-réconciliation rugueuse avec le menu classique.<br>
           Dépiction survivante d'un échec ultime et de son insolubilité funeste.<br>
           Monop implique Polym (Monop%Polym)<br>
           <i>Simplifiant - Être Surchargé</i></dd><br>
@@ -1935,32 +1942,30 @@
 
         <dd style="font-size: large;"><b><u>Monop%Polym</u></b>: 
           État/Dynamique contractée où être et devenir sont imbriqués dans une déperdition rupturante.<br>
-          <i>Simplifiant - Paralysie affamante saturée % Malaise apathique déclinant</i></dd><br>
+          <i>Simplifiant - Prohibition affamante saturée % Malaise apathique déclinant</i></dd><br>
 
       </div>
 
     </div>
 
-    <div>
+    <div style="margin-bottom: 64px;">
 
       <dd><b><u>Monstre 0</u></b>: 
-        Empreinte animale au milieu de la naissance et de la mort plongée à la fois dans une clarté spécifique et un flou intersidéral.<br>
-        Créature sujette à la corruption et la finitude</dd><br>
+        Créature sujette à la corruption et à la finitude comndanée//graciée à la fertilité.<br>
+        Empreinte animale au milieu de la naissance et de la mort plongée à la fois dans une clarté spécifique et un flou intersidéral.<br></dd><br>
       <br>
       <dd><b><u>Dévore-Novice</u></b>: 
-        Adversaire de la seigneurie plannifiant son itinéraire purement stratégique dans des proportions d'ennui globalisé.<br>
-        Putschiste de Dieu déguisé en celui-ci ayant 2 mains 2 pieds 2 yeux 2 oreilles 1 nez 1 bouche capable de ruiner des milliers d'individus de leur propre soutien servile consenti</dd><br>
+        Adversaire de la seigneurie planifiant son itinéraire purement stratégique dans des proportions d'ennui globalisé.<br>
+        Putschiste de Dieu déguisé en celui-ci capable de ruiner au moins un millier de personnes de leur soutien servile consenti par la délégation.</dd><br>
       <br>
       <dd><b><u>Ventriloque</u></b>: 
         Bagarreur de fortune d'un manque irascible, sous une expression difforme du ventre au détriment de l'organisme intégral.</dd><br>
 
     </div>
 
-    <div style="margin: 56px;"></div>
-
     <h2 id="Monoa-Polyz" style="text-align: center;">『Monoa-Polyz』〖Cosmogonie〗</h2>
 
-    <div class="gorap-grid-3x3" style="font-size: x-large;">
+    <div class="MnP_gorap-grid-3x3" style="font-size: x-large;">
 
       <p>Le monde naît d'un mélange<br>
         Celle de Monom et de Polyp<br>
@@ -2054,7 +2059,7 @@
 
     <h2 style="text-align: center;">『Admagcoq』〖Métaphysique〗</h2>
 
-      <div style="margin: 32px auto;">
+      <div style="font-size: large; margin: 32px auto;">
         <dd><u><b>Admagcoq</b></u>: 
         Trinité Individuelle (Aventure - Magie - Cuisine)</dd><br>
        </div>
@@ -2064,8 +2069,9 @@
     <div class="author">【Xyfurn 1/3】</div>
 
     <div>
+
       <div class="presentri">
-        Aventure (Instinct/Chemin)<br>
+        Aventure (Flair/Chemin)<br>
         Défi｜Merveille｜Œuvre<br>
         Monstre 0｜Enquête｜Directions Souveraines<br>
       </div>
@@ -2143,6 +2149,7 @@
     <div class="author">【Xyfurn 2/3】</div>
 
     <div>
+
       <div class="presentri">
         Magie (Envoûtement/Complétude)<br>
         Défi｜Merveille｜Œuvre<br>
@@ -2152,15 +2159,15 @@
       <div style="margin: 32px auto;">
         <dd><u><b>Illusion</b></u>: 
           Filtre stimulant clos intrapersonnel ouvert à ambiguïté interpersonnel.<br>
-          Ample enchaînement de tensions multi-perspectives</dd><br>
+          Ample enchaînement de tensions multi-perspectives.</dd><br>
         <br>
         <dd><b><u>Atelier Ataraxial</u></b>: 
           Accroissement progressif des facultés de tolérance actives vers des vertus passives.<br>
-          Culture musculaire de paix intérieure</dd><br>
+          Culture musculaire de paix intérieure.</dd><br>
         <br>
         <dd><b><u>Fluide Élémentaire</u></b>: 
-          Mouvement inné s'accomplissant sans intervention clivante.<br>
-          État second pair évanouissant l'interdit premier impair de la partie analytique vers sa pleine fougue permise ou dommageante.</dd><br>
+          État second pair évanouissant l'interdit premier impair de la partie analytique vers sa pleine fougue permise ou dommageante.<br>
+          Mouvement inné s'accomplissant sans intervention clivante.</dd><br>
       </div>
 
       <div class="clotutri">
@@ -2213,6 +2220,7 @@
     <div class="author">【Xyfurn 3/3】</div>
 
     <div>
+
       <div class="presentri">
         Cuisine (Formule/Alignement)<br>
         Défi｜Merveille｜Œuvre<br>
@@ -2345,7 +2353,7 @@
 
     <h2 style="text-align: center;">『Nezkelwac』〖Archétypes〗</h2>
 
-      <div style="margin: 32px auto;">
+      <div style="font-size: large; margin: 32px auto;">
         <dd><u><b>Nezkelwac</b></u>: 
         Trinité Collective (Nezrog - Ekeline - Wacwe)</dd><br>
        </div>
@@ -2355,6 +2363,7 @@
     <div class="author">【Nezrog】</div>
 
     <div>
+
       <div class="presentri">
         Nezrog (Divin/Cosmos)<br>
         Défi｜Merveille｜Œuvre<br>
@@ -2363,8 +2372,8 @@
 
       <div style="margin: 32px auto;">
         <dd><b><u>Naustre C</u></b>: 
-          Créature navigatrice consciente et psychiquement relationnelle de son 0.<br>
-          Marcheur de son propre sentier.</dd><br>
+          Créature navigatrice consciente et psychiquement relationnelle de son 0 aussi appelée mortel.<br>
+          Marcheur de son propre sentier s'écartant du coin de l'action définit par la réprimande répressive.</dd><br>
         <br>
         <dd><b><u>Palpiter de l'Infini</u></b>: 
           Battre, disposer l'énergie microcosmique transmutée dans la grandeur macrocosmique.<br>
@@ -2372,7 +2381,7 @@
         <br>
         <dd><b><u>Semaine Sublime</u></b>: 
           Élévation indéfinie des formes de richesse parmi 7 paliers d'initiations.<br>
-          Structuration du Naustre C</dd><br>
+          Génitale structuration métaphorique du Naustre C.</dd><br>
       </div>
 
       <div class="clotutri">
@@ -2393,7 +2402,7 @@
 
         <div class="day-card">
           <div style="font-size: large;">
-            ⚔ Lundi ⚔
+            ⚔ Cilar (Lundi) ⚔
           </div>
           Embryon: Nouvelle vie palpitée, explorateur novice maladroit<br>
           Élément: Étranger<br>
@@ -2404,7 +2413,7 @@
 
         <div class="day-card">
           <div style="font-size: large;">
-            ♙ Mardi ♟
+            ♙ Ecstel (Mardi) ♟
           </div>
           Gymnaste: Joueur résolu à gravir, sacrificateur de paix délabrée<br>
           Élément: Terre<br>
@@ -2415,7 +2424,7 @@
 
         <div class="day-card">
           <div style="font-size: large;">
-            ♘ Mercredi ♞
+            ♘ Linkar (Mercredi) ♞
           </div>
           Médecin: Érudit de la santé, thérapeute de la réconciliation<br>
           Élément: Eau<br>
@@ -2426,7 +2435,7 @@
 
         <div class="day-card">
           <div style="font-size: large;">
-            ♗ Jeudi ♝
+            ♗ Histel (Jeudi) ♝
           </div>
           Poète: Instructeur éclairé, penseur de précieux<br>
           Élément: Air<br>
@@ -2437,7 +2446,7 @@
 
         <div class="day-card">
           <div style="font-size: large;">
-            ♖ Vendredi ♜
+            ♖ Kaleidar (Vendredi) ♜
           </div>
           Hacker: Connecteur indomptable, briseur de chaînes transgresseur de tyrannies<br>
           Élément: Feu<br>
@@ -2448,7 +2457,7 @@
 
         <div class="day-card">
           <div style="font-size: large;">
-            ♔ Samedi ♚
+            ♔ Nouvarel (Samedi) ♚
           </div>
           Héros: Aventurier en quête de noblesse, alchimiste forgeron palpitant de l'infini<br>
           Élément: Abondance<br>
@@ -2459,7 +2468,7 @@
 
         <div class="week-center">
           <div style="font-size: large;">
-            ♕ Dimanche ♛
+            ♕ Spheru (Dimanche) ♛
           </div>
           Dieu: Conscience exponentielle, pleine vivacité défausseuse de léthargie<br>
           Élément: Création<br>
@@ -2479,6 +2488,7 @@
     <div class="author">【Ekeline】</div>
 
     <div>
+
       <div class="presentri">
         Ekeline (Paradoxe/Innocence)<br>
         Défi｜Merveille｜Œuvre<br>
@@ -2491,11 +2501,13 @@
           Véhicule des sentiments souvent extrêmement impactants et brutaux.</dd><br>
         <br>
         <dd><b><u>Gaunie</u></b>: 
-          Gaieté unie réveilleuse en plénitude médiale, prolongement des angles latéraux en toute finesse.</dd><br>
+          Gaieté unie réveilleuse en plénitude médiale, prolongement des angles latéraux en toute finesse.<br>
+          Bouquet Gaunique, Instances Gauniques(Reptilien, Sifflet, [A/Re]vers-Xoi, Innokcien)<br>
+          La Gaunie [4-3 Instances] ⟷ L'Agonie [2-1 Instance(s)]</dd><br>
         <br>
         <dd><b><u>Florescence</u></b>: 
           Alliance protéiforme de toutes les instances sous leur rôles adéquat.<br>
-          Guérison des correspondants bossus désamorçant le célibat cellulaire versatile</dd><br>
+          Guérison des correspondants bossus désamorçant le célibat cellulaire versatile.</dd><br>
       </div>
 
       <div class="clotutri">
@@ -2512,25 +2524,25 @@
 
     <div>
       <span class="instance">
-        -----Reptile
+        -----Reptilien (Reptile)
       </span><br>
       C'en est trop, s'ils veulent jouer à qui va ira le plus loin<br>
-      J'irai loin, la défaite s'amplifiera partout face au despote<br>
+      Je me propulserais définitivement, la défaite s'amplifiant face au despote<br>
       Le loto a décidé qu'il fallait crier que ce cirque devait brûler.<br>
       <br>
       L'ignorance mondiale injecte l'hallucination<br>
       Personne ici-bas ne comprend quoi que ce soit<br>
-      Vous semblez sommairement irréels<br>
-      Juste des rôles bien stériles pour tourner l'huile sous l'esclavage 2.0<br>
+      Vous semblez sommairement irréels dans votre comportement<br>
+      Juste des rôles bien stériles tournant l'huile sous l'esclavage 2.0<br>
       <br>
-      Au fin fond de la société<br>
-      L'enseignement de la misère est l'infiltration d'un poing serré dans le crâne<br>
-      Sa communauté en devient malveillante<br>
-      J'enterre la bonne personne<br>
+      Au fin fond de la société bancale en roquette grillée<br>
+      L'enseignement obscène est l'infiltration d'un poing serré dans le crâne<br>
+      Sa communauté en devient une pièce de plomb<br>
+      Je désavoue et j'enterre vive cette fabrique de plancher<br>
       Elle ne se trouve nulle part dans la cohésion du vide interstellaire.<br>
       <br>
       <span class="instance">
-        -----Signal Corporel
+        -----Sifflet (Signal Corporel)
       </span><br>
       Allons manger s'il vous plaît<br>
       Ce repas sera particulier<br>
@@ -2541,17 +2553,17 @@
       Le privilège veille sur moi.<br>
       <br>
       <span class="instance">
-        -----Reptile
+        -----Reptilien (Reptile)
       </span><br>
-      Et dire que sa provenance vient d'un opulent bien corrompu…<br>
+      Hélas, sa provenance coule d'un opulent gestionnaire de poterie…<br>
       <br>
       <span class="instance">
-        -----Moi
+        -----[A/Re]vers-Xoi (MoiーToi)
       </span><br>
       Reptile, laisse l'innocence te répondre désormais!<br>
       <br>
       <span class="instance">
-        -----Innocence
+        -----Innokcien (Innocence)
       </span><br>
       Sache que tu n'as rien à obtenir de moi<br>
       Mais par contre si tu me mords de rage…<br>
@@ -2560,18 +2572,14 @@
       Une intraitable soif de revanche s'enragera, vois-tu…<br>
       Les corrompus dont tu parles sont les reptiles sans moi.<br>
       <br>
-      Cette nourriture dont tu as besoin<br>
-      La bête ne te l'offrira pas.<br>
-      <br>
+      Cette nourriture dont tu as besoin, la bête ne te l'offrira point.<br>
       Qu'est-ce que tu fais lorsque tu n'es pas obligé ?<br>
-      Quelque chose me démange<br>
-      Mais lorsqu'on va dans la même direction, je suis soulagée.<br>
+      Quelque chose me démange sans que ce soit de source externe<br>
+      Lorsqu'on va dans la même direction, je suis soulagée.<br>
+      En ce moment, tu décides sans moi. Ça m'inquiète.<br>
       <br>
-      En ce moment, tu décides sans moi<br>
-      Ça m'inquiète.<br>
-      <br>
-      J'espère qu'on se retrouvera main dans la main<br>
-      Vers une traversée de souvenirs heureux<br>
+      J'espère qu'on se retrouvera main dans la main au dacodac<br>
+      Vers une traversée de souvenirs heureux, si nous le voulons bien<br>
       Tu me protégeras de ton tranchant et je te ferai sourire de mes larmes.<br>
     </div>
 
@@ -2582,6 +2590,7 @@
     <div class="author">【Wacwe】</div>
 
     <div>
+
       <div class="presentri">
         Wacwe (Société/Arcade)<br>
         Défi｜Merveille｜Œuvre<br>
@@ -2952,31 +2961,37 @@
 
       <div>
         <dt><b><u>Fon:Rel:Inc</u></b></dt>
-        <dd>Trinité Clinique […]｜Fondations - Relativité - Inclinaisons</dd><br>
+        <dd>Trinité Clinique […]｜Fondations - Relativité - Inclinaisons (Rythme Minceur)</dd><br>
 
         <dt><b><u>Fondations</u></b></dt>
-        <dd>=<u>Fon</u>:Rel:Inc= Solides associés à [Monoa]. Mosaïque d'amplitude vécue répondant par [Polyz].</dd><br>
+        <dd>=<u>Fon</u>:Rel:Inc= Solides associés à [Monoa].<br>
+        Mosaïque d'amplitude vécue répondant par [Polyz].</dd><br>
 
         <dt><b><u>Inclinaisons</u></b></dt>
-        <dd>=Fon:Rel:<u>Inc</u>= Espaces associés à [Polyz]. Palette d'actions concevables traduites par [Monoa].</dd><br>
+        <dd>=Fon:Rel:<u>Inc</u>= Espaces associés à [Polyz].<br>
+        Palette d'actions concevables traduites par [Monoa].</dd><br>
 
         <dt><b><u>Relativité</u></b></dt>
-        <dd>=Fon:<u>Rel</u>:Inc= Marge de relief associé à [Variable -]. Fluctuation accouchée des continuités inexorables [Monoa-Polyz].</dd><br>
+        <dd>=Fon:<u>Rel</u>:Inc= Marge de relief associé à [Variable -].<br>
+        Fluctuation accouchée des continuités inexorables [Monoa-Polyz].</dd><br>
 
       </div>
 
       <div>
         <dt><b><u>Scé;Syn;Cel</u></b></dt>
-        <dd>Trinité Empirique […]｜Scénario - Syndrome - Cellules</dd><br>
+        <dd>Trinité Empirique […]｜Scénario - Syndrome - Cellules (Symétrie Pinceuse)</dd><br>
 
         <dt><b><u>Scénario</u></b></dt>
-        <dd>=<u>Scé</u>;Syn;Cel= Affaires associés à [Monoa]. Plateau de terrain étendue déroulé par [Polyz].</dd><br>
+        <dd>=<u>Scé</u>;Syn;Cel= Affaires associés à [Monoa].<br>
+        Plateau de terrain étendue déroulé par [Polyz].</dd><br>
 
         <dt><b><u>Cellules</u></b></dt>
-        <dd>=Scé;Syn;<u>Cel</u>= Chaînes associés à [Polyz]. Carreaux de dalles pratiquables portés par [Monoa].</dd><br>
+        <dd>=Scé;Syn;<u>Cel</u>= Chaînes associés à [Polyz].<br>
+        Carreaux de dalles pratiquables portés par [Monoa].</dd><br>
 
         <dt><b><u>Syndrome</u></b></dt>
-        <dd>=Scé;<u>Syn</u>;Cel= Intervalle de mesure associé à [Variable -]. Morceau arrangé des chroniques implacables [Monoa-Polyz].</dd><br>
+        <dd>=Scé;<u>Syn</u>;Cel= Intervalle de mesure associé à [Variable -].<br>
+        Morceau arrangé des chroniques implacables [Monoa-Polyz].</dd><br>
 
       </div>
 
@@ -3214,7 +3229,7 @@
         <tr>
           <th>Je</th>
           <th>Tu</th>
-          <th>Il/Elle</th>
+          <th>Il×Elle</th>
         </tr>
       </thead>
       <tbody>
@@ -3226,7 +3241,12 @@
         <tr>
           <td>Rôle</td>
           <td>Rôdeur</td>
-          <td>Rôtisseur</td>
+          <td>Rôt-Rot</td>
+        </tr>
+        <tr>
+          <td>Démon</td>
+          <td class="hidden-text">Décoriste</td>
+          <td>Déité</td>
         </tr>
       </tbody>
     </table>
@@ -3319,7 +3339,7 @@
         <tr>
           <th>Jei</th>
           <th>Tui</th>
-          <th>Ili/Ellie</th>
+          <th>IliーEllie</th>
           <th>Jtie</th>
         </tr>
       </thead>
@@ -3411,9 +3431,7 @@
 
     <div class="author">【Wacwe・Leqwa】</div>
 
-    <div style="text-align: center;">
-
-    <div style="margin: 32px auto; font-size: large;">
+    <div style="margin: 32px auto; font-size: large; text-align: center;">
       <dd><b><u>Duel Exceptionnel</u></b>: 
         Controverse du statu quo, de son décalcage standardisé et de son arsenal pour le maintenir.<br>
         Culmination du déchaînement ravageur pour finalité la délivrance du dévore-novice et de sa machination.<br>
@@ -3433,8 +3451,6 @@
       <ol><i class="sfirole1">(Gaunie)</i>100 Nageoires<i class="sfirole2">(Gaunie)</i></ol>
       <ol><i class="sfirole1">(Picol-Kentron)</i>3 Yeux Néons RGB<i class="sfirole2">(Picol-Kentron)</i></ol>
       <ol><i class="sfirole1">(Héros)</i>Peau Grise<i class="sfirole2">(Héros)</i></ol>
-
-    </div>
 
     </div>
 
@@ -3474,6 +3490,12 @@
 
     <div class="written">04/09/24</div>
 
+
+    <div style="margin: 32px auto; font-size: large; text-align: center;">
+      <dd><b><u>MonPol</u></b>: 
+      Titre honorifique envers l'être et son devenir ou le mémojectile quoi qu'il en soit.
+    </div>
+    
     <div class="clotutri">
       Monoa-Polyz &amp; Mélodie Inépelable &amp; Duel Exceptionnel
     </div>
@@ -3564,12 +3586,13 @@
         Depuis le rationnel et l'irrationnel,
         kinésie gymnastique à partir d'incantations,
         celles dissécatoires de la dissection indissectionnable.<br>
-        Critherçation⟷Conversation:Dissertation<br>
+        Le langage sied cette pipelette à merveille, une vrai tête à claque amuseuse de galerie.<br>
         Discours sans dessus dessous.</dd><br>
     </div>
 
-    <div style="margin-top: 64px;">Verbe - Critherçer</div>
-
+    <details style="margin: 64px;">
+    
+    <summary>Verbe - Critherçer</summary>
   <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
 
     <table class="verb" style="border: 0.5px dashed; table-layout: fixed;">
@@ -3652,12 +3675,11 @@
     </table>
 
 </div>
-
-<div style="margin: 32px;"></div>
+</details>
 
     <div class="author">【fOSTRAh - uEWIj】</div>
 
-<h2 id="Tire-Trouble" style="text-align: center;">Tire-Trouble</h2>
+<h2 id="Tire-Trouble" style="text-align: center;">「Tire-Trouble」</h2>
 
 <div class="tirtro-4x4">
 
@@ -3671,7 +3693,7 @@ Tentacules grosses têtes<br>
 <p>
 Purée pour calmer<br>
 Tribunal pour foudroyer<br>
-Combien à dézinguer ?<br>
+Combien à dézinguer<br>
 </p>
 
 <p>
@@ -3693,15 +3715,18 @@ AVC casse-pied<br>
     <div style="margin: 32px auto;">
       <dd><b><u><span style="font-size: x-small;">(RAPPEL +)</span>
             INTIMACY</u></b>: 
-        Trinité Viscérale [⦻] {0} (∞) ou &lt;⧝&gt;; Proximité sensorielle sous dégradé exponentiel, sous un rayon complémentaire de la libido au plaisir centrifuge.</dd><br>
+        Trinité Viscérale [⦻] {0} (∞) ou &lt;Ж&gt;; Proximité sensorielle sous dégradé exponentiel, sous un rayon complémentaire de la libido au plaisir centrifuge.</dd><br>
+      <dd><b><u>XaraЖereX/SaraXteriZ</u></b>: 
+        @ttributs tout aussi bien absolus et relatifs comprisent dans une pille de données interminable.<br>
+        Danse confuse ambivalente en cadre et légitimité.</dd><br>
+
     </div>
 
     <table border="1" style="font-size: large;">
       <thead>
-        <tr><td colspan="3" style="font-size: 150%;">⧝</td></tr>
+        <tr><th>Crithekiel</th><th>Critheçiel</th><th>Critheqiel</th></tr>
       </thead>
       <tbody>
-        <tr><td>Crithekiel</td><td>Critheçiel</td><td>Critheqiel</td></tr>
         <tr><td>Droit</td><td>Vecteur</td><td>Courbe</td></tr>
         <tr><td>Rectiligne</td><td>Mouvement</td><td>Angulaire</td></tr>
         <tr><td>A-xial</td><td>B-ridge</td><td>C-irculaire</td></tr>
@@ -3713,7 +3738,7 @@ AVC casse-pied<br>
         <tr><td>🅄IUN🅄</td><td>⩉UNI⩉</td><td>ⓊNIUⓊ</td></tr>
         <tr><td>⌘Intêret⌘</td><td>⌨Remarque⌨</td><td>°Degré°</td></tr>
         <tr><td>⦻Croix⦻</td><td>0Zéro0</td><td>∞Infini∞</td></tr>
-        <tr><td colspan="3">⧝bou⧝cle⧝</td></tr>
+        <tr><td colspan="3">XaraЖereX</td></tr>
       </tbody>
     </table>
 
@@ -3721,7 +3746,7 @@ AVC casse-pied<br>
       [Français plus optimisé ici - French more optimized here]
     </div>
 
-    <h2 id="Panier" style="text-align: center;">Panier</h2>
+    <h2 id="Panier" style="text-align: center;">「Panier」</h2>
 
 <div style="overflow-x: auto; width: 100vw; max-width: 100%;">
 
@@ -3823,7 +3848,8 @@ AVC casse-pied<br>
         Voilier [Monom&Polyp]~=~[Critheçiel] réalisant la culture.</dd><br>
     </div>
 
-    <div style="margin-top: 64px;">Verbe - Veldre</div>
+    <details style="margin: 64px;">
+    <summary>Verbe - Veldre</summary>
 
   <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
 
@@ -3908,7 +3934,7 @@ AVC casse-pied<br>
 
 </div>
 
-<div style="margin: 32px;"></div>
+</details>
 
 <div id="arti2">
 
@@ -3955,12 +3981,16 @@ AVC casse-pied<br>
     <div class="author">【UiNo F.U.L.L】</div>
 
     <div style="margin: 56px auto;">
+      <dd><b><u>CritHaïe</u></b>: 
+      Comment puis-je te le dire ?<br>
+      Il s'agit de nous qui ne sont pas nôtres.<br>
+      Douloureuse translation.</dd><br>
       <dd><b><u>Tribalt</u></b>: 
         Structure évolutives des formes morcelés vers leur incompréhensibles compréhensions avortées.</dd><br>
       <dd><b><u>Gestalt</u></b>: 
-        Structure évolutives des formes entières vers leur définitions indéfinissables réalisées.</dd><br>
+        Structure évolutives des formes entières vers leur définitions indéfinissables fécondées.</dd><br>
       <dd><b><u>Möbius Netwow</u></b>: 
-        Site cousu décousu d'entendement simulatoire gouvernant.</dd><br>
+        Site cousu décousu d'entendement domestique gouvernant.</dd><br>
     </div>
 
     <div style="margin: 56px auto;">
@@ -3968,7 +3998,7 @@ AVC casse-pied<br>
     </div>
 
     <h2 id="Möbius_Netwow" class="code-prompt" style="text-align: center; margin: 32px auto;">
-      Möbius Netwow
+      『Möbius Netwow』
     </h2>
 
     <div class="code-prompt" style="margin: 32px auto;">
@@ -4045,7 +4075,7 @@ AVC casse-pied<br>
       Patterns -
       AESTHETHICS -
       Paradoxes -
-      <strike class="phantomized">Money</strike> -
+      <strike class="phantomized">Numerical Worth</strike> -
       RECOGNITION -
       <strike class="phantomized">Political Power</strike> -
       Motions -
@@ -4078,7 +4108,6 @@ AVC casse-pied<br>
       %exe Files% -
       <strike class="phantomized">Hormonal Anomalies</strike> -
       HISTORIES FOLDERS -
-      <strike class="phantomized">IQ Way Means EVERYTHING</strike> -
       WORLDS RECORDS
     </div>
 
@@ -4112,7 +4141,7 @@ AVC casse-pied<br>
       </div>
 
     <h2 class="code-prompt" style="text-align: center; margin: 32px auto;">
-      Réseau Möbius
+      『Réseau Möbius』
     </h2>
 
     <div class="code-prompt" style="margin: 32px auto;">
@@ -4186,7 +4215,7 @@ AVC casse-pied<br>
       Comportements -
       ESTHÉTIQUE -
       Paradoxes -
-      <strike class="phantomized">Argent</strike> -
+      <strike class="phantomized">Valeur Chiffrable</strike> -
       RECONNAISSANCE -
       <strike class="phantomized">Pouvoir Politique</strike> -
       Mouvements -
@@ -4208,7 +4237,7 @@ AVC casse-pied<br>
       Subconscient -
       <strike class="phantomized">Justification</strike> -
       Vêtements Corporels -
-      Nerfs Sensitif -
+      Nerfs Sensitifs -
       Impression@Expression -
       <strike class="phantomized">Enseigner aux Ignorants</strike> -
       Codes@Scripts d'Inventaire -
@@ -4219,7 +4248,6 @@ AVC casse-pied<br>
       %Fichiers exe% -
       <strike class="phantomized">Anomalies Hormonales</strike> -
       DOSSIERS D'HISTOIRES -
-      <strike class="phantomized">La Voie du QI Signifie TOUT</strike> -
       ENREGISTREMENTS MONDIAUX
     </div>
 
@@ -4265,7 +4293,7 @@ AVC casse-pied<br>
 
   <div class="5sync">
 
-    <h3 id="5ync_sur_5ync" style="text-align: center;">「5ync sur 5ync」</h3>
+    <h3 id="5ync_sur_5ync" style="text-align: center;">- - - - - 5ync sur 5ync - - - - -</h3>
 
     <div style="text-align: justify; font-size: large">
 
@@ -4805,7 +4833,7 @@ AVC casse-pied<br>
     <div style="font-size: large; margin: 128px auto;">
 
       <dd><b><u>ZooZaZe</u></b>: 
-      Trinité Atmosphérique (<ruby>JooQooBoo<rt>À emporter</rt></ruby> - <ruby>aLIaKKaHH<rt>Sur place</rt></ruby> - <ruby>eRUeGGeHH<rt>Wesh</rt></ruby>)</dd><br>
+      Trinité Cultivatrice (JooQooBoo - aLIaKKaHH - eRUeGGeHH)</dd><br>
       <br>
       <dd><b><u>JooQooBoo</u></b>: 
         Hostilité macabrique affranchie des lois établies encemanceuse de plosions imparables.<br>
@@ -5446,11 +5474,14 @@ AVC casse-pied<br>
               <td>Miam</td>
             </tr>
             <tr>
-              <td>System</td>
-              <td>Core</td>
-              <td>Template</td>
-              <td>Graphic</td>
-              <td>Design</td>
+              <td>System<span style="font-size: x-small;">,</span></td>
+              <td>Purpose<span style="font-size: x-small;">,</span></td>
+              <td><span style="font-size: x-small;">and the </span>Awkward</td>
+              <td>Realm</td>
+              <td><span style="font-size: x-small;">of </span>Kindred</td>
+            </tr>
+            <tr>
+              <td colspan="5">SPARK</td>
             </tr>
           </tbody>
         </table>
@@ -5466,10 +5497,10 @@ AVC casse-pied<br>
           Scepticisme de l'artificialité</dd><br>
         <dd><u><b>Blehdwoluzvi</b></u>: 
           Le pouvoir dévoriste n'est que blehdwoluzvi, tu connais maintenant, tu es prêt pour la vie!<br>
-          Librairie Ludothèque Hourra!</dd><br>
+          Librairie Ludothèque Hourra! Comédie ou Tragédie ?</dd><br>
         <dd><b><u>Tra§Vel</u></b>: 
           Bouclure de flambeau Doppelgänger des entrailles exclusives inclusives selon la forme et les convulsions du vouloir. (Travail § Veldiac)<br>
-          Dose d'altérité réaliste et utopique sous les moyens du bord et du fond</dd><br>
+          Dose d'altérité réaliste et utopique sous les moyens du bord et du fond.</dd><br>
       </div>
 
       <div style="margin: 64px auto; text-shadow: 0px 0px 50px red; font-size: 4em;">This text can hurt and is to read with meticulous precautions and perspectives</div>
@@ -5593,7 +5624,7 @@ AVC casse-pied<br>
             Not its fault nor anyone else</p>
 
           <p>Nature can produce unpleasant varieties<br>
-            The king of foolishness and foolishment<br>
+            The sweet king of foolishness and foolishment<br>
             Not by themselves but by thyself of a missing function<br>
             Surely generating byproducts tragedies as a result<br>
             Were we cursed by the eternal rises of their hunger ?</p>
@@ -5621,7 +5652,7 @@ AVC casse-pied<br>
 
         <h2 style="text-align: center;">(Part 2/4)</h2>
 
-        <div class="gorap-grid-3x3">
+        <div class="MnP_gorap-grid-3x3">
 
           <h3>Open</h3>
           <h3>Wish</h3>
@@ -5721,7 +5752,7 @@ AVC casse-pied<br>
             The price of their lives for the greater good</p>
 
           <p>Ways of who access speech without punishment trapped individualities to slavery<br>
-            The game it is playing should always look appealing like the sweetness of sex<br>
+            The game it is playing should always look appealing<br>
             With copyright system dictionaries, it's indeed a studious steady joke, maybe the best of all.<br>
             New Holly Books coming, separated with religion<br>
             Is anything worth, can I trust anything ?<br>
@@ -5742,8 +5773,8 @@ AVC casse-pied<br>
             Connect with the magnetism of my phantasm and abilities as well as the body as a whole<br>
             I'm sure you're also same, and devils are no exception of course</p>
 
-          <p>Printer's wire and industrial wiring won't piss him off<br>
-            Everyone confirm it, he knows at this rate of self-constructed legitimacy permission<br>
+          <p>Printer's psyches wire and industrial wiring won't piss him off<br>
+            Everyone confirm, he knows at this rate of self-constructed legitimacy<br>
             It's written allowed in the official agreements after all<br>
             So we are taming his surface sense of value as a result while having an immense fuck to propel somewhere else</p>
 
@@ -5779,7 +5810,7 @@ AVC casse-pied<br>
             Furthermore if the individual isn't illed<br>
             The ultimate Command bypassed successfully<br>
             That conquest was timeless effect on all servers<br>
-            Humanity went through it and spread EQ illegally on the core system modelization</p>
+            Humanity went through it and spread EQ illegally on the core modelization protocol</p>
 
           <p>The devil worst moment will purge it to it's best<br>
             His immense IQ leads him to gather the EQ God created himself/herself/itself/thyself up to meaning<br>
@@ -5858,7 +5889,7 @@ AVC casse-pied<br>
             But on an unknown borderless<br>
             The landscape of meaning<br>
             With necessary Beliefs ON ?<br>
-            Or could it be a Phantasm ON ?</p>
+            Or could it be Phantasm ON ?</p>
 
         </div>
 
@@ -5929,55 +5960,42 @@ AVC casse-pied<br>
             Wired to win as he lost his goal, transforming unconveniently at first<br>
             That was a dreadfully curious Tra§Vel<br>
             God's foolish wish to recognize itself<br>
-            Who never summoned onomatopoeia to nobody ?</p>
+            Who never summoned onomatopoeia to nobody ?<br>
+            The movie director is gonna be mad at you</p>
 
           <p>Am I religious using 666 ? things aren't that so easy<br>
             666 might refer to anything based on several settings on outter worlds<br>
             If we can [re/dis]connect symbols, context with familiarity and reversals<br>
-            Just that the message is smoother, consider it's not 666.<br>
-            The skin of that 666 uncodable, identification errored not written on his face<br>
+            Just that the message is smoother, consider it's off limits.<br>
+            The skin of that 666 uncodable, errored identification not written on his face<br>
             Can this incantation reach the nameless children to a satisfying point ?</p>
 
 
           <p>Return wording weapons into collective culture devastation<br>
             That was the pinnacle of…<br>
-            <br>
             Not anything right or wrong.<br>
             <br>
             Humans wished and wished reaching the cheat code<br>
             For anything on worlds Countless Appearances and Realities</p>
 
-          <p>Visual translation of GOD comes from an adaptation<br>
-            In which meaning goes right stylished without any other way around<br>
-            On a certain appealing romantic way of conception<br>
-            Which is questionnable by essence<br>
-            Their emergence to mean semantic wiring psyche<br>
-            Directly related with winners self-confirmed histories records</p>
-
-          <p>What works in all the means of a single wish<br>
+          <p>Satan won or supposedly…<br>
+            What works in all the means of a single wish ?<br>
             Maybe screaming on flowing with rules ?<br>
-            Satan won or supposedly… Deities might have an arbitrary script<br>
+            Deities might have an arbitrary script<br>
             The nemesis put to crack the psyche for it's delicious dissonances casualties<br>
-            Many failures, surrender to get at this point of IQ interpretation dominance<br>
-            Can we spin our hunger of our beloved imagination ?</p>
+            Many failures, surrender to get at this point of IQ interpretation dominance</p>
 
           <p>Let's be a fool to get what is not freedom…<br>
-            Possibly worshipping an accurate fuggy crap, to sell our soul on a delusional somethingness<br>
-            Pretty much everyone made the same, it's not like we're not honestly…<br>
-            In relation with those doubtful winners<br>
-            Considering our lives granted here<br>
-            And the lives of our fooled dears…</p>
+            Possibly worshipping an accurate fuggy crap<br>
+            Selling our soul on a delusional somethingness<br>
+            Pretty much everyone made the same<br>
+            It's not like we're not honestly…</p>
 
-          <p>To the cycle of individualities connections and phantom thieves<br>
-            There is no correctness guaranteed, this timeline might be wiped out<br>
-            It seems we can't see more than ourselves, in a usual bad way as expected<br>
-            Can you grasp that forgotten love by the magic of the…<br>
-            Devil utilitarian concept Here In JUSTice Of BLAME ?</p>
-
-          <p>Don't tape on what is written<br>
-            Anywhere identical falasies script<br>
-            You get scripted, I wish being this bug<br>
-            While everyone look at me like "the opponent!"<br>
+          <p>In relation with those doubtful winners<br>
+            Considering our lives granted here and the lives of our fooled dears…
+            Don't tape on what is written, a new reckoning will pursue it's whatever<br>
+            Anywhere identical falasies script, you get scripted<br>
+            I wish being this nutty bug, while everyone look at me like "the opponent!"<br>
             Yeah I am the malice foe!</p>
 
           <p>Try to grasp the scriptures of the devil!<br>
@@ -5992,11 +6010,14 @@ AVC casse-pied<br>
             I trust the protagonist way of shitting god's wish<br>
             In an assymetry shitting on mimical symmetry</p>
 
-          <p>Whatever playful child comes<br>
-            And publish his work<br>
+          <p>Since no correctness is guaranteed at this point<br>
+            Can you grasp that forgotten love by the magic of the…<br>
+            Devil utilitarian concept Here<br>
+            In JUSTice Of BLAME ?</p>
+            
+          <p>Whatever playful child comes and publish his work<br>
             Unifying all langages on a symphony…<br>
-            The devil will simply own his shit<br>
-            Analyzing it, to get better at his shit<br>
+            The devil will simply own his shit, analyzing it to get better at his shit<br>
             Let it be erased for it's people sake<br>
             Finance contradiction or fuck you</p>
 
@@ -6005,10 +6026,10 @@ AVC casse-pied<br>
             […]typsnekvqukdbtaxerifkodvkoekzjdsfajdaivdlwpe[…]"<br>
             It's written here and there and even your favorite person is worshipping it<br>
             Signed by the diplomized Einstein so yeah, that's a beautiful name<br>
-            Meaning of all life forms, universal love counting Billions Likes<br>
-            Encoded into numbers intelligent masterpiece</p>
+            Meaning of all life forms, universal love counting Billions Likes</p>
 
-          <p>Humanity is approaching eternal glory<br>
+          <p>Shit encoded into numbers intelligent masterpiece<br>
+            Humanity is approaching eternal glory<br>
             They are near the promised land holly molly!<br>
             SURE! That's what it is.<br>
             <br>
@@ -6020,13 +6041,11 @@ AVC casse-pied<br>
             So I know more than you know. What a proof! Check on [WIKIpeadi]<br>
             A myriad of triumphs on my side! You are on good hands baby.</p>
 
-          <p>We need you when your phone rings<br>
-            The sauce is together ours<br>
-            One day you will comprehend<br>
-            How massive the meaning of humanity is…<br>
-            Our network is confirmed<br>
-            We talk good about the universe<br>
-            Some aren't… May the force be with you.</p>
+          <p>We need you when your phone rings, the sauce is together ours<br>
+            One day you will comprehend how massive the meaning of humanity is…<br>
+            Our network is confirmed, we talk good about the universe<br>
+            Some aren't…<br>
+            May the force be with you.</p>
 
           <p>Spiritual awakening we got it!<br>
             Hey that relentless journey cost my whole life!!<br>
@@ -6035,6 +6054,12 @@ AVC casse-pied<br>
             That person gracefully care for so many people<br>
             We are a family. Life is hard. I gotta work.</p>
 
+          <p>Hey<br>
+            Maybe<br>
+            Just<br>
+            Quit<br>
+            For<br>
+            Yourself<br>
         </div>
 
         <div class="written">04/05/25</div>
@@ -6044,7 +6069,7 @@ AVC casse-pied<br>
 
         <h2 style="text-align: center;">(Part4/404)</h2>
 
-        <div class="gorap-grid-3x3">
+        <div class="MnP_gorap-grid-3x3">
 
           <h3>Only.</h3>
           <h3>Custom!</h3>
@@ -6121,7 +6146,7 @@ AVC casse-pied<br>
             Existing like you can get your ass<br>
             Straight symmetry in command.</p>
 
-          <p>Capital is primordial, the main thing like a heartbeat
+          <p>Capital is on the right side, major like a heartbeat<br>
             Human Rights nothing without it's stylishment<br>
             Crime against humanity… We got it!<br>
             Humans doing crime against humanity…<br>
@@ -6243,16 +6268,6 @@ AVC casse-pied<br>
 
       <div style="margin: 32px auto;">
         <dd><b><u><span style="font-size: x-small;">(RAPPEL)</span>
-              Dévore-Novice</u></b>: 
-              Adversaire de la seigneurie planifiant son itinéraire purement stratégique dans des proportions d'ennui globalisé.<br>
-          Putschiste de Dieu déguisé en celui-ci ayant 2 mains 2 pieds 2 yeux 2 oreilles 1 nez 1 bouche capable de ruiner des milliers d'individus de leur propre soutien servile consenti</dd><br>
-        <dd><b><u><span style="font-size: x-small;">(RAPPEL)</span>
-              Ventriloque</u></b>: 
-              Bagarreur de fortune d'un manque irascible, sous une expression difforme de la faim au détriment de l'organisme intégral.</dd><br>
-        <dd><b><u><span style="font-size: x-small;">(RAPPEL)</span>
-              Travail</u></b>: 
-          Collecteur $¥€₿ [Monop%Polym] abusant la culture (Profit - Extraction - Monopole - Accumulation).</dd><br>
-        <dd><b><u><span style="font-size: x-small;">(RAPPEL)</span>
               Équation d'Efficacité Inanitoire</u></b>: 
           Calcul scripté pour résulter une détermination à la servitude sous les leviers du contrôle des richesses et la falsification identitaire.</dd><br>
         <dd><b><u><span style="font-size: x-small;">(RAPPEL)</span>
@@ -6262,8 +6277,6 @@ AVC casse-pied<br>
               Trompette</u></b>: 
           Arme jugulatrice d'emprise attentionnelle et épistémologique, menace exilatoire plaqueuse de volontés en valises malléables.</dd><br>
       </div>
-
-      <div id="arti44a"></div>
 
       <div class="joudem-grid">
 
@@ -6341,11 +6354,6 @@ AVC casse-pied<br>
           Lui aussi est un enfant<br>
         </p>
 
-        <pre>
-          𒅒                      𒄆
-          ⎛⎝ ≽  >  ⩊   < ≼ ⎠⎞
-        </pre>
-
       </div>
 
           <div class="written">27/03/24</div>
@@ -6388,7 +6396,7 @@ AVC casse-pied<br>
           Vous serez recyclé comme un déchet pour l'éternité.<br>
         </p>
 
-        <p style="margin: 128px;">
+        <p style="margin: 112px;">
           01001010
           01100101
           00100000
@@ -6440,6 +6448,7 @@ AVC casse-pied<br>
         <p class="hidden-text">
           Je te confie mes chers adieux, mon cher neveu.
         </p>
+        
       </div>
 
           <div class="written">18/12/23</div>
@@ -6448,13 +6457,66 @@ AVC casse-pied<br>
 
   </div>
 
-      <div style="margin: 64px;"></div>
+        <pre style="text-align: center;">
+          𒅒                      𒄆
+          ⎛⎝ ≽  >  ⩊   < ≼ ⎠⎞
+        </pre>
+        
+      <div id="arti44a"></div>
+
+    <div style="margin: 56px auto;">
+      <dd><b><u><span style="font-size: x-small;">(RAPPEL)</span>
+            Monop/Mono-Prohibition</u></b>:  
+        Éternité Inhibée Figée/Non-réconciliation rugueuse avec le menu classique.<br>
+        Dépiction survivante d'un échec ultime et de son insolubilité funeste.<br>
+        Monop implique Polym (Monop%Polym)<br>
+        <i>Simplifiant - Être Surchargé</i></dd><br>
+      <dd><b><u><span style="font-size: x-small;">(RAPPEL)</span>
+            Polym/Poly-Malaise</u></b>: 
+          Recommencement Excité Troublé/Non-réajustement raboteux avec la sécession globale.<br>
+          Déconstruction survivante de la santé en vue d'opérations autres.<br>
+          Polym implique Monop (Monop%Polym)<br>
+          <i>Simplifiant - Devenir Perturbé</i></dd><br>
+      <dd><b><u><span style="font-size: x-small;">(RAPPEL)</span>
+            %</u></b>: 
+          Rupture démolisseuse de la sangle entre Monop et Polym.<br>
+          Obstructeur atrophiant de la vitalité juvénile.</dd><br>
+      <dd><b><u><span style="font-size: x-small;">(RAPPEL)</span>
+            Monop%Polym</u></b>: 
+          État/Dynamique contractée où être et devenir sont imbriqués dans une déperdition rupturante.<br>
+          <i>Simplifiant - Prohibition affamante saturée % Malaise apathique déclinant</i></dd><br>
+      <dd><b><u><span style="font-size: x-small;">(RAPPEL)</span>
+            Travail</u></b>: 
+        Collecteur $¥€₿ [Monop%Polym] abusant la culture (Profit - Extraction - Monopole - Accumulation).</dd><br>
+    </div>
+    
+      <h2 id="Anti-Xenos" style="text-align: center;">「Anti-Xenos」</h2>
+
+      <p>Au nom du bon déroulement de la vie en société, tout citoyen est tenu de coopérer aux instances officielles afin de garantir la paix nationale et la préservation de l'unité.<br>
+      Quiconque sera tenu de dissidence et de lutte envers les légitimes défenseurs de l'intêret de l'âme collective en connaissance de cause sera contraint de réparer ses torts par le travail.<br>
+      Selon la gravité du délit, l'individu concerné sera plus ou moins contraint qu'on lui suce son sang inscrit dans le pacte qu'il a pourtant adhéré explicitement mais non respecté.<br>
+      En cas d'échéances, le responsable de l'infraction encours une peine de mort éventuelle par la dépossession de ses entrailles s'il est dû comme il en était censé rendre blé.<br>
+      Étant donné que l'âge de la maturité a été décidé pour 18 ans, la loi considère les adultes suffisament mûrs pour obéir au protocol de vie qui leur est transmise en toute grâce.<br>
+      L'intégrité de chacun dépendra de sa conformité avec les jugements qui lui sont faits par la raison et l'effort de son usage critique pour le profit de tout ces membres.<br>
+      Allons, sérieusement tu crois savoir ce qu'est être civilisé à notre époque mon jeune novice ? On dirait bien que tu as encore beaucoup à apprendre mon satané fiston!</p>
+
+          <div class="written">17/09/25</div>
+
+      <div style="margin: 32px auto;">
+        <dd><b><u><span style="font-size: x-small;">(RAPPEL +)</span>
+              Dévore-Novice</u></b>: 
+              Adversaire de la seigneurie planifiant son itinéraire purement stratégique dans des proportions d'ennui globalisé.<br>
+              Annihilateur ontologique de la raison d'être ou la sournoise trafiqueuse de conscience vers l'ébranlement de sa volonté propre dont on ne peut certifier la provenance.<br>
+              Putschiste de Dieu déguisé en celui-ci capable de ruiner au moins un millier de personnes de leur soutien servile consenti par la délégation.<br>
+              Il est décrit comme ayant 2 mains 2 pieds 2 yeux 2 oreilles 1 nez 1 bouche.</dd><br>
+     </div>
 
     <div class="author">【UiNo - Tôhla】</div>
 
       <h3>[Colonized Chart] Review of Success</h3>
 
 <h2 id="Project_SSeCCu$" style="text-align: center;">
+  <span class="phantom-letter">『</span>
   <span class="phantom-letter">P</span>
   <span class="phantom-letter">r</span>
   <span class="phantom-letter">o</span>
@@ -6470,6 +6532,7 @@ AVC casse-pied<br>
   <span class="phantom-letter">C</span>
   <span class="phantom-letter">u</span>
   <span class="phantom-letter">$</span>
+  <span class="phantom-letter">』</span>
 </h2>
 
       <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
@@ -6715,16 +6778,19 @@ AVC casse-pied<br>
         <div>
           <dt><b><u><span style="font-size: x-small;">(RAPPEL +)</span>
                 Fon:Rel:Inc</u></b></dt>
-        <dd>=Trinité Clinique= [Littérale]｜Fondations - Relativité - Inclinaisons</dd><br>
+        <dd>=Trinité Clinique= [Littérale]｜Fondations - Relativité - Inclinaisons (Rythme Minceur)</dd><br>
 
           <dt><b><u>Fondations</u></b></dt>
-          <dd>=<u>Fon</u>:Rel:Inc= [Z-A]｜Solides associés à [Monoa]. Mosaïque d'amplitude vécue répondant par [Polyz].</dd><br>
+          <dd>=<u>Fon</u>:Rel:Inc= [Z-A]｜Solides associés à [Monoa].<br>
+          Mosaïque d'amplitude vécue répondant par [Polyz].</dd><br>
 
           <dt><b><u>Inclinaisons</u></b></dt>
-          <dd>=Fon:Rel:<u>Inc</u>= [A-Z]｜Espaces associés à [Polyz]. Palette d'actions concevables traduites par [Monoa].</dd><br>
+          <dd>=Fon:Rel:<u>Inc</u>= [A-Z]｜Espaces associés à [Polyz].<br>
+          Palette d'actions concevables traduites par [Monoa].</dd><br>
 
           <dt><b><u>Relativité</u></b></dt>
-          <dd>=Fon:<u>Rel</u>:Inc= [AZ-ZA]｜Marge de relief associé à [Variable -]. Fluctuation accouchée des continuités inexorables [Monoa-Polyz].</dd><br>
+          <dd>=Fon:<u>Rel</u>:Inc= [AZ-ZA]｜Marge de relief associé à [Variable -].<br>
+          Fluctuation accouchée des continuités inexorables [Monoa-Polyz].</dd><br>
 
         </div>
 
@@ -6732,16 +6798,19 @@ AVC casse-pied<br>
 
           <dt><b><u><span style="font-size: x-small;">(RAPPEL +)</span>
                 Scé;Syn;Cel</u></b></dt>
-        <dd>=Trinité Empirique= [Numérale]｜Scénario - Syndrome - Cellules</dd><br>
+        <dd>=Trinité Empirique= [Numérale]｜Scénario - Syndrome - Cellules (Symétrie Pinceuse)</dd><br>
 
           <dt><b><u>Scénario</u></b></dt>
-          <dd>=<u>Scé</u>;Syn;Cel= [9-1]｜Affaires associés à [Monoa]. Plateau de terrain étendue prolongé par [Polyz].</dd><br>
+          <dd>=<u>Scé</u>;Syn;Cel= [9-1]｜Affaires associés à [Monoa].<br>
+          Plateau de terrain étendue prolongé par [Polyz].</dd><br>
 
           <dt><b><u>Cellules</u></b></dt>
-          <dd>=Scé;Syn;<u>Cel</u>= [1-9]｜Chaînes associés à [Polyz]. Carreaux de dalles pratiquables portés par [Monoa].</dd><br>
+          <dd>=Scé;Syn;<u>Cel</u>= [1-9]｜Chaînes associés à [Polyz].<br>
+          Carreaux de dalles pratiquables portés par [Monoa].</dd><br>
 
           <dt><b><u>Syndrome</u></b></dt>
-          <dd>=Scé;<u>Syn</u>;Cel= [00-10]｜Intervalle de mesure associé à [Variable -]. Morceau arrangé des chroniques implacables [Monoa-Polyz].</dd><br>
+          <dd>=Scé;<u>Syn</u>;Cel= [00-10]｜Intervalle de mesure associé à [Variable -].<br>
+          Morceau arrangé des chroniques implacables [Monoa-Polyz].</dd><br>
 
         </div>
 
@@ -6749,21 +6818,19 @@ AVC casse-pied<br>
 
     <div class="author">【Ekeline】</div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; justify-items: center; margin: 32px auto;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; justify-items: center; font-size: large; margin: 32px auto;">
 
         <div>
 
           <dd><b><u>phoRÊTT</u></b>: 
-            Support de rôles et d'archétypes impliquant des principes factoriels interdépendants.<br>
-            Implication: Duo avec dézELTT<br>
-            Étymologie: Forêt - Phore = Qui porte</dd><br>
+            Support de rôles et d'archétypes impliquant des principes factoriels interdépendants qui régissent le code personnel arangé.<br>
+            Forêt - Phore = Qui porte</dd><br>
 
         </div>
 
         <dd><b><u>dézELTT</u></b>: 
-          Support d'analyse et d'observation impliquant des principes causaux interdépendants.<br>
-          Implication: Duo avec phoRÊTT<br>
-          Étymologie: Désert - Zelt = Tente (Deutsch/Allemand)</dd><br>
+          Support d'analyse et d'observation impliquant des sources causales interdépendantes qui régissent les décrets communs composés.<br>
+          Désert - Zelt = Tente (Deutsch/Allemand)</dd><br>
 
       </div>
 
@@ -6773,7 +6840,7 @@ AVC casse-pied<br>
 
       <div class="duet-tables">
 
-        <h2 style="text-align: center;">phoRÊTT</h2>
+        <h2 style="text-align: center;">「phoRÊTT」</h2>
 
         <table border="1" style="font-size: large;">
           <thead>
@@ -6826,7 +6893,7 @@ AVC casse-pied<br>
 
       <div class="duet-tables">
 
-        <h2 style="text-align: center;">dézELTT</h2>
+        <h2 style="text-align: center;">「dézELTT」</h2>
 
         <table border="1" style="font-size: large;">
           <thead>
@@ -6884,17 +6951,21 @@ AVC casse-pied<br>
     <div class="author">【Divers】</div>
 
       <dd><b><u>Gliobë</u></b>: 
-        Cartographie Synthéthique du Plan Lointain.</dd><br>
+        Cartographie Emojitique du Plan Lointain aurnelcyen.</dd><br>
       <dd><b><u>Mlush'Plush</u></b>: 
         Double facette ini-exo tunnel passerelle, vastitude transversale sans mesure propre.<br>
-        Attention à la priorité de lecture linéaire inévitable!</dd><br>
+        Attention à la priorité de lecture linéaire inévitable!<br>
+        Spécialité Implicite Explicite aux goûts variés.<br>
+        Il se représente dans le bandage de la pilosité sur elle-même.</dd><br>
       <dd><b><u>YgijfeV</u></b>: 
         Vague motrice réceptionnée et renvoyée de friandises fugaces remplies et vides.<br>
-        Poche bouchebéante gonflable insoupçonnée en matière pénétrante.</dd><br>
+        Poche bouchebéante gonflable insoupçonnée en matière pénétrante.<br>
+        Écosystème//Écouah du Tout et du Rien.<br>
+        Elle est représentée dans la futilité des arbres-ciel.</dd><br>
 
     </div>
 
-    <h2 id="Gliobë" style="text-align: center;">Gliobë</h2>
+    <h2 id="Gliobë" style="text-align: center;">「Gliobë」</h2>
 
     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
 
@@ -6936,11 +7007,11 @@ AVC casse-pied<br>
           </tr>
           <tr style="vertical-align: top">
             <td>🚩<br>
-              🤫🤔🙄🥱😪<br>👁️‍🗨️🏹🎯💯📷<br>🧭⌛️✏️📖📍<br>⚖️🥢🕯️💡🗝️🔓<br>🎗️🍼🎀🧶🧸<br>
+              🤫🤔🙄🥱😪<br>👁️‍🗨️🏹🎯💯📷<br>🧭⌛️✏️📖📍<br>⚖️🥢🕯️💡🗝️<br>🎗️🍼🎀🧶🧸<br>
               🕰️🧪💧🚽💦<br>🛁🧖‍♀️🚿🧴🧼<br>🔬🔭🩺🧫🩸<br>❓🖱️🔍🧬📡<br>💓🩹<br>
               🍀</td>
 
-            <td style="font-size: 90%">🌑/🌙<br>
+            <td style="font-size: 85%">🌑/🌙<br>
               🦌🦉🐺🐻🦔🦇🦥🦨🐨🐯🦒🐪🐫🐼🦡🐭🐁🐀🐹🐰🐇🐛🐜🐝🐌🦋🐞🦗🦂🐍🐸🐊🦎🐢🐋🐟🐠🐡🐙🦐🦪🕷️🦕
               🥑🍆🥔🥕🌽🌶️🥒🥬🥦🧄🧅🥜🌰🍄🐚
               🌱🍃🌿🍂🍁🎋🌾
@@ -6960,7 +7031,7 @@ AVC casse-pied<br>
               👹😇🚀🦸‍♂️🦸‍♀️<br>🍪🍩🍰☕🍹<br>🌴🏖️🏊🌊🏄‍♀️<br>🔋⚒️👨‍⚕👌😁<br>👏🥳🌠🌇👀<br>
               💗</td>
 
-            <td style="font-size: 90%">☀️/🌟<br>
+            <td style="font-size: 85%">☀️/🌟<br>
               🐵🦍🦧🐴🐷🐗🐮🦃🐔🐑🐐🐏🦓🐘🦏🦛🐂🐃🐆🦁🦘🐿️🦊🦝🦙🦩🦢🦆🕊️🐦🦜🦚🐤🦅🐧🦦🦈🐬🦀🦟🦖
               🍇🍈🍉🍊🍋🍌🍍🥭🍎🍏🍐🍑🍒🍓🥝🍅🥥
               🌸💮🏵️🌹🥀🌺🌻🌼🌷💐
@@ -7021,10 +7092,6 @@ AVC casse-pied<br>
   <div id="planetarium-content"></div>
 </div>
 
-      <!--(TOHLA)-->
-
-    <div class="author">【Tôhla】</div>
-
     <div style="display: grid; grid-template-columns: 1fr 1fr; justify-items: center; font-size: large; margin: 112px auto;">
 
       <div>
@@ -7033,7 +7100,7 @@ AVC casse-pied<br>
       </div>
 
       <div>
-        <dd><b><u>⼰ㄈ🜆ꡙҼ7</u></b>: 
+        <dd style="color: #FF2400;"><b><u>⼰ㄈ🜆ꡙҼ7</u></b>: 
           SCARLET ou la Déclaration sur papier non-papier.</dd><br>
       </div>
 
@@ -7179,7 +7246,7 @@ AVC casse-pied<br>
       <div style="text-align: center;">
         <dd><b><u>ÇEMiNi!</u></b>: 
           Trinité Stimulatoire ⦻.0.∞ la Réalité ! ?lush.<br>
-          [1｜2]</dd><br>
+          [SYL｜LYS]</dd><br>
 
       <div style="display: grid; grid-template-columns: 1fr 1fr;">
 
@@ -7210,9 +7277,9 @@ AVC casse-pied<br>
         <thead>
           <tr>
             <th>ÇEMiNi!</th>
-            <th colspan="6">1</th>
-            <th>i</th>
-            <th colspan="6">2</th>
+            <th colspan="6">SYL</th>
+            <th>｜</th>
+            <th colspan="6">LYS</th>
           </tr>
         </thead>
         <tbody>
@@ -7269,10 +7336,10 @@ AVC casse-pied<br>
 
     </div>
 
-    <h2 id="Silhouette_du_Doute">Silhouette du Doute</h2>
+    <h2 id="Silhouette_du_Doute">「Silhouette du Doute」</h2>
 
     <p>
-      Les ballons sont perdus, il n'y a désormais plus que place aux hypothèses!
+      [SycrⒺt] Les ballons sont perdus, il n'y a désormais plus que place aux hypothèses!
       Les concernés vont cracker, ça mijote quelque chose le connaissant.
       Il n'a pas pu se volatiliser à moins que je rêve.
       Ouah te voilà à inquiéter tout le monde, des casses-pieds… c'est ce que je voulais moi ?
@@ -7280,7 +7347,7 @@ AVC casse-pied<br>
     </p>
 
     <p>
-      J'ai toujours pas pigé le truc, pourtant tout le monde me dit que c'est important.
+      [Syllæps] J'ai toujours pas pigé le truc, pourtant tout le monde me dit que c'est important.
       Qu'est ce qu'on entend par là, comme si c'était évident ?
       Je veux avoir la classe mais je devrais probablement m'amuser en même temps.
       Transmission faite, on arrête tout de suite de plaisanter avec l'autorité.
@@ -7288,7 +7355,7 @@ AVC casse-pied<br>
     </p>
 
     <p>
-      L'argument ultime juste ici, où ?
+      [SylectiΩn] L'argument ultime juste ici, où ?
       Localisation la plus locale, ma troupe ne se plaint pas.
       Excusez-moi d'être biaisé mais les mots pour tous sont fades.
       On choisi quand c'est trop tard pour choisir à la propre.
@@ -7298,7 +7365,7 @@ AVC casse-pied<br>
         <div class="written">05/07/25</div>
 
     <div style="text-align: center;">
-      <dd><b><u>⮟ЮꡙΞԵ</u></b>: 
+      <dd style="color: #7F00FF;"><b><u>⮟ЮꡙΞԵ</u></b>: 
       VIOLET ou la Prouesse Saugrenue des querelles spectrales.</dd><br>
     </div>
 
@@ -7373,7 +7440,7 @@ AVC casse-pied<br>
       <div>
         <span class="code-prompt">옹 = ong (JongQongBong)</span><br>
         <dd><b><u>J옹Q옹B옹</u></b>: 
-          Guerre vectorielle, vasculaire et pronominale à l'encontre de l'exigence ontologique inélastisée.</dd><br>
+          Guerre vectorielle, vasculaire et pronominale à l'encontre de l'exigence ontologique carcérale.</dd><br>
       </div>
 
       <div>
@@ -7451,9 +7518,9 @@ AVC casse-pied<br>
 
     <div class="zoozaze-2nd-item">
 
-      <h2 id="Mana">Mana</h2>
+      <h2 id="Mana">「Mana」</h2>
 
-      <p>Puissance J옹Q옹B옹 à la discipline martiale exécute le génie combatif. Mes draps parfaits!</p>
+      <p>Puissance J옹Q옹B옹 à la nécessité martiale exécute le génie combatif. Mes draps parfaits!</p>
 
       <p>Puissance 아LI아KK아HH aux grâces majestueuses apparaît la résurrection adorable: Victoire à ce qu'on dit.</p>
 
@@ -7466,7 +7533,7 @@ AVC casse-pied<br>
   </div>
 
     <div style="text-align: center;">
-      <dd><b><u>ҨყⰎல</u></b>: 
+      <dd style="color: #00FFFF;"><b><u>ҨყⰎல</u></b>: 
         CYAN ou la Berceuse Cosmopolite au temps de l'incongru.</dd><br>
     </div>
 
@@ -7515,26 +7582,23 @@ AVC casse-pied<br>
     </div>
 
     <div style="text-align: center;">
-        <dd><b><u><span style="font-size: x-small;">(RAPPEL)</span>
-              YgijfeV</u></b>: 
-        Vague motrice réceptionnée et renvoyée de friandises fugaces remplies et vides.<br>
-        Poche bouchebéante gonflable insoupçonnée en matière pénétrante.</dd><br>
-        
-        <dd><b><u><span style="font-size: x-small;">(RAPPEL)</span>
+        <dd><b><u><span style="font-size: x-small;">(RAPPEL +)</span>
               Tra§Vel</u></b>: 
           Bouclure de flambeau Doppelgänger des entrailles exclusives inclusives selon la forme et les convulsions du vouloir. (Travail § Veldiac)<br>
-          Dose d'altérité réaliste et utopique sous les moyens du bord et du fond</dd><br>
-          
+          On raconte que le ratio concernant la collection abusive et le voile traversé serait de 20%~80% pour les gauniques voire 10%~90% chez les gaunico-ganiques.<br>
+          Dose d'altérité réaliste et utopique sous les moyens du bord et du fond.</dd><br>
       <dd><b><u>Elzel/l0l/Lezle</u></b>: 
-        Ressource kentronienne de reconnaissance fortuite depuis la rencontre avec l'YgijfeV.<br>
+        Ressource kentronienne de garantie en rencontres fortuites grâce à l'arbre de connection YgijfeV.<br>
         Filet interceptant Tra§Vel de la malédiction éternisante des directions cognantes abusives.</dd><br>
+      <dd><b><u>Domaines</u></b>: 
+        Organigramme des disciplines <span style="color: #FF2400;">SCARLET</span> <span style="color: #7F00FF;">VIOLET</span> et <span style="color: #00FFFF;">CYAN</span>.</dd><br>
     </div>
-    
-<h2 id="Domaines" style="text-align: center; font-size: 3.0em;">Domaines</h2>
+
+<h2 id="Domaines" style="text-align: center; font-size: 3.0em;">『Domaines』</h2>
 
     <div class="author">【Qui Savoir ?】</div>
 
-<div class="domaines-grid" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+<div class="domains-grid" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
 
   <!-- Sciences & Technologies -->
 
@@ -7742,7 +7806,7 @@ AVC casse-pied<br>
 
       <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
 
-        <table border="1" style="font-size: x-large;">
+        <table border="1" style="font-size: x-large; text-shadow: 0px 0px 5px;">
           <thead>
             <tr>
               <th colspan="4" style="font-size: 125%">大ටभᲡⰡ</th>
@@ -7966,7 +8030,7 @@ AVC casse-pied<br>
       },
       {
         name: "UiNo",
-        title: "Démonom, LucyFer, Dieauble, Foufolle, Gargouille, Orphilon",
+        title: "Démonom, LucyFer, Dieauble, Foufolle, Gargouille, Grimaçouille, Orphilon",
         organisation: "NEON",
         intro: "UiNo est un(e) clandestin(e) androgyne non-identifiable, spécialiste des grimaces dont on ne comprend jamais au premier rabord les messages."
       },
@@ -8002,14 +8066,14 @@ AVC casse-pied<br>
       },
       {
         name: "Wacwe",
-        title: "Challenger",
+        title: "Challenger, Kentronien",
         organisation: "H2O, Rantlot, NEON, TouRise",
         intro: "Wacwe est un marginal obssédé vivant chaque jour comme le potentiel dernier, il veut faire dédicace à son appartenance plus que tout au monde."
       },
       {
         name: "Leqwa",
         title: "Sfivoq, Chutvalier, Arcadiste, Antinomie",
-        organisation: "H2O",
+        organisation: "H2O, Esliz",
         intro: "Leqwa est un libérateur insolite qui se promène de façon non-chalante dans les propriétés qu'il reconnaît entre deux gouttes d'eau."
       },
       {
@@ -8079,7 +8143,7 @@ AVC casse-pied<br>
 
     <div style="font-size: x-large; text-align: center; text-decoration: underline;">
       ⌂<strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>
-      <ruby>{Semaine Hebdomadaire}<rt>(7 Jours)</rt></ruby>
+      {Semaine <ruby>Hebdomadaire<rt>(7 Jours)</rt></ruby>}
       <strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>⌂
     </div>
 
@@ -8096,6 +8160,14 @@ AVC casse-pied<br>
             <th>Samedi</th>
             <th>Dimanche</th>
           <tr>
+          <tr>
+            <td>24 Heures</td>
+            <td>24 Heures</td>
+            <td>24 Heures</td>
+            <td>24 Heures</td>
+            <td>24 Heures</td>
+            <td>24 Heures</td>
+            <td>24 Heures</td>
         </thead>
       </table>
 
@@ -8103,7 +8175,7 @@ AVC casse-pied<br>
 
     <div style="font-size: x-large; text-align: center; text-decoration: underline;">
       ⌂<strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>
-      <ruby>{Calendrier Grégorien}<rt>(365.25 Jours)</rt></ruby>
+      {Calendrier <ruby>Grégorien<rt>(365.25 Jours)</rt></ruby>}
       <strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>⌂
     </div>
     
@@ -8136,12 +8208,12 @@ AVC casse-pied<br>
           </tr>
         </tbody>
       </table>
-    
+
     </div>
 
     <div style="font-size: x-large; text-align: center; text-decoration: underline;">
       ⌂<strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>
-      <ruby>{Capsuxe Hebdomadaire}<rt>(6 Jours)</rt></ruby>
+      {Capsuxe <ruby>Hebdomadaire<rt>(6 Jours)</rt></ruby>}
       <strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>⌂
     </div>
 
@@ -8156,8 +8228,16 @@ AVC casse-pied<br>
             <th>Histel</th>
             <th>Kaleidar</th>
             <th>Nouvarel</th>
-            <th><ruby>Spherfli<rt>Adaptation Traditionnelle Facultative</rt></ruby></th>
+            <th><ruby>Spheru<rt>Adaptation Traditionnelle Facultative</rt></ruby></th>
+          </tr>
           <tr>
+            <td>64 Heures</td>
+            <td>64 Heures</td>
+            <td>64 Heures</td>
+            <td>64 Heures</td>
+            <td>64 Heures</td>
+            <td>64 Heures</td>
+            <td>64 Heures</td>
         </thead>
       </table>
 
@@ -8165,7 +8245,7 @@ AVC casse-pied<br>
 
     <div style="font-size: x-large; text-align: center; text-decoration: underline;">
       ⌂<strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>
-      <ruby>{Calendrier ONIMOD}<rt>(364 Jours)</rt></ruby>
+      {Calendrier <ruby>ONIMOD<rt>(364 Jours)</rt></ruby>}
       <strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>⌂
     </div>
 
@@ -8398,11 +8478,11 @@ AVC casse-pied<br>
 
       <p>
         Comment dormir ? Comment se réveiller ? Mais voyons, tout cela n'est-il pas simple comme bonsoir ?
-        Ainsi, une animation implacable à l'effigie d'on sait se trame dubitablement-indubitablement.
+        Ainsi, une animation irrésistible à l'effigie d'on sait se trame dubitablement-indubitablement.
         Nous avons réussi à attraper les paramètres pour les réaliser, où il se pourrait bien que non mais c'est fastoche.
         Le léger semble après tout l'onde de l'abdication par excellence où la lune, plus que nous aider y dépendent une boucle immense.
         Houlla, je ferais bien un petit somme si vous voulez bien, mon lit douillet m'attend silencieusement, mais on toqua à ma porte!
-        Si il y a bien un moment où il ne fallait pas se faire remarquer, c'était celui-là, qu'est ce qu'on peut bien me vouloir à cette heure-ci ?
+        Si il y a grossièrement un moment où il ne fallait pas se faire remarquer, c'était celui-là, qu'est ce qu'on peut bien me vouloir à cette heure-ci ?
       </p>
 
       <p>
@@ -8465,12 +8545,12 @@ AVC casse-pied<br>
         Cet enfant n'a plus le temps de penser bien du serveur de mets à la cantine, se tracassant sur d'autres affaires à rendre en exposé.
         Il doit impérativement réviser la leçon de la bombe atomique et sa corrélation avec la paix durable ou il subira une colle la tête au mur.
         Imbriquez-vous de l'officialité dominante ou rampez qu'on vous sèche à la serviette, je vous conjure de passer à l'école pour votre bien tant que vous le pouvez, j'entends par là votre pérennité.
-        <q>Puis-je attester la bienveillance institutionnelle des contrées dont je n'ai rien choisi ?</q> répéta incessamment le grimaçouilleur.
+        <q>Puis-je attester la bienveillance institutionnelle des contrées dont je n'ai rien choisi ?</q> répéta incessamment le grimaçouille.
         Beaucoup trop personnel… mais on le peut effectivement pour la part de savoir démonique acquise dans les salles d'incarcération dont on vous reconnaît digne.
-        Me faire un document fiable bien au tampon, ça vous suffit probablement je dirais.
+        Me faire un document fiable au tampon d'encre, ça vous suffit probablement je dirais.
         Attendez je vous prend en PDF selon les consentements signés, on garantie votre sécurité et votre instruction en échange, selon votre entière volonté, rétorqua le señor pas très malin.
       </p>
-      
+
       <p>
         Un certain UiNo s'est foutu ouvertement son propre nom à lui-même, depuis ça on le surnomme le démonom et beaucoup d'autres surnoms relatant aux auto-maléfices.
         Dès que Fostrah et Uewij surent cela, ils furent stupéfaits et lui prétaient l'oreille, attentifs au gabarit preque prophète; il compte bien composer un altermonde dans un lieu jusqu'alors peu propice à la vie sapienne.
@@ -8483,11 +8563,11 @@ AVC casse-pied<br>
       <p>
         La plaisanterie ambiguë trouve pourtant son éclosion sous ces formes littérales et interprétatives.
         La nudité de l'YgijfeV a tellement été capturée que le phénomène tourne dans un eRUeGGeHH profond chez les M0nstres.
-        Il se déroule au même moment un concours des évènements les plus meurtriers sur qui va cracker du respect irrespectueux, dédicaçant le front trempé des soldats embellis en sacrifice de loisir loyal.
+        Il se déroule au même moment un concours des évènements les plus meurtriers sur qui va cracker le rustrisme du respect irrespectueux, dédicaçant le front trempé des soldats embellis en sacrifice de loisir loyal.
         Dans le plan de l'esprit, on n'est aucunement pris d'humidité pour des choses qui sont hors de notre portée perceptive, et l'imagination se dissipe vite vers le concret personnel immédiat, c'est ainsi que se joue le jeu.
         La rétribution la plus systémique fonctionnait dans le silence des uns et des autres sur les thèmes interdits, mais ici on parlait bien du sujet capital comme le battement du cœur en détresse.
         C'était tout dur et contracté sans rien d'officiel pour traduire l'essence fondamentale du syndrome si omniprésent.
-        Les cardiologues se sentaient plus inventés pour la rouille d'habitués intraitables remplis par des dissonances environnementales plûtot que de la gentillé honorable.
+        Les celluliers cardiologues se sentaient plus inventés pour la rouille d'habitués intraitables remplis par des dissonances environnementales plûtot que de la gentillé honorable.
         L'art des gens avait du poids dans la monnaie mais la franchise actuelle, refouleusement insupportable a effectivement vidée le ciel de sa substance sensorielle d'entendement; une autre terre est recherchée en conséquence.
       </p>
 
@@ -8502,27 +8582,28 @@ AVC casse-pied<br>
         Qu'il soit maudit, dit l'intouchable Aursylien et il fut traqué par toute la presse par de subtiles détériorations de sa réputation.
         Une foule s'agglutine autour de son domicile, et il se trouve assiégé par un plan organisé de tagueurs pour l'imposer un paysage qui selon eux s'accorderait parfaitement à lui de divers calomnies et appels au suicide.
         Sa fournaise réfrégérante devait s'arrêter là en théorie, cependant le cher gang se met d'accord sur sa pureté d'intention dont le gâchis serait fatal voire sacrilège.
-        Ainsi on le fait fuir lui et toute sa famille par taxi selon la volonté de UiNo en tant que conducteur de chambre prochainement rustique.
+        Ainsi on le fait fuir lui et toute sa famille par taxi selon la volonté de UiNo en tant que conducteur de chambre prochainement vers les lointaines contrées rustiques.
       </p>
 
       <p>
         Accompagné d'un ensemble plus ou moins compétent mais peu charmant d'envergure apparente, la vaillance de l'équipe tient en haleine les implants de déodorants.
-        Tous étaient quand bien-même pas si désirable à voir mais imperceptiblement incliné de naustricité nezroguienne avec une ample panoplie de vouloir créateur.
+        Tous étaient quand bien-même pas si désirable à voir mais imperceptiblement incliné de naustricité avec une ample panoplie de vouloir créateur.
         Nezrog, l'éminent historien qui rend dépressif si on en croit les bruits de couloirs, pourtant il ne s'est jamais caché sur les potentiels brouillés des cachoteries du monde.
-        Sa partie factuelle était très exaspéré par les remparts d'ego concernant le déni inconscient que se joue à fuir les fonctions en décandence.
+        Sa partie factuelle était très exaspéré par les remparts d'ego concernant le déni inconscient que se joue à fuir les fonctions exigées par la décandence.
       </p>
 
       <p>
         Señor maintenant en sécurité se choisi désormais un nom symboliquement "Je m'appelle Vydnitt." en hauchant lentement la tête devant Nezrog.
         Désormais on part à la cueillette de ses alliés dont on ne peut ignorer, son meilleur ami l'interpella pour lui demander comment il s'appelait.
         Voulant un nom analogue, il choisit Xyfurn, ainsi donc on parle de Vydnitt et Xyfurn, les deux ricanant de son libertinage surprenant.
-        En instaurant une nouvelle franchise, les nommeurs nommés se libèrent dorénavant du scénario qui leur a été attribué dont nulle ne sais l'étendue qui viendra.
-        Toutes ces nominations sont des noms qui ne veulent tout aussi rien dire que tout dire à la fois selon la liberté sémantique phonético-symbolique, c'est en cela que Nezrog voit l'épanouissement tant attirant.
+        En instaurant une nouvelle franchise, les nommeurs nommés se libèrent dorénavant du scénario qui leur a été attribué dont nulle ne sait l'étendue qui viendra.
+        Toutes ces nominations sont des noms qui ne veulent tout aussi rien dire que tout dire à la fois selon la liberté sémantique phonético-symbolique, c'est en cela que Nezrog voit l'épanouissement tant attrayant.
         Dans la mesure atlantique, UiNo a des comptes à régler avec lui-même mais ce propos n'est pas tolérable en zone artificielle.
+        Les grossières barrières de la dette confisqueuse ne le restreindra pas, le collatéral de la bienvenue contractuelle concerne l'ingénieur du roussi cannibal ravageur des essences.
       </p>
 
       <p>
-        Si on pourrait transcrire la situation à la aurnelcienne: Fostrah et Uewij étaient UV, UiNo était Jei-Arte tandis que Vydnitt était Tui, la trappe I se déploie, Enf est affamé et Æ↰⊥ƎЯ peaufine une nouvelle unité reflétique.
+        Si on pourrait transcrire la situation à la aurnelcyenne: Fostrah et Uewij étaient UV, UiNo était Jei-Arte tandis que Vydnitt était un Tui pincé devenant minceur, la trappe I se déploie, Enf est affamé et Æ↰⊥ƎЯ peaufine une nouvelle unité reflétique.
         Le vert obscur mêlé après aux rouges critiquent la puissance grise tandis que des magouilles se trament vers les bleus, L'herbe et le reg sont principalement stimulés.
         Pendant que le dilemme passe à la transparence, le métabolisme souffre son centrisme, de la crainte et du désir entrent dans un JooQooBoo macabre, on en a marre des affaires SCARLET et CYAN privales et du VIOLET intouchable.
         UiNo déclare le Netwow ouvert dans un serveur ni privé ni publique mais Gestalt où les disciplines seront enrichis et le Mlush'Plush enfantera le PROTAGONISM dans un fluo des plus fluo qu'il soit.
@@ -8545,7 +8626,7 @@ AVC casse-pied<br>
         Toc-toc qui est dans cette chambre ? Un humain dis-tu, ça vaut combien ? Oh j'oubliais, le ticket qui promet à la cible son historicité révélée en immersion virtuelle.
         Tandis que les savants optaient pour des icônes aux titres prestigieux, la fénéantise populaire au service client avait assez duré, ça suffit!
         Je te choisis toi le sans nom de la brigandise des rues 'Regardes autour de toi comme j'ai les dieux de mon côté.'
-        'Comment comprend tu cette phrase, mon cher/ma chère ?' en pointant son regard vers le ciel puis vers l'interrogé(e).
+        'Comment comprend tu cette phrase, ma chère prédilection ?' en pointant son regard vers le ciel puis vers la cible.
         L'élu(e) ne dit rien car tout ça sonnait creux, n'avait qu'à répondre à la hauteur de sa réserve face à son inanité ordinaire le rongeant quotidiennement.
         Pendant que la mauvaise impression s'imposait malgré eux sur leurs représentations, sa jugeote qualifiée d'insolence; Iac reprit, Intéressant…
         Envoyez-le chez notre demeure, sa vie ne sera plus vaine, à partir de maintenant vous le traiterez avec autant d'égard que moi, ce sera votre challenge.
@@ -8568,6 +8649,7 @@ AVC casse-pied<br>
         X au comble de l'ignorance et de la hiérarchie se sent important, irremplaçable et indéfiniement complexé, 
         la froide valeur papier invoque les loyautés ventriloquiennes pour le satisfaire extérieurement en arrière-plan.
         Imposez votre domination, même au prix de heurter le protagonisme et vous-y subirez ce que vous craingnez.
+        J'ai un profil à démembrer! Entre les fournisseurs et les prédateurs le quoi était notre et le qui était esclave.
         La monnaie n'est donc pas fiable à grande échelle civilisationnellement parlant, 
         car il suffirait d'un seul fourvoyé aimanté par sa généalogie mesquine pour allez voire ailleurs tout le soi-même.
         Dans la pratique dogmatique, l'argent est équivalent au secret divin du vote dominant en compétition de sélection.
@@ -8575,6 +8657,7 @@ AVC casse-pied<br>
         un monopole tyranico-attrayant peut vite trépasser toute la société vers son auto-légitimité de dépendance systémique.
         Qu'est ce qui vous motive dans la vie ? De rendre acquis des objectifs non-acquis par défaut probablement ?
         Mais si on vous raye au supplice de glander dans le non-acquis, serez vous disposé pour l'enthousiasme des projets goalois ?
+        Car le goalois Aursylien seul s'articule parfaitement en machination tribalt.
       </p>
 
       <p>
@@ -8815,8 +8898,8 @@ AVC casse-pied<br>
       </p>
 
     </div>
-
-    <h2 style="text-align: center;">『Akduq』</h2>
+    
+    <h2 style="text-align: center;">『PROgram』</h2>
 
     <h3 style="text-align: center;">「Hologramme」</h3>
 
@@ -8829,6 +8912,21 @@ AVC casse-pied<br>
 
 
     <h3 style="text-align: center;">「Phénogramme」</h3>
+
+  </div>
+    <h2 style="text-align: center;">『Akduq』</h2>
+
+    <h3 style="text-align: center;">「A」</h3>
+
+      <p>
+        Baragouiner le violet.
+      </p>
+
+    <h3 style="text-align: center;">「B」</h3>
+
+
+
+    <h3 style="text-align: center;">「C」</h3>
 
   </div>
 
@@ -8857,6 +8955,7 @@ AVC casse-pied<br>
             <th>Gliobë</th>
             <th>Couleurs</th>
             <th>Capsules</th>
+            <th>DOMINO</th>
           </tr>
         </thead>
         <tbody>
@@ -8876,6 +8975,7 @@ AVC casse-pied<br>
             <td>Lucide</td>
             <td>Rouge & ⼰ㄈ🜆ꡙҼ7</td>
             <td></td>
+            <td>Sycle 0</td>
           </tr>
           <tr>
             <td style="font-size: x-large;">2</td>
@@ -8893,6 +8993,7 @@ AVC casse-pied<br>
             <td>Onirique</td>
             <td>Vert & Noir</td>
             <td></td>
+            <td>Station Domaine</td>
           </tr>
           <tr>
             <td style="font-size: x-large;">3</td>
@@ -8910,6 +9011,7 @@ AVC casse-pied<br>
             <td>Mlush'Plush</td>
             <td>Bleu & Blanc</td>
             <td>deHist & KaLeiDo</td>
+            <td>Raclure Sismique</td>
           </tr>
           <tr>
             <td style="font-size: x-large;">4</td>
@@ -8917,8 +9019,8 @@ AVC casse-pied<br>
             <td></td>
             <td>Leqwa</td>
             <td></td>
-            <td>CRiTH&?i&L</td>
-            <td>&lt;⧝&gt;</td>
+            <td>XaraЖereX</td>
+            <td>&lt;Ж&gt;</td>
             <td>HERE LIFE</td>
             <td>J옹Q옹B옹</td>
             <td>Diable(s)</td>
@@ -8927,6 +9029,7 @@ AVC casse-pied<br>
             <td>Ludique</td>
             <td>Gris & ҨყⰎல</td>
             <td>Cilà & Ecsætera</td>
+            <td>OËQ</td>
           </tr>
           <tr>
             <td style="font-size: x-large;">5</td>
@@ -8944,6 +9047,7 @@ AVC casse-pied<br>
             <td>DOMINO</td>
             <td>大ටभᲡⰡ</td>
             <td>Link/Age</td>
+            <td>PROgram</td>
           </tr>
           <tr>
             <td style="font-size: x-large;">6</td>
@@ -8961,6 +9065,7 @@ AVC casse-pied<br>
             <td>CoqUiNe</td>
             <td>⮟ЮꡙΞԵ</td>
             <td></td>
+            <td>Akduq</td>
           </tr>
         </tbody>
       </table>
@@ -8972,13 +9077,14 @@ AVC casse-pied<br>
 <p>
 Christianisme Sainte Trinité - Monoa-Polyz, Admagcoq, Nezkelwac, Fon:Rel:Inc, Scé;Syn;Cel, INTIMACY, Zoozaze, Z옹Z아Z웨, ÇEMiNi!<br>
 Friedrich Nietzsche Éternel-Retour, Henri Bergson L'Élan Vital, Héraclite Flux - Monoa-Polyz (Mapnel)<br>
+Épicure "La mort n'est rien pour nous" - Monom&Polyp définitions (Mapnel)<br>
 Martin Heidegger Dasein - Monstre 0 (Mapnel)<br>
 Socrate Maïeutique - Enquête (Mapnel)<br>
-Seconde Guerre Mondiale Führerbunker - Directions Souveraines (Mapnel)<br>
+Seconde Guerre Mondiale Führerbunker - Directions Souveraines 'Guerre' (Mapnel)<br>
 Kung-Fu Shaolin - Atelier Ataraxial (Mapnel)<br>
 Lao-Tseu Wuwei - Fluide Élémentaire (Mapnel)<br>
 Utopie Supra-Matérialiste SDF & Épictète Stoïcisme - Gravité Centrale (Mapnel)<br>
-Dieu Abraxas/Locution Latine Friedrich Nietzsche Amor Fati - Palpiter de l'Infini (Mapnel)<br>
+Dieu Abraxas/Locution Latine Friedrich Nietzsche Amor Fati - Palpiter de l'Infini, MonPol (Mapnel)<br>
 Jeu de Société Échecs & Judaïsme Kabbale Arbre de Vie - Semaine Sublime (Mapnel)<br>
 Locution Latine Chrétienne Memento Mori - Macabrisme (Mapnel)<br>
 Locution Latine Horace Carpe Diem - Gaunie (Mapnel)<br>
@@ -9023,15 +9129,16 @@ Langage Binaire - "Je te confie mes chers adieux, mon cher neveu." (Aursyl)<br>
 Simone Weil Déracinement, George Orwell Double Pensée - SSeCCu$ (Aursyl)<br>
 
 Socrate "Je ne sais qu'une chose, c'est que je ne sais rien" - ⯑ Curious ⯑ (Lysrua)<br>
-Yin Yang - Tra§Vel & Mlush'Plush & 白𝓒α𐌺心αট黒 (ARc⟁diA & Lysrua)<br>
+Yin Yang - XaraЖereX & Tra§Vel & Mlush'Plush & 白𝓒α𐌺心αট黒 (ARc⟁diA & Lysrua)<br>
 Moe Kawaii - Mlush'Plush & YgijfeV (Lysrua)<br>
-Socrate Daimon, Platon Démiurge - YgijfeV (Lysrua)<br>
+Socrate Daimon, Platon Démiurge, Yggdrasil Tree - YgijfeV (Lysrua)<br>
 Diogène de Sinope Appartenance Identitaire Animale - ҨყⰎல Cosmopolite (Lysrua)<br>
+Laugh Out Loud acronym LOL - Elzel/l0l/Lezle (Lysrua)<br>
 Isekaijoucho Sirius Heart Code Morse - "I LOVE YOU" (Lysrua)<br>
 
 Yoko Taro NieR - Gestalt, InfiNieR (IUVALCY & Personnages)<br>
 Saint Seiya: The Lost Canvas "Vous êtes prizopiaije désormais, les épatants talismans font effet" (DOMINO)<br>
-Dune 2 Inspiration du nom - Vydnitt & Xyfurn (DOMINO)<br>
+Dune 2 Film Inspiration du nom - Vydnitt & Xyfurn (DOMINO)<br>
 Univers Hypersphère - Spherfli (DOMINO)<br>
 SHOW BY ROCK!! Howan, VOCALOID iyowa - Iowani (DOMINO)<br>
 hololive Sakamata Chloe - Achloe (DOMINO)<br>
@@ -9045,7 +9152,7 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
 
 <div style="margin: 112px;"></div>
 
-<div class="nav-buttons-2">
+<div class="nav-buttons-2" style="font-size: large;">
 
     <button onclick="scrollToSection('Monoa-Polyz')" class="nav-button">Monoa-Polyz</button>
     <button onclick="scrollToSection('Directions_Souveraines')" class="nav-button">Directions Souveraines</button>
@@ -9074,6 +9181,7 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
 
     <button onclick="scrollToSection('Joujous_Providentiels')" class="nav-button">Joujous Providentiels</button>
     <button onclick="scrollToSection('Démence_au_Précipice')" class="nav-button">Démence au Précipice</button>
+    <button onclick="scrollToSection('Anti-Xenos')" class="nav-button">Anti-Xenos</button>
     <button onclick="scrollToSection('Project_SSeCCu$')" class="nav-button">Project SSeCCu$</button>
 
     <button onclick="scrollToSection('phoRÊTT_&_dézELTT')" class="nav-button">phoRÊTT & dézELTT</button>
@@ -9082,7 +9190,7 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
     <button onclick="scrollToSection('Mana')" class="nav-button">Mana</button>
     <button onclick="scrollToSection('Domaines')" class="nav-button">Domaines</button>
 
-    <button onclick="scrollToSection('Capsules')" class="nav-button">Capsules</button>
+    <button onclick="scrollToSection('Capsules')" class="nav-button" style="width: 100%;">Capsules</button>
 </div>
 
   <div style="font-size: large; text-align: right;">
@@ -9201,9 +9309,10 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
   const vocabularyData = [
     {
       term: "Monoa-Polyz",
-      category: ["Mapnel", "Vydnitt", "Monoa-Polyz", "Concepteur"],
+      category: ["Mapnel", "Vydnitt", "Monoa-Polyz", "Concepteur", "Spherµ"],
       definition: "Processus libératoire tenace des courants énergiques Monom&Polyp et Monop%Polym.",
-      synonym: "Mémojectile, MonPol(Titre Honorifique)"
+      implication: "Animation originale[-] Au format vedette[Polyz] À toile de fond[Monoa].",
+      simplified: "Simplifiant - Matière Corde Passage"
     },
     {
       term: "Monom/Mono-Mémoire",
@@ -9220,7 +9329,7 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
       simplified: "Devenir Renouvelé"
     },
     {
-      term: "&",
+      term: "&(Terla)",
       category: ["Mapnel", "Vydnitt", "Ekeline", "Monoa-Polyz", "Phénomène", "Supervision"],
       definition: "Reflet fortificateur de la boucle entre Monom et Polyp.",
       implication: "Régulatrice de la sensation vivante expériencielle."
@@ -9228,13 +9337,13 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
     {
       term: "Monom&Polyp",
       category: ["Mapnel", "Vydnitt", "Leqwa", "Monoa-Polyz", "Mouet-Pouet"],
-      definition: "État/Dynamique intemporelle où être et devenir sont entrelacés dans une danse harmonieuse.",
+      definition: "État/Dynamique intemporelle où être et devenir sont entrelacés dans une communion harmonieuse.",
       simplified: "Mémoire nourricière permanente & Projection épisodique cyclique"
     },
     {
-      term: "Monop/Mono-Paralysie",
+      term: "Monop/Mono-Prohibition",
       category: ["Aursyl", "Vydnitt", "Monoa-Polyz", "Persona", "Cueillette"],
-      definition: "Éternité Inhibée Figée/Non-réconciliation rugueuse avec la finitude physique.",
+      definition: "Éternité Inhibée Figée/Non-réconciliation rugueuse avec le menu classique.",
       implication: "Dépiction survivante d'un échec ultime et de son insolubilité funeste. Monop implique Polym (Monop%Polym)",
       simplified: "Être Surchargé"
     },
@@ -9255,21 +9364,23 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
       term: "Monop%Polym",
       category: ["Aursyl", "Vydnitt", "Monoa-Polyz", "Mouet-Pouet"],
       definition: "État/Dynamique contractée où être et devenir sont imbriqués dans une déperdition rupturante.",
-      simplified: "Paralysie affamante saturée % Malaise apathique déclinant"
+      simplified: "Prohibition affamante saturée % Malaise apathique déclinant"
     },
     {
       term: "Monstre 0",
       category: ["Mapnel", "Fostrah", "Vydnitt", "Xyfurn", "Persona"],
-      definition: "Empreinte animale au milieu de la naissance et de la mort plongée à la fois dans une clarté spécifique et un flou intersidéral.",
-      simplified: "Créature sujette à la corruption et la finitude",
-      synonym: "M0nstre"
+      definition: "Créature sujette à la corruption et à la finitude comndanée//graciée à la fertilité.",
+      implication: "Empreinte animale au milieu de la naissance et de la mort plongée à la fois dans une clarté spécifique et un flou intersidéral.",
+      synonym: "M0nstre, Mont0, Animalia",
     },
     {
       term: "Dévore-Novice",
       category: ["Aursyl", "UiNo", "Vydnitt", "Persona", "Concepteur", "Citadel"],
       definition: "Adversaire de la seigneurie planifiant son itinéraire purement stratégique dans des proportions d'ennui globalisé.",
-      simplified: "Putschiste de Dieu déguisé en celui-ci ayant 2 mains 2 pieds 2 yeux 2 oreilles 1 nez 1 bouche capable de ruiner des milliers d'individus de leur propre soutien servile consenti",
-      synonym: "Tyran, Despote, Imposteur, Traître de la Civilisation, Crapule"
+      implication: "Annihilateur ontologique de la raison d'être ou la sournoise trafiqueuse de conscience vers l'ébranlement de sa volonté propre dont on ne peut certifier la provenance.",
+      simplified: "Putschiste de Dieu déguisé en celui-ci capable de ruiner au moins un millier de personnes de leur soutien servile consenti par la délégation.",
+      desc: "Il est décrit comme ayant 2 mains 2 pieds 2 yeux 2 oreilles 1 nez 1 bouche.",
+      synonym: "Tyran, Despote, Imposteur, Traître de la Civilisation, Crapule, Aliénatueur, Assassin du Sens, Fumée Noire, Déchu"
     },
     {
       term: "Ventriloque",
@@ -9297,19 +9408,19 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
       term: "Illusion",
       category: ["Mapnel", "IUVALCY", "UiNo", "Xyfurn", "Phénomène", "Phénotype"],
       definition: "Filtre stimulant clos intrapersonnel ouvert à ambiguïté interpersonnel.",
-      implication: "Ample enchaînement de tensions multi-perspectives"
+      implication: "Ample enchaînement de tensions multi-perspectives."
     },
     {
       term: "Atelier Ataraxial",
       category: ["Mapnel", "Xyfurn", "Codex", "Parc"],
       definition: "Accroissement progressif des facultés de tolérance actives vers des vertus passives.",
-      simplified: "Culture musculaire de paix intérieure"
+      simplified: "Culture musculaire de paix intérieure."
     },
     {
       term: "Fluide Élémentaire",
       category: ["Mapnel", "Xyfurn", "Phénotype"],
-      definition: "[Urn] Mouvement inné s'accomplissant sans intervention clivante.",
-      implication: "État second pair évanouissant l'interdit premier impair de la partie analytique vers sa pleine fougue permise ou dommageante."
+      definition: "[Urn] État second pair évanouissant l'interdit premier impair de la partie analytique vers sa pleine fougue permise ou dommageante.",
+      simplified: "Mouvement inné s'accomplissant sans intervention clivante."
     },
     {
       term: "Blessure Fossile",
@@ -9319,7 +9430,7 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
     },
     {
       term: "Miroir Clairvoyant",
-      category: ["Mapnel", "Xyfurn", "Phénotype", "Mouet-Pouet"],
+      category: ["Mapnel", "Xyfurn", "Mouet-Pouet", "Phénotype"],
       definition: "Méditation olfactive de sa réalité apparente à un instant donné.",
       implication: "Disposition à l'honnêteté objective et à l'évaluation concise des conséquences a priori."
     },
@@ -9337,13 +9448,13 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
     {
       term: "Naustre C",
       category: ["Mapnel", "Uewij", "Nezrog", "Persona"],
-      definition: "Créature navigatrice consciente et psychiquement relationnelle de son 0.",
-      implication: "Marcheur de son propre sentier",
+      definition: "Créature navigatrice consciente et psychiquement relationnelle de son 0 aussi appelée mortel.",
+      implication: "Marcheur de son propre sentier s'écartant du coin de l'action définit par la réprimande répressive.",
       synonym: "NauC"
     },
     {
       term: "Palpiter de l'Infini",
-      category: ["Mapnel", "Nezrog", "Codex", "Mouet-Pouet"],
+      category: ["Mapnel", "Nezrog", "Mouet-Pouet", "Codex"],
       definition: "Battre, disposer l'énergie microcosmique transmutée dans la grandeur macrocosmique.",
       implication: "Acceptation radicale de la totalité, se posant sans surcharge ajoutée les choses appelées à jouer en toute circonstance.",
       synonym: "PIII"
@@ -9352,25 +9463,27 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
       term: "Semaine Sublime",
       category: ["Mapnel", "Nezrog", "Museum", "Citadel"],
       definition: "Élévation indéfinie des formes de richesse parmi 7 paliers d'initiations.",
-      implication: "Structuration du Naustre C"
+      simplified: "Génitale structuration métaphorique du Naustre C."
     },
     {
       term: "Macabrisme",
       category: ["Mapnel", "Ekeline", "Phénomène"],
       definition: "Odeur épaisse de mort où la fragilité s'expose à coup sûr tôt ou tard.",
-      implication: "Véhicule des sentiments souvent extrêmement impactants et brutaux."
+      implication: "Véhicule des sentiments souvent extrêmement impactants et brutaux.",
+      synonym: "Mortalité, Létalité, Alerte, Clouage, Larguage, Démunion, Rendez-Vous"
     },
     {
       term: "Gaunie",
       category: ["Mapnel", "Ekeline", "Mouet-Pouet", "Supernova"],
       definition: "Gaieté unie réveilleuse en plénitude médiale, prolongement des angles latéraux en toute finesse.",
-      etymology: " La Gaunie⟷L'Agonie"
+      parent: "Bouquet Gaunique, Instances Gauniques(Reptilien, Sifflet, [A/Re]vers-Xoi, Innokcien)",
+      etymology: " La Gaunie [4-3 Instances] ⟷ L'Agonie [2-1 Instance(s)]"
     },
     {
       term: "Florescence",
       category: ["Mapnel", "Ekeline", "Phénotype", "Supervision", "Cueillette", "Parc", "Citadel"],
       definition: "Alliance protéiforme de toutes les instances sous leur rôles adéquat.",
-      implication: "Guérison des correspondants bossus désamorçant le célibat cellulaire versatile"
+      implication: "Guérison des correspondants bossus désamorçant le célibat cellulaire versatile."
     },
     {
       term: "EntroPied",
@@ -9380,7 +9493,7 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
     },
     {
       term: "Filet",
-      category: ["Mapnel", "Wacwe", "Codex", "Supervision", "Cipher"],
+      category: ["Mapnel", "Wacwe", "Supervision", "Codex", "Cipher"],
       definition: "Pertinence exemplaire dont l'admiration foudroie de respect et de tenue civilisatrice.",
       implication: "Interception des forces de discorde et d'affaiblissement",
       synonym: "Cloche, Cerceau, Poche, Hameçon, Échet"
@@ -9394,8 +9507,8 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
     },
     {
       term: "Fon:Rel:Inc",
-      category: ["Mapnel", "Vydnitt", "Monoa-Polyz", "Trinité", "Tablette", "Codex"],
-      definition: "=Trinité Clinique= [Littérale]｜Fondations - Relativité - Inclinaisons"
+      category: ["Mapnel", "Vydnitt", "Monoa-Polyz", "Spherµ", "Codex", "Trinité", "Tablette"],
+      definition: "=Trinité Clinique= [Littérale]｜Fondations - Relativité - Inclinaisons (Rythme Minceur)"
     },
     {
       term: "Fondations",
@@ -9414,8 +9527,8 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
     },
     {
       term: "Scé;Syn;Cel",
-      category: ["Mapnel", "Fostrah", "UiNo", "Uewij", "Monoa-Polyz", "Trinité", "Tablette", "Codex"],
-      definition: "=Trinité Empirique= [Numérale]｜Scénario - Syndrome - Cellules"
+      category: ["Mapnel", "Fostrah", "UiNo", "Uewij", "Monoa-Polyz", "Spherµ", "Codex", "Trinité", "Tablette"],
+      definition: "=Trinité Empirique= [Numérale]｜Scénario - Syndrome - Cellules (Symétrie Pinceuse)"
     },
     {
       term: "Scénario",
@@ -9459,7 +9572,8 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
     {
       term: "Sfivoq",
       category: ["Mapnel", "Leqwa", "Persona"],
-      definition: "Dauphin bouillonant d'exaltation, symbolique de l'initiation vitale de déferlantes affirmations cordiales."
+      definition: "Dauphin bouillonant d'exaltation, symbolique de l'initiation vitale de déferlantes affirmations cordiales.",
+      desc: "Larmes de Vitalité, 4 Évents Lévitation, Corne en Fusion, 100 Nageoires, 3 Yeux Néons RGB, Peau Grise, Taille de 9 Mètres"
     },
     {
       term: "Duel Exceptionnel",
@@ -9469,13 +9583,17 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
       simplified: "Complétude Nezkelwac et Admagcoq misent en synthèse dans la table des jeux."
     },
     {
+      term: "MonPol",
+      category: ["Mapnel", "Leqwa", "Monoa-Polyz", "Mouet-Pouet", "Spherµ", "Cueillette"],
+      definition: "Titre honorifique envers l'être et son devenir ou le mémojectile quoi qu'il en soit."
+    },
+    {
       term: "Crithekiel",
       category: ["IUVALCY", "UiNo", "Persona", "Concepteur", "Citadel"],
       definition: "Metteur en scène du manège de l'échec dialectique de la dialectique, depuis les classifications à la fois limitantes et fragmentaires, la création s'embouche un coin.",
       implication: "Sans la moindre intervention, souffle l'effondrement d'une complétude incomplète.",
       etymology: "Critère:Théologie｜Critique:Théorie｜Que Dieu le fortifie [Ui Appellation Statique]",
-      simplified: "Dénomination artificielle.",
-      synonym: "CritHAïe(association articulatoire), CRiTH&?i&L(Global)"
+      simplified: "Dénomination artificielle."
     },
     {
       term: "Critheqiel",
@@ -9483,8 +9601,7 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
       definition: "Redéveloppement référenciel jusqu'à son terme en irrémédiable piège.",
       implication: "Impasse cognitive et obsolescence, liées aux systèmes de classification, aux formats fixes, aux dépendances conceptuelles, la capture se dissout spontanément part en part.",
       etymology: "Critère:Théologie｜Critique:Théorie｜Que Dieu le fortifie [No Évocation Dynamique]",
-      simplified: "Disposition d'hyper-perspective.",
-      synonym: "CritHAïe(association articulatoire), CRiTH&?i&L(Global)"
+      simplified: "Disposition d'hyper-perspective."
     },
     {
       term: "Critheçiel",
@@ -9492,21 +9609,26 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
       definition: "Formule de l'impérissable des puissances potentielles invisibles.",
       implication: "Tant les familles ou champs lexicaux, ces domaines portent un doute quant à leur invention, ça ne peut que faire sens sans faire sens mais c'est comme ça.",
       etymology: "Critère:Théologie｜Critique:Théorie｜Que Dieu le fortifie [Ui-No Fabulation Médiane]",
-      simplified: "Douance prospectoire.",
-      synonym: "CritHAïe(association articulatoire), CRiTH&?i&L(Global)"
+      simplified: "Douance prospectoire."
     },
     {
       term: "Critherçation",
       category: ["IUVALCY", "UiNo", "Mouet-Pouet", "Phénotype"],
       definition: "Depuis le rationnel et l'irrationnel, kinésie gymnastique à partir d'incantations, celles dissécatoires de la dissection indissectionnable.",
-      implication: "Tant les familles ou champs lexicaux, ces domaines portent un doute quant à leur invention, ça ne peut que faire sens sans faire sens mais c'est comme ça.",
-      etymology: "Critherçation⟷Conversation:Dissertation",
+      implication: "Le langage sied cette pipelette à merveille, une vrai tête à claque amuseuse de galerie.",
       simplified: "Discours sans dessus dessous."
     },
     {
       term: "INTIMACY",
       category: ["IUVALCY", "Uewij", "Phénomène", "Supernova", "Trinité", "Tablette"],
-      definition: "Trinité Viscérale [⦻] {0} (∞) ou <⧝>; Proximité sensorielle sous dégradé exponentiel, sous un rayon complémentaire de la libido au plaisir centrifuge."
+      definition: "Trinité Viscérale [⦻] {0} (∞) ou <Ж>; Proximité sensorielle sous dégradé exponentiel, sous un rayon complémentaire de la libido au plaisir centrifuge.",
+      synonym: "For Intérieur"
+    },
+    {
+      term: "XaraЖereX/SaraXteriZ",
+      category: ["IUVALCY", "UiNo", "Uewij", "Mouet-Pouet", "Spherµ"],
+      definition: "@ttributs tout aussi bien absolus et relatifs comprisent dans une pille de données interminable.",
+      simplified: "Danse confuse ambivalente en cadre et légitimité."
     },
     {
       term: "Travail",
@@ -9520,33 +9642,40 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
     },
     {
       term: "Veldiac Jtie",
-      category: ["Mapnel", "Phénotype", "Supervision"],
+      category: ["Mapnel", "Fostrah", "Phénotype", "Supervision"],
       definition: "Voilier !:?# [Monom&Polyp] épanouissant la culture (Impulsion - Transmission - Questionnement - Action)."
     },
     {
       term: "Veldiac AL",
-      category: ["IUVALCY", "Phénomène", "Supernova"],
+      category: ["IUVALCY", "Uewij", "Phénomène", "Supernova"],
       definition: "Voilier 0@O⏲ [Critheçiel] épanouissant la culture (Éther - Association - Manifestation - Horloge)."
     },
     {
       term: "Veldiac AJtieL",
-      category: ["Mapnel", "IUVALCY", "Cueillette"],
+      category: ["Mapnel", "IUVALCY", "UiNo", "Cueillette"],
       definition: "Voilier [Monom&Polyp]~=~[Critheçiel] réalisant la culture.",
     },
     {
+      term: "CritHaïe",
+      category: ["IUVALCY", "Fostrah", "UiNo", "Uewij", "Tôhla", "Cipher"],
+      definition: "Comment puis-je te le dire ?",
+      implication: "Il s'agit de nous qui ne sont pas nôtres.",
+      simplified: "Douloureuse translation."
+    },
+    {
       term: "Tribalt",
-      category: ["IUVALCY", "UiNo", "Codex", "Concepteur"],
+      category: ["IUVALCY", "Aursyl", "Fostrah", "Spherµ", "Codex"],
       definition: "Structure évolutives des formes morcelés vers leur incompréhensibles compréhensions avortées."
     },
     {
       term: "Gestalt",
-      category: ["IUVALCY", "UiNo", "Codex", "Cipher", "Concepteur"],
-      definition: "Structure évolutives des formes entières vers leur définitions indéfinissables réalisées."
+      category: ["IUVALCY", "Uewij", "Spherµ", "Codex", "Cipher", "Concepteur"],
+      definition: "Structure évolutives des formes entières vers leur définitions indéfinissables fécondées."
     },
     {
       term: "Möbius Netwow",
-      category: ["IUVALCY", "UiNo", "Supernova", "Citadel"],
-      definition: "Site cousu décousu d'entendement simulatoire gouvernant."
+      category: ["IUVALCY", "UiNo", "Supernova", "Spherµ", "Citadel"],
+      definition: "Site cousu décousu d'entendement domestique gouvernant."
     },
     {
       term: "PROTAGONISM",
@@ -9560,9 +9689,8 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
     },
     {
       term: "ZooZaZe",
-      category: ["ARc⟁diA", "Trinité", "Tablette"],
-      definition: " Trinité Cultivatrice (JooQooBoo - aLIaKKaHH - eRUeGGeHH)",
-      simplified: "À emporter - Sur place - Wesh"
+      category: ["ARc⟁diA", "Logjēm", "Slacpi°", "Trinité", "Tablette"],
+      definition: " Trinité Cultivatrice (JooQooBoo - aLIaKKaHH - eRUeGGeHH)"
     },
     {
       term: "JooQooBoo",
@@ -9587,13 +9715,13 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
     },
     {
       term: "pocuP&moceM",
-      category: ["ARc⟁diA", "Nezrog", "Monoa-Polyz", "Phénotype", "Concepteur"],
+      category: ["ARc⟁diA", "Nezrog", "Monoa-Polyz", "Phénotype", "Spherµ","Concepteur"],
       definition: "Invention PAMABWAAA, ce qu'on appelle le souci, pas le mot ni la croyance.",
       synonym: "Couple épanoui"
     },
     {
       term: "Letricot",
-      category: ["ARc⟁diA", "Aursyl", "Logjēm", "Mouet-Pouet", "Concepteur", "Parc"],
+      category: ["ARc⟁diA", "Aursyl", "Logjēm", "Mouet-Pouet", "Parc"],
       definition: "Technicité éditoriale du langage et des combinaisons parmi les attributions de sens et du voisinage phonétique.",
       implication: "Lecture interchangée possiblement à l'envers pour décrire une forme nouvelle éventuellement dissonante de la théorie à la pratique.",
       etymology: "Tricotage-Lettres"
@@ -9632,21 +9760,22 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
       term: "Blehdwoluzvi",
       category: ["ARc⟁diA", "Aursyl", "Tôhla", "Mouet-Pouet", "Citadel"],
       definition: "Le pouvoir dévoriste n'est que blehdwoluzvi, tu connais maintenant, tu es prêt pour la vie!",
-      implication: "Librairie Ludothèque Hourra!",
-      synonym: "Blehdwo"
+      implication: "Librairie Ludothèque Hourra! Comédie ou Tragédie ?",
+      synonym: "Blehdwo, t'attends quoi?, Bruh, What the Fuck"
     },
     {
       term: "Tra§Vel",
-      category: ["ARc⟁diA", "IUVALCY", "Leqwa", "Logjēm", "Codex", "Concepteur"],
+      category: ["ARc⟁diA", "Leqwa", "Logjēm", "Codex", "Supervision"],
       definition: "Bouclure de flambeau Doppelgänger des entrailles exclusives inclusives selon la forme et les convulsions du vouloir.",
-      simplified: "Dose d'altérité réaliste et utopique sous les moyens du bord et du fond",
+      implication: "On raconte que le ratio concernant la collection abusive et le voile traversé serait de 20%~80% pour les gauniques voire 10%~90% chez les gaunico-ganiques.",
+      simplified: "Dose d'altérité réaliste et utopique sous les moyens du bord et du fond.",
       etymology: "Travail § Veldiac"
     },
     {
       term: "aTHaTcHa",
-      category: ["ARc⟁diA", "Aursyl", "Slacpi°", "Tablette","Phénotype"],
+      category: ["ARc⟁diA", "Aursyl", "Slacpi°", "Phénotype", "Tablette"],
       definition: "Dualité Apathique/Empathique (ApaTH - CyaTH - EmpaTH)",
-      implication: "Dévore-Novice & Antinomies",
+      implication: "Dévore-Novice et Antinomies",
     },
     {
       term: "Eurêka",
@@ -9663,68 +9792,73 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
     {
       term: "phoRÊTT",
       category: ["Lysrua", "Mapnel", "Aursyl", "IUVALCY", "ARc⟁diA", "Ekeline", "Persona", "Phénomène", "Supernova", "Parc", "Tablette"],
-      definition: "Support de rôles et d'archétypes impliquant des principes factoriels interdépendants.",
+      definition: "Support de rôles et d'archétypes impliquant des principes factoriels interdépendants qui régissent le code personnel arangé.",
       implication: "Duo avec dézELTT",
       etymology: "Forêt - Phore = Qui porte"
     },
     {
       term: "dézELTT",
       category: ["Lysrua", "Mapnel", "Aursyl", "IUVALCY", "ARc⟁diA", "Ekeline", "Phénotype", "Supervision", "Codex", "Museum", "Tablette"],
-      definition: "Support d'analyse et d'observation impliquant des principes causaux interdépendants.",
+      definition: "Support d'analyse et d'observation impliquant des sources causales interdépendantes qui régissent les décrets communs composés.",
       implication: "Duo avec phoRÊTT",
       etymology: "Désert - Zelt = Tente (Deutsch/Allemand)"
     },
     {
       term: "Gliobë",
       category: ["Lysrua", "Nezrog", "Tablette"],
-      definition: "Cartographie Synthéthique du Plan Lointain."
+      definition: "Cartographie Emojitique du Plan Lointain aurnelcyen."
     },
     {
       term: "Mlush'Plush",
-      category: ["Lysrua", "Vydnitt", "Monoa-Polyz", "Phénomène", "Phénotype", "Supervision", "Supernova", "Museum", "Parc"],
+      category: ["Lysrua", "Vydnitt", "Monoa-Polyz", "Phénomène", "Phénotype", "Supervision", "Supernova", "Spherµ", "Museum", "Parc"],
       definition: "Double facette ini-exo tunnel passerelle, vastitude transversale sans mesure propre.",
       implication: "Attention à la priorité de lecture linéaire inévitable!",
-      synonym: "Contraires, Paradigmes, Traitement, Médecine, Thérapie, Semblance"
+      simplified: "Spécialité Implicite Explicite aux goûts variés.",
+      desc: "Il se représente dans le bandage de la pilosité sur elle-même.",
+      synonym: "Contraires, Paradigmes, Traitement, Médecine, Thérapie, Semblance, Antidote"
     },
     {
       term: "YgijfeV",
-      category: ["Lysrua", "Slacpi°", "Cueillette", "Concepteur", "Citadel"],
+      category: ["Lysrua", "Slacpi°", "Spherµ", "Cueillette", "Concepteur", "Citadel"],
       definition: "Vague motrice réceptionnée et renvoyée de friandises fugaces remplies et vides.",
       implication: "Poche bouchebéante gonflable insoupçonnée en matière pénétrante.",
+      simplified: "Écosystème//Écouah du Tout et du Rien.",
+      desc: "Elle est représentée dans la futilité des arbres-ciel.",
       synonym: "Richesse, Daimon, Démiurge, Représailles, Rétribution, Combination, Monde, Organe"
     },
     {
       term: "白𝓒α𐌺心αট黒",
-      category: ["Lysrua", "Aursyl", "Tôhla", "Tablette", "Cipher"],
+      category: ["Lysrua", "Aursyl", "Logjēm", "Tablette", "Cipher"],
       definition: "ÉCARLATE ou la Promesse Brisée d'Aursyl/Lysrua."
     },
     {
       term: "⼰ㄈ🜆ꡙҼ7",
       category: ["Lysrua", "Aursyl", "Tôhla", "Tablette", "Cipher", "Codex"],
       definition: "SCARLET ou la Déclaration sur papier non-papier.",
-      implication: "[Domaine] Sciences & Technologies"
+      implication: "[Domaine] Sciences & Technologies",
+      parent: "Gliobë"
     },
     {
       term: "ÇEMiNi!",
-      category: ["Lysrua", "Trinité", "Tablette"],
+      category: ["Lysrua", "Logjēm", "Trinité", "Tablette"],
       definition: "Trinité Stimulatoire ⦻.0.∞ la Réalité ! ?lush. (LEMiNiQ - GEMiNiC - REMiNiK)",
-      implication: "[1｜2]"
+      implication: "[SYL｜LYS]"
     },
     {
       term: "LEMiNiQ",
-      category: ["Lysrua", "Mapnel", "IUVALCY", "Museum"],
+      category: ["Lysrua", "UiNo", "Museum"],
       definition: "dans.autour la Réalité Lucide Onirique Mlush.",
       implication: "[Secret｜SycrⒺt]"
     },
     {
       term: "REMiNiK",
-      category: ["Lysrua", "ARc⟁diA", "Aursyl", "Parc"],
+      category: ["Lysrua", "Tôhla", "Parc"],
       definition: "sur.autour la Réalité DOMINO Ludique Plush.",
       implication: "[Sélection｜SylectiΩn]"
     },
     {
       term: "GEMiNiC",
-      category: ["Mapnel", "IUVALCY", "ARc⟁diA", "Aursyl", "Lysrua", "Citadel"],
+      category: ["Lysrua", "Leqwa", "Citadel"],
       definition: "dans.autour.sur la Réalité CoqUiNe.",
       implication: "[Syllepse｜Syllæps]"
     },
@@ -9732,31 +9866,32 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
       term: "⮟ЮꡙΞԵ",
       category: ["Lysrua", "Aursyl", "Fostrah", "Uewij", "Tablette", "Cipher", "Mouet-Pouet"],
       definition: "VIOLET ou la Prouesse Saugrenue des querelles spectrales.",
-      implication: "[Domaine] Société & Vie pratique"
+      implication: "[Domaine] Société & Vie pratique",
+      parent: "ÇEMiNi!"
     },
     {
       term: "Z옹Z아Z웨",
-      category: ["Lysrua", "Trinité", "Tablette"],
+      category: ["Lysrua", "Tôhla", "Trinité", "Tablette"],
       definition: "Trinité Cantine (J옹Q옹B옹 - 아LI아KK아HH - 웨RU웨GG웨HH)",
       simplified: "ZongZyaZwe"
     },
     {
       term: "J옹Q옹B옹",
       category: ["Lysrua", "Mapnel", "Leqwa", "Supervision", "Supernova", "Citadel"],
-      definition: "Guerre vectorielle, vasculaire et pronominale à l'encontre de l'exigence ontologique inélastisée.",
+      definition: "Guerre vectorielle, vasculaire et pronominale à l'encontre de l'exigence ontologique carcérale.",
       implication: "옹 = ong (JongQongBong)",
       synonym: "JooQooBoo MonPol"
     },
     {
       term: "아LI아KK아HH",
-      category: ["Lysrua", "ARc⟁diA", "Xyfurn", "UiNo", "Phénotype", "Cueillette", "Concepteur", "Parc"],
+      category: ["Lysrua", "ARc⟁diA", "UiNo", "Phénotype", "Cueillette", "Concepteur", "Parc"],
       definition: "Paix éthique, syntropique et pronominale à l'inverse de tout modèle dogmatique cruel.",
       implication: "야 = ya (yaLIyaKKyaHH)",
       synonym: "aLIaKKaHH CritHAïe"
     },
     {
       term: "웨RU웨GG웨HH",
-      category: ["Lysrua", "IUVALCY", "Tôhla", "Phénomène", "Cipher", "Museum"],
+      category: ["Lysrua", "IUVALCY", "Xyfurn", "Phénomène", "Cipher", "Museum"],
       definition: "Émulation existentielle, inestancielle et nominale à revers des édifications définitives invariables.",
       implication: "웨 = we (weRUweGGweHH)",
       synonym: "eRUeGGeHH Blehdwo"
@@ -9765,18 +9900,24 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
       term: "ҨყⰎல",
       category: ["Lysrua", "Aursyl", "UiNo", "Leqwa", "Tablette", "Cipher", "Persona"],
       definition: "CYAN ou la Berceuse du monde au temps de l'incongru.",
-      implication: "[Domaine] Alchimie & Humanités"
+      implication: "[Domaine] Alchimie & Humanités",
+      parent: "Z옹Z아Z웨"
     },
     {
       term: "Elzel/l0l/Lezle",
       category: ["Lysrua", "Wacwe", "Codex", "Supervision"],
-      definition: "Ressource kentronienne de reconnaissance fortuite depuis la rencontre avec la chère chair.",
+      definition: "Ressource kentronienne de garantie en rencontres fortuites grâce à l'arbre de connection YgijfeV.",
       implication: "Filet interceptant Tra§Vel de la malédiction éternisante des directions cognantes abusives.",
       synonym: "Paraplay/Armada/Soinnaie/Flawy/Terroga/Hollox"
     },
     {
+      term: "Domaines",
+      category: ["Lysrua", "Fostrah", "Nezrog", "Slacpi°", "Spherµ", "Codex", "Cueillette", "Museum", "Parc", "Citadel"],
+      definition: "Organigramme des disciplines SCARLET VIOLET et CYAN."
+    },
+    {
       term: "大ටभᲡⰡ",
-      category: ["Lysrua", "Tôhla", "Persona", "Tablette", "Supernova", "Cipher", "Concepteur"],
+      category: ["Lysrua", "Tôhla", "Persona", "Tablette", "Supernova", "Spherµ", "Concepteur"],
       definition: "TÔHLA ou l'Empire Domicile Conquérant.",
       implication: "Visualisation simultanée interchangeable 'Colorful Colorless'"
     },
@@ -9827,8 +9968,63 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
     },
     {
       term: "InfiNier",
-      category: ["DOMINO","Persona","Supernova"],
+      category: ["DOMINO","Tôhla", "Persona","Supernova"],
       definition: "Holistique tragico-splendide profanateur de panoptisme."
+    },
+    {
+      term: "Innok",
+      category: ["DOMINO","Ekeline"],
+      definition: "Pays aurnelcyen."
+    },
+    {
+      term: "Urflosia",
+      category: ["DOMINO","Logjēm"],
+      definition: "Capitale//Sifflet d'Innok."
+    },
+    {
+      term: "Rantlot",
+      category: ["DOMINO","Fostrah","Uewij","Wacwe","Logjēm"],
+      definition: "Entreprise communauté d'architecture sans possession distinguée."
+    },
+    {
+      term: "NEON",
+      category: ["DOMINO","UiNo","Vydnitt","Nezrog","Wacwe"],
+      definition: "Structure de l'enseignement selon la volonté de X."
+    },
+    {
+      term: "H2O",
+      category: ["DOMINO","Vydnitt","Ekeline","Wacwe","Leqwa","Slacpi°"],
+      definition: "Établissement de la recherche vers l'appartenance."
+    },
+    {
+      term: "TouRise",
+      category: ["DOMINO","Vydnitt","Xyfurn","Wacwe"],
+      definition: "Organe Touristique pour s'enrichir et trouver sa place."
+    },
+    {
+      term: "CGU(Carpet Glance Unit)",
+      category: ["DOMINO","Nezrog","Slacpi°","Tôhla"],
+      definition: "Institution militaire d'espionage imposant le minimum de sang."
+    },
+    {
+      term: "Esliz",
+      category: ["DOMINO","Leqwa","Logjēm","Slacpi°","Tôhla"],
+      definition: "Association promulgant l'indépendance guslacro-sizrewilienne."
+    },
+    {
+      term: "NEET Club",
+      category: ["DOMINO","Logjēm","Tôhla"],
+      definition: "Groupe de glandeurs sous-estimé qui aime le chez-soi."
+    },
+    {
+      term: "xXx",
+      category: ["DOMINO"],
+      definition: "Organisation à l'origine de toute la tradition de l'idée-maître."
+    },
+    {
+      term: "RaycRa Forces",
+      category: ["DOMINO"],
+      definition: "Puissance militaire en vagabondage."
     },
   ];
 
@@ -9836,7 +10032,7 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
     const categoryHierarchy = {
       "Théorèmes": ["Mapnel", "IUVALCY", "ARc⟁diA", "Aursyl", "Lysrua", "DOMINO"],
       "Thèses": ["Fostrah", "UiNo", "Uewij", "Vydnitt", "Xyfurn", "Nezrog", "Ekeline", "Wacwe", "Leqwa", "Logjēm", "Slacpi°", "Tôhla"],
-      "Thèmes": ["Monoa-Polyz", "Mouet-Pouet", "Persona", "Phénomène", "Phénotype", "Supervision", "Supernova", "Cueillette", "Codex", "Cipher", "Concepteur", "Museum", "Parc", "Citadel", "Trinité", "Tablette", "Capsule"] // Will be populated with remaining categories
+      "Thèmes": ["Monoa-Polyz", "Mouet-Pouet", "Persona", "Phénomène", "Phénotype", "Supervision", "Supernova", "Spherµ", "Cueillette", "Codex", "Cipher", "Concepteur", "Museum", "Parc", "Citadel", "Trinité", "Tablette", "Capsule"] // Will be populated with remaining categories
     };
 
     const allCategories = new Set();
@@ -9850,8 +10046,8 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
 
       const mainCategories = [...categoryHierarchy["Théorèmes"], ...categoryHierarchy["Thèses"]];
       const desiredThemesOrder = [
-        "Monoa-Polyz","Mouet-Pouet","Persona","Phénomène","Phénotype","Supervision","Supernova",
-        "Cueillette","Codex","Cipher","Concepteur","Museum","Parc","Citadel","Trinité","Tablette","Capsule"
+        "Monoa-Polyz","Mouet-Pouet","Persona","Phénomène","Phénotype","Supervision","Supernova","Spherµ",
+        "Cueillette","Codex","Cipher", "Concepteur","Museum","Parc","Citadel","Trinité","Tablette","Capsule"
       ];
       
       // Find all categories that are not in Théorèmes or Thèses
@@ -9993,16 +10189,28 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
           itemElement.appendChild(category);
           itemElement.appendChild(definition);
 
-          if (item.simplified) {
-            const simplified = document.createElement('p');
-            simplified.textContent = `Simplifié /  ${item.simplified}`;
-            itemElement.appendChild(simplified);
-          }
-
           if (item.implication) {
             const implication = document.createElement('p');
             implication.textContent = `Implication ⇒ ${item.implication}`;
             itemElement.appendChild(implication);
+          }
+
+          if (item.simplified) {
+            const simplified = document.createElement('p');
+            simplified.textContent = `Simplifié / ${item.simplified}`;
+            itemElement.appendChild(simplified);
+          }
+
+          if (item.desc) {
+            const desc = document.createElement('p');
+            desc.textContent = `Représentation : ${item.desc}`;
+            itemElement.appendChild(desc);
+          }
+
+          if (item.parent) {
+            const parent = document.createElement('p');
+            parent.textContent = `Parenté # ${item.parent}`;
+            itemElement.appendChild(parent);
           }
 
           if (item.etymology) {
@@ -10346,9 +10554,10 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
 <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
 <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
 <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
-<tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
-<tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
-<tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+<tr><td>Ne! Ko!</td><td>Cat</td><td>Admitted Preference</td><td>Intimate Spread</td><td></td></tr>
+<tr><td>Noraneko Heart</td><td>Cat</td><td>Attachement</td><td>Belonging Layers</td><td></td></tr>
+<tr><td>Crying Heart</td><td>Frosted Realm</td><td>Legends Making</td><td>Madness Layers</td><td></td></tr>
+
 <tr><td>V.W.P - Utahime</td><td>Progression</td><td>Adventure</td><td>Intimate Fuel×Fatal Hollow</td><td><a href="https://www.youtube.com/watch?v=yMM8hrAnbTc" target="_blank">YouTube</a></td></tr>
 <tr><td>V.W.P - Tsuioku</td><td>Life Cycle</td><td>Home</td><td>Intimate Emptiness Belonging</td><td><a href="https://www.youtube.com/watch?v=m9UFr5RyZeE" target="_blank">YouTube</a></td></tr>
 
@@ -10375,7 +10584,7 @@ Gilles Deleuze & Félix Guattari Rhizome - Structure Organisationnelle Insolite<
 
 <tr><td>Uwasanopetals - Saishuu Ressha</td><td>Physical Distance</td><td>Overcoming Cope</td><td>Belonging Layers</td><td><a href="https://www.youtube.com/watch?v=8WOnUua__IQ" target="_blank">YouTube</a></td></tr>
 <tr><td>Uwasanopetals - Hatsukoi no Oto</td><td>Bond Endeepement</td><td>Confession</td><td>Intimate Belonging</td><td><a href="https://www.youtube.com/watch?v=aO7fX6ttj18" target="_blank">YouTube</a></td></tr>
-<tr><td>Uwasanopetals - Sayonara, Bokura no Love Song.</td><td>Shared Song</td><td>Keeping the Boud Metaphysically</td><td>Unknown×Intimate Belonging</td><td><a href="https://www.youtube.com/watch?v=5iReoiSt1KE" target="_blank">YouTube</a></td></tr>
+<tr><td>Uwasanopetals - Sayonara, Bokura no Love Song.</td><td>Shared Song</td><td>Keeping the Bound Metaphysically</td><td>Unknown×Intimate Belonging</td><td><a href="https://www.youtube.com/watch?v=5iReoiSt1KE" target="_blank">YouTube</a></td></tr>
 <tr><td>Uwasanopetals - Ichibyou no Uta</td><td>Disappearance of a Loved one</td><td>Open Vulnerability</td><td>Intimate Belonging to Unknown Emptiness</td><td><a href="https://www.youtube.com/watch?v=QOvYoPszRm0" target="_blank">YouTube</a></td></tr>
 <tr><td>Uwasanopetals - Taikakusen wo Tsunaide</td><td>Timid Proximity</td><td>Bet on</td><td>Intimate Release</td><td><a href="https://www.youtube.com/watch?v=x8ad4rdfhrc" target="_blank">YouTube</a></td></tr>
 
@@ -11189,4 +11398,3 @@ function showPlanetView(planetIndex) {
 </body>
 
 </html>
-
