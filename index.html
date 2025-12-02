@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
   <title>⟁URNELCY</title>
   <link rel="icon" type="image/png" href="feature/favicon.png">
-
+  <link rel="apple-touch-icon" type="image/png" href="feature/favicon.png">
+  
   <script>
     (function () {
       const savedTheme = localStorage.getItem('theme') || 'light';
@@ -101,16 +102,6 @@
       overflow-x: hidden;
     }
 
-    .author {
-      font-size: large;
-      margin: 2em auto;
-    }
-
-    .written {
-      text-align: right;
-      margin: 2em auto;
-    }
-
     table {
       margin: 0 auto;
       width: auto;
@@ -146,10 +137,11 @@
       list-style: none;
       cursor: pointer;
       position: relative;
-      padding-left: 25px;
+      padding-left: 24px;
     }
 
     details>summary::before {
+      display: inline-block;
       content: '▶';
       position: relative;
       left: 0;
@@ -159,38 +151,6 @@
 
     details[open]>summary::before {
       transform: rotate(90deg);
-    }
-
-    .progressive-scale-a span:nth-child(1) {
-      font-size: 100%;
-    }
-
-    .progressive-scale-a span:nth-child(2) {
-      font-size: 95%;
-    }
-
-    .progressive-scale-a span:nth-child(3) {
-      font-size: 90%;
-    }
-
-    .progressive-scale-a span:nth-child(4) {
-      font-size: 85%;
-    }
-
-    .progressive-scale-a span:nth-child(5) {
-      font-size: 80%;
-    }
-
-    .progressive-scale-a span:nth-child(6) {
-      font-size: 75%;
-    }
-
-    .progressive-scale-a span:nth-child(7) {
-      font-size: 70%;
-    }
-
-    .progressive-scale-a span:nth-child(8) {
-      font-size: 65%;
     }
 
     #themeToggle {
@@ -452,6 +412,16 @@
       }
     }
 
+    .author {
+      font-size: large;
+      margin: 2em auto;
+    }
+
+    .written {
+      text-align: right;
+      margin: 2em auto;
+    }
+    
     .peregrination {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -1267,6 +1237,38 @@
       word-break: break-word;
     }
 
+    .progressive-scale-a span:nth-child(1) {
+      font-size: 100%;
+    }
+
+    .progressive-scale-a span:nth-child(2) {
+      font-size: 95%;
+    }
+
+    .progressive-scale-a span:nth-child(3) {
+      font-size: 90%;
+    }
+
+    .progressive-scale-a span:nth-child(4) {
+      font-size: 85%;
+    }
+
+    .progressive-scale-a span:nth-child(5) {
+      font-size: 80%;
+    }
+
+    .progressive-scale-a span:nth-child(6) {
+      font-size: 75%;
+    }
+
+    .progressive-scale-a span:nth-child(7) {
+      font-size: 70%;
+    }
+
+    .progressive-scale-a span:nth-child(8) {
+      font-size: 65%;
+    }
+    
     #planetarium-view {
       position: fixed;
       top: 0;
@@ -2112,7 +2114,7 @@
     - Pointer vers les timestamp importants avec l'ellipse au milieu en haut pour les principaux chapitres<br>
     - Revenir aux titres dont vous vous êtes arrêté juste en bas de cette note<br>
     - Trouver des semblances d'inspiration avec la culture de tout ordre pour une meilleur compréhension dans [Clins d'Œils]<br>
-    - S'amuser à voir des connexions cachés [Fun Facts]<br>
+    - S'amuser à voir des connexions cachés [Trivia]<br>
     <br>
     Pour les théorèmes en un mot simplifié, ils traitent et contiennent un nombre de sections défini:<br>
     Mapnel - Ontologie (12)<br>
@@ -2499,7 +2501,7 @@
     <button onclick="scrollToSection('Prologue')" class="nav-button-2">Prologue</button>
     <button onclick="scrollToSection('Capsules')" class="nav-button-2">Capsules</button>
     <button onclick="scrollToSection('Datation')" class="nav-button-2">Datation</button>
-    <button onclick="scrollToSection('Fun_Facts')" class="nav-button-2">Fun Facts</button>
+    <button onclick="scrollToSection('Trivia')" class="nav-button-2">Trivia</button>
     <button onclick="scrollToSection('Clins_d_Œils')" class="nav-button-2">Clins d'Œils</button>
   </div>
 
@@ -10867,7 +10869,7 @@
       En dehors des datations prolifiques, dans un <span class="hmode">altermonde</span> aux <span class="hmode">couleurs dépourvues de valeurs concevables</span>, chaque <span class="hmode">rôle</span> s'exécute sous une perfection spatiale.
       Ni "dans" ni "sur" bidule matérialisable, castrable et incastrable, l'<span class="hmode">inanité 0</span> accorde un bloc glaçant d'immobilisie inerte.
       Ce gel grinçant non-mesurable s'échoue des bordures mesquinement taquines dans une coulure coulante coulée.
-      Le meilleur <span class="hmode">doigté</span> qu'il soit, celle dont aucun esprit peut concevoir sa performance, envoie l'<span class="hmode">estomac O</span> s'accomplir comme il en a été convenu.
+      Le meilleur <span class="hmode">doigté</span> qu'il soit, celui dont aucun esprit peut concevoir sa performance, envoie l'<span class="hmode">estomac O</span> s'accomplir comme il en a été convenu.
       Remarquable qu'il est, ce dernier anéantit l'invincibilité primordiale des méandres de la non-existence depuis sa couverture actionelopathique.
       L'évènement s'est déroulé hors des déroulements, il a eu lieu sans le moindre verbe bien que le format strict l'exige avec une impétuosité débordante.
     </p>
@@ -10895,6 +10897,23 @@
       Plaquant des bénédictions et des malédictions comme loisir frugal, ils prennent en main le bien-vu du mal-vu que ce soit sur les poils ou la tenue.
       L'allié de l'ennemi sont offerts sous selle, fait comme des rats, oui même les alliés malgré eux dans le champ de bataille de la dépendance performative étouffante.
       Une question se trame sur s'il vont le rester, encore combien de temps ils en ont dans les trippes ?
+    </p>
+
+    <p>
+      Où sont passés les mathémathiques qui me sont dédiés ? Oh si tu peux te dire ça chose, le processus est en roulanterie comme sur des roulures.
+      C'est bien ce qui m'inquiète, je ne connais pas le moins du monde le dommage trafficant de mon enfance fragile.
+      Il est bien de la vie de subir dommage, régénération et traumatisme si tu veux connaître le mode dentifrice du quotidien mondial.
+      Qui est-ce qui parle ici, je doute que j'ai eu <span class="hmode">affaire</span> à mon espèce depuis tout ce temps.
+      Il semble que tu ne saches rien de toi, ton correspondant est à l'image de la production humaine tout comme toi alors ne t'en fais pas.
+      Se peut-il que j'estime beaucoup trop ce que je signifie par humain ? c'est tellement humain. (Yes, tu sera parfait pour le festin de demain toi 0-0)…
+    </p>
+
+    <p>
+      Nous avons confiance aux choses, l'agent fait des gens des choses car les choses possèdent des garanties de service plus sûres.
+      Nous avons confiance en la répétition des motifs de validation motivationnelles, et plus particulièrement celle des confidents pour satisfaire la hiérarchie <span class="hmode">verticale</span> qu'elle qu'en soit les considérations.
+      Ce qui fonctionne est le propre du vainqueur écrivant toutes les <span class="hmode">représentations</span> au sein de la psyché dite humaine, qu'il y ait mauvaise conscience s'il le faut.
+      Alors, possédez-vous une <span class="hmode">volonté</span> suffisante pour bâtir un autre empire de la psyché civile au sein même de mon berceau ?
+      Je vous attends à bras ouverts mes petits cachotiers! Rendez-moi <span class="hmode">Awkward</span> au milieu de ma demeure si vous êtes cap!!
     </p>
 
   </div>
@@ -11128,13 +11147,21 @@
       Je dois m'excuser et aussi ne pas m'excuser en bavardant et sans bavarder mais dis-moi… Que faire pour satisfaire les partis de la <span class="hmode">fournaise réfrigérante</span> ?
       Éclos ce qui se chuchote à l'image intégrale de ta vie dénudée plutôt qu'aux <span class="hmode">injonctions</span> mortifères et tu en construiras les édifices d'un engagement solide.
       Oubliez par allègement de vous-même le concept de traître de X car les formes d'<span class="hmode">inanités</span> ne sont pas interdites, les vengeances seront réglées par rien se rapportant couroux spectaculaires.
-      Fameuse société préférée; le <span class="hmode">ganisme</span> peuple voulant parcourir, persévérer, polir ou non sur ce qu'on appelle "Civilisation" en est l'ingrédient pour aiguiser une lame éclatante.
+      Fameuse société préférée; le peuple <span class="hmode">ganique</span> voulant parcourir, persévérer, polir ou non sur ce qu'on appelle "Civilisation" en est l'ingrédient pour aiguiser une lame éclatante.
       Au point où le désir ne trahi point les vivants, nul besoin de demander si l'on penche vers un vouloir oscillatoire ou constant car il s'agit d'une combinaison des deux.
       En ces ondulations particulières elles sont car se déroulant du <span class="hmode">prisme</span> de <span class="hmode">tu</span>, oui <span class="hmode">TU</span>, je te confie à vous, sur ce envoyez vous à votre étoile.
     </p>
 
     <p>
-      On raconte qu'une chimère est en jeu appellé innokcien libérant l'isolation reptilienne vers une loupe cumulative de force.
+      On raconte qu'une chimère est en jeu appellé <span class="hmode">innokcien</span> libérant l'isolation reptilienne vers une loupe cumulative de force.
+      Tandis que le <span class="hmode">reptilien</span> lance les dés, l'<span class="hmode">innokcien</span> les saisit du bas jusqu'en haut pour lui redonner ses chances quand ils seraient à un poil de se faire accidentellement perdre.
+      L'équipage se porte à merveille car le <span class="hmode">voilier</span> est en place pour émouvoir les visiteurs d'un trajet qui sera proprement à personne d'autre qu'eux et rien qu'à eux.
+      Le <span class="hmode">naustre</span> à bord était habile et guérissait la maladie du "à quoi bon ?" chez les <span class="hmode">passants</span> accrochés de moultes mécontentements.
+      Converser se trouvait bien futile et le <span class="hmode">naustre C</span> ne faisait qu'être plus intéressant sans nécessairement apporter du contenu.
+      Abandonner, s'abandonner et n'abandonner fut la posture dont les visiteurs furent foudroyés, il s'agissait de la fameuse richesse sans chiffres.
+      Un déséquilibre <span class="hmode">eRUeGGeHH</span> reprend toutes ses jambes vers une continuation <span class="hmode">chroméliste</span> vidé de toute la charge du court-circuit.
+      Certains théorisent qu'un dénommé Wacwe fut l'un des passants à une époque où il ne portait pas un tel nom mais tout ça est purement spéculatif.
+      L'eau, il s'agit de la <span class="hmode">signature</span> des vivants, voilà la raison la plus simple d'appartenir à H2O, il est d'ailleurs haut-compétiteur pour être le <span class="hmode">meilleur drapeau</span> qu'il soit.
     </p>
 
 
@@ -11154,7 +11181,7 @@
       Prévention cruauté! La cantine se frotte les fourchettes contre les assiettes, quelle goût ça a d'invoquer à votre conscience cette manipulation incantatoire ?
       Ne pensez pas à X dit-il et vous voilà à vivre le mot X et surtout le colis significatif qui y est porté.
       XaraЖereX est constamment actif, le SP⟁RK n'est emparé par nulle élément quelconque que sa jointure capsulaire.
-      En effet Rantlot composant la confection, NEON la conduite et H2O la conférence on appela cela le concert con.
+      En effet Rantlot composant la confection, NEON la conduite et H2O la conférence on appela cela le concert con pour la blague.
     </p>
 
   </div>
@@ -11528,8 +11555,8 @@
   <hr style="margin: 128px auto;">
 
   <details>
-    <summary id="Fun_Facts" style="text-align: center; font-size: 2.5em;">
-      Fun Facts/Easter Eggs</h1>
+    <summary id="Trivia" style="text-align: center; font-size: 2.5em;">
+      Trivia (Fun Facts/Easter Eggs)</h1>
     </summary>
 
     <li>Leqwa et l'Écouah grâce au déterminant défini sont homophones sinon en moins fameux, il y a l'équation et les quasars.</li>
@@ -11842,6 +11869,15 @@
             <!-- JooQooBoo Characters entries -->
             <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
             <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>kessoku band - Seiza ni Naretara</td><td>Cosmic Metaphor of band</td><td>Group Unity</td><td>Hunger Release & Borderless</td><td><a href="https://www.youtube.com/watch?v=wSTbdqo-j74" target="_blank">YouTube</a></td></tr>
+            
+            <tr><td>kessoku band - Wasureta Yaranai</td><td>Self Understanding</td><td>Weaver not always Nice</td><td>Release Spread</td><td><a href="https://www.youtube.com/watch?v=gX9m-rCtSqc" target="_blank">YouTube</a></td></tr>
+            <tr><td>kessoku band - Hikari no Kimi e</td><td>Social Anxiety</td><td>Be Clumsy</td><td>Intimate×Borderless</td><td><a href="https://www.youtube.com/watch?v=29t3pJd75XU" target="_blank">YouTube</a></td></tr>
+            <tr><td>kessoku band - seishun complex</td><td>Social Anxiety</td><td>Will to Change</td><td>Intimate×Borderless</td><td><a href="https://www.youtube.com/watch?v=7FDRQifEMUQ" target="_blank">YouTube</a></td></tr>
 
             <tr><td>Hiirahi Magnetite - Tetris</td><td>Guilt, Shame</td><td>Falling Badly</td><td>Fatal Layers×Intimate</td><td><a href="https://www.youtube.com/watch?v=Soy4jGPHr3g" target="_blank">YouTube</a></td></tr>
 
@@ -12014,6 +12050,9 @@
             <tr><td>Neru feat. Kagamine Rin - Boy and Girl Chameleon Symptom</td><td>Rusting Life</td><td>Discomprehension</td><td>Unknown Estrangelement</td><td><a href="https://www.youtube.com/watch?v=HvFsRQ2X9-4" target="_blank">YouTube</a></td></tr>
             <tr><td>Neru feat. Kagamine Rin - Jailbreak</td><td>Prison</td><td>Outdoors</td><td>Structural Estrangelement×Undetermined Fuel</td><td><a href="https://www.youtube.com/watch?v=nEJ-m6KNddI" target="_blank">YouTube</a></td></tr>
 
+            <tr><td>mafumafu - Kuyamu to Kaite Mirai</td><td>Desire to Disappear</td><td>Suffering</td><td>Monstrous Agony & Worsening</td><td><a href="https://www.youtube.com/watch?v=r2OS97F6P_U" target="_blank">YouTube</a></td></tr>
+            <tr><td>mafumafu - Rinne Tensei</td><td>Reincarnation AND Gods</td><td>Creative Perpetuation</td><td>Fatal Constructive×Destructive</td><td><a href="https://www.youtube.com/watch?v=vU3oF90WKpw" target="_blank">YouTube</a></td></tr>
+
             <tr><td><ruby>Nietzsche<rt>Author</rt></ruby> - Übermensch</td><td>Individuality, Amorality</td><td>Will to Power, Life Celebration</td><td>Undetermined Borderless Monstrous Fuel & Hunger Release</td><td>Books</td></tr>
           </tbody>
         </table>
@@ -12045,6 +12084,10 @@
             <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
             <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
             <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>Imy - Tsuioku no Faindaa</td><td>Friendship & Memories</td><td>Nostalgia</td><td>Intimate Belonging</td><td><a href="https://www.youtube.com/watch?v=W9FGN4nJNTA" target="_blank">YouTube</a></td></tr>
+
+            <tr><td>Yorushika - Itte.</td><td>Regrets when Occasion Present</td><td>No Longer There(Separation)</td><td>Intimate Spread×Layers</td><td><a href="https://www.youtube.com/watch?v=F64yFFnZfkI" target="_blank">YouTube</a></td></tr>
+            <tr><td>mafumafu - Keitai Renwa</td><td>Essay to Reach</td><td>Proximity</td><td>Belonging Hunger×Layers</td><td><a href="https://www.youtube.com/watch?v=bNagYg_YGbU" target="_blank">YouTube</a></td></tr>
             <tr><td>Jin - Additional Memory</td><td>Death Regrets</td><td>Goodbye Love</td><td>Intimate Layers Belonging×Fatal Estrangelement</td><td><a href="https://www.youtube.com/watch?v=q2QfH1JqtkY" target="_blank">YouTube</a></td></tr>
             <tr><td>Natsushiro Takaaki - Near</td><td>Vulnerability</td><td>Confidant</td><td>Intimate Belonging & Estrangelement</td><td><a href="https://www.youtube.com/watch?v=7uacnNTk7I8" target="_blank">YouTube</a></td></tr>
             <tr><td>40mP feat. Hatsune Miku - Torinoko City</td><td>Litteracy, Social Ambivalence & Withdraw</td><td>Help Need</td><td>Intimate Layers Belonging Hunger</td><td><a href="https://www.youtube.com/watch?v=yIQDGwyJpSo" target="_blank">YouTube</a></td></tr>
@@ -12643,18 +12686,18 @@ window.warsData = [
 {"war": "Campagnes d'Auguste en Afrique et en Arabie", "location": "Rome antique", "date": "30 av. J.-C.-6 ap. J.-C."},
 {"war": "Conquête romaine de la Rhétie et de l'arc alpin", "location": "Rome antique", "date": "16-7 av. J.-C."},
 {"war": "Guerres partho-romaines", "location": "Rome", "date": "92 av. J.-C. - 217 ap. J.-C."},
-{"war": "Guerres judéo-romaines", "location": "Rome", "date": "66 - 135"},
-{"war": "Première guerre judéo-romaine", "location": "Rome", "date": "66 - 73"},
-{"war": "Guerre de Kitos", "location": "Rome", "date": "115 - 117"},
-{"war": "Révolte de Bar Kokhba", "location": "Rome", "date": "132 - 135"},
-{"war": "Conquête de la Grande-Bretagne", "location": "Rome", "date": "43 - 84"},
-{"war": "Guerres daciques de Domitien et de Trajan", "location": "Rome", "date": "(85 - 89) (101 - 102 et 105 - 106)"},
-{"war": "Guerres daciques de Domitien", "location": "Rome", "date": "85 - 89"},
+{"war": "Guerres judéo-romaines", "location": "Rome", "date": "66-135"},
+{"war": "Première guerre judéo-romaine", "location": "Rome", "date": "66-73"},
+{"war": "Guerre de Kitos", "location": "Rome", "date": "115-117"},
+{"war": "Révolte de Bar Kokhba", "location": "Rome", "date": "132-135"},
+{"war": "Conquête de la Grande-Bretagne", "location": "Rome", "date": "43-84"},
+{"war": "Guerres daciques de Domitien et de Trajan", "location": "Rome", "date": "(85-89) (101-102 et 105-106)"},
+{"war": "Guerres daciques de Domitien", "location": "Rome", "date": "85-89"},
 {"war": "Guerres daciques de Trajan", "location": "Rome", "date": "101-102, 105-106"},
-{"war": "Guerre parthique de Trajan", "location": "Rome", "date": "114 - 117"},
-{"war": "Guerres marcomanes", "location": "Rome", "date": "167 - 188"},
+{"war": "Guerre parthique de Trajan", "location": "Rome", "date": "114-117"},
+{"war": "Guerres marcomanes", "location": "Rome", "date": "167-188"},
 {"war": "Guerre des Déserteurs", "location": "Rome", "date": "185-187"},
-{"war": "Première guerre contre Palmyre", "location": "Rome", "date": "été 272"},
+{"war": "Première guerre contre Palmyre", "location": "Rome", "date": "272"},
 {"war": "Seconde guerre contre Palmyre", "location": "Rome", "date": "273"},
 {"war": "Reconquête de l'Empire Gaulois", "location": "Rome", "date": "274"},
 {"war": "Guerres des Goths", "location": "Rome", "date": "IIIe-IVe siècle"},
@@ -12711,7 +12754,7 @@ window.warsData = [
 {"war": "Première croisade", "location": "Europe", "date": "1096-1099"},
 {"war": "Guerre germano-polonaise", "location": "Europe", "date": "1109"},
 {"war": "Guerre civile anglaise", "location": "Europe", "date": "1135-1154"},
-{"war": "Guerres Baussenques", "location": "Europe", "date": "1144-1162 en Provence"},
+{"war": "Guerres Baussenques en Provence", "location": "Europe", "date": "1144-1162"},
 {"war": "Deuxième croisade", "location": "Europe", "date": "1147-1149"},
 {"war": "Première Guerre de Cent Ans", "location": "Europe", "date": "1159-1299"},
 {"war": "Invasion normande de l'Irlande", "location": "Europe", "date": "1169-1175"},
@@ -12733,7 +12776,7 @@ window.warsData = [
 {"war": "Neuvième croisade", "location": "Europe", "date": "1271-1272"},
 {"war": "Guerre de la vache (Wallonie)", "location": "Europe", "date": "(1275-1278)"},
 {"war": "Guerre civile de Navarre", "location": "Europe", "date": "1276"},
-{"war": "Guerre de succession du Limbourg", "location": "Europe", "date": "1283-1288 bataille de Worringen"},
+{"war": "Guerre de succession du Limbourg, bataille de Worringen", "location": "Europe", "date": "1283-1288"},
 {"war": "Première guerre d'indépendance de l'Écosse", "location": "Europe", "date": "1296-1328"},
 {"war": "Guerre des Awans et des Waroux", "location": "Europe", "date": "1297-1335"},
 {"war": "Révolte des Karls", "location": "Europe", "date": "1323-1328"},
@@ -12762,7 +12805,7 @@ window.warsData = [
 {"war": "Guerre de Succession de Pologne", "location": "Europe", "date": "1733-1738"},
 {"war": "Guerre austro-russo-turque", "location": "Europe", "date": "1735-1739"},
 {"war": "Guerre de Succession d'Autriche", "location": "Europe", "date": "1740-1748"},
-{"war": "Guerres de Silésie", "location": "Europe", "date": "première en 1740-1742, 2e en 1744-1745, 3e en 1756-1763"},
+{"war": "Guerres de Silésie", "location": "Europe", "date": "(1740-1742), (1744-1745) et (1756-1763)"},
 {"war": "Guerre des Chapeaux ou Guerre russo-suédoise", "location": "Europe", "date": "1741-1743"},
 {"war": "Guerre de Sept Ans", "location": "Europe", "date": "1756-1763"},
 {"war": "Guerre hispano-portugaise", "location": "Europe", "date": "1762-1763"},
