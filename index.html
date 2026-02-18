@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -2255,6 +2255,133 @@ body.vocab-feature-active .definition-link {
       opacity: 0.5;
       cursor: grabbing;
     }
+
+    /* Capsule Icon (Dezoomed) Styles */
+    .capsule-preview-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .capsule-preview {
+      width: 180px;
+      height: 180px;
+      border: 2px solid var(--text-color);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--bg-color);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 8px rgba(var(--text-color-rgb), 0.15);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .capsule-preview-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      white-space: nowrap;
+    }
+    
+    .capsule-preview-content table {
+      white-space: normal;
+      table-layout: auto;
+    }
+    
+    .capsule-preview-content div {
+      white-space: normal;
+    }
+
+    .capsule-preview-container:hover .capsule-preview {
+      transform: scale(1.05);
+      box-shadow: 0 4px 16px rgba(var(--text-color-rgb), 0.3);
+    }
+
+    .capsule-title {
+      font-size: 0.95em;
+      font-weight: bold;
+      text-align: center;
+      max-width: 200px;
+      color: var(--text-color);
+      word-wrap: break-word;
+    }
+
+    /* Modal Styles */
+    .capsule-modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .capsule-modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .capsule-modal-content {
+      background: var(--bg-color);
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 90vw;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .capsule-modal-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 2em;
+      cursor: pointer;
+      color: var(--text-color);
+      background: none;
+      border: none;
+      padding: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+
+    .capsule-modal-close:hover {
+      transform: scale(1.2);
+      color: #ff4444;
+    }
   </style>
 
 </head>
@@ -2372,7 +2499,7 @@ body.vocab-feature-active .definition-link {
     Veldiac Jtie - Mélodie Inépelable - Sfivoq - Duel Xceptionnel - MonPol - Articulation Par-ci=Par-là (Mapnélienne)<br>
     <br>
     <h3>IUVALCY</h3>
-    Crithekiel - Critheçiel - Critheqiel - Critherçation - PAMABWA - INTIMACY - XaraЖereX - Veldiac AL - Ganie - CritHaïe - TRIBALT - GESTALT - Goalois(e) - Möbius Netwow - PROTAGONISM - Articulation Ecsætera (Iuvalcienne) -
+    Crithekiel - Critheçiel - Critheqiel - Critherçation - PAMABWA - INTIMACY - XaraЖereX - Veldiac AL - Ganie - CritHAïe - TRIBALT - GESTALT - Goalois(e) - Möbius Netwow - PROTAGONISM - Articulation Ecsætera (Iuvalcienne) -
     Veldiac AJtieL - GaunieGanie<br>
     MATRICE 5ync sur 5ync<br>
     <br>
@@ -2380,7 +2507,7 @@ body.vocab-feature-active .definition-link {
     ⟁ -
     ZooZaZe - JooQooBoo - aLIaKKaHH - eRUeGGeHH -
     Letricot - TRICK_&_TREAT -
-    fântomiseur/phantomizer - ~Monom&moceM~🙵~Polyp&pocuP~ - Mirsa Mirsa Mua -
+    fantômiseur/phantomizer - ~Monom&moceM~🙵~Polyp&pocuP~ - Mirsa Mirsa Mua -
     EURÊK⟁ - SP⟁RK -
     Câble/Wire - InfiNieR - Blehdwoluzvi - Tra§Vel - Gorgeous Raper - aTHaTCHa - Articulation Link/Age (Arcadienne)<br>
     <br>
@@ -5545,7 +5672,7 @@ body.vocab-feature-active .definition-link {
 
   <div style="margin: 56px auto;">
 
-    <dd><b><u>CritHaïe</u></b>:
+    <dd><b><u>CritHAïe</u></b>:
       Comment puis-je te le dire ?<br>
       Il s'agit de nous qui ne sont pas nôtres.<br>
       Douloureuse translation.</dd><br>
@@ -5568,7 +5695,7 @@ body.vocab-feature-active .definition-link {
 
   <details class="info">
     <summary>Sujet</summary>
-    Type: Glossaire de Cosmologie Informatique<br>
+    Type: Génèse de Cosmologie Informatique<br>
     Question: Simulation<br>
     Outil: Conceptualisation<br>
     Éclairage: Réalité<br>
@@ -6984,7 +7111,7 @@ body.vocab-feature-active .definition-link {
 
   <div style="margin: 32px auto;">
 
-    <dd><b><u>fântomiseur/phantomizer</u></b>:
+    <dd><b><u>fantômiseur/phantomizer</u></b>:
       Il m'en bouche un coin, je voudrai effectivement une diarrhée pérenne.<br>
       Je t'ai démasqué petit cachotier, voilà un fantôme, ça existe pour de vrai ouuahhh!!</dd><br>
 
@@ -8187,8 +8314,8 @@ body.vocab-feature-active .definition-link {
       <thead>
         <tr>
           <th>A</th><th>U</th><th>R</th><th>S</th><th>Y</th><th>L</th>
-          <th>⦿</th>
-          <th>L</th><th>Y</th><th>S</th><th>R</th><th>U</th><th>A</th>
+          <th>Ɐ</th>
+          <th style="transform: scaleX(-1);">L</th><th style="transform: scaleX(-1);">Y</th><th style="transform: scaleX(-1);">S</th><th style="transform: scaleX(-1);">R</th><th style="transform: scaleX(-1);">U</th><th style="transform: scaleX(-1);">A</th>
         </tr>
       </thead>
     </table>
@@ -9010,7 +9137,8 @@ body.vocab-feature-active .definition-link {
   <div style="margin: 32px auto;">
 
     <dd><b><u>Nihilin</u></b>:
-      Abandon absolu de toute forme de sens.</dd><br>
+      Abandon absolu de toute forme de sens.<br>
+      Nihilisme, Nihil, Rien</dd><br>
 
   </div>
 
@@ -11540,7 +11668,7 @@ body.vocab-feature-active .definition-link {
           <td>Critheçiel</td>
           <td>Critheqiel</td>
           <td>XaraЖereX</td>
-          <td>CritHaïe</td>
+          <td>CritHAïe</td>
           <td>PROTAGONISM</td>
         </tr>
           <tr>
@@ -12177,7 +12305,8 @@ body.vocab-feature-active .definition-link {
     </p>
 
     <p>
-      Un certain UiNo s'est foutu ouvertement son propre nom à lui-même, depuis ça on le surnomme le démonom et beaucoup d'autres surnoms relatant aux auto-maléfices.
+      Un certain UiNo a supprimé sa reconnaissance sonore avec son nom d'origine et s'est engagé ouvertement son propre nom en dédicace à un défunt qui le nommait ainsi.
+      Depuis ça on le surnomme le démonom et beaucoup d'autres surnoms relatant aux auto-maléfices et c'est parfait parce qu'on croyait jusqu'alors saisir sa personne en se trompant lourdement.
       Dès que Fostrah et Uewij surent cela, ils furent stupéfaits et lui prêtaient l'oreille, attentifs au gabarit presque prophète; il compte bien composer un <span class="hmode">altermonde</span> dans un lieu jusqu'alors peu propice à la vie sapienne.
       UiNo le foufolle devient un rigolo de la théorie de la culture souple mais il ne plaisante pas et plaisante en même temps ce qui lui donnait des impressions où personne n'est jamais d'accord pour le qualifier.
       Il fut porté à son sujet néanmoins une description très troublante du personnage pour <span class="hmode">scénariser</span> sa défaite et diriger la leçon scolaire du jour sur le juridisme et le psychiatrisme de telles méfaits inconsidérés.
@@ -12336,7 +12465,7 @@ body.vocab-feature-active .definition-link {
       Par l'herbe, les arbustes les arbres jusqu'aux feuilles puis pour les plus persévérants des séismes, des volcans, des tsunamis, des cyclones et des inondations tous dotés d'intelligence.
       Le barrage n'hésitera pas à tuer le <span class="hmode">challenger</span> s'il persiste dans cette voie mentale, parmi les indignes se trouvent les devants des choses.
       De la fureur, il y eut pendant la <span class="hmode">sélection</span>, mais la réalité peut s'avérer cruel quand les dés sont déjà programmés.
-      Des 40.000 adhérents, simple chiffre sans signification intime, le nombre s'aminci vers les migrateurs à 729 pour passer à 12 dignes.
+      Des 40.000 adhérents, simple chiffre sans signification intime, le nombre s'aminci vers les migrateurs à 5070 pour passer à 12 dignes.
       On compte Fostrah, UiNo, Uewij, Vydnitt, Xyfurn, Nezrog, Ekeline, Wacwe, Logjēm, Slacpi° et Tôhla.
     </p>
 
@@ -12626,18 +12755,21 @@ body.vocab-feature-active .definition-link {
 
     <!--<div class="author">【Fostrah - UiNo - Uewij - Vydnitt - Xyfurn - Nezrog - Ekeline - Wacwe・Leqwa - Logjēm - Slacpi° - Tôhla】</div>-->
 
-    <div id="arti11"></div>
-    <div id="arti22"></div>
-    <div id="arti33"></div>
-    <div id="arti44b"></div>
-    <div id="arti55"></div>
-    <div id="arti66"></div>
+    <div id="capsule-icons" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 20px;">
+    </div>
 
-    <div id="cale11"></div>
-    <div id="cale22"></div>
+    <div id="arti11" data-title="Par-ci=Par-là" style="display: none;"></div>
+    <div id="arti22" data-title="Ecsætera" style="display: none;"></div>
+    <div id="arti33" data-title="Link/Age" style="display: none;"></div>
+    <div id="arti44b" data-title="deHist" style="display: none;"></div>
+    <div id="arti55" data-title="KaLeiDo" style="display: none;"></div>
+    <div id="arti66" data-title="ZigZag" style="display: none;"></div>
 
-    <div id="matr55"></div>
-    <div id="matr66"></div>
+    <div id="cale11" data-title="Semaine % Grégorien" style="display: none;"></div>
+    <div id="cale22" data-title="Siane & Emmaïe" style="display: none;"></div>
+
+    <div id="matr55" data-title="5ync sur 5ync" style="display: none;"></div>
+    <div id="matr66" data-title="A6es 6tiques 6colaire" style="display: none;"></div>
 
   </details>
 
@@ -12747,7 +12879,7 @@ body.vocab-feature-active .definition-link {
     <li>L'articulation Iuvalcienne et Arcadienne ont un format acronymique entre I-UV-AL-CY et S-P-A-R-K.</li>
     <li>ZooZaZe utilise les symboles [⦻] {0} (∞) de INTIMACY en les verbisant.</li>
     <li>La fabulation médiane Critheçiel fait allusion au ciel, c'est un espace vertigineux en possibilités.</li>
-    <li>Le 4ème Code ÆND et CritHaïe indique implicitement que la règle s'applique pour son propre sujet.</li>
+    <li>Le 4ème Code ÆND et CritHAïe indique implicitement que la règle s'applique pour son propre sujet.</li>
     <li>La conception du terme Monoa-Polyz s'est construit sur l'idée de l'un et du multiple mais les mots monopole et monopoly dans le langage courant sont un contresens, l'ajout du [a] et [z] doivent s'interpréter comme fusionnels.</li>
     <li>Le double triangle [⟁] est une stylisation de Eurêka ou EURÊK⟁, SPARK ou SP⟁RK pour Awkward chez l'enfant et Akduq pour ⟁KDUQ.</li>
     <li>Le décoriste de l'articulation Aursylienne est le chef d'orchestre, il pourrait bien s'agir de toi.</li>
@@ -12768,7 +12900,7 @@ body.vocab-feature-active .definition-link {
     <li>Le Veldiac aurait un lien étroit avec Fon:Rel:Inc, de plus le Travail aussi avec Scé;Syn;Cel.</li>
     <li>Le Veldiac est un peu plus iuvalcien que mapnélien dans un ratio entre 60-40 ou 65-35.</li>
     <li>PAMABWA est la seule définition qui possède une date de naissance.</li>
-    <li>Il y a plusieurs génèses qui s'entremêlent entre Monom&amp;Polyp, l'Articulation Iuvalcienne, l'arche Arcadienne, Hyenuul et Nihilin.</li>
+    <li>Il y a plusieurs génèses qui s'entremêlent entre Monom&amp;Polyp, le Möbius Netwow, l'Articulation Iuvalcienne, l'arche Arcadienne, Gorgeous Raper, Hyenuul et Nihilin.</li>
     <li>Tous les théorèmes ont un lien avec Monoa-Polyz ou leur version de la chose.</li>
     <li>Fenekohq en tant que NEET sévère a construit ⟁URNELCY, c'est un thug.</li>
     <li>On écrit aurnelcyen pour ⟁URNELCY mais on écrit iuvalcien pour IUVALCY car il y a le IUVALCIUM.</li>
@@ -12799,7 +12931,7 @@ body.vocab-feature-active .definition-link {
     <li>Le mot Uof est facultative dans le nom de mois Uof Ervuap de Emmaïe, il s'agit comme pour SSeCCuS d'être le contraire.</li>
     <li>La waifu de Fenekohq est Howan (SHOW BY ROCK!!)<img src="feature/Howan_Chibi.png" alt="Howan_Chibi" style="max-width:3%;"></li>
     <li>Fenekohq a une carrière sur MDMC en tant que Charter de Muse Dash.</li>
-    <li></li>
+    <li>CritHAïe contient le HA de l'inanité.</li>
     <li></li>
     <li></li>
     <li></li>
@@ -12971,6 +13103,9 @@ body.vocab-feature-active .definition-link {
     <div id="filter-controls" style="margin-top: 20px; text-align: left; padding: 10px; border: 1px dashed var(--text-color); border-radius: 6px;">
         <h4 style="margin-top: 0; margin-bottom: 10px; font-size: 1.1em;">Afficher/Masquer les détails:</h4>
         <div id="detail-checkboxes" style="display: flex; flex-wrap: wrap; gap: 15px;">
+          <input type="checkbox" id="toggle-all-check" checked>
+          <label for="toggle-all-check"> <strong>Tout</strong></label>
+          
           <input type="checkbox" class="detail-toggle" value="implication" id="implication-check" checked>
           <label for="implication-check"> Implication (⇒)</label>
           
@@ -12992,11 +13127,14 @@ body.vocab-feature-active .definition-link {
           <input type="checkbox" class="detail-toggle" value="pronunce" id="pronunce-check" checked>
           <label for="pronunce-check"> Prononciation (🗣)</label>
 
-          <input type="checkbox" class="detail-toggle" value="pronunce" id="meme-check" checked>
-          <label for="meme-check"> Phenomème (🗿)</label>
+          <input type="checkbox" class="detail-toggle" value="meme" id="meme-check" checked>
+          <label for="meme-check"> Phénomème (🗿)</label>
 
-          <input type="checkbox" class="detail-toggle" value="pronunce" id="surnatural-check" checked>
+          <input type="checkbox" class="detail-toggle" value="surnatural" id="surnatural-check" checked>
           <label for="surnatural-check"> Surnaturel (🔮)</label>
+
+          <input type="checkbox" class="detail-toggle" value="version" id="version-check" checked>
+          <label for="version-check"> Versions alternatives (≍)</label>
         </div>
     </div>
 
@@ -13109,6 +13247,24 @@ body.vocab-feature-active .definition-link {
             <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
             <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
             <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+
+
             <tr><td>kessoku band - Seiza ni Naretara</td><td>Cosmic Metaphor of band</td><td>Group Unity</td><td>Hunger Release & Borderless</td><td><a href="https://www.youtube.com/watch?v=wSTbdqo-j74" target="_blank">YouTube</a></td></tr>
             
             <tr><td>kessoku band - Wasureta Yaranai</td><td>Self Understanding</td><td>Weaver not always Nice</td><td>Release Spread</td><td><a href="https://www.youtube.com/watch?v=gX9m-rCtSqc" target="_blank">YouTube</a></td></tr>
@@ -13322,6 +13478,24 @@ body.vocab-feature-active .definition-link {
             <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
             <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
             <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+
+
             <tr><td>Ariabl'eyeS - Nageki no L'adieu</td><td>Farewell</td><td>Let go and be by your own</td><td>Belonging Layers to Borderless Constructive</td><td><a href="https://www.youtube.com/watch?v=rc7u6mek3rQ" target="_blank">YouTube</a></td></tr>
             <tr><td>Kano - Stellarium</td><td>Be Meant to be</td><td>Right Time</td><td>Intimate Layers</td><td><a href="https://www.youtube.com/watch?v=GNkPJvVEm0s" target="_blank">YouTube</a></td></tr>
             <tr><td>Orangestar feat. IA - Asu no Yozora Shoukaihan</td><td>Sense of Unity</td><td>Yesterday and Tomorrow</td><td>Intimate Belonging & Hunger</td><td><a href="https://www.youtube.com/watch?v=XogSflwXgpw" target="_blank">YouTube</a></td></tr>
@@ -13524,6 +13698,24 @@ body.vocab-feature-active .definition-link {
             <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
             <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
             <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+            <tr><td>a</td><td>a</td><td>a</td><td>a</td><td><a href="a" target="_blank">YouTube</a></td></tr>
+
+
             <tr><td>mafumafu feat. IA - Yakubyougami</td><td>Strangeness</td><td>Cynism</td><td>Estrangelement Layers & Destructive Hunger</td><td><a href="https://www.youtube.com/watch?v=z1WfsWU2qds" target="_blank">YouTube</a></td></tr>
             <tr><td>Yorushika - Algernon</td><td>Labyrinth</td><td>Unending Lost Travel</td><td>Unknown Release</td><td><a href="https://www.youtube.com/watch?v=_9_rUFrgLI8" target="_blank">YouTube</a></td></tr>
             
@@ -15307,6 +15499,133 @@ window.warsData = [
   const copy10 = matr6.cloneNode(true);
   matr66.appendChild(copy10);
 
+  // Create capsule icon grid with dezoomed previews
+  const capsuleIds = ['arti11', 'arti22', 'arti33', 'arti44b', 'arti55', 'arti66', 'cale11', 'cale22', 'matr55', 'matr66'];
+  const iconsContainer = document.getElementById('capsule-icons');
+  const modals = {};
+
+  capsuleIds.forEach(id => {
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    const title = element.getAttribute('data-title') || id;
+
+    // Create container with title
+    const containerDiv = document.createElement('div');
+    containerDiv.className = 'capsule-preview-container';
+    containerDiv.innerHTML = `
+      <div class="capsule-preview"></div>
+      <div class="capsule-title">${title}</div>
+    `;
+    
+    // Get the preview element
+    const previewElement = containerDiv.querySelector('.capsule-preview');
+
+    // Extract subject details and other content separately
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = element.innerHTML;
+    
+    const subjectDetails = tempDiv.querySelector('details.info');
+    
+    // Remove subject from content
+    if (subjectDetails) {
+      subjectDetails.remove();
+    }
+    
+    // Remove overflow-x: auto from table containers in preview to prevent forced vertical layout
+    const tableContainers = tempDiv.querySelectorAll('div[style*="overflow-x"]');
+    tableContainers.forEach(container => {
+      // Remove the overflow-x: auto style but keep other styles
+      const newStyle = container.getAttribute('style')
+        .replace(/overflow-x:\s*auto;?/g, '')
+        .replace(/>\s*-webkit-overflow-scrolling:\s*touch;?/g, '');
+      if (newStyle.trim()) {
+        container.setAttribute('style', newStyle);
+      } else {
+        container.removeAttribute('style');
+      }
+    });
+    
+    // Remove title decorations (divs with font-size: 1.5em, 2em, etc.)
+    const titleDecorations = tempDiv.querySelectorAll('div[style*="font-size"]');
+    titleDecorations.forEach(titleDiv => {
+      // Check if it contains decorative elements like ⌂ or {
+      if (titleDiv.textContent.includes('⌂') || titleDiv.textContent.includes('{')) {
+        titleDiv.remove();
+      }
+    });
+    
+    const contentHTML = tempDiv.innerHTML;
+    
+    // Build preview: only dezoomed content (no subject, no titles)
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'capsule-preview-content';
+    contentDiv.innerHTML = contentHTML;
+    previewElement.appendChild(contentDiv);
+    
+    // Calculate adaptive zoom
+    // Temporarily add to DOM to measure size
+    const measureContainer = document.createElement('div');
+    measureContainer.style.position = 'absolute';
+    measureContainer.style.visibility = 'hidden';
+    measureContainer.style.width = 'auto';
+    measureContainer.style.height = 'auto';
+    measureContainer.innerHTML = contentHTML;
+    document.body.appendChild(measureContainer);
+    
+    const contentWidth = measureContainer.scrollWidth;
+    const contentHeight = measureContainer.scrollHeight;
+    document.body.removeChild(measureContainer);
+    
+    // Calculate zoom to fit 180x180
+    const maxWidth = 180;
+    const maxHeight = 180;
+    const zoomX = maxWidth / contentWidth;
+    const zoomY = maxHeight / contentHeight;
+    const adaptiveZoom = Math.min(zoomX, zoomY); // Fill to touch one edge
+    
+    // Apply the calculated zoom
+    contentDiv.style.transform = `scale(${adaptiveZoom})`;
+    contentDiv.style.transformOrigin = 'center';
+
+    // Create full-size modal
+    const modal = document.createElement('div');
+    modal.className = 'capsule-modal';
+    modal.dataset.id = id;
+    const fullContent = element.cloneNode(true);
+    fullContent.style.display = 'block';
+    modal.innerHTML = `
+      <div class="capsule-modal-content">
+        <button class="capsule-modal-close">✕</button>
+        <h2 style="margin-top: 0; text-align: center;">${title}</h2>
+        ${fullContent.innerHTML}
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+    modals[id] = modal;
+
+    // Click handler for preview
+    containerDiv.addEventListener('click', () => {
+      modal.classList.add('active');
+    });
+
+    // Click handler for close button
+    const closeBtn = modal.querySelector('.capsule-modal-close');
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      modal.classList.remove('active');
+    });
+
+    // Close modal when clicking outside
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+      }
+    });
+
+    iconsContainer.appendChild(containerDiv);
+  });
 
 </script>
 
@@ -15325,7 +15644,8 @@ window.warsData = [
       etymology: "⟁UR(ARc⟁diA & Aursyl) NEL(Mapnel) CY(IUVALCY) Lettres Dispatchées(Lysrua) Structure Métaphorique(D⦾MIN⦿'s)",
       synonym: "AURNELCY",
       pronunce: "Français /oʁ.nɛl.si/ English /ɔːɹ.nəl.si/",
-      surnatural: "Invoquer ⟁URNELCY est pure folie."
+      surnatural: "Invoquer ⟁URNELCY est pure folie.",
+      version: "AURNELCY, aurnelcyen, aurnelcyenne, aurnelcyens, aurnelcyennes"
     },
     {
       term: "Fenekohq",
@@ -15346,7 +15666,8 @@ window.warsData = [
       parent: "⟁URNELCY",
       etymology: "Ma(Monoa-Admagcoq) pnel(Polyz-Nezkelwac[N-ezrog, E-keline, L-eqwa])",
       synonym: "ℳ𝒶𝓅𝓃ℯ𝓁",
-      pronunce: "Français /map.nɛl/ English /ˈmæp.nəl/"
+      pronunce: "Français /map.nɛl/ English /ˈmæp.nəl/",
+      version: "Mapnélien, Mapnéliens, Mapnélienne, Mapnéliennes, Mapnélo"
     },
     {
       term: "IUVALCY",
@@ -15356,7 +15677,8 @@ window.warsData = [
       desc: "Fostrah, UiNo, Uewij",
       parent: "⟁URNELCY",
       etymology: "I(Ligne) UV(Aiguisement) AL(Chaise) CY(Conscience V Levée)",
-      pronunce: "Français /ju.val.si/ English /ˈjuː.væl.si/"
+      pronunce: "Français /ju.val.si/ English /ˈjuː.væl.si/",
+      version: "Iuvalcien, Iuvalciens, Iuvalcienne, Iuvalciennes, Iuvalco, IUVALCIUM"
     },
     {
       term: "ARc⟁diA",
@@ -15367,7 +15689,8 @@ window.warsData = [
       parent: "⟁URNELCY",
       etymology: "Arc, Arcade",
       synonym: "Arcadia",
-      pronunce: "Français /aʁ.ka.dja/ English /ɑːrˈkeɪ.di.ə/"
+      pronunce: "Français /aʁ.ka.dja/ English /ɑːrˈkeɪ.di.ə/",
+      version: "Arcadien, Arcadien, Arcadienne, Arcadiennes, Arcado"
     },
     {
       term: "Aursyl",
@@ -15378,7 +15701,8 @@ window.warsData = [
       parent: "⟁URNELCY",
       etymology: "Aura, Réunion",
       synonym: "𝔄𝔲𝔯𝔰𝔶𝔩",
-      pronunce: "Français /ɔʁ.sil/ English /ˈɔːɹ.sɪl/"
+      pronunce: "Français /ɔʁ.sil/ English /ˈɔːɹ.sɪl/",
+      version: "Aursylien, Aursyliens, Aursylienne, Aursyliennes, Aursylo"
     },
     {
       term: "Lysrua",
@@ -15388,7 +15712,8 @@ window.warsData = [
       desc: "Ø",
       parent: "⟁URNELCY",
       etymology: "Aursyl Inversé",
-      pronunce: "Français /lis.ʁɥa/ English /ˈlɪs.ruː.ə/"
+      pronunce: "Français /lis.ʁɥa/ English /ˈlɪs.ruː.ə/",
+      version: "Lysruéen, Lysruéens, Lysruéenne, Lysruéennes, Lysro"
     },
     {
       term: "D⦾MIN⦿'s",
@@ -15399,20 +15724,24 @@ window.warsData = [
       parent: "⟁URNELCY",
       etymology: "Domicile, Domination, Domino",
       synonym: "DOMINO's",
-      pronunce: "Français /dɔ.mi.noz/ English /ˈdɒ.mɪ.noʊz/"
+      pronunce: "Français /dɔ.mi.noz/ English /ˈdɒ.mɪ.noʊz/",
+      version: "DOMINO, DOMINOS, DOMINION, DOMINIONS"
     },
     {
       term: "Héros/Héroïne",
       category: ["Mapnel", "Persona", "Supervision", "Supernova"],
       definition: "Figure célèbre et admirable de combat et d'adversité, on en raconte la fulgurance iconique de sa vie.",
-      etymology: "Chef/Demi-Dieu"
+      etymology: "Chef/Demi-Dieu",
+      version: "Hero, Heroine"
     },
     {
       term: "Pérégrination",
       category: ["Mapnel", "Cueillette"],
       definition: "Long voyage sinueux en région reculée des habitudes routinières aisées.",
       etymology: "Voyage Lointain",
-      synonym: "Périple, Pèlerinage, Expédition, Cheminement, Odysée, Errance"
+      synonym: "Périple, Pèlerinage, Expédition, Cheminement, Odysée, Errance",
+      version: "Pérégrinations, Pérégriner"
+
     },
     {
       term: "Monoa-Polyz",
@@ -15420,7 +15749,8 @@ window.warsData = [
       definition: "Être et Devenir Monom&Polyp et Monop%Polym.",
       implication: "Animation originale[-] Au format vedette[Polyz] À toile de fond[Monoa].",
       simplified: "Matière Corde Passage ou Déploiement Énergique",
-      synonym: "𝙼𝚘𝚗𝚘𝚊-𝙿𝚘𝚕𝚢𝚣(Monospace)"
+      synonym: "𝙼𝚘𝚗𝚘𝚊-𝙿𝚘𝚕𝚢𝚣(Monospace)",
+      version: "Moa&Poz, M&P"
     },
     {
       term: "Monom/Mono-Mémoire",
@@ -15428,7 +15758,8 @@ window.warsData = [
       definition: "Éternité Homogène Singulière/Sensation vivante d'expérimenter une manifestation perpétuelle.",
       implication: "Une fermeture des coulisses n'achève pas la vie. Monom implique Polyp (Monom&Polyp)",
       simplified: "Être Mouvant",
-      synonym: "Unité, Unique, Central, Rétention, Enfermement"
+      synonym: "Unité, Unique, Central, Rétention, Enfermement",
+      version: "Monom, Mono-Mémoire"
     },
     {
       term: "Polyp/Poly-Projection",
@@ -15436,7 +15767,8 @@ window.warsData = [
       definition: "Recommencement Hétérogène Pluriel/Sensation vivante d'expérimenter une actualisation cordiale.",
       implication: "L'ouverture des erreurs adapte le rythme d'une vie. Polyp implique Monom (Monom&Polyp)",
       simplified: "Devenir Renouvelé",
-      synonym: "Fraction, Multiple, Décentral, Éclattement, Dispersion"
+      synonym: "Fraction, Multiple, Décentral, Éclattement, Dispersion",
+      version: "Polyp, Poly-Projection"
     },
     {
       term: "&(Terla)",
@@ -15444,7 +15776,8 @@ window.warsData = [
       definition: "Reflet fortificateur de la boucle entre Monom et Polyp.",
       implication: "Instructrice régulatrice de la sensation vivante expérientielle.",
       desc: "Terla est représenté en anneau pendentif.",
-      synonym: "Jonction, Stabilité, Composition, Conteneur, Concentration"
+      synonym: "Jonction, Stabilité, Composition, Conteneur, Concentration",
+      version: "Terla"
     },
     {
       term: "Monom&Polyp",
@@ -15452,28 +15785,32 @@ window.warsData = [
       definition: "État/Dynamique intemporelle où être et devenir sont entrelacés dans une communion harmonieuse.",
       simplified: "Mémoire nourricière permanente & Projection épisodique cyclique ou Laisser Ouvert",
       synonym: "ℳℴ𝓃ℴ𝓂🙵𝒫ℴ𝓁𝓎𝓅(Cursive), Mom&Pop, MM&PP",
-      pronunce: "MTP, monomennepolype, monome-terla-polype"
+      pronunce: "MTP, monomennepolype, monome-terla-polype",
+      version: "Mom&Pop"
     },
     {
       term: "Monop/Mono-Prohibition",
       category: ["Aursyl", "Vydnitt", "Monoa-Polyz", "Persona", "Cueillette"],
       definition: "Éternité Inhibée Figée/Non-réconciliation rugueuse d'afistoler le menu classique des attributions déterminées.",
       implication: "Dépiction survivante d'un échec ultime et de son insolubilité funeste. Monop implique Polym (Monop%Polym)",
-      simplified: "Être Surchargé"
+      simplified: "Être Surchargé",
+      version: "Monop, Mono-Prohibition"
     },
     {
       term: "Polym/Poly-Malaise",
       category: ["Aursyl", "Vydnitt", "Monoa-Polyz", "Phénotype", "Supernova"],
       definition: "Recommencement Excité Troublé/Non-réajustement raboteux avec la sécession globale.",
       implication: "Déconstruction survivante de la santé en vue d'opérations autres. Polym implique Monop (Monop%Polym)",
-      simplified: "Devenir Perturbé"
+      simplified: "Devenir Perturbé",
+      version: "Polym, Poly-Malaise"
     },
     {
       term: "%(Derla)",
       category: ["Aursyl", "Vydnitt", "Monoa-Polyz", "Phénomène", "Supervision"],
       definition: "Scission Démolisseuse de la sangle entre Monop et Polym.",
       implication: "Obstructrice dispatcheuse atrophiante de la vitalité juvénile.",
-      desc: "Derla est représenté en boulet de forçat."
+      desc: "Derla est représenté en boulet de forçat.",
+      version: "Derla"
     },
     {
       term: "Monop%Polym",
@@ -15481,7 +15818,8 @@ window.warsData = [
       definition: "État/Dynamique contractée où être et devenir sont imbriqués dans une déperdition rupturante.",
       simplified: "Prohibition affamante saturée % Malaise apathique déclinant ou Prendre au Piège",
       synonym: "𝔐𝔬𝔫𝔬𝔭%𝔓𝔬𝔩𝔶𝔪(Fraktur), Mop%Pom, MP%PM",
-      pronunce: "MDP, monopeourpolyme, monope-derla-polyme"
+      pronunce: "MDP, monopeourpolyme, monope-derla-polyme",
+      version: "Mop%Pom"
     },
     {
       term: "Monstre 0",
@@ -15490,7 +15828,8 @@ window.warsData = [
       implication: "Empreinte animale au milieu de la naissance et du décès plongée à la fois dans une clarté spécifique et un flou intersidéral.",
       simplified: "Toute créature concernée par la vie et la mort.",
       synonym: "M0nstre, Mont0, Animalia",
-      surnatural: "Chair répondant au Comment au travers d'une instantanéité définie."
+      surnatural: "Chair répondant au Comment au travers d'une instantanéité définie.",
+      version: "M0nstre, Monstruosité, Monstruosité 0, Monstruosités, Monstruosités 0"
     },
     {
       term: "Dévore-Novice",
@@ -15500,14 +15839,16 @@ window.warsData = [
       simplified: "Colonisateur d'apprentis-novices vers la déflagration de leur consciences.",
       desc: "Il est décrit comme ayant 2 mains 2 pieds 2 yeux 2 oreilles 1 nez 1 bouche.",
       synonym: "Tyran, Despote, Imposteur, Crapule, Aliénatueur, Assassin du Sens, Fumée Noire, Déchu, Marque de Fabrique",
-      surnatural: "Putschiste de Dieu déguisé en celui-ci injoncteur du Pourquoi capable de ruiner au moins un millier de personnes de leur soutien servile consenti par la délégation."
+      surnatural: "Putschiste de Dieu déguisé en celui-ci injoncteur du Pourquoi capable de ruiner au moins un millier de personnes de leur soutien servile consenti par la délégation.",
+      version: "Dévore-Novicien, Dévore-Novicienne, Dévore-Noviciens, Dévore-Noviciennes"
     },
     {
       term: "Ventriloque",
       category: ["Aursyl", "Fostrah", "Persona", "Supervision"],
       definition: "Bagarreur de fortune d'un manque irascible, sous une expression difforme de la faim au détriment de l'organisme intégral.",
       implication: "Partisans compétiteurs de l'entendement dévore-novice comme loisir obsessionnel.",
-      synonym: "Subission de son désir sans SOS"
+      synonym: "Subission de son désir sans SOS",
+      version: "Ventriloquien"
     },
     {
       term: "Admagcoq",
@@ -15518,7 +15859,8 @@ window.warsData = [
     {
       term: "Enquête",
       category: ["Mapnel", "Aursyl", "Lysrua", "Xyfurn", "Supervision", "Codex", "Cueillette"],
-      definition: "Stimulation interrogative explorative autosuffisante dont l'accoutumance ne rend jamais de marbre."
+      definition: "Stimulation interrogative explorative autosuffisante dont l'accoutumance ne rend jamais de marbre.",
+      version: "Enquêtes, Enquêter"
     },
     {
       term: "Directions Souveraines",
@@ -15529,13 +15871,15 @@ window.warsData = [
       term: "Illusion",
       category: ["Mapnel", "IUVALCY", "UiNo", "Xyfurn", "Phénomène", "Phénotype"],
       definition: "Filtre stimulant clos intrapersonnel ouvert à ambiguïté interpersonnel.",
-      implication: "Ample enchaînement de tensions multi-perspectives."
+      implication: "Ample enchaînement de tensions multi-perspectives.",
+      version: "Illusions"
     },
     {
       term: "Atelier Ataraxial",
       category: ["Mapnel", "Xyfurn", "Codex", "Parc"],
       definition: "Accroissement progressif des facultés de tolérance actives vers des vertus passives.",
-      simplified: "Culture musculaire de paix intérieure."
+      simplified: "Culture musculaire de paix intérieure.",
+      version: "Atelier"
     },
     {
       term: "Fluide Élémentaire",
@@ -15573,14 +15917,16 @@ window.warsData = [
       implication: "Marcheur de son propre sentier s'écartant du coin de l'action définit par la réprimande répressive.",
       simplified: "Toute créature concernée par l'engagement.",
       synonym: "NauC",
-      surnatural: "Chair répondant au Pourquoi au travers d'une maturation indéfinie."
+      surnatural: "Chair répondant au Pourquoi au travers d'une maturation indéfinie.",
+      version: "Naustre, Naustrique, Naustriques, Naustral, Naustricité"
     },
     {
       term: "Palpiter de l'Infini",
       category: ["Mapnel", "Nezrog", "Mouet-Pouet", "Codex"],
       definition: "Battre, disposer l'énergie microcosmique transmutée dans la grandeur macrocosmique.",
       implication: "Acceptation radicale de la totalité, se posant sans surcharge ajoutée les choses appelées à jouer en toute circonstance.",
-      synonym: "PIII"
+      synonym: "PIII",
+      version: "Palpiter"
     },
     {
       term: "Semaine Sublime",
@@ -15602,7 +15948,8 @@ window.warsData = [
       category: ["Mapnel", "Ekeline", "Phénomène", "Cueillette"],
       definition: "Odeur épaisse de mort où la fragilité s'expose à coup sûr tôt ou tard.",
       implication: "Véhicule des sentiments souvent extrêmement impactants et brutaux.",
-      synonym: "Mortalité, Létalité, Alerte, Clouage, Larguage, Démunion, Rendez-Vous"
+      synonym: "Mortalité, Létalité, Alerte, Clouage, Larguage, Démunion, Rendez-Vous",
+      version: "Macabre, Macabrismes, Macabriste, Macabristes, Macabrique, Macabriques"
     },
     {
       term: "Gaunie",
@@ -15610,7 +15957,8 @@ window.warsData = [
       definition: "Gaieté unie réveilleuse en plénitude médiale, prolongement des angles latéraux en toute finesse.",
       parent: "Bouquet Gaunique, Instances Gauniques(Reptilien, Sifflet, ARvers-Xoi, Innokcien)",
       etymology: " La Gaunie [4-3 Instances] ⟷ L'Agonie [2-1 Instance(s)]",
-      surnatural: "Jauge de Concetration Unitaire"
+      surnatural: "Jauge de Concetration Unitaire",
+      version: "Gaunico, Gaunique"
     },
     {
       term: "Florescence",
@@ -15623,7 +15971,8 @@ window.warsData = [
       category: ["Mapnel", "Ekeline", "Persona", "Codex", "Concepteur"],
       definition: "Dispossédé médiateur reptilien rapetissant les inadvertances par la magnificence de sa trempe.",
       simplified: "Instance témoin à la sagacité holistique des ensembles.",
-      etymology: "Innocence"
+      etymology: "Innocence",
+      version: "Innokciens, Innokcienne, Innokciennes"
     },
     {
       term: "EntroPied",
@@ -15636,14 +15985,16 @@ window.warsData = [
       category: ["Mapnel", "Wacwe", "Supervision", "Codex", "Cipher"],
       definition: "Pertinence exemplaire dont l'admiration foudroie de respect et de tenue civilisatrice.",
       implication: "Dextérité interceptrice des forces de discorde et d'affaiblissement.",
-      synonym: "Cloche, Cerceau, Poche, Hameçon, Échet"
+      synonym: "Cloche, Cerceau, Poche, Hameçon, Échet",
+      version: "Filets"
     },
     {
       term: "Picol-Kentron",
       category: ["Mapnel", "Wacwe", "Cueillette", "Tablette", "Museum", "Parc", "Citadel"],
       definition: "Schéma de multiplicité des rôles, fonctions interprétées par cercles s'empilant par objectifs •RGB•BNG•",
       implication: "Chaque couleur poursuit un rapport étroit avec l'intégralité fonctionnel et fondamentale.",
-      etymology: "(Pi: Cercle Circulaire) - (Col: Color/Couleur) - (Kentron: Aiguillon/Pointe)"
+      etymology: "(Pi: Cercle Circulaire) - (Col: Color/Couleur) - (Kentron: Aiguillon/Pointe)",
+      version: "Kentronien, Kentroniens, Kentronienne, Kentroniennes"
     },
     {
       term: "Chromel",
@@ -15656,72 +16007,85 @@ window.warsData = [
     {
       term: "Fon:Rel:Inc",
       category: ["Mapnel", "Vydnitt", "Monoa-Polyz", "Spherµ", "Codex", "Trinité", "Tablette"],
-      definition: "=Trinité Clinique= [Littérale]｜Fondations - Relativité - Inclinaisons (Rythme Minceur)"
+      definition: "=Trinité Clinique= [Littérale]｜Fondations - Relativité - Inclinaisons (Rythme Minceur)",
+      version: "F:R:I"
     },
     {
       term: "Fondations",
       category: ["Mapnel", "Vydnitt", "Persona", "Museum"],
-      definition: "=Fon:Rel:Inc= [Z-A]｜Solides associés à [Monoa]. Mosaïque d'amplitude vécue répondant par [Polyz]."
+      definition: "=Fon:Rel:Inc= [Z-A]｜Solides associés à [Monoa]. Mosaïque d'amplitude vécue répondant par [Polyz].",
+      version: "Fondation, Fonder"
     },
     {
       term: "Inclinaisons",
       category: ["Mapnel", "Vydnitt", "Supervision", "Parc"],
-      definition: "=Fon:Rel:Inc= [A-Z]｜Espaces associés à [Polyz]. Palette d'actions concevables traduites par [Monoa]."
+      definition: "=Fon:Rel:Inc= [A-Z]｜Espaces associés à [Polyz]. Palette d'actions concevables traduites par [Monoa].",
+      version: "Inclinaison, Inclination, Inclinations, Incliner"
     },
     {
       term: "Relativité",
       category: ["Mapnel", "Vydnitt", "Phénotype", "Mouet-Pouet", "Citadel"],
-      definition: "=Fon:Rel:Inc= [AZ-ZA]｜Marge de relief associé à [Variable -]. Fluctuation accouchée des continuités inexorables [Monoa-Polyz]."
+      definition: "=Fon:Rel:Inc= [AZ-ZA]｜Marge de relief associé à [Variable -]. Fluctuation accouchée des continuités inexorables [Monoa-Polyz].",
+      version: "Relativités"
     },
     {
       term: "Scé;Syn;Cel",
       category: ["Mapnel", "Fostrah", "UiNo", "Uewij", "Monoa-Polyz", "Spherµ", "Codex", "Trinité", "Tablette"],
-      definition: "=Trinité Empirique= [Numérale]｜Scénario - Syndrome - Cellules (Symétrie Pinceuse)"
+      definition: "=Trinité Empirique= [Numérale]｜Scénario - Syndrome - Cellules (Symétrie Pinceuse)",
+      version: "S;S;C"
     },
     {
       term: "Scénario",
       category: ["Mapnel", "Fostrah", "Cueillette", "Museum"],
-      definition: "=Scé;Syn;Cel= [9-1]｜Affaires associés à [Monoa]. Plateau de terrain étendue prolongé par [Polyz]."
+      definition: "=Scé;Syn;Cel= [9-1]｜Affaires associés à [Monoa]. Plateau de terrain étendue prolongé par [Polyz].",
+      version: "Scénarios, Scénariser"
     },
     {
       term: "Cellules",
       category: ["Mapnel", "Uewij", "Cipher", "Parc"],
-      definition: "=Scé;Syn;Cel= [1-9]｜Chaînes associés à [Polyz]. Carreaux de dalles pratiquables portés par [Monoa]."
+      definition: "=Scé;Syn;Cel= [1-9]｜Chaînes associés à [Polyz]. Carreaux de dalles pratiquables portés par [Monoa].",
+      version: "Cellule, Cellulier, Celluliers"
     },
     {
       term: "Syndrome",
       category: ["Mapnel", "UiNo", "Phénomène", "Mouet-Pouet", "Citadel"],
-      definition: "=Scé;Syn;Cel= [00-10]｜Intervalle de mesure associé à [Variable -]. Morceau arrangé des chroniques implacables [Monoa-Polyz]."
+      definition: "=Scé;Syn;Cel= [00-10]｜Intervalle de mesure associé à [Variable -]. Morceau arrangé des chroniques implacables [Monoa-Polyz].",
+      version: "Syndromes, Syndromatique, Syndromatiques"
     },
     {
       term: "Équation d'Efficacité Inanitoire",
       category: ["Aursyl", "Fostrah", "Codex", "Cipher", "Museum"],
       definition: "Calcul scripté pour résulter une détermination à la servitude sous les leviers du contrôle des richesses et la falsification identitaire.",
-      synonym: "EEI, Science Inanitoire, Bricole du 0, Inanité Religieuse"
+      synonym: "EEI, Science Inanitoire, Bricole du 0, Inanité Religieuse",
+      version: "EEI, Science Inanitoire, Bricole du 0, Bricolage du 0, Inanité Religieuse"
     },
     {
       term: "Flingue",
       category: ["Aursyl", "UiNo", "Supernova", "Citadel"],
       definition: "Arme neutralisatrice d'emprise comportementale et psychologique, menace mutilatoire liquidatrice d'intrus en cadavres muets.",
-      synonym: "Revolver, Fusil, Calibre, Troueur, Railgun, Perforant"
+      synonym: "Revolver, Fusil, Calibre, Troueur, Railgun, Perforant",
+      version: "Flingues, Flingueur, Flingueurs, Flingueuse, Flingueuses, Flinguer"
     },
     {
       term: "Trompette",
       category: ["Aursyl", "Uewij", "Mouet-Pouet", "Supervision", "Parc"],
       definition: "Arme jugulatrice d'emprise attentionnelle et épistémologique, menace exilatoire plaqueuse de volontés en valises malléables.",
-      synonym: "Turbine, Klaxon, Sonnerie, Couvre-Feu, Intimidateur, Convocation"
+      synonym: "Turbine, Klaxon, Sonnerie, Couvre-Feu, Intimidateur, Convocation",
+      version: "Trompettes"
     },
     {
       term: "Mélodie Inépelable",
       category: ["Mapnel", "Nezrog", "Ekeline", "Wacwe", "Mouet-Pouet", "Cipher"],
       definition: "Composition arrangée sans commandement en cohésion organique souple.",
-      synonym: "Méline"
+      synonym: "Méline",
+      version: "Méline"
     },
     {
       term: "Sfivoq",
       category: ["Mapnel", "Leqwa", "Persona"],
       definition: "Dauphin bouillonant d'exaltation, symbolique de l'initiation vitale de déferlantes affirmations cordiales.",
-      desc: "Larmes de Vitalité, 4 Évents Lévitation, Corne en Fusion, 100 Nageoires, 3 Yeux Néons RGB, Peau Grise, Taille de 9 Mètres"
+      desc: "Larmes de Vitalité, 4 Évents Lévitation, Corne en Fusion, 100 Nageoires, 3 Yeux Néons RGB, Peau Grise, Taille de 9 Mètres",
+      version: "Sfivoqs"
     },
     {
       term: "Duel Xceptionnel",
@@ -15806,13 +16170,14 @@ window.warsData = [
       definition: "Voilier 1234 traversant la culture (1 - 2 - 3 - 4).",
       implication: "Ce qui ne bouge pas et fait que le village voile à ce qu'on dit.",
       simplfied: "Silence au devoir sans savoir.",
-      desc: "Représenté par la cachoterie ayant un lien étroit avec le coquin."
+      desc: "Représenté par la cachoterie ayant un lien étroit avec le coquin.",
+      version: "Veldiaçien, Veldiaçiens, Veldiaçienne, Veldiaçiennes"
     },
     {
       term: "Veldiac Jtie",
       category: ["Mapnel", "Fostrah", "Phénotype", "Supervision"],
       definition: "Voilier !:?# [Monom&Polyp] épanouissant la culture (Impulsion - Transmission - Questionnement - Action).",
-      synonym: "Veldiac Mapnélien"
+      synonym: "Veldiac Mapnélien",
     },
     {
       term: "Veldiac AL",
@@ -15824,12 +16189,14 @@ window.warsData = [
       term: "Veldiac AJtieL",
       category: ["Mapnel", "IUVALCY", "UiNo", "Cueillette"],
       definition: "Voilier [Monom&Polyp]~=~[Critheçiel] réalisant la culture.",
-      synonym: "Veldiac Mapnélo-Iuvalcien"
+      synonym: "Veldiac Mapnélo-Iuvalcien",
+      version: "AJtieL"
     },
     {
       term: "Ganie",
       category: ["IUVALCY", "Uewij", "Supernova", "Cueillette"],
-      definition: "Hors-ganisme alias aux couches plus lointaines que l'organologie actuelle."
+      definition: "Hors-ganisme alias aux couches plus lointaines que l'organologie actuelle.",
+      version: "Ganico, Ganique"
     },
     {
       term: "GaunieGanie",
@@ -15837,10 +16204,11 @@ window.warsData = [
       definition: "Gaieté Hors-ganique.",
       etymology: "Gaunie+Ganie pouvant se dire à l'avers ou à revers.",
       synonym: "Extase, Félicité, Transe",
-      meme: "Gaunico=Ganique/Ganico=Gaunique"
+      meme: "Gaunico=Ganique/Ganico=Gaunique",
+      version: "Gaunico=Ganique, Ganico=Gaunique"
     },
     {
-      term: "CritHaïe",
+      term: "CritHAïe",
       category: ["IUVALCY", "Fostrah", "UiNo", "Uewij", "Tôhla", "Cipher"],
       definition: "Comment puis-je te le dire ?",
       implication: "Il s'agit de nous qui ne sont pas nôtres.",
@@ -15860,18 +16228,21 @@ window.warsData = [
       term: "Goalois(e)",
       category: ["IUVALCY", "Fostrah", "Persona", "Phénomène"],
       definition: "Solution Miscible Immiscible plongée dans le circuit du sens.",
-      etymology: "Gaulois-Goal Polyphonie"
+      etymology: "Gaulois-Goal Polyphonie",
+      version: "Goalois, Goaloise, Goaloises"
     },
     {
       term: "Möbius Netwow",
       category: ["IUVALCY", "UiNo", "Supernova", "Spherµ", "Citadel"],
-      definition: "Site cousu décousu d'entendement domestique gouvernant."
+      definition: "Site cousu décousu d'entendement domestique gouvernant.",
+      version: "Netwow, Netwower, Netwowers"
     },
     {
       term: "PROTAGONISM",
       category: ["IUVALCY", "UiNo", "Leqwa", "Concepteur"],
       definition: "Pouvoir affirmatif du défi continuel vers une forme de vie irréductible et croissante.",
-      synonym: "Ganique(profusée)"
+      synonym: "Ganique(profusée)",
+      version: "Protagoniste, Protagonique, Protagoniques"
     },
     {
       term: "Crith",
@@ -15883,7 +16254,8 @@ window.warsData = [
       category: ["ARc⟁diA", "Mouet-Pouet", "Cipher"],
       definition: "Awkward.",
       etymology: "awk = ambigu｜ward = direction spaciale/temporelle",
-      synonym: "Étrange, Maladroit, Embarassant, Difficile, Gênant, Délicat, Fâcheux, Lourd"
+      synonym: "Étrange, Maladroit, Embarassant, Difficile, Gênant, Délicat, Fâcheux, Lourd",
+      version: "Awkward"
     },
     {
       term: "ZooZaZe",
@@ -15895,21 +16267,24 @@ window.warsData = [
       category: ["ARc⟁diA", "Logjēm", "Supervision", "Supernova"],
       definition: "Hostilité macabrique affranchie des lois établies ensemanceuse de plosions imparables.",
       simplified: "Jeu du Cou Menacé",
-      synonym: "JooQ, SWOT, Compétition, Violence, Agitation"
+      synonym: "JooQ, SWOT, Compétition, Violence, Agitation",
+      version: "JooQooBoos, JooQooBien, JooQooBiens, JooQooBienne, JooQooBiennes"
     },
     {
       term: "aLIaKKaHH",
       category: ["ARc⟁diA", "Slacpi°", "Ekeline", "Phénotype", "Cueillette"],
       definition: "Dissolution affiliatrice affranchie des coercitions prescrites enrôleuse d'horizons inexplorés.",
       simplified: "Alimentation Accentueuse de Soulagement",
-      synonym: "aLIa, SCAMPER, Coopération, Douceur, Calme"
+      synonym: "aLIa, SCAMPER, Coopération, Douceur, Calme",
+      version: "aLIaKKaHHs, aLIaKKien, aLIaKKiens, aLIaKKienne, aLIaKKiennes"
     },
     {
       term: "eRUeGGeHH",
       category: ["ARc⟁diA", "Nezrog", "Phénomène"],
       definition: "Passage didactique affranchie des limitations formées animateur d'exterrogations impénétrables.",
       simplified: "Éruption Égayeuse d'Interpellations",
-      synonym: "eRUe, QQOQCCP, Congruence, Proportion, Médiation"
+      synonym: "eRUe, QQOQCCP, Congruence, Proportion, Médiation",
+      version: "eRUeGGeHHs, eRUeGGien, eRUeGGiens, eRUeGGienne, eRUeGGiennes"
     },
     {
       term: "Letricot",
@@ -15926,10 +16301,11 @@ window.warsData = [
       meme: "Désolé tu n'es plus Urflosien… Tu ne l'as jamais été, à vrai dire. Je t'ai mal jugé."
     },
     {
-      term: "fântomiseur/phantomizer",
+      term: "fantômiseur/phantomizer",
       category: ["ARc⟁diA", "Slacpi°", "Persona", "Mouet-Pouet", "Cipher", "Cueillette"],
       definition: "Il m'en bouche un coin, je voudrai effectivement une diarrhée pérenne.",
-      implication: "Je t'ai démasqué petit cachotier, voilà un fantôme, ça existe pour de vrai ouuahhh!!"
+      implication: "Je t'ai démasqué petit cachotier, voilà un fantôme, ça existe pour de vrai ouuahhh!!",
+      version: "fantômiseur, phantomizer, fantômiste, fantômistes, fantômisation, fantômisé, fantômisés, fantômisée, fantômisées"
     },
     {
       term: "~Monom&moceM~🙵~Polyp&pocuP~",
@@ -15954,13 +16330,15 @@ window.warsData = [
       term: "SP⟁RK",
       category: ["ARc⟁diA", "Tôhla", "Supernova", "Spherµ", "Museum", "Parc", "Citadel"],
       definition: "System, Purpose, and the Awkward Realm of Kindred",
-      synonym: "SPARK, Société, Énergie, Généalogie"
+      synonym: "SPARK, Société, Énergie, Généalogie",
+      version: "SPARK"
     },
     {
       term: "Câble/Wire",
       category: ["ARc⟁diA", "Aursyl", "Logjēm", "Slacpi°", "Phénomène", "Supervision", "Codex"],
       definition: "Le destin t'a choisi, ta vie a un sens, tu as besoin de ceci ou cela XD.",
-      implication: "Scepticisme de l'artificialité."
+      implication: "Scepticisme de l'artificialité.",
+      version: "Câble, Câbles, Wire, Wires, Wired, Wiring, Câblage, Câblé, Câblée, Cablés, Cablées"
     },
     {
       term: "InfiNieR",
@@ -15974,7 +16352,8 @@ window.warsData = [
       definition: "Le pouvoir dévoriste n'est que blehdwo, tu connais maintenant, tu es prêt pour la vie!",
       implication: "Librairie Ludothèque Hourra! Comédie ou Tragédie ?",
       synonym: "Blehdwo, t'attends quoi?, Bruh, What the Fuck, Incompréhension",
-      meme: "C'est les livres. C'est la musique. C'est la culture. Toute la merde du monde. Ceux que vous souhaitiez jusqu'à présent."
+      meme: "C'est les livres. C'est la musique. C'est la culture. Toute la merde du monde. Ceux que vous souhaitiez jusqu'à présent.",
+      version: "Blehdwo"
     },
     {
       term: "Tra§Vel",
@@ -15984,7 +16363,8 @@ window.warsData = [
       simplified: "Dose d'altérité réaliste et utopique sous les moyens du bord et du fond.",
       parent: "Travail, Veldiac",
       etymology: "English Travel (Français Voyager)",
-      meme: "Ça n'existe pas à ce qu'on dit."
+      meme: "Ça n'existe pas à ce qu'on dit.",
+      version: "Tra§Veling"
     },
     {
       term: "Gorgeous Raper",
@@ -16035,7 +16415,8 @@ window.warsData = [
       term: "PROjECT SSeCCu$",
       category: ["Aursyl", "UiNo", "Tôhla", "Codex", "Tablette", "Museum", "Parc", "Citadel"],
       definition: "Diagramme colonisé - Revue du succès",
-      implication: "Les règles du succès sous une banière instrumentale co-produite"
+      implication: "Les règles du succès sous une banière instrumentale co-produite",
+      version: "SSeCCu$, SSeCCuS"
     },
     {
       term: "￣\_(ツ)_/￣",
@@ -16117,14 +16498,16 @@ window.warsData = [
     {
       term: "白𝓒α𐌺心αট黒",
       category: ["Lysrua", "Aursyl", "Logjēm", "Tablette", "Cipher"],
-      definition: "ÉCARLATE ou la Promesse Brisée d'Aursyl/Lysrua."
+      definition: "ÉCARLATE ou la Promesse Brisée d'Aursyl/Lysrua.",
+      version: "ÉCARLATE"
     },
     {
       term: "⼰ㄈ🜆ꡙҼ7",
       category: ["Lysrua", "Aursyl", "Tôhla", "Tablette", "Cipher", "Codex"],
       definition: "SCARLET ou la Déclaration sur papier non-papier.",
       implication: "[Domaine] Sciences & Technologies",
-      parent: "Gliobë"
+      parent: "Gliobë",
+      version: "SCARLET"
     },
     {
       term: "ÇEMiNi!",
@@ -16155,42 +16538,48 @@ window.warsData = [
       category: ["Lysrua", "Aursyl", "Fostrah", "Uewij", "Tablette", "Cipher", "Mouet-Pouet"],
       definition: "VIOLET ou la Prouesse Saugrenue des querelles spectrales.",
       implication: "[Domaine] Société & Vie pratique",
-      parent: "ÇEMiNi!"
+      parent: "ÇEMiNi!",
+      version: "VIOLET"
     },
     {
       term: "Z옹Z야Z웨",
       category: ["Lysrua", "Tôhla", "Trinité", "Tablette"],
       definition: "Trinité Cantinière (J옹Q옹B옹 - 야LI야KK야HH - 웨RU웨GG웨HH)",
       pronunce: "ZongZyaZwe",
-      parent: "ZooZaZe"
+      parent: "ZooZaZe",
+      version: "ZongZyaZwe",
     },
     {
       term: "J옹Q옹B옹",
       category: ["Lysrua", "Mapnel", "Leqwa", "Supervision", "Supernova", "Citadel"],
       definition: "Guerre vectorielle, vasculaire et pronominale à l'encontre de l'exigence ontologique carcérale.",
       pronunce: "옹 = ong (JongQongBong)",
-      synonym: "JooQooBoo MonPol"
+      synonym: "JooQooBoo MonPol",
+      version: "JongQongBong, JooQooBoo MonPol, JooQooBoo Mapnélien"
     },
     {
       term: "야LI야KK야HH",
       category: ["Lysrua", "ARc⟁diA", "UiNo", "Phénotype", "Cueillette", "Concepteur", "Parc"],
       definition: "Paix éthique, syntropique et pronominale à l'inverse de tout modèle dogmatique cruel.",
       pronunce: "야 = ya (yaLIyaKKyaHH)",
-      synonym: "aLIaKKaHH CritHAïe"
+      synonym: "aLIaKKaHH CritHAïe",
+      version: "yaLIyaKKyaHH, aLIaKKaHH CritHAïe, aLIaKKaHH Iuvalcien"
     },
     {
       term: "웨RU웨GG웨HH",
       category: ["Lysrua", "IUVALCY", "Xyfurn", "Phénomène", "Cipher", "Museum"],
       definition: "Émulation existentielle, inestancielle et nominale à revers des édifications définitives invariables.",
       pronunce: "웨 = we (weRUweGGweHH)",
-      synonym: "eRUeGGeHH Blehdwo"
+      synonym: "eRUeGGeHH Blehdwo",
+      version: "weRUweGGweHH, weRUweGGweHH Blehdwo, weRUweGGweHH Arcadien"
     },
     {
       term: "ҨყⰎல",
       category: ["Lysrua", "Aursyl", "UiNo", "Leqwa", "Tablette", "Cipher", "Persona"],
       definition: "CYAN ou la Berceuse du monde au temps de l'incongru.",
       implication: "[Domaine] Alchimie & Humanités",
-      parent: "Z옹Z야Z웨"
+      parent: "Z옹Z야Z웨",
+      version: "CYAN"
     },
     {
       term: "elzel0lezle",
@@ -16198,7 +16587,8 @@ window.warsData = [
       definition: "Ressource supra-kentronienne de garantie en rencontres fortuites grâce à l'arbre de connexion YgijfeV.",
       implication: "Filet interceptant Tra§Vel de la malédiction éternisante des directions cognantes abusives.",
       simplified: "Proximité civilisationnelle au travers de SCARLET, VIOLET, CYAN, ￣\_(ツ)_/￣ et 大ටभᲡⰡ.",
-      synonym: "Paraplay/Armada/Soinnaie/Flawy/Terroga/Hollox"
+      synonym: "Paraplay/Armada/Soinnaie/Flawy/Terroga/Hollox",
+      version: "Elzel, l0l, Lezle"
     },
     {
       term: "大ටभᲡⰡ",
@@ -16209,43 +16599,50 @@ window.warsData = [
     {
       term: "Domaines",
       category: ["Lysrua", "Spherµ", "Codex", "Cueillette", "Museum", "Parc", "Citadel"],
-      definition: "Organigramme des disciplines SCARLET VIOLET et CYAN."
+      definition: "Organigramme des disciplines SCARLET VIOLET et CYAN.",
+      version: "Domaine"
     },
     {
       term: "Articulation Par-ci=Par-là (Mapnélienne)",
       category: ["Mapnel", "Capsule", "Persona", "Supervision", "Supernova"],
       definition: "Esprit - Mental - Corps - Monstre",
-      synonym: "ci=là/Cilà"
+      synonym: "ci=là/Cilà",
+      version: "Par-ci=Par-là"
     },
     {
       term: "Articulation Ecsætera (Iuvalcienne)",
       category: ["IUVALCY", "Capsule", "Phénomène", "Phénotype"],
       definition: "Inanité - Doigté - Estomac - Ganique",
-      synonym: "Jumbo"
+      synonym: "Jumbo",
+      version: "Ecsætera"
     },
     {
       term: "Articulation Link/Age (Arcadienne)",
       category: ["ARc⟁diA", "Capsule", "Museum", "Parc", "Citadel"],
       definition: "Logique - Connection - Engagement - Inspiration - Hummm",
-      synonym: "dotFUL"
+      synonym: "dotFUL",
+      version: "Link/Age"
     },
     {
       term: "Articulation deHist (Aursylienne)",
       category: ["Aursyl", "Capsule", "Persona", "Concepteur"],
       definition: "Investisseur - Inconnu - Intouchable",
-      synonym: "PlumEncre"
+      synonym: "PlumEncre",
+      version: "deHist"
     },
     {
       term: "Articulation KaLeiDo (Lysruéenne)",
       category: ["Lysrua", "Capsule", "Cipher"],
       definition: "OPAL - ALTER - EGO×Ω𝚸𐒰Ⅼ - Æ↰⊥ƎЯ - Ⓔ🇬㊔",
-      synonym: "VIRGINless"
+      synonym: "VIRGINless",
+      version: "KaLeiDo"
     },
     {
       term: "Squelette ZigZag (Dominion)",
       category: ["D⦾MIN⦿'s", "Capsule", "Spherµ", "Cueillette"],
       definition: "0 - 1 - 2 - 3 - 4 - 5 - 6 - 7 - 8 - 9 - A - B - C - D - E - F",
-      synonym: "Indissect"
+      synonym: "Indissect",
+      version: "ZigZag"
     },
     {
       term: "Semaine Hebdomadaire",
@@ -16255,7 +16652,8 @@ window.warsData = [
     {
       term: "Calendrier Grégorien",
       category: ["Aursyl", "Capsule", "Tablette"],
-      definition: "Tableau des 365 jours d'une année Solaire."
+      definition: "Tableau des 365 jours d'une année Solaire.",
+      version: "Grégorien"
     },
     {
       term: "Siane Hebdomadaire",
@@ -16265,14 +16663,17 @@ window.warsData = [
     {
       term: "Calendrier Emmaïe",
       category: ["Lysrua", "Capsule", "Tablette"],
-      definition: "Tableau des 364 jours d'une année Solaire-Lunaire."
+      definition: "Tableau des 364 jours d'une année Solaire-Lunaire.",
+      parent: "CritHAïe",
+      version: "Emmaïe"
     },
     {
       term: "MATRICE 5ync sur 5ync",
       category: ["Mapnel", "IUVALCY", "Tablette", "Capsule", "Codex", "Spherµ", "Cipher"],
       definition: "Symbolisme Pentagrammique 5x20 Mapnélo-Iuvalcien.",
       simplified: "Cinq sur Cinq",
-      synonym: "⛤"
+      synonym: "⛤",
+      version: "5ync sur 5ync"
     },
     {
       term: "MATRICE A6es 6tiques 6colaire",
@@ -16281,7 +16682,8 @@ window.warsData = [
       implication: "Nouveau lore concernant le QI de la bête 666.",
       simplified: "Assises Cystiques si Scolaire",
       etymology: "Siège de l'anomalie de la vessie à l'école",
-      meme: "Quelle chance d'aller aux toilettes!"
+      meme: "Quelle chance d'aller aux toilettes!",
+      version: "A6es 6tiques 6colaire"
     },
     {
       term: "Innok",
@@ -16292,7 +16694,8 @@ window.warsData = [
     {
       term: "Urflosia",
       category: ["D⦾MIN⦿'s", "Logjēm"],
-      definition: "Capitale//Sifflet d'Innok."
+      definition: "Capitale//Sifflet d'Innok.",
+      version: "Urflosien, Urflosiens, Urflosienne, Urflosiennes"
     },
     {
       term: "Rantlot",
@@ -16555,7 +16958,7 @@ window.warsData = [
 
         if (item.meme) {
           const meme = document.createElement('p');
-          meme.textContent = `Phenomème 🗿 ${item.meme}`;
+          meme.textContent = `Phénomème 🗿 ${item.meme}`;
           meme.classList.add('category-meme');
           itemElement.appendChild(meme);
         }
@@ -16565,6 +16968,13 @@ window.warsData = [
           surnatural.textContent = `Surnaturel 🔮 ${item.surnatural}`;
           surnatural.classList.add('category-surnatural');
           itemElement.appendChild(surnatural);
+        }
+
+        if (item.version) {
+          const version = document.createElement('p');
+          version.textContent = `Versions alternatives ≍ ${item.version}`;
+          version.classList.add('category-version');
+          itemElement.appendChild(version);
         }
 
         vocabularyList.appendChild(itemElement);
@@ -16622,6 +17032,7 @@ window.warsData = [
 <script>
 document.addEventListener('DOMContentLoaded', () => {
     const toggles = document.querySelectorAll('.detail-toggle');
+    const toggleAllCheckbox = document.getElementById('toggle-all-check');
 
     function toggleDetailsVisibility(event) {
         // Get the property name from the checkbox's value (e.g., 'implication')
@@ -16640,14 +17051,45 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function updateToggleAllState() {
+        // Check if all detail toggles are checked
+        const allChecked = Array.from(toggles).every(cb => cb.checked);
+        const noneChecked = Array.from(toggles).every(cb => !cb.checked);
+        
+        // Update the "Tout" checkbox state
+        toggleAllCheckbox.checked = allChecked;
+        toggleAllCheckbox.indeterminate = !allChecked && !noneChecked;
+    }
+
+    function toggleAllDetails(event) {
+        const isChecked = event.target.checked;
+        
+        // Toggle all detail checkboxes
+        toggles.forEach(checkbox => {
+            checkbox.checked = isChecked;
+            // Trigger the change event for each checkbox
+            checkbox.dispatchEvent(new Event('change'));
+        });
+        
+        // Update the state
+        updateToggleAllState();
+    }
+
     // Attach the toggle function to all checkboxes
     toggles.forEach(checkbox => {
         checkbox.addEventListener('change', toggleDetailsVisibility);
+        checkbox.addEventListener('change', updateToggleAllState);
         
         // Execute the function once to set the initial state 
         // (elements will be visible since they are 'checked' in the HTML)
         checkbox.dispatchEvent(new Event('change'));
     });
+
+    // Attach the toggle-all function
+    toggleAllCheckbox.addEventListener('change', toggleAllDetails);
+    
+    // Set initial state
+    updateToggleAllState();
 });
 </script>
 
@@ -16931,6 +17373,20 @@ document.addEventListener('DOMContentLoaded', () => {
           term: item.term, 
           definition: item.definition
       });
+      
+      // Add version mappings if versions exist
+      if (item.version) {
+        // Split versions by comma only and trim whitespace
+        const versions = item.version.split(/,/).map(v => v.trim()).filter(v => v);
+        versions.forEach(version => {
+          // Map each version to the main term
+          definitionMap.set(version.toLowerCase(), {
+              term: item.term,
+              definition: item.definition,
+              isVersion: true
+          });
+        });
+      }
     });
 
     const termsToSearch = Array.from(definitionMap.keys());
@@ -17024,7 +17480,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       
       if (node.nodeType === 3) { 
-        if (node.parentNode && !ignoreTags.includes(node.parentNode.tagName) && node.parentNode.tagName !== 'SPAN') {
+        if (node.parentNode && !ignoreTags.includes(node.parentNode.tagName)) {
           handleTextNode(node);
         }
       } else if (node.nodeType === 1 && !ignoreTags.includes(node.tagName)) { 
@@ -17044,30 +17500,34 @@ document.addEventListener('DOMContentLoaded', () => {
       const isWithinTag = /<[^>]+>/.test(newHtml);
       if (isWithinTag) return;
 
-      termsToSearch.forEach((lowerCaseTerm) => {
-        const data = definitionMap.get(lowerCaseTerm);
-        if (!data) return; 
-        
-        // Échappement STRICT pour prendre en charge les émoticônes/caractères non-conventionnels.
-        const escapedTerm = lowerCaseTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-        
-        // CLÉ : On utilise une regex qui recherche le terme entier, et on utilise \b seulement si le terme est "normal"
-        // Le `\\b` (word boundary) ne fonctionne pas pour les caractères non-ASCII ou les symboles. 
-        // L'assertion négative `(?![^<]*>)` garantit qu'on n'est pas déjà dans un tag HTML.
-        
-        // Le terme exact, non délimité par des espaces s'il s'agit d'un caractère non-alphanumérique
-        // La deuxième partie sans \b est pour les termes comme l'émoticône
-        const regex = new RegExp(`(?![^<]*>)\\b(${escapedTerm})\\b|(?![^<]*>)(${escapedTerm})`, 'gi');
-        
-        if (regex.test(newHtml)) {
-          replaced = true;
-          
-          newHtml = newHtml.replace(regex, (match) => {
-            const originalTermWithCorrectCase = data.term || match;
-            return `<span class="definition-link" data-term="${originalTermWithCorrectCase}">${match}</span>`;
-          });
-        }
+      // Au lieu de boucler sur chaque terme et faire un remplacement,
+      // on construit une regex unique avec tous les termes (déjà triés par longueur décroissante)
+      // pour éviter de remplacer un terme qui est déjà parte d'un autre terme plus long
+      
+      const escapedTerms = termsToSearch.map(term => {
+        return term.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
       });
+      
+      // Créer une regex alternée avec tous les termes triés par longueur décroissante
+      // Cela garantit que les termes plus longs sont testés en premier
+      const alternationPattern = escapedTerms.join('|');
+      
+      // Créer la regex qui cherche n'importe quel terme de la liste
+      // On teste d'abord avec \b (word boundary) pour les termes alphanumériques
+      // Ensuite sans \b pour les caractères spéciaux
+      const regex = new RegExp(`(?![^<]*>)\\b(${alternationPattern})\\b|(?![^<]*>)(${alternationPattern})`, 'gi');
+      
+      if (regex.test(newHtml)) {
+        replaced = true;
+        
+        newHtml = newHtml.replace(regex, (match) => {
+          const data = definitionMap.get(match.toLowerCase());
+          if (!data) return match;
+          
+          const originalTermWithCorrectCase = data.term || match;
+          return `<span class="definition-link" data-term="${originalTermWithCorrectCase}">${match}</span>`;
+        });
+      }
 
       if (replaced) {
         // Remplacer le nœud de texte par un fragment qui contient le HTML des <span>
