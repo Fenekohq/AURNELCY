@@ -129,6 +129,14 @@
       color: rgb(0, 0, 255);
     }
 
+    .white-text {
+      color: #EDEAE0;
+    }
+    
+    .black-text {
+      color: black;
+    }
+    
     .grey-text {
       color: rgb(150, 150, 150);
     }
@@ -184,6 +192,11 @@
         font-size: 1.5em;
       }
     }
+
+    button, input, select, textarea {
+      font-family: inherit;
+    }
+
   </style>
 
 
@@ -497,7 +510,6 @@ body.vocab-feature-active .definition-link {
 
   <style>
     .welcome-title {
-      font-family: "Georgia", serif;
       font-size: 12vw;
       text-align: center;
       font-weight: bold;
@@ -507,7 +519,6 @@ body.vocab-feature-active .definition-link {
     }
     
     .welcome-title2 {
-      font-family: "Georgia", serif;
       font-size: 6vw;
       text-align: center;
       font-weight: bold;
@@ -716,12 +727,21 @@ body.vocab-feature-active .definition-link {
       grid-template-columns: 1fr 1fr;
     }
 
+    .rgb-tables3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
     @media screen and (max-width: 768px) {
       .rgb-grid {
         margin-bottom: 64px;
       }
 
       .rgb-tables {
+        grid-template-columns: 1fr;
+      }
+      
+      .rgb-tables3 {
         grid-template-columns: 1fr;
       }
     }
@@ -931,15 +951,17 @@ body.vocab-feature-active .definition-link {
       }
     }
 
-    .duel {
+    .duel-cartel {
       font-size: large;
       text-align: justify;
-      padding: 2em;
+      padding-left: 2em;
+      padding-right: 2em;
     }
 
     @media (max-width: 768px) {
-      .duel {
-        padding: 1em;
+      .duel-cartel {
+        padding-left: 1em;
+        padding-right: 1em;
       }
     }
 
@@ -993,6 +1015,17 @@ body.vocab-feature-active .definition-link {
       }
     }
 
+    .travel2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: 768px) {
+      .travel2 {
+        grid-template-columns: 1fr;
+      }
+    }
+      
     .tirtro-4x4 {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -1018,22 +1051,23 @@ body.vocab-feature-active .definition-link {
       margin: 0 2px;
     }
 
-.typing {
-    border-right: 4px solid var(--text-color);
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 2s steps(13, end), blink-caret 0.5s step-end infinite alternate;
-}
-@-webkit-keyframes typing {
-    from {
-        width: 0;
+    .typing {
+        border-right: 4px solid var(--text-color);
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 2s steps(13, end), blink-caret 0.5s step-end infinite alternate;
     }
-}
-@-webkit-keyframes blink-caret {
-    50% {
-        border-color: transparent;
+
+    @-webkit-keyframes typing {
+        from {
+            width: 0;
+        }
     }
-}
+    @-webkit-keyframes blink-caret {
+        50% {
+            border-color: transparent;
+        }
+    }
 
     .phantomized {
       animation: fade 2s ease-in-out infinite alternate;
@@ -1272,7 +1306,17 @@ body.vocab-feature-active .definition-link {
       }
     }
 
-
+    .charte { 
+      line-height: 1.6;
+      max-width: 600px;
+    }
+    
+    .article {
+      margin-bottom: 20px;
+      border-left: 3px solid currentColor;
+      padding-left: 15px;
+    }
+  
     .joudem-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1334,14 +1378,16 @@ body.vocab-feature-active .definition-link {
 
     .wasteland {
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      justify-items: center;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      text-align: center;
+      max-width: 1200px;
+      padding: 0 20px;
     }
 
-    @media (max-width: 768px) {
-      .wasteland {
-        grid-template-columns: 1fr;
-      }
+    .wasteland p {
+      margin: 0;
+      line-height: 1.6;
     }
 
     .ascii-art {
@@ -1358,6 +1404,23 @@ body.vocab-feature-active .definition-link {
       text-align: justify;
       text-align-last: justify;
     }
+
+    .mirror-delta {
+        display: inline-block;
+        animation: mirror-flip 3s ease-in-out infinite alternate;
+      }
+
+      @keyframes mirror-flip {
+        0% {
+          transform: scaleX(1);
+        }
+        50% {
+          transform: scaleX(0);
+        }
+        100% {
+          transform: scaleX(-1);
+        }
+      }
     
     .quest {
       display: grid;
@@ -1378,20 +1441,20 @@ body.vocab-feature-active .definition-link {
       }
     }
 
-.float {
-    animation: floating 2s linear infinite;
-}
-@keyframes floating {
-    0% {
-        transform: translate(0%, 2%);
+    .float {
+        animation: floating 2s linear infinite;
     }
-    50% {
-        transform: translate(0%, -2%);
+    @keyframes floating {
+        0% {
+            transform: translate(0%, 2%);
+        }
+        50% {
+            transform: translate(0%, -2%);
+        }
+        100% {
+            transform: translate(0%, 2%);
+        }
     }
-    100% {
-        transform: translate(0%, 2%);
-    }
-}
 
     .phodez {
       overflow-x: auto;
@@ -1416,44 +1479,30 @@ body.vocab-feature-active .definition-link {
     }
 
     .respect {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      justify-items: center;
-    }
-
-    @media screen and (max-width: 768px) {
-      .respect {
-        grid-template-columns: 1fr !important;
-        gap: 16px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        justify-items: center;
       }
-    }
 
-    @media screen and (max-width: 896px) {
-      .respect {
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
+      @media screen and (max-width: 1024px) {
+        .respect { grid-template-columns: repeat(2, 1fr); }
       }
-    }
 
-  .respect p {
-    font-size: 1.15em;
-    width: 220px;
-    height: 220px;
-    box-sizing: border-box;
-    text-align: justify;
-    text-align-last: justify;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    word-break: break-word;
-    line-height: 1.3;
-    overflow: auto;
-  }
+      @media screen and (max-width: 600px) {
+        .respect { grid-template-columns: 1fr; }
+      }
 
-  .respect p::after{
-    content: "";
-    display: inline-block;
-    width: 100%;
-  }
+      .respect p {
+        font-size: 1.1em;
+        width: 250px;
+        min-height: 200px; 
+        margin: 0;
+        box-sizing: border-box;
+        text-align: justify;
+        line-height: 1.3;
+        word-break: break-word;
+      }
 
     .gliobe-table {
       table-layout: fixed;
@@ -1465,7 +1514,6 @@ body.vocab-feature-active .definition-link {
       border-radius: 10px;
       border: 1px var(--bg-color);
     }
-
 
     .gliobe-table td:nth-child(1),
     .gliobe-table th:nth-child(1),
@@ -1674,7 +1722,6 @@ body.vocab-feature-active .definition-link {
     }
 
     .mindmap {
-      font-family: sans-serif;
       margin: 2em auto;
       max-width: 1000px;
     }
@@ -1973,8 +2020,11 @@ body.vocab-feature-active .definition-link {
     }
 
     @media screen and (max-width: 768px) {
-      .calendar-week, .calendar-year, .calendar-lunar {
-        width: 200%;
+      .calendar-week {
+        width: 300%;
+      }
+      .calendar-year, .calendar-lunar {
+        width: 500%
       }
     }
 
@@ -2615,49 +2665,74 @@ body.vocab-feature-active .definition-link {
 
   <button id="toggle-vocab-button" type="button" class="category-tag" style="position: fixed; top: 20px; left: 80px; z-index: 2000; font-size: 1em;">🗏</button>
 
+  <button id="fontPickerBtn" class="category-tag" style="position: fixed; top: 20px; right: 70px; z-index: 2000; font-size: 1em;" title="Changer la police">𝐀</button>
+
+<div id="fontPickerDropdown" style="display: none; position: fixed; top: 60px; right: 100px; z-index: 1999; background: var(--bg-color); border: 1px solid var(--text-color); border-radius: 8px; padding: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); width: 220px; max-height: 420px; overflow-y: auto;">
+  <h4 style="margin: 0 0 8px 0; font-size: 0.9em;">Police d'écriture :</h4>
+  <div id="fontList" style="display: flex; flex-direction: column; gap: 4px;"></div>
+</div>
+
+<button id="fontSizeBtn" class="category-tag" style="position: fixed; top: 20px; right: 120px; z-index: 2000; font-size: 1em;" title="Taille du texte">𝐓</button>
+
+<div id="fontSizeDropdown" style="display: none; position: fixed; top: 60px; right: 160px; z-index: 1999; background: var(--bg-color); border: 1px solid var(--text-color); border-radius: 8px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); width: 180px;">
+  <h4 style="margin: 0 0 10px 0; font-size: 0.9em;">Taille du texte :</h4>
+  <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+    <button id="fontSizeMinus" style="width: 36px; height: 36px; border-radius: 6px; border: 1px solid var(--text-color); background: var(--bg-color); color: var(--text-color); font-size: 1.2em; cursor: pointer;">−</button>
+    <span id="fontSizeValue" style="font-size: 0.95em; min-width: 50px; text-align: center;">100%</span>
+    <button id="fontSizePlus" style="width: 36px; height: 36px; border-radius: 6px; border: 1px solid var(--text-color); background: var(--bg-color); color: var(--text-color); font-size: 1.2em; cursor: pointer;">+</button>
+  </div>
+  <button id="fontSizeReset" style="margin-top: 10px; width: 100%; padding: 5px; border-radius: 6px; border: 1px solid var(--text-color); background: var(--bg-color); color: var(--text-color); font-size: 0.85em; cursor: pointer;">Réinitialiser</button>
+</div>
+
+<button id="bookmarkBtn" class="category-tag" style="position: fixed; top: 20px; right: 170px; z-index: 2000; font-size: 1em;" title="Marque-pages">🏷</button>
+
+<div id="bookmarkDropdown" style="display: none; position: fixed; top: 60px; right: 200px; z-index: 1999; background: var(--bg-color); border: 1px solid var(--text-color); border-radius: 8px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); width: 260px; max-height: 400px; overflow-y: auto;">
+  <h4 style="margin: 0 0 10px 0; font-size: 0.9em;">Marque-pages :</h4>
+  <button id="bookmarkAdd" style="width: 100%; padding: 7px; border-radius: 6px; border: 1px solid var(--text-color); background: var(--bg-color); color: var(--text-color); font-size: 0.9em; cursor: pointer; margin-bottom: 10px;">+ Marquer cette position</button>
+  <div id="bookmarkList" style="display: flex; flex-direction: column; gap: 6px;"></div>
+  <p id="bookmarkEmpty" style="font-size: 0.85em; color: var(--text-color); opacity: 0.5; text-align: center; margin: 8px 0 0 0;">Aucun marque-page</p>
+</div>
+
 <!-- Global Detail Visibility Manager -->
 <script>
 window.detailVisibility = {
-    implication: true,
-    simplified: true,
-    desc: true,
-    parent: true,
-    etymology: true,
-    synonym: true,
-    pronunce: true,
-    meme: true,
-    surnatural: true,
-    version: true,
+    implication: true, simplified: true, desc: true, parent: true, 
+    etymology: true, synonym: true, pronunce: true, meme: true, 
+    surnatural: true, version: true,
     
     update() {
-        // Update all active popovers
+        // --- POPOVER (Ta version actuelle) ---
         if (window.activePopovers) {
             window.activePopovers.forEach(popover => {
                 Object.keys(this).forEach(key => {
-                    // Skip method names
                     if (typeof this[key] !== 'boolean') return;
-                    
                     const el = popover.querySelector('[data-detail-type="' + key + '"]');
-                    if (el) {
-                        el.style.display = this[key] ? '' : 'none';
-                    }
+                    if (el) el.style.display = this[key] ? '' : 'none';
                 });
             });
         }
+
+        // --- DICTIONNAIRE (La nouvelle partie) ---
+        Object.keys(this).forEach(key => {
+            if (typeof this[key] !== 'boolean') return;
+            // On ne cherche que les éléments qui ont la classe "detail-item"
+            // Ça protège ta définition qui n'a pas cette classe !
+            const dictElements = document.querySelectorAll('.detail-item.detail-' + key);
+            dictElements.forEach(el => {
+                el.style.display = this[key] ? '' : 'none';
+            });
+        });
     },
     
     setAll(value) {
-      // Only update boolean visibility flags; do not overwrite methods
       Object.keys(this).forEach(key => {
-        if (typeof this[key] === 'boolean') {
-          this[key] = value;
-        }
+        if (typeof this[key] === 'boolean') this[key] = value;
       });
-        this.update();
+      this.update();
     },
     
     set(key, value) {
-        if (key !== 'update' && key !== 'setAll' && key !== 'set') {
+        if (typeof this[key] === 'boolean') {
             this[key] = value;
             this.update();
         }
@@ -2715,9 +2790,6 @@ window.detailVisibility = {
   </div>
 </div>
 
-  <!-- Arcadia References modal open button -->
-  <button id="openArcadiaRefsBtn" class="category-tag" style="position: fixed; top: 20px; right: 80px; z-index: 2000; font-size: 1em;">⟁</button>
-
   <div class="welcome-title">
     ⟁URNELCY
   </div>
@@ -2732,16 +2804,19 @@ window.detailVisibility = {
     La lecture complète du contenu nécessite le langage Français, Anglais et Néologique propre à ⟁URNELCY s'introduisant progressivement au fil du temps.
     Vous devriez donc lire au fur et à mesure les écrits de haut en bas à la manière classique pour saisir la progression du contenu.
     La composition morphologique globale passe de définitions aux écrits aux schèmes aux bilans puis à une réouverture.
-    Le mode paysage est fortement conseillé pour les smartphones. Comprendre les capsules est capital pour s'accotoyer avec le théorème, [Sujet] informe du contenu traité dans chaque œuvre.<br>
+    Le mode paysage est fortement conseillé pour les smartphones. Comprendre les capsules est capital pour s'accoutumer avec le théorème, [Sujet] informe du contenu traité dans chaque œuvre.<br>
     <br>
     Les outils à dispositions sont les suivants:<br>
     - Bouquiner des mots de vocabulaire en haut à gauche [🕮]<br>
     - Surligner le vocabulaire important en haut à gauche [🕶]<br>
     - Activer les définitions dans le texte [🗏]<br>
     - Activer le mode clair/sombre en haut à droite [◐]<br>
+    - Changer la police en haut à droite [𝐀]<br>
+    - Personnaliser la taille du texte [𝐓]<br>
+    - Attribuer des marques-page [🏷]<br>
     - Comprendre des objets culturels divers en haut à droite [⟁]<br>
     - Pointer vers les timestamp importants avec l'ellipse au milieu en haut pour les principaux chapitres<br>
-    - Revenir aux titres dont vous vous êtes arrêté juste en bas de cette note<br>
+    - Naviguer vite grâce au [Sommaire]<br>
     - Trouver des ressemblances et similitudes avec la culture de tout ordre pour une meilleure compréhension dans [Clins d'Œils]<br>
     - S'amuser à voir des connexions cachées [Trivia]<br>
     <br>
@@ -2944,11 +3019,12 @@ window.detailVisibility = {
 
   <details>
     <summary>Hashtags</summary>
+    
     <h2>Tags Courants</h2>
-    Bullshit, Philosophie, Mythologie, Poésie, Mythopoïèse, Lyrisme, Cosmogonie, Worldbuilding, Expérimental, Spiritualité, Épistémologie, Introspection, Réflexion, Transduction, Culture, Langage, Polyphonique, Non-Linéaire, Lecture, Taxonomie, Gnose, Cryptique, Spéculation, Politique, Pamphlet, Anthropologie, Éthique, Surréalisme, Symbolisme, Constructivisme, Holisme, Métaphysique, Hermétisme, Sémiotique, Esotérisme, Mysticisme, Néologisme, Esthétique, Dialectique, Création, Fiction, Sociologie, Critique, Humanisme, Théogonie, Génèse, Anthropogonie, Pensée, Fable, Métaphore, Littérature, Société, Idée, Invention, Glossopoïèse, Mythe, Sagesse, Divin, Théorème, Histoire, Légende, Allégorie, Fantastique, Eschatologie, Existentialisme, Phénoménologie, Dualisme, Monisme<br>
+    Bullshit, Écrit, Philosophie, Mythologie, Poésie, Mythopoïèse, Lyrisme, Cosmogonie, Encyclopédie, Texte, Worldbuilding, Expérimental, Spiritualité, Épistémologie, Introspection, Réflexion, Transduction, Culture, Vocabulaire, Langage, Polyphonique, Non-Linéaire, Lecture, Taxonomie, Gnose, Cryptique, Spéculation, Politique, Pamphlet, Anthropologie, Éthique, Surréalisme, Symbolisme, Constructivisme, Holisme, Métaphysique, Hermétisme, Sémiotique, Ésotérisme, Mysticisme, Néologisme, Esthétique, Dialectique, Création, Fiction, Sociologie, Critique, Humanisme, Théogonie, Génèse, Anthropogonie, Pensée, Fable, Métaphore, Littérature, Société, Idée, Invention, Glossopoïèse, Mythe, Sagesse, Divin, Théorème, Histoire, Légende, Allégorie, Fantastique, Eschatologie, Existentialisme, Phénoménologie, Dualisme, Monisme<br>
 
     <h2>Tags Possiblement Apparents mais Négatifs</h2>
-    Didactique, Pédagogie, Instruction, Moralisme, Amoralisme, Occultisme Dogmatique, New Age, Gnosticisme, Scientisme, Nihilisme, Marxisme, Anarchisme, Idéalisme, Religion, Développement Personnel, Utopisme, Théisme, Postmodernisme Classique, Transhumanisme, Manichéisme, Culte, Ascétisme(pas transcendante), Prophétisme, Message d'Amour Universel, Utilitarisme, Théologie, Académique, Cynisme, Progressisme, Structuralisme, Système<br>
+    Didactique, Pédagogie, Instruction, Moralisme, Amoralisme, Déisme, Occultisme Dogmatique, New Age, Gnosticisme, Scientisme, Nihilisme, Marxisme, Religion, Développement Personnel, Utopisme, Théisme, Postmodernisme Classique, Transhumanisme, Manichéisme, Culte, Ascétisme, Prophétisme, Message d'Amour Universel, Utilitarisme, Théologie, Académique, Cynisme, Progressisme, Structuralisme, Système<br>
 
     <h2>Tags Vocabulaire Auto-Référençant Overview</h2>
     Fostrah - UiNo - Uewij - Vydnitt - Xyfurn - Nezrog - Ekeline - Wacwe・Leqwa - Logjēm - Slacpi° - Tôhla<br>
@@ -2963,11 +3039,13 @@ window.detailVisibility = {
     Fon:Rel:Inc - Fondations - Relativité - Inclinaisons - Scé;Syn;Cel - Scénario - Syndrome - Cellules -
     Veldiac Jtie - Mélodie Inépelable - Sfivoq - Duel Xceptionnel - MonPol - Articulation Par-ci=Par-là (Mapnélienne)<br>
     <br>
+    
     <h3>IUVALCY</h3>
-    Crithekiel - Critheçiel - Critheqiel - Critherçation - PAMABWA - INTIMACY - XaraЖereX - Veldiac AL - Ganie - CritHAïe - TRIBALT - GESTALT - Goalois(e) - Möbius Netwow - PROTAGONISM - Articulation Ecsætera (Iuvalcienne) -
+    Crithekiel - Critheçiel - Critheqiel - Critherçation - PAMABWA - INTIMACY - XaraЖereX - Déjà-Vu - Veldiac AL - Ganie - CritHAïe - TRIBALT - GESTALT - Goalois(e) - Möbius Netwow - PROTAGONISM - Articulation Ecsætera (Iuvalcienne) -
     Veldiac AJtieL - GaunieGanie<br>
     MATRICE 5ync sur 5ync<br>
     <br>
+    
     <h3>ARc⟁diA</h3>
     ⟁ -
     ZooZaZe - JooQooBoo - aLIaKKaHH - eRUeGGeHH -
@@ -2976,29 +3054,36 @@ window.detailVisibility = {
     EURÊK⟁ - SP⟁RK -
     Câble/Wire - InfiNieR - Blehdwoluzvi - Tra§Vel - Gorgeous Raper - aTHaTCHa - Articulation Link/Age (Arcadienne)<br>
     <br>
+    
     <h3>Aursyl</h3>
     Semaine Hebdomadaire - Calendrier Grégorien -
     Monop/Mono-Prohibition - %(Derla) - Polym/Poly-Malaise - Monop%Polym -
     Équation d'Efficacité Inanitoire - Flingue - Trompette - Travail -
     InfeXcuse - VII-X - Conte Sanguinaire - Ventriloque - Nihilin -
     Dévore-Novice - Dévore-Nova - PROjECT SSeCCu$ - Articulation deHist (Aursylienne)<br>
+    MATRICE 4lien 4perçu<br>
     <br>
+    
     <h3>Lysrua</h3>
     Syoneme Hebdomadaire - Calendrier Emmaïe -
-    ￣\_(ツ)_/￣ - phoRÊTT - dézELTT - Iacy - Terlush・Derlush - Sublii(s) - Atcha -
-    Gliobë - Mlush'Plush - YgijfeV - 白𝓒α𐌺心αট黒 - ⼰ㄈ🜆ꡙҼ7 -
-    ÇEMiNi! - LEMiNiQ - REMiNiK - GEMiNiC - ⮟ЮꡙΞԵ -
-    Z옹Z아Z웨 - J옹Q옹B옹 - 아LI아KK아HH - 웨RU웨GG웨HH - ҨყⰎல -
-    elzel0lezle - 大ටभᲡⰡ - Domaines - Articulation KaLeiDo (Lysruéenne)<br>
+    phoRÊTT - dézELTT - Iacy - Terlush・Derlush - Sublii(s) - Atcha -
+    Gliobë - Mlush'Plush - YgijfeV - 白𝓒α𐌺心αট黒 -
+    ÇEMiNi! - LEMiNiQ - REMiNiK - GEMiNiC -
+    Z옹Z아Z웨 - J옹Q옹B옹 - 아LI아KK아HH - 웨RU웨GG웨HH -
+    elzel0lezle - ⼰ㄈ🜆ꡙҼ7 - ⮟ЮꡙΞԵ - ҨყⰎல - Domaines - ￣\_(ツ)_/￣ - 大ටभᲡⰡ - Articulation KaLeiDo (Lysruéenne)<br>
     MATRICE A6es 6tiques 6colaire<br>
     <br>
+    
     <h3>D⦾MIN⦿'s</h3>
     Squelette ZigZag (Dominion) -
     Innok - Urflosia - Rantlot - NEON - H2O - TouRise - CGU(Carpet Glance Unit) - Esliz - NEET Club - xXx - RaycRa Forces<br>
     <br>
+    
     <h3>Taxonomie Aurnelcyenne</h3>
-
-    <dl>
+    
+        <dt><strong>Monoa-Polyz</strong></dt>
+        <dd>Monom&Polyp - Monop%Polym</dd>
+        <br>
         <dt><strong>Picol-Kentron</strong></dt>
         <dd>Rouge - Vert - Bleu - Clair-Obscur - Blanc - Noir - Gris<br>
         Blanchâtre - Noirâtre - Grisâtre</dd>
@@ -3013,23 +3098,24 @@ window.detailVisibility = {
         <dt><strong>phodèz</strong></dt>
         <dd>Herbe - Sève - Branche - Racine - Sable - Oasis - Reg - Canyon</dd>
         <br>
-        <dt><strong>Domaines</strong></dt>
+        <dt><strong>elzel0lezle</strong></dt>
         <dd>SCARLET - VIOLET - CYAN - ￣\_(ツ)_/￣ - 大ටभᲡⰡ</dd>
         <br>
         <dt><strong>Dominances Articulatoire</strong></dt>
         <dd>Jei - Tui - IliーEllie - Jtie<br>
         I - UV - AL - CY<br>
         Hom - Fem - Enf - Arte - Oh<br>
-        Je - Tu - Il×Elle<br>
+        Je - Tu - Il×Elle×Ça<br>
         Ω𝚸𐒰Ⅼ - Æ↰⊥ƎЯ - Ⓔ🇬㊔</dd>
     </dl>
     
   </details>
   
   <p>⟁URNELCY contient:<br>
-    <li>[?] œuvres dont [?] principales</li>
+    <li>[38] œuvres dont [8] principales en théorie</li>
     <li>[6] Articulations</li>
     <li>[2x2] Agendas</li>
+    <li>[2] Hiérarchies</li>
     <li>[2] Matrices</li>
     <li>[<span id="definitionCount">...</span>] Définitions</li>
   </p>
@@ -3058,6 +3144,33 @@ window.detailVisibility = {
     Geert Hofstede Dimensions Culturelles - Distance Hiérarchique 20% - Individualisme 65% - Masculinité 40% - Évitement de l'Incertitude 25% - Orientation Long-Terme 90% - Indulgence 55%<br>
     Trompenaars Modèle de Culture Nationale - <strike>Universalisme</strike>⟷Particularisme 40%-60% - Individualisme⟷<strike>Communautarianisme</strike> 60%-40% - <strike>Neutre</strike>⟷Émotionnel 30%-70% - <strike>Spécifique</strike>⟷Diffuse 15%-85% - <strike>Réalisation</strike>⟷Ascription 45%-55% - <strike>Séquentiel</strike>⟷Synchronique 10%-90% - <strike>Interne</strike>-Externe 40%-60%<br>
   </details>
+
+<section id="about-aurnelcy">
+  <h2>À propos</h2>
+  
+  <p>
+    AURNELCY est un mythe qui se confond avec sa fiction.
+    Il utilise un surnaturel assumé pour exprimer un regard sur le monde à travers son décor. Ici, la vie est un jeu total où la place de l'homme réside dans l'usage de ses capacités, comme n'importe quel animal.
+    La richesse culturelle se présente à travers le processus créatif grâce à son expérience, de la matière expérimentale, vers l'invention de son expertise.
+  </p>
+  
+  <blockquote>"L'art de créer ses dieux est un événement plus important que d'y croire."</blockquote>
+  
+  <p>
+    Vu qu'aucune description académique ne capture ce projet, si AURNELCY aurait eu une école de pensée, se serait la coquinerie cachotière, car son auteur n'a d'autre loisir que de d'écrire n'importe quoi.
+    AURNELCY ne pose pas la question si quoi/qui existe ou non.
+    Statuer définitivement sur les dieux comporte des implications embrigadantes vers l'unidimensionnel et semblerait plus une taquinerie qu'autre chose.
+    AURNELCY prend chacun de ses dieux comme idée intéressante à explorer et non comme des absolus objectifs.
+    Il s'agit d'un amusement dont on se confond avec ambivalence comme objet-talismans.
+    Il faut le reconnaître, ces essences apportent une richesse qui n'est pas à nier ni à prouver du moment qu'ils tiennent une certaine solidité dans une vision globale.
+    Nous sommes par ailleurs au courant que l'icônicité guide la mémoire bien mieux que l'on le veuille ou non.
+  </p>
+  
+  <p style="text-align: center;">
+    L'histoire retiendra du contenu culte; vous serez impuissants face aux arts cultes.
+  </p>
+  
+</section>
 
   <h2>Lettrologie</h2>
 
@@ -3226,7 +3339,7 @@ window.detailVisibility = {
 
 <div id="category-container" class="nav-buttons-2" style="font-size: large;">
 
-  <div><span class="category-title" style="font-size: 1.75em; font-weight: bold; text-decoration: underline;">Mapnel (?)</span>
+  <div><span class="category-title" style="font-size: 1.5em; font-weight: bold; text-decoration: underline;">Mapnel(?)</span>
     <button onclick="scrollToSection('Monoa-Polyz')" class="nav-button-2">Monoa-Polyz</button>
     <button onclick="scrollToSection('Directions_Souveraines')" class="nav-button-2">Directions Souveraines</button>
     <button onclick="scrollToSection('Fluide_Élémentaire')" class="nav-button-2">Fluide Élémentaire</button>
@@ -3234,14 +3347,14 @@ window.detailVisibility = {
     <button onclick="scrollToSection('La_Semaine_Sublime')" class="nav-button-2">La Semaine Sublime</button>
     <button onclick="scrollToSection('Florescence')" class="nav-button-2">Florescence</button>
     <button onclick="scrollToSection('Picol-Kentron')" class="nav-button-2">Picol-Kentron</button>
-    <button onclick="scrollToSection('Fon:Rel:Inc_&_Scé;Syn;Cel')" class="nav-button-2">Fon:Rel:Inc & Scé;Syn;Cel</button>
+    <button onclick="scrollToSection('Fon:Rel:Inc_&_Scé;Syn;Cel')" class="nav-button-2">F:R:I & S;S;C</button>
     <button onclick="scrollToSection('Veso')" class="nav-button-2">Ventril×Souhait</button>
     <button onclick="scrollToSection('LuneTele')" class="nav-button-2">Lune×Tele</button>
     <button onclick="scrollToSection('Mélodie_Inépelable')" class="nav-button-2">Mélodie Inépelable</button>
     <button onclick="scrollToSection('Duel_Xceptionnel')" class="nav-button-2">Duel Xceptionnel</button>
   </div>
 
-  <div><span class="category-title" style="font-size: 1.75em; font-weight: bold; text-decoration: underline;">IUVALCY (?)</span>
+  <div><span class="category-title" style="font-size: 1.5em; font-weight: bold; text-decoration: underline;">IUVALCY(?)</span>
     <button onclick="scrollToSection('La_bêtise_de_la_bête')" class="nav-button-2">La bêtise de la bête</button>
     <button onclick="scrollToSection('tIRe-tROUBLe')" class="nav-button-2">tIRe-tROUBLe</button>
     <button onclick="scrollToSection('Panier')" class="nav-button-2">Panier</button>
@@ -3249,28 +3362,27 @@ window.detailVisibility = {
     <button onclick="scrollToSection('Möbius_Netwow')" class="nav-button-2">Möbius Netwow</button>
   </div>
 
-  <div><span class="category-title" style="font-size: 1.75em; font-weight: bold; text-decoration: underline;">ARc⟁diA (?)</span>
+  <div><span class="category-title" style="font-size: 1.5em; font-weight: bold; text-decoration: underline;">ARc⟁diA(?)</span>
     <button onclick="scrollToSection('Start')" class="nav-button-2">Start</button>
     <button onclick="scrollToSection('CurSEED CurrenTCY')" class="nav-button-2">CurSEED CurrenTCY</button>
     <button onclick="scrollToSection('FekiTruTHako')" class="nav-button-2">FekiTruTHako</button>
     <button onclick="scrollToSection('Gorgeous_Raper')" class="nav-button-2">Gorgeous Raper</button>
   </div>
 
-  <div><span class="category-title" style="font-size: 1.75em; font-weight: bold; text-decoration: underline;">Aursyl (?)</span>
+  <div><span class="category-title" style="font-size: 1.5em; font-weight: bold; text-decoration: underline;">Aursyl(?)</span>
     <button onclick="scrollToSection('Anti-Xenos')" class="nav-button-2">Anti-Xenos</button>
-    <button onclick="scrollToSection('Joudem')" class="nav-button-2">Joujous % Démence</button>
-    <button onclick="scrollToSection('TicketTactique')" class="nav-button-2">TicketTactique</button>
-    <button onclick="scrollToSection('InFeXcuse')" class="nav-button-2">InFeXcuse</button>
+    <button onclick="scrollToSection('Joudem')" class="nav-button-2">Joujous×Démence</button>
     <button onclick="scrollToSection('Bloody-Tale')" class="nav-button-2">Conte Sanguinaire</button>
     <button onclick="scrollToSection('OUROBOROS')" class="nav-button-2">OUROBOROS</button>
+    <button onclick="scrollToSection('Cartel_Conceptionnel')" class="nav-button-2">Cartel Conceptionnel</button>
     <button onclick="scrollToSection('Wasteland')" class="nav-button-2">Wasteland</button>
     <button onclick="scrollToSection('PROjECT_SSeCCu$')" class="nav-button-2">PROjECT SSeCCu$</button>
   </div>
 
-  <div><span class="category-title" style="font-size: 1.75em; font-weight: bold; text-decoration: underline;">Lysrua (?)</span>
+  <div><span class="category-title" style="font-size: 1.5em; font-weight: bold; text-decoration: underline;">Lysrua(?)</span>
     <button onclick="scrollToSection('The_Quest_Way')" class="nav-button-2">The Quest Way</button>
     <button onclick="scrollToSection('phoRÊTT_&_dézELTT')" class="nav-button-2">phoRÊTT & dézELTT</button>
-    <button onclick="scrollToSection('Code_ÆND')" class="nav-button-2">Code ÆND</button>
+    <button onclick="scrollToSection('Conquête_Ataraxiale')" class="nav-button-2">Conquête Ataraxiale</button>
     <button onclick="scrollToSection('Gliobë')" class="nav-button-2">Gliobë</button>
     <button onclick="scrollToSection('Silhouette_Lisante')" class="nav-button-2">Silhouette Lisante</button>
     <button onclick="scrollToSection('Mana')" class="nav-button-2">Mana</button>
@@ -3280,7 +3392,7 @@ window.detailVisibility = {
     <button onclick="scrollToSection('Le_Syoneme_Sublime')" class="nav-button-2">Le Syoneme Sublime</button>
   </div>
 
-  <div><span class="category-title" style="font-size: 1.75em; font-weight: bold; text-decoration: underline;">D⦾MIN⦿'s (?)</span>
+  <div><span class="category-title" style="font-size: 1.5em; font-weight: bold; text-decoration: underline;">D⦾MIN⦿'s(?)</span>
     <button onclick="scrollToSection('Generation')" class="nav-button-2">Generation</button>
     <button onclick="scrollToSection('Arkensyl')" class="nav-button-2">Arkensyl</button>
     <button onclick="scrollToSection('AvanTcer')" class="nav-button-2">AvanTcer</button>
@@ -3442,7 +3554,7 @@ window.detailVisibility = {
 
     <div><span style="font-size: x-large; text-shadow: 0px 0px 5px;">〖Quête〗</span><br>
       「Lune×Tele」<br>
-      『Mélodie Inépelable』<br>
+      「Mélodie Inépelable」<br>
     </div>
 
     <div><span style="font-size: x-large; text-shadow: 0px 0px 5px;">〖Épreuve〗</span><br>
@@ -3471,8 +3583,6 @@ window.detailVisibility = {
      ➡ La florissante Monom&amp;Polyp (cercle vertueux)<br>
      ➡ La décadente Monop%Polym (cercle vicieux)<br>
   </div>
-
-  <div class="author">【Vydnitt】</div>
 
   <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px auto;">
     <table border="1" style="font-size: 1.33em; width: max-content; border-collapse: separate; border-spacing: 32px 16px;">
@@ -3521,7 +3631,7 @@ window.detailVisibility = {
         Terla est représenté en anneau pendentif.</dd><br>
 
       <dd style="font-size: large;"><b><u>Monom&amp;Polyp</u></b>:
-        État/Dynamique intemporelle où être et devenir sont entrelacés dans une communion harmonieuse.<br>
+        État-Dynamique intemporelle où être et devenir sont entrelacés dans une communion harmonieuse.<br>
         <i style="font-size: 0.8em;">Simplifiant - Mémoire nourricière permanente &amp; Projection épisodique cyclique ou Laisser Ouvert</i>
       </dd><br>
 
@@ -3549,7 +3659,7 @@ window.detailVisibility = {
         Derla est représenté en boulet de forçat.</dd><br>
 
       <dd style="font-size: large;"><b><u>Monop%Polym</u></b>:
-        État/Dynamique contractée où être et devenir sont imbriqués dans une déperdition rupturante.<br>
+        État-Dynamique contractée où être et devenir sont imbriqués dans une déperdition rupturante.<br>
         <i style="font-size: 0.8em;">Simplifiant - Prohibition affamante saturée % Malaise apathique déclinant ou Prendre au Piège</i>
       </dd><br>
 
@@ -3572,6 +3682,8 @@ window.detailVisibility = {
 
   </div>
 
+  <div class="author">【Vydnitt】</div>
+  
   <details class="info">
     <summary>Sujet</summary>
     Type: Théogonie<br>
@@ -3701,24 +3813,11 @@ window.detailVisibility = {
 
   <!--(AVENTURE)-->
 
-  <div class="author">【Xyfurn 1/3】</div>
-
   <div class="presentri">
     Aventure (Flair/Chemin)<br>
     Défi｜Merveille｜Œuvre<br>
     Monstre 0｜Enquête｜Directions Souveraines<br>
   </div>
-
-  <details class="info">
-    <summary>Sujet</summary>
-    Type: Allégorie Philosophique<br>
-    Question: Volonté Civile<br>
-    Outil: Rêveries<br>
-    Éclairage: Réalisme Idéalisme<br>
-    Alignement: Mauvais Bon<br>
-    Mouvement: Citoyen<br>
-    Tension: Réalité et Imagination<br>
-  </details>
 
   <div style="margin: 32px auto;">
 
@@ -3740,6 +3839,19 @@ window.detailVisibility = {
   <div class="clotutri">Monstre 0 &amp; Enquête &amp; Directions Souveraines</div>
   <div class="clotutri-p">La route est jonchée d'une large panoplie, hors de question de s'y précipiter sans une bonne étude de la contrée qui m'est accordée.</div>
 
+  <div class="author">【Xyfurn 1/3】</div>
+  
+  <details class="info">
+    <summary>Sujet</summary>
+    Type: Allégorie Philosophique<br>
+    Question: Volonté Civile<br>
+    Outil: Rêveries<br>
+    Éclairage: Réalisme Idéalisme<br>
+    Alignement: Mauvais Bon<br>
+    Mouvement: Citoyen<br>
+    Tension: Réalité et Imagination<br>
+  </details>
+  
   <h3 id="Directions_Souveraines" style="text-align: center;">「Directions Souveraines」</h3>
 
   <div class="dirsou-container">
@@ -3786,24 +3898,11 @@ window.detailVisibility = {
 
   <!--(MAGIE)-->
 
-  <div class="author">【Xyfurn 2/3】</div>
-
   <div class="presentri">
     Magie (Envoûtement/Complétude)<br>
     Défi｜Merveille｜Œuvre<br>
     Illusion｜Atelier Ataraxial｜Fluide Élémentaire<br>
   </div>
-
-  <details class="info">
-    <summary>Sujet</summary>
-    Type: Essai Phénoménologique<br>
-    Question: Énergie<br>
-    Outil: Acceptation<br>
-    Éclairage: Auto-Suffisance<br>
-    Alignement: Neutre Bon<br>
-    Mouvement: Interconnection<br>
-    Tension: Manque et Vertus<br>
-  </details>
 
   <div style="margin: 32px auto;">
 
@@ -3824,6 +3923,19 @@ window.detailVisibility = {
   <div class="clotutri">Illusion &amp; Atelier Ataraxial &amp; Fluide Élémentaire</div>
   <div class="clotutri-p">Il se pourrait que l'on me joue des tours, une galerie espacée repère mieux les intrus; l'inspection paraît quelque peu étrange lorsque ça tremble, me voilà à m'engendrer sans me reconnaître.</div>
 
+  <div class="author">【Xyfurn 2/3】</div>
+  
+  <details class="info">
+    <summary>Sujet</summary>
+    Type: Essai Phénoménologique<br>
+    Question: Énergie<br>
+    Outil: Acceptation<br>
+    Éclairage: Auto-Suffisance<br>
+    Alignement: Neutre Bon<br>
+    Mouvement: Interconnection<br>
+    Tension: Manque et Vertus<br>
+  </details>
+  
   <h3 id="Fluide_Élémentaire" style="text-align: center;">「Fluide Élémentaire」</h3>
 
   <div class="fluid-grid">
@@ -3861,24 +3973,11 @@ window.detailVisibility = {
 
   <!--(CUISINE)-->
 
-  <div class="author">【Xyfurn 3/3】</div>
-
   <div class="presentri">
     Cuisine (Formule/Alignement)<br>
     Défi｜Merveille｜Œuvre<br>
     Blessure Fossile｜Miroir Clairvoyant｜Gravité Centrale<br>
   </div>
-
-  <details class="info">
-    <summary>Sujet</summary>
-    Type: Monologue Philosophique<br>
-    Question: Sans Domicile Fixe<br>
-    Outil: Compassion<br>
-    Éclairage: Appartenance<br>
-    Alignement: Souci<br>
-    Mouvement: Réalisation<br>
-    Tension: Conviction<br>
-  </details>
 
   <div style="margin: 32px auto;">
 
@@ -3898,6 +3997,19 @@ window.detailVisibility = {
   <div class="clotutri">Blessure Fossile &amp; Miroir Clairvoyant &amp; Gravité Centrale</div>
   <div class="clotutri-p">Les cicatrices nécessitent un regard minutieux, s'adapter à ses fragilités en s'aménageant dans la justesse est crucial.</div>
 
+  <div class="author">【Xyfurn 3/3】</div>
+  
+  <details class="info">
+    <summary>Sujet</summary>
+    Type: Monologue Philosophique<br>
+    Question: Sans Domicile Fixe<br>
+    Outil: Compassion<br>
+    Éclairage: Appartenance<br>
+    Alignement: Souci<br>
+    Mouvement: Réalisation<br>
+    Tension: Conviction<br>
+  </details>
+  
   <h3 id="Gravité_Centrale" style="text-align: center;">「Gravité Centrale」</h3>
 
   <div style="text-align: center;">
@@ -3999,24 +4111,11 @@ window.detailVisibility = {
 
   <!--(NEZROG)-->
 
-  <div class="author">【Nezrog】</div>
-
   <div class="presentri">
     Nezrog (Divin/Cosmos)<br>
     Défi｜Merveille｜Œuvre<br>
     Naustre C｜Infini｜Semaine Sublime<br>
   </div>
-
-  <details class="info">
-    <summary>Sujet</summary>
-    Type: Gnose Taxonomique<br>
-    Question: Qui Vouloir Être ?<br>
-    Outil: Admiration de la Grandeur<br>
-    Éclairage: Motivation Intrinsèque<br>
-    Alignement: Compétence Bon<br>
-    Mouvement: Être Mieux que ce qu'on est<br>
-    Tension: Challenge<br>
-  </details>
 
   <div style="margin: 32px auto;">
 
@@ -4032,7 +4131,7 @@ window.detailVisibility = {
 
     <dd><b><u>Semaine Sublime</u></b>:
       Élévation continuelle des formes de richesse parmi 7 paliers d'initiations.<br>
-      Génitale structuration métaphorique</dd><br>
+      Génitale structuration métaphorique de l'ordre</dd><br>
 
     <dd><b><u>Hyenuul</u></b>:
       Attache ne pouvant pas se passer de l'envie en vie.<br>
@@ -4043,12 +4142,25 @@ window.detailVisibility = {
   <div class="clotutri">Naustre C &amp; Infini &amp; Semaine Sublime</div>
   <div class="clotutri-p">Prendre bord représente un délicieux apport alimentaire, l'autorisation simple du déroulement des choses constitue une énorme économie pour s'élever.</div>
 
+  <div class="author">【Nezrog】</div>
+
+  <details class="info">
+    <summary>Sujet</summary>
+    Type: Gnose Taxonomique<br>
+    Question: Qui Vouloir Être ?<br>
+    Outil: Admiration de la Grandeur<br>
+    Éclairage: Motivation Intrinsèque<br>
+    Alignement: Compétence Bon<br>
+    Mouvement: Être Mieux que ce qu'on est<br>
+    Tension: Challenge<br>
+  </details>
+  
   <h3 id="La_Semaine_Sublime" style="text-align: center;">「La Semaine Sublime」</h3>
 
   <div class="week-grid" style="font-size: large;">
 
     <div class="day-card">
-      <div style="font-size: x-large;">⚔ Lundi ⚔</div>
+      <div style="font-size: x-large;">1. Lundi</div>
       <span class="hmode">Embryon</span>: Nouvelle vie palpitée, explorateur novice maladroit<br>
       Élément: Étranger<br>
       Anatomie: Ventre<br>
@@ -4057,7 +4169,7 @@ window.detailVisibility = {
     </div>
 
     <div class="day-card">
-      <div style="font-size: x-large;">♙ Mardi ♟</div>
+      <div style="font-size: x-large;">2. Mardi</div>
       <span class="hmode">Gymnaste</span>: Joueur résolu à gravir, sacrificateur de paix délabrée<br>
       Élément: Terre<br>
       Anatomie: Bras, Jambes<br>
@@ -4066,7 +4178,7 @@ window.detailVisibility = {
     </div>
 
     <div class="day-card">
-      <div style="font-size: x-large;">♘ Mercredi ♞</div>
+      <div style="font-size: x-large;">3. Mercredi</div>
       <span class="hmode">Médecin</span>: Érudit de la santé, thérapeute de la réconciliation<br>
       Élément: Eau<br>
       Anatomie: Œil<br>
@@ -4075,7 +4187,7 @@ window.detailVisibility = {
     </div>
 
     <div class="day-card">
-      <div style="font-size: x-large;">♗ Jeudi ♝</div>
+      <div style="font-size: x-large;">4. Jeudi</div>
       <span class="hmode">Poète</span>: Instructeur éclairé, penseur de préciosité instigatrice<br>
       Élément: Air<br>
       Anatomie: Poumons<br>
@@ -4084,7 +4196,7 @@ window.detailVisibility = {
     </div>
 
     <div class="day-card">
-      <div style="font-size: x-large;">♖ Vendredi ♜</div>
+      <div style="font-size: x-large;">5. Vendredi</div>
       <span class="hmode">Hacker</span>: Connecteur indomptable, briseur de chaînes transgresseur de tyrannies<br>
       Élément: Feu<br>
       Anatomie: Cœur<br>
@@ -4093,7 +4205,7 @@ window.detailVisibility = {
     </div>
 
     <div class="day-card">
-      <div style="font-size: x-large;">♔ Samedi ♚</div>
+      <div style="font-size: x-large;">6. Samedi</div>
       <span class="hmode">Héraut</span>: Aventurier en quête de noblesse, alchimiste forgeron palpitant de l'infini<br>
       Élément: Abondance<br>
       Anatomie: Arbre de Vie<br>
@@ -4102,7 +4214,7 @@ window.detailVisibility = {
     </div>
 
     <div class="week-center">
-      <div style="font-size: x-large;">♕ Dimanche ♛</div>
+      <div style="font-size: x-large;">7. Dimanche</div>
       <span class="hmode">Hyenuul</span>: Conscience exponentielle, pleine vivacité défausseuse de léthargie<br>
       Élément: Création<br>
       Anatomie: Soi<br>
@@ -4116,24 +4228,11 @@ window.detailVisibility = {
 
   <!--(EKELINE)-->
 
-  <div class="author">【Ekeline】</div>
-
   <div class="presentri">
     Ekeline (Paradoxe/Innocence)<br>
     Défi｜Merveille｜Œuvre<br>
     Macabrisme｜Gaunie｜Florescence<br>
   </div>
-
-  <details class="info">
-    <summary>Sujet</summary>
-    Type: Dialogue Socratique Allégorique<br>
-    Question: Haine des Systèmes<br>
-    Outil: Conversation<br>
-    Éclairage: Comportement Aggravant<br>
-    Alignement: Mauvais à Bon Foi<br>
-    Mouvement: Facettes de la Psyché<br>
-    Tension: Cynisme<br>
-  </details>
 
   <div style="margin: 32px auto;">
 
@@ -4159,6 +4258,19 @@ window.detailVisibility = {
   <div class="clotutri">Macabrisme &amp; Gaunie &amp; Florescence</div>
   <div class="clotutri-p">Le risque de trépasser se montre plus réel sans allégresse, cet enthousiasme régulier au renouveau émerge d'une confiance indélébile dans la nature spontanée.</div>
 
+  <div class="author">【Ekeline】</div>
+  
+  <details class="info">
+    <summary>Sujet</summary>
+    Type: Dialogue Socratique Allégorique<br>
+    Question: Haine des Systèmes<br>
+    Outil: Conversation<br>
+    Éclairage: Comportement Aggravant<br>
+    Alignement: Mauvais à Bon Foi<br>
+    Mouvement: Facettes de la Psyché<br>
+    Tension: Cynisme<br>
+  </details>
+  
   <h3 id="Florescence" style="text-align: center;">「Florescence」</h3>
 
   <div style="text-align: center;">
@@ -4237,24 +4349,11 @@ window.detailVisibility = {
 
   <!--(WACWE)-->
 
-  <div class="author">【Wacwe】</div>
-
   <div class="presentri">
     Wacwe (Société/Arcade)<br>
     Défi｜Merveille｜Œuvre<br>
     EntroPied｜Filet｜Picol-Kentron<br>
   </div>
-
-  <details class="info">
-    <summary>Sujet</summary>
-    Type: Taxinomie Architecturale<br>
-    Question: Nation et Politique<br>
-    Outil: Imagerie Symbolique<br>
-    Éclairage: Hiérarchies et Charges<br>
-    Alignement: Civil Neutre<br>
-    Mouvement: Unisson<br>
-    Tension: Noyau<br>
-  </details>
 
   <div style="margin: 32px auto;">
 
@@ -4268,28 +4367,35 @@ window.detailVisibility = {
 
     <dd><b><u>Picol-Kentron</u></b>:
       Schéma de multiplicité des rôles, fonctions interprétées par cercles s'empilant par objectifs •RGB•BNG•<br>
-      Chaque couleur poursuit un rapport étroit avec l'intégralité fonctionnel et fondamentale.</dd><br>
+      Chaque couleur poursuit un rapport étroit avec l'intégralité fonctionnelle et fondamentale.<br>
+      (Pi: Cercle Circulaire) - (Col: Color/Couleur) - (Kentron: Aiguillon/Pointe)</dd><br>
 
     <dd><b><u>Chromel</u></b>:
       Sublimation décisive des marqueurs traumatiques à la page tournante.<br>
-      Reprise des déjà vus sur une phase supérieure de configuration.<br>
+      Reprise des déjà-vus sur une phase supérieure de configuration.<br>
       Meilleur Drapeau, forme authentique et hypothétique.</dd><br>
 
   </div>
 
   <div class="clotutri">EntroPied &amp; Filet &amp; Picol-Kentron</div>
-
   <div class="clotutri-p">L'aimable tient un équipement raffiné afin de subvenir aux soucis parmi ses pairs à travers des conseils avisés, ce règne enfantera une souveraineté libératrice de tous les semblants d'élégance.</div>
 
+  <div class="author">【Wacwe】</div>
+  
+  <details class="info">
+    <summary>Sujet</summary>
+    Type: Taxinomie Architecturale<br>
+    Question: Nation et Politique<br>
+    Outil: Imagerie Symbolique<br>
+    Éclairage: Hiérarchies et Charges<br>
+    Alignement: Civil Neutre<br>
+    Mouvement: Unisson<br>
+    Tension: Noyau<br>
+  </details>
+  
   <h3 id="Picol-Kentron" style="text-align: center;">「Picol-Kentron」</h3>
 
   <div style="text-align: center;">
-
-    <p style="margin: 64px auto; font-size: 3vw; font-style: italic;">
-      (Pi: Cercle Circulaire)<br>
-      (Col: Color/Couleur)<br>
-      (Kentron: Aiguillon/Pointe)<br>
-    </p>
 
     <div class="rgb-tables" style="margin-bottom: 64px;">
 
@@ -4447,10 +4553,10 @@ window.detailVisibility = {
 
     </div>
 
-    <div class="rgb-tables" style="margin-bottom: 64px;">
+    <div class="rgb-tables3" style="margin-bottom: 64px;">
 
       <div class="rgb-grid" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-        <table border="1" class="p-kwhite" style="font-size: large;">
+        <table border="1" class="p-kwhite" style="font-size: large; font-weight: bold;">
           <thead>
             <tr>
               <th colspan="1"><ruby>Blanchâtre<rt>Consensus</rt></ruby></th>
@@ -4478,7 +4584,7 @@ window.detailVisibility = {
       </div>
 
       <div class="rgb-grid" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-        <table border="1" class="p-kblack" style="font-size: large;">
+        <table border="1" class="p-kblack" style="font-size: large; font-weight: bold;">
           <thead>
             <tr>
               <th colspan="1"><ruby>Noirâtre<rt>Rationnement</rt></ruby></th>
@@ -4505,34 +4611,34 @@ window.detailVisibility = {
         </table>
       </div>
 
-    </div>
-
-    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-      <table border="1" class="p-kgrey" style="font-size: large;">
-        <thead>
-          <tr>
-            <th colspan="1"><ruby>Grisâtre<rt>Triomphe</rt></ruby></th>
-            <th colspan="2">Dessein Arborescent</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Désir</td>
-            <td>Richesse<br>Multidividuelle</td>
-            <td>Béatitude</td>
-          </tr>
-          <tr>
-            <td>Crainte</td>
-            <td>Crise<br>de la Maîtrise</td>
-            <td>Aliénation</td>
-          </tr>
-          <tr>
-            <td>Jugement</td>
-            <td>Jauge<br>Inéchangeable</td>
-            <td>Spectre</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="rgb-grid" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+        <table border="1" class="p-kgrey" style="font-size: large; font-weight: bold;">
+          <thead>
+            <tr>
+              <th colspan="1"><ruby>Grisâtre<rt>Triomphe</rt></ruby></th>
+              <th colspan="2">Dessein Arborescent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Désir</td>
+              <td>Richesse<br>Multidividuelle</td>
+              <td>Béatitude</td>
+            </tr>
+            <tr>
+              <td>Crainte</td>
+              <td>Crise<br>de la Maîtrise</td>
+              <td>Aliénation</td>
+            </tr>
+            <tr>
+              <td>Jugement</td>
+              <td>Jauge<br>Inéchangeable</td>
+              <td>Spectre</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
     </div>
 
     <div class="kentrons">
@@ -4540,8 +4646,8 @@ window.detailVisibility = {
       <div>
         <div class="picol-kentron"></div>
         <h4>Kentron Mapnélien</h4>
-        <div>Hiérarchie Supérieure - Rouge &gt; Gris &gt; Blanc&Noir &gt; Vert&Bleu &gt; Rouge</div>
-        <div>Hiérarchie Inférieure - Rouge &lt; Vert&Bleu &lt; Blanc&Noir &lt; Gris &lt; Rouge</div>
+        <div>Hiérarchie Supérieure - <span class="red-text">Rouge</span> &gt; <span class="grey-text">Gris</span> &gt; <span class="white-text">Blanc</span>&<span class="black-text">Noir</span> &gt; <span class="green-text">Vert</span>&<span class="blue-text">Bleu</span> &gt; <span class="red-text">Rouge</span></div>
+        <div>Hiérarchie Inférieure - <span class="red-text">Rouge</span> &lt; <span class="green-text">Vert</span>&<span class="blue-text">Bleu</span> &lt; <span class="white-text">Blanc</span>&<span class="black-text">Noir</span> &lt; <span class="grey-text">Gris</span> &lt; <span class="red-text">Rouge</span></div>
       </div>
       
       <div style="filter: blur(10px);">
@@ -4735,7 +4841,7 @@ window.detailVisibility = {
   </div>
 
   <div class="written">06/06/25</div>
-
+      
   <!--(FOSTRAH)-->
 
   <div class="veso-grid">
@@ -4884,7 +4990,8 @@ window.detailVisibility = {
       <strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>⌂
     </div>
 
-    <table border="1" style="font-size: large; margin-bottom: 50px; width: 300px; table-layout: fixed;">
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+    <table border="1" style="font-size: large; margin-bottom: 50px; width: auto; table-layout: fixed;">
       <colgroup>
         <col style="width: 33.3333%;">
         <col style="width: 33.3333%;">
@@ -4894,7 +5001,7 @@ window.detailVisibility = {
         <tr>
         <th>Je</th>
         <th>Tu</th>
-        <th>Il×Elle</th>
+        <th>Il×Elle×Ça</th>
       </tr>
       </thead>
       <tbody>
@@ -4915,7 +5022,7 @@ window.detailVisibility = {
       </tr>
       </tbody>
     </table>
-
+    </div>
   </div>
 
   <h2 style="text-align: center; text-shadow: 0px 0px 5px;">〖Quête〗</h2>
@@ -4933,7 +5040,11 @@ window.detailVisibility = {
 
   </div>
 
-  <div class="author">【Fostrah - Uewij】</div>
+<div class="author" style="display: flex; justify-content: space-between;">
+  <span>【Hun-Haine】</span>
+  <span>【Humain】</span>
+  <span>【Hum-Haime】</span>
+</div>
 
   <details class="info">
     <summary>Sujet</summary>
@@ -5022,7 +5133,8 @@ window.detailVisibility = {
       <strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>⌂
     </div>
 
-    <table border="1" style="font-size: large; margin-bottom: 50px; width: 500px; table-layout: fixed;">
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+    <table border="1" style="font-size: large; margin-bottom: 50px; width: auto; table-layout: fixed;">
     <colgroup>
       <col style="width: 25%;">
       <col style="width: 25%;">
@@ -5058,7 +5170,7 @@ window.detailVisibility = {
       </tr>
       </tbody>
     </table>
-
+    </div>
   </div>
 
   <!--(MELODY)-->
@@ -5083,7 +5195,7 @@ window.detailVisibility = {
     Tension: ⨳⨳⨳⨳⨳<br>
   </details>
 
-  <h2 id="Mélodie_Inépelable" style="text-align: center;">『Mélodie Inépelable』</h2>
+  <h3 id="Mélodie_Inépelable" style="text-align: center;">「Mélodie Inépelable」</h3>
 
   <div style="margin: 56px auto;">
 
@@ -5133,9 +5245,12 @@ window.detailVisibility = {
 
   <div class="written">01/11/24</div>
 
+  <p style="text-align: center; font-size: 2em; margin: 32px auto;">
+    Wacwe devient Leqwa<br>
+    Ça×Jtie va barder!<br>
+  </p>
+  
   <!--(SFIVOQ)-->
-
-  <div class="author">【Wacwe・Leqwa】</div>
 
   <h3 style="text-align: center;">Dualité Mapnélo-Aursylienne</h3>
 
@@ -5180,31 +5295,6 @@ window.detailVisibility = {
           <td>Commissionnaire</td>
           <td>Entendement</td>
           <td>Signatures</td>
-          <td>Addiction Catabolique</td>
-          <td>Détracteurs</td>
-          <td>Urgence</td>
-          <td>Intervenir</td>
-          <td>Aigre</td>
-          <td>Dette Transactionnelle</td>
-          <td>Performance dans l'Arène</td>
-          <td>Putsch</td>
-          <td>Travail</td>
-          <td>Problème</td>
-          <td>Injonction</td>
-          <td>Défaite-Victoire</td>
-          <td>Délivrance Lapidaire</td>
-        </tr>
-        <tr>
-          <td>Aursylien</td>
-          <td>Dévore-Novice</td>
-          <td>Monop%Polym</td>
-          <td>Isoamorphe</td>
-          <td>Absorbatrice</td>
-          <td>Jadis pour Ailleurs</td>
-          <td>Privatisation du Monde</td>
-          <td>Gastro-Intestinal</td>
-          <td>Emballement</td>
-          <td>Tacles</td>
           <td>Autonomie Métabolique</td>
           <td>Compagnons</td>
           <td>Importance</td>
@@ -5219,12 +5309,39 @@ window.detailVisibility = {
           <td>Déffet-Vicseoir</td>
           <td>Fournaise Réfrigérante</td>
         </tr>
+        <tr>
+          <td>Aursylien</td>
+          <td>Dévore-Novice</td>
+          <td>Monop%Polym</td>
+          <td>Isoamorphe</td>
+          <td>Absorbatrice</td>
+          <td>Jadis pour Ailleurs</td>
+          <td>Privatisation du Monde</td>
+          <td>Gastro-Intestinal</td>
+          <td>Emballement</td>
+          <td>Tacles</td>
+          <td>Addiction Catabolique</td>
+          <td>Détracteurs</td>
+          <td>Urgence</td>
+          <td>Intervenir</td>
+          <td>Aigre</td>
+          <td>Dette Transactionnelle</td>
+          <td>Performance dans l'Arène</td>
+          <td>Putsch</td>
+          <td>Travail</td>
+          <td>Problème</td>
+          <td>Injonction</td>
+          <td>Défaite-Victoire</td>
+          <td>Délivrance Lapidaire</td>
+        </tr>
       </tbody>
     </table>
   </div>
 
   <h2 style="text-align: center; text-shadow: 0px 0px 5px;">〖Épreuve〗</h2>
 
+  <div class="author">【Leqwa】</div>
+  
   <div style="margin: 64px auto; font-size: large; text-align: center;">
 
     <dd><b><u>Sfivoq</u></b>:
@@ -5241,7 +5358,11 @@ window.detailVisibility = {
     <ol><i class="sfirole1">(Picol-Kentron)</i>3 Yeux Néons RGB<i class="sfirole2">(Picol-Kentron)</i></ol>
     <ol><i class="sfirole1">(Héros)</i>Peau Grise<i class="sfirole2">(Héros)</i></ol>
   </dl>
-  
+
+<img src="feature/Sfivoq Pixel-Art.png" alt="Sfivoq Pixel-Art">
+
+  <div>
+  </div>
     <dd><b><u>Duel Xceptionnel</u></b>:
       Controverse du statu quo, de son décalcage standardisé et de son arsenal pour le maintenir.<br>
       Culmination du déchaînement ravageur pour finalité la délivrance du <span class="hmode">dévore-novice</span> et de sa machination.<br>
@@ -5262,7 +5383,7 @@ window.detailVisibility = {
   
   <h2 id="Duel_Xceptionnel" style="text-align: center;">『Duel Xceptionnel』</h2>
 
-  <div class="duel">
+  <div class="duel-cartel">
 
     <p>
       Il lève un doigt, mille <span class="hmode">flingues</span> et mille <span class="hmode">trompettes</span> s'exécutent à la dysfonction auto-immune.
@@ -5467,8 +5588,6 @@ window.detailVisibility = {
   
   <!--(CRITH)-->
 
-  <div class="author">【UiNo 1/2】</div>
-
   <div style="display: grid; grid-template-columns: 1fr 1fr; justify-items: center; text-align: center; margin-top: 56px;">
 
     <div>
@@ -5529,20 +5648,30 @@ window.detailVisibility = {
   </div>
   <div style="text-align: center; padding-inline: 25%;">[Que Dieu le fortifie]</div>
 
-
-  <div style="text-align: center; margin: 56px auto;">
-
-    <div><span style="font-weight: bold;">1. Table Critère:Théologie (Volonté &amp; Représentation)</span>
-      ---Qu'est-ce qui est Important ? (Expérience)</div>
-
-    <div><span style="font-weight: bold;">2. Index Critique:Théorie (Bifurcation &amp; Vraisemblance)</span>
-      ---Est-ce Possible ? Y aurait-il Mieux ? (Expérimental)</div>
-
-    <div><span style="font-weight: bold;">3. Dieu le FORTifie (Intemporalité)</span>
-      ---Pertinence Impérieuse (Expertise)</div>
-
+<div style="display: flex; flex-wrap: wrap; text-align: center; margin: 56px 0;">
+  
+  <div style="flex: 1; min-width: 300px; margin-bottom: 20px;">
+    <b>1. Table Critère : Théologie</b><br>
+    (Volonté & Représentation)<br>
+    --- Qu'est-ce qui est Important ? (Expérience)
   </div>
 
+  <div style="flex: 1; min-width: 300px; margin-bottom: 20px;">
+    <b>2. Index Critique : Théorie</b><br>
+    (Bifurcation & Vraisemblance)<br>
+    --- Est-ce Possible ? Y aurait-il Mieux ? (Expérimental)
+  </div>
+
+  <div style="flex: 1; min-width: 300px; margin-bottom: 20px;">
+    <b>3. Dieu le FORTifie</b><br>
+    (Intemporalité)<br>
+    --- Pertinence Impérieuse (Expertise)
+  </div>
+
+</div>
+
+  <div class="author">【UiNo 1/2】</div>
+  
   <details class="info">
     <summary>Sujet</summary>
     Type: Didactique Allégorique<br>
@@ -5556,56 +5685,67 @@ window.detailVisibility = {
 
   <h2 id="La_bêtise_de_la_bête" style="text-align: center;">「La bêtise de la bête」</h2>
 
-  <p style="text-align: left;">
-    [K] Merci d'avoir pensé à moi<br>
+<div style="max-width: 720px; margin: 40px auto; line-height: 1.5;">
+
+  <div style="margin-bottom: 20px;">
+    <strong>[K]</strong><br>
+    Merci d'avoir pensé à moi<br>
     Quel doux réconfort<br>
     Cette peluche est sage<br>
-    Les fabricants le sont aussi ?<br>
-  </p>
+    Les fabricants le sont aussi ?
+  </div>
 
-  <p style="text-align: right;">
-    [Ç] La bête multiplie les peluches<br>
+  <div style="margin-bottom: 20px; text-align: right;">
+    <strong>[Ç]</strong><br>
+    La bête multiplie les peluches<br>
     Offrant un bon sommeil<br>
     L'échange de fruits la nourrit<br>
-    Elle fera de meilleures peluches<br>
-  </p>
+    Elle fera de meilleures peluches
+  </div>
 
-  <p style="text-align: left;">
-    [K] La bête a du cœur papa ?<br>
-    Elle aime aussi les peluches ?<br>
-  </p>
+  <div style="margin-bottom: 20px;">
+    <strong>[K]</strong><br>
+    La bête a du cœur papa ?<br>
+    Elle aime aussi les peluches ?
+  </div>
 
-  <p style="text-align: right;">
-    [Ç] Ma fille, la bête est très affamée<br>
+  <div style="margin-bottom: 20px; text-align: right;">
+    <strong>[Ç]</strong><br>
+    Ma fille, la bête est très affamée<br>
     Elle a renoncé à son cœur<br>
     Elle souhaite un monde de peluches<br>
-    Elle ne se repose donc pas sur ses lauriers<br>
-  </p>
+    Elle ne se repose donc pas sur ses lauriers
+  </div>
 
-  <p style="text-align: right;">
-    [Q] Cheffe d'orchestre…<br>
+  <div style="margin-bottom: 20px; text-align: right;">
+    <strong>[Q]</strong><br>
+    Cheffe d'orchestre…<br>
     Militaires au premier rang…<br>
     Clients au second…<br>
     Militants au rang des pendus.<br>
     Si je paye cette peluche mon ange,<br>
-    Tu votes pour l'entreprise de la bête.<br>
-  </p>
+    Tu votes pour l'entreprise de la bête.
+  </div>
 
-  <p style="text-align: left;">
-    [Q] Papa, il faut l'arrêter!<br>
+  <div style="margin-bottom: 20px;">
+    <strong>[Q]</strong><br>
+    Papa, il faut l'arrêter!<br>
     Si cela est vrai<br>
     Je leur ferai s'évader<br>
     Pour qu'elles connaissent<br>
     La reconnaissance et le cœur<br>
     Je volerais tout le magasin!<br>
-    Laissant y à la porte du voisinage<br>
-  </p>
+    Laissant y à la porte du voisinage
+  </div>
 
-  <p style="text-align: right;">
-    [KÇQ] Princesse coquine, bien dit<br>
+  <div style="margin-top: 40px; text-align: center; border-top: 1px solid #000; padding-top: 20px;">
+    <strong>[KÇQ]</strong><br>
+    Princesse coquine et cachotière, bien dit<br>
     Ce contrat commercial point dans notre élément<br>
-    La chaleur viendra du fond du cœur ;)<br>
-  </p>
+    La chaleur viendra du fond du cœur ;)
+  </div>
+
+</div>
 
   <div class="written">05/03/24</div>
 
@@ -5772,8 +5912,18 @@ window.detailVisibility = {
     </table>
   </div>
 
+      <div style="margin: 32px auto;">
+
+        <dd><b><u>Déjà-Vu</u></b>:
+          Sentiment d'expérience/expérimental/d'expertise du vécu.<br>
+                <i style="font-size: 0.8em;">Simplifiant - Superposition Analogue</i></dd><br>
+
+      </div>
+      
   <div style="margin: 56px auto;">[Français plus optimisé ici - French more optimized here]</div>
 
+  <div class="author">【Uewij - Fostrah】</div>
+  
   <details class="info">
     <summary>Sujet</summary>
     Type: Poésie Formelle Inversée<br>
@@ -5872,29 +6022,40 @@ window.detailVisibility = {
 
   <div style="margin: 56px auto;">
 
+  <div class="travel2">
+    <div>
     <dd><b><u><span class="rappel">(RAPPEL +)</span>
           Travail</u></b>:
       Collecteur $¥€₿ [Monop%Polym] abusant la culture (Profit - Extraction - Monopole - Accumulation).<br>
       Ce qui doit être fait pour l'âme collective à ce qu'on dit.<br>
       Tic au devoir avec ravoir.</dd><br>
-    <br>
+    </div>
 
+    <div>
     <dd><b><u><span class="rappel">(RAPPEL +)</span>
           Veldiac</u></b>:
       Voilier 1234 traversant la culture (1 - 2 - 3 - 4).<br>
       Ce qui ne bouge pas et fait que le village voile à ce qu'on dit.<br>
       Silence au devoir sans savoir.<br>
       Représenté par la cachoterie ayant un lien étroit avec le coquin.</dd><br>
+    </div>
 
+    <div>
     <dd><b><u>Veldiac Jtie</u></b>:
       Voilier !:?# [Monom&Polyp] épanouissant la culture (Impulsion - Transmission - Questionnement - Action).</dd><br>
-
+    </div>
+    
+    <div>
     <dd><b><u>Veldiac AL</u></b>:
       Voilier 0@O⏲ [Critheçiel] épanouissant la culture (Éther - Association - Manifestation - Horloge).</dd><br>
-
+    </div>
+   </div>
+   
+    <div style="text-align: center;">
     <dd><b><u>Veldiac AJtieL</u></b>:
       Voilier [Monom&Polyp]~=~[Critheçiel] réalisant la culture.</dd><br>
-
+    </div>
+    
   </div>
 
   <details style="margin: 64px auto;">
@@ -5919,6 +6080,8 @@ window.detailVisibility = {
 
   </details>
 
+  <div class="author">【Xyfurn】</div>
+  
   <details class="info">
     <summary>Sujet</summary>
     Type: Traité de Logique Morale<br>
@@ -5989,7 +6152,8 @@ window.detailVisibility = {
       <strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>⌂
     </div>
 
-    <table border="1" style="font-size: large; margin-bottom: 50px; width: 500px; table-layout: fixed;">
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+    <table border="1" style="font-size: large; margin-bottom: 50px; width: auto; table-layout: fixed;">
     <colgroup>
       <col style="width: 25%;">
       <col style="width: 25%;">
@@ -6025,15 +6189,18 @@ window.detailVisibility = {
       </tr>
       </tbody>
     </table>
-
+    </div>
   </div>
 
   <!--(NETWOW)-->
 
-  <div class="author">【UiNo F.U.L.L】</div>
-
   <div style="margin: 56px auto;">
 
+    <dd><b><u><span class="rappel">(RAPPEL)</span>
+      Illusion</b></u>:
+      Filtre stimulant clos intrapersonnel ouvert à ambiguïté interpersonnel.<br>
+      Ample enchaînement de tensions multi-perspectives.</dd><br>
+      
     <dd><b><u>CritHAïe</u></b>:
       Comment puis-je te le dire ?<br>
       Il s'agit de nous qui ne sont pas nôtres.<br>
@@ -6055,6 +6222,8 @@ window.detailVisibility = {
 
   <div style="margin: 56px auto;">[English more optimized here - Anglais plus optimisé ici]</div>
 
+  <div class="author">【UiNo F.U.L.L】</div>
+  
   <details class="info">
     <summary>Sujet</summary>
     Type: Génèse de Cosmologie Informatique<br>
@@ -6639,7 +6808,7 @@ window.detailVisibility = {
     <button id="openHistBtn" class="category-tag" style="margin: 0 auto; display: block; font-size: 1.5em;">⛤</button>
   </div>
 
-<button id="snewlc-toggle-btn" style="padding: 8px 16px; font-size: 1rem; border-radius: 4px; cursor: pointer; background: var(--bg-color); color: var(--text-color); border: 1px solid var(--text-color); border radius: 6px; transition: all 0.2s ease; margin: 10px 0;">
+<button id="snewlc-toggle-btn" style="padding: 8px 16px; font-size: 1rem; border-radius: 4px; cursor: pointer; background: var(--bg-color); color: var(--text-color); border: 1px solid var(--text-color); border-radius: 6px; transition: all 0.2s ease; margin: 10px 0;">
   Switch to Horizontal View
 </button>
 
@@ -7104,10 +7273,12 @@ window.detailVisibility = {
   </div>
 
   <div style="margin: 64px auto; font-size: 3em;">
-    <dd><b><u>⟁ = Awkward</u></b></dd>
+    <dd><b>⟁ = Awkward</b></dd>
     <img src="feature/Awkward.png" alt="Awkward" style="max-width:100%;">
   </div>
 
+  <div class="author">【Unknown Daimôn】</div>
+  
   <details class="info">
     <summary>Sujet</summary>
     Type: Méditation Aphoristique<br>
@@ -7156,17 +7327,6 @@ window.detailVisibility = {
 
   <!--(ARCADE)-->
 
-  <details class="info">
-    <summary>Sujet</summary>
-    Type: Glossaire des Principes d'Émancipation Culturelle<br>
-    Question: Forces<br>
-    Outil: Personnalité<br>
-    Éclairage: Classifications<br>
-    Alignement: Neutre<br>
-    Mouvement: 3 Dimensions<br>
-    Tension: Relation Trinitaire<br>
-  </details>
-
   <div style="font-size: large; margin: 64px auto;">
 
     <dd><b><u>ZooZaZe</u></b>:
@@ -7189,6 +7349,17 @@ window.detailVisibility = {
 
   </div>
 
+  <details class="info">
+    <summary>Sujet</summary>
+    Type: Glossaire des Principes d'Émancipation Culturelle<br>
+    Question: Forces<br>
+    Outil: Personnalité<br>
+    Éclairage: Classifications<br>
+    Alignement: Neutre<br>
+    Mouvement: 3 Dimensions<br>
+    Tension: Relation Trinitaire<br>
+  </details>
+  
   <h3 style="text-align: center;">Arche Arcadienne</h3>
 
   <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
@@ -7255,8 +7426,6 @@ window.detailVisibility = {
 
   <!--(LOGJEM)-->
 
-  <div class="author">【Logjēm//AnonLeafmous】</div>
-
   <div class="code-prompt" style="margin: 64px auto;"><b><u>Letricot</u></b>:
     Tricotage des lettres, contradiction irrésolvable.<br>
       ==================<br>
@@ -7266,6 +7435,8 @@ window.detailVisibility = {
       <strike>/ERRØ</strike><b style="color: red;">RED-1%</b><br>
   </div>
 
+  <div class="author">【Logjēm//AnonLeafmous】</div>
+  
   <details class="info">
     <summary>Sujet</summary>
     Type: Satire Dystopique<br>
@@ -7451,8 +7622,6 @@ window.detailVisibility = {
 
   <!--(SLACPI)-->
 
-  <div class="author">【Slacpi°//CelHerbty】</div>
-
   <div style="margin: 56px auto;">
 
     <dd><b><u>~Monom&amp;moceM~&#128629;~Polyp&amp;pocuP~</u></b>:
@@ -7493,6 +7662,8 @@ window.detailVisibility = {
     <dd><b><u>Mirsa Mirsa Mua</u></b>:
       Thémathique du vouloir double, Forme Hypothéthique ouverte 'Tu saura prochainement si tu es intéressé'.</dd><br>
 
+  <div class="author">【Slacpi°//CelHerbty】</div>
+  
   </div>
 
   <details class="info">
@@ -7813,7 +7984,7 @@ window.detailVisibility = {
     </div>
 
     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 50px;">
-      <table border="1" style="font-size: large; width: 700px; table-layout: fixed;">
+      <table border="1" style="font-size: large; width: auto; table-layout: fixed;">
     <colgroup>
       <col style="width: 20%;">
       <col style="width: 20%;">
@@ -7860,7 +8031,7 @@ window.detailVisibility = {
             <td><span style="font-size: x-small;">of </span>Kindred</td>
           </tr>
           <tr>
-            <td colspan="5">SP⟁RK</td>
+            <td colspan="5" style="letter-spacing: 16px;">SP⟁RK</td>
           </tr>
         </tbody>
       </table>
@@ -7871,8 +8042,8 @@ window.detailVisibility = {
   <div style="margin: 32px auto;">
 
     <dd><b><u>Tra§Vel</u></b>:
-      Bouclure de flambeau Doppelgänger des entrailles exclusives inclusives selon la forme et les convulsions du vouloir. (Travail § Veldiac)<br>
-      Dose d'altérité réaliste et utopique sous les moyens du bord et du fond.</dd><br>
+      Bouclure de flambeau Doppelgänger des entrailles exclusives inclusives selon la forme et les convulsions du vouloir.<br>
+      Dose d'altérité réaliste et idéaliste sous les moyens du bord et du fond.</dd><br>
 
     </div>
 
@@ -7939,9 +8110,14 @@ window.detailVisibility = {
 
   </div>
 
+  <p style="text-align: center; font-size: 2em; margin: 32px auto;">
+    There's no escape.<br>
+    I'am gonna eat you!!<br>
+  </p>
+  
   <!--(TôHL@CJēM)-->
 
-  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; justify-content: center; text-align: center; margin: 64px auto;">
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; justify-content: center; text-align: center; margin: 64px auto; max-width: 320px;">
     <h2>【TôH</h2>
     <h2>L@C</h2>
     <h2>JēM】</h2>
@@ -7968,8 +8144,8 @@ window.detailVisibility = {
 
     <div class="gorap-grid-2x2">
 
-      <h3>I am Wrong Sorry</h3>
-      <h3>It's ME The Wrong Person</h3>
+      <h3 style="text-align: center;">I am Wrong Sorry</h3>
+      <h3 style="text-align: center;">It's ME The Wrong Person</h3>
 
       <p>The ones who guarantee the state as it is stated<br>
         They attack all forms of life being life<br>
@@ -8108,9 +8284,9 @@ window.detailVisibility = {
 
     <div class="MnP_gorap-grid-3x3">
 
-      <h3>Open</h3>
-      <h3>Wish</h3>
-      <h3>Verses</h3>
+      <h3 style="text-align: center;">Open</h3>
+      <h3 style="text-align: center;">Wish</h3>
+      <h3 style="text-align: center;">Verses</h3>
 
       <p>Consider God's event without limits<br>
         Words are always incorrect about it<br>
@@ -8357,8 +8533,8 @@ window.detailVisibility = {
 
     <div class="gorap-grid-2x2">
 
-      <h3>Doubt PAPER</h3>
-      <h3>Being PAPER</h3>
+      <h3 style="text-align: center;">Doubt PAPER</h3>
+      <h3 style="text-align: center;">Being PAPER</h3>
 
       <p>Maybe I imagine chimeric things like psychopaths<br>
         To bamboozle everyone, same here.<br>
@@ -8526,9 +8702,9 @@ window.detailVisibility = {
 
     <div class="MnP_gorap-grid-3x3">
 
-      <h3>Only.</h3>
-      <h3>Custom!</h3>
-      <h3>Gotcha ?</h3>
+      <h3 style="text-align: center;">Only.</h3>
+      <h3 style="text-align: center;">Custom!</h3>
+      <h3 style="text-align: center;">Gotcha ?</h3>
 
       <p>!!WARNING Copyrighted Content!!<br>
         --- I present you <span class="hmode">Mapnel</span> ---<br>
@@ -8591,7 +8767,6 @@ window.detailVisibility = {
         <q>The world is a TRAP!! IDK it's not me. But it's me.<br>
           No it's the Universe? Outterverse? Interverse? or maybe the Multiverse if only you get what I mean ?</q></p>
 
-
       <p>God Right! Gods Wrong!<br>
         Godesse Godesses Wrong x2! bruh…<br>
         I'am poor. You are rich. Dignity is on paper.<br>
@@ -8636,30 +8811,30 @@ window.detailVisibility = {
               <td><ruby>EmpaTH<rt>Affinity</rt></ruby></td>
             </tr>
             <tr>
-              <td><ruby>CaTH-CaTcH<rt>Tube-Seize</rt></ruby></td>
+              <td><ruby>CaTH-CaTCH<rt>Tube-Seize</rt></ruby></td>
               <td><ruby>StaTH<rt>Town</rt></ruby></td>
-              <td><ruby>BaTH-BaTcH<rt>Wash-Package</rt></ruby></td>
+              <td><ruby>BaTH-BaTCH<rt>Wash-Package</rt></ruby></td>
             </tr>
             <tr>
-              <td><ruby>MaTH-MaTcH<rt>Calculation-Party</rt></ruby></td>
+              <td><ruby>MaTH-MaTCH<rt>Calculation-Party</rt></ruby></td>
               <td><ruby>OaTH<rt>Promise</rt></ruby></td>
-              <td><ruby>PaTH-PaTcH<rt>Track-Update</rt></ruby></td>
+              <td><ruby>PaTH-PaTCH<rt>Track-Update</rt></ruby></td>
             </tr>
             </tr>
             <tr>
-              <td><ruby>SnaTH-SnaTcH<rt>Scythe-Extract</rt></ruby></td>
+              <td><ruby>SnaTH-SnaTCH<rt>Scythe-Extract</rt></ruby></td>
               <td><ruby>GinaTH<rt>Defense</rt></ruby></td>
-              <td><ruby>BlaTH-BlaTcH<rt>Blossom-Blackening</rt></ruby></td>
+              <td><ruby>BlaTH-BlaTCH<rt>Blossom-Blackening</rt></ruby></td>
             </tr>
             <tr>
-              <td><ruby>RATH-RaTcH<rt>Wall-Unilateral</rt></ruby></td>
+              <td><ruby>RATH-RaTCH<rt>Wall-Unilateral</rt></ruby></td>
               <td><ruby>WraTH<rt>Anger</rt></ruby></td>
-              <td><ruby>NaTH-NaTcH<rt>Creator-Naturally</rt></ruby></td>
+              <td><ruby>NaTH-NaTCH<rt>Creator-Naturally</rt></ruby></td>
             </tr>
             <tr>
-              <td><ruby>LaTH-LaTcH<rt>Plaster-Padlock</rt></ruby></td>
+              <td><ruby>LaTH-LaTCH<rt>Plaster-Padlock</rt></ruby></td>
               <td><ruby>EraTH<rt>Surname</rt></ruby></td>
-              <td><ruby>WaTH-WaTcH<rt>Ford-Monitor</rt></ruby></td>
+              <td><ruby>WaTH-WaTCH<rt>Ford-Monitor</rt></ruby></td>
             </tr>
           </tbody>
         </table>
@@ -8971,7 +9146,7 @@ window.detailVisibility = {
 
     <dd><b><u><span class="rappel">(RAPPEL)</span>
           Monop%Polym</u></b>:
-      État/Dynamique contractée où être et devenir sont imbriqués dans une déperdition rupturante.<br>
+      État-Dynamique contractée où être et devenir sont imbriqués dans une déperdition rupturante.<br>
       <i style="font-size: 0.8em;">Simplifiant - Prohibition affamante saturée % Malaise apathique déclinant ou Prendre au Piège</i>
     </dd><br>
 
@@ -8992,16 +9167,53 @@ window.detailVisibility = {
 
   <h2 id="Anti-Xenos" style="text-align: center;">「Anti-Xenos」</h2>
 
-  <p>Au nom du bon déroulement de la vie en société, tout citoyen est tenu de coopérer aux <span class="hmode">instances</span> officielles afin de garantir la paix nationale et la <span class="hmode">préservation</span> de l'unité.<br>
-    Quiconque sera tenu de dissidence et de lutte envers les légitimes défenseurs de l'intérêt de l'âme collective en connaissance de cause sera contraint de réparer ses torts par le <span class="hmode">travail</span>.<br>
-    Selon la gravité du délit, l'individu concerné sera plus ou moins contraint qu'on lui suce son sang inscrit dans le pacte qu'il a pourtant adhéré explicitement mais non respecté.<br>
-    En cas d'échéances, le responsable de l'infraction encours une peine de mort éventuelle par la dépossession de ses entrailles s'il est dû comme il en était censé rendre blé.<br>
-    Étant donné que l'âge de la <span class="hmode">maturité</span> a été décidé pour 18 ans, la loi considère les adultes suffisament mûrs pour obéir au protocol de vie qui leur est transmise en toute grâce.<br>
-    L'intégrité de chacun dépendra de sa conformité avec les jugements qui lui sont faits par la raison et l'effort de son usage <span class="hmode">critique</span> pour le profit de tout ces membres.<br>
-    Allons, sérieusement tu crois savoir ce qu'est être civilisé à notre époque mon jeune <span class="hmode">novice</span> ? On dirait bien que tu as encore beaucoup à apprendre mon satané fiston!</p>
+<article class="charte">
+
+    <div class="article">
+        <span class="article-title">Préambule</span>
+        Au nom du bon déroulement de la vie en société, tout citoyen est tenu de coopérer aux <span class="hmode">instances</span> officielles afin de garantir la paix nationale et la <span class="hmode">préservation</span> de l'unité.
+    </div>
+
+    <div class="article">
+        <span class="article-title">Article I</span>
+        Quiconque sera tenu de dissidence et de lutte envers les légitimes défenseurs de l'intérêt de l'âme collective en connaissance de cause sera contraint de réparer ses torts par le <span class="hmode">travail</span>.
+    </div>
+
+    <div class="article">
+        <span class="article-title">Article II</span>
+        Selon la gravité du délit, l'individu concerné sera plus ou moins contraint qu'on lui suce son sang inscrit dans le pacte qu'il a pourtant adhéré explicitement mais non respecté.
+    </div>
+
+    <div class="article">
+        <span class="article-title">Article III</span>
+        En cas d'échéances, le responsable de l'infraction encours une peine de mort éventuelle par la dépossession de ses entrailles s'il est dû comme il en était censé rendre blé.
+    </div>
+
+    <div class="article">
+        <span class="article-title">Article IV</span>
+        Étant donné que l'âge de la <span class="hmode">maturité</span> a été décidé pour 18 ans, la loi considère les adultes suffisamment mûrs pour obéir au protocole de vie qui leur est transmis en toute grâce.
+    </div>
+
+    <div class="article">
+        <span class="article-title">Article V</span>
+        L'intégrité de chacun dépendra de sa conformité avec les jugements qui lui sont faits par la raison et l'effort de son usage <span class="hmode">critique</span> pour le profit de tous ces membres.
+    </div>
+
+    <div class="conclusion">
+        « Allons, sérieusement tu crois savoir ce qu'est être civilisé à notre époque mon jeune <span class="hmode">novice</span> ? On dirait bien que tu as encore beaucoup à apprendre mon satané fiston ! »
+    </div>
+    
+    <div class="signature">Ordre Magistrale</div>
+    
+</article>
 
   <div class="written">17/09/25</div>
 
+  <p style="text-align: center; font-size: 2em; margin: 32px auto;">
+    Toute ça vie n'est qu'une machination aursylienne.<br>
+    Çes choix dépendent du çerpent, çon trône et de ça tuyauterie.<br>
+  </p>
+  
   <div style="margin: 32px auto;">
 
     <dd><b><u><span class="rappel">(RAPPEL)</span>
@@ -9228,137 +9440,6 @@ window.detailVisibility = {
   <div id="arti44a"></div>
 
   <div style="margin: 32px auto;">
-  
-    <dd><b><u><span class="rappel">(RAPPEL)</span>
-      Câble/Wire</b></u>:
-      Le destin t'a choisi, ta vie a un sens, tu as besoin de ceci ou cela XD.<br>
-      Scepticisme de l'artificialité.</dd><br>
-
-    <dd><b><u><span class="rappel">(RAPPEL +)</span>
-          Travail</u></b>:
-      Collecteur $¥€₿ [Monop%Polym] abusant la culture (Profit - Extraction - Monopole - Accumulation).<br>
-      Ce qui doit être fait pour l'âme collective à ce qu'on dit.<br>
-      Tic au devoir avec ravoir.</dd><br>
-
-  </div>
-  
-  <details class="info">
-    <summary>Sujet</summary>
-    Type: Structure d'Engrenage<br>
-    Question: Système<br>
-    Outil: Nous<br>
-    Éclairage: Système<br>
-    Alignement: Balivernes<br>
-    Mouvement: Collectif<br>
-    Tension: Individuelle<br>
-  </details>
-  
-  <h2 id="TicketTactique" style="text-align: center;">「TicketTactique」</h2>
-
-  <ol style="font-size: 1.25em; text-align: center;">
-    <li>Entraîner la crainte de la peur</li>
-    <li>Museler les surfaces</li>
-    <li>S'auto-justifier par ordre d'autorité</li>
-    <li>Neutraliser le bavardage</li>
-    <li>Enfumer de prétextes</li>
-    <li>Suivre l'horaire de la haine habitué</li>
-    <li>Inhiber de l'exposition solaire</li>
-    <li>Valoriser par intérêt économique</li>
-    <li>Émettre une validation de drogues</li>
-    <li>Produire mauvaise conscience</li>
-    <li>Falloir trouver une solution</li>
-    <li>Risquer de mourir au cas contraire</li>
-    <li>Conduire l'interprétation médiatique</li>
-    <li>Donner raison au système</li>
-    <li>Personnaliser l'impunité</li>
-    <li>S'intégrer légalement</li>
-    <li>Confirmer son identité</li>
-    <li>Simuler comme si de rien était</li>
-  </ol>
-
-  <div class="written">26/12/25</div>
-
-  <div style="margin: 32px auto;">
-
-    <dd><b><u><span class="rappel">(RAPPEL)</span>
-      Blehdwoluzvi</b></u>:
-      Le pouvoir dévoriste n'est que blehdwo, tu connais maintenant, tu es prêt pour la vie!<br>
-      Librairie Ludothèque Hourra! Comédie ou Tragédie ?</dd><br>
-
-    <dd><b><u><span class="rappel">(RAPPEL +)</span>
-      Letricot</b></u>:
-      Technicité éditoriale du langage et des combinaisons parmi les attributions de sens et du voisinage phonétique.<br>
-      Lecture interchangée possiblement à l'envers pour décrire une forme nouvelle éventuellement dissonante de la théorie à la pratique.</dd><br>
-
-  <dd><b><u>InFeXcuse</u></b>:
-    Préfixes % Suffixes odieux à jeter hors de son champ de vocabulaire.<br>
-    Il y a le X, le Xé, le Xeur; la Xation est féroce.<br>
-    Infection + Excuse</dd><br>
-
-  </div>
-  
-  <details class="info">
-    <summary>Sujet</summary>
-    Type: Pamphlet contre la Corruption Linguistique<br>
-    Question: Dictionnaire<br>
-    Outil: Langage<br>
-    Éclairage: Connotation<br>
-    Alignement: Cognition<br>
-    Mouvement: Références<br>
-    Tension: Entendement<br>
-  </details>
-
-  <h2 id="InFeXcuse" style="text-align: center;">「InFeXcuse」</h2>
-
-  <div style="display: grid; grid-template-columns: 1fr 1fr; justify-items: center;">
-
-    <div>
-
-      <table border="1" style="text-align: center; font-size: x-medium;">
-        <thead>
-          <th colspan="2">preFIX</th>
-        </thead>
-        <tbody>
-          <tr><td>onoma- doxo-</td><td>non-</td></tr>
-          <tr><td>sur-, super-</td><td>sub-</td></tr>
-          <tr><td>eu-, euo-</td><td>cac(o)-</td></tr>
-          <tr><td>aristo-</td><td>arch(i)-</td></tr>
-          <tr><td>angélo-</td><td>démono- cata-</td></tr>
-          <tr><td>mis(o)-</td><td>narco- klepto-</td></tr>
-          <tr><td>dys- addicto- porno-</td><td>noso- toxico-</td></tr>
-          <tr><td>mécano- politico- erg(o)-</td><td>idéo- nomo-</td></tr>
-          <tr><td>patho- crimin(a/o)-</td><td>médico- pharmaco-</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-    <div>
-
-      <table border="1" style="text-align: center; font-size: x-medium;">
-        <thead>
-          <th colspan="2">suFIX</th>
-        </thead>
-        <tbody>
-          <tr><td>-isme -cratie</td><td>-iste -crate</td></tr>
-          <tr><td>-âtre</td><td>-aud(e)</td></tr>
-          <tr><td>-arc(at/hie)</td><td>-arche</td></tr>
-          <tr><td>-lâtrie -manie</td><td>-lâtre -mane</td></tr>
-          <tr><td>-oche</td><td>-ocher</td></tr>
-          <tr><td>-aille</td><td>-ard(e)/-asse</td></tr>
-          <tr><td>-phobie</td><td>-phobe</td></tr>
-          <tr><td>-pathie</td><td>-pathe</td></tr>
-          <tr><td>-rragie</td><td>-thanasie</td></tr>
-        </tbody>
-      </table>
-
-    </div>
-
-  </div>
-
-  <div class="written">31/10/25</div>
-
-  <div style="margin: 32px auto;">
 
     <dd><b><u><span class="rappel">(RAPPEL)</span>
       Blessure Fossile</u></b>:
@@ -9388,31 +9469,46 @@ window.detailVisibility = {
   </details>
 
   <h3 style="text-align: center;">VII-X</h3>
-
-  <table border="1" style="text-align: center; font-size: x-medium;">
-    <thead>
-      <tr><th>Souffrance</th><th>Sanction</th><th>Supplice</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>Péremption</td><td>Poison</td><td>Pollution</td></tr>
-      <tr><td>Dégradation</td><td>Dépravation</td><td>Déchet</td></tr>
-      <tr><td>Usure</td><td>Souillure</td><td>Moisissure</td></tr>
-      <tr><td>Traumatisme</td><td>Tremblement</td><td>Traitement</td></tr>
-      <tr><td>Contamination</td><td>Corruption</td><td>Crime</td></tr>
-      <tr><td>Malédiction</td><td>Misère</td><td>Malheur</td></tr>
-    </tbody>
-  </table>
+  
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+    <table border="1" class="triplet-rows" style="font-size: 1.5em; width: max-content;">
+      <tbody>
+        <tr>
+          <th>Souffrance</th>
+          <td>Péremption</td>
+          <td>Dégradation</td>
+          <td>Usure</td>
+          <td>Traumatisme</td>
+          <td>Contamination</td>
+          <td>Malédiction</td>
+        </tr>
+        <tr>
+          <th>Sanction</th>
+          <td>Poison</td>
+          <td>Dépravation</td>
+          <td>Souillure</td>
+          <td>Tremblement</td>
+          <td>Corruption</td>
+          <td>Misère</td>
+        </tr>
+        <tr>
+          <th>Supplice</th>
+          <td>Pollution</td>
+          <td>Déchet</td>
+          <td>Moisissure</td>
+          <td>Traitement</td>
+          <td>Crime</td>
+          <td>Malheur</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <div style="margin: 32px auto;">
 
     <dd><b><u><span class="rappel">(RAPPEL)</span>
       Enquête</u></b>:
       Stimulation interrogative explorative autosuffisante dont l'accoutumance ne rend jamais de marbre.</dd><br>
-
-    <dd><b><u><span class="rappel">(RAPPEL)</span>
-      TRIBALT</u></b>:
-      Structure évolutives des formes morcelées vers leur incompréhensibles compréhensions avortées.</dd><br>
-
     <dd><b><u>Conte Sanguinaire</u></b>:
       Déconseillé aux humains moins humains.</dd><br>
   </div>
@@ -9424,6 +9520,8 @@ window.detailVisibility = {
     </p>
   </div>
 
+  <div class="author">【Fostrah & Nezrog】</div>
+  
   <details class="info">
     <summary>Sujet</summary>
     Type: Encyclopédie Historique<br>
@@ -9435,26 +9533,72 @@ window.detailVisibility = {
     Tension: Identité<br>
   </details>
 
-  <div class="author">【Fostrah & Nezrog】</div>
-
 <!--Conte Sanguinaire-->
 <div id="Bloody-Tale" class="excluded-section" aria-label="Conte Sanguinaire"></div>
 
   <div class="written">22/11/25</div>
 
-  <p style="text-align: center; font-size: 2em; margin: 32px auto;">
-    Toute ça vie n'est qu'une machination aursylienne.<br>
-    Çes choix dépendent du çerpent, çon trône et de ça tuyauterie.<br>
-  </p>
+    <div style="margin: 32px auto;">
+
+    <dd><b><u><span class="rappel">(RAPPEL)</span>
+      Blehdwoluzvi</b></u>:
+      Le pouvoir dévoriste n'est que blehdwo, tu connais maintenant, tu es prêt pour la vie!<br>
+      Librairie Ludothèque Hourra! Comédie ou Tragédie ?</dd><br>
+
+    <dd><b><u><span class="rappel">(RAPPEL +)</span>
+      Letricot</b></u>:
+      Technicité éditoriale du langage et des combinaisons parmi les attributions de sens et du voisinage phonétique.<br>
+      Lecture interchangée possiblement à l'envers pour décrire une forme nouvelle éventuellement dissonante de la théorie à la pratique.</dd><br>
+
+  <dd><b><u>InFeXcuse</u></b>:
+    Préfixes % Suffixes odieux à utiliser avec modération.<br>
+    Structure des mots du politicien<br>
+    Il y a le X, le Xé, le Xeur; la Xation est féroce.<br>
+    Infection + Excuse</dd><br>
+
+  </div>
+  
+  <details class="info">
+    <summary>Sujet</summary>
+    Type: Pamphlet contre la Corruption Linguistique<br>
+    Question: Dictionnaire<br>
+    Outil: Langage<br>
+    Éclairage: Connotation<br>
+    Alignement: Cognition<br>
+    Mouvement: Références<br>
+    Tension: Entendement<br>
+  </details>
+
+  <h3 style="text-align: center;">InFeXcuse</h3>
+
+  <table border="1" style="text-align: center; font-size: x-medium;">
+    <tbody>
+      <th colspan="2">preFIX</th>
+      <th rowspan="10" style="font-size: 1.5em; width: 1.5em;">R<br>A<br>D<br>I<br>C<br>A<br>L</th>
+      <th colspan="2">suFIX</th>
+      <tr><td>onoma- doxo-</td><td>non-</td><td>-isme -cratie</td><td>-iste -crate</td></tr>
+      <tr><td>sur-, super-</td><td>sub-</td><td>-âtre</td><td>-aud(e)</td></tr>
+      <tr><td>eu-, euo-</td><td>cac(o)-</td><td>-arc(at/hie)</td><td>-arche</td></tr>
+      <tr><td>aristo-</td><td>arch(i)-</td><td>-lâtrie -manie</td><td>-lâtre -mane</td></tr>
+      <tr><td>angélo-</td><td>démono- cata-</td><td>-oche</td><td>-ocher</td></tr>
+      <tr><td>mis(o)-</td><td>narco- klepto-</td><td>-aille</td><td>-ard(e)/-asse</td></tr>
+      <tr><td>dys- addicto- porno-</td><td>noso- toxico-</td><td>-phobie</td><td>-phobe</td></tr>
+      <tr><td>mécano- politico- erg(o)-</td><td>idéo- nomo-</td><td>-pathie</td><td>-pathe</td></tr>
+      <tr><td>patho- crimin(a/o)-</td><td>médico- pharmaco-</td><td>-rragie</td><td>-thanasie</td></tr>
+    </tbody>
+  </table>
   
   <div style="margin: 32px auto;">
 
-    <dd><b><u><span class="rappel">(RAPPEL)</span>
+    <dd><b><u><span class="rappel">(RAPPEL +)</span>
           Ventriloque</u></b>:
       Bagarreur de fortune d'un manque irascible, sous une expression difforme de la faim au détriment de l'organisme intégral.<br>
-      Partisans compétiteurs de l'entendement dévore-novice comme loisir obsessionnel.</dd><br>
+      Partisans compétiteurs de l'entendement dévore-novice comme loisir obsessionnel.<br>
+      Subission de son désir sans SOS</dd><br>
 
   </div>
+
+  <div class="author">【Télévision Num.001】</div>
   
   <details class="info">
     <summary>Sujet</summary>
@@ -9524,21 +9668,129 @@ window.detailVisibility = {
       <div>
         <div class="picol-kentron"></div>
         <h4>Kentron Mapnélien</h4>
-        <div>Hiérarchie Supérieure - Rouge &gt; Gris &gt; Blanc&Noir &gt; Vert&Bleu &gt; Rouge</div>
-        <div>Hiérarchie Inférieure - Rouge &lt; Vert&Bleu &lt; Blanc&Noir &lt; Gris &lt; Rouge</div>
+        <div>Hiérarchie Supérieure - <span class="red-text">Rouge</span> &gt; <span class="grey-text">Gris</span> &gt; <span class="white-text">Blanc</span>&<span class="black-text">Noir</span> &gt; <span class="green-text">Vert</span>&<span class="blue-text">Bleu</span> &gt; <span class="red-text">Rouge</span></div>
+        <div>Hiérarchie Inférieure - <span class="red-text">Rouge</span> &lt; <span class="green-text">Vert</span>&<span class="blue-text">Bleu</span> &lt; <span class="white-text">Blanc</span>&<span class="black-text">Noir</span> &lt; <span class="grey-text">Gris</span> &lt; <span class="red-text">Rouge</span></div>
       </div>
       
       <div>
         <div class="picol-kentron-aursyl"></div>
         <h4>Kentron Aursylien</h4>
-        <div>Hiérarchie Supérieure - Gris &gt; Blanc%Noir &gt; Bleu &gt; Rouge%Vert</div>
-        <div>Hiérarchie Inférieure - Rouge%Vert &lt; Bleu &lt; Blanc%Noir &lt; Gris</div>
+        <div>Hiérarchie Supérieure - <span class="grey-text">Gris</span> &gt; <span class="white-text">Blanc</span>%<span class="black-text">Noir</span> &gt; <span class="blue-text">Bleu</span> &gt; <span class="red-text">Rouge</span>%<span class="green-text">Vert</span></div>
+        <div>Hiérarchie Inférieure - <span class="red-text">Rouge</span>%<span class="green-text">Vert</span> &lt; <span class="blue-text">Bleu</span> &lt; <span class="white-text">Blanc</span>%<span class="black-text">Noir</span> &lt; <span class="grey-text">Gris</span></div>
       </div>
       
     </div>
 
   </div>
 
+  <div style="margin: 32px auto;">
+  
+    <dd><b><u><span class="rappel">(RAPPEL)</span>
+      TRIBALT</u></b>:
+      Structure évolutives des formes morcelées vers leur incompréhensibles compréhensions avortées.</dd><br>
+
+  </div>
+
+  <div class="author">【?】</div>
+  
+  <details class="info">
+    <summary>Sujet</summary>
+    Type: Message Politique<br>
+    Question: Rétaliation<br>
+    Outil: Malinerie<br>
+    Éclairage: Ennemis<br>
+    Alignement: Crime<br>
+    Mouvement: Totalitarisme<br>
+    Tension: Héritage<br>
+  </details>
+  
+  <h2 id="Cartel_Conceptionnel" style="text-align: center;">「Cartel Conceptionnel」</h2>
+
+  <div class="duel-cartel">
+  
+  <p>
+  Nulle ne saurait départager qui est le plus coquin entre les mapnéliens, les iuvalciens et les arcadiens, cependant ceux qui sont allé au bout de leur coquinerie ne sont autres que les aursyliens.
+  On dit qu'la vie a fait son apparition sur terre depuis un hallucinant processus malgré nous.
+  Aucunement en mesure de prouver quel quelque chose est derrière cette réalité, par le sang décidera qui sera vrai en ce monde.
+  De l'ethnocentrisme et des étiquettes pour fourvoyer les faibles est un jeu d'enfant.
+  Nous poursuivrons la suite de nos motifs à travers des remplaçants qui n'ont pas leur mot à dire tant nous avons les mêmes états de faits à avoir en commun.
+  Quiconque osera se soustraire de notre charge sera déclaré pauvre fou, ceux-là seront dépossédés de leurs habits et nus de quoi renforcer leur image comme il se doit.
+  <br><br>
+  Je te salut mapnélien(ne)!
+  Bonne chance tu auras besoin afin de parvenir un temps soit peu à sortir de la toile arachnéenne d'où tu viens.
+  Tu seras si araché(e) de ta condition qu'un régiment spécial se portera à ton grand malheur garant de l'impossibilisation de tes plans.
+  La guerre est déclarée pour faire de toi le putschiste fictionnel.
+  <br><br>
+  Je te salut iuvalcien(ne)!
+  Je te promets que des affamés produits d'intention dévoreront depuis ta chair jusqu'à tes entrailles dans le sens le plus figuré qu'il soit.
+  Ton abstraction prouvera sa faiblesse par la justesse de nos valeurs traditionnelles tenues par nos compatriotes.
+  La guerre est déclarée pour brandir les critères qui font ce que nous sommes.
+  <br><br>
+  Je te salut arcadien(ne)!
+  Je suis venu t'informer que tu as choisi le camp des terrassés, les meilleurs mains sont celles qui font tomber toutes les autres en châteaux de cartes effondrés.
+  Notre franchise descend d'une officialité d'entendement que tu ne pourra rompre pas d'une semelle.
+  La guerre est déclarée pour générer la gouvernance traumatique.
+  <br><br>
+  Des plus incorrigibles, les hors la loi échappant aux engagements standards, ma religion du tribunal ne leur plaît pas, mais que c'est balot.
+  Traquez leurs chaînes et usez d'eux comme des outils vivants comme le reste hiérarchique du dressage.
+  Nous trouveront satisfaction à coincer chaque trouble dans sa compression la plus charitable que nous pouvons offrir sous toutes les techniques à disposition.
+  Quiconque nous livrera l'un de ces énergumènes sera récompensé par un respect sans pareil.
+  </p>
+
+  </div>
+  
+  <div class="written">28/02/26</div>
+
+
+  <div style="margin: 32px auto;">
+  
+    <dd><b><u><span class="rappel">(RAPPEL)</span>
+      Câble/Wire</b></u>:
+      Le destin t'a choisi, ta vie a un sens, tu as besoin de ceci ou cela XD.<br>
+      Scepticisme de l'artificialité.</dd><br>
+
+    <dd><b><u><span class="rappel">(RAPPEL +)</span>
+          Travail</u></b>:
+      Collecteur $¥€₿ [Monop%Polym] abusant la culture (Profit - Extraction - Monopole - Accumulation).<br>
+      Ce qui doit être fait pour l'âme collective à ce qu'on dit.<br>
+      Tic au devoir avec ravoir.</dd><br>
+
+  </div>
+  
+  <details class="info">
+    <summary>Sujet</summary>
+    Type: Structure d'Engrenage<br>
+    Question: Système<br>
+    Outil: Nous<br>
+    Éclairage: Système<br>
+    Alignement: Balivernes<br>
+    Mouvement: Collectif<br>
+    Tension: Individuelle<br>
+  </details>
+  
+  <h2 style="text-align: center;">TicketTactique</h2>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 10px; font-size: 1.1em;">
+  <div>1. Entraîner la crainte de la peur</div>
+  <div>2. Museler les surfaces</div>
+  <div>3. S'auto-justifier par ordre d'autorité</div>
+  <div>4. Neutraliser le bavardage</div>
+  <div>5. Enfumer de prétextes</div>
+  <div>6. Suivre l'horaire de la haine habitué</div>
+  <div>7. Inhiber de l'exposition solaire</div>
+  <div>8. Valoriser par intérêt économique</div>
+  <div>9. Émettre une validation de drogues</div>
+  <div>10. Produire mauvaise conscience</div>
+  <div>11. Falloir trouver une solution</div>
+  <div>12. Risquer de mourir au cas contraire</div>
+  <div>13. Conduire l'interprétation médiatique</div>
+  <div>14. Donner raison au système</div>
+  <div>15. Personnaliser l'impunité</div>
+  <div>16. S'intégrer légalement</div>
+  <div>17. Confirmer son identité</div>
+  <div>18. Simuler comme si de rien était</div>
+</div>
+  
   <div style="margin: 32px auto;">
 
     <dd><b><u>Nihilin</u></b>:
@@ -9547,7 +9799,7 @@ window.detailVisibility = {
 
   </div>
 
-  <div class="author">【Xyfurn】</div>
+  <div class="author">【Xyfurn - Vydnitt】</div>
 
   <details class="info">
     <summary>Sujet</summary>
@@ -9584,7 +9836,7 @@ window.detailVisibility = {
   <div class="written">24/09/25</div>
 
 <details class="excluded-section">
-  <summary>Version Policé</summary>
+  <summary>Version Policée</summary>
   <h2 style="text-align: center;">「𝔚𝔞𝔰𝔱𝔢𝔩𝔞𝔫𝔡」</h2>
 
   <div class="wasteland">
@@ -9620,7 +9872,7 @@ window.detailVisibility = {
       Adversaire de la seigneurie planifiant son itinéraire purement stratégique dans des proportions d'ennui globalisé.<br>
       Annihilateur ontologique de la raison d'être ou la sournoise trafiqueuse de conscience vers l'ébranlement de sa volonté propre dont on ne peut certifier la provenance.<br>
       Colonisateur d'apprentis-novices vers la déflagration de leur consciences.<br>
-      Il est décrit comme ayant 2 mains 2 pieds 2 yeux 2 oreilles 1 nez 1 bouche.<br>
+      Il est décrit comme ayant 2 mains 2 pieds 2 yeux 2 oreilles 1 nez 1 bouche, mais s'est aussi construit une citadelle dans le monde invisible de l'esprit de chacun.<br>
       Putschiste de Dieu déguisé en celui-ci injoncteur du pourquoi capable de ruiner au moins un millier de personnes de leur soutien servile consenti par la délégation.</dd><br>
 
     <dd><b><u>Dévore-Nova</u></b>:
@@ -9631,7 +9883,7 @@ window.detailVisibility = {
 
   <!-- PROjECT SSeCCu$ -->
 
-  <div class="author">【UiNo - Tôhla】</div>
+  <div class="author">【Nameless】</div>
 
   <h3>[Colonized Chart] Review of Success</h3>
 
@@ -9773,65 +10025,54 @@ window.detailVisibility = {
   <div style="text-align: center; font-size: x-large; margin: 64px auto;">
 
     <dt><b><u>MATRICE 4lien 4perçu</u></b></dt>
-    <dd>Partie bricolée [Mots Croisés] Arcado-Aursylien.</dd><br>
+    <dd>Partie bricolée [14 Mots Croisés] Arcado-Aursylien.</dd><br>
 
   </div>
 
-<button id="Alien-toggle-btn" style="padding: 8px 16px; font-size: 1rem; border-radius: 4px; cursor: pointer; background: var(--bg-color); color: var(--text-color); border: 1px solid var(--text-color); border radius: 6px; transition: all 0.2s ease; margin: 10px 0;">
+  <div style="margin-bottom: 32px;">
+    <button id="openArcadiaRefsBtn" class="category-tag" style="margin: 0 auto; display: block; font-size: 1.5em;"><span class="mirror-delta">⟁</span></button> 
+  </div>
+
+<button id="Alien-toggle-btn" style="padding: 8px 16px; font-size: 1rem; border-radius: 4px; cursor: pointer; background: var(--bg-color); color: var(--text-color); border: 1px solid var(--text-color); border-radius: 6px; transition: all 0.2s ease; margin: 10px 0;">
   Switch to Horizontal View
 </button>
 
-  <div id="matr6">
+<div id="matr6">
 
-    <div id="4lien-4perçu" style="font-size: 3em; text-align: center; text-decoration: underline;">
-      ⌂<strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>
-      <ruby>{MATRICE <ruby>4lien<rt><span class="phantomized">A</span>lien</rt></ruby> <ruby>4perçu<rt><span class="phantomized">A</span>perçu</rt></ruby>}</ruby>
-        <strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>⌂
-    </div>
-    
+  <div id="4lien-4perçu" style="font-size: 3em; text-align: center; text-decoration: underline;">
+    ⌂<strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>
+    <ruby>{MATRICE <ruby>4lien<rt><span class="phantomized">A</span>lien</rt></ruby> <ruby>4perçu<rt><span class="phantomized">A</span>perçu</rt></ruby>}</ruby>
+    <strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>⌂
+  </div>
+
   <div id="Alien-original">
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 64px;">
 
-    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 64px;">
-      <table border="1" class="Alien" style="font-size: x-medium;">
-        <colgroup>
-          <col style="width:20%;">
-          <col style="width:20%;">
-          <col style="width:20%;">
-          <col style="width:20%;">
-          <col style="width:20%;">
-        <thead>
-          <tr style="font-size: 2em;">
-            <th>?</th>
-            <th>?</th>
-            <th>?</th>
-            <th>?</th>
-            <th>?</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th>?</th>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-          </tr>
-          <tr>
-            <th>?</th>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-            <td>?</td>
-          </tr>
-        </tbody>
-      </table>
+  <div id="cw-wrap" style="display:flex; flex-wrap:wrap; gap:48px; justify-content:center; align-items:flex-start; margin:32px auto;">
+
+    <div>
+      <div style="display:flex; gap:8px; margin-bottom:12px; flex-wrap:wrap; align-items:center;">
+        <button onclick="cwVerify()" style="padding:6px 14px; border-radius:6px; border:1px solid var(--text-color); background:var(--bg-color); color:var(--text-color); cursor:pointer; font-size:0.9em;">Vérifier</button>
+        <button onclick="cwReveal()" style="padding:6px 14px; border-radius:6px; border:1px solid var(--text-color); background:var(--bg-color); color:var(--text-color); cursor:pointer; font-size:0.9em;">Révéler</button>
+        <button onclick="cwReset()"  style="padding:6px 14px; border-radius:6px; border:1px solid var(--text-color); background:var(--bg-color); color:var(--text-color); cursor:pointer; font-size:0.9em;">Recommencer</button>
+        <span id="cw-msg" style="padding:6px 8px; font-size:0.85em; font-weight:bold;"></span>
+      </div>
+      <table id="cw-grid" style="border-collapse:collapse;"></table>
+    </div>
+
+    <div style="max-width:320px;">
+      <div id="cw-clue-active" style="margin-bottom:12px; padding:8px 12px; border:1px solid var(--text-color); border-radius:6px; font-size:0.9em; min-height:36px; background:var(--bg-color);">Cliquez une case</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+        <div><strong style="font-size:0.95em;">→ Horizontaux</strong><ol id="cw-across" style="padding-left:18px; font-size:0.82em; line-height:1.9;"></ol></div>
+        <div><strong style="font-size:0.95em;">↓ Verticaux</strong><ol id="cw-down"   style="padding-left:18px; font-size:0.82em; line-height:1.9;"></ol></div>
+      </div>
     </div>
 
   </div>
-
+  </div>
   </div>
 
-
+</div>
 
 <div id="Alien-swap" style="display: none; overflow-x: auto;"></div>
 
@@ -10262,7 +10503,7 @@ window.detailVisibility = {
 
   </div>
   
-  <div class="author">【Leqwa】</div>
+  <div class="author" style="text-align: center;">【Wacwe】</div>
 
   <details class="info">
     <summary>Sujet</summary>
@@ -10366,7 +10607,10 @@ window.detailVisibility = {
 
   </div>
 
-  <div class="author">【Ekeline】</div>
+  <div class="author" style="display: flex; justify-content: space-between;">
+    <span>【Ekeline】</span>
+    <span>【Nezrog】</span>
+  </div>
 
   <div id="phoRÊTT_&_dézELTT" class="phodez-section" style="margin-bottom: 64px;">
 
@@ -10523,7 +10767,7 @@ window.detailVisibility = {
 
   </div>
 
-  <div class="author">【Xyfurn】</div>
+  <div class="author">【Xyfurn & Vydnitt】</div>
 
   <details class="info">
     <summary>Sujet</summary>
@@ -10536,7 +10780,7 @@ window.detailVisibility = {
     Tension: Mise en Pratique<br>
   </details>
 
-  <h2 id="Code_ÆND" style="text-align: center;">「Code ÆND」</h2>
+  <h2 id="Conquête_Ataraxiale" style="text-align: center;">「Conquête Ataraxiale」</h2>
 
   <div class="respect">
 
@@ -10547,6 +10791,26 @@ window.detailVisibility = {
     <p>L'un <strike class="phantomized">doit</strike> autoriser ce qu'il ressent depuis le berceau de sa chair et de sa psyché, tenter d'y comprendre son origine, sa raison, et les enjeux encourus de son opinion sur celles-ci.</p>
 
     <p>L'un <strike class="phantomized">doit</strike> accorder de l'espace aux propriétés hors de sa possession, les considérer embêtables pour un temps et une dimension donné en son nom personnalisé d'acteur costumé.</p>
+
+    <p>Exécute-toi dévoué à ton miroir<br>
+      Tel la droiture d'une lame<br>
+      Le plus grand cadeau<br>
+      Accordé au cosmos</p>
+
+    <p>Fils, fille de peu importe<br>
+      Garde-toi de te porter juste<br>
+      Né pour te réveiller<br>
+      S'accomplissant à ton propre regard</p>
+
+    <p>Pilier en équilibre<br>
+      Enraciné dans la terre<br>
+      Contemple le dessin<br>
+      Signé par les dieux</p>
+
+    <p>Tout est prêté puis rendu<br>
+      Rien à craindre<br>
+      Il s'agit de mourir correctement<br>
+      Devant ce reflet mémorable</p>
 
   </div>
 
@@ -10629,13 +10893,13 @@ window.detailVisibility = {
           <td>ARc⟁diA</td>
           <td>AurLys</td>
         </tr>
-        <tr style="vertical-align: top; font-size: 1.05vw;">
+        <tr style="vertical-align: top; font-size: 1em;">
           <td>🚩<br>
             🤫🤔🙄🥱😪<br>👁️‍🗨️🏹🎯💯📷<br>🧭⌛️✏️📖📍<br>⚖️🥢🕯️💡🗝️<br>🎗️🍼🎀🧶🧸<br>
             🕰️🧪💧🚽💦<br>🛁🧖‍♀️🚿🧴🧼<br>🔬🔭🩺🧫🩸<br>❓🖱️🔍🧬📡<br>💓🩹<br>
             🍀</td>
 
-          <td>🌑/🌙<br>
+          <td style="vertical-align: top; font-size: 0.855em;">🌑/🌙<br>
             🦌🦉🐺🐻🦔🦇🦥🦨🐨🐯🦒🐪🐫🐼🦡🐭🐁🐀🐹🐰🐇🐛🐜🐝🐌🦋🐞🦗🦂🐍🐸🐊🦎🐢🐋🐟🐠🐡🐙🦐🦪🕷️🦕
             🥑🍆🥔🥕🌽🌶️🥒🥬🥦🧄🧅🥜🌰🍄🐚
             🌱🍃🌿🍂🍁🎋🌾
@@ -10655,7 +10919,7 @@ window.detailVisibility = {
             👹😇🚀🦸‍♂️🦸‍♀️<br>🍪🍩🍰☕🍹<br>🌴🏖️🏊🌊🏄‍♀️<br>🔋⚒️👨‍⚕👌😁<br>👏🥳🌠🌇👀<br>
             💗</td>
 
-          <td>☀️/🌟<br>
+          <td style="vertical-align: top; font-size: 0.855em;">☀️/🌟<br>
             🐵🦍🦧🐴🐷🐗🐮🦃🐔🐑🐐🐏🦓🐘🦏🦛🐂🐃🐆🦁🦘🐿️🦊🦝🦙🦩🦢🦆🕊️🐦🦜🦚🐤🦅🐧🦦🦈🐬🦀🦟🦖
             🍇🍈🍉🍊🍋🍌🍍🥭🍎🍏🍐🍑🍒🍓🥝🍅🥥
             🌸💮🏵️🌹🥀🌺🌻🌼🌷💐
@@ -10668,15 +10932,15 @@ window.detailVisibility = {
             ☘️</td>
         </tr>
         <tr style="font-style: italic;">
-          <td colspan="2">LEMiNiQ</td>
-          <td colspan="3">GEMiNiC</td>
-          <td colspan="2">REMiNiK</td>
+          <td colspan="2">-- LEMiNiQ --</td>
+          <td colspan="3">== GEMiNiC ==</td>
+          <td colspan="2">-- REMiNiK --</td>
         </tr>
-        <tr style="font-size: 1vw;">
-          <td style="font-size: 4vw;">
+        <tr style="font-size: 0.9em;">
+          <td style="font-size: 3em;">
             🖤🥵
           </td>
-          <td style="font-size: 4vw;">
+          <td style="font-size: 3em;">
             ☣️👾
           </td>
           <td>
@@ -10697,10 +10961,10 @@ window.detailVisibility = {
             📰🎰📺🎪🎠🎡🎢🚧👷‍♂️
             ⛔
           </td>
-          <td style="font-size: 4vw;">
+          <td style="font-size: 3em;">
             🤖☢️
           </td>
-          <td style="font-size: 4vw;">
+          <td style="font-size: 3em;">
             🥶🤍
           </td>
         </tr>
@@ -10715,10 +10979,9 @@ window.detailVisibility = {
     <div id="planetarium-content"></div>
   </div>
 
-
-  <div class="red-text" style="text-align: center; font-size: 2em;"><span class="rappel">(RAPPEL)</span>Rouge = Protection</div>
+  <div class="red-text" style="text-align: center; font-size: 2em; margin-bottom: 64px;"><span class="rappel">(RAPPEL)</span>Rouge = Protection</div>
   
-  <div style="display: grid; grid-template-columns: 1fr 1fr; justify-items: center; font-size: large; text-shadow: 0px 0px 10px #FF2400; margin: 64px auto;">
+  <div style="display: grid; grid-template-columns: 1fr 1fr; justify-items: center; font-size: large; text-shadow: 0px 0px 10px #FF2400;">
 
     <div>
       <dd><b><u>白𝓒α𐌺心αট黒</u></b>:
@@ -10732,7 +10995,7 @@ window.detailVisibility = {
 
   </div>
 
-  <div class="ecarlet-tables" style="display: grid; margin: 64px auto; grid-template-columns: 1fr 1fr; text-shadow: 0px 0px 10px #FF2400; align-items: center; gap: 20px;">
+  <div class="ecarlet-tables" style="display: grid; grid-template-columns: 1fr 1fr; text-shadow: 0px 0px 10px #FF2400; align-items: center; gap: 20px;">
 
     <div class="ecarlet" style="text-align: left;">
 
@@ -10864,7 +11127,7 @@ window.detailVisibility = {
 
   </div>
 
-  <div style="margin: 128 auto;">
+  <div style="margin: 64px auto;">
     <div style="font-size: large;">
       <div style="text-align: center;">
         <dd><b><u>ÇEMiNi!</u></b>:
@@ -10952,7 +11215,7 @@ window.detailVisibility = {
     </table>
   </div>
 
-  <div class="author">【Uewij】</div>
+  <div class="author">【Uewij & UiNo】</div>
   
   <details class="info">
     <summary>Sujet</summary>
@@ -10993,6 +11256,8 @@ window.detailVisibility = {
 
   <div class="written">05/07/25</div>
 
+  <div class="green-text" style="text-align: center; font-size: 2em; margin-bottom: 64px;"><span class="rappel">(RAPPEL)</span>Vert = Révolution</div>
+  
   <div style="text-align: center;">
     <dd style="text-shadow: 0px 0px 10px #7F00FF;"><b><u>⮟ЮꡙΞԵ</u></b>:
       VIOLET ou la Prouesse Saugrenue des querelles spectrales.</dd><br>
@@ -11096,7 +11361,7 @@ window.detailVisibility = {
 
   </div>
 
-  <div class="author">【Logjēm】</div>
+  <div class="author">【Logjēm & Slacpi°】</div>
 
       <details class="info">
         <summary>Sujet</summary>
@@ -11168,6 +11433,8 @@ window.detailVisibility = {
 
   </div>
 
+  <div class="blue-text" style="text-align: center; font-size: 2em; margin-bottom: 64px;"><span class="rappel">(RAPPEL)</span>Bleu = Expansion</div>
+  
   <div style="text-align: center;">
     <dd style="text-shadow: 0px 0px 10px #00FFFF;"><b><u>ҨყⰎல</u></b>:
       CYAN ou la Berceuse Cosmopolite au temps de l'incongru.</dd><br>
@@ -11219,9 +11486,9 @@ window.detailVisibility = {
 
     <dd><b><u><span class="rappel">(RAPPEL +)</span>
             Tra§Vel</u></b>:
-      Bouclure de flambeau Doppelgänger des entrailles exclusives inclusives selon la forme et les convulsions du vouloir. (Travail § Veldiac)<br>
+      Bouclure de flambeau Doppelgänger des entrailles exclusives inclusives selon la forme et les convulsions du vouloir.<br>
       On raconte que le ratio concernant la collection abusive et le voile traversé serait de 20%~80% pour les gauniques voire 10%~90% chez les gaunico-ganiques.<br>
-      Dose d'altérité réaliste et utopique sous les moyens du bord et du fond.</dd><br>
+      Dose d'altérité réaliste et idéaliste sous les moyens du bord et du fond.</dd><br>
 
     <dd><b><u>elzel0lezle</u></b>:
       Ressource supra-kentronienne de garantie en rencontres fortuites grâce à l'arbre de connexion YgijfeV.<br>
@@ -11248,7 +11515,7 @@ window.detailVisibility = {
 
   <h2 id="Domaines" style="text-align: center; font-size: 3.0em;">『Domaines』</h2>
 
-  <div class="author">【Qui Savoir ?】</div>
+  <div class="author">【Fostrah】</div>
 
   <div class="domains-grid" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
 
@@ -11445,7 +11712,7 @@ window.detailVisibility = {
   <summary>English Version</summary>
   <h2 style="text-align: center; font-size: 3.0em;">『Domains』</h2>
 
-  <div class="author">【Who Knows ?】</div>
+  <div class="author">【Fostrah】</div>
 
   <div class="domains-grid" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
 
@@ -11660,81 +11927,81 @@ window.detailVisibility = {
     </div>
 
     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 64px;">
-      <table border="1" style="font-size: small;">
+      <table border="1" style="border-collapse: separate; font-size: small; width: auto;">
         <thead>
           <tr style="font-size: 300%;">
-          <th colspan="3"><b>Ω𝚸𐒰Ⅼ</b></th>
-          <th colspan="3"><b>Æ↰⊥ƎЯ</b></th>
-          <th colspan="3"><b>Ⓔ🇬㊔</b></th>
-        </tr>
+            <th colspan="3"><b>Ω𝚸𐒰Ⅼ</b></th>
+            <th colspan="3"><b>Æ↰⊥ƎЯ</b></th>
+            <th colspan="3"><b>Ⓔ🇬㊔</b></th>
+          </tr>
         </thead>
         <tbody>
           <tr>
-          <td class="info-cell">Unicode</td>
-          <td class="info-cell">Origine</td>
-          <td class="info-cell">Sens</td>
-          <td class="info-cell">Unicode</td>
-          <td class="info-cell">Origine</td>
-          <td class="info-cell">Sens</td>
-          <td class="info-cell">Unicode</td>
-          <td class="info-cell">Origine</td>
-          <td class="info-cell">Sens</td>
-        </tr>
+            <td class="info-cell">Unicode</td>
+            <td class="info-cell">Origine</td>
+            <td class="info-cell">Sens</td>
+            <td class="info-cell">Unicode</td>
+            <td class="info-cell">Origine</td>
+            <td class="info-cell">Sens</td>
+            <td class="info-cell">Unicode</td>
+            <td class="info-cell">Origine</td>
+            <td class="info-cell">Sens</td>
+          </tr>
           <tr>
-          <td class="symb-cell">Ω</td>
-          <td class="info-cell"><ruby>ελληνικά<rt>Grec</rt></ruby></td>
-          <td class="info-cell">Complétude</td>
-          <td class="symb-cell">Æ</td>
-          <td class="info-cell">Latin Ligature</td>
-          <td class="info-cell">Hybridation</td>
-          <td class="symb-cell">Ⓔ</td>
-          <td class="info-cell">Alphanumérique Entouré</td>
-          <td class="info-cell">Évaluation</td>
-        </tr>
+            <td class="symb-cell">Ω</td>
+            <td class="info-cell"><ruby>ελληνικά<rt>Grec</rt></ruby></td>
+            <td class="info-cell">Complétude</td>
+            <td class="symb-cell">Æ</td>
+            <td class="info-cell">Latin Ligature</td>
+            <td class="info-cell">Hybridation</td>
+            <td class="symb-cell">Ⓔ</td>
+            <td class="info-cell">Alphanumérique Entouré</td>
+            <td class="info-cell">Évaluation</td>
+          </tr>
           <tr>
-          <td class="symb-cell">𝚸</td>
-          <td class="info-cell">Math</td>
-          <td class="info-cell">Stratification</td>
-          <td class="symb-cell">↰</td>
-          <td class="info-cell">Flèche</td>
-          <td class="info-cell"><span class="hidden-text">⍰</span></td>
-          <td class="symb-cell">🇬</td>
-          <td class="info-cell">Indicateur Régionnel</td>
-          <td class="info-cell">Repère</td>
-        </tr>
+            <td class="symb-cell">𝚸</td>
+            <td class="info-cell">Math</td>
+            <td class="info-cell">Stratification</td>
+            <td class="symb-cell">↰</td>
+            <td class="info-cell">Flèche</td>
+            <td class="info-cell"><span class="hidden-text">⍰</span></td>
+            <td class="symb-cell">🇬</td>
+            <td class="info-cell">Indicateur Régionnel</td>
+            <td class="info-cell">Repère</td>
+          </tr>
           <tr>
-          <td class="symb-cell">𐒰</td>
-          <td class="info-cell"><ruby>𐓏𐒰𐓓𐒰𐓓𐒷 𐒻𐒷<rt>Osage</rt></ruby></td>
-          <td class="info-cell">Ouverture</td>
-          <td class="symb-cell">⊥</td>
-          <td class="info-cell">Logique-Géométrie</td>
-          <td class="info-cell">Contradiction-Perpendiculaire</td>
-          <td class="symb-cell">㊔</td>
-          <td class="info-cell"><ruby>漢字<rt>Sinogramme</rt></ruby></td>
-          <td class="info-cell">~Nom~</td>
-        </tr>
+            <td class="symb-cell">𐒰</td>
+            <td class="info-cell"><ruby>𐓏𐒰𐓓𐒰𐓓𐒷 𐒻𐒷<rt>Osage</rt></ruby></td>
+            <td class="info-cell">Ouverture</td>
+            <td class="symb-cell">⊥</td>
+            <td class="info-cell">Logique-Géométrie</td>
+            <td class="info-cell">Contradiction-Perpendiculaire</td>
+            <td class="symb-cell">㊔</td>
+            <td class="info-cell"><ruby>漢字<rt>Sinogramme</rt></ruby></td>
+            <td class="info-cell">~Nom~</td>
+          </tr>
           <tr>
-          <td class="symb-cell">Ⅼ</td>
-          <td class="info-cell"><ruby>Romanus<rt>Romain</rt></ruby></td>
-          <td class="info-cell">Chiffre 50</td>
-          <td class="symb-cell">Ǝ</td>
-          <td class="info-cell">Quantificateur Existentiel</td>
-          <td class="info-cell">THERE EXISTS</td>
-          <td class="symb-cell"></td>
-          <td class="info-cell"></td>
-          <td class="info-cell"></td>
-        </tr>
+            <td class="symb-cell">Ⅼ</td>
+            <td class="info-cell"><ruby>Romanus<rt>Romain</rt></ruby></td>
+            <td class="info-cell">Chiffre 50</td>
+            <td class="symb-cell">Ǝ</td>
+            <td class="info-cell">Quantificateur Existentiel</td>
+            <td class="info-cell">THERE EXISTS</td>
+            <td class="symb-cell" style="empty-cells: hide;"></td>
+            <td class="info-cell" style="empty-cells: hide;"></td>
+            <td class="info-cell" style="empty-cells: hide;"></td>
+          </tr>
           <tr>
-          <td class="symb-cell"></td>
-          <td class="info-cell"></td>
-          <td class="info-cell"></td>
-          <td class="symb-cell">Я</td>
-          <td class="info-cell"><ruby>Кириллица<rt>Cyrillique</rt></ruby></td>
-          <td class="info-cell">Je</td>
-          <td class="symb-cell"></td>
-          <td class="info-cell"></td>
-          <td class="info-cell"></td>
-        </tr>
+            <td class="symb-cell" style="empty-cells: hide;"></td>
+            <td class="info-cell" style="empty-cells: hide;"></td>
+            <td class="info-cell" style="empty-cells: hide;"></td>
+            <td class="symb-cell">Я</td>
+            <td class="info-cell"><ruby>Кириллица<rt>Cyrillique</rt></ruby></td>
+            <td class="info-cell">Je</td>
+            <td class="symb-cell" style="empty-cells: hide;"></td>
+            <td class="info-cell" style="empty-cells: hide;"></td>
+            <td class="info-cell" style="empty-cells: hide;"></td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -11774,14 +12041,23 @@ window.detailVisibility = {
     <div>Æ</div>
     <div>Ω</div>
   </div>
-  
-  <div class="author">【Tôhla】</div>
 
-  <div style="text-align: center; font-size: large;">
-    <dd><b><u>大ටभᲡⰡ</b></u>:
-      TÔHLA ou la Zone Domicile Conquérante.<br>
-      Visualisation simultanée interchangeable 'Colorful Colorless'</dd><br>
+  <div style="margin: 32px auto;">
+  
+    <dd><b><u><span class="rappel">(RAPPEL)</span>
+      Chromel</u></b>:
+      Sublimation décisive des marqueurs traumatiques à la page tournante.<br>
+      Reprise des déjà-vus sur une phase supérieure de configuration.<br>
+      Meilleur Drapeau, forme authentique et hypothétique.</dd><br>
+
+    <dd><b><u><span class="rappel">(RAPPEL)</span>
+      Déjà-Vu</u></b>:
+      Sentiment d'expérience/expérimental/d'expertise du vécu.<br>
+            <i style="font-size: 0.8em;">Simplifiant - Superposition Analogue</i></dd><br>
+
   </div>
+  
+  <div class="author" style="text-align: center;">【Leqwa】</div>
   
   <details class="info">
     <summary>Sujet</summary>
@@ -11883,9 +12159,16 @@ window.detailVisibility = {
   <p style="text-align: center; font-size: 2em; margin: 512px auto;">
       Garçon -  C'est un prank, ne faites pas attention!!<br>
       Fille - Mais non c'était cool, pourquoi tu gâches tout !?<br>
+      *Cachotteries*<br>
   </p>
 
-  <div class="author">【Fostrah】</div>
+  <div style="text-align: center; font-size: large;">
+    <dd><b><u>大ටभᲡⰡ</b></u>:
+      TÔHLA ou la Zone Domicile Conquérante.<br>
+      Visualisation simultanée interchangeable 'Colorful Colorless'</dd><br>
+  </div>
+  
+  <div class="author" style="text-align: center;">【Tôhla】</div>
 
   <details class="info">
     <summary>Sujet</summary>
@@ -11928,20 +12211,21 @@ window.detailVisibility = {
         Celui insuflé de société dit sans le dire, en le refoulant: <br>
         <q>J'ai peur, et je dois donc X selon X.</q><br>
         <br>
-        Si je ne suis ni un criminel, ni un terroriste, ni un trafiquant, c'est car je suis amoureux de la civilisation.<br>
+        Si je ne suis ni un criminel, ni un terroriste, ni un trafiquant, c'est car je suis follement amoureux de la civilisation.<br>
+        Le sujet primordial dans lequel l'un a besoin de sa complète attention pour être plus lui-même/elle-même/soi-même.<br>
         La civilisation est d'une signification à la température d'un amour la plus belle qu'elle soit.<br>
         Quiconque s'identifie et pratique le souffle de la société ou de la civilisation est tenu de la rendre vers une vision minimale ou maximale.<br>
         <br>
         Je vous le dis de ce moment: <br>
         Le civilisateur est en solitaire au jour d'aujourd'hui, car les injonctions ont pris dessus.<br>
-        Soyez bénis et force à vous, civilisateurs, car de votre mouvement battra des ailes scintillantes.<br>
+        Soyez bénis et force à vous, civilisateurs, car de votre mouvement battra des ailes noires scintillantes.<br>
       </p>
 
       <div class="written">07/11/25</div>
 
     </div>
 
-    <div class="civil-item" style="text-align: right;">
+    <div class="civil-item excluded-section" style="text-align: right;">
 
       <h2>『Glorious Nation』</h2>
 
@@ -11969,14 +12253,15 @@ window.detailVisibility = {
         The one inspired by society says, without saying it, by repressing it: <br>
         <q>I’m afraid, therefore I must X according to X.</q><br>
         <br>
-        If I am neither a criminal, nor a terrorist, nor a trafficker, it is because I am in love with civilization.<br>
+        If I am neither a criminal, nor a terrorist, nor a trafficker, it is because I am madly in love with civilization.<br>
+        The primordial subject in which one need its full attention to be more himself/herself/itself/thyself.<br>
         Civilization find its meaning at the temperature of love, the most beautiful there is.<br>
         Whoever identifies with and breathes the spirit of society or civilization<br>
         is bound to express it in either its minimal or maximal vision.<br>
         <br>
         I tell you this now: <br>
         The civilizator stands alone today, for injunctions have taken over.<br>
-        Be blessed, and strength to you, civilizators, for from your movement will rise shimmering wings.<br>
+        Be blessed, and strength to you, civilizators, for from your movement will rise shimmering black wings.<br>
       </p>
 
       <div class="written">00/00/00</div>
@@ -11984,6 +12269,12 @@ window.detailVisibility = {
     </div>
 
   </div>
+
+  <p style="text-align: center; font-size: 2em; margin: 512px auto;">
+      L'heure est proche<br>
+      Les héros aurnelcyens vont tous mourir<br>
+      Ils laissent leur dernier pipi caca aux toilettes<br>
+  </p>
 
   <div class="author">【12 Aurnelcyens】</div>
 
@@ -12004,9 +12295,9 @@ window.detailVisibility = {
     Tension: Sublime<br>
   </details>
   
-  <h2 id="Le_Syoneme_Sublime" style="text-align: center; text-shadow: 0px 0px 5px; font-family: Georgia, serif;">『Le Syoneme Sublime』</h2>
+  <h2 id="Le_Syoneme_Sublime" style="text-align: center; text-shadow: 0px 0px 5px;">『Le Syoneme Sublime』</h2>
 
-  <div class="week-grid" style="font-size: large; text-shadow: 0px 0px 5px; font-family: Georgia, serif;">
+  <div class="week-grid" style="font-size: large; text-shadow: 0px 0px 5px;">
 
     <div class="day-card">
       <div style="font-size: x-large;">一 「Cilar」 一</div>
@@ -12029,7 +12320,7 @@ window.detailVisibility = {
     <div class="day-card">
       <div style="font-size: x-large;">三 「Linkar」 三</div>
       <span class="hmode">Bouffon(ne)</span>: Perdant(e) de la vie, marié(e) à la civilisation ayant tord sur absolument tout<br>
-      Élément: Blehdwoluzvi, Mirsa Mirsa Mua<br>
+      Élément: Mirsa Mirsa Mua, Blehdwoluzvi<br>
       Anatomie: Role-Playing Game<br>
       Forme: ⟁ (Awkward)<br>
       Défi: Hérésie, Impie<br>
@@ -12039,7 +12330,7 @@ window.detailVisibility = {
       <div style="font-size: x-large;">四 「Histel」 四</div>
       <span class="hmode">Pur-Sang</span>: Génie [inversé ?] attrape-innocence, maître canonique de la leçon du jour<br>
       Élément: Letricot, Câble<br>
-      Anatomie: Network & SSeCCu$<br>
+      Anatomie: SSeCCu$ Network<br>
       Forme: 𝔐%𝔓 (Monop - Derla - Polym)<br>
       Défi: Chômage<br>
     </div>
@@ -12075,17 +12366,8 @@ window.detailVisibility = {
 
   <div class="written">19/02/26</div>
 
-  <p style="text-align: center; font-size: 2em; margin: 128px auto;">
-      Mauvais présage pour le 4 (╥﹏╥) quelle cliché…<br>
-      Police police! On a osé maudire mon chiffre favori!<br>
-      J'enverrai 4 coups à sa porte pour le maudire mouhaha!!<br>
-      Toc, Toc, Toc, Toc<br>
-      <br>
-      Tu veux la baston!? C'est ça que tu veux ?<br>
-      Police police! Un individu peu recommendable m'a fait injure!!<br>
-      <br>
-      La police sera t-elle raciste ?<br>
-      À suivre dans le prochain épisode…<br>
+  <p style="text-align: center; font-size: 2em; margin: 512px auto;">
+      Un inconnu tire la chasse d'eau.
   </p>
   
   <div style="text-align: center; font-size: x-large; margin: 64px auto;">
@@ -12099,7 +12381,7 @@ window.detailVisibility = {
     <button id="toggleAllBtn" style="margin: 0 auto; display: block; font-size: 1.5em; padding: 8px 12px;"></button>
   </div>
 
-<button id="A6es-toggle-btn" style="padding: 8px 16px; font-size: 1rem; border-radius: 4px; cursor: pointer; background: var(--bg-color); color: var(--text-color); border: 1px solid var(--text-color); border radius: 6px; transition: all 0.2s ease; margin: 10px 0;">
+<button id="A6es-toggle-btn" style="padding: 8px 16px; font-size: 1rem; border-radius: 4px; cursor: pointer; background: var(--bg-color); color: var(--text-color); border: 1px solid var(--text-color); border-radius: 6px; transition: all 0.2s ease; margin: 10px 0;">
   Switch to Horizontal View
 </button>
 
@@ -12196,7 +12478,7 @@ window.detailVisibility = {
             <td>Chromel</td>
           </tr>
           <tr>
-            <th>Fon:Rel:Inc Scé;Syn;Cel</th>
+            <th>F:R:I & S;S;C</th>
             <td>Fondations</span></td>
             <td>Relativité</span></td>
             <td>Inclinaisons</span></td>
@@ -12274,7 +12556,7 @@ window.detailVisibility = {
             <td>Sanction</td>
             <td>Supplice</td>
             <td>suFIX</td>
-            <td>⚔️</td>
+            <td>RADICAL</td>
           </tr>
           <tr>
             <th>PROjECT SSeCCu$</th>
@@ -12294,7 +12576,7 @@ window.detailVisibility = {
             <td colspan="2">Honorphore｜Honneur</td>
           </tr>
           <tr>
-            <th>Code ÆND</th>
+            <th>Conquête Ataraxiale</th>
             <td>Iacy</td>
             <td colspan="2">Terlush</td>
             <td>Derlush</td>
@@ -12335,11 +12617,11 @@ window.detailVisibility = {
           </tr>
           <tr>
             <th>D⦾MIN⦿'s</th>
-            <td>Sycle 0</td>
-            <td>Station Domaine</td>
-            <td>Raclure Sismique</td>
+            <td>Sycle-0</td>
+            <td>Mooderagion</td>
+            <td>Tridalment</td>
+            <td>Facyulti</td>
             <td>OËQ</td>
-            <td>PROgram</td>
             <td>⟁KDUQ</td>
           </tr>
         </tbody>
@@ -12533,7 +12815,7 @@ window.detailVisibility = {
     </div>
 
     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-      <table border="1" class="zigzag" style="font-size: 2em; margin-bottom: 50px; table-layout: fixed;">
+      <table border="1" class="zigzag" style="font-size: 2em; margin-bottom: 50px; width: auto; table-layout: fixed;">
         <thead>
           <tr><th>&nbsp;</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th><th>F</th></tr>
         </thead>
@@ -12572,7 +12854,6 @@ window.detailVisibility = {
 
 /* Titre du prologue */
 .prologue-title {
-    font-family: "Georgia", serif;
     color:  var (--text-color);
     margin-top: 0;
     font-variant: small-caps;
@@ -12582,7 +12863,6 @@ window.detailVisibility = {
 
 /* Texte principal */
 .prologue-text {
-    font-family: "Georgia", serif;
     font-style: italic;
     line-height: 1.8;
     color: var (--text-color);
@@ -12599,7 +12879,6 @@ window.detailVisibility = {
 
 /* Texte de bas d'encadré */
 .prologue-footer {
-    font-family: "Georgia", serif;
     font-size: 0.8em;
     color: var (--text-color);
 }
@@ -12613,7 +12892,7 @@ window.detailVisibility = {
             Le plus farfelu de tous était à nos trousses<br>
             Cherches-moi camarade car ma venue est proche<br>
             Nous entamons notre première et notre dernière rencontre<br>
-            Mon héros meurt d'envie de mourir d'envie<br>
+            Mes héros meurent d'envie de mourir d'envie<br>
         </p>
         <div class="prologue-divider"></div>
         <p class="prologue-footer"><strong>Réjouissance à cette chimère que voilà</strong></p>
@@ -12633,9 +12912,9 @@ window.detailVisibility = {
     <button id="next" class="card-carousel-btn" aria-label="Suivant">&gt;</button>
   </div>
   
-  <!--(1-0 SYCLE 0)-->
+  <!--(1-0 SYCLE-0)-->
 
-  <h2 class="mytho-chapter">『Sycle 0』</h2>
+  <h2 class="mytho-chapter">『Sycle-0』</h2>
 
   <!--(1-1 GENERATION)-->
 
@@ -12720,7 +12999,7 @@ window.detailVisibility = {
       Le traffic ordonne une <span class="hmode">sensorialité</span> comportementale dans les "ce qui est" et "ce qui n'est pas", les vivants ont souvent le passe-temps de repousser leur inéluctabilité.
       Ce sang oppressé depuis l'apocalypse de la polarité, vous allez faire quoi ? Jouer avec bordures floues ou chuchoter l'être <span class="hmode">Gaunico-Ganique</span> ?
       Pendant que les cris éternels se veulent neutralisateurs dans les institutions vierges, les <span class="hmode">palpitants</span> déguerpirent les lieux scénarisés à la beliquienne pour se déployer indigènement.
-      Ils creusaient des trous dans le ciel et instauraient leur domination sur l'affable surréalité <span class="hmode">YgijfeV</span>, l'arbre céleste avant tout les arbres.
+      Ils creusaient des trous dans le ciel et instauraient leur domination sur l'affable surréalité <span class="hmode">YgijfeV</span>, l'arbre céleste avant tous les arbres.
       Une entrance se résumait à rien de si fabuleux ni terrifiant, il nous regorifiait à nous en tant que néant rempli.
     </p>
 
@@ -12802,7 +13081,7 @@ window.detailVisibility = {
       Il suffirait d'un seul fronçage pour railler indéfiniment, engendrant toute la postérité selon l'allure de voies ferrées.
       Tout cela n'a jamais été nouveau, il n'était nouveau que dans sa perspective découvreuse de l'imprégnation quotidienne des étincelles de nuit.
     </p>
-
+    
     <p>
       Analyser la <span class="hmode">reconnaissance</span> de ses repères se trouvait sur-côté car au nom d'un quoique-ce-soit, il le faut, au prix de grands sacrifices.
       Vous avez le droit de faire des choses à votre encontre, il suffit simplement que l'activité ne soit pas perçue telle quelle et bingo.
@@ -12813,7 +13092,18 @@ window.detailVisibility = {
     </p>
 
     <p>
-      Un désir absorbateur frénétique est la devise des locaux depuis mon arrivée, des comparaisons grotesques s'évertuent à de glorieuses victoires.
+      Puisqu'on y est les amis ne sont pas des troupeaux si l'on s'accorde sur ce point, les possibilités sont infinies en dénigrement mais l'aurnelcyen inclut l'aursylien.
+      La tyrannie et l'esclavage ont une aura relationnelle assez réelle avec toute structure en place.
+      Content ou non, gardez un mot juste et vous êtes déjà un tyran, soyez obligé à l'employer pour vous faire comprendre et vous êtes déjà un esclave.
+      De l'aursylien découle le mouvement aurnelcyen tout entier alors il est temps d'offrir au cycliste un parcours remplie de grand n'importe quoi.
+      Au grand n'importe quoi peut naître des nouvelles structures barbares, pour connoter le modérateur vocabulistique dont on a retenu grâce au triomphe des X face aux X'.
+      Le champ est trufé de mines donc cette mythologie n'a d'autre choix que d'être écrite de façon insuportable, toutes mes excuses.
+      La mine était caché pour exploser le mineur à la pioche c'était purement antipersonnel sans intention derrière son emplacement.
+      Langue gôbée, si mortelle, la fiabilité est à revoir; au revoir pour toujours!
+    </p>
+
+    <p>
+      Un désir absorbateur frénétique est la devise des locaux, depuis mon arrivée, des comparaisons grotesques s'évertuent à de glorieuses victoires.
       Je vois que l'on apprécie beaucoup faire semblant par ici, stressé au point d'en finir finalement sérieux sous peine de mort.
       Des citations de personnages illustres, la classe! Cependant, sectionner en tranches à tout va, c'en est assez.
       À quoi bon, à quoi bon si l'intérêt se veut démentiellement chagrino-colérico-phobico-motivationnel…
@@ -12823,11 +13113,22 @@ window.detailVisibility = {
       Il s'avère qu'un certain quelqu'un se demandait quelque chose à moins que je me trompe ? Et puis d'ailleurs il se peut que "<span class="hmode">je</span>" me trompe, alias l'anonymat.
     </p>
 
+    <p>
+      Au nom du nom qui sonne comme le chez-soi, j'y saisirais sa prononciation en l'absence d'une signification obligatoire.
+      Son entendement raisonne comme si familier et si icônique que le forgeron se prendra porteur de ses propres armures.
+      Ceci est une déclaration d'un club scolaire d'Urflosia, la capitale d'Innok ou le pays aurnelcyen.
+      Délire est souvent ce qu'on prononce pour discréditer l'authenticité des perceptions d'autrui.
+      Eh bien le plus coquin crée le plus cachotier, c'est curieux ne trouves-tu pas ?
+      Cependant dans cette histoire, le cachotier devra dévorer les coquineries qui lui sont jetés depuis sa plus tendre enfance et réinventer indéfiniement ses cachoteries.
+      Au trône, le petit coquin; au globe matériel, digital, virtuel et imaginaire, le petit cachotier ayant pour quête de conquérir le trône.
+      Vous l'avez deviné, c'est un duel entre deux chenapans mais le bullshiteur biaisé Fenekohq prend parti pour le plus néophyte donc le suspens est à zéro, vous pouvez quitter, toutes mes condoléances.
+    </p>
+    
   </div>
 
-  <!--(2-0 Station Domaine)-->
+  <!--(2-0 Mooderagion)-->
 
-  <h2 class="mytho-chapter">『Station Domaine』</h2>
+  <h2 class="mytho-chapter">『Mooderagion』</h2>
 
   <!--(2-1 Esprix)-->
 
@@ -12919,7 +13220,7 @@ window.detailVisibility = {
       Voulant un nom analogue, il choisit Xyfurn, ainsi donc on parle de Vydnitt et Xyfurn, les deux ricanant de son libertinage surprenant.
       En instaurant une nouvelle franchise, les nommeurs nommés se libèrent dorénavant du <span class="hmode">scénario</span> qui leur a été attribué dont nulle ne sait l'étendue qui viendra.
       Toutes ces nominations sont des noms qui ne veulent tout aussi rien dire que tout dire à la fois selon la liberté sémantique phonético-symbolique, c'est en cela que Nezrog voit l'épanouissement tant attrayant.
-      Dans la mesure atlantique, UiNo a des comptes à régler avec lui-même mais ce propos n'est pas tolérable en zone artificielle.
+      Dans la mesure atlantique, UiNo a des comptes à régler avec lui-même mais ce propos n'est pas tolérable en zone artificielle avec son unique seule métrique.
       Les grossières barrières de la dette confisqueuse ne le restreindra pas, le collatéral de la bienvenue contractuelle concerne l'ingénieur du roussi cannibal ravageur des <span class="hmode">essences</span>.
     </p>
 
@@ -12944,6 +13245,8 @@ window.detailVisibility = {
       Nous les pauvres fous proclamons la taquinerie de toute sorte d'espèce en mitraillette apocryphique,
       selon les dispositions authentiques de la <span class="hmode">monstruosité</span> en vue de son éclosion demandé par l'intérêt chaotique du <span class="hmode">plateau</span> de jeu,
       que le sort de votre <span class="hmode">folie</span> soit à contribution multi-facettes, ou nous condamne en mort-vivants pour le restant de peine décadente.
+      L'état de droit contient en lui une idole gérant les idioties par le châtiment divin; quant à l'état du nécessaire le contenant agonique ne sera pas ignoré contrairement à la cruauté du premier qui mord la queue au Xoi.
+      Cette énergie électrique pourrait servir à fouetter les coupables ou à enquêter sur les leviers obscurs du corrompu dans l'ensemble de la pièce, c'est ici et là où le pays d'Innok entre en désaccord.
     </p>
 
     <p>
@@ -12970,7 +13273,7 @@ window.detailVisibility = {
       Au point où le désir ne trahi point les vivants, nul besoin de demander si l'on penche vers un vouloir oscillatoire ou constant car il s'agit d'une combinaison des deux.
       En ces ondulations particulières elles sont car se déroulant du <span class="hmode">prisme</span> de <span class="hmode">tu</span>, oui <span class="hmode">TU</span>, je te confie à vous, sur ce envoyez vous à votre étoile.
     </p>
-
+    
     <p>
       On raconte qu'une chimère est en jeu appellé <span class="hmode">innokcien</span> libérant l'isolation reptilienne vers une loupe cumulative de force.
       Tandis que le <span class="hmode">reptilien</span> lance les dés, l'<span class="hmode">innokcien</span> les saisit du bas jusqu'en haut pour lui redonner ses chances quand ils seraient à un poil de se faire accidentellement perdre.
@@ -12986,9 +13289,9 @@ window.detailVisibility = {
 
   </div>
 
-  <!--(3-0 Raclure Sismique)-->
+  <!--(3-0 Tridalment)-->
 
-  <h2 class="mytho-chapter">『Raclure Sismique』</h2>
+  <h2 class="mytho-chapter">『Tridalment』</h2>
 
   <!--(3-1 Neur0ne)-->
 
@@ -13023,7 +13326,7 @@ window.detailVisibility = {
       Par l'herbe, les arbustes les arbres jusqu'aux feuilles puis pour les plus persévérants des séismes, des volcans, des tsunamis, des cyclones et des inondations tous dotés d'intelligence.
       Le barrage n'hésitera pas à tuer le <span class="hmode">challenger</span> s'il persiste dans cette voie mentale, parmi les indignes se trouvent les devants des choses.
       De la fureur, il y eut pendant la <span class="hmode">sélection</span>, mais la réalité peut s'avérer cruel quand les dés sont déjà programmés.
-      Des 40.000 adhérents, simple chiffre sans signification intime, le nombre s'aminci vers les migrateurs à 5070 pour passer à 12 dignes.
+      Des 40.000 adhérents, simple chiffre sans signification intime, le nombre s'aminci vers les migrateurs à 5.070 pour passer à 12 dignes.
       On compte Fostrah, UiNo, Uewij, Vydnitt, Xyfurn, Nezrog, Ekeline, Wacwe, Logjēm, Slacpi° et Tôhla.
     </p>
 
@@ -13082,6 +13385,14 @@ window.detailVisibility = {
     </p>
 
   </div>
+
+  <h2 class="mytho-chapter">『Facyulti』</h2>
+
+  <h3 class="mytho-section">「1」</h3>
+
+  <h3 class="mytho-section">「2」</h3>
+
+  <h3 class="mytho-section">「3」</h3>
   
   <h2 class="mytho-chapter">『OËQ』</h2>
 
@@ -13222,7 +13533,7 @@ window.detailVisibility = {
     <p>
       <span class="hmode">Dévore-novice</span> ne s'en rendra compte que lorsqu'il le verra en personne.
       Le patron a affaire au <span class="hmode">protagoniste</span> le plus chevronné qui ait foulé le sol tellurique.
-      Leqwa et <span class="hmode">dévore-novice</span> étaient appelés à jouer en toute circonstance sur ce moment qui bousculera tout les moments à venir.
+      Leqwa et <span class="hmode">dévore-novice</span> étaient appelés à jouer en toute circonstance sur ce moment qui bousculera tous les moments à venir.
       L'entièreté <span class="hmode">organique</span> survivante et un fragment <span class="hmode">ganique</span> vivant mises sur scène intégralement dégagée…
       Le despote avait toute l'armée pour lui excepté le <span class="hmode">sfivoq</span> n'ayant que ce qui a fait qu'il fut à secourir.
     </p>
@@ -13251,6 +13562,10 @@ window.detailVisibility = {
       Malgré leur haute intolérance initiale, Leqwa de sa seule présence rendait le joint superficiel voire oubliable.
     </p>
 
+    <p>
+      Les grands possesseurs de l'eau potable du monde vont s'occuper de ce Sfivoq, là où il fera son apparition, les terres seront asséchées et les employés non-travaillants seront rémunérés double pour cet évènement spécial.
+    </p>
+    
     <p>
       <span class="hmode">Lus</span> et <span class="hmode">Veld</span> seront restaurés, le monde sera pris en main sans prise en main depuis la non-petite non-moyenne non-grande évidence non-évidente disable indisable de <span class="hmode">Crith</span>.
       Ce n'était pas la <span class="hmode">bricole du 0</span> contre le <span class="hmode">protagonisme</span> ni interdite par, ni prise de dessus par.
@@ -13289,26 +13604,23 @@ window.detailVisibility = {
 
   </div>
 
-  <h2 class="mytho-chapter">『PROgram』</h2>
-
-  <h3 class="mytho-section">「Hologramme」</h3>
-
-  <h3 class="mytho-section">「Orthogramme」</h3>
-
-  <h3 class="mytho-section">「Phénogramme」</h3>
-
   <h2 class="mytho-chapter">『⟁KDUQ』</h2>
 
   <hr style="margin: 128px auto;">
+
+    <h1 style="text-align: center; font-size: 2em; margin: 512px auto;">
+      Merci d'avoir lu ⟁URNELCY
+    </h1>
   
   <div class="welcome-title2">
     ⟁UR<br>NEL<br>CY</div>
 
   <hr style="margin: 128px auto;">
 
+
   <details>
     <summary id="Capsules" style="text-align: center; font-size: 2.5em;">
-      Capsules(Articulations, Agendas, MATRICES)
+      Capsules(Articulations, Agendas, Hiérarchie, MATRICES)
     </summary>
 
     <!--<div class="author">【Fostrah - UiNo - Uewij - Vydnitt - Xyfurn - Nezrog - Ekeline - Wacwe・Leqwa - Logjēm - Slacpi° - Tôhla】</div>-->
@@ -13322,7 +13634,7 @@ window.detailVisibility = {
     <div id="arti44b" data-title="deHist" style="display: none;"></div>
     <div id="arti55" data-title="KaLeiDo" style="display: none;"></div>
     <div id="arti66" data-title="ZigZag" style="display: none;"></div>
-    <div id="ktn11" data-title="Hiérarchie Kentronienne" style="display: none;"></div>
+    <div id="ktn11" data-title="Kentrons" style="display: none;"></div>
     
     <div id="cale11" data-title="Semaine % Grégorien" style="display: none;"></div>
     <div id="cale22" data-title="Syoneme & Emmaïe" style="display: none;"></div>
@@ -13382,14 +13694,13 @@ window.detailVisibility = {
         <tr><td>05/08/2025</td><td>Chrono-Chroma</td></tr>
         <tr><td>17/09/2025</td><td>Anti-Xenos</td></tr>
         <tr><td>24/09/2025</td><td>Wasteland</td></tr>
-        <tr><td>26/10/2025</td><td>Code ÆND</td></tr>
+        <tr><td>26/10/2025</td><td>Conquête Ataraxiale</td></tr>
         <tr><td>29/10/2025</td><td>BonBon=Bons</td></tr>
-        <tr><td>31/10/2025</td><td>InFeXcuse</td></tr>
         <tr><td>07/11/2025</td><td>Glorieuse Nation</td></tr>
         <tr><td>22/11/2025</td><td>Conte Sanguinaire</td></tr>
         <tr><td>08/12/2025</td><td>OUROBOROS</td></tr>
-        <tr><td>26/12/2025</td><td>TicketTactique</td></tr>
         <tr><td>19/02/2026</td><td>Le Syoneme Sublime</td></tr>
+        <tr><td>28/02/2026</td><td>Cartel Conceptionnel</td></tr>
       </tbody>
     </table>
 
@@ -13409,7 +13720,7 @@ window.detailVisibility = {
     <li>L'articulation Iuvalcienne et Arcadienne ont un format acronymique entre I-UV-AL-CY et S-P-A-R-K.</li>
     <li>ZooZaZe utilise les symboles [⦻] {0} (∞) de INTIMACY en les verbisant.</li>
     <li>La fabulation médiane Critheçiel fait allusion au ciel, c'est un espace vertigineux en possibilités.</li>
-    <li>Le 4ème Code ÆND et CritHAïe indique implicitement que la règle s'applique pour son propre sujet.</li>
+    <li>Le 4ème vers Conquête Ataraxiale et CritHAïe indique implicitement que la règle s'applique pour son propre sujet.</li>
     <li>La conception du terme Monoa-Polyz s'est construit sur l'idée de l'un et du multiple mais les mots monopole et monopoly dans le langage courant sont un contresens, l'ajout du [a] et [z] doivent s'interpréter comme fusionnels.</li>
     <li>Le double triangle [⟁] est une stylisation de Eurêka ou EURÊK⟁, SPARK ou SP⟁RK pour Awkward chez l'enfant et Akduq pour ⟁KDUQ.</li>
     <li>Le décoriste de l'articulation Aursylienne est le chef d'orchestre, il pourrait bien s'agir de toi.</li>
@@ -13434,7 +13745,7 @@ window.detailVisibility = {
     <li>Tous les théorèmes ont un lien avec Monoa-Polyz ou leur version de la chose.</li>
     <li>Fenekohq en tant que NEET sévère a construit ⟁URNELCY, c'est un thug.</li>
     <li>On écrit aurnelcyen pour ⟁URNELCY mais on écrit iuvalcien pour IUVALCY car il y a le IUVALCIUM.</li>
-    <li>SCARLET et VIOLET possède tout les deux [ꡙ], ils se connectent de la théorie à la pratique.</li>
+    <li>SCARLET et VIOLET possèdent tous les deux [ꡙ], ils se connectent de la théorie à la pratique.</li>
     <li>Les signatures mapnéliennes ne concernent pas la paperasse de la bureaucratie.</li>
     <li>Il y a beaucoup de concept trinitaire avec 9 lettres coupés en 3 de chaque dans Mapnel et ARc⟁diA.</li>
     <li>Dans Florescence le second paragraphe est incliné vers la gauche qui est associée à l'/au ARvers-Xoi, pour le troisième vers la droite associée au Sifflet, étant donné que l'Innokcien est au milieu exactement comme le reptile mais avec cette différence, il porte en lui le paquet dans toutes ses dimensions.</li>
@@ -13451,7 +13762,7 @@ window.detailVisibility = {
     <li>Dans Wasteland, le dernier mot utopia est écrit en police propre à Mapnel ce qui indique une posture différente pour la suite.</li>
     <li>Bien avant Wacwe s'appelait Maqwe et la trinité s'appellait Nezkelmaq il y a longtemps de cela.</li>
     <li>Le Conte Sanguinaire vient du Wikipedia français.</li>
-    <li>Le Code ÆND est en forme carré ce qui est aussi une référence du Gymnaste nezroguien.</li>
+    <li>La Conquête Ataraxiale est en forme carré ce qui est aussi une référence du Gymnaste nezroguien.</li>
     <li>Le racisme de la définition du Conte Sanguinaire est un coup aursylien provocateur.</li>
     <li>La référence des toilettes est dans la citation d'introduction de [Mapnel] et dans la Matrice [A6es 6tiques 6colaire] ce qui débute les théorèmes et les conclut.</li>
     <li>Contrairement aux grecs, les courroux spectaculaires dans cette mythologie se font calmer par un gigachad.</li>
@@ -13461,14 +13772,26 @@ window.detailVisibility = {
     <li>Fenekohq a une carrière sur MDMC en tant que Charter de Muse Dash.</li>
     <li>CritHAïe contient le HA de l'inanité.</li>
     <li>CoqUiNe est un clin d'oeil à UiNo.</li>
-    <li>La Semaine Sublime et Le Syoneme Sublime sont les œuvres les plus proches de tout AURNELCY, l'un est de l'ordre l'autre est du chaos.</li>
+    <li>La Semaine Sublime et Le Syoneme Sublime sont les œuvres les plus proches de tout AURNELCY, l'un est de l'ordre(établit une ligne) l'autre est du chaos(établit un carrefour).</li>
     <li>eRoi = Roi Errant - aReine = Reine Arrente, on peut observer un retournement des symboliques traditionnelles</li>
     <li>Le Picol-Kentron est la seule œuvre qqui possède sa capsule.</li>
+    <li>Le démonom UiNo aurait de la Mono-Mémoire à moins que ce n'est qu'une hallucination.</li>
+    <li>Fenekohq est un coquin comme son nom l'indique, vous y croyez vous ?</li>
     <li></li>
     <li></li>
     <li></li>
     <li></li>
-  
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    
   </details>
 
   <hr style="margin: 128px auto;">
@@ -13581,7 +13904,7 @@ window.detailVisibility = {
     </div>
     
   </details>
-    
+
   <hr style="margin: 128px auto;">
   
   <div style="font-size: large; text-align: right;">
@@ -15979,13 +16302,35 @@ window.warsData = [
 
 <!--SCROLL POSITION MEMORY-->
 <script>
+  // Sauvegarde de la position avant de quitter
   window.addEventListener('beforeunload', function () {
-    localStorage.setItem('scrollY', window.scrollY);
+    // Trouver l'élément avec un id le plus proche du haut du viewport
+    const candidates = document.querySelectorAll('[id]');
+    let best = null, bestDist = Infinity;
+    candidates.forEach(el => {
+      if (!el.offsetParent && el.tagName !== 'BODY') return;
+      const top = Math.abs(el.getBoundingClientRect().top);
+      if (top < bestDist) { bestDist = top; best = el; }
+    });
+    if (best) {
+      localStorage.setItem('scrollAnchor', best.id);
+      localStorage.setItem('scrollOffset', best.getBoundingClientRect().top);
+    }
   });
 
+  // Restauration après chargement complet (images incluses)
   window.addEventListener('load', function () {
-    const y = localStorage.getItem('scrollY');
-    if (y !== null) window.scrollTo(0, parseInt(y, 10));
+    const anchorId = localStorage.getItem('scrollAnchor');
+    const offset   = parseInt(localStorage.getItem('scrollOffset') || '0', 10);
+    if (!anchorId) return;
+    // Attendre que les clones/capsules soient rendus
+    setTimeout(function () {
+      const el = document.getElementById(anchorId);
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: Math.max(0, top), behavior: 'instant' });
+      }
+    }, 300);
   });
 </script>
 
@@ -16117,13 +16462,10 @@ window.warsData = [
     // Calculate adaptive zoom
     // Temporarily add to DOM to measure size
     const measureContainer = document.createElement('div');
-    measureContainer.style.position = 'absolute';
-    measureContainer.style.visibility = 'hidden';
-    measureContainer.style.width = 'auto';
-    measureContainer.style.height = 'auto';
+    measureContainer.style.cssText = 'position:fixed;top:-9999px;left:-9999px;visibility:hidden;pointer-events:none;width:auto;height:auto;';
     measureContainer.innerHTML = contentHTML;
     document.body.appendChild(measureContainer);
-    
+
     const contentWidth = measureContainer.scrollWidth;
     const contentHeight = measureContainer.scrollHeight;
     document.body.removeChild(measureContainer);
@@ -16301,7 +16643,7 @@ window.warsData = [
       implication: "Animation originale[-] Au format vedette[Polyz] À toile de fond[Monoa].",
       simplified: "Matière Corde Passage ou Déploiement Énergique",
       synonym: "𝙼𝚘𝚗𝚘𝚊-𝙿𝚘𝚕𝚢𝚣(Monospace)",
-      version: "Moa&Poz, M&P"
+      version: "Moa&Poz, M&P, 𝙼𝚘𝚗𝚘𝚊-𝙿𝚘𝚕𝚢𝚣"
     },
     {
       term: "Monom/Mono-Mémoire",
@@ -16333,7 +16675,7 @@ window.warsData = [
     {
       term: "Monom&Polyp",
       category: ["Mapnel", "Vydnitt", "Leqwa", "Monoa-Polyz", "Citadel"],
-      definition: "État/Dynamique intemporelle où être et devenir sont entrelacés dans une communion harmonieuse.",
+      definition: "État-Dynamique intemporelle où être et devenir sont entrelacés dans une communion harmonieuse.",
       simplified: "Mémoire nourricière permanente & Projection épisodique cyclique ou Laisser Ouvert",
       synonym: " Mom&Pop, MM&PP, ℳℴ𝓃ℴ𝓂🙵𝒫ℴ𝓁𝓎𝓅(Cursive), ℳℴ𝓂🙵𝒫ℴ𝓅, ℳ🙵𝒫",
       pronunce: "MTP, monomennepolype, monome-terla-polype",
@@ -16366,11 +16708,11 @@ window.warsData = [
     {
       term: "Monop%Polym",
       category: ["Aursyl", "Vydnitt", "Monoa-Polyz", "Citadel"],
-      definition: "État/Dynamique contractée où être et devenir sont imbriqués dans une déperdition rupturante.",
+      definition: "État-Dynamique contractée où être et devenir sont imbriqués dans une déperdition rupturante.",
       simplified: "Prohibition affamante saturée % Malaise apathique déclinant ou Prendre au Piège",
       synonym: "Mop%Pom, MP%PM, 𝔐𝔬𝔫𝔬𝔭%𝔓𝔬𝔩𝔶𝔪(Fraktur), 𝔐𝔬𝔭%𝔓𝔬𝔪, 𝔐%𝔓",
       pronunce: "MDP, monopeourpolyme, monope-derla-polyme",
-      version: "Mop%Pom, MP%PM, 𝔐𝔬𝔫𝔬𝔭%𝔓𝔬𝔩𝔶𝔪(Fraktur), 𝔐𝔬𝔭%𝔓𝔬𝔪, 𝔐%𝔓"
+      version: "Mop%Pom, MP%PM, 𝔐𝔬𝔫𝔬𝔭%𝔓𝔬𝔩𝔶𝔪, 𝔐𝔬𝔭%𝔓𝔬𝔪, 𝔐%𝔓"
     },
     {
       term: "Monstre 0",
@@ -16388,8 +16730,8 @@ window.warsData = [
       definition: "Adversaire de la seigneurie planifiant son itinéraire purement stratégique dans des proportions d'ennui globalisé.",
       implication: "Annihilateur ontologique de la raison d'être ou la sournoise trafiqueuse de conscience vers l'ébranlement de sa volonté propre dont on ne peut certifier la provenance.",
       simplified: "Colonisateur d'apprentis-novices vers la déflagration de leur consciences.",
-      desc: "Il est décrit comme ayant 2 mains 2 pieds 2 yeux 2 oreilles 1 nez 1 bouche.",
-      synonym: "Tyran, Despote, Imposteur, Crapule, Aliénatueur, Assassin du Sens, Fumée Noire, Déchu, Marque de Fabrique",
+      desc: "Il est décrit comme ayant 2 mains 2 pieds 2 yeux 2 oreilles 1 nez 1 bouche, mais s'est aussi construit une citadelle dans le monde invisible de l'esprit de chacun.",
+      synonym: "Tyran, Esclavagiste, Despote, Imposteur, Crapule, Aliénatueur, Assassin du Sens, Fumée Noire, Déchu, Marque de Fabrique",
       surnatural: "Putschiste de Dieu déguisé en celui-ci injoncteur du Pourquoi capable de ruiner au moins un millier de personnes de leur soutien servile consenti par la délégation.",
       version: "Dévore-Novicien, Dévore-Novicienne, Dévore-Noviciens, Dévore-Noviciennes"
     },
@@ -16550,7 +16892,7 @@ window.warsData = [
       term: "Picol-Kentron",
       category: ["Mapnel", "Wacwe", "Cueillette", "Tablette", "Museum", "Parc", "Citadel"],
       definition: "Schéma de multiplicité des rôles, fonctions interprétées par cercles s'empilant par objectifs •RGB•BNG•",
-      implication: "Chaque couleur poursuit un rapport étroit avec l'intégralité fonctionnel et fondamentale.",
+      implication: "Chaque couleur poursuit un rapport étroit avec l'intégralité fonctionnelle et fondamentale.",
       etymology: "(Pi: Cercle Circulaire) - (Col: Color/Couleur) - (Kentron: Aiguillon/Pointe)",
       version: "Kentronien, Kentroniens, Kentronienne, Kentroniennes"
     },
@@ -16558,7 +16900,7 @@ window.warsData = [
       term: "Chromel",
       category: ["Mapnel", "Wacwe", "Phénotype", "Supernova", "Codex"],
       definition: "Sublimation décisive des marqueurs traumatiques à la page tournante.",
-      implication: "Reprise des déjà vus sur une phase supérieure de configuration.",
+      implication: "Reprise des déjà-vus sur une phase supérieure de configuration.",
       desc: "Meilleur Drapeau, forme authentique et hypothétique.",
       surnatural: "Supporte Fardeaux",
       version: "Chroméliste, Chromélisme"
@@ -16714,6 +17056,12 @@ window.warsData = [
       definition: "@ttributs tout aussi bien absolus et relatifs comprisent dans une pille de données interminable.",
       simplified: "Danse confuse ambivalente en cadre et légitimité.",
       pronunce: "SaraXteriZ"
+    },
+    {
+      term: "Déjà-Vu",
+      category: ["IUVALCY", "Leqwa", "Mouet-Pouet", "Phénomène"],
+      definition: "Sentiment d'expérience/expérimental/d'expertise du vécu.",
+      simplified: "Superposition Analogue"
     },
     {
       term: "Travail",
@@ -16903,14 +17251,15 @@ window.warsData = [
       term: "InfiNieR",
       category: ["ARc⟁diA", "Tôhla", "Persona", "Supernova"],
       definition: "Antinomie tragico-splendide profanateur de panoptisme.",
-      etymology: "Infirme, Infirmier, Infirmerie, Infini"
+      etymology: "Infirme, Infirmier, Infirmerie, Infini",
+      parent: "Palpiter de l'Infini"
     },
     {
       term: "Blehdwoluzvi",
       category: ["ARc⟁diA", "Aursyl", "Tôhla", "Mouet-Pouet", "Phénotype"],
       definition: "Le pouvoir dévoriste n'est que blehdwo, tu connais maintenant, tu es prêt pour la vie!",
       implication: "Librairie Ludothèque Hourra! Comédie ou Tragédie ?",
-      synonym: "Blehdwo, t'attends quoi?, Bruh, What the Fuck, Incompréhension",
+      synonym: "Blehdwo, t'attends quoi?, Bruh, What the Fuck, Incompréhension, le juron par excellence",
       meme: "C'est les livres. C'est la musique. C'est la culture. Toute la merde du monde. Ceux que vous souhaitiez jusqu'à présent.",
       version: "Blehdwo"
     },
@@ -16919,7 +17268,7 @@ window.warsData = [
       category: ["ARc⟁diA", "Leqwa", "Logjēm", "Codex", "Supervision"],
       definition: "Bouclure de flambeau Doppelgänger des entrailles exclusives inclusives selon la forme et les convulsions du vouloir.",
       implication: "On raconte que le ratio concernant la collection abusive et le voile traversé serait de 20%~80% pour les gauniques voire 10%~90% chez les gaunico-ganiques.",
-      simplified: "Dose d'altérité réaliste et utopique sous les moyens du bord et du fond.",
+      simplified: "Dose d'altérité réaliste et idéaliste sous les moyens du bord et du fond.",
       parent: "Travail, Veldiac",
       etymology: "English Travel (Français Voyager)",
       meme: "Ça n'existe pas à ce qu'on dit.",
@@ -16942,7 +17291,8 @@ window.warsData = [
     {
       term: "InFeXcuse",
       category: ["Aursyl", "Slacpi°", "Codex", "Phénotype", "Parc", "Tablette"],
-      definition: "Préfixes % Suffixes odieux à jeter hors de son champ de vocabulaire.",
+      definition: "Préfixes % Suffixes odieux à utiliser avec modération.",
+      simplified: "Structure des mots du politicien",
       implication: "Il y a le X, le Xé, le Xeur; la Xation est féroce.",
       etymology: "Infection + Excuse"
     },
@@ -16972,7 +17322,7 @@ window.warsData = [
     },
     {
       term: "PROjECT SSeCCu$",
-      category: ["Aursyl", "UiNo", "Tôhla", "Codex", "Tablette", "Museum", "Parc", "Citadel"],
+      category: ["Aursyl", "Codex", "Tablette", "Museum", "Parc", "Citadel"],
       definition: "Diagramme colonisé - Revue du succès",
       implication: "Les règles du succès sous une banière instrumentale co-produite",
       version: "SSeCCu$, SSeCCuS"
@@ -17035,7 +17385,7 @@ window.warsData = [
     },
     {
       term: "Gliobë",
-      category: ["Lysrua", "Mapnel", "IUVALCY", "ARc⟁diA", "Aursyl", "Nezrog", "Tablette"],
+      category: ["Lysrua", "Mapnel", "IUVALCY", "ARc⟁diA", "Aursyl", "Mouet-Pouet", "Tablette"],
       definition: "Cartographie Emojitique du Plan Lointain aurnelcyen."
     },
     {
@@ -17255,7 +17605,7 @@ window.warsData = [
     {
       term: "MATRICE 4lien 4perçu",
       category: ["ARc⟁diA", "Aursyl", "Tablette", "Capsule", "Codex", "Spherµ", "Cipher"],
-      definition: "Partie bricolée [Mots Croisés] Arcado-Aursylien.",
+      definition: "Partie bricolée [14 Mots Croisés] Arcado-Aursylien.",
       simplified: "Alien Aperçu, lien perçu",
       synonym: "⊠",
       version: "4lien 4perçu, Alien Aperçu, lien perçu"
@@ -17347,7 +17697,7 @@ window.warsData = [
         allCategories.add(item.category);
       }
     });
-
+    
     const mainCategories = [...categoryHierarchy["Théorèmes"], ...categoryHierarchy["Thèses"]];
     const desiredThemesOrder = [
       "Monoa-Polyz", "Mouet-Pouet", "Persona", "Phénomène", "Phénotype", "Supervision", "Supernova", "Spherµ",
@@ -17397,7 +17747,7 @@ window.warsData = [
     };
     tagsContainer.appendChild(allTag);
 
-    const tagElements = {};
+    window.tagElements = {};
 
     Object.entries(categoryHierarchy).forEach(([section, categories]) => {
 
@@ -17462,11 +17812,10 @@ function updateCategoryCounts() {
 
     vocabularyData.forEach(item => {
 
+      // Vérifie si TOUTES les catégories actives sont présentes dans l'item
+      const itemCats = Array.isArray(item.category) ? item.category : [item.category];
       const matchesCategory = activeCategories.size === 0 ||
-        (Array.isArray(item.category) &&
-          Array.from(activeCategories).every(activeTag =>
-            item.category.includes(activeTag)
-          ));
+        Array.from(activeCategories).every(activeTag => itemCats.includes(activeTag));
 
       const matchesSearch = searchTerm === '' ||
 (item.term && item.term.toLowerCase().includes(searchTerm));
@@ -17495,14 +17844,12 @@ itemElement.appendChild(title);
         }
 itemElement.appendChild(category);
 
-// Définition
-            const definition = document.createElement('p');
-            definition.textContent = item.definition;
-            itemElement.appendChild(definition);
-
-        itemElement.appendChild(title);
-        itemElement.appendChild(category);
-        itemElement.appendChild(definition);
+if (item.definition) {
+    const defP = document.createElement('p');
+    defP.textContent = item.definition;
+    // Pas de classe detail-item → jamais masqué par les filtres
+    itemElement.appendChild(defP);
+}
 
 const fields = [
                 { key: 'implication', label: 'Implication ⇒ ' },
@@ -17521,7 +17868,11 @@ const fields = [
                 if (item[field.key]) {
                     const p = document.createElement('p');
                     p.textContent = `${field.label}${item[field.key]}`;
-                    p.classList.add(`category-${field.key}`);
+
+                    p.classList.add('is-detail');
+                    p.classList.add('detail-item'); 
+                    p.classList.add(`detail-${field.key}`); 
+                    
                     itemElement.appendChild(p);
                 }
             });
@@ -18323,6 +18674,9 @@ document.addEventListener('DOMContentLoaded', () => {
             popover.innerHTML = popoverHTML;
             
             document.body.appendChild(popover);
+            if (window.detailVisibility && typeof window.detailVisibility.update === 'function') {
+                window.detailVisibility.update();
+            }
 
             setTimeout(() => {
                 setPopoverPosition(linkElement, popover);
@@ -18584,6 +18938,540 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Exécution au chargement de la page
   window.onload = updateCounters;
+</script>
+<!--POLICE CHANGE-->
+<script>
+(function() {
+  const fonts = [
+    { name: 'Par défaut', value: 'system-ui, Monospace, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif' },
+    { name: 'Arial', value: 'Arial, sans-serif' },
+    { name: 'Helvetica', value: 'Helvetica, Arial, sans-serif' },
+    { name: 'Times New Roman', value: '"Times New Roman", Times, serif' },
+    { name: 'Georgia', value: 'Georgia, serif' },
+    { name: 'Garamond', value: 'Garamond, "EB Garamond", serif' },
+    { name: 'Verdana', value: 'Verdana, Geneva, sans-serif' },
+    { name: 'Trebuchet MS', value: '"Trebuchet MS", Helvetica, sans-serif' },
+    { name: 'Tahoma', value: 'Tahoma, Geneva, sans-serif' },
+    { name: 'Impact', value: 'Impact, Charcoal, sans-serif' },
+    { name: 'Courier New', value: '"Courier New", Courier, monospace' },
+    { name: 'Lucida Console', value: '"Lucida Console", Monaco, monospace' },
+    { name: 'Comic Sans MS', value: '"Comic Sans MS", "Comic Sans", cursive' },
+    { name: 'Palatino', value: '"Palatino Linotype", Palatino, serif' },
+    { name: 'Futura', value: 'Futura, "Century Gothic", sans-serif' },
+  ];
+
+  const STORAGE_KEY = 'aurnelcy-font';
+  const btn = document.getElementById('fontPickerBtn');
+  const dropdown = document.getElementById('fontPickerDropdown');
+  const fontList = document.getElementById('fontList');
+
+  function applyFont(value) {
+    document.body.style.fontFamily = value;
+    localStorage.setItem(STORAGE_KEY, value);
+    fontList.querySelectorAll('.font-option').forEach(el => {
+      const active = el.dataset.value === value;
+      el.style.fontWeight = active ? 'bold' : 'normal';
+      el.style.color = active ? 'var(--tag-active, #FF2400)' : 'var(--text-color)';
+      el.style.borderColor = active ? 'var(--tag-active, #FF2400)' : 'transparent';
+    });
+  }
+
+  fonts.forEach(f => {
+    const item = document.createElement('button');
+    item.className = 'font-option';
+    item.dataset.value = f.value;
+    item.textContent = f.name;
+    item.style.cssText = 'display:block; width:100%; text-align:left; padding:6px 10px; border:1px solid transparent; border-radius:5px; background:none; cursor:pointer; font-family:' + f.value + '; font-size:0.95em; color:var(--text-color); transition:all 0.15s ease;';
+    item.addEventListener('mouseenter', () => { item.style.background = 'rgba(128,128,128,0.1)'; });
+    item.addEventListener('mouseleave', () => { item.style.background = 'none'; });
+    item.addEventListener('click', () => { applyFont(f.value); dropdown.style.display = 'none'; });
+    fontList.appendChild(item);
+  });
+
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+  });
+
+  document.addEventListener('click', e => {
+    if (!dropdown.contains(e.target) && e.target !== btn) dropdown.style.display = 'none';
+  });
+
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) applyFont(saved);
+})();
+</script>
+
+<!--FONT SIZE CHANGE-->
+<script>
+(function() {
+  const STORAGE_KEY = 'aurnelcy-fontsize';
+  const STEP = 5;
+  const MIN = 70;
+  const MAX = 150;
+
+  const btn = document.getElementById('fontSizeBtn');
+  const dropdown = document.getElementById('fontSizeDropdown');
+  const minusBtn = document.getElementById('fontSizeMinus');
+  const plusBtn = document.getElementById('fontSizePlus');
+  const resetBtn = document.getElementById('fontSizeReset');
+  const valueLabel = document.getElementById('fontSizeValue');
+
+  let current = parseInt(localStorage.getItem(STORAGE_KEY)) || 100;
+
+  const BASE = 16; // font-size de base du body en px
+
+  function applySize(val) {
+  current = Math.min(MAX, Math.max(MIN, val));
+  document.body.style.zoom = current + '%';
+  valueLabel.textContent = current + '%';
+  localStorage.setItem(STORAGE_KEY, current);
+  minusBtn.disabled = current <= MIN;
+  plusBtn.disabled = current >= MAX;
+  minusBtn.style.opacity = current <= MIN ? '0.3' : '1';
+  plusBtn.style.opacity = current >= MAX ? '0.3' : '1';
+}
+
+  plusBtn.addEventListener('click', () => applySize(current + STEP));
+  minusBtn.addEventListener('click', () => applySize(current - STEP));
+  resetBtn.addEventListener('click', () => applySize(100));
+
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+  });
+
+  document.addEventListener('click', e => {
+    if (!dropdown.contains(e.target) && e.target !== btn) dropdown.style.display = 'none';
+  });
+
+  applySize(current);
+})();
+</script>
+
+<!--BOOKMARK-->
+<script>
+(function() {
+  const STORAGE_KEY = 'aurnelcy-bookmarks';
+  const btn = document.getElementById('bookmarkBtn');
+  const dropdown = document.getElementById('bookmarkDropdown');
+  const addBtn = document.getElementById('bookmarkAdd');
+  const list = document.getElementById('bookmarkList');
+  const empty = document.getElementById('bookmarkEmpty');
+
+  function load() {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  }
+
+  function save(bookmarks) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(bookmarks));
+  }
+
+  function getLabel() {
+    const headings = document.querySelectorAll('h1, h2, h3');
+    let best = null;
+    let bestTop = -Infinity;
+    headings.forEach(h => {
+      // Ignorer les éléments cachés ou dans un details fermé
+      if (!h.offsetParent) return;
+      const top = h.getBoundingClientRect().top + window.scrollY;
+      if (top <= window.scrollY + 80 && top > bestTop) {
+        bestTop = top;
+        best = h;
+      }
+    });
+    return best ? best.textContent.trim().slice(0, 40) : 'Position ' + Math.round(window.scrollY);
+  }
+
+  function render() {
+    const bookmarks = load();
+    list.innerHTML = '';
+    empty.style.display = bookmarks.length === 0 ? 'block' : 'none';
+
+    bookmarks.forEach((bm, i) => {
+      const row = document.createElement('div');
+      row.style.cssText = 'display:flex; align-items:center; gap:6px;';
+
+      const goBtn = document.createElement('button');
+      goBtn.textContent = bm.label;
+      goBtn.title = bm.label;
+      goBtn.style.cssText = 'flex:1; text-align:left; padding:6px 8px; border-radius:5px; border:1px solid var(--text-color); background:var(--bg-color); color:var(--text-color); font-size:0.85em; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;';
+      goBtn.addEventListener('click', () => {
+        window.scrollTo({ top: bm.scrollY, behavior: 'smooth' });
+        dropdown.style.display = 'none';
+      });
+
+      const delBtn = document.createElement('button');
+      delBtn.textContent = '✕';
+      delBtn.style.cssText = 'width:26px; height:26px; border-radius:5px; border:1px solid var(--text-color); background:var(--bg-color); color:var(--text-color); font-size:0.8em; cursor:pointer; flex-shrink:0;';
+      delBtn.addEventListener('click', () => {
+        const bms = load();
+        bms.splice(i, 1);
+        save(bms);
+        render();
+      });
+
+      row.appendChild(goBtn);
+      row.appendChild(delBtn);
+      list.appendChild(row);
+    });
+  }
+
+  addBtn.addEventListener('click', () => {
+    const bms = load();
+    bms.push({ label: getLabel(), scrollY: window.scrollY });
+    save(bms);
+    render();
+  });
+
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    render();
+    dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+  });
+
+  document.addEventListener('click', e => {
+    if (!dropdown.contains(e.target) && e.target !== btn) dropdown.style.display = 'none';
+  });
+})();
+</script>
+
+<!--4LIEN CROSSWORD-->
+<script>
+(function(){
+
+const CLUES_A = [
+  {n:1,  text:"Pays et Paysans"},
+  {n:3,  text:"ARc⟁diA renverse les [\u2026]"},
+  {n:5,  text:"Aursyl est la science des [\u2026]"},
+  {n:7,  text:"ARc⟁diA est le [\u2026] pour Aursyl"},
+  {n:8,  text:"ARc⟁diA joue les [\u2026]"},
+  {n:9,  text:"Tournage en direct"},
+  {n:12, text:"Aursyl est le [\u2026] pour ARc⟁diA"},
+];
+const CLUES_D = [
+  {n:2,  text:"Chacun est \u2026 de l'autre"},
+  {n:4,  text:"Aursyl jette un [\u2026]"},
+  {n:6,  text:"Question pour rus\u00E9"},
+  {n:9,  text:"Chacun est [\u2026] avec l'autre"},
+  {n:10, text:"Ce n'est pas fait pour les [\u2026]"},
+  {n:11, text:"Aursyl vend du [\u2026]"},
+  {n:12, text:"Nous sommes les plus [\u2026]"},
+];
+
+const SOL = {
+  '1A':  ['X','A','T','I','O','N'],
+  '3A':  ['A','R','M','E','S'],
+  '5A':  ['F','A','I','L','L','E','S'],
+  '7A':  ['D','I','V','E','R','T','I','S','S','E','M','E','N','T'],
+  '8A':  ['I','G','N','O','R','A','N','T','S'],
+  '9A':  ['S','I','M','U','L','A','T','I','O','N'],
+  '12A': ['D','\u00C9','G','U','I','S','E','M','E','N','T'],
+  '2D':  ['A','G','A','C','\u00C9'],
+  '4D':  ['M','A','L','\u00C9','F','I','C','E'],
+  '6D':  ['D','E','V','I','N','E','T','T','E'],
+  '9D':  ['S','\u00C9','V','\u00C8','R','E'],
+  '10D': ['P','E','U','R','E','U','X'],
+  '11D': ['D','E','S','T','I','N'],
+  '12D': ['D','\u00C9','V','I','A','N','T','S'],
+};
+
+// Position de départ [row, col] de chaque mot
+const WSTART = {
+  '1A': [0,0],  '3A': [2,1],  '5A':  [6,3],  '7A':  [9,0],
+  '8A': [11,9], '9A': [12,0], '12A': [16,3],
+  '2D': [0,1],  '4D': [2,3],  '6D':  [8,9],  '9D':  [12,0],
+  '10D':[14,6], '11D':[15,11],'12D': [16,3],
+};
+
+// Cellules actives + numéros [row, col, num_or_empty]
+const ACTIVE = [
+  [0,0,'1'],[0,1,'2'],[0,2,''],[0,3,''],[0,4,''],[0,5,''],
+  [1,1,''],
+  [2,1,'3'],[2,2,''],[2,3,'4'],[2,4,''],[2,5,''],
+  [3,1,''],[3,3,''],
+  [4,1,''],[4,3,''],
+  [5,3,''],
+  [6,3,'5'],[6,4,''],[6,5,''],[6,6,''],[6,7,''],[6,8,''],[6,9,''],
+  [7,3,''],
+  [8,3,''],[8,9,'6'],
+  [9,0,'7'],[9,1,''],[9,2,''],[9,3,''],[9,4,''],[9,5,''],[9,6,''],[9,7,''],[9,8,''],[9,9,''],[9,10,''],[9,11,''],[9,12,''],[9,13,''],
+  [10,9,''],
+  [11,9,'8'],[11,10,''],[11,11,''],[11,12,''],[11,13,''],[11,14,''],[11,15,''],[11,16,''],
+  [12,0,'9'],[12,1,''],[12,2,''],[12,3,''],[12,4,''],[12,5,''],[12,6,''],[12,7,''],[12,8,''],[12,9,''],
+  [13,0,''],[13,9,''],
+  [14,0,''],[14,6,'10'],[14,9,''],
+  [15,0,''],[15,6,''],[15,9,''],[15,11,'11'],
+  [16,0,''],[16,3,'12'],[16,4,''],[16,5,''],[16,6,''],[16,7,''],[16,8,''],[16,9,''],[16,10,''],[16,11,''],[16,12,''],[16,13,''],
+  [17,0,''],[17,3,''],[17,6,''],[17,11,''],
+  [18,3,''],[18,6,''],[18,11,''],
+  [19,3,''],[19,6,''],[19,11,''],
+  [20,3,''],[20,6,''],[20,11,''],
+  [21,3,''],
+  [22,3,''],
+  [23,3,''],
+];
+
+const cellActive = {};
+const cellNum    = {};
+ACTIVE.forEach(([r,c,n]) => {
+  cellActive[r+','+c] = true;
+  if(n) cellNum[r+','+c] = n;
+});
+
+// Map (r,c) -> expected letter (built from SOL)
+const EXPECTED = {};
+Object.keys(SOL).forEach(wkey => {
+  const [wr,wc] = WSTART[wkey];
+  const dir = wkey.slice(-1);
+  SOL[wkey].forEach((ch,i) => {
+    const r = wr + (dir==='D'?i:0);
+    const c = wc + (dir==='A'?i:0);
+    EXPECTED[r+','+c] = ch;
+  });
+});
+
+const userGrid = {};
+let selected = null;
+
+// ─── BUILD ────────────────────────────────────────────────────────────────────
+function buildGrid(){
+  const table = document.getElementById('cw-grid');
+  table.innerHTML = '';
+  const ROWS = 24, COLS = 17;
+  for(let r=0; r<ROWS; r++){
+    const tr = document.createElement('tr');
+    for(let c=0; c<COLS; c++){
+      const key = r+','+c;
+      const active = !!cellActive[key];
+      const td = document.createElement('td');
+      td.style.cssText = 'width:28px;height:28px;padding:0;position:relative;'
+        + (active
+          ? 'border:1px solid var(--text-color);background:var(--bg-color);'
+          : 'border:none;background:transparent;');
+      if(active){
+        if(cellNum[key]){
+          const s = document.createElement('span');
+          s.textContent = cellNum[key];
+          s.style.cssText = 'position:absolute;top:1px;left:2px;font-size:8px;line-height:1;pointer-events:none;color:var(--text-color);';
+          td.appendChild(s);
+        }
+        const inp = document.createElement('input');
+        inp.maxLength = 1;
+        inp.id = 'cw-cell-' + r + '-' + c;
+        inp.name = 'cw-cell-' + r + '-' + c;
+        inp.autocomplete = 'off';
+        inp.dataset.r = r;
+        inp.dataset.c = c;
+        inp.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:none;background:transparent;'
+          +'text-align:center;font-size:13px;font-weight:bold;text-transform:uppercase;'
+          +'color:var(--text-color);cursor:pointer;outline:none;padding-top:10px;box-sizing:border-box;';
+        inp.addEventListener('click',   onCellClick);
+        inp.addEventListener('keydown', onKeyDown);
+        inp.addEventListener('input',   onInput);
+        td.appendChild(inp);
+      }
+      tr.appendChild(td);
+    }
+    table.appendChild(tr);
+  }
+  buildClues();
+}
+
+function inp(r,c){ return document.querySelector('#cw-grid input[data-r="'+r+'"][data-c="'+c+'"]'); }
+
+// ─── CLICK / KEY ──────────────────────────────────────────────────────────────
+function onCellClick(e){
+  const r=+e.target.dataset.r, c=+e.target.dataset.c;
+  if(selected && selected.r===r && selected.c===c){
+    const other = selected.dir==='A'?'D':'A';
+    if(getWord(r,c,other)) selected = {r,c,dir:other};
+  } else {
+    const prefer = selected?selected.dir:'A';
+    const dir = getWord(r,c,prefer) ? prefer : (getWord(r,c,'A')?'A':'D');
+    selected = {r,c,dir};
+  }
+  highlight(); showClue();
+}
+
+function onKeyDown(e){
+  if(!selected) return;
+  const {r,c,dir} = selected;
+  if(e.key==='ArrowRight'){ e.preventDefault(); move(r,c,0,1); }
+  else if(e.key==='ArrowLeft'){ e.preventDefault(); move(r,c,0,-1); }
+  else if(e.key==='ArrowDown'){ e.preventDefault(); move(r,c,1,0); }
+  else if(e.key==='ArrowUp'){ e.preventDefault(); move(r,c,-1,0); }
+  else if(e.key==='Backspace'){
+    e.preventDefault();
+    const el=inp(r,c);
+    if(el&&el.value){ el.value=''; delete userGrid[r+','+c]; }
+    else {
+      const [dr,dc]=dir==='A'?[0,-1]:[-1,0];
+      if(cellActive[(r+dr)+','+(c+dc)]){
+        selected={r:r+dr,c:c+dc,dir};
+        const ni=inp(r+dr,c+dc);
+        if(ni){ni.value='';delete userGrid[(r+dr)+','+(c+dc)];ni.focus();}
+        highlight();
+      }
+    }
+  }
+  else if(e.key==='Tab'){ e.preventDefault(); nextWord(e.shiftKey); }
+}
+
+function onInput(e){
+  const r=+e.target.dataset.r, c=+e.target.dataset.c;
+  const v = e.target.value.toUpperCase().replace(/[^A-Z\u00C0-\u00FF]/g,'');
+  e.target.value = v;
+  if(v) userGrid[r+','+c]=v; else delete userGrid[r+','+c];
+  // reset color to default on new input
+  e.target.style.color = 'var(--text-color)';
+  if(v && selected){
+    const {dir}=selected;
+    const nr=r+(dir==='D'?1:0), nc=c+(dir==='A'?1:0);
+    if(cellActive[nr+','+nc]){ selected={r:nr,c:nc,dir}; inp(nr,nc)?.focus(); highlight(); }
+  }
+}
+
+function move(r,c,dr,dc){
+  const nr=r+dr,nc=c+dc;
+  if(cellActive[nr+','+nc]){
+    selected={r:nr,c:nc,dir:selected.dir};
+    inp(nr,nc)?.focus(); highlight(); showClue();
+  }
+}
+
+// ─── MOTS ─────────────────────────────────────────────────────────────────────
+function getWord(r,c,dir){
+  for(const wk of Object.keys(WSTART)){
+    if(!wk.endsWith(dir)) continue;
+    const [wr,wc]=WSTART[wk];
+    const len=SOL[wk].length;
+    for(let i=0;i<len;i++){
+      const cr=wr+(dir==='D'?i:0), cc=wc+(dir==='A'?i:0);
+      if(cr===r&&cc===c) return wk;
+    }
+  }
+  return null;
+}
+
+function wordCells(wk){
+  const [wr,wc]=WSTART[wk], dir=wk.slice(-1);
+  return SOL[wk].map((_,i)=>({r:wr+(dir==='D'?i:0),c:wc+(dir==='A'?i:0)}));
+}
+
+// ─── HIGHLIGHT ────────────────────────────────────────────────────────────────
+function highlight(){
+  document.querySelectorAll('#cw-grid td').forEach(td=>{
+    if(cellActive[(+td.children[td.children.length-1]?.dataset?.r||'')+','+(+td.children[td.children.length-1]?.dataset?.c||'')]||true)
+      td.style.background='var(--bg-color)';
+  });
+  // simpler: reset all active cells
+  document.querySelectorAll('#cw-grid input').forEach(el=>{
+    el.parentElement.style.background='var(--bg-color)';
+  });
+  if(!selected) return;
+  const wk=getWord(selected.r,selected.c,selected.dir);
+  if(wk) wordCells(wk).forEach(({r,c})=>{
+    const el=inp(r,c); if(el) el.parentElement.style.background='rgba(128,128,255,0.18)';
+  });
+  const cur=inp(selected.r,selected.c);
+  if(cur) cur.parentElement.style.background='rgba(128,128,255,0.45)';
+}
+
+// ─── CLUES ────────────────────────────────────────────────────────────────────
+function buildClues(){
+  const ao=document.getElementById('cw-across'), dw=document.getElementById('cw-down');
+  ao.innerHTML=''; dw.innerHTML='';
+  CLUES_A.forEach(({n,text})=>{
+    const li=document.createElement('li'); li.value=n; li.textContent=text;
+    li.style.cursor='pointer';
+    li.addEventListener('click',()=>jumpTo(n+'A'));
+    ao.appendChild(li);
+  });
+  CLUES_D.forEach(({n,text})=>{
+    const li=document.createElement('li'); li.value=n; li.textContent=text;
+    li.style.cursor='pointer';
+    li.addEventListener('click',()=>jumpTo(n+'D'));
+    dw.appendChild(li);
+  });
+}
+
+function jumpTo(wk){
+  if(!WSTART[wk]) return;
+  const [r,c]=WSTART[wk];
+  selected={r,c,dir:wk.slice(-1)};
+  inp(r,c)?.focus(); highlight(); showClue();
+}
+
+function showClue(){
+  const el=document.getElementById('cw-clue-active');
+  if(!selected){el.textContent='Cliquez une case';return;}
+  const wk=getWord(selected.r,selected.c,selected.dir);
+  if(!wk){el.textContent='';return;}
+  const n=parseInt(wk), dir=wk.slice(-1);
+  const list=dir==='A'?CLUES_A:CLUES_D;
+  const cl=list.find(x=>x.n===n);
+  el.textContent=cl?(n+' '+(dir==='A'?'→':'↓')+' '+cl.text):'';
+}
+
+function nextWord(rev){
+  const all=[...CLUES_A.map(x=>x.n+'A'),...CLUES_D.map(x=>x.n+'D')];
+  const cur=selected?getWord(selected.r,selected.c,selected.dir):null;
+  const idx=cur?all.indexOf(cur):-1;
+  jumpTo(all[(idx+(rev?-1:1)+all.length)%all.length]);
+}
+
+// ─── BOUTONS ──────────────────────────────────────────────────────────────────
+window.cwVerify = function(){
+  let ok=0, total=0;
+  document.querySelectorAll('#cw-grid input').forEach(el=>{
+    const key=el.dataset.r+','+el.dataset.c;
+    const exp=EXPECTED[key];
+    if(!exp) return;
+    total++;
+    const val=(el.value||'').toUpperCase();
+    if(val===''){
+      el.style.color='var(--text-color)';
+    } else if(val===exp){
+      ok++;
+      el.style.color='#27ae60';
+    } else {
+      el.style.color='#e74c3c';
+    }
+  });
+  const msg=document.getElementById('cw-msg');
+  const filled=document.querySelectorAll('#cw-grid input');
+  let filledCount=0;
+  filled.forEach(el=>{ if(el.value) filledCount++; });
+  if(filledCount===0){ msg.textContent=''; return; }
+  if(ok===total){ msg.textContent='✓ Parfait !'; msg.style.color='#27ae60'; }
+  else { msg.textContent=ok+'/'+total+' corrects'; msg.style.color='#e67e22'; }
+};
+
+window.cwReveal = function(){
+  document.querySelectorAll('#cw-grid input').forEach(el=>{
+    const key=el.dataset.r+','+el.dataset.c;
+    const exp=EXPECTED[key];
+    if(exp){ el.value=exp; userGrid[key]=exp; el.style.color='#2980b9'; }
+  });
+  document.getElementById('cw-msg').textContent='';
+};
+
+window.cwReset = function(){
+  document.querySelectorAll('#cw-grid input').forEach(el=>{
+    el.value='';
+    el.style.color='var(--text-color)';
+    el.parentElement.style.background='var(--bg-color)';
+  });
+  Object.keys(userGrid).forEach(k=>delete userGrid[k]);
+  document.getElementById('cw-msg').textContent='';
+  selected=null;
+};
+
+// ─── INIT ─────────────────────────────────────────────────────────────────────
+buildGrid();
+
+})();
 </script>
 
 </html>
