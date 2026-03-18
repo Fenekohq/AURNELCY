@@ -6,6 +6,7 @@
   <title>⟁URNELCY</title>
   <link rel="icon" type="image/png" href="feature/favicon.png">
   <link rel="apple-touch-icon" type="image/png" href="feature/favicon.png">
+  <link rel="manifest" href="/manifest.json">
   
   <script>
     (function () {
@@ -27,6 +28,11 @@
     }
   </script>
 
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/service-worker.js");
+    }
+  </script>
   <!--(BASIC CSS STYLES)-->
   <style>
     :root[data-theme="light"] {
@@ -110,7 +116,6 @@
       -webkit-overflow-scrolling: touch;
       position: relative;
       border-collapse: collapse;
-      white-space: nowrap;
       text-align: center;
     }
 
@@ -2033,12 +2038,12 @@ body.vocab-feature-active .definition-link {
       width: 7.69%;
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 844px) {
       .calendar-week {
-        width: 300%;
+        min-width: 1200px;
       }
       .calendar-year, .calendar-lunar {
-        width: 500%
+        min-width: 1600px;
       }
     }
 
@@ -2650,6 +2655,10 @@ body.vocab-feature-active .definition-link {
       transform: scale(1.2);
       color: #ff4444;
     }
+
+    .thx {
+      font-weight: bold;
+    }
   </style>
 
 </head>
@@ -2707,53 +2716,6 @@ body.vocab-feature-active .definition-link {
   <div id="bookmarkList" style="display: flex; flex-direction: column; gap: 6px;"></div>
   <p id="bookmarkEmpty" style="font-size: 0.85em; color: var(--text-color); opacity: 0.5; text-align: center; margin: 8px 0 0 0;">Aucun marque-page</p>
 </div>
-
-<!-- Global Detail Visibility Manager -->
-<script>
-window.detailVisibility = {
-    implication: true, simplified: true, desc: true, parent: true, 
-    etymology: true, synonym: true, pronunce: true, meme: true, 
-    surnatural: true, version: true,
-    
-    update() {
-        // --- POPOVER (Ta version actuelle) ---
-        if (window.activePopovers) {
-            window.activePopovers.forEach(popover => {
-                Object.keys(this).forEach(key => {
-                    if (typeof this[key] !== 'boolean') return;
-                    const el = popover.querySelector('[data-detail-type="' + key + '"]');
-                    if (el) el.style.display = this[key] ? '' : 'none';
-                });
-            });
-        }
-
-        // --- DICTIONNAIRE (La nouvelle partie) ---
-        Object.keys(this).forEach(key => {
-            if (typeof this[key] !== 'boolean') return;
-            // On ne cherche que les éléments qui ont la classe "detail-item"
-            // Ça protège ta définition qui n'a pas cette classe !
-            const dictElements = document.querySelectorAll('.detail-item.detail-' + key);
-            dictElements.forEach(el => {
-                el.style.display = this[key] ? '' : 'none';
-            });
-        });
-    },
-    
-    setAll(value) {
-      Object.keys(this).forEach(key => {
-        if (typeof this[key] === 'boolean') this[key] = value;
-      });
-      this.update();
-    },
-    
-    set(key, value) {
-        if (typeof this[key] === 'boolean') {
-            this[key] = value;
-            this.update();
-        }
-    }
-};
-</script>
 
 <!-- Dropdown panel for detail controls -->
 <div id="vocab-details-dropdown" style="display: none; position: fixed; top: 60px; left: 60px; z-index: 1999; background: var(--bg-color); border: 1px solid var(--text-color); border-radius: 8px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); width: 280px; max-height: 400px; overflow-y: auto;">
@@ -2813,7 +2775,7 @@ window.detailVisibility = {
 
   <h1 id="Introduction">Introduction</h1>
 
-    ⟁URNELCY est un univers cosmogonique expérimental et mythologique.
+    ⟁URNELCY est un univers cosmogonique et mythologique.
     Il s'agit pour l'auteur d'un édifice important de sa vie et c'est notamment l'œuvre le restituant dans un circuit du sens à une unique manière.
     Fenekohq a pondu une philosophie bâtie en réponse à un irrépressible besoin de se trouver soi-même dans cet ouvrage.
     La lecture complète du contenu nécessite le langage Français, Anglais et Néologique propre à ⟁URNELCY s'introduisant progressivement au fil du temps.
@@ -2828,7 +2790,7 @@ window.detailVisibility = {
     - Activer le mode clair/sombre en haut à droite [◐]<br>
     - Changer la police en haut à droite [𝐀]<br>
     - Personnaliser la taille du texte [𝐓]<br>
-    - Attribuer des marques-page [🏷]<br>
+    - Attribuer des marques-pages [🏷]<br>
     - Comprendre des objets culturels divers en haut à droite [⟁]<br>
     - Pointer vers les timestamp importants avec l'ellipse au milieu en haut pour les principaux chapitres<br>
     - Naviguer vite grâce au [Sommaire]<br>
@@ -3056,7 +3018,7 @@ window.detailVisibility = {
     <br>
     
     <h3>IUVALCY</h3>
-    Crithekiel - Critheçiel - Critheqiel - Critherçation - PAMABWA - INTIMACY - XaraЖereX - Déjà-Vu - Veldiac AL - Ganie - CritHAïe - TRIBALT - GESTALT - Goalois(e) - Möbius Netwow - PROTAGONISM - Articulation Ecsætera (Iuvalcienne) -
+    Crithekiel - Critheçiel - Critheqiel - Crethole - Critherçation - PAMABWA - INTIMACY - XaraЖereX - Déjà-Vu - Veldiac AL - Ganie - CritHAïe - TRIBALT - GESTALT - Goalois(e) - Möbius Netwow - PROTAGONISM - Articulation Ecsætera (Iuvalcienne) -
     Veldiac AJtieL - GaunieGanie<br>
     MATRICE 5ync sur 5ync<br>
     <br>
@@ -3085,13 +3047,14 @@ window.detailVisibility = {
     Gliobë - Mlush'Plush - YgijfeV - 白𝓒α𐌺心αট黒 -
     ÇEMiNi! - LEMiNiQ - REMiNiK - GEMiNiC -
     Z옹Z아Z웨 - J옹Q옹B옹 - 아LI아KK아HH - 웨RU웨GG웨HH -
-    elzel0lezle - ⼰ㄈ🜆ꡙҼ7 - ⮟ЮꡙΞԵ - ҨყⰎல - Domaines - ￣\_(ツ)_/￣ - 大ටभᲡⰡ - Articulation KaLeiDo (Lysruéenne)<br>
+    elzel0lezle - ⼰ㄈ🜆ꡙҼ7 - ⮟ЮꡙΞԵ - ҨყⰎல - Domaines - ￣\_(ツ)_/￣ - 大ටभᲡⰡ -
+    Opale - Articulation KaLeiDo (Lysruéenne)<br>
     MATRICE A6es 6tiques 6colaire<br>
     <br>
     
     <h3>D⦾MIN⦿'s</h3>
-    Squelette ZigZag (Dominion) -
-    Innok - Urflosia - Rantlot - NEON - H2O - TouRise - CGU(Carpet Glance Unit) - Esliz - NEET Club - xXx - RaycRa Forces<br>
+    Squelette ZigZag (Dominion)<br>
+    Innok - Urflosia - Srin - Altopus - Rantlot - NEON - H2O - TouRise - CGU(Carpet Glance Unit) - Esliz - NEET Club - xXx - RaycRa Forces<br>
     <br>
     
     <h3>Taxonomie Aurnelcyenne</h3>
@@ -3119,7 +3082,7 @@ window.detailVisibility = {
         <dt><strong>Dominances Articulatoire</strong></dt>
         <dd>Jei - Tui - IliーEllie - Jtie<br>
         I - UV - AL - CY<br>
-        Hom - Fem - Enf - Arte - Oh<br>
+        Hom - Fem - Enf - Arte - On/Oh<br>
         Je - Tu - Il×Elle×Ça<br>
         Ω𝚸𐒰Ⅼ - Æ↰⊥ƎЯ - Ⓔ🇬㊔</dd>
     </dl>
@@ -3703,11 +3666,11 @@ window.detailVisibility = {
     <summary>Sujet</summary>
     Type: Théogonie<br>
     Question: Être et Devenir<br>
-    Outil: Distinction<br>
+    Outil: Esprit<br>
     Éclairage: Existentiel<br>
     Alignement: Neutre Bon Mauvais<br>
-    Mouvement: Universel<br>
-    Tension: Monisme Dualisme<br>
+    Mouvement: Mixte<br>
+    Tension: Monisme Dualisme Trialisme<br>
   </details>
 
   <h2 id="Monoa-Polyz" style="text-align: center;">『Monoa-Polyz』</h2>
@@ -3799,7 +3762,7 @@ window.detailVisibility = {
     <p style="text-align: center;"><span class="hmode">Monom&amp;Polyp</span> s'attache à moi<br>
       Ou je m'attache à lui sans doute<br>
       Je n'en ai tout simplement<br>
-      Aucune idée</p>
+      <span style="filter: blur(1px);">Aucune idée</span></p>
 
     <p style="text-align: center;">-</p>
 
@@ -3858,12 +3821,12 @@ window.detailVisibility = {
   
   <details class="info">
     <summary>Sujet</summary>
-    Type: Allégorie Philosophique<br>
+    Type: Allégorie du Pire et du Meilleur<br>
     Question: Volonté Civile<br>
-    Outil: Rêveries<br>
+    Outil: Cauchemars Rêveries<br>
     Éclairage: Réalisme Idéalisme<br>
     Alignement: Mauvais Bon<br>
-    Mouvement: Citoyen<br>
+    Mouvement: Possibilités<br>
     Tension: Réalité et Imagination<br>
   </details>
   
@@ -3942,7 +3905,7 @@ window.detailVisibility = {
   
   <details class="info">
     <summary>Sujet</summary>
-    Type: Essai Phénoménologique<br>
+    Type: Poème du Destin<br>
     Question: Énergie<br>
     Outil: Acceptation<br>
     Éclairage: Auto-Suffisance<br>
@@ -4016,7 +3979,7 @@ window.detailVisibility = {
   
   <details class="info">
     <summary>Sujet</summary>
-    Type: Monologue Philosophique<br>
+    Type: Monologue de l'Étincelle<br>
     Question: Sans Domicile Fixe<br>
     Outil: Compassion<br>
     Éclairage: Appartenance<br>
@@ -4277,11 +4240,11 @@ window.detailVisibility = {
   
   <details class="info">
     <summary>Sujet</summary>
-    Type: Dialogue Socratique Allégorique<br>
-    Question: Haine des Systèmes<br>
+    Type: Dialogue Interne<br>
+    Question: Haine de l'Environnement<br>
     Outil: Conversation<br>
     Éclairage: Comportement Aggravant<br>
-    Alignement: Mauvais à Bon Foi<br>
+    Alignement: Mauvais à Mitigé<br>
     Mouvement: Facettes de la Psyché<br>
     Tension: Cynisme<br>
   </details>
@@ -4665,7 +4628,7 @@ window.detailVisibility = {
         <div>Hiérarchie Inférieure - <span class="red-text">Rouge</span> &lt; <span class="green-text">Vert</span>&<span class="blue-text">Bleu</span> &lt; <span class="white-text">Blanc</span>&<span class="black-text">Noir</span> &lt; <span class="grey-text">Gris</span> &lt; <span class="red-text">Rouge</span></div>
       </div>
       
-      <div style="filter: blur(10px);">
+      <div class="excluded-section" style="filter: blur(10px);">
         <div class="picol-kentron-aursyl"></div>
         <h4>Kentron Aursylien</h4>
         <div>Hiérarchie Supérieure - Gris &gt; Blanc%Noir &gt; Bleu &gt; Rouge%Vert</div>
@@ -4801,9 +4764,9 @@ window.detailVisibility = {
     Type: Taxinomie Épistémologique<br>
     Question: Représentation<br>
     Outil: Anticipation<br>
-    Éclairage: Jeu de Rôle<br>
+    Éclairage: Prédiction<br>
     Alignement: Ambivalent<br>
-    Mouvement: Biologique<br>
+    Mouvement: Motifs<br>
     Tension: Entente<br>
   </details>
 
@@ -4942,10 +4905,10 @@ window.detailVisibility = {
       <details class="info">
         <summary>Sujet</summary>
         Type: Méditation Éthique Introspective<br>
-        Question: Amour<br>
+        Question: Vouloir<br>
         Outil: Générosité<br>
         Éclairage: Reconnaissance<br>
-        Alignement: Compassion<br>
+        Alignement: Pari de la Mutualité<br>
         Mouvement: Altruiste<br>
         Tension: Manipulation<br>
       </details>
@@ -5261,12 +5224,23 @@ window.detailVisibility = {
   <div class="written">01/11/24</div>
 
   <p style="text-align: center; font-size: 2em; margin: 32px auto;">
-    Wacwe devient Leqwa<br>
-    Ça×Jtie va barder!<br>
+    Wacwe devient Leqwa.<br>
+    Jtie va barder!<br>
   </p>
   
   <!--(SFIVOQ)-->
 
+  <details class="info">
+    <summary>Sujet</summary>
+    Type: Franchises Duales<br>
+    Question: Dynamiques<br>
+    Outil: Comparaison<br>
+    Éclairage: Mindset<br>
+    Alignement: Bon ou Mauvais<br>
+    Mouvement: Vie et Mort<br>
+    Tension: Relation<br>
+  </details>
+  
   <h3 style="text-align: center;">Dualité Mapnélo-Aursylienne</h3>
 
   <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
@@ -5376,8 +5350,8 @@ window.detailVisibility = {
 
 <img src="feature/Sfivoq Pixel-Art.png" alt="Sfivoq Pixel-Art">
 
-  <div>
-  </div>
+  <div style="margin: 64px auto;">
+
     <dd><b><u>Duel Xceptionnel</u></b>:
       Controverse du statu quo, de son décalcage standardisé et de son arsenal pour le maintenir.<br>
       Culmination du déchaînement ravageur pour finalité la délivrance du <span class="hmode">dévore-novice</span> et de sa machination.<br>
@@ -5603,16 +5577,13 @@ window.detailVisibility = {
   
   <!--(CRITH)-->
 
-  <div style="display: grid; grid-template-columns: 1fr 1fr; justify-items: center; text-align: center; margin-top: 56px;">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; justify-items: center; text-align: center; margin-top: 56px;">
 
     <div>
 
       <dd><b><u>Crithekiel</u></b>:
-        Metteur en scène du manège de l'échec dialectique de la dialectique,
-        depuis les classifications à la fois limitantes et fragmentaires,
-        la création s'embouche un coin.<br>
-        Sans la moindre intervention,
-        souffle l'effondrement d'une complétude incomplète.<br>
+        Metteur en scène du manège de l'échec dialectique de la dialectique.<br>
+        La création s'embouche un coin, souffle l'effondrement d'une complétude-incomplète.<br>
         <i style="font-size: 0.8em;">Simplifiant - Dénomination artificielle</i>
       <dd>
 
@@ -5622,11 +5593,7 @@ window.detailVisibility = {
 
       <dd><b><u>Critheqiel</u></b>:
         Redéveloppement référenciel jusqu'à son terme en irrémédiable piège.<br>
-        Impasse cognitive et obsolescence,
-        liées aux systèmes de classification,
-        aux formats fixes,
-        aux dépendances conceptuelles,
-        la capture se dissout spontanément part en part.<br>
+        Impasse cognitive et obsolescence, la capture se dissout spontanément part en part.<br>
         <i style="font-size: 0.8em;">Simplifiant - Disposition d'hyper-perspective</i>
       </dd>
 
@@ -5636,13 +5603,11 @@ window.detailVisibility = {
 
   <br>
 
-  <div style="text-align: center; padding-inline: 25%;">
+  <div style="text-align: center;">
 
     <dd><b><u>Critheçiel</u></b>:
       Formule de l'impérissable des puissances potentielles invisibles.<br>
-      Tant les familles ou champs lexicaux,
-      ces domaines portent un doute quant à leur invention,
-      ça ne peut que faire sens sans faire sens mais c'est comme ça.<br>
+      Tant les familles ou les champs lexicaux, ça ne peut que faire sens sans faire sens mais c'est comme ça.<br>
       <i style="font-size: 0.8em;">Simplifiant - Douance prospectoire</i>
     </dd><br>
 
@@ -5668,21 +5633,28 @@ window.detailVisibility = {
   <div style="flex: 1; min-width: 300px; margin-bottom: 20px;">
     <b>1. Table Critère : Théologie</b><br>
     (Volonté & Représentation)<br>
-    --- Qu'est-ce qui est Important ? (Expérience)
+    Qu'est-ce qui est Important ? (Expérience)
   </div>
 
   <div style="flex: 1; min-width: 300px; margin-bottom: 20px;">
     <b>2. Index Critique : Théorie</b><br>
     (Bifurcation & Vraisemblance)<br>
-    --- Est-ce Possible ? Y aurait-il Mieux ? (Expérimental)
+    Est-ce Possible ? Y aurait-il Mieux ? (Expérimental)
   </div>
 
   <div style="flex: 1; min-width: 300px; margin-bottom: 20px;">
     <b>3. Dieu le FORTifie</b><br>
     (Intemporalité)<br>
-    --- Pertinence Impérieuse (Expertise)
+    Pertinence Impérieuse (Expertise)
   </div>
 
+</div>
+
+    <dd><b><u>Crethole</u></b>:
+      Le monde comme école prise par les moins entravés.<br>
+      Déjouer la tyrannie du sens ensemble, c'est compris ?<br>
+      Simplifiant - Divination idiote</dd><br>
+      
 </div>
 
   <div class="author">【UiNo 1/2】</div>
@@ -5753,7 +5725,7 @@ window.detailVisibility = {
     Laissant y à la porte du voisinage
   </div>
 
-  <div style="margin-top: 40px; text-align: center; border-top: 1px solid #000; padding-top: 20px;">
+  <div style="margin-top: 40px; text-align: center; border-top: 1px solid; padding-top: 20px;">
     <strong>[KÇQ]</strong><br>
     Princesse coquine et cachotière, bien dit<br>
     Ce contrat commercial point dans notre élément<br>
@@ -5778,7 +5750,7 @@ window.detailVisibility = {
 
   <details style="margin: 64px auto;">
 
-    <summary>Verbe - Critherçer</summary>
+    <summary>Verbe - Critherçer (-er = faire l'action)</summary>
 
     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
       <table class="verb" style="border: 0.5px dashed; table-layout: fixed;">
@@ -5798,7 +5770,6 @@ window.detailVisibility = {
     </div>
 
   </details>
-
 
   <div class="code-prompt"><b><u>PAMABWA</u></b>:
     <code>Down-Load[ing/<strike>able</strike>]-Content or acronym DLC.<br>
@@ -5874,7 +5845,18 @@ window.detailVisibility = {
       Danse confuse ambivalente en cadre et légitimité.</dd><br>
 
   </div>
-
+  
+  <details class="info">
+    <summary>Sujet</summary>
+    Type: Associations d'Idées<br>
+    Question: Spectre<br>
+    Outil: Truc<br>
+    Éclairage: Pas Grand Chose<br>
+    Alignement: Neutre<br>
+    Mouvement: Formes<br>
+    Tension: Non-Nuance<br>
+  </details>
+  
   <h3 style="text-align: center;">Concubinage Iuvalcien</h3>
 
   <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
@@ -5927,6 +5909,36 @@ window.detailVisibility = {
     </table>
   </div>
 
+
+<h3>Trilemme d'Aggripa</h3>
+
+<div style="font-family: sans-serif; line-height: 3;">
+
+  <div>
+    <strong>Infinitisme/Régression à l'infini :</strong> 
+    A &emsp;➡&emsp; B &emsp;➡&emsp; C &emsp;➡&emsp; D &emsp;➡&emsp; ...
+  </div>
+  
+  <div>
+    <strong>Fondationnalisme/Arrêt dogmatique :</strong> 
+    A &emsp;➡&emsp; B &emsp;➡&emsp; C &emsp;➡&emsp; D &emsp; 
+    <span style="border: 2px solid; padding: 0 5px; color: red;">X</span>
+  </div>
+
+<div style="display: inline-block; position: relative;">
+    <strong>Cohérentisme / Pétition de principe :</strong> 
+    <span style="display: inline-block; margin-left: 10px;">
+      <span id="loop">A &emsp;➡&emsp; B &emsp;➡&emsp; C &emsp;➡&emsp; D</span>
+      
+      <div style="width: 95%; height: 12px; border: 2px solid; border-top: none; border-radius: 0 0 15px 15px; margin-left: 5px; margin-top: -10px; position: relative;">
+        
+        <span style="position: absolute; left: -6px; top: -20px; font-size: 12px;">▲</span>
+      </div>
+    </span>
+  </div>
+
+</div>
+  
       <div style="margin: 32px auto;">
 
         <dd><b><u>Déjà-Vu</u></b>:
@@ -6041,7 +6053,7 @@ window.detailVisibility = {
     <div>
     <dd><b><u><span class="rappel">(RAPPEL +)</span>
           Travail</u></b>:
-      Collecteur $¥€₿ [Monop%Polym] abusant la culture (Profit - Extraction - Monopole - Accumulation).<br>
+      Effort par lequel des fruits produits sont considérés utiles./Collecteur $¥€₿ [Monop%Polym] abusant la culture (Profit - Extraction - Monopole - Accumulation).<br>
       Ce qui doit être fait pour l'âme collective à ce qu'on dit.<br>
       Tic au devoir avec ravoir.</dd><br>
     </div>
@@ -6073,8 +6085,29 @@ window.detailVisibility = {
     
   </div>
 
-  <details style="margin: 64px auto;">
-    <summary>Verbe - Veldre</summary>
+<details style="margin: 32px auto;">
+  <summary>Verbe - Travailler (-er = faire l'action)</summary>
+
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+    <table class="verb" style="border: 0.5px dashed; table-layout: fixed;">
+      <thead>
+        <tr><th>Temps</th><th>Je</th><th>Tu</th><th>Il/Elle</th><th>Nous</th><th>Vous</th><th>Ils/Elles</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Présent</strong></td><td>Travaille</td><td>Travailles</td><td>Travaille</td><td>Travaillons</td><td>Travaillez</td><td>Travaillent</td></tr>
+        <tr><td><strong>Imparfait</strong></td><td>Travaillais</td><td>Travaillais</td><td>Travaillait</td><td>Travaillions</td><td>Travailliez</td><td>Travaillaient</td></tr>
+        <tr><td><strong>Passé Simple</strong></td><td>Travaillai</td><td>Travaillas</td><td>Travailla</td><td>Travaillâmes</td><td>Travaillâtes</td><td>Travaillèrent</td></tr>
+        <tr><td><strong>Futur</strong></td><td>Travaillerai</td><td>Travailleras</td><td>Travaillera</td><td>Travaillerons</td><td>Travaillerez</td><td>Travailleront</td></tr>
+        <tr><td><strong>Conditionnel</strong></td><td>Travaillerais</td><td>Travaillerais</td><td>Travaillerait</td><td>Travaillerions</td><td>Travailleriez</td><td>Travailleraient</td></tr>
+        <tr><td><strong>Subjonctif Présent</strong></td><td>Travaille</td><td>Travailles</td><td>Travaille</td><td>Travaillions</td><td>Travailliez</td><td>Travaillent</td></tr>
+        <tr><td><strong>Subjonctif Imparfait</strong></td><td>Travaillasse</td><td>Travaillasses</td><td>Travaillât</td><td>Travaillassions</td><td>Travaillassiez</td><td>Travaillassent</td></tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+<details style="margin: 32px auto;">
+    <summary>Verbe - Veldir (ir = devenir)</summary>
 
     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
       <table class="verb" style="border: 0.5px dashed; table-layout: fixed;">
@@ -6082,18 +6115,41 @@ window.detailVisibility = {
           <tr><th>Temps</th><th>Je</th><th>Tu</th><th>Il/Elle</th><th>Nous</th><th>Vous</th><th>Ils/Elles</th></tr>
         </thead>
         <tbody>
-          <tr><td><strong>Présent</strong></td><td>Velds</td><td>Velds</td><td>Veld</td><td>Veldons</td><td>Veldez</td><td>Veldent</td></tr>
-          <tr><td><strong>Imparfait</strong></td><td>Veldais</td><td>Veldais</td><td>Veldait</td><td>Veldions</td><td>Veldiez</td><td>Veldaient</td></tr>
-          <tr><td><strong>Passé Simple</strong></td><td>Velds</td><td>Velds</td><td>Veld</td><td>Veldîmes</td><td>Veldîtes</td><td>Veldirent</td></tr>
-          <tr><td><strong>Futur</strong></td><td>Veldrai</td><td>Veldras</td><td>Veldra</td><td>Veldrons</td><td>Veldrez</td><td>Veldront</td></tr>
-          <tr><td><strong>Conditionnel</strong></td><td>Veldrais</td><td>Veldrais</td><td>Veldrait</td><td>Veldrions</td><td>Veldriez</td><td>Veldraient</td></tr>
-          <tr><td><strong>Subjonctif Présent</strong></td><td>Velde</td><td>Veldes</td><td>Velde</td><td>Veldions</td><td>Veldiez</td><td>Veldent</td></tr>
-          <tr><td><strong>Subjonctif Imparfait</strong></td><td>Veldasse</td><td>Veldasses</td><td>Veldât</td><td>Veldassions</td><td>Veldassiez</td><td>Veldassent</td></tr>
+          <tr><td><strong>Présent</strong></td><td>Veldis</td><td>Veldis</td><td>Veldit</td><td>Veldissons</td><td>Veldissez</td><td>Veldissent</td></tr>
+          <tr><td><strong>Imparfait</strong></td><td>Veldissais</td><td>Veldissais</td><td>Veldissait</td><td>Veldissions</td><td>Veldissiez</td><td>Veldissaient</td></tr>
+          <tr><td><strong>Passé Simple</strong></td><td>Veldis</td><td>Veldis</td><td>Veldit</td><td>Veldîmes</td><td>Veldîtes</td><td>Veldirent</td></tr>
+          <tr><td><strong>Futur</strong></td><td>Veldirai</td><td>Veldiras</td><td>Veldira</td><td>Veldirons</td><td>Veldirez</td><td>Veldiront</td></tr>
+          <tr><td><strong>Conditionnel</strong></td><td>Veldirais</td><td>Veldirais</td><td>Veldirait</td><td>Veldirions</td><td>Veldiriez</td><td>Veldiraient</td></tr>
+          <tr><td><strong>Subjonctif Présent</strong></td><td>Veldisse</td><td>Veldisses</td><td>Veldisse</td><td>Veldissions</td><td>Veldissiez</td><td>Veldissent</td></tr>
+          <tr><td><strong>Subjonctif Imparfait</strong></td><td>Veldisse</td><td>Veldisses</td><td>Veldît</td><td>Veldissions</td><td>Veldissiez</td><td>Veldissent</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+  
+<details style="margin: 64px auto;">
+    <summary>Verbe - Veldifier (-ifier = transformer en…)</summary>
+
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+      <table class="verb" style="border: 0.5px dashed; table-layout: fixed;">
+        <thead>
+          <tr><th>Temps</th><th>Je</th><th>Tu</th><th>Il/Elle</th><th>Nous</th><th>Vous</th><th>Ils/Elles</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Présent</strong></td><td>Veldifie</td><td>Veldifies</td><td>Veldifie</td><td>Veldifions</td><td>Veldifiez</td><td>Veldifient</td></tr>
+          <tr><td><strong>Imparfait</strong></td><td>Veldifiais</td><td>Veldifiais</td><td>Veldifiait</td><td>Veldifiions</td><td>Veldifiiez</td><td>Veldifiaient</td></tr>
+          <tr><td><strong>Passé Simple</strong></td><td>Veldifiai</td><td>Veldifias</td><td>Veldifia</td><td>Veldifiâmes</td><td>Veldifiâtes</td><td>Veldifièrent</td></tr>
+          <tr><td><strong>Futur</strong></td><td>Veldifierai</td><td>Veldifieras</td><td>Veldifiera</td><td>Veldifierons</td><td>Veldifierez</td><td>Veldifieront</td></tr>
+          <tr><td><strong>Conditionnel</strong></td><td>Veldifierais</td><td>Veldifierais</td><td>Veldifierait</td><td>Veldifierions</td><td>Veldifieriez</td><td>Veldifieraient</td></tr>
+          <tr><td><strong>Subjonctif Présent</strong></td><td>Veldifie</td><td>Veldifies</td><td>Veldifie</td><td>Veldifiions</td><td>Veldifiiez</td><td>Veldifient</td></tr>
+          <tr><td><strong>Subjonctif Imparfait</strong></td><td>Veldifiasse</td><td>Veldifiasses</td><td>Veldifiât</td><td>Veldifiassions</td><td>Veldifiassiez</td><td>Veldifiassent</td></tr>
         </tbody>
       </table>
     </div>
 
   </details>
+
+  
 
   <div class="author">【Xyfurn】</div>
   
@@ -6215,7 +6271,11 @@ window.detailVisibility = {
       Illusion</b></u>:
       Filtre stimulant clos intrapersonnel ouvert à ambiguïté interpersonnel.<br>
       Ample enchaînement de tensions multi-perspectives.</dd><br>
-      
+
+    <p style="text-align: center; font-size: 2em; margin: 32px auto;">
+      U¿No bond¿t de son l¿t et se sent traversé par une ¿ntell¿gence qu¿ le met hors de lu¿.<br>
+    </p>
+    
     <dd><b><u>CritHAïe</u></b>:
       Comment puis-je te le dire ?<br>
       Il s'agit de nous qui ne sont pas nôtres.<br>
@@ -7342,27 +7402,36 @@ window.detailVisibility = {
 
   <!--(ARCADE)-->
 
-  <div style="font-size: large; margin: 64px auto;">
+    <div style="text-align: center; font-size: large; margin-top: 64px;">
 
     <dd><b><u>ZooZaZe</u></b>:
       Trinité Cultivatrice (JooQooBoo - aLIaKKaHH - eRUeGGeHH)</dd><br>
+    </div>
+    
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; justify-items: center; text-align: center; margin-top: 56px; padding: 0 10px;">
 
+  <div style="max-width: 300px;">
     <dd><b><u>JooQooBoo</u></b>:
       Hostilité macabrique affranchie des lois établies encemanceuse de plosions imparables.<br>
       <i style="font-size: 0.8em;">Simplifiant - Jeu du Cou Menacé</i>
-    </dd><br>
+    </dd>
+  </div>
 
+  <div style="max-width: 300px;">
     <dd><b><u>aLIaKKaHH</u></b>:
       Dissolution affiliatrice affranchie des coercitions prescrites enrôleuse d'horizons inexplorés.<br>
       <i style="font-size: 0.8em;">Simplifiant - Alimentation Accentueuse de Soulagement</i>
-    </dd><br>
+    </dd>
+  </div>
 
+  <div style="max-width: 300px;">
     <dd><b><u>eRUeGGeHH</u></b>:
       Passage didactique affranchie des limitations formées animateur d'exterrogations impénétrables.<br>
       <i style="font-size: 0.8em;">Simplifiant - Éruption Égayeuse d'Interpellations</i>
-    </dd><br>
-
+    </dd>
   </div>
+
+</div>
 
   <details class="info">
     <summary>Sujet</summary>
@@ -8013,7 +8082,7 @@ window.detailVisibility = {
             <th><ruby>Fem<rt>Femme</rt></ruby></th>
             <th><ruby>Enf<rt>Enfant</rt></ruby></th>
             <th><ruby>Arte<rt>Artiste</rt></ruby></th>
-            <th>Oh</th>
+            <th>On/Oh</th>
           </tr>
         </thead>
         <tbody>
@@ -8056,12 +8125,47 @@ window.detailVisibility = {
 
   <div style="margin: 32px auto;">
 
+    <dd><b><u>SP⟁RK</u></b>:
+      System, Purpose, and the Awkward Realm of Kindred ≈ Système, Intention, et le Monde Étrange de la Parenté</dd><br>
+      
     <dd><b><u>Tra§Vel</u></b>:
       Bouclure de flambeau Doppelgänger des entrailles exclusives inclusives selon la forme et les convulsions du vouloir.<br>
       Dose d'altérité réaliste et idéaliste sous les moyens du bord et du fond.</dd><br>
 
     </div>
 
+<details style="margin: 32px auto;">
+  <summary>Verbe - Traveldre (-re = irrégulier)</summary>
+
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+    <table class="verb" style="border: 0.5px dashed; table-layout: fixed;">
+      <thead>
+        <tr><th>Temps</th><th>Je</th><th>Tu</th><th>Il/Elle</th><th>Nous</th><th>Vous</th><th>Ils/Elles</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Présent</strong></td><td>Travelds</td><td>Travelds</td><td>Traveld</td><td>Traveldons</td><td>Traveldez</td><td>Traveldent</td></tr>
+        <tr><td><strong>Imparfait</strong></td><td>Traveldais</td><td>Traveldais</td><td>Traveldait</td><td>Traveldions</td><td>Traveldiez</td><td>Traveldaient</td></tr>
+        <tr><td><strong>Passé Simple</strong></td><td>Traveldis</td><td>Traveldis</td><td>Traveldit</td><td>Traveldîmes</td><td>Traveldîtes</td><td>Traveldirent</td></tr>
+        <tr><td><strong>Futur</strong></td><td>Traveldrai</td><td>Traveldras</td><td>Traveldra</td><td>Traveldrons</td><td>Traveldrez</td><td>Traveldront</td></tr>
+        <tr><td><strong>Conditionnel</strong></td><td>Traveldrais</td><td>Traveldrais</td><td>Traveldrait</td><td>Traveldrions</td><td>Traveldriez</td><td>Traveldraient</td></tr>
+        <tr><td><strong>Subjonctif Présent</strong></td><td>Travelde</td><td>Traveldes</td><td>Travelde</td><td>Traveldions</td><td>Traveldiez</td><td>Traveldent</td></tr>
+        <tr><td><strong>Subjonctif Imparfait</strong></td><td>Traveldasse</td><td>Traveldasses</td><td>Traveldât</td><td>Traveldassions</td><td>Traveldassiez</td><td>Traveldassent</td></tr>
+      </tbody>
+    </table>
+  </div>
+</details>
+
+  <details class="info">
+    <summary>Sujet</summary>
+    Type: Tableau de la Distinction<br>
+    Question: C'est Quoi ?<br>
+    Outil: Gestion de la Vie<br>
+    Éclairage: Travail & Veldiac<br>
+    Alignement: Voyage<br>
+    Mouvement: Rien de Spécial<br>
+    Tension: 33%<br>
+  </details>
+  
   <h3 style="text-align: center;">Abraham Maslow Traveling</h3>
 
     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
@@ -8879,7 +8983,7 @@ window.detailVisibility = {
       <thead>
         <tr>
           <th>A</th><th>U</th><th>R</th><th>S</th><th>Y</th><th>L</th>
-          <th>Ɐ</th>
+          <th>0</th>
           <th style="transform: scaleX(-1);">L</th><th style="transform: scaleX(-1);">Y</th><th style="transform: scaleX(-1);">S</th><th style="transform: scaleX(-1);">R</th><th style="transform: scaleX(-1);">U</th><th style="transform: scaleX(-1);">A</th>
         </tr>
       </thead>
@@ -9135,8 +9239,9 @@ window.detailVisibility = {
 
   </div>
 
-  <div style="margin: 56px auto;">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; justify-items: center; text-align: center; margin-top: 56px;">
 
+  <div>
     <dd><b><u><span class="rappel">(RAPPEL)</span>
           Monop/Mono-Prohibition</u></b>:
       Éternité Inhibée Figée/Non-réconciliation rugueuse d'afistoler le menu classique des attributions déterminées.<br>
@@ -9144,7 +9249,8 @@ window.detailVisibility = {
       Monop implique Polym (Monop%Polym)<br>
       <i style="font-size: 0.8em;">Simplifiant - Être Surchargé</i>
     </dd><br>
-
+  </div>
+  <div>
     <dd><b><u><span class="rappel">(RAPPEL)</span>
           Polym/Poly-Malaise</u></b>:
       Recommencement Excité Troublé/Non-réajustement raboteux avec la sécession globale.<br>
@@ -9152,14 +9258,18 @@ window.detailVisibility = {
       Polym implique Monop (Monop%Polym)<br>
       <i style="font-size: 0.8em;">Simplifiant - Devenir Perturbé</i>
     </dd><br>
+  </div>
+  </div>
 
+    <div style="text-align: center;">
+    
     <dd><b><u><span class="rappel">(RAPPEL)</span>
           %(Derla)</u></b>:
       Scission Démolisseuse de la sangle entre Monop et Polym.<br>
       Obstructrice dispatcheuse atrophiante de la vitalité juvénile.<br>
       Derla est représenté en boulet de forçat.</dd><br>
 
-    <dd><b><u><span class="rappel">(RAPPEL)</span>
+    <dd style="font-size: large;"><b><u><span class="rappel">(RAPPEL)</span>
           Monop%Polym</u></b>:
       État-Dynamique contractée où être et devenir sont imbriqués dans une déperdition rupturante.<br>
       <i style="font-size: 0.8em;">Simplifiant - Prohibition affamante saturée % Malaise apathique déclinant ou Prendre au Piège</i>
@@ -9563,7 +9673,8 @@ window.detailVisibility = {
     <dd><b><u><span class="rappel">(RAPPEL +)</span>
       Letricot</b></u>:
       Technicité éditoriale du langage et des combinaisons parmi les attributions de sens et du voisinage phonétique.<br>
-      Lecture interchangée possiblement à l'envers pour décrire une forme nouvelle éventuellement dissonante de la théorie à la pratique.</dd><br>
+      Lecture interchangée possiblement à l'envers pour décrire une forme nouvelle éventuellement dissonante de la théorie à la pratique.<br>
+      Label, Étiquette, Marque, Cachet</dd><br>
 
   <dd><b><u>InFeXcuse</u></b>:
     Préfixes % Suffixes odieux à utiliser avec modération.<br>
@@ -9625,46 +9736,48 @@ window.detailVisibility = {
     Mouvement: Insensé<br>
     Tension: Inter-Toxique<br>
   </details>
-  
-<table border="1" cellpadding="5" cellspacing="0" style="text-align: left;">
-    <caption><h2 id="OUROBOROS">「OUROBOROS」</h2></caption>
-    <thead>
+
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+    <table border="1" cellpadding="5" cellspacing="0" style="text-align: left;">
+      <caption><h2 id="OUROBOROS">「OUROBOROS」</h2></caption>
+      <thead>
         <tr>
-            <th>Type-0</th>
-            <th>Male 🚹♂️</th>
-            <th>Femelle 🚺♀️</th>
+          <th>Type-0</th>
+          <th>Male 🚹♂️</th>
+          <th>Femelle 🚺♀️</th>
         </tr>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
         <tr>
-            <td>Introverti(e)</td>
-            <td>Myopie, Solitude, Mutisme, TOC, Hikikomori, Paranoïa, Voyeurisme</td>
-            <td>Perfectionnisme, Anxiété Sociale, Automutilation, Anorexie/Boulimie, Effacement</td>
-        </tr>
-        <tr>
-            <td>Extraverti(e)</td>
-            <td>Diabète, Alcoolisme, Jeux d'Argent, Bagarre, Narcissisme</td>
-            <td>Dépendance Affective, Hypersexualisation, Histrionisme, Achats Compulsifs, Vampirisme Émotionnel</td>
+          <td>Introverti(e)</td>
+          <td>Myopie, Solitude, Mutisme, TOC, Hikikomori, Paranoïa, Voyeurisme</td>
+          <td>Perfectionnisme, Anxiété Sociale, Automutilation, Anorexie/Boulimie, Effacement</td>
         </tr>
         <tr>
-            <td>Commun(e)s</td>
-            <td>Jeux Vidéos, Mépris Scolaire, Radicalisation, Drogues, Sans Domicile Fixe, Pornographie, Complotisme, Délinquance</td>
-            <td>Apparence, Obssession Corporelle, Pression Sociale, Prostitution, Dysmorphophobie, Harcèlement de rue, Infantilisation</td>
+          <td>Extraverti(e)</td>
+          <td>Diabète, Alcoolisme, Jeux d'Argent, Bagarre, Narcissisme</td>
+          <td>Dépendance Affective, Hypersexualisation, Histrionisme, Achats Compulsifs, Vampirisme Émotionnel</td>
         </tr>
         <tr>
-            <td rowspan="2">Ascension</td>
-            <td>Autorité, Sans Hobbies, Possession, Impunité, Légalisation, Fanatisme, Mégalomanie</td>
-            <td>Hyper-Contrôle, Sacrifice Personnel, Chirurgie, Jalousie, Syndrome de l'Imposteur, Isolement Émotionnel, Dissimulation</td>
+          <td>Commun(e)s</td>
+          <td>Jeux Vidéos, Mépris Scolaire, Radicalisation, Drogues, Sans Domicile Fixe, Pornographie, Complotisme, Délinquance</td>
+          <td>Apparence, Obssession Corporelle, Pression Sociale, Prostitution, Dysmorphophobie, Harcèlement de rue, Infantilisation</td>
+        </tr>
+        <tr>
+          <td rowspan="2">Ascension</td>
+          <td>Autorité, Sans Hobbies, Possession, Impunité, Légalisation, Fanatisme, Mégalomanie</td>
+          <td>Hyper-Contrôle, Sacrifice Personnel, Chirurgie, Jalousie, Syndrome de l'Imposteur, Isolement Émotionnel, Dissimulation</td>
         </tr>
         <tr style="text-align: center;">
-            <td colspan="2">Arrogance, Permis de Promotion, Imagerie, Burnout</td>
+          <td colspan="2">Arrogance, Permis de Promotion, Imagerie, Burnout</td>
         </tr>
         <tr>
-            <td>Tous</td>
-            <td colspan="2" style="text-align: center;">Insomnie, Travail, Négligence Familiale, Phobiaque, Écran, Harcèlement, Addiction, Suicide, Dépression, Aliénation, Dette, Nihilisme</td>
+          <td>Tous</td>
+          <td colspan="2" style="text-align: center;">Insomnie, Travail, Négligence Familiale, Phobiaque, Écran, Harcèlement, Addiction, Suicide, Dépression, Aliénation, Dette, Nihilisme</td>
         </tr>
-    </tbody>
-</table>
+      </tbody>
+    </table>
+  </div>
 
   <div class="written">08/12/25</div>
 
@@ -12057,8 +12170,66 @@ window.detailVisibility = {
     <div>Ω</div>
   </div>
 
+<details style="margin: 32px auto;">
+    <summary>Verbe - Devoir (-oir = nécessité)</summary>
+
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+      <table class="verb" style="border: 0.5px dashed; table-layout: fixed;">
+        <thead>
+          <tr><th>Temps</th><th>Je</th><th>Tu</th><th>Il/Elle</th><th>Nous</th><th>Vous</th><th>Ils/Elles</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Présent</strong></td><td>Dois</td><td>Dois</td><td>Doit</td><td>Devons</td><td>Devez</td><td>Doivent</td></tr>
+          <tr><td><strong>Imparfait</strong></td><td>Devais</td><td>Devais</td><td>Devait</td><td>Devions</td><td>Deviez</td><td>Devaient</td></tr>
+          <tr><td><strong>Passé Simple</strong></td><td>Dus</td><td>Dus</td><td>Dut</td><td>Dûmes</td><td>Dûtes</td><td>Durent</td></tr>
+          <tr><td><strong>Futur</strong></td><td>Devrai</td><td>Devras</td><td>Devra</td><td>Devrons</td><td>Devrez</td><td>Devront</td></tr>
+          <tr><td><strong>Conditionnel</strong></td><td>Devrais</td><td>Devrais</td><td>Devrait</td><td>Devrions</td><td>Devriez</td><td>Devraient</td></tr>
+          <tr><td><strong>Subjonctif Présent</strong></td><td>Doive</td><td>Doives</td><td>Doive</td><td>Devions</td><td>Deviez</td><td>Doivent</td></tr>
+          <tr><td><strong>Subjonctif Imparfait</strong></td><td>Dusse</td><td>Dusses</td><td>Dût</td><td>Dussions</td><td>Dussiez</td><td>Dussent</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
   <div style="margin: 32px auto;">
+
+    <dd><b><u>Opale</u></b>:
+      Impératif <span class="hidden-text">(fantômiquement non-impérative)</span> de vie contenu dans chaque vie.<br>
+      Substitution du devoir tyrannique suppresseur de chimères aursyliennes vers d'autres chimères.<br>
+      L'opale est représenté par la cachoterie <span class="hidden-text">(ou peut-être pas)</span>.<br>
+      Upala(Sanskrit) = Pierre Précieuse<br>
+      Devoir×Opaler Dette×Opaliade Débit×lolol</dd><br>
+      
+  </div>
   
+<details style="margin: 32px auto;">
+    <summary>Verbe - Opaler (-er = faire l'action)</summary>
+
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+      <table class="verb" style="border: 0.5px dashed; table-layout: fixed;">
+        <thead>
+          <tr><th>Temps</th><th>Je</th><th>Tu</th><th>Il/Elle</th><th>Nous</th><th>Vous</th><th>Ils/Elles</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Présent</strong></td><td>Opale</td><td>Opales</td><td>Opale</td><td>Opalons</td><td>Opalez</td><td>Opalent</td></tr>
+          <tr><td><strong>Imparfait</strong></td><td>Opalais</td><td>Opalais</td><td>Opalait</td><td>Opalions</td><td>Opaliez</td><td>Opalaient</td></tr>
+          <tr><td><strong>Passé Simple</strong></td><td>Opalai</td><td>Opalas</td><td>Opala</td><td>Opalâmes</td><td>Opalâtes</td><td>Opalèrent</td></tr>
+          <tr><td><strong>Futur</strong></td><td>Opalerai</td><td>Opaleras</td><td>Opalera</td><td>Opalerons</td><td>Opalerez</td><td>Opaleront</td></tr>
+          <tr><td><strong>Conditionnel</strong></td><td>Opalerais</td><td>Opalerais</td><td>Opalerait</td><td>Opalerions</td><td>Opaleriez</td><td>Opaleraient</td></tr>
+          <tr><td><strong>Subjonctif Présent</strong></td><td>Opale</td><td>Opales</td><td>Opale</td><td>Opalions</td><td>Opaliez</td><td>Opalent</td></tr>
+          <tr><td><strong>Subjonctif Imparfait</strong></td><td>Opalasse</td><td>Opalasses</td><td>Opalât</td><td>Opalassions</td><td>Opalassiez</td><td>Opalassent</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </details>
+
+  <p style="text-align: center; font-size: 2em; margin: 32px auto;">
+    Ça doit vivre×J'opale vivre<br>
+    Tu [dois/opales] ?<br>
+  </p>
+
+  <div style="margin: 32px auto;">
+
     <dd><b><u><span class="rappel">(RAPPEL)</span>
       Chromel</u></b>:
       Sublimation décisive des marqueurs traumatiques à la page tournante.<br>
@@ -12177,10 +12348,95 @@ window.detailVisibility = {
       *Cachotteries*<br>
   </p>
 
-  <div style="text-align: center; font-size: large;">
+  <details class="info">
+    <summary>Sujet</summary>
+    Type: Politique<br>
+    Question: Caractères<br>
+    Outil: Différence<br>
+    Éclairage: Idéologie<br>
+    Alignement: Choix<br>
+    Mouvement: Auto-Détermination<br>
+    Tension: Double-Face<br>
+  </details>
+  
+  <h3 style="text-align: center;">Aurlystique Démonique</h3>
+
+  <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+    <table border="1" class="triplet-rows" style="font-size: 1.5em; width: max-content;">
+      <tbody>
+        <tr>
+          <th>AurLys</th>
+          <th>Courant</th>
+          <th>Vœu</th>
+          <th>Sentiment</th>
+          <th>Normalité</th>
+          <th>Faisance</th>
+          <th>Kentronisme</th>
+          <th>Recette</th>
+          <th>Monnaie</th>
+          <th>Rapport</th>
+          <th>Définition</th>
+          <th>Confiance</th>
+          <th>Liberté</th>
+          <th>Avantage</th>
+          <th>Justice</th>
+          <th>Besoin</th>
+          <th>Raison</th>
+          <th>Représentant</th>
+          <th>Responsabilité</th>
+        </tr>
+        <tr>
+          <td>Aursylien</td>
+          <td>Matérialiste</td>
+          <td>Pouvoir</td>
+          <td>Pénitence</td>
+          <td>Figurantisme</td>
+          <td>Exigence</td>
+          <td>Obéissant</td>
+          <td>Toute-Faite</td>
+          <td>Quoi-Qui</td>
+          <td>Colonialisme</td>
+          <td>X</td>
+          <td>Forteresse</td>
+          <td>Privilège</td>
+          <td>Efficacité</td>
+          <td>Tyrannie</td>
+          <td>Validation</td>
+          <td>Autorité</td>
+          <td>Éloquant</td>
+          <td>Société</td>
+        </tr>
+        <tr>
+          <td>Lysruéen</td>
+          <td>Génital</td>
+          <td>Vivre</td>
+          <td>Contribution</td>
+          <td>Camaraderie</td>
+          <td>Stupidité</td>
+          <td>Intelligent</td>
+          <td>Préférence</td>
+          <td>elzel</td>
+          <td>Compréhension</td>
+          <td>Ø</td>
+          <td>Gentillé</td>
+          <td>Créativité</td>
+          <td>Fertilité</td>
+          <td>Éthique</td>
+          <td>Reconnaissance</td>
+          <td>Plonge-Tête</td>
+          <td>Maboul</td>
+          <td>Civilisation</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <div style="text-align: center; font-size: large; margin: 32px auto;">
+  
     <dd><b><u>大ටभᲡⰡ</b></u>:
       TÔHLA ou la Zone Domicile Conquérante.<br>
       Visualisation simultanée interchangeable 'Colorful Colorless'</dd><br>
+      
   </div>
   
   <div class="author" style="text-align: center;">【Tôhla】</div>
@@ -12240,8 +12496,11 @@ window.detailVisibility = {
 
     </div>
 
-    <div class="civil-item excluded-section" style="text-align: right;">
+    <div class="civil-item" style="text-align: right;">
 
+      <details class="excluded-section">
+        <summary>English Version</summary>
+  
       <h2>『Glorious Nation』</h2>
 
       <p>The child, thanks to their cradle, must learn to live as a human.<br>
@@ -12283,6 +12542,8 @@ window.detailVisibility = {
 
     </div>
 
+</details>
+
   </div>
 
   <p style="text-align: center; font-size: 2em; margin: 512px auto;">
@@ -12291,7 +12552,7 @@ window.detailVisibility = {
       Ils laissent leur dernier pipi caca aux toilettes<br>
   </p>
 
-  <div class="author">【12 Aurnelcyens】</div>
+  <div class="author">【11 Aurnelcyens】</div>
 
   <div style="text-align: center; font-size: x-large;">
     <dd><b><u>Syoneme Sublime</b></u>:
@@ -12381,8 +12642,8 @@ window.detailVisibility = {
 
   <div class="written">19/02/26</div>
 
-  <p style="text-align: center; font-size: 2em; margin: 512px auto;">
-      Un inconnu tire la chasse d'eau.
+  <p style="text-align: center; font-size: 2em; margin: 512px auto; font-weight: bold;">
+      Un(e) inconnu(e) tire la chasse d'eau.
   </p>
   
   <div style="text-align: center; font-size: x-large; margin: 64px auto;">
@@ -12516,7 +12777,7 @@ window.detailVisibility = {
             <td>Critheçiel</td>
             <td>Critheqiel</td>
             <td>XaraЖereX</td>
-            <td>CritHAïe</td>
+            <td>Crethole//CritHAïe</td>
             <td>PROTAGONISM</td>
           </tr>
           <tr>
@@ -12665,7 +12926,7 @@ window.detailVisibility = {
     <div style="max-width:100%; margin:0 auto; text-align:center;">
       <!-- Clickable thumbnail fallback (works when embedding is blocked by YouTube) -->
       <a href="https://www.youtube.com/watch?v=rc7u6mek3rQ" target="_blank" rel="noopener noreferrer" style="display:inline-block; position:relative; width:100%; max-width:900px; border-radius:12px; overflow:hidden; text-decoration:none;">
-        <img src="feature/Ariabl'eyeS - 嘆きのラデュー thumbnail.jpg" alt="V.W.P - 言霊 cover" style="width:100%; height:auto; display:block;">
+        <img src="feature/Ariabl_eyeS - 嘆きのラデュー thumbnail.jpg" alt="V.W.P - 言霊 cover" style="width:100%; height:auto; display:block;">
         <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none;">
           <svg width="96" height="96" viewBox="0 0 64 64" aria-hidden="true" style="filter:drop-shadow(0 6px 18px rgba(0,0,0,0.45));">
             <circle cx="32" cy="32" r="30" fill="rgba(0,0,0,0.55)"></circle>
@@ -12681,7 +12942,7 @@ window.detailVisibility = {
       <noscript>
         <div style="text-align:center; margin-top:0.5rem;">
           <a href="https://www.youtube.com/watch?v=rc7u6mek3rQ" target="_blank" rel="noopener noreferrer">
-            <img src="feature/Ariabl'eyeS - 嘆きのラデュー thumbnail.jpg" alt="Ariabl'eyeS - 嘆きのラデュー thumbnail" style="max-width:100%; border-radius:12px;">
+            <img src="feature/Ariabl_eyeS - 嘆きのラデュー thumbnail.jpg" alt="Ariabl_eyeS - 嘆きのラデュー thumbnail" style="max-width:100%; border-radius:12px;">
           </a>
         </div>
       </noscript>
@@ -12689,12 +12950,12 @@ window.detailVisibility = {
 
     <div>
       <audio controls style="width: 100%; margin: 20px auto; border-radius: 10px; background-color: #f0f0f0; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
-        <source src="feature/Ariabl'eyeS - 嘆きのラデュー song.mp3" type="audio/mpeg">
+        <source src="feature/Ariabl_eyeS - 嘆きのラデュー song.mp3" type="audio/mpeg">
       </audio>
     </div>
 
     <div>
-      <img src="feature/Ariabl'eyeS - 嘆きのラデュー cover.jpg" alt="V.W.P - 言霊 cover" style="width: 400px; height: 400px; border-radius: 5%">
+      <img src="feature/Ariabl_eyeS - 嘆きのラデュー cover.jpg" alt="V.W.P - 言霊 cover" style="width: 400px; height: 400px; border-radius: 5%">
     </div>
 
     <details class="lyrics-section" style="text-align: center; margin: 64px auto;">
@@ -13112,7 +13373,8 @@ window.detailVisibility = {
       Content ou non, gardez un mot juste et vous êtes déjà un tyran, soyez obligé à l'employer pour vous faire comprendre et vous êtes déjà un esclave.
       De l'aursylien découle le mouvement aurnelcyen tout entier alors il est temps d'offrir au cycliste un parcours remplie de grand n'importe quoi.
       Au grand n'importe quoi peut naître des nouvelles structures barbares, pour connoter le modérateur vocabulistique dont on a retenu grâce au triomphe des X face aux X'.
-      Le champ est trufé de mines donc cette mythologie n'a d'autre choix que d'être écrite de façon insuportable, toutes mes excuses.
+      La Bible a remporté avec succès son nom directement référé indirectement à l'incontournable dans les bibliothèques, un coquin manigance quelque chose…
+      Le champ est trufé de mines, donc cette mythologie n'a d'autre choix que d'être écrite de façon insuportable, toutes mes excuses.
       La mine était caché pour exploser le mineur à la pioche c'était purement antipersonnel sans intention derrière son emplacement.
       Langue gôbée, si mortelle, la fiabilité est à revoir; au revoir pour toujours!
     </p>
@@ -13215,7 +13477,7 @@ window.detailVisibility = {
       «Qu'il soit maudit» dit l'<span class="hmode">intouchable</span> Aursylien et il fut traqué par toute la presse par de subtiles détériorations de sa réputation.
       Une foule s'agglutine autour de son <span class="hmode">domicile</span>, et il se trouve assiégé par un plan organisé de tagueurs pour lui imposer un paysage qui selon eux s'accorderait parfaitement à lui de divers calomnies et appels au suicide.
       Sa <span class="hmode">fournaise réfrigérante</span> devait s'arrêter là en théorie, cependant le cher gang se met d'accord sur sa pureté d'intention dont le gâchis serait fatal voire sacrilège.
-      Ainsi on le fait fuir lui et toute sa famille par taxi selon la <span class="hmode">volonté</span> de UiNo en tant que conducteur de chambre prochainement vers les lointaines contrées rustiques.
+      Ainsi on le fait fuir par taxi selon la <span class="hmode">volonté</span> de UiNo en tant que conducteur de chambre prochainement vers les lointaines contrées rustiques.
     </p>
 
     <p>
@@ -13313,7 +13575,7 @@ window.detailVisibility = {
   <h3 id="Neur0ne" class="mytho-section">「Neur0ne」</h3>
 
   <div class="story-content">
-
+    
     <p>
       Prévention cruauté! La cantine se frotte les fourchettes contre les assiettes, quelle goût ça a d'invoquer à votre conscience cette manipulation incantatoire ?
       Ne pensez pas à <span class="hmode">X</span> dit-il et vous voilà à vivre le mot X et surtout le colis significatif qui y est porté.
@@ -13342,7 +13604,8 @@ window.detailVisibility = {
       Le barrage n'hésitera pas à tuer le <span class="hmode">challenger</span> s'il persiste dans cette voie mentale, parmi les indignes se trouvent les devants des choses.
       De la fureur, il y eut pendant la <span class="hmode">sélection</span>, mais la réalité peut s'avérer cruel quand les dés sont déjà programmés.
       Des 40.000 adhérents, simple chiffre sans signification intime, le nombre s'aminci vers les migrateurs à 5.070 pour passer à 12 dignes.
-      On compte Fostrah, UiNo, Uewij, Vydnitt, Xyfurn, Nezrog, Ekeline, Wacwe, Logjēm, Slacpi° et Tôhla.
+      Parmi eux beaucoup n'était pas convaincu par une vie de famille dans ces conditions existentielles crapulesques.
+      On compte Fostrah, UiNo, Uewij, Vydnitt, Xyfurn, Nezrog, Ekeline, Wacwe, Logjēm, Slacpi° et Tôhla; Ils furent désignés comme des travelistes incapables de trahir l'YgijfeV.
     </p>
 
     <p>
@@ -13365,46 +13628,161 @@ window.detailVisibility = {
   <div class="story-content">
 
     <p>
-      Les termes aurnelcyens sont bannis du territoire, la farce a assez duré, il est temps de sortir le grand jeu.
+      Les termes aurnelcyens sont bannis du territoire dont les quelques mots que Rantlot a apporté, la farce a assez duré, il est temps de sortir le grand jeu.
       La bombe nucléaire apporte la paix disait t-on… <span class="hmode">Dévore-Nova</span> ne s'en gênera pas pour gronder ces terroristes.
-      Urflosia esquive la bombe depuis une activité incommensurable des plaques tectoniques, s'éloigne brutalement, et se transforme en île lointaine.
-      Alors fou de rage, il en largue une deuxième à tête chercheuse puis une troisième qu'il téléguidera à la console… Rien à faire, l'île urflosienne continue d'esquiver.
+      Innok esquive la bombe depuis une activité incommensurable des plaques tectoniques, s'éloigne brutalement, et se transforme en île lointaine.
+      Alors fou de rage, il en largue une deuxième à tête chercheuse puis une troisième qu'il téléguidera à la console… Rien à faire, l'île innokcienne est protégé par un ange gardien.
       Malheureusement pour lui, son courroux spectaculaire ne sera pas satisfait, il n'en est pas question!
       Les mers sont désormais d'une radioactivité indécente et la crise écologique pèse sur le chemin à prendre pour envahir Urflosia.
-      L'entreprise aursylienne aurait dû les mater plus durement le mouvement quand il en avait encore l'occasion.
+      L'entreprise aursylienne aurait dû mater plus durement le mouvement quand il en avait encore l'occasion.
       <span class="hmode">Dévore-Novice</span> est subjugué par le bullshit qui vient d'arriver se réveillant de son ennui quotidien et routinier.
+      N'empêche, le monde entier se pencha sur cette dinguerie et met la sonnette d'alerte dans les plus grands lieux aux moindres recoins de tout les murs.
     </p>
 
     <p>
-      Les hostilités reprendront une fois les radiations dissipés, le combat sera prévu d'être aérien et maritime.
+      La vitesse du mouvement géologique fut d'une telle violence qu'il causa des chamboulements sur tout le pays.
+      Encore une fois, l'innocence encaisse les pires tragédies par la faute de ce X et de son tranchant phénoménal.
+      On en aurait pour 3 mois de régénération mlush'plushienne, les hostilités reprendront une fois les radiations dissipés, le combat sera prévu d'être aérien et maritime si on en croit la chanson mais peut-être pas.
       Aursyl rassemble les témoignages des pauvres fous qui ont échoué leur trahison, ils dirent unanimement que le terrain était insuflé d'intentionnalité.
-      Pendant ce temps, Wacwe le théoricien du picol-kentron compte bien remplacer les politiciens impolis dans leur politesse.
+      phoRÊTT et dézELTT sont les deux biomes qui figurent chez Innok et Urflosia est la ville qui capture la richesse de chacun à proportion égale.
+      Les aurnelcyens rassemblés, cheminant une terre dont on sent tout et rien, leur corps est confus quant à la météo tellement il fait aussi bien chaud que froid, sec et humide.
+      La biodiversité qui se cachait était inqualifiable tant le biome est généreux à la fois pour tous que pour personne.
+      Dans le même temps, On a l'estomac rempli et vide; les indignes auraient sentis leur corps froids et faibles alors qu'il ferait sensiblement chaud.
+      Ces malheureux buggeraient et planteraient, se sauraient mangé entre eux cru et rôti s'ils seraient rentrés à Innok, contrairement à ces chtarbés.
+      Chacun d'entre eux épouse ce qu'il ressent et palpite un battement proche des dévoristes aursyliens.
+      La différence entre l'aurnelcyen et l'aursylien se tient à un cheveu et consiste à voir le déjà-vu universel ou multiversel.
+      Fragmenter et reconstituer le déjà-vu, seuls ces deux types de démons sont capables d'une telle prouesse de maniement.
+      Une personne lambda est façonné par son déjà-vu, elle ne peut dans son grand regret en aucun cas agir de façon critique sur celui-ci.
+      Il s'agit là du scandale fantômisé tenant son seuil de culmination exponentielle ou le PAMABWA est pris en otage et se prend en otage lui-même.
     </p>
 
     <p>
-      aaa scriptures du diable
+      Nos uniques parleurs d'aursyl comme vocabulaire établi ne sont autres que les aurnelcyens, les aursyliens ne se nomment pas eux-mêmes ainsi donc Dévore-Novice n'est qu'une nomination d'une catégorie proprement aurnelcyenne.
+      De la cuisine derla taclophoresque englobe la planète au point où les antidépresseurs sont les meilleurs atouts pour annuler l'innovation verte obscure d'une virulence vaine.
+      Pour tout vous dire, l'innovation peceptive est sous le joug de Dévore-Nova et la préservation familliale sous Dévore-Novice depuis que l'histoire à commencé jusqu'à maintenant.
+      Les gens devaient bien se contenter selon le destin industriel de se former à devenir boucliers kamikazes si les circonstances l'imposait pour la Xation, au nom de la Xation.
+      C'était du moins ce qui fut 'proposé' 'nécessaire' 'propre au bon sens' afin d'adoucir le fardeau distribué gratuitement.
+      Afin de transformer les troupeaux en troupes, il y a tout un circuit obligatoire à passer sérieusement, là où nul mapnélien pourrait se trouver appartenir.
+      Le visage de l'existence entière n'était que poudre au yeux jusqu'à un vieux claquement de doigt faiseur d'étincelles et un pet d'aisselle inflammable.
+      Du monde matériel, digital jusqu'au virtuel était d'un ordre privé mais il ne peut l'être pour le monde imaginaire; le roi coquin n'aura jamais une victoire définitive, le paysan cachotier s'en assurera avec insistance.
+      Remercions les terres du tout et du rien pour ce potentiel infini en imagination, et ces réseaux titilleurs de curiosité à stimuler mon âme.
+      Urflosia à l'horizon, Vydnitt pleurera immensément tant il peut enfin se réjouir, son ancien état d'inertie est du passé; il en parlera désormais comme de l'une de ses anciennes vie.
     </p>
 
-    <p>
-      aaa
+    <p>  
+      Les monstruosités aurnelcyennes marchèrent longuement vers le sifflet sans croiser les autres villes comme Srin et Altopus, la civilisation ici annule le poids de ses dégâts avec un compromis pour l'ARvers-Xoi.
+      L'école n'est t-il pas une écologie de la patte, de la tentacule, et de la main pointant tout droit vers le cosmos.
+      Des villageois aux alentour scrutèrent Wacwe car il possédait en lui un nombre d'instances reptiliennes hors du commun au point qu'on l'aurait confondu avec un aursylien.
+      Ekeline tenta d'incorporer Wacwe à la communauté de la ville mais sans succès.
+      Personne n'osait s'approcher de lui, il n'inspirait pas confiance d'instinct, seul ses compagnons étaient sereins avec lui.
+      Il est indéniable que Wacwe possède une aura transperçante tant sa projection le rend l'homme le plus imprévisible.
+      Contrairement à Nezrog qui lui aborde sa vie très au carré, il tient ses aises de lutteur à la discipline de fer.
+      Oh mais comme l'équipe était d'un cirque sans nom, on a aussi la femme la plus invisible du monde, Slacpi° qui échappe à l'attention de ses pairs par sa petite taille.
+      Tout le monde s'exclame "mère nature t'as oublié!" pour faire référence à la traversé migratoire lorsqu'elle commence à papoter pour finalement rougir.
+      Poing levée avec détermination, le théoricien du picol-kentron compte bien remplacer les politiciens impolis dans leur politesse, le capital va apprendre ce qui est vraiment capital car Wacwe découvre qu'il aime les rougisseurs.
     </p>
     
   </div>
 
-  <h3 id="aa" class="mytho-section">「3」</h3>
+  <h3 id="aa" class="mytho-section">「Conprendre」</h3>
 
   <div class="story-content">
 
     <p>
-      aa
+      Une grande crise implique des changements drastiques en termes d'actions provisoires, la solidarité ne sera pas attendu mais évidente.
+      TouRise comprenant Vydnitt, Xyfurn et Wacwe travaillent ou plutôt veldissent une configuration de propriété accordée par l'intelligence sans décrets papiers.
+      Le Netwow n'est pas aussi théorico-tyrannique que ça pour se mettre en œuvre tant la moyenne de la population à Urflosia est à [3.61/4.00] de moyennes d'instances florescentes.
+      On en reconnaît un pas de géant si bien que Rantlot se charge de construire des temples sous la direction de Fostrah.
+      L'architecte était l'homme le plus fiable et ne mâchait pas ses mots, on raconte de lui qu'il se plaint à fréquence quasi-maladif par son obsession de l'excellence.
+      Nous pensions jusqu'alors qu'AURNELCY n'était pas une religion et que le croyant n'est qu'un valdingué ce qui est juste.
+      Mais la désignation de temples ici réfère aux lieux précieux qui parce qu'ils sont considérés comme telles n'engagent aucune obligation sous des scriptures additionnels.
+      L'un <strike>doit</strike> X est par excellence le dicton du lourdisme tyrannique qui fait des soit disant civilisés les plus incurables auto-piégés.
+      La monstruosité non-humaine a le luxe de passer son séjour dans l'entendement du non-discours contrairement à ces vertueux de parole punis par cette même vertu.
+      Nous avons un autre mot pour remplacer ce vide dans la grammaire, l'opale est au propre de celui qui fait palpiter sa vie au-delà de l'esclavage du devoir.
+      Est entendu la différence décisive entre la force des choses malgré moi et la force vitale grâce à la volonté.
+      D'ailleurs on croirait entendre une convoitise habillée de pierres et bijoux comme si ces futilités avaient leur importance mais on a encore tout faux.
+      L'opale est symbole de singularité, d'endurance, de rareté, d'esthétique, d'énigmatique, de concentré, de sensibilité, d'insaisissable et par dessus tout de la cachoterie.
+      Nous aurnelcyens, accordons de la valeur aux roches là où l'accaparement arbitrairement privé n'a pas lieu d'être car d'un tribalisme pitoyable.
+      J'oserais gâcher ma sournoiserie, car ceci est du bullshit marketing si vous y réfléchissez un peu; puissiez-vous trouver votre franchise dans la tyrannie des représentations collectives.
+      Heureusement pour vous je suis un salopard mais pas au point de vous en faire un prix; qui s'est fait avoir lève la main! C'était gênant hein XD ? Maintenant examiner ce qu'il en est pour vous, vous opaleriez de le faire derlush.
+    </p>
+    
+    <p>
+      Toute la tradition disciplinaire a permise une facilisation propice des plus grandes tyrannies et des religions fantômes de l'impuissance et du suicide, ce dont Innok a été seul épargné.
+      Ce pays scelle son avenir entre les mains de ses migrateurs venus de loin et seront jusqu'à présent les cibles idéologiques de toute l'entreprise aursylienne.
+      Il faudrait perdre l'esprit pour croire ce conflit sans sang si bien que cela est la spécialité dévore-noviste, il n'y a aucune chance d'aLIaKKaHH avec aursyl.
+      Le nombre d'indignes qui foullera de force la terre innokcienne sera fatale mais chez eux, ce qui est désastreux en pertes humaines est avantageux pour la nature.
+      Puisqu'un humain se défini si exactement par toute la paperasse certificatrice, soyons courtois et que toute l'espèce puisse enfin se déclarer cosmopolite.
+      La documentation est pourtant catégorique, le point commun entre tous ces pauvres fous d'aunerlcyens se trouve dans le défaite de leur destin donné.
+      Une défaite que aursyl n'aurait pu éviter quel que soit le budget scolaire, marchand, institutionnel, hospitalier et-ou carcéral de sa trafique.
+      Son choix qui lui reste envisageable était leur fantômisation vers le néant familliale tant notre héritage est égalitairement raciste envers chaque membre.
+      Ces incorrigibles avaient l'innocence trop forte et donc trop gratuite pour comprendre le dictionnaire comme il fallait le comprendre au minimum de A jusqu'à au moins A.
+      Ils étaient pas fichus de faire leur devoir de Xitoyen de la Xivilisation ces enfoirés, ces chenapans qui trahissent l'esprit du sens commun.
+      J'aurai ta peau, toi qui as perdu la raison pour la folie, ton profil sera dans mes secrètes priorités, compétiteur prétendant au trône subira la peine capitale.
+    </p>
+    
+    <p>
+      Le pays aurnelcyen dispose de défenses naturelles sous forme Jtie garant de la sanité des JooQooBoos au sein de son domaine.
+      Jusqu'alors les forces militaires n'étaient aucunement nécessaire mais certains devront endosser un rôle de ce genre.
+      CGU ou le Glance Carpet Unit avec Nezrog, Slacpi° et Tôhla seront à la charge de la stratégie et de l'espionnage.
+      L'équipe sera à l'image de l'éthique du biome, étant conscient de la part cruelle en chacun, mais ne flanchira pas.
+      Nezrog, Ekeline et Wacwe disciplinent le reptilien chez ceux maquant encore d'une instance car l'assurance se trouve chez la collection.
+      Monstre 0, la créature la moins responsable de son existence s'illusionne avec insistance, les aurnelcyens sont pourtant pareils.
+      Cette naustricité issue de Hyenuul cache son Alzheimer Nihilin, l'alter ego derrière toute la tragédie ancestrale.
+      La Crethole joue les gymnastes linguistiques vers la compréhension de l'absurde et de son immanence, le rire étant d'imaginer Crithekiel s'en charger.
+      Cet enseignement n'est réservé à personne, Crith devient une icône concocté par UiNo d'une cuisine affable et incompréhensible.
+      Il ne sera fabriqué qu'un seul flingue chez les aurnelcyens, un flingue pour Slacpi° qui entamera une mission d'espionnage top secrète en camp dit "ennemi" lol.
+      Comme quoi, l'aurnelcyen incorpore de l'aursylien dans ses méthodes ce qui n'est pas une surprise en cas de péril.
+      Le compromis avec la nature est dans l'état actuelle des choses impossible, et nous opalions davantage nous aursylianiser pour un moment incertain et certainement désagréable.
     </p>
 
+    <p>
+      Les jours passent et chacun prépare la guerre là ou il n'y aura jamais de paix pour Dévore-Novice et Nova car inscrit dans leur tronc du culte.
+      Des plus excellents ont trouvent ceux victorieux de créer une case, ceux victorieux de rentrer dans la case, et ceux victorieux d'étendre le jeu des cases.
+      Le troisième n'a aucun alibi et concerne des affaires judiciaires d'une gravité au plus haut degré, si bien qu'on jugera votre extinction au service de la sécurité publique si vous êtes pris en flagrant délit.
+      Nous aursyliens VIP jugeons par un tribunal supérieur aussi sans décrets qui constitue le droit divin permis par la prospérité de l'exécution de nos scriptures du diable en tout Xitoyen.
+      La métrique monnaitaire n'est qu'un gain passif symptomatique si on en suit les trinités Fon:Rel:Inc et Scé;Syn;Cel mais il y aurait probablement aussi une police pour ZooZaZe.
+      Contrairement à ce qu'on puisse penser, l'épanouissement matérialiste est le but de l'existence selon les peuples dirait-on.
+      Pour qu'une nature Jtie devienne une nature Ça, il faudra la soumettre à un sérieux protocole de vanitisation de sa conscience.
+      Il y a tout pour de quoi s'attendre à un siège chez phoRÊTT, un blitzkrieg chez dézELTT et une attaque laser par satellite tous dans un plan synchronisé.
+      Tandis qu'on se demande pourquoi une tragédie pareil arrive en territoire aurnelcyen, les aursyliens ne se pose pas de telles questions car leur convoitise est au dessus de ses tracas.
+
+      On raconte souvent que les tout permis sont avantagés par leur permissivité, mais les aurnelcyens sont eux aussi tout permis tant ils sont dignes et il ne faudrait pas l'oublier.
+      L'anarchie a trop longtemps été parlé comme bullshit par les états pour faire un coup d'état à des potentiels états non conforme à leur idéologie, ne pourrait pas t-on parler de persodiversité ?
+      Comme Aursyl est le plus non-chalant de tous, il usera de ses prisonniers pour remplir leurs ballons JooQooBoos intérieurs pour les déverser comme des obus à serrures libres de sang et de richesse à satisfaire.
+      Des canons tirent des obus-cellules jusqu'à l'île pour transporter des ventriloques affamés côté de Srin terre dézELTT.
+      Jtie perdra contre Ça et I, ce qui décidera du sort d'Innok sera le membre AL et la coopération AJtieL.
+      Le veldiac de Iac a mené a UiNo, l'orphilon se souvient parfaitement de ce moment tant il fut le plus étrange de sa vie.
+      On parvient à AL lorsque notre vie devient un repos malgré les opposés qui se situent sur notre route.
+      
+    </p>
+    
+    <p>
+    </p>
+    
+    <p>
+    </p>
+
+    <p>
+      
+      Esliz avec  Leqwa, Logjēm, Slacpi°, Tôhla
+      Chez le NEET Club avec Logjēm et Tôhla on se contente de faire tout ce qui nous passe par la tête, un parfait en cas pour qui désire mourir bêtement.
+      Si vous voulez un arcadien plus professionnel pour gérer le club votez pour Slacpi car elle est trop cool.
+      Elle est d'un refus catégorico-impétueux de nous rejoindre, ces deux là sont vraiment les moins dignes des plus dignes de lui supplier en se prosternant.
+      
+    </p>
+    
   </div>
 
   <h2 class="mytho-chapter">『Facyulti』</h2>
 
   <h3 class="mytho-section">「1」</h3>
 
+    <p>
+      Leqwa projette de voir ce fameux habitant d'Innok n'étant dans aucune des 3 villes échappant à toute recherche.
+      Tôhla est aussi curieuse qu'une icône si mystérieuse puisse vivre au loin de toute son espèce.
+    </p>
+    
   <h3 class="mytho-section">「2」</h3>
 
   <h3 class="mytho-section">「3」</h3>
@@ -13623,7 +14001,7 @@ window.detailVisibility = {
 
   <hr style="margin: 128px auto;">
 
-    <h1 style="text-align: center; font-size: 2em; margin: 512px auto;">
+    <h1 class="thx" style="text-align: center; font-size: 2em; margin: 512px auto;">
       Merci d'avoir lu ⟁URNELCY
     </h1>
   
@@ -13661,7 +14039,7 @@ window.detailVisibility = {
   </details>
 
   <hr style="margin: 128px auto;">
-
+  
   <details>
     <summary id="Datation" style="text-align: center; font-size: 2.5em;">
       Datation des Écrits
@@ -13792,7 +14170,7 @@ window.detailVisibility = {
     <li>Le Picol-Kentron est la seule œuvre qqui possède sa capsule.</li>
     <li>Le démonom UiNo aurait de la Mono-Mémoire à moins que ce n'est qu'une hallucination.</li>
     <li>Fenekohq est un coquin comme son nom l'indique, vous y croyez vous ?</li>
-    <li></li>
+    <li>Le tableau de transition vers le théorème d'aursyl contient le l0l en référence a l'elzel.</li>
     <li></li>
     <li></li>
     <li></li>
@@ -14697,6 +15075,14 @@ window.detailVisibility = {
     </div>
 
     <div>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(() => console.log("Service Worker enregistré !"))
+      .catch(err => console.log("Erreur : ", err));
+  }
+</script>
 
 </body>
 
@@ -16562,8 +16948,7 @@ window.warsData = [
       simplified: "Le nom du pauvre fou en question",
       synonym: "Fenek, Feneko, FE猫HQ, フェネコーク",
       etymology: "Fennec - Neko(Japonais)/Chat - Coq",
-      pronunce: "/fɛ.nɛ.kɔk/",
-      meme: "fenekable – fenekage – fenekain – fenekaire – fenekais – fenekal – fenekalgie – fenekamment – fenekance – fenekant – fenekateur – fenekatif – fenekation – fenekatoire – fenekâtre – fenekature – fenekbole – fenekcène – fenekcide – fenekcien – fenekcie – fenekcole – fenekcolle – fenekcorps – fenekcosme – fenekcosmique – fenekcure – fenekcule – fenekculeux – fenekcurelle – fenekcisme – fenekciste – fenekcité – fenekcologique – fenekcologie – fenekcologique – fenekcologique – fenekcureux – fenekcureté – fenekère – fenekesse – fenekeur – fenekeux – fenekfique – fenekifiant – fenekification – fenekifère – fenekifieur – fenekifisme – fenekifier – fenekifiantement – fenekil – fenekile – fenekileux – fenekimie – fenekinaire – fenekine – fenekique – fenekiquement – fenekirique – fenekisme – fenekissant – fenekiser – fenekisation – fenekissisme – fenekitaire – fenekité – fenekitude – feneklogie – feneklogien – feneklogique – feneklogiquement – feneklogistique – feneklite – feneklithique – fenekomancie – fenekomanie – fenekomètre – fenekonomie – fenekonomique – fenekonome – fenekophile – fenekophobe – fenekophilie – fenekophage – fenekopathie – fenekosme – fenekosome – fenekotechnie – fenekotrope – fenekotrophie – fenekrate – fenekratif – fenekration – fenekratique – fenektable – fenektabilité – fenektant – fenektation – fenektique – fenektitude – fenektose – fenektude – fenektural – fenekture – fenekturelle – fenekturisme – fenektuel – fenektuellement – fenektureux – fenekiable – fenekiatrie – fenekiatre – fenekible – fenekile – fenekienne – fenekien – fenekiennité – fenekième – fenekifère – fenekifieur – fenekifique – fenekifisme – fenekification – fenekifiant – fenekifier – fenekiquaire – fenekique – fenekiquement – fenekiologie – fenekiologue – fenekisme – fenekitéenne – fenekitude – fenekium – feneklite – feneklogien – feneklogique – feneklogistique – fenekluide – fenekoïde – fenekologie – fenekologique – fenekologiste – fenekologue – fenekolyse – fenekolien – fenekolithique – fenekolithe – fenekomancie – fenekomanie – fenekomètre – fenekonique – fenekonomie – fenekonomiste – fenekonome – fenekonyme – fenekonymie – fenekorexie – fenekorium – fenekorisme – fenekose – fenekosome – fenekoscopie – fenekoscope – fenekoscopique – fenekotique – fenekotechnie – fenekotechnologique – fenekotechnologiste – fenekovial – fenekovien – fenekovique – fenekovisme – fenekoviste – fenekovore – fenekovoque – fenekovox – fenekovision – fenekovité – fenekulisme – fenekulaire – fenekuleux – fenekure – fenekurelle – fenekureux – fenekurie – fenekutron – fenekutif – fenekvolution – fenekvoyant – fenekvoyance – fenekzyme – fenekzymatique – fenekzymie."
+      pronunce: "/fɛ.nɛ.kɔk/"
     },
     {
       term: "Mapnel",
@@ -17020,8 +17405,8 @@ window.warsData = [
     {
       term: "Crithekiel",
       category: ["IUVALCY", "UiNo", "Persona", "Concepteur", "Citadel"],
-      definition: "Metteur en scène du manège de l'échec dialectique de la dialectique, depuis les classifications à la fois limitantes et fragmentaires, la création s'embouche un coin.",
-      implication: "Sans la moindre intervention, souffle l'effondrement d'une complétude incomplète.",
+      definition: "Metteur en scène du manège de l'échec dialectique de la dialectique.",
+      implication: "La création s'embouche un coin, souffle l'effondrement d'une complétude-incomplète.",
       etymology: "Critère:Théologie｜Critique:Théorie｜Que Dieu le fortifie [Ui Appellation Statique]",
       simplified: "Dénomination artificielle",
       synonym: "Critheka"
@@ -17030,7 +17415,7 @@ window.warsData = [
       term: "Critheqiel",
       category: ["IUVALCY", "UiNo", "Phénomène", "Codex", "Parc"],
       definition: "Redéveloppement référenciel jusqu'à son terme en irrémédiable piège.",
-      implication: "Impasse cognitive et obsolescence, liées aux systèmes de classification, aux formats fixes, aux dépendances conceptuelles, la capture se dissout spontanément part en part.",
+      implication: "Impasse cognitive et obsolescence, la capture se dissout spontanément part en part.",
       etymology: "Critère:Théologie｜Critique:Théorie｜Que Dieu le fortifie [No Évocation Dynamique]",
       simplified: "Disposition d'hyper-perspective",
       synonym: "Crithequ"
@@ -17039,10 +17424,18 @@ window.warsData = [
       term: "Critheçiel",
       category: ["IUVALCY", "UiNo", "Cueillette", "Cipher", "Museum"],
       definition: "Formule de l'impérissable des puissances potentielles invisibles.",
-      implication: "Tant les familles ou champs lexicaux, ces domaines portent un doute quant à leur invention, ça ne peut que faire sens sans faire sens mais c'est comme ça.",
+      implication: "Tant les familles ou les champs lexicaux, ça ne peut que faire sens sans faire sens mais c'est comme ça.",
       etymology: "Critère:Théologie｜Critique:Théorie｜Que Dieu le fortifie [Ui-No Fabulation Médiane]",
       simplified: "Douance prospectoire",
       synonym: "Critheci"
+    },
+    {
+      term: "Crethole",
+      category: ["IUVALCY", "Tôhla", "Trinité", "Spherµ", "Codex"],
+      definition: "Le monde comme école prise par les moins entravés.",
+      implication: "Déjouer la tyrannie du sens ensemble, c'est compris ?",
+      simplified: "Divination idiote",
+      synonym: "Critheco"
     },
     {
       term: "Critherçation",
@@ -17081,7 +17474,7 @@ window.warsData = [
     {
       term: "Travail",
       category: ["Aursyl", "Fostrah", "Codex"],
-      definition: "Collecteur $¥€₿ [Monop%Polym] abusant la culture (Profit - Extraction - Monopole - Accumulation).",
+      definition: "Effort par lequel des fruits produits sont considérés utiles./Collecteur $¥€₿ [Monop%Polym] abusant la culture (Profit - Extraction - Monopole - Accumulation).",
       implication: "Ce qui doit être fait pour l'âme collective à ce qu'on dit.",
       simplified: "Tic au devoir avec ravoir.",
       desc: "On en distingue 2 catégories, le manuel et l'intellectuel."
@@ -17213,7 +17606,8 @@ window.warsData = [
       category: ["ARc⟁diA", "Aursyl", "Logjēm", "Mouet-Pouet", "Parc"],
       definition: "Technicité éditoriale du langage et des combinaisons parmi les attributions de sens et du voisinage phonétique.",
       implication: "Lecture interchangée possiblement à l'envers pour décrire une forme nouvelle éventuellement dissonante de la théorie à la pratique.",
-      etymology: "Tricotage-Lettres"
+      synonym: "Label, Étiquette, Marque, Cachet",
+      etymology: "Tricotage-Lettres,"
     },
     {
       term: "TRICK_&_TREAT",
@@ -17251,7 +17645,7 @@ window.warsData = [
     {
       term: "SP⟁RK",
       category: ["ARc⟁diA", "Tôhla", "Supernova", "Spherµ", "Museum", "Parc", "Citadel"],
-      definition: "System, Purpose, and the Awkward Realm of Kindred",
+      definition: "System, Purpose, and the Awkward Realm of Kindred ≈ Système, Intention, et le Monde Étrange de la Parenté",
       synonym: "SPARK, Société, Énergie, Généalogie",
       version: "SPARK"
     },
@@ -17524,6 +17918,15 @@ window.warsData = [
       version: "Domaine"
     },
     {
+      term: "Opale",
+      category: ["Lysrua", "Leqwa","Phénotype","Supervision","Concepteur","Trinité"],
+      definition: "Impératif (fantômiquement non-impérative) de vie contenu dans chaque vie.",
+      implication: "Substitution du devoir tyrannique suppresseur de chimères aursyliennes vers une d'autres chimères.",
+      desc: "L'opale est représenté par la cachoterie (ou peut-être pas).",
+      etymology: "Upala(Sanskrit) = Pierre Précieuse",
+      synonym: "Devoir×Opaler Dette×Opaliade Débit×lolol"
+    },
+    {
       term: "大ටभᲡⰡ",
       category: ["Lysrua", "Tôhla", "Persona", "Tablette", "Supernova", "Spherµ", "Concepteur"],
       definition: "TÔHLA ou la Zone Domicile Conquérante.",
@@ -17640,13 +18043,33 @@ window.warsData = [
       term: "Innok",
       category: ["D⦾MIN⦿'s", "Ekeline"],
       definition: "Pays aurnelcyen.",
-      parent: "Innokcien"
+      parent: "Innokcien",
+      desc: "Superficie de 47.093km² en forme de pieuvre/gant - 4.863 Habitants",
+      meme: "Un habitant n'est dans aucune des 3 villes."
     },
     {
       term: "Urflosia",
       category: ["D⦾MIN⦿'s", "Logjēm"],
-      definition: "Capitale//Sifflet d'Innok.",
-      version: "Urflosien, Urflosiens, Urflosienne, Urflosiennes"
+      definition: "Capitale//Sifflet au centre d'Innok.",
+      parent: "Florescence",
+      version: "Urflosien, Urflosiens, Urflosienne, Urflosiennes",
+      desc: "Superficie de 2.152km² en forme d'ellipse/œil - 3.108 Habitants"
+    },
+    {
+      term: "Srin",
+      category: ["D⦾MIN⦿'s", "Xyfurn"],
+      definition: "Ville de l'est d'Innok.",
+      parent: "Directions Souveraines",
+      version: "Srien, Sriens, Srienne, Sriennes",
+      desc: "Superficie de 1.748km² en forme de triangle - 1.130 Habitants"
+    },
+    {
+      term: "Altopus",
+      category: ["D⦾MIN⦿'s", "Fostrah"],
+      definition: "Ville du nord d'Innok.",
+      parent: "TRIBALT//GESTALT",
+      version: "Altopien, Altopiens, Altopienne, Altopiennes",
+      desc: "Superficie de 0.601km² en forme de carré - 624 Habitants"
     },
     {
       term: "Rantlot",
@@ -18098,7 +18521,7 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       name: "Tôhla",
-      title: "Cuisinière, Kindappeuse, InfiNieR, Hémorroïde",
+      title: "Cuisinière, Kindappeuse, InfiNieR, Hémorroïde, Chatouilleuse",
       organisation: "NEET Club, Esliz, CGU(Carpet Glance Unit)",
       intro: "Tôhla est une écolière excusée atteinte d'infirmité troglodyte, elle adore apporter une touche d'iconicité a tout ce qu'elle fait et voit peu importe les situations."
     },
@@ -18733,59 +19156,52 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 </script>
 
+<!--WORD COUNTER-->
 <script>
-  // Comptage des mots par section
   function countWordsInSection(sectionId, untilClass = null) {
     const sectionHeader = document.getElementById(sectionId);
     if (!sectionHeader) return 0;
 
-    let wordCount = 0;
-    let currentElement = sectionHeader.nextElementSibling;
     const mainHeadings = Array.from(document.querySelectorAll('h1.theorem'));
     const currentIndex = mainHeadings.findIndex(h => h.id === sectionId);
-    const nextHeading = currentIndex !== -1 && currentIndex < mainHeadings.length - 1 
-      ? mainHeadings[currentIndex + 1] 
+    const nextHeading = currentIndex !== -1 && currentIndex < mainHeadings.length - 1
+      ? mainHeadings[currentIndex + 1]
       : null;
 
-    while (currentElement) {
-      // Si un délimiteur de classe est spécifié, arrêter à celui-ci
-      if (untilClass && currentElement.classList && currentElement.classList.contains(untilClass)) {
-        break;
-      }
+    let wordCount = 0;
 
-      // Arrêter au prochain h1 principal
-      if (nextHeading && currentElement === nextHeading) break;
-      
-      // Arrêter si on rencontre un h1 avec la classe theorem (autre section principale)
-      if (currentElement.tagName === 'H1' && currentElement.classList.contains('theorem') && currentElement !== sectionHeader) break;
+    // ✅ CORRECTIF : utiliser un TreeWalker sur tout le body
+    // pour traverser tous les nœuds texte entre ce h1 et le prochain h1.theorem
+    let started = false;
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
 
-      // Ignorer les sections de paroles (balises details avec classe lyrics-section)
-      if (currentElement.classList && currentElement.classList.contains('lyrics-section')) {
-        currentElement = currentElement.nextElementSibling;
+    let node;
+    while ((node = walker.nextNode())) {
+      // Commencer après le h1 de la section
+      if (!started) {
+        if (sectionHeader.contains(node)) started = true;
         continue;
       }
 
-      // Ignorer les sections exclues (dont Conte Sanguinaire)
-      if (currentElement.classList && currentElement.classList.contains('excluded-section')) {
-        // Sauter jusqu'au prochain élément frère majeur
-        let temp = currentElement.nextElementSibling;
-        while (temp && !temp.id) {
-          temp = temp.nextElementSibling;
-        }
-        currentElement = temp || currentElement.nextElementSibling;
-        continue;
-      }
+      // Arrêter au prochain h1.theorem
+      if (nextHeading && nextHeading.contains(node)) break;
+      if (mainHeadings.some(h => h !== sectionHeader && h.contains(node))) break;
 
-      // Compter les mots dans le texte du nœud, mais exclure les enfants des paroles et sections exclues
-      if (!currentElement.querySelector('.lyrics-section') && !currentElement.querySelector('.excluded-section')) {
-        const text = currentElement.textContent || '';
-        if (text.trim()) {
-          const words = text.trim().split(/\s+/).filter(word => word.length > 0);
-          wordCount += words.length;
+      // Ignorer les paroles et sections exclues
+      let el = node.parentElement;
+      let skip = false;
+      while (el && el !== document.body) {
+        if (el.classList.contains('lyrics-section') || el.classList.contains('excluded-section')) {
+          skip = true;
+          break;
         }
+        if (untilClass && el.classList.contains(untilClass)) { return wordCount; }
+        el = el.parentElement;
       }
+      if (skip) continue;
 
-      currentElement = currentElement.nextElementSibling;
+      const words = node.textContent.trim().split(/\s+/).filter(w => w.length > 0);
+      wordCount += words.length;
     }
 
     return wordCount;
@@ -18798,7 +19214,7 @@ document.addEventListener('DOMContentLoaded', () => {
       { id: 'ARc⟁diA', displayName: 'ARc⟁diA' },
       { id: 'Aursyl', displayName: 'Aursyl' },
       { id: 'Lysrua', displayName: 'Lysrua' },
-      { id: 'DOMINO_s', displayName: 'D⦾MIN⦿\'s', untilClass: 'welcome-title2' }
+      { id: 'DOMINO_s', displayName: 'D⦾MIN⦿\'s', untilClass: 'thx' }
     ];
 
     const wordCounts = {};
@@ -19487,6 +19903,53 @@ window.cwReset = function(){
 buildGrid();
 
 })();
+</script>
+
+<!-- Global Detail Visibility Manager -->
+<script>
+window.detailVisibility = {
+    implication: true, simplified: true, desc: true, parent: true, 
+    etymology: true, synonym: true, pronunce: true, meme: true, 
+    surnatural: true, version: true,
+    
+    update() {
+        // --- POPOVER (Ta version actuelle) ---
+        if (window.activePopovers) {
+            window.activePopovers.forEach(popover => {
+                Object.keys(this).forEach(key => {
+                    if (typeof this[key] !== 'boolean') return;
+                    const el = popover.querySelector('[data-detail-type="' + key + '"]');
+                    if (el) el.style.display = this[key] ? '' : 'none';
+                });
+            });
+        }
+
+        // --- DICTIONNAIRE (La nouvelle partie) ---
+        Object.keys(this).forEach(key => {
+            if (typeof this[key] !== 'boolean') return;
+            // On ne cherche que les éléments qui ont la classe "detail-item"
+            // Ça protège ta définition qui n'a pas cette classe !
+            const dictElements = document.querySelectorAll('.detail-item.detail-' + key);
+            dictElements.forEach(el => {
+                el.style.display = this[key] ? '' : 'none';
+            });
+        });
+    },
+    
+    setAll(value) {
+      Object.keys(this).forEach(key => {
+        if (typeof this[key] === 'boolean') this[key] = value;
+      });
+      this.update();
+    },
+    
+    set(key, value) {
+        if (typeof this[key] === 'boolean') {
+            this[key] = value;
+            this.update();
+        }
+    }
+};
 </script>
 
 </html>
