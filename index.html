@@ -15078,9 +15078,10 @@ body.vocab-feature-active .definition-link {
 
 <script>
   if ('serviceWorker' in navigator) {
+    // On utilise './' pour rester dans le dossier du projet
     navigator.serviceWorker.register('./service-worker.js')
       .then(() => console.log("Service Worker enregistré !"))
-      .catch(err => console.log("Erreur : ", err));
+      .catch(err => console.log("Échec : ", err));
   }
 </script>
 
