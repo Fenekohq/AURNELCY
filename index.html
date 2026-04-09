@@ -2732,6 +2732,11 @@
       }
     </style>
 
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { primaryColor: 'var(--bg-color)', primaryTextColor: 'var(--text-color)', primaryBorderColor: 'var(--text-color)', lineColor: 'var(--text-color)', secondaryColor: 'var(--bg-color)', tertiaryColor: 'var(--bg-color)' } });
+    </script>
+
   </head>
 
   <body>
@@ -2786,6 +2791,30 @@
       <button id="bookmarkAdd" style="width: 100%; padding: 7px; border-radius: 6px; border: 1px solid var(--text-color); background: var(--bg-color); color: var(--text-color); font-size: 0.9em; cursor: pointer; margin-bottom: 10px;">+ Marquer cette position</button>
       <div id="bookmarkList" style="display: flex; flex-direction: column; gap: 6px;"></div>
       <p id="bookmarkEmpty" style="font-size: 0.85em; color: var(--text-color); opacity: 0.5; text-align: center; margin: 8px 0 0 0;">Aucun marque-page</p>
+    </div>
+
+    <div id="visitor-counter" style="position: absolute; bottom: 20px; right: 100px; padding: 8px 12px; border-radius: 14px; border: 1px solid var(--text-color); color: var(--text-color); backdrop-filter: blur(8px); cursor: pointer;">Visites : 0</div>
+
+    <div id="visitor-chart-panel" style="display: none; position: fixed; bottom: 80px; right: 20px; width: 440px; max-height: 540px; background: var(--bg-color); border: 1px solid var(--text-color); border-radius: 18px; box-shadow: 0 20px 40px rgba(0,0,0,0.25); padding: 18px; overflow: hidden; z-index: 2500;">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 14px;">
+        <div>
+          <div style="font-size: 1rem; font-weight: 700;">Visites locales</div>
+          <div style="font-size: 0.85rem; opacity: 0.8;">Cliquez sur une période pour voir le graphique</div>
+        </div>
+        <button id="visitor-chart-close" style="border: none; background: transparent; color: var(--text-color); cursor: pointer; font-size: 1.2rem; line-height: 1;">✕</button>
+      </div>
+      <div id="visitor-period-buttons" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px;">
+        <button type="button" class="visitor-period-button" data-period="day" style="flex: 1 1 40%; min-width: 110px; padding: 10px 12px; border: 1px solid var(--text-color); border-radius: 12px; background: transparent; color: var(--text-color); cursor: pointer;">Quotidien</button>
+        <button type="button" class="visitor-period-button" data-period="week" style="flex: 1 1 40%; min-width: 110px; padding: 10px 12px; border: 1px solid var(--text-color); border-radius: 12px; background: transparent; color: var(--text-color); cursor: pointer;">Hebdomadaire</button>
+        <button type="button" class="visitor-period-button" data-period="month" style="flex: 1 1 40%; min-width: 110px; padding: 10px 12px; border: 1px solid var(--text-color); border-radius: 12px; background: transparent; color: var(--text-color); cursor: pointer;">Mensuel</button>
+        <button type="button" class="visitor-period-button" data-period="year" style="flex: 1 1 40%; min-width: 110px; padding: 10px 12px; border: 1px solid var(--text-color); border-radius: 12px; background: transparent; color: var(--text-color); cursor: pointer;">Annuel</button>
+        <button type="button" class="visitor-period-button" data-period="all" style="flex: 1 1 40%; min-width: 110px; padding: 10px 12px; border: 1px solid var(--text-color); border-radius: 12px; background: transparent; color: var(--text-color); cursor: pointer;">All-time</button>
+      </div>
+      <div style="margin-bottom: 10px; opacity: 0.8; font-size: 0.9rem;">Graphique par période</div>
+      <div id="visitor-chart-title" style="font-size: 1rem; font-weight: 700; margin-bottom: 8px;">Quotidien</div>
+      <div id="visitor-chart-summary" style="font-size: 0.9rem; opacity: 0.9; margin-bottom: 12px;">Chargement…</div>
+      <div id="visitor-chart-graph" style="width: 100%; height: 240px; background: transparent;"></div>
+      <div id="visitor-chart-footer" style="margin-top: 12px; font-size: 0.85rem; opacity: 0.75;">Total all-time : <span id="visitor-all-time-count">0</span></div>
     </div>
 
     <!-- Dropdown panel for detail controls -->
@@ -2847,36 +2876,36 @@
     <h1 id="Introduction">Introduction</h1>
 
     <p>⟁URNELCY est un univers cosmogonique et mythologique et un système de sens.
-    Il s'agit pour l'auteur d'un édifice important de sa vie et c'est notamment l'œuvre le restituant dans un circuit du sens à une unique manière.
-    Fenekohq a pondu une philosophie bâtie en réponse à un irrépressible besoin de se trouver soi-même dans cet ouvrage.
-    La lecture complète du contenu nécessite le langage Français, Anglais et Néologique propre à ⟁URNELCY s'introduisant progressivement au fil du temps.
-    Vous devriez donc lire au fur et à mesure les écrits de haut en bas à la manière classique pour saisir la progression du contenu.
-    La composition morphologique globale passe de définitions aux écrits aux schèmes aux bilans puis à une réouverture.
-    Le mode paysage est fortement conseillé pour les smartphones. Comprendre les capsules est capital pour s'accoutumer avec le théorème.</p>
+      Il s'agit pour l'auteur d'un édifice important de sa vie et c'est notamment l'œuvre le restituant dans un circuit du sens à une unique manière.
+      Fenekohq a pondu une philosophie bâtie en réponse à un irrépressible besoin de se trouver soi-même dans cet ouvrage.
+      La lecture complète du contenu nécessite le langage Français, Anglais et Néologique propre à ⟁URNELCY s'introduisant progressivement au fil du temps.
+      Vous devriez donc lire au fur et à mesure les écrits de haut en bas à la manière classique pour saisir la progression du contenu.
+      La composition morphologique globale passe de définitions aux écrits aux schèmes aux bilans puis à une réouverture.
+      Le mode paysage est fortement conseillé pour les smartphones. Comprendre les capsules est capital pour s'accoutumer avec le théorème.</p>
     <div>Les outils à dispositions sont les suivants:
-    <li>Bouquiner des mots de vocabulaire en haut à gauche [🕮]</li>
-    <li>Surligner le vocabulaire important en haut à gauche [🕶]</li>
-    <li>Activer les définitions dans le texte [🗏]</li>
-    <li>Activer le mode clair/sombre en haut à droite [◐]</li>
-    <li>Changer la police en haut à droite [𝐀]</li>
-    <li>Personnaliser la taille du texte [𝐓]</li>
-    <li>Attribuer des marques-pages [🏷]</li>
-    <li>Comprendre des objets culturels divers en haut à droite [⟁]</li>
-    <li>Être informé du contenu traité dans chaque œuvre [Sujet]</li>
-    <li>Pointer vers les timestamp importants avec l'ellipse au milieu en haut pour les principaux chapitres</li>
-    <li>Naviguer vite grâce au [Sommaire]</li>
-    <li>Trouver des ressemblances et similitudes avec la culture de tout ordre pour une meilleure compréhension dans [Clins d'Œils]</li>
-    <li>S'amuser à voir des connexions cachées [Trivia]</li>
+      <li>Bouquiner des mots de vocabulaire en haut à gauche [🕮]</li>
+      <li>Surligner le vocabulaire important en haut à gauche [🕶]</li>
+      <li>Activer les définitions dans le texte [🗏]</li>
+      <li>Activer le mode clair/sombre en haut à droite [◐]</li>
+      <li>Changer la police en haut à droite [𝐀]</li>
+      <li>Personnaliser la taille du texte [𝐓]</li>
+      <li>Attribuer des marques-pages [🏷]</li>
+      <li>Comprendre des objets culturels divers en haut à droite [⟁]</li>
+      <li>Être informé du contenu traité dans chaque œuvre [Sujet]</li>
+      <li>Pointer vers les timestamp importants avec l'ellipse au milieu en haut pour les principaux chapitres</li>
+      <li>Naviguer vite grâce au [Sommaire]</li>
+      <li>Trouver des ressemblances et similitudes avec la culture de tout ordre pour une meilleure compréhension dans [Clins d'Œils]</li>
+      <li>S'amuser à voir des connexions cachées [Trivia]</li>
     </div>
 
     <p>Pour les théorèmes en un mot simplifié, ils traitent:<br>
-    <li>Mapnel - Ontologie</li>
-    <li>IUVALCY - Cognition</li>
-    <li>ARc⟁diA - Simulation</li>
-    <li>Aursyl - Ruine</li>
-    <li>Lysrua - Richesse</li>
-    <li>D⦾MIN⦿'s - Révolte</li>
-  </p>
+      <li>Mapnel - Ontologie</li>
+      <li>IUVALCY - Cognition</li>
+      <li>ARc⟁diA - Simulation</li>
+      <li>Aursyl - Ruine</li>
+      <li>Lysrua - Richesse</li>
+      <li>D⦾MIN⦿'s - Révolte</li>
+    </p>
 
     <details>
       <summary>Contenu d'Approfondissement</summary>
@@ -3175,25 +3204,121 @@
     <details>
       <summary>Typologies</summary>
 
-      Robert K. Merton Typologie de la Déviance - Rébellion (Nouveaux Buts Culturels - Nouveaux Moyens Institutionnels)<br>
-      Typologie Style Social - Analysant (Réservé)<br>
-      Schwartz Typologie de Valeurs - Autonomie 95% - Stimulation 95% - Transcendance 95% - Universalisme 90% - Réussite 85% - Hédonisme 70% - Bienveillance 65% - Tradition 20% - Sécurité 15% - Pouvoir 10% - Conformité 5%<br>
-      John Alan Lee Typologie Amoureux - Agape + Ludus + Mania<br>
-      Composition Logique - Dialectique 25% - Analogique 20% - Phénoménologique 15% - Abductive 15% - Paradoxale 10% - Inductive 10% - Déductive 5%<br>
-      Dominances Métaphoriques - Archétypale 20% - Alchimique 15% - Cosmique 15% - Sémiotique 10% - Corporelle 10% - Écologique 10% - Technologique 7% - Esthétique 5% - Sociale 5% - Transcendante 3%<br>
-      MBTI - INFP-T (Introverted Intuitive Feeling Perceiving) (Fi Ne Si Te)<br>
-      Ennéagramme - 4w5 (Bohémien)<br>
-      Tritype 459 (Cœur Esprit Corps) (Romantique Observateur Médiateur)<br>
-      Tempérament - Mélancolique-Phlegmatique<br>
-      Alignement Moral - Chaotic Good<br>
-      Archétype Jungien - Créateur - Rebelle - Sage - Ombre<br>
-      Variante Instinctive - sx/so (sexuel/social)<br>
-      Big Five (OCEAN) - Ouverture 100% - Conscienciosité 70% - Extraversion 20% - Agréabilité 60% - Névrotisme 50%<br>
-      SLOAN - RCOAN (Reserved Calm Organized Accomodating Inquisitive)<br>
-      Socionique - IEI (Introverti Éthique-Intuitif)<br>
-      Robert Plutchik Roue des émotions - Joie 25% - Tristesse 20% - Confiance 15% - Anticipation 10% - Peur 10% - Surprise 10% - Colère 5% - Dégoût 5% (=100%)<br>
-      Geert Hofstede Dimensions Culturelles - Distance Hiérarchique 20% - Individualisme 65% - Masculinité 40% - Évitement de l'Incertitude 25% - Orientation Long-Terme 90% - Indulgence 55%<br>
-      Trompenaars Modèle de Culture Nationale - <strike>Universalisme</strike>⟷Particularisme 40%-60% - Individualisme⟷<strike>Communautarianisme</strike> 60%-40% - <strike>Neutre</strike>⟷Émotionnel 30%-70% - <strike>Spécifique</strike>⟷Diffuse 15%-85% - <strike>Réalisation</strike>⟷Ascription 45%-55% - <strike>Séquentiel</strike>⟷Synchronique 10%-90% - <strike>Interne</strike>-Externe 40%-60%<br>
+      <li>Robert K. Merton Typologie de la Déviance - Rébellion (Nouveaux Buts Culturels - Nouveaux Moyens Institutionnels)</li>
+      <li>Typologie Style Social - Analysant (Réservé)</li>
+      <li>Schwartz Typologie de Valeurs - Autonomie 95% - Stimulation 95% - Transcendance 95% - Universalisme 90% - Réussite 85% - Hédonisme 70% - Bienveillance 65% - Tradition 20% - Sécurité 15% - Pouvoir 10% - Conformité 5%</li>
+      <li>John Alan Lee Typologie Amoureux - Agape + Ludus + Mania</li>
+      <li>Composition Logique - Dialectique 25% - Analogique 20% - Phénoménologique 15% - Abductive 15% - Paradoxale 10% - Inductive 10% - Déductive 5%</li>
+      <li>Dominances Métaphoriques - Archétypale 20% - Alchimique 15% - Cosmique 15% - Sémiotique 10% - Corporelle 10% - Écologique 10% - Technologique 7% - Esthétique 5% - Sociale 5% - Transcendante 3%</li>
+      <li>MBTI - INFP-T (Introverted Intuitive Feeling Perceiving) (Fi Ne Si Te)</li>
+      <li>Ennéagramme - 4w5 (Bohémien)</li>
+      <li>Tritype 459 (Cœur Esprit Corps) (Romantique Observateur Médiateur)</li>
+      <li>Tempérament - Mélancolique-Phlegmatique</li>
+      <li>Alignement Moral - Chaotic Good</li>
+      <li>Archétype Jungien - Créateur - Rebelle - Sage - Ombre</li>
+      <li>Variante Instinctive - sx/so (sexuel/social)</li>
+      <li>Big Five (OCEAN) - Ouverture 100% - Conscienciosité 70% - Extraversion 20% - Agréabilité 60% - Névrotisme 50%</li>
+      <li>SLOAN - RCOAN (Reserved Calm Organized Accomodating Inquisitive)</li>
+      <li>Socionique - IEI (Introverti Éthique-Intuitif)</li>
+      <li>Robert Plutchik Roue des émotions - Joie 25% - Tristesse 20% - Confiance 15% - Anticipation 10% - Peur 10% - Surprise 10% - Colère 5% - Dégoût 5% (=100%)</li>
+      <li>Geert Hofstede Dimensions Culturelles - Distance Hiérarchique 20% - Individualisme 65% - Masculinité 40% - Évitement de l'Incertitude 25% - Orientation Long-Terme 90% - Indulgence 55%</li>
+      <li>Trompenaars Modèle de Culture Nationale - <strike>Universalisme</strike>⟷Particularisme 40%-60% - Individualisme⟷<strike>Communautarianisme</strike> 60%-40% - <strike>Neutre</strike>⟷Émotionnel 30%-70% - <strike>Spécifique</strike>⟷Diffuse 15%-85% - <strike>Réalisation</strike>⟷Ascription 45%-55% - <strike>Séquentiel</strike>⟷Synchronique 10%-90% - <strike>Interne</strike>-Externe 40%-60%</li>
+
+      <h3>Visual Charts and Diagrams</h3>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto;">
+
+        <div>
+          <h4>Big Five Personality Traits</h4>
+          <div class="mermaid">
+            pie title Big Five (OCEAN)
+            "Ouverture" : 100
+            "Conscienciosité" : 70
+            "Extraversion" : 20
+            "Agréabilité" : 60
+            "Névrotisme" : 50
+          </div>
+        </div>
+
+        <div>
+          <h4>Schwartz Typology of Values</h4>
+          <div class="mermaid">
+            pie title Schwartz Typology of Values
+            "Autonomie" : 95
+            "Stimulation" : 95
+            "Transcendance" : 95
+            "Universalisme" : 90
+            "Réussite" : 85
+            "Hédonisme" : 70
+            "Bienveillance" : 65
+            "Tradition" : 20
+            "Sécurité" : 15
+            "Pouvoir" : 10
+            "Conformité" : 5
+          </div>
+        </div>
+
+        <div>
+          <h4>Plutchik's Wheel of Emotions</h4>
+          <div class="mermaid">
+            pie title Robert Plutchik Wheel of Emotions
+            "Joie" : 25
+            "Tristesse" : 20
+            "Confiance" : 15
+            "Anticipation" : 10
+            "Peur" : 10
+            "Surprise" : 10
+            "Colère" : 5
+            "Dégoût" : 5
+          </div>
+        </div>
+
+        <div>
+          <h4>Hofstede Cultural Dimensions</h4>
+          <div class="mermaid">
+            pie title Hofstede Cultural Dimensions
+            "Distance Hiérarchique" : 20
+            "Individualisme" : 65
+            "Masculinité" : 40
+            "Évitement de l'Incertitude" : 25
+            "Orientation Long-Terme" : 90
+            "Indulgence" : 55
+          </div>
+        </div>
+
+        <div>
+          <h4>Logical Composition</h4>
+          <div class="mermaid">
+            pie title Composition Logique
+            "Dialectique" : 25
+            "Analogique" : 20
+            "Phénoménologique" : 15
+            "Abductive" : 15
+            "Paradoxale" : 10
+            "Inductive" : 10
+            "Déductive" : 5
+          </div>
+        </div>
+
+        <div>
+          <h4>Metaphorical Dominances</h4>
+          <div class="mermaid">
+            pie title Dominances Métaphoriques
+            "Archétypale" : 20
+            "Alchimique" : 15
+            "Cosmique" : 15
+            "Sémiotique" : 10
+            "Corporelle" : 10
+            "Écologique" : 10
+            "Technologique" : 7
+            "Esthétique" : 5
+            "Sociale" : 5
+            "Transcendante" : 3
+          </div>
+        </div>
+
+      </div>
+
     </details>
 
     <section id="about-aurnelcy">
@@ -11005,6 +11130,11 @@
 
     <div class="written">26/10/25</div>
 
+    <p class="hype-phrase" style="margin: 32px auto;">
+      <strike>Est-ce que ça va ?</strike><br>
+      Est-ce que c'est riche ?<br>
+    </p>
+
     <div style="text-align: center; font-size: large; margin: 32px auto;">
 
       <dd><b><u>Gliobë</u></b>:
@@ -15053,6 +15183,283 @@
               .then(() => console.log("Service Worker enregistré !"))
               .catch(err => console.log("Échec : ", err));
           }
+        </script>
+
+        <script>
+          const VISITOR_COUNT_KEY = 'aurnelcyVisitorCount';
+          const VISITOR_TIMESTAMPS_KEY = 'aurnelcyVisitorTimestamps';
+          const VISITOR_SESSION_KEY = 'aurnelcySessionCounted';
+
+          function getVisitorTimestamps() {
+            const stored = localStorage.getItem(VISITOR_TIMESTAMPS_KEY);
+            try {
+              return stored ? JSON.parse(stored) : [];
+            } catch (e) {
+              return [];
+            }
+          }
+
+          function saveVisitorTimestamps(timestamps) {
+            localStorage.setItem(VISITOR_TIMESTAMPS_KEY, JSON.stringify(timestamps));
+            localStorage.setItem(VISITOR_COUNT_KEY, String(timestamps.length));
+          }
+
+          function addVisitorIfNeeded() {
+            if (sessionStorage.getItem(VISITOR_SESSION_KEY)) {
+              return false;
+            }
+            const timestamps = getVisitorTimestamps();
+            timestamps.push(Date.now());
+            saveVisitorTimestamps(timestamps);
+            sessionStorage.setItem(VISITOR_SESSION_KEY, 'true');
+            return true;
+          }
+
+          function updateVisitorCounter() {
+            const counterEl = document.getElementById('visitor-counter');
+            if (addVisitorIfNeeded()) {
+              localStorage.setItem(VISITOR_COUNT_KEY, String(getVisitorTimestamps().length));
+            }
+            if (counterEl) {
+              counterEl.textContent = `Visites : ${getVisitorTimestamps().length}`;
+            }
+          }
+
+          const VISITOR_PERIOD_LABELS = {
+            day: 'Quotidien',
+            week: 'Hebdomadaire',
+            month: 'Mensuel',
+            year: 'Annuel',
+            all: 'All-time'
+          };
+
+          let activeVisitorPeriod = 'day';
+
+          function formatShortDate(date, options) {
+            return new Intl.DateTimeFormat('fr-FR', options).format(date);
+          }
+
+          function getVisitorChartData(period) {
+            const timestamps = getVisitorTimestamps();
+            const now = Date.now();
+            const msPerHour = 60 * 60 * 1000;
+            const msPerDay = 24 * msPerHour;
+            const values = [];
+            const labels = [];
+            let total = 0;
+            let title = VISITOR_PERIOD_LABELS[period];
+            let subtitle = '';
+
+            if (period === 'day') {
+              const buckets = Array.from({ length: 24 }, () => 0);
+              timestamps.forEach(ts => {
+                const diff = now - ts;
+                if (diff >= 0 && diff < 24 * msPerHour) {
+                  const hour = new Date(ts).getHours();
+                  buckets[hour] += 1;
+                }
+              });
+              buckets.forEach((value, index) => {
+                labels.push(`${index}h`);
+                values.push(value);
+                total += value;
+              });
+              subtitle = 'Dernières 24 heures';
+            } else if (period === 'week') {
+              const buckets = Array.from({ length: 7 }, () => 0);
+              const start = new Date(now);
+              start.setHours(0, 0, 0, 0);
+              start.setDate(start.getDate() - 6);
+              timestamps.forEach(ts => {
+                if (ts >= start.getTime() && ts <= now) {
+                  const date = new Date(ts);
+                  const index = Math.floor((date.setHours(0, 0, 0, 0) - start.getTime()) / msPerDay);
+                  if (index >= 0 && index < 7) {
+                    buckets[index] += 1;
+                  }
+                }
+              });
+              for (let i = 0; i < 7; i += 1) {
+                const date = new Date(start);
+                date.setDate(start.getDate() + i);
+                labels.push(formatShortDate(date, { weekday: 'short' }));
+                values.push(buckets[i]);
+                total += buckets[i];
+              }
+              subtitle = 'Derniers 7 jours';
+            } else if (period === 'month') {
+              const bucketSize = 3 * msPerDay;
+              const bucketCount = 10;
+              const start = now - 29 * msPerDay;
+              const buckets = Array.from({ length: bucketCount }, () => 0);
+              timestamps.forEach(ts => {
+                if (ts >= start && ts <= now) {
+                  const index = Math.floor((ts - start) / bucketSize);
+                  if (index >= 0 && index < bucketCount) {
+                    buckets[index] += 1;
+                  }
+                }
+              });
+              for (let i = 0; i < bucketCount; i += 1) {
+                const date = new Date(start + i * bucketSize);
+                labels.push(`${date.getDate()}/${date.getMonth() + 1}`);
+                values.push(buckets[i]);
+                total += buckets[i];
+              }
+              subtitle = 'Derniers 30 jours';
+            } else if (period === 'year') {
+              const buckets = Array.from({ length: 12 }, () => 0);
+              const start = new Date(now);
+              start.setDate(1);
+              start.setHours(0, 0, 0, 0);
+              start.setMonth(start.getMonth() - 11);
+              timestamps.forEach(ts => {
+                if (ts >= start.getTime() && ts <= now) {
+                  const date = new Date(ts);
+                  const monthIndex = (date.getFullYear() - start.getFullYear()) * 12 + date.getMonth() - start.getMonth();
+                  if (monthIndex >= 0 && monthIndex < 12) {
+                    buckets[monthIndex] += 1;
+                  }
+                }
+              });
+              for (let i = 0; i < 12; i += 1) {
+                const date = new Date(start);
+                date.setMonth(start.getMonth() + i);
+                labels.push(formatShortDate(date, { month: 'short' }));
+                values.push(buckets[i]);
+                total += buckets[i];
+              }
+              subtitle = 'Derniers 12 mois';
+            } else {
+              const years = timestamps
+                .map(ts => new Date(ts).getFullYear())
+                .filter((value, index, self) => self.indexOf(value) === index)
+                .sort((a, b) => a - b);
+              const buckets = years.map(() => 0);
+              timestamps.forEach(ts => {
+                const year = new Date(ts).getFullYear();
+                const index = years.indexOf(year);
+                if (index >= 0) {
+                  buckets[index] += 1;
+                }
+              });
+              years.forEach((year, index) => {
+                labels.push(String(year));
+                values.push(buckets[index]);
+                total += buckets[index];
+              });
+              subtitle = 'Depuis le premier visiteur';
+            }
+
+            return {
+              title,
+              subtitle,
+              labels,
+              values,
+              total,
+              allTime: timestamps.length
+            };
+          }
+
+          function setActiveVisitorPeriod(period) {
+            activeVisitorPeriod = period;
+            const buttons = document.querySelectorAll('.visitor-period-button');
+            buttons.forEach(button => {
+              const isActive = button.dataset.period === period;
+              button.style.background = isActive ? 'rgba(255, 255, 255, 0.08)' : 'transparent';
+              button.style.fontWeight = isActive ? '700' : '500';
+            });
+            buildVisitorChart(period);
+          }
+
+          function buildVisitorChart(period = activeVisitorPeriod) {
+            const chartData = getVisitorChartData(period);
+            const titleEl = document.getElementById('visitor-chart-title');
+            const summaryEl = document.getElementById('visitor-chart-summary');
+            const footerCount = document.getElementById('visitor-all-time-count');
+            const graphEl = document.getElementById('visitor-chart-graph');
+            if (!graphEl || !titleEl || !summaryEl || !footerCount) {
+              return;
+            }
+
+            titleEl.textContent = chartData.title;
+            summaryEl.textContent = `${chartData.total} visite${chartData.total === 1 ? '' : 's'} · ${chartData.subtitle}`;
+            footerCount.textContent = chartData.allTime;
+
+            const width = 400;
+            const height = 240;
+            const padding = 28;
+            const maxValue = Math.max(...chartData.values, 1);
+            const barCount = chartData.values.length;
+            const barSpacing = 8;
+            const barWidth = Math.max(16, (width - padding * 2 - barSpacing * (barCount - 1)) / barCount);
+
+            const bars = chartData.values.map((value, index) => {
+              const x = padding + index * (barWidth + barSpacing);
+              const barHeight = (height - padding * 2) * (value / maxValue);
+              const y = height - padding - barHeight;
+              return `
+                <rect x="${x}" y="${y}" width="${barWidth}" height="${barHeight}" rx="5" fill="currentColor" opacity="0.9" />
+                <text x="${x + barWidth / 2}" y="${height - padding + 14}" text-anchor="middle" font-size="10" fill="currentColor">${chartData.labels[index]}</text>
+              `;
+            }).join('');
+
+            const gridLines = [1, 2, 3, 4].map(i => {
+              const y = padding + ((height - padding * 2) / 4) * i;
+              return `<line x1="${padding}" y1="${y}" x2="${width - padding}" y2="${y}" stroke="currentColor" opacity="0.15" />`;
+            }).join('');
+
+            graphEl.innerHTML = `
+              <svg viewBox="0 0 ${width} ${height}" style="width:100%; height:100%; color: var(--text-color);">
+                <rect width="100%" height="100%" fill="transparent" />
+                ${gridLines}
+                ${bars}
+              </svg>
+            `;
+          }
+
+          function toggleVisitorChart() {
+            const panel = document.getElementById('visitor-chart-panel');
+            if (!panel) {
+              return;
+            }
+            if (panel.style.display === 'none' || panel.style.display === '') {
+              setActiveVisitorPeriod(activeVisitorPeriod);
+              panel.style.display = 'block';
+            } else {
+              panel.style.display = 'none';
+            }
+          }
+
+          function closeVisitorChart() {
+            const panel = document.getElementById('visitor-chart-panel');
+            if (panel) {
+              panel.style.display = 'none';
+            }
+          }
+
+          function initVisitorChartButtons() {
+            const buttons = document.querySelectorAll('.visitor-period-button');
+            buttons.forEach(button => {
+              button.addEventListener('click', () => {
+                setActiveVisitorPeriod(button.dataset.period);
+              });
+            });
+          }
+
+          window.addEventListener('load', updateVisitorCounter);
+          window.addEventListener('load', () => {
+            const counterEl = document.getElementById('visitor-counter');
+            const closeBtn = document.getElementById('visitor-chart-close');
+            if (counterEl) {
+              counterEl.addEventListener('click', toggleVisitorChart);
+            }
+            if (closeBtn) {
+              closeBtn.addEventListener('click', closeVisitorChart);
+            }
+            initVisitorChartButtons();
+            setActiveVisitorPeriod(activeVisitorPeriod);
+          });
         </script>
 
   </body>
