@@ -1,0 +1,43 @@
+#himn .st-singer {
+  color: #FF69B4;
+}
+
+#himn .nd-singer {
+  color: #1E90FF;
+}
+
+#himn .rd-singer {
+  color: #9932CC;
+}
+
+#vwp .kaf {
+  color: #FF00FF;
+}
+
+#vwp .rim {
+  color: #0000CD;
+}
+
+#vwp .haru {
+  color: #FF0000;
+}
+
+#vwp .sekai {
+  color: #FFA500;
+}
+
+#vwp .koko {
+  color: #8A2BE2;
+}
+
+#vwp .all {
+  text-shadow: 0px 0px 4px;
+}
+
+#aria .st-singer {
+  color: #1E90FF;
+}
+
+#aria .nd-singer {
+  color: #87CEEB;
+}

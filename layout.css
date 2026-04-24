@@ -1,0 +1,80 @@
+.welcome-title {
+  font-size: 12vw;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 8px;
+  text-shadow: 0px 0px 6vw;
+  margin: 25vh auto;
+}
+
+.welcome-title2 {
+  font-size: 6vw;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-shadow: 0px 0px 3vw;
+  margin: 25vh auto;
+}
+
+.family {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 32px;
+}
+
+@media screen and (max-width: 768px) {
+  .family {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.theorem {
+  text-align: center;
+  font-size: 7vw;
+  text-shadow: 0px 0px 10px;
+}
+
+.author {
+  font-size: large;
+  margin: 2em auto;
+}
+
+.written {
+  text-align: right;
+  margin: 2em auto;
+}
+
+.definizer {
+  margin: 32px auto;
+}
+
+.rappel {
+  font-size: x-small;
+  opacity: 80%;
+}
+
+.hype-phrase {
+  text-align: center;
+  font-size: 2em;
+}
+
+.info {
+  margin: 32px;
+}
+
+.triplet-rows th,
+.triplet-rows td {
+  padding: 8px;
+}
+
+@media screen and (max-width: 768px) {
+
+  .triplet-rows th,
+  .triplet-rows td {
+    padding: 6px;
+  }
+}
+
+.thx {
+  font-weight: bold;
+}
