@@ -1,3 +1,79 @@
+table {
+  margin: 0 auto;
+  width: auto;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+}
+
+.red-text {
+  color: rgb(255, 0, 0);
+}
+
+.green-text {
+  color: rgb(0, 255, 0);
+}
+
+.blue-text {
+  color: rgb(0, 0, 255);
+}
+
+.white-text {
+  color: #edeae0;
+}
+
+.black-text {
+  color: black;
+}
+
+.grey-text {
+  color: rgb(150, 150, 150);
+}
+
+.matrice {
+  font-size: 3em;
+  text-align: center;
+  text-decoration: underline;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+details > summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  padding-left: 24px;
+}
+
+details > summary::before {
+  display: inline-block;
+  content: '▶';
+  position: relative;
+  left: 0;
+  transform: rotate(0);
+  transition: transform 0.2s;
+}
+
+details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
 .welcome-title {
   font-size: 12vw;
   text-align: center;
@@ -68,7 +144,6 @@
 }
 
 @media screen and (max-width: 768px) {
-
   .triplet-rows th,
   .triplet-rows td {
     padding: 6px;

@@ -22,7 +22,7 @@ function setupTableToggle(sourceTableSelector, originalDivId, swapDivId, buttonI
 
   rows.forEach((row, rowIndex) => {
     let colIndex = 0;
-    Array.from(row.cells).forEach(cell => {
+    Array.from(row.cells).forEach((cell) => {
       while (grid[rowIndex] && grid[rowIndex][colIndex] !== undefined) colIndex++;
 
       const cSpan = cell.colSpan || 1;
@@ -31,7 +31,7 @@ function setupTableToggle(sourceTableSelector, originalDivId, swapDivId, buttonI
       const cellData = {
         original: cell.dataset.original,
         index: cell.dataset.index,
-        width: cell.dataset.width
+        width: cell.dataset.width,
       };
 
       for (let r = 0; r < rSpan; r++) {
@@ -41,9 +41,10 @@ function setupTableToggle(sourceTableSelector, originalDivId, swapDivId, buttonI
         for (let c = 0; c < cSpan; c++) {
           grid[rowIndex + r][colIndex + c] = content;
           cellDataMap[rowIndex + r][colIndex + c] = cellData;
-          metaGrid[rowIndex + r][colIndex + c] = (r === 0 && c === 0)
-            ? { isOrigin: true, nRS: cSpan, nCS: rSpan, tag: cell.tagName, css: cell.className }
-            : { isOrigin: false };
+          metaGrid[rowIndex + r][colIndex + c] =
+            r === 0 && c === 0
+              ? { isOrigin: true, nRS: cSpan, nCS: rSpan, tag: cell.tagName, css: cell.className }
+              : { isOrigin: false };
         }
       }
       colIndex += cSpan;
@@ -52,7 +53,7 @@ function setupTableToggle(sourceTableSelector, originalDivId, swapDivId, buttonI
 
   const swappedTable = document.createElement('table');
   swappedTable.className = sourceTable.className;
-  swappedTable.setAttribute('border', sourceTable.getAttribute('border') || "1");
+  swappedTable.setAttribute('border', sourceTable.getAttribute('border') || '1');
 
   for (let j = 0; j < (grid[0]?.length || 0); j++) {
     const tr = document.createElement('tr');
@@ -129,7 +130,7 @@ function syncMemoryGameState(tableElement) {
       td.classList.add('mem-hidden');
     });
   } else {
-    cells.forEach(td => {
+    cells.forEach((td) => {
       if (td.dataset.original) {
         td.innerHTML = td.dataset.original;
         td.classList.remove('mem-hidden');

@@ -2,7 +2,11 @@
 
 (function () {
   const fonts = [
-    { name: 'Par défaut', value: 'system-ui, Monospace, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif' },
+    {
+      name: 'Par défaut',
+      value:
+        'system-ui, Monospace, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif',
+    },
     { name: 'Arial', value: 'Arial, sans-serif' },
     { name: 'Helvetica', value: 'Helvetica, Arial, sans-serif' },
     { name: 'Times New Roman', value: '"Times New Roman", Times, serif' },
@@ -27,7 +31,7 @@
   function applyFont(value) {
     document.body.style.fontFamily = value;
     localStorage.setItem(STORAGE_KEY, value);
-    fontList.querySelectorAll('.font-option').forEach(el => {
+    fontList.querySelectorAll('.font-option').forEach((el) => {
       const active = el.dataset.value === value;
       el.style.fontWeight = active ? 'bold' : 'normal';
       el.style.color = active ? 'var(--tag-active, #FF2400)' : 'var(--text-color)';
@@ -35,24 +39,34 @@
     });
   }
 
-  fonts.forEach(f => {
+  fonts.forEach((f) => {
     const item = document.createElement('button');
     item.className = 'font-option';
     item.dataset.value = f.value;
     item.textContent = f.name;
-    item.style.cssText = 'display:block; width:100%; text-align:left; padding:6px 10px; border:1px solid transparent; border-radius:5px; background:none; cursor:pointer; font-family:' + f.value + '; font-size:0.95em; color:var(--text-color); transition:all 0.15s ease;';
-    item.addEventListener('mouseenter', () => { item.style.background = 'rgba(128,128,128,0.1)'; });
-    item.addEventListener('mouseleave', () => { item.style.background = 'none'; });
-    item.addEventListener('click', () => { applyFont(f.value); dropdown.style.display = 'none'; });
+    item.style.cssText =
+      'display:block; width:100%; text-align:left; padding:6px 10px; border:1px solid transparent; border-radius:5px; background:none; cursor:pointer; font-family:' +
+      f.value +
+      '; font-size:0.95em; color:var(--text-color); transition:all 0.15s ease;';
+    item.addEventListener('mouseenter', () => {
+      item.style.background = 'rgba(128,128,128,0.1)';
+    });
+    item.addEventListener('mouseleave', () => {
+      item.style.background = 'none';
+    });
+    item.addEventListener('click', () => {
+      applyFont(f.value);
+      dropdown.style.display = 'none';
+    });
     fontList.appendChild(item);
   });
 
-  btn.addEventListener('click', e => {
+  btn.addEventListener('click', (e) => {
     e.stopPropagation();
     dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
   });
 
-  document.addEventListener('click', e => {
+  document.addEventListener('click', (e) => {
     if (!dropdown.contains(e.target) && e.target !== btn) dropdown.style.display = 'none';
   });
 
@@ -77,7 +91,7 @@
 
   let current = parseInt(localStorage.getItem(STORAGE_KEY)) || 100;
 
-  const BASE = 16; // font-size de base du body en px
+  const BASE = 16;
 
   function applySize(val) {
     current = Math.min(MAX, Math.max(MIN, val));
@@ -94,12 +108,12 @@
   minusBtn.addEventListener('click', () => applySize(current - STEP));
   resetBtn.addEventListener('click', () => applySize(100));
 
-  btn.addEventListener('click', e => {
+  btn.addEventListener('click', (e) => {
     e.stopPropagation();
     dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
   });
 
-  document.addEventListener('click', e => {
+  document.addEventListener('click', (e) => {
     if (!dropdown.contains(e.target) && e.target !== btn) dropdown.style.display = 'none';
   });
 
@@ -128,8 +142,7 @@
     const headings = document.querySelectorAll('h1, h2, h3');
     let best = null;
     let bestTop = -Infinity;
-    headings.forEach(h => {
-      // Ignorer les éléments cachés ou dans un details fermé
+    headings.forEach((h) => {
       if (!h.offsetParent) return;
       const top = h.getBoundingClientRect().top + window.scrollY;
       if (top <= window.scrollY + 80 && top > bestTop) {
@@ -152,7 +165,8 @@
       const goBtn = document.createElement('button');
       goBtn.textContent = bm.label;
       goBtn.title = bm.label;
-      goBtn.style.cssText = 'flex:1; text-align:left; padding:6px 8px; border-radius:5px; border:1px solid var(--text-color); background:var(--bg-color); color:var(--text-color); font-size:0.85em; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;';
+      goBtn.style.cssText =
+        'flex:1; text-align:left; padding:6px 8px; border-radius:5px; border:1px solid var(--text-color); background:var(--bg-color); color:var(--text-color); font-size:0.85em; cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;';
       goBtn.addEventListener('click', () => {
         window.scrollTo({ top: bm.scrollY, behavior: 'smooth' });
         dropdown.style.display = 'none';
@@ -160,7 +174,8 @@
 
       const delBtn = document.createElement('button');
       delBtn.textContent = '✕';
-      delBtn.style.cssText = 'width:26px; height:26px; border-radius:5px; border:1px solid var(--text-color); background:var(--bg-color); color:var(--text-color); font-size:0.8em; cursor:pointer; flex-shrink:0;';
+      delBtn.style.cssText =
+        'width:26px; height:26px; border-radius:5px; border:1px solid var(--text-color); background:var(--bg-color); color:var(--text-color); font-size:0.8em; cursor:pointer; flex-shrink:0;';
       delBtn.addEventListener('click', () => {
         const bms = load();
         bms.splice(i, 1);
@@ -181,13 +196,13 @@
     render();
   });
 
-  btn.addEventListener('click', e => {
+  btn.addEventListener('click', (e) => {
     e.stopPropagation();
     render();
     dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
   });
 
-  document.addEventListener('click', e => {
+  document.addEventListener('click', (e) => {
     if (!dropdown.contains(e.target) && e.target !== btn) dropdown.style.display = 'none';
   });
 })();

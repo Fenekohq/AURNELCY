@@ -1,15 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const table = document.querySelector(".gliobe-table");
-  const planetarium = document.getElementById("planetarium-view");
-  const planetariumContent = document.getElementById("planetarium-content");
-  const overlay = document.getElementById("planetarium-overlay");
+  const table = document.querySelector('.gliobe-table');
+  const planetarium = document.getElementById('planetarium-view');
+  const planetariumContent = document.getElementById('planetarium-content');
+  const overlay = document.getElementById('planetarium-overlay');
 
   for (let planetIndex = 1; planetIndex <= 7; planetIndex++) {
-    const columnCells = Array.from(table.querySelectorAll(`td:nth-child(${planetIndex}), th:nth-child(${planetIndex})`));
-    columnCells.forEach(cell => {
+    const columnCells = Array.from(
+      table.querySelectorAll(`td:nth-child(${planetIndex}), th:nth-child(${planetIndex})`),
+    );
+    columnCells.forEach((cell) => {
       cell.dataset.planet = planetIndex;
-      cell.style.cursor = "pointer";
-      cell.addEventListener("click", (e) => {
+      cell.style.cursor = 'pointer';
+      cell.addEventListener('click', (e) => {
         e.stopPropagation();
         showPlanetView(planetIndex);
       });
@@ -20,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const rows = Array.from(table.rows);
     let html = '';
 
-    rows.forEach(row => {
+    rows.forEach((row) => {
       let visualCol = 1;
       const cells = Array.from(row.cells);
       for (const cell of cells) {
@@ -35,13 +37,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     planetariumContent.innerHTML = html;
-    planetarium.style.display = "flex";
-    document.body.style.overflow = "hidden";
+    planetarium.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
   }
 
-  overlay.addEventListener("click", () => {
-    planetarium.style.display = "none";
+  overlay.addEventListener('click', () => {
+    planetarium.style.display = 'none';
     planetariumContent.innerHTML = '';
-    document.body.style.overflow = "";
+    document.body.style.overflow = '';
   });
 });

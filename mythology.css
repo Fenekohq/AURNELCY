@@ -85,7 +85,10 @@
   align-items: center;
   padding: 24px;
   text-align: center;
-  transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+  transition:
+    box-shadow 0.2s,
+    background 0.2s,
+    color 0.2s;
   color: var(--text-color);
 }
 

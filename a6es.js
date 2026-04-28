@@ -13,16 +13,17 @@ function toggleA6esMemory() {
   const originalDiv = document.getElementById('A6es-original');
   const swapDiv = document.getElementById('A6es-swap');
 
-  const visibleTable = originalDiv.style.display !== 'none'
-    ? originalDiv.querySelector('.A6es')
-    : swapDiv.querySelector('.A6es');
+  const visibleTable =
+    originalDiv.style.display !== 'none'
+      ? originalDiv.querySelector('.A6es')
+      : swapDiv.querySelector('.A6es');
 
   if (!visibleTable) return;
 
   const cells = Array.from(visibleTable.querySelectorAll('tbody td'));
 
   if (window.a6esMemoryState.allHidden) {
-    cells.forEach(td => {
+    cells.forEach((td) => {
       if (td.dataset.original) {
         td.innerHTML = td.dataset.original;
         td.classList.remove('mem-hidden');

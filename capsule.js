@@ -57,11 +57,24 @@ const matr77 = document.getElementById('matr77');
 const copy11 = matr7.cloneNode(true);
 matr77.appendChild(copy11);
 
-const capsuleIds = ['arti11', 'arti22', 'arti33', 'arti44b', 'arti55', 'arti66', 'ktn11', 'cale11', 'cale22', 'matr55', 'matr66', 'matr77'];
+const capsuleIds = [
+  'arti11',
+  'arti22',
+  'arti33',
+  'arti44b',
+  'arti55',
+  'arti66',
+  'ktn11',
+  'cale11',
+  'cale22',
+  'matr55',
+  'matr66',
+  'matr77',
+];
 const iconsContainer = document.getElementById('capsule-icons');
 const modals = {};
 
-capsuleIds.forEach(id => {
+capsuleIds.forEach((id) => {
   const element = document.getElementById(id);
   if (!element) return;
 
@@ -86,8 +99,9 @@ capsuleIds.forEach(id => {
   }
 
   const tableContainers = tempDiv.querySelectorAll('div[style*="overflow-x"]');
-  tableContainers.forEach(container => {
-    const newStyle = container.getAttribute('style')
+  tableContainers.forEach((container) => {
+    const newStyle = container
+      .getAttribute('style')
       .replace(/overflow-x:\s*auto;?/g, '')
       .replace(/>\s*-webkit-overflow-scrolling:\s*touch;?/g, '');
     if (newStyle.trim()) {
@@ -98,7 +112,7 @@ capsuleIds.forEach(id => {
   });
 
   const titleDecorations = tempDiv.querySelectorAll('div[style*="font-size"]');
-  titleDecorations.forEach(titleDiv => {
+  titleDecorations.forEach((titleDiv) => {
     if (titleDiv.textContent.includes('⌂') || titleDiv.textContent.includes('{')) {
       titleDiv.remove();
     }
@@ -112,7 +126,8 @@ capsuleIds.forEach(id => {
   previewElement.appendChild(contentDiv);
 
   const measureContainer = document.createElement('div');
-  measureContainer.style.cssText = 'position:fixed;top:-9999px;left:-9999px;visibility:hidden;pointer-events:none;width:auto;height:auto;';
+  measureContainer.style.cssText =
+    'position:fixed;top:-9999px;left:-9999px;visibility:hidden;pointer-events:none;width:auto;height:auto;';
   measureContainer.innerHTML = contentHTML;
   document.body.appendChild(measureContainer);
 

@@ -1,14 +1,13 @@
 /*Vocabulary Popover*/
 
 document.addEventListener('DOMContentLoaded', function () {
-
   if (typeof vocabularyData === 'undefined' || !vocabularyData.length) {
     console.error("ERREUR CRITIQUE : La variable 'vocabularyData' n'est pas définie ou est vide.");
     return;
   }
 
   const definitionMap = new Map();
-  vocabularyData.forEach(item => {
+  vocabularyData.forEach((item) => {
     definitionMap.set(item.term.toLowerCase(), {
       term: item.term,
       definition: item.definition,
@@ -22,13 +21,16 @@ document.addEventListener('DOMContentLoaded', function () {
       meme: item.meme,
       surnatural: item.surnatural,
       version: item.version,
-      category: item.category
+      category: item.category,
     });
 
     if (item.version) {
-      const versions = item.version.split(/,/).map(v => v.trim()).filter(v => v);
+      const versions = item.version
+        .split(/,/)
+        .map((v) => v.trim())
+        .filter((v) => v);
 
-      versions.forEach(version => {
+      versions.forEach((version) => {
         const versionLower = version.toLowerCase();
         definitionMap.set(versionLower, {
           term: item.term,
@@ -44,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
           surnatural: item.surnatural,
           version: item.version,
           category: item.category,
-          isVersion: true
+          isVersion: true,
         });
       });
     }
@@ -65,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return {
       summary: summary + (data.definition.includes('.') ? '.' : ''),
       originalTerm: data.term,
-      data: data
+      data: data,
     };
   }
 
@@ -79,8 +81,10 @@ document.addEventListener('DOMContentLoaded', function () {
       const escapedNestedTerm = nestedLowerCaseTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
 
       const accentPattern = 'a-zA-Z0-9àâäèéêëëìîïòôöùûüçñ';
-      const regex = new RegExp(`(?![^<]*>)(?<![${accentPattern}])(${escapedNestedTerm})(?![${accentPattern}])`, 'gi');
-
+      const regex = new RegExp(
+        `(?![^<]*>)(?<![${accentPattern}])(${escapedNestedTerm})(?![${accentPattern}])`,
+        'gi',
+      );
 
       processedText = processedText.replace(regex, (match) => {
         const originalTermWithCorrectCase = nestedData.term || match;
@@ -127,12 +131,10 @@ document.addEventListener('DOMContentLoaded', function () {
       if (desiredLeft + popoverActualWidth > screenWidth - safetyMargin) {
         finalLeft = Math.max(safetyMargin, screenWidth - popoverActualWidth - safetyMargin);
         isRightAligned = true;
-      }
-      else if (desiredLeft < safetyMargin) {
+      } else if (desiredLeft < safetyMargin) {
         finalLeft = safetyMargin;
         isRightAligned = false;
-      }
-      else {
+      } else {
         finalLeft = desiredLeft;
         isRightAligned = false;
       }
@@ -189,14 +191,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const isWithinTag = /<[^>]+>/.test(newHtml);
     if (isWithinTag) return;
 
-    const escapedTerms = termsToSearch.map(term => {
+    const escapedTerms = termsToSearch.map((term) => {
       return term.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
     });
 
     const alternationPattern = escapedTerms.join('|');
 
     const accentPattern = 'a-zA-Z0-9àâäèéêëëìîïòôöùûüçñ';
-    const regex = new RegExp(`(?![^<]*>)(?<![${accentPattern}])(${alternationPattern})(?![${accentPattern}])`, 'gi');
+    const regex = new RegExp(
+      `(?![^<]*>)(?<![${accentPattern}])(${alternationPattern})(?![${accentPattern}])`,
+      'gi',
+    );
 
     if (regex.test(newHtml)) {
       replaced = true;
@@ -223,12 +228,17 @@ document.addEventListener('DOMContentLoaded', function () {
   const vocabDetailsDropdown = document.getElementById('vocab-details-dropdown');
 
   if (!toggleButton) {
-    console.error("ERREUR : L'élément <button id='toggle-vocab-button'> est manquant dans le HTML.");
+    console.error(
+      "ERREUR : L'élément <button id='toggle-vocab-button'> est manquant dans le HTML.",
+    );
     return;
   }
 
   document.addEventListener('click', function (event) {
-    if (!event.target.closest('#toggle-vocab-button') && !event.target.closest('#vocab-details-dropdown')) {
+    if (
+      !event.target.closest('#toggle-vocab-button') &&
+      !event.target.closest('#vocab-details-dropdown')
+    ) {
       vocabDetailsDropdown.style.display = 'none';
     }
   });
@@ -237,11 +247,12 @@ document.addEventListener('DOMContentLoaded', function () {
     event.stopPropagation();
 
     if (event.target === toggleButton || event.target.closest('button') === toggleButton) {
-      vocabDetailsDropdown.style.display = vocabDetailsDropdown.style.display === 'none' ? 'block' : 'none';
+      vocabDetailsDropdown.style.display =
+        vocabDetailsDropdown.style.display === 'none' ? 'block' : 'none';
     }
 
     if (!hasLinksBeenInjected) {
-      console.log("Activation initiale : Injection des liens dans le DOM.");
+      console.log('Activation initiale : Injection des liens dans le DOM.');
       walk(document.body);
       hasLinksBeenInjected = true;
     }
@@ -252,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.classList.toggle('vocab-feature-active', isVocabActive);
 
     if (!isVocabActive) {
-      window.activePopovers.forEach(popover => {
+      window.activePopovers.forEach((popover) => {
         popover.remove();
       });
       window.activePopovers = [];
@@ -261,7 +272,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   document.body.addEventListener('click', function (event) {
-
     if (!isVocabActive) return;
 
     const target = event.target;
@@ -272,7 +282,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const popover = closeButton.closest('.definition-popover');
       if (popover) {
         popover.remove();
-        window.activePopovers = window.activePopovers.filter(p => p !== popover);
+        window.activePopovers = window.activePopovers.filter((p) => p !== popover);
       }
       return;
     }
@@ -283,11 +293,11 @@ document.addEventListener('DOMContentLoaded', function () {
       const term = linkElement.getAttribute('data-term');
       if (!term) return;
 
-      let existingPopover = window.activePopovers.find(p => p.dataset.term === term);
+      let existingPopover = window.activePopovers.find((p) => p.dataset.term === term);
 
       if (existingPopover) {
         existingPopover.remove();
-        window.activePopovers = window.activePopovers.filter(p => p !== existingPopover);
+        window.activePopovers = window.activePopovers.filter((p) => p !== existingPopover);
         return;
       }
 
@@ -351,13 +361,12 @@ document.addEventListener('DOMContentLoaded', function () {
       if (window.detailVisibility && typeof window.detailVisibility.update === 'function') {
         window.detailVisibility.update();
       }
-
     } else {
       if (target.closest('.definition-popover')) {
         return;
       }
 
-      window.activePopovers.forEach(popover => {
+      window.activePopovers.forEach((popover) => {
         popover.remove();
       });
       window.activePopovers = [];
@@ -367,7 +376,7 @@ document.addEventListener('DOMContentLoaded', function () {
   window.addEventListener('scroll', () => {
     if (!isVocabActive) return;
 
-    window.activePopovers.forEach(popover => {
+    window.activePopovers.forEach((popover) => {
       const term = popover.dataset.term;
       const originalLink = document.querySelector(`.definition-link[data-term="${term}"]`);
       if (originalLink) {

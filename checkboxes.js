@@ -5,14 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const nomenclatureToggleAll = document.getElementById('toggle-all-check');
 
   function updateToggleAllCheckboxes() {
-    const allDropdownChecked = Array.from(dropdownToggles).every(cb => cb.checked);
+    const allDropdownChecked = Array.from(dropdownToggles).every((cb) => cb.checked);
     dropdownToggleAll.checked = allDropdownChecked;
 
-    const allNomenclatureChecked = Array.from(nomenclatureToggles).every(cb => cb.checked);
+    const allNomenclatureChecked = Array.from(nomenclatureToggles).every((cb) => cb.checked);
     nomenclatureToggleAll.checked = allNomenclatureChecked;
   }
 
-  dropdownToggles.forEach(checkbox => {
+  dropdownToggles.forEach((checkbox) => {
     checkbox.addEventListener('change', function () {
       window.detailVisibility.set(this.value, this.checked);
       const nomenclatureCheckbox = document.getElementById(this.id.replace('dropdown-', ''));
@@ -25,16 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   dropdownToggleAll.addEventListener('change', function () {
     window.detailVisibility.setAll(this.checked);
-    dropdownToggles.forEach(cb => {
+    dropdownToggles.forEach((cb) => {
       cb.checked = this.checked;
     });
-    nomenclatureToggles.forEach(cb => {
+    nomenclatureToggles.forEach((cb) => {
       cb.checked = this.checked;
     });
     nomenclatureToggleAll.checked = this.checked;
   });
 
-  nomenclatureToggles.forEach(checkbox => {
+  nomenclatureToggles.forEach((checkbox) => {
     checkbox.addEventListener('change', function () {
       window.detailVisibility.set(this.value, this.checked);
       const dropdownCheckbox = document.getElementById('dropdown-' + this.id);
@@ -47,10 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   nomenclatureToggleAll.addEventListener('change', function () {
     window.detailVisibility.setAll(this.checked);
-    nomenclatureToggles.forEach(cb => {
+    nomenclatureToggles.forEach((cb) => {
       cb.checked = this.checked;
     });
-    dropdownToggles.forEach(cb => {
+    dropdownToggles.forEach((cb) => {
       cb.checked = this.checked;
     });
     dropdownToggleAll.checked = this.checked;
