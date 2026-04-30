@@ -64,19 +64,10 @@ document.addEventListener('DOMContentLoaded', function () {
 // WRITING DATES
 
 document.addEventListener('DOMContentLoaded', function () {
-  const dataNode = document.getElementById('writingDatesData');
   const tbody = document.getElementById('writingDatesBody');
-  if (!dataNode || !tbody) return;
+  if (!tbody || typeof writingDates === 'undefined') return;
 
-  let parsed;
-  try {
-    parsed = JSON.parse(dataNode.textContent);
-  } catch (error) {
-    console.error('Invalid writing dates JSON', error);
-    return;
-  }
-
-  const entries = Array.isArray(parsed.entries) ? parsed.entries.slice() : [];
+  const entries = Array.isArray(writingDates.entries) ? writingDates.entries.slice() : [];
   function toSortableDateParts(dateString) {
     const match = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(String(dateString).trim());
     if (!match) return null;

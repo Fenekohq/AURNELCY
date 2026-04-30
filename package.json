@@ -1,0 +1,36 @@
+{
+    "additional_trust_anchors": [
+        "aze"
+    ],
+    "app_name": "AURNELCY",
+    "main": "index.html",
+    "name": "AURNELCY",
+    "nodejs": false,
+    "webexe_settings": {
+        "blacklist": "",
+        "custom_script": "",
+        "download_dir": "",
+        "export_dir": "C:/Users/antho/Desktop",
+        "force_download": false,
+        "nw_compression_level": 0,
+        "output_pattern": "",
+        "sdk_build": false,
+        "uncompressed_folder": false,
+        "whitelist": "",
+        "windows-x64": true
+    },
+    "webkit": {
+        "plugin": true
+    },
+    "window": {
+        "as_desktop": true,
+        "exe_icon": "favicon.png",
+        "frame": true,
+        "id": "AURNELCY",
+        "resizable": true,
+        "show": true,
+        "show_in_taskbar": true,
+        "title": "AURNELCY",
+        "visible": true
+    }
+}
