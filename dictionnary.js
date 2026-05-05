@@ -73,6 +73,18 @@ const vocabularyData = [
     pronunce: "/fɛ.nɛ.kɔk/",
   },
   {
+    term: "0K",
+    category: ["0K"],
+    definition: "C'est OK pour l'instant.",
+    simplified: "J'ai fait de mon mieux",
+    desc: "Emma",
+    parent: "⟁URNELCY, non-⟁URNELCY",
+    etymology: "0 Kill, All Correct, Orl Korrect",
+    synonym:"OK",
+    pronunce: "Français /ɔ.ke/ English /ˌoʊˈkeɪ/",
+    version: "OK, Okien, Okiens, Okienne, Okiennes",
+  },
+  {
     term: "Mapnel",
     category: ["Mapnel"],
     definition: "Dialogue entre contraires.",
@@ -165,6 +177,27 @@ const vocabularyData = [
     simplified: "Architecture Grammaticale",
     desc: "⌂         {0 X}         ⌂",
     version: "Capsules",
+  },
+  {
+    term: "Vie",
+    category: ["0K", "Cipher", "Phénomène", "Concepteur", "Phénotype", "Supervision"],
+    definition: "Fait de vivre [etc…]",
+    implication: "Toutes les définitions combinées sont insatisfaisantes.",
+    etymology: "Vita (Latin)",
+  },
+  {
+    term: "Mort",
+    category: ["0K", "Cipher", "Phénomène", "Cueillette", "Spherµ", "Supernova"],
+    definition: "Cessation de la vie [etc…]",
+    implication: "Toutes les définitions combinées sont insatisfaisantes.",
+    etymology: "Mortuus (Latin)",
+  },
+  {
+    term: "Homo Sapien",
+    category: ["0K", "Persona"],
+    definition: "Mammifère primate de la famille des hominidés [etc…]",
+    implication: "T'as compris ?",
+    etymology: "Être Humain Intelligent, Sage, Raisonnable, Prudent",
   },
   {
     term: "Héros/Héroïne",
@@ -721,7 +754,7 @@ const vocabularyData = [
   },
   {
     term: "JooQooBoo",
-    category: ["ARc⟁diA", "Logjēm", "Supervision", "Supernova"],
+    category: ["ARc⟁diA", "Logjēm", "Leqwa", "Supervision", "Supernova"],
     definition: "Hostilité macabrique affranchie des lois établies ensemanceuse de plosions imparables.",
     simplified: "Jeu du Cou Menacé",
     synonym: "JooQ, SWOT, Compétition, Violence, Agitation",
@@ -1296,7 +1329,7 @@ const vocabularyData = [
     definition: "Organisation à l'origine de toute la tradition de l'idée-maître.",
   },
   {
-    term: "RaycRa Forces",
+    term: "RaycRa Force",
     category: ["D⦾MIN⦿'s"],
     definition: "Puissance militaire en vagabondage.",
   },
@@ -1305,6 +1338,7 @@ const vocabularyData = [
 function initializeCategoryTags() {
   const categoryHierarchy = {
     Théorèmes: [
+      "0K",
       "Mapnel",
       "IUVALCY",
       "ARc⟁diA",

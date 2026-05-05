@@ -124,6 +124,17 @@ details[open] > summary::before {
   margin: 32px auto;
 }
 
+.definizer-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-width: 768px) {
+  .definizer-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
 .rappel {
   font-size: x-small;
   opacity: 80%;

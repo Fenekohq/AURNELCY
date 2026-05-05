@@ -5,6 +5,12 @@
   padding-right: 8px;
 }
 
+/*0K*/
+
+html[data-theme='dark'] img[src*='feature/OK.png'] {
+  filter: invert(1) hue-rotate(180deg);
+}
+
 /*Mapnel*/
 
 .peregrination {
@@ -453,17 +459,6 @@
     width: 100%;
     margin-bottom: 100px;
     justify-self: end;
-  }
-}
-
-.travel2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-@media screen and (max-width: 768px) {
-  .travel2 {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -1449,31 +1444,4 @@ html[data-theme='dark'] img[src*='feature/Awkward.png'] {
 
 .a6mplush {
   font-size: small;
-}
-
-/*After Theorems*/
-
-.numerology-list {
-  list-style: none;
-  padding: 0;
-  margin: 20px auto;
-  max-width: 800px;
-  line-height: 1.6;
-}
-
-.numerology-list li {
-  display: flex;
-  margin-bottom: 8px;
-  border-bottom: 1px solid var(--text-color);
-  padding-bottom: 4px;
-}
-
-.numerology-list .num {
-  font-weight: bold;
-  min-width: 40px;
-  flex-shrink: 0;
-}
-
-.numerology-list .desc {
-  text-align: left;
 }

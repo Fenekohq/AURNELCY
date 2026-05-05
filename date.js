@@ -47,6 +47,7 @@ const writingDates = {
     { "date": "19/02/2026", "title": "Le Syoneme Sublime" },
     { "date": "28/02/2026", "title": "Cartel Conceptionnel" },
     { "date": "13/04/2026", "title": "Business" },
-    { "date": "23/04/2026", "title": "Gesticul" }
+    { "date": "23/04/2026", "title": "Gesticul" },
+    { "date": "04/05/2026", "title": "Être Humain" }
   ]
 };
