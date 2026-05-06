@@ -48,6 +48,7 @@ const writingDates = {
     { "date": "28/02/2026", "title": "Cartel Conceptionnel" },
     { "date": "13/04/2026", "title": "Business" },
     { "date": "23/04/2026", "title": "Gesticul" },
-    { "date": "04/05/2026", "title": "Être Humain" }
+    { "date": "04/05/2026", "title": "Terrien" },
+    { "date": "06/05/2026", "title": "Manipule" }
   ]
 };

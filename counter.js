@@ -90,6 +90,7 @@ function countWordsInSection(sectionId, untilClass = null) {
 
 function updateWordCountTable() {
   const sectionConfigs = [
+    { id: '0K', displayName: '0K' },
     { id: 'Mapnel', displayName: 'Mapnel' },
     { id: 'IUVALCY', displayName: 'IUVALCY' },
     { id: 'ARc⟁diA', displayName: 'ARc⟁diA' },

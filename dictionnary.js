@@ -82,7 +82,7 @@ const vocabularyData = [
     etymology: "0 Kill, All Correct, Orl Korrect",
     synonym:"OK",
     pronunce: "Français /ɔ.ke/ English /ˌoʊˈkeɪ/",
-    version: "OK, Okien, Okiens, Okienne, Okiennes",
+    version: "OK, Okien, Okiens, Okienne, Okiennes, Zérokien, Zérokiens, Zérokienne, Zérokiennes",
   },
   {
     term: "Mapnel",
