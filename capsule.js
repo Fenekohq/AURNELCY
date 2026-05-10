@@ -1,63 +1,97 @@
+const arti0 = document.getElementById('arti0');
+const arti00 = document.getElementById('arti00');
+if (arti0 && arti00) {
+  const copy = arti0.cloneNode(true);
+  arti00.appendChild(copy);
+}
+
 const arti1 = document.getElementById('arti1');
 const arti11 = document.getElementById('arti11');
-const copy = arti1.cloneNode(true);
-arti11.appendChild(copy);
+if (arti1 && arti11) {
+  const copy2 = arti1.cloneNode(true);
+  arti11.appendChild(copy2);
+}
 
 const arti2 = document.getElementById('arti2');
 const arti22 = document.getElementById('arti22');
-const copy2 = arti2.cloneNode(true);
-arti22.appendChild(copy2);
+if (arti2 && arti22) {
+  const copy3 = arti2.cloneNode(true);
+  arti22.appendChild(copy3);
+}
 
 const arti3 = document.getElementById('arti3');
 const arti33 = document.getElementById('arti33');
-const copy3 = arti3.cloneNode(true);
-arti33.appendChild(copy3);
+if (arti3 && arti33) {
+  const copy4 = arti3.cloneNode(true);
+  arti33.appendChild(copy4);
+}
 
 const arti4 = document.getElementById('arti4');
-document.getElementById('arti44a').appendChild(arti4.cloneNode(true));
-document.getElementById('arti44b').appendChild(arti4.cloneNode(true));
+if (arti4) {
+  const arti44a = document.getElementById('arti44a');
+  const arti44b = document.getElementById('arti44b');
+  if (arti44a) arti44a.appendChild(arti4.cloneNode(true));
+  if (arti44b) arti44b.appendChild(arti4.cloneNode(true));
+}
 
 const arti5 = document.getElementById('arti5');
 const arti55 = document.getElementById('arti55');
-const copy5 = arti5.cloneNode(true);
-arti55.appendChild(copy5);
+if (arti5 && arti55) {
+  const copy5 = arti5.cloneNode(true);
+  arti55.appendChild(copy5);
+}
 
 const arti6 = document.getElementById('arti6');
 const arti66 = document.getElementById('arti66');
-const copy6 = arti6.cloneNode(true);
-arti66.appendChild(copy6);
+if (arti6 && arti66) {
+  const copy6 = arti6.cloneNode(true);
+  arti66.appendChild(copy6);
+}
 
 const ktn1 = document.getElementById('ktn1');
 const ktn11 = document.getElementById('ktn11');
-const copy12 = ktn1.cloneNode(true);
-ktn11.appendChild(copy12);
+if (ktn1 && ktn11) {
+  const copy7 = ktn1.cloneNode(true);
+  ktn11.appendChild(copy7);
+}
 
 const cale1 = document.getElementById('cale1');
 const cale11 = document.getElementById('cale11');
-const copy7 = cale1.cloneNode(true);
-cale11.appendChild(copy7);
+if (cale1 && cale11) {
+  const copy8 = cale1.cloneNode(true);
+  cale11.appendChild(copy8);
+}
 
 const cale2 = document.getElementById('cale2');
 const cale22 = document.getElementById('cale22');
-const copy8 = cale2.cloneNode(true);
-cale22.appendChild(copy8);
+if (cale2 && cale22) {
+  const copy9 = cale2.cloneNode(true);
+  cale22.appendChild(copy9);
+}
 
 const matr5 = document.getElementById('matr5');
 const matr55 = document.getElementById('matr55');
-const copy9 = matr5.cloneNode(true);
-matr55.appendChild(copy9);
+if (matr5 && matr55) {
+  const copy10 = matr5.cloneNode(true);
+  matr55.appendChild(copy10);
+}
+
+const matr4 = document.getElementById('matr4');
+const matr44 = document.getElementById('matr44');
+if (matr4 && matr44) {
+  const copy11 = matr4.cloneNode(true);
+  matr44.appendChild(copy11);
+}
 
 const matr6 = document.getElementById('matr6');
 const matr66 = document.getElementById('matr66');
-const copy10 = matr6.cloneNode(true);
-matr66.appendChild(copy10);
-
-const matr7 = document.getElementById('matr7');
-const matr77 = document.getElementById('matr77');
-const copy11 = matr7.cloneNode(true);
-matr77.appendChild(copy11);
+if (matr6 && matr66) {
+  const copy12 = matr6.cloneNode(true);
+  matr66.appendChild(copy12);
+}
 
 const capsuleIds = [
+  'arti00',
   'arti11',
   'arti22',
   'arti33',
@@ -68,8 +102,8 @@ const capsuleIds = [
   'cale11',
   'cale22',
   'matr55',
+  'matr44',
   'matr66',
-  'matr77',
 ];
 const iconsContainer = document.getElementById('capsule-icons');
 const modals = {};
@@ -147,13 +181,11 @@ capsuleIds.forEach((id) => {
   const modal = document.createElement('div');
   modal.className = 'capsule-modal';
   modal.dataset.id = id;
-  const fullContent = element.cloneNode(true);
-  fullContent.style.display = 'block';
   modal.innerHTML = `
       <div class="capsule-modal-content">
         <button class="capsule-modal-close">✕</button>
         <h2 style="margin-top: 0; text-align: center;">${title}</h2>
-        ${fullContent.innerHTML}
+        ${element.innerHTML}
       </div>
     `;
 
