@@ -230,6 +230,7 @@ const vocabularyData = [
     implication: "Une fermeture des coulisses n'achève pas la vie. Monom implique Polyp (Monom&Polyp)",
     simplified: "Être Mouvant",
     synonym: "Unité, Unique, Central, Rétention, Enfermement",
+    parent: "Monoa-Polyz",
     version: "Monom, Mono-Mémoire",
   },
   {
@@ -239,6 +240,7 @@ const vocabularyData = [
     implication: "L'ouverture des erreurs adapte le rythme d'une vie. Polyp implique Monom (Monom&Polyp)",
     simplified: "Devenir Renouvelé",
     synonym: "Fraction, Multiple, Décentral, Éclattement, Dispersion",
+    parent: "Monoa-Polyz",
     version: "Polyp, Poly-Projection",
   },
   {
@@ -249,6 +251,7 @@ const vocabularyData = [
     simplified: "PlusPlus",
     desc: "Terla est représenté en anneau pendentif.",
     synonym: "Jonction, Stabilité, Composition, Conteneur, Concentration",
+    parent: "Monoa-Polyz",
     version: "Terla",
   },
   {
@@ -258,6 +261,7 @@ const vocabularyData = [
     simplified: "Mémoire nourricière permanente & Projection épisodique cyclique ou Laisser Ouvert",
     synonym: " Mom&Pop, MM&PP, ℳℴ𝓃ℴ𝓂🙵𝒫ℴ𝓁𝓎𝓅(Cursive), ℳℴ𝓂🙵𝒫ℴ𝓅, ℳ🙵𝒫",
     pronunce: "MTP, monomennepolype, monome-terla-polype",
+    parent: "Monoa-Polyz",
     version: "Mom&Pop, MM&PP, ℳℴ𝓃ℴ𝓂🙵𝒫ℴ𝓁𝓎𝓅, ℳℴ𝓂🙵𝒫ℴ𝓅, ℳ🙵𝒫",
   },
   {
@@ -266,6 +270,7 @@ const vocabularyData = [
     definition: "Éternité Inhibée Figée/Non-réconciliation rugueuse d'afistoler le menu classique des attributions déterminées.",
     implication: "Dépiction survivante d'un échec ultime et de son insolubilité funeste. Monop implique Polym (Monop%Polym)",
     simplified: "Être Surchargé",
+    parent: "Monoa-Polyz",
     version: "Monop, Mono-Prohibition",
   },
   {
@@ -274,6 +279,7 @@ const vocabularyData = [
     definition: "Recommencement Excité Troublé/Non-réajustement raboteux avec la sécession globale.",
     implication: "Déconstruction survivante de la santé en vue d'opérations autres. Polym implique Monop (Monop%Polym)",
     simplified: "Devenir Perturbé",
+    parent: "Monoa-Polyz",
     version: "Polym, Poly-Malaise",
   },
   {
@@ -283,6 +289,7 @@ const vocabularyData = [
     implication: "Obstructrice dispatcheuse atrophiante de la vitalité juvénile.",
     simplified: "MoinsMoins",
     desc: "Derla est représenté en boulet de forçat.",
+    parent: "Monoa-Polyz",
     version: "Derla",
   },
   {
@@ -292,6 +299,7 @@ const vocabularyData = [
     simplified: "Prohibition affamante saturée % Malaise apathique déclinant ou Prendre au Piège",
     synonym: "Mop%Pom, MP%PM, 𝔐𝔬𝔫𝔬𝔭%𝔓𝔬𝔩𝔶𝔪(Fraktur), 𝔐𝔬𝔭%𝔓𝔬𝔪, 𝔐%𝔓",
     pronunce: "MDP, monopeourpolyme, monope-derla-polyme",
+    parent: "Monoa-Polyz",
     version: "Mop%Pom, MP%PM, 𝔐𝔬𝔫𝔬𝔭%𝔓𝔬𝔩𝔶𝔪, 𝔐𝔬𝔭%𝔓𝔬𝔪, 𝔐%𝔓",
   },
   {
@@ -302,7 +310,7 @@ const vocabularyData = [
     simplified: "Toute créature concernée par la vie et la mort.",
     synonym: "M0nstre, Mont0, Animalia",
     surnatural: "Chair répondant au Comment au travers d'une instantanéité définie.",
-    version: "Monstres 0, M0nstre, Monstruosité, Monstruosité 0, Monstruosités, Monstruosités 0",
+    version: "Monstres 0, M0nstre, M0nstres, Monstruosité, Monstruosité 0, Monstruosités, Monstruosités 0",
   },
   {
     term: "Dévore-Novice",
@@ -578,6 +586,7 @@ const vocabularyData = [
     term: "MonPol",
     category: ["Mapnel", "Lysrua", "Leqwa", "Monoa-Polyz", "Phénotype", "Spherµ", "Cueillette"],
     definition: "Titre honorifique envers l'être et son devenir ou le mémojectile quoi qu'il en soit.",
+    simplified: "Dédicace Exaltée",
     pronunce: "Monne-Polle",
   },
   {
@@ -828,13 +837,14 @@ const vocabularyData = [
     term: "PAMABWA",
     category: ["IUVALCY", "Slacpi°", "Monoa-Polyz", "Phénotype", "Mouet-Pouet", "Concepteur"],
     definition: "Invention pocuP&moceM, ce qu'on appelle le souci, pas le mot ni la croyance.",
+    parent: "Monoa-Polyz",
     synonym: "Couple épanoui",
   },
   {
     term: "Tra§Vel",
     category: ["ARc⟁diA", "Leqwa", "Logjēm", "Codex", "Supervision"],
     definition: "Bouclure de flambeau Doppelgänger des entrailles exclusives inclusives selon la forme et les convulsions du vouloir.",
-    implication: "Le ratio concernant la collection abusive et le voile traversé serait de 20%~80% pour les gauniques voire 10%~90% chez les gaunico-ganiques.",
+    implication: "Ce qui doit être une collection abusive et un voile traversé à ce qu'on dit.",
     simplified: "Dose d'altérité réaliste et idéaliste sous les moyens du bord et du fond.",
     desc: "Représenté par l'adolescent.",
     parent: "Travail, Veldiac",
