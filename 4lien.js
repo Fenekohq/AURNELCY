@@ -3,21 +3,21 @@
 (function () {
   const CLUES_A = [
     { n: 1, text: 'Pays et Paysans' },
-    { n: 3, text: 'ARc⟁diA renverse les [\u2026]' },
-    { n: 5, text: 'Aursyl est la science des [\u2026]' },
-    { n: 7, text: 'ARc⟁diA est le [\u2026] pour Aursyl' },
-    { n: 8, text: 'ARc⟁diA joue les [\u2026]' },
+    { n: 3, text: 'ARcâŸdiA renverse les […]' },
+    { n: 5, text: 'Aursyl est la science des […]' },
+    { n: 7, text: 'ARcâŸdiA est le […] pour Aursyl' },
+    { n: 8, text: 'ARcâŸdiA joue les […]' },
     { n: 9, text: 'Tournage en direct' },
-    { n: 12, text: 'Aursyl est le [\u2026] pour ARc⟁diA' },
+    { n: 12, text: 'Aursyl est le […] pour ARcâŸdiA' },
   ];
   const CLUES_D = [
-    { n: 2, text: "Chacun est \u2026 de l'autre" },
-    { n: 4, text: 'Aursyl jette un [\u2026]' },
-    { n: 6, text: 'Question pour rus\u00E9' },
-    { n: 9, text: "Chacun est [\u2026] avec l'autre" },
-    { n: 10, text: "Ce n'est pas fait pour les [\u2026]" },
-    { n: 11, text: 'Aursyl vend du [\u2026]' },
-    { n: 12, text: 'Nous sommes les plus [\u2026]' },
+    { n: 2, text: "Chacun est … de l'autre" },
+    { n: 4, text: 'Aursyl jette un […]' },
+    { n: 6, text: 'Question pour rusé' },
+    { n: 9, text: "Chacun est […] avec l'autre" },
+    { n: 10, text: "Ce n'est pas fait pour les […]" },
+    { n: 11, text: 'Aursyl vend du […]' },
+    { n: 12, text: 'Nous sommes les plus […]' },
   ];
 
   const SOL = {
@@ -27,14 +27,14 @@
     '7A': ['D', 'I', 'V', 'E', 'R', 'T', 'I', 'S', 'S', 'E', 'M', 'E', 'N', 'T'],
     '8A': ['I', 'G', 'N', 'O', 'R', 'A', 'N', 'T', 'S'],
     '9A': ['S', 'I', 'M', 'U', 'L', 'A', 'T', 'I', 'O', 'N'],
-    '12A': ['D', '\u00C9', 'G', 'U', 'I', 'S', 'E', 'M', 'E', 'N', 'T'],
-    '2D': ['A', 'G', 'A', 'C', '\u00C9'],
-    '4D': ['M', 'A', 'L', '\u00C9', 'F', 'I', 'C', 'E'],
+    '12A': ['D', 'É', 'G', 'U', 'I', 'S', 'E', 'M', 'E', 'N', 'T'],
+    '2D': ['A', 'G', 'A', 'C', 'É'],
+    '4D': ['M', 'A', 'L', 'É', 'F', 'I', 'C', 'E'],
     '6D': ['D', 'E', 'V', 'I', 'N', 'E', 'T', 'T', 'E'],
-    '9D': ['S', '\u00C9', 'V', '\u00C8', 'R', 'E'],
+    '9D': ['S', 'É', 'V', 'È', 'R', 'E'],
     '10D': ['P', 'E', 'U', 'R', 'E', 'U', 'X'],
     '11D': ['D', 'E', 'S', 'T', 'I', 'N'],
-    '12D': ['D', '\u00C9', 'V', 'I', 'A', 'N', 'T', 'S'],
+    '12D': ['D', 'É', 'V', 'I', 'A', 'N', 'T', 'S'],
   };
 
   const WSTART = {
@@ -172,312 +172,374 @@
     });
   });
 
-  const userGrid = {};
-  let selected = null;
+  function getCrosswordRoot(container) {
+    if (!container) return document.querySelector('[data-cw-root]');
+    if (container.matches && container.matches('[data-cw-root]')) return container;
+    return container.querySelector('[data-cw-root]');
+  }
 
-  function buildGrid() {
-    const table = document.getElementById('cw-grid');
-    table.innerHTML = '';
-    const ROWS = 24,
-      COLS = 17;
-    for (let r = 0; r < ROWS; r++) {
-      const tr = document.createElement('tr');
-      for (let c = 0; c < COLS; c++) {
-        const key = r + ',' + c;
-        const active = !!cellActive[key];
-        const td = document.createElement('td');
-        td.style.cssText =
-          'width:28px;height:28px;padding:0;position:relative;' +
-          (active
-            ? 'border:1px solid var(--text-color);background:var(--bg-color);'
-            : 'border:none;background:transparent;');
-        if (active) {
-          if (cellNum[key]) {
-            const s = document.createElement('span');
-            s.textContent = cellNum[key];
-            s.style.cssText =
-              'position:absolute;top:1px;left:2px;font-size:8px;line-height:1;pointer-events:none;color:var(--text-color);';
-            td.appendChild(s);
-          }
-          const inp = document.createElement('input');
-          inp.maxLength = 1;
-          inp.id = 'cw-cell-' + r + '-' + c;
-          inp.name = 'cw-cell-' + r + '-' + c;
-          inp.autocomplete = 'off';
-          inp.dataset.r = r;
-          inp.dataset.c = c;
-          inp.style.cssText =
-            'position:absolute;inset:0;width:100%;height:100%;border:none;background:transparent;' +
-            'text-align:center;font-size:13px;font-weight:bold;text-transform:uppercase;' +
-            'color:var(--text-color);cursor:pointer;outline:none;padding-top:10px;box-sizing:border-box;';
-          inp.addEventListener('click', onCellClick);
-          inp.addEventListener('keydown', onKeyDown);
-          inp.addEventListener('input', onInput);
-          td.appendChild(inp);
-        }
-        tr.appendChild(td);
-      }
-      table.appendChild(tr);
+  function initialize4lienCrossword(container) {
+    const root = getCrosswordRoot(container);
+    if (!root || root.dataset.cwInitialized === 'true') return root?._cwApi || null;
+
+    const table = root.querySelector('[data-cw-role="grid"]');
+    const acrossList = root.querySelector('[data-cw-role="across"]');
+    const downList = root.querySelector('[data-cw-role="down"]');
+    const activeClue = root.querySelector('[data-cw-role="active-clue"]');
+    const message = root.querySelector('[data-cw-role="message"]');
+
+    if (!table || !acrossList || !downList || !activeClue || !message) return null;
+
+    root.dataset.cwInitialized = 'true';
+
+    const state = {
+      selected: null,
+      userGrid: {},
+    };
+
+    function inp(r, c) {
+      return table.querySelector('input[data-r="' + r + '"][data-c="' + c + '"]');
     }
-    buildClues();
-  }
 
-  function inp(r, c) {
-    return document.querySelector('#cw-grid input[data-r="' + r + '"][data-c="' + c + '"]');
-  }
-
-  function onCellClick(e) {
-    const r = +e.target.dataset.r,
-      c = +e.target.dataset.c;
-    if (selected && selected.r === r && selected.c === c) {
-      const other = selected.dir === 'A' ? 'D' : 'A';
-      if (getWord(r, c, other)) selected = { r, c, dir: other };
-    } else {
-      const prefer = selected ? selected.dir : 'A';
-      const dir = getWord(r, c, prefer) ? prefer : getWord(r, c, 'A') ? 'A' : 'D';
-      selected = { r, c, dir };
-    }
-    highlight();
-    showClue();
-  }
-
-  function onKeyDown(e) {
-    if (!selected) return;
-    const { r, c, dir } = selected;
-    if (e.key === 'ArrowRight') {
-      e.preventDefault();
-      move(r, c, 0, 1);
-    } else if (e.key === 'ArrowLeft') {
-      e.preventDefault();
-      move(r, c, 0, -1);
-    } else if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      move(r, c, 1, 0);
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      move(r, c, -1, 0);
-    } else if (e.key === 'Backspace') {
-      e.preventDefault();
-      const el = inp(r, c);
-      if (el && el.value) {
-        el.value = '';
-        delete userGrid[r + ',' + c];
-      } else {
-        const [dr, dc] = dir === 'A' ? [0, -1] : [-1, 0];
-        if (cellActive[r + dr + ',' + (c + dc)]) {
-          selected = { r: r + dr, c: c + dc, dir };
-          const ni = inp(r + dr, c + dc);
-          if (ni) {
-            ni.value = '';
-            delete userGrid[r + dr + ',' + (c + dc)];
-            ni.focus();
-          }
-          highlight();
+    function getWord(r, c, dir) {
+      for (const wk of Object.keys(WSTART)) {
+        if (!wk.endsWith(dir)) continue;
+        const [wr, wc] = WSTART[wk];
+        const len = SOL[wk].length;
+        for (let i = 0; i < len; i++) {
+          const cr = wr + (dir === 'D' ? i : 0);
+          const cc = wc + (dir === 'A' ? i : 0);
+          if (cr === r && cc === c) return wk;
         }
       }
-    } else if (e.key === 'Tab') {
-      e.preventDefault();
-      nextWord(e.shiftKey);
+      return null;
     }
-  }
 
-  function onInput(e) {
-    const r = +e.target.dataset.r,
-      c = +e.target.dataset.c;
-    const v = e.target.value.toUpperCase().replace(/[^A-Z\u00C0-\u00FF]/g, '');
-    e.target.value = v;
-    if (v) userGrid[r + ',' + c] = v;
-    else delete userGrid[r + ',' + c];
-    e.target.style.color = 'var(--text-color)';
-    if (v && selected) {
-      const { dir } = selected;
-      const nr = r + (dir === 'D' ? 1 : 0),
-        nc = c + (dir === 'A' ? 1 : 0);
+    function wordCells(wk) {
+      const [wr, wc] = WSTART[wk];
+      const dir = wk.slice(-1);
+      return SOL[wk].map((_, i) => ({
+        r: wr + (dir === 'D' ? i : 0),
+        c: wc + (dir === 'A' ? i : 0),
+      }));
+    }
+
+    function showClue() {
+      if (!state.selected) {
+        activeClue.textContent = 'Cliquez une case';
+        return;
+      }
+
+      const wk = getWord(state.selected.r, state.selected.c, state.selected.dir);
+      if (!wk) {
+        activeClue.textContent = '';
+        return;
+      }
+
+      const n = parseInt(wk, 10);
+      const dir = wk.slice(-1);
+      const list = dir === 'A' ? CLUES_A : CLUES_D;
+      const clue = list.find((item) => item.n === n);
+      activeClue.textContent = clue ? n + ' ' + (dir === 'A' ? '→' : '↓') + ' ' + clue.text : '';
+    }
+
+    function highlight() {
+      table.querySelectorAll('td').forEach((td) => {
+        td.style.background = 'var(--bg-color)';
+      });
+
+      if (!state.selected) return;
+
+      const wk = getWord(state.selected.r, state.selected.c, state.selected.dir);
+      if (wk) {
+        wordCells(wk).forEach(({ r, c }) => {
+          const el = inp(r, c);
+          if (el) el.parentElement.style.background = 'rgba(128,128,255,0.18)';
+        });
+      }
+
+      const current = inp(state.selected.r, state.selected.c);
+      if (current) current.parentElement.style.background = 'rgba(128,128,255,0.45)';
+    }
+
+    function move(r, c, dr, dc) {
+      const nr = r + dr;
+      const nc = c + dc;
       if (cellActive[nr + ',' + nc]) {
-        selected = { r: nr, c: nc, dir };
+        state.selected = { r: nr, c: nc, dir: state.selected.dir };
         inp(nr, nc)?.focus();
         highlight();
+        showClue();
       }
     }
-  }
 
-  function move(r, c, dr, dc) {
-    const nr = r + dr,
-      nc = c + dc;
-    if (cellActive[nr + ',' + nc]) {
-      selected = { r: nr, c: nc, dir: selected.dir };
-      inp(nr, nc)?.focus();
+    function nextWord(reverse) {
+      const all = [...CLUES_A.map((item) => item.n + 'A'), ...CLUES_D.map((item) => item.n + 'D')];
+      const current = state.selected ? getWord(state.selected.r, state.selected.c, state.selected.dir) : null;
+      const index = current ? all.indexOf(current) : -1;
+      jumpTo(all[(index + (reverse ? -1 : 1) + all.length) % all.length]);
+    }
+
+    function jumpTo(wk) {
+      if (!WSTART[wk]) return;
+      const [r, c] = WSTART[wk];
+      state.selected = { r, c, dir: wk.slice(-1) };
+      inp(r, c)?.focus();
       highlight();
       showClue();
     }
-  }
 
-  function getWord(r, c, dir) {
-    for (const wk of Object.keys(WSTART)) {
-      if (!wk.endsWith(dir)) continue;
-      const [wr, wc] = WSTART[wk];
-      const len = SOL[wk].length;
-      for (let i = 0; i < len; i++) {
-        const cr = wr + (dir === 'D' ? i : 0),
-          cc = wc + (dir === 'A' ? i : 0);
-        if (cr === r && cc === c) return wk;
-      }
-    }
-    return null;
-  }
+    function onCellClick(event) {
+      const r = +event.target.dataset.r;
+      const c = +event.target.dataset.c;
 
-  function wordCells(wk) {
-    const [wr, wc] = WSTART[wk],
-      dir = wk.slice(-1);
-    return SOL[wk].map((_, i) => ({
-      r: wr + (dir === 'D' ? i : 0),
-      c: wc + (dir === 'A' ? i : 0),
-    }));
-  }
-
-  function highlight() {
-    document.querySelectorAll('#cw-grid td').forEach((td) => {
-      if (
-        cellActive[
-          (+td.children[td.children.length - 1]?.dataset?.r || '') +
-            ',' +
-            (+td.children[td.children.length - 1]?.dataset?.c || '')
-        ] ||
-        true
-      )
-        td.style.background = 'var(--bg-color)';
-    });
-    document.querySelectorAll('#cw-grid input').forEach((el) => {
-      el.parentElement.style.background = 'var(--bg-color)';
-    });
-    if (!selected) return;
-    const wk = getWord(selected.r, selected.c, selected.dir);
-    if (wk)
-      wordCells(wk).forEach(({ r, c }) => {
-        const el = inp(r, c);
-        if (el) el.parentElement.style.background = 'rgba(128,128,255,0.18)';
-      });
-    const cur = inp(selected.r, selected.c);
-    if (cur) cur.parentElement.style.background = 'rgba(128,128,255,0.45)';
-  }
-
-  function buildClues() {
-    const ao = document.getElementById('cw-across'),
-      dw = document.getElementById('cw-down');
-    ao.innerHTML = '';
-    dw.innerHTML = '';
-    CLUES_A.forEach(({ n, text }) => {
-      const li = document.createElement('li');
-      li.value = n;
-      li.textContent = text;
-      li.style.cursor = 'pointer';
-      li.addEventListener('click', () => jumpTo(n + 'A'));
-      ao.appendChild(li);
-    });
-    CLUES_D.forEach(({ n, text }) => {
-      const li = document.createElement('li');
-      li.value = n;
-      li.textContent = text;
-      li.style.cursor = 'pointer';
-      li.addEventListener('click', () => jumpTo(n + 'D'));
-      dw.appendChild(li);
-    });
-  }
-
-  function jumpTo(wk) {
-    if (!WSTART[wk]) return;
-    const [r, c] = WSTART[wk];
-    selected = { r, c, dir: wk.slice(-1) };
-    inp(r, c)?.focus();
-    highlight();
-    showClue();
-  }
-
-  function showClue() {
-    const el = document.getElementById('cw-clue-active');
-    if (!selected) {
-      el.textContent = 'Cliquez une case';
-      return;
-    }
-    const wk = getWord(selected.r, selected.c, selected.dir);
-    if (!wk) {
-      el.textContent = '';
-      return;
-    }
-    const n = parseInt(wk),
-      dir = wk.slice(-1);
-    const list = dir === 'A' ? CLUES_A : CLUES_D;
-    const cl = list.find((x) => x.n === n);
-    el.textContent = cl ? n + ' ' + (dir === 'A' ? '→' : '↓') + ' ' + cl.text : '';
-  }
-
-  function nextWord(rev) {
-    const all = [...CLUES_A.map((x) => x.n + 'A'), ...CLUES_D.map((x) => x.n + 'D')];
-    const cur = selected ? getWord(selected.r, selected.c, selected.dir) : null;
-    const idx = cur ? all.indexOf(cur) : -1;
-    jumpTo(all[(idx + (rev ? -1 : 1) + all.length) % all.length]);
-  }
-
-  window.cwVerify = function () {
-    let ok = 0,
-      total = 0;
-    document.querySelectorAll('#cw-grid input').forEach((el) => {
-      const key = el.dataset.r + ',' + el.dataset.c;
-      const exp = EXPECTED[key];
-      if (!exp) return;
-      total++;
-      const val = (el.value || '').toUpperCase();
-      if (val === '') {
-        el.style.color = 'var(--text-color)';
-      } else if (val === exp) {
-        ok++;
-        el.style.color = '#27ae60';
+      if (state.selected && state.selected.r === r && state.selected.c === c) {
+        const other = state.selected.dir === 'A' ? 'D' : 'A';
+        if (getWord(r, c, other)) state.selected = { r, c, dir: other };
       } else {
-        el.style.color = '#e74c3c';
+        const preferredDir = state.selected ? state.selected.dir : 'A';
+        const dir = getWord(r, c, preferredDir) ? preferredDir : getWord(r, c, 'A') ? 'A' : 'D';
+        state.selected = { r, c, dir };
       }
-    });
-    const msg = document.getElementById('cw-msg');
-    const filled = document.querySelectorAll('#cw-grid input');
-    let filledCount = 0;
-    filled.forEach((el) => {
-      if (el.value) filledCount++;
-    });
-    if (filledCount === 0) {
-      msg.textContent = '';
-      return;
-    }
-    if (ok === total) {
-      msg.textContent = '✓ Parfait !';
-      msg.style.color = '#27ae60';
-    } else {
-      msg.textContent = ok + '/' + total + ' corrects';
-      msg.style.color = '#e67e22';
-    }
-  };
 
-  window.cwReveal = function () {
-    document.querySelectorAll('#cw-grid input').forEach((el) => {
-      const key = el.dataset.r + ',' + el.dataset.c;
-      const exp = EXPECTED[key];
-      if (exp) {
-        el.value = exp;
-        userGrid[key] = exp;
-        el.style.color = '#2980b9';
+      highlight();
+      showClue();
+    }
+
+    function onKeyDown(event) {
+      if (!state.selected) return;
+
+      const { r, c, dir } = state.selected;
+
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        move(r, c, 0, 1);
+      } else if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        move(r, c, 0, -1);
+      } else if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        move(r, c, 1, 0);
+      } else if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        move(r, c, -1, 0);
+      } else if (event.key === 'Backspace') {
+        event.preventDefault();
+        const currentInput = inp(r, c);
+        if (currentInput && currentInput.value) {
+          currentInput.value = '';
+          delete state.userGrid[r + ',' + c];
+        } else {
+          const [dr, dc] = dir === 'A' ? [0, -1] : [-1, 0];
+          if (cellActive[r + dr + ',' + (c + dc)]) {
+            state.selected = { r: r + dr, c: c + dc, dir };
+            const nextInput = inp(r + dr, c + dc);
+            if (nextInput) {
+              nextInput.value = '';
+              delete state.userGrid[r + dr + ',' + (c + dc)];
+              nextInput.focus();
+            }
+            highlight();
+            showClue();
+          }
+        }
+      } else if (event.key === 'Tab') {
+        event.preventDefault();
+        nextWord(event.shiftKey);
       }
-    });
-    document.getElementById('cw-msg').textContent = '';
-  };
+    }
 
-  window.cwReset = function () {
-    document.querySelectorAll('#cw-grid input').forEach((el) => {
-      el.value = '';
-      el.style.color = 'var(--text-color)';
-      el.parentElement.style.background = 'var(--bg-color)';
-    });
-    Object.keys(userGrid).forEach((k) => delete userGrid[k]);
-    document.getElementById('cw-msg').textContent = '';
-    selected = null;
-  };
+    function onInput(event) {
+      const r = +event.target.dataset.r;
+      const c = +event.target.dataset.c;
+      const value = event.target.value.toUpperCase().replace(/[^A-ZÀ-ÿ]/g, '');
 
-  buildGrid();
+      event.target.value = value;
+      if (value) {
+        state.userGrid[r + ',' + c] = value;
+      } else {
+        delete state.userGrid[r + ',' + c];
+      }
+
+      event.target.style.color = 'var(--text-color)';
+
+      if (value && state.selected) {
+        const { dir } = state.selected;
+        const nr = r + (dir === 'D' ? 1 : 0);
+        const nc = c + (dir === 'A' ? 1 : 0);
+        if (cellActive[nr + ',' + nc]) {
+          state.selected = { r: nr, c: nc, dir };
+          inp(nr, nc)?.focus();
+          highlight();
+          showClue();
+        }
+      }
+    }
+
+    function buildClues() {
+      acrossList.innerHTML = '';
+      downList.innerHTML = '';
+
+      CLUES_A.forEach(({ n, text }) => {
+        const li = document.createElement('li');
+        li.value = n;
+        li.textContent = text;
+        li.style.cursor = 'pointer';
+        li.addEventListener('click', () => jumpTo(n + 'A'));
+        acrossList.appendChild(li);
+      });
+
+      CLUES_D.forEach(({ n, text }) => {
+        const li = document.createElement('li');
+        li.value = n;
+        li.textContent = text;
+        li.style.cursor = 'pointer';
+        li.addEventListener('click', () => jumpTo(n + 'D'));
+        downList.appendChild(li);
+      });
+    }
+
+    function buildGrid() {
+      table.innerHTML = '';
+      const ROWS = 24;
+      const COLS = 17;
+
+      for (let r = 0; r < ROWS; r++) {
+        const tr = document.createElement('tr');
+
+        for (let c = 0; c < COLS; c++) {
+          const key = r + ',' + c;
+          const active = !!cellActive[key];
+          const td = document.createElement('td');
+          td.style.cssText =
+            'width:28px;height:28px;padding:0;position:relative;' +
+            (active
+              ? 'border:1px solid var(--text-color);background:var(--bg-color);'
+              : 'border:none;background:transparent;');
+
+          if (active) {
+            if (cellNum[key]) {
+              const number = document.createElement('span');
+              number.textContent = cellNum[key];
+              number.style.cssText =
+                'position:absolute;top:1px;left:2px;font-size:8px;line-height:1;pointer-events:none;color:var(--text-color);';
+              td.appendChild(number);
+            }
+
+            const input = document.createElement('input');
+            input.maxLength = 1;
+            input.autocomplete = 'off';
+            input.dataset.r = r;
+            input.dataset.c = c;
+            input.style.cssText =
+              'position:absolute;inset:0;width:100%;height:100%;border:none;background:transparent;' +
+              'text-align:center;font-size:13px;font-weight:bold;text-transform:uppercase;' +
+              'color:var(--text-color);cursor:pointer;outline:none;padding-top:10px;box-sizing:border-box;';
+            input.addEventListener('click', onCellClick);
+            input.addEventListener('keydown', onKeyDown);
+            input.addEventListener('input', onInput);
+            td.appendChild(input);
+          }
+
+          tr.appendChild(td);
+        }
+
+        table.appendChild(tr);
+      }
+
+      buildClues();
+    }
+
+    function verify() {
+      let correct = 0;
+      let total = 0;
+
+      table.querySelectorAll('input').forEach((input) => {
+        const key = input.dataset.r + ',' + input.dataset.c;
+        const expected = EXPECTED[key];
+        if (!expected) return;
+
+        total++;
+        const value = (input.value || '').toUpperCase();
+
+        if (value === '') {
+          input.style.color = 'var(--text-color)';
+        } else if (value === expected) {
+          correct++;
+          input.style.color = '#27ae60';
+        } else {
+          input.style.color = '#e74c3c';
+        }
+      });
+
+      let filledCount = 0;
+      table.querySelectorAll('input').forEach((input) => {
+        if (input.value) filledCount++;
+      });
+
+      if (filledCount === 0) {
+        message.textContent = '';
+        return;
+      }
+
+      if (correct === total) {
+        message.textContent = '✓ Parfait !';
+        message.style.color = '#27ae60';
+      } else {
+        message.textContent = correct + '/' + total + ' corrects';
+        message.style.color = '#e67e22';
+      }
+    }
+
+    function reveal() {
+      table.querySelectorAll('input').forEach((input) => {
+        const key = input.dataset.r + ',' + input.dataset.c;
+        const expected = EXPECTED[key];
+        if (!expected) return;
+
+        input.value = expected;
+        state.userGrid[key] = expected;
+        input.style.color = '#2980b9';
+      });
+
+      message.textContent = '';
+    }
+
+    function reset() {
+      table.querySelectorAll('input').forEach((input) => {
+        input.value = '';
+        input.style.color = 'var(--text-color)';
+        input.parentElement.style.background = 'var(--bg-color)';
+      });
+
+      Object.keys(state.userGrid).forEach((key) => delete state.userGrid[key]);
+      message.textContent = '';
+      state.selected = null;
+      highlight();
+      showClue();
+    }
+
+    root.querySelectorAll('[data-cw-action]').forEach((button) => {
+      const action = button.getAttribute('data-cw-action');
+      if (action === 'verify') button.addEventListener('click', verify);
+      if (action === 'reveal') button.addEventListener('click', reveal);
+      if (action === 'reset') button.addEventListener('click', reset);
+    });
+
+    buildGrid();
+    showClue();
+
+    const api = { verify, reveal, reset, jumpTo, root };
+    root._cwApi = api;
+    return api;
+  }
+
+  window.initialize4lienCrossword = initialize4lienCrossword;
+
+  const primaryApi = initialize4lienCrossword(document.getElementById('Alien-original'));
+  if (primaryApi) {
+    window.cwVerify = primaryApi.verify;
+    window.cwReveal = primaryApi.reveal;
+    window.cwReset = primaryApi.reset;
+  }
 })();

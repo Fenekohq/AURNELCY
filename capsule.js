@@ -1,212 +1,239 @@
-const arti0 = document.getElementById('arti0');
-const arti00 = document.getElementById('arti00');
-if (arti0 && arti00) {
-  const copy = arti0.cloneNode(true);
-  arti00.appendChild(copy);
-}
+window.addEventListener('load', function () {
+  function appendClone(sourceId, targetId) {
+    const source = document.getElementById(sourceId);
+    const target = document.getElementById(targetId);
+    if (!source || !target) return;
 
-const arti1 = document.getElementById('arti1');
-const arti11 = document.getElementById('arti11');
-if (arti1 && arti11) {
-  const copy2 = arti1.cloneNode(true);
-  arti11.appendChild(copy2);
-}
+    target.innerHTML = '';
+    target.appendChild(source.cloneNode(true));
+  }
 
-const arti2 = document.getElementById('arti2');
-const arti22 = document.getElementById('arti22');
-if (arti2 && arti22) {
-  const copy3 = arti2.cloneNode(true);
-  arti22.appendChild(copy3);
-}
+  function createAlienMatrixClone() {
+    const source = document.getElementById('matr4');
+    const target = document.getElementById('matr44');
+    if (!source || !target) return;
 
-const arti3 = document.getElementById('arti3');
-const arti33 = document.getElementById('arti33');
-if (arti3 && arti33) {
-  const copy4 = arti3.cloneNode(true);
-  arti33.appendChild(copy4);
-}
+    const clone = source.cloneNode(true);
 
-const arti4 = document.getElementById('arti4');
-if (arti4) {
-  const arti44a = document.getElementById('arti44a');
-  const arti44b = document.getElementById('arti44b');
-  if (arti44a) arti44a.appendChild(arti4.cloneNode(true));
-  if (arti44b) arti44b.appendChild(arti4.cloneNode(true));
-}
+    clone.querySelectorAll('[id]').forEach((element) => {
+      element.removeAttribute('id');
+    });
 
-const arti5 = document.getElementById('arti5');
-const arti55 = document.getElementById('arti55');
-if (arti5 && arti55) {
-  const copy5 = arti5.cloneNode(true);
-  arti55.appendChild(copy5);
-}
+    clone.querySelectorAll('[onclick]').forEach((element) => {
+      element.removeAttribute('onclick');
+    });
 
-const arti6 = document.getElementById('arti6');
-const arti66 = document.getElementById('arti66');
-if (arti6 && arti66) {
-  const copy6 = arti6.cloneNode(true);
-  arti66.appendChild(copy6);
-}
+    clone.querySelectorAll('button').forEach((button) => {
+      button.disabled = true;
+      button.style.opacity = '0.7';
+      button.style.cursor = 'default';
+    });
 
-const ktn1 = document.getElementById('ktn1');
-const ktn11 = document.getElementById('ktn11');
-if (ktn1 && ktn11) {
-  const copy7 = ktn1.cloneNode(true);
-  ktn11.appendChild(copy7);
-}
+    clone.querySelectorAll('input').forEach((input) => {
+      input.disabled = true;
+      input.tabIndex = -1;
+      input.style.cursor = 'default';
+    });
 
-const cale1 = document.getElementById('cale1');
-const cale11 = document.getElementById('cale11');
-if (cale1 && cale11) {
-  const copy8 = cale1.cloneNode(true);
-  cale11.appendChild(copy8);
-}
+    target.innerHTML = '';
+    target.appendChild(clone);
+  }
 
-const cale2 = document.getElementById('cale2');
-const cale22 = document.getElementById('cale22');
-if (cale2 && cale22) {
-  const copy9 = cale2.cloneNode(true);
-  cale22.appendChild(copy9);
-}
+  function createInteractiveAlienMatrixModalBody() {
+    const source = document.getElementById('matr4');
+    if (!source) return null;
 
-const matr5 = document.getElementById('matr5');
-const matr55 = document.getElementById('matr55');
-if (matr5 && matr55) {
-  const copy10 = matr5.cloneNode(true);
-  matr55.appendChild(copy10);
-}
+    const clone = source.cloneNode(true);
 
-const matr4 = document.getElementById('matr4');
-const matr44 = document.getElementById('matr44');
-if (matr4 && matr44) {
-  const copy11 = matr4.cloneNode(true);
-  matr44.appendChild(copy11);
-}
+    clone.querySelectorAll('[id]').forEach((element) => {
+      element.removeAttribute('id');
+    });
 
-const matr6 = document.getElementById('matr6');
-const matr66 = document.getElementById('matr66');
-if (matr6 && matr66) {
-  const copy12 = matr6.cloneNode(true);
-  matr66.appendChild(copy12);
-}
+    clone.querySelectorAll('[onclick]').forEach((element) => {
+      element.removeAttribute('onclick');
+    });
 
-const capsuleIds = [
-  'arti00',
-  'arti11',
-  'arti22',
-  'arti33',
-  'arti44b',
-  'arti55',
-  'arti66',
-  'ktn11',
-  'cale11',
-  'cale22',
-  'matr55',
-  'matr44',
-  'matr66',
-];
-const iconsContainer = document.getElementById('capsule-icons');
-const modals = {};
+    clone.querySelectorAll('[data-cw-root]').forEach((element) => {
+      element.removeAttribute('data-cw-initialized');
+    });
 
-capsuleIds.forEach((id) => {
-  const element = document.getElementById(id);
-  if (!element) return;
+    return clone;
+  }
 
-  const title = element.getAttribute('data-title') || id;
+  appendClone('arti0', 'arti00');
+  appendClone('arti1', 'arti11');
+  appendClone('arti2', 'arti22');
+  appendClone('arti3', 'arti33');
 
-  const containerDiv = document.createElement('div');
-  containerDiv.className = 'capsule-preview-container';
-  containerDiv.innerHTML = `
+  const arti4 = document.getElementById('arti4');
+  if (arti4) {
+    const arti44a = document.getElementById('arti44a');
+    const arti44b = document.getElementById('arti44b');
+    if (arti44a) {
+      arti44a.innerHTML = '';
+      arti44a.appendChild(arti4.cloneNode(true));
+    }
+    if (arti44b) {
+      arti44b.innerHTML = '';
+      arti44b.appendChild(arti4.cloneNode(true));
+    }
+  }
+
+  appendClone('arti5', 'arti55');
+  appendClone('arti6', 'arti66');
+  appendClone('ktn1', 'ktn11');
+  appendClone('cale1', 'cale11');
+  appendClone('cale2', 'cale22');
+  appendClone('matr5', 'matr55');
+  createAlienMatrixClone();
+  appendClone('matr6', 'matr66');
+
+  const capsuleIds = [
+    'arti00',
+    'arti11',
+    'arti22',
+    'arti33',
+    'arti44b',
+    'arti55',
+    'arti66',
+    'ktn11',
+    'cale11',
+    'cale22',
+    'matr55',
+    'matr44',
+    'matr66',
+  ];
+  const iconsContainer = document.getElementById('capsule-icons');
+  const modals = {};
+
+  capsuleIds.forEach((id) => {
+    const element = document.getElementById(id);
+    if (!element || !iconsContainer) return;
+
+    const title = element.getAttribute('data-title') || id;
+
+    const containerDiv = document.createElement('div');
+    containerDiv.className = 'capsule-preview-container';
+    containerDiv.innerHTML = `
       <div class="capsule-preview"></div>
       <div class="capsule-title">${title}</div>
     `;
 
-  const previewElement = containerDiv.querySelector('.capsule-preview');
+    const previewElement = containerDiv.querySelector('.capsule-preview');
 
-  const tempDiv = document.createElement('div');
-  tempDiv.innerHTML = element.innerHTML;
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = element.innerHTML;
 
-  const subjectDetails = tempDiv.querySelector('details.info');
+    const subjectDetails = tempDiv.querySelector('details.info');
+    if (subjectDetails) {
+      subjectDetails.remove();
+    }
 
-  if (subjectDetails) {
-    subjectDetails.remove();
-  }
+    const tableContainers = tempDiv.querySelectorAll('div[style*="overflow-x"]');
+    tableContainers.forEach((container) => {
+      const currentStyle = container.getAttribute('style') || '';
+      const newStyle = currentStyle
+        .replace(/overflow-x:\s*auto;?/g, '')
+        .replace(/-webkit-overflow-scrolling:\s*touch;?/g, '');
 
-  const tableContainers = tempDiv.querySelectorAll('div[style*="overflow-x"]');
-  tableContainers.forEach((container) => {
-    const newStyle = container
-      .getAttribute('style')
-      .replace(/overflow-x:\s*auto;?/g, '')
-      .replace(/>\s*-webkit-overflow-scrolling:\s*touch;?/g, '');
-    if (newStyle.trim()) {
-      container.setAttribute('style', newStyle);
+      if (newStyle.trim()) {
+        container.setAttribute('style', newStyle);
+      } else {
+        container.removeAttribute('style');
+      }
+    });
+
+    const titleDecorations = tempDiv.querySelectorAll('div[style*="font-size"]');
+    titleDecorations.forEach((titleDiv) => {
+      if (titleDiv.textContent.includes('⌂') || titleDiv.textContent.includes('{')) {
+        titleDiv.remove();
+      }
+    });
+
+    const contentHTML = tempDiv.innerHTML;
+
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'capsule-preview-content';
+    contentDiv.innerHTML = contentHTML;
+    previewElement.appendChild(contentDiv);
+
+    const measureContainer = document.createElement('div');
+    measureContainer.style.cssText =
+      'position:fixed;top:-9999px;left:-9999px;visibility:hidden;pointer-events:none;width:auto;height:auto;';
+    measureContainer.innerHTML = contentHTML;
+    document.body.appendChild(measureContainer);
+
+    const contentWidth = measureContainer.scrollWidth || 1;
+    const contentHeight = measureContainer.scrollHeight || 1;
+    document.body.removeChild(measureContainer);
+
+    const maxWidth = 180;
+    const maxHeight = 180;
+    const adaptiveZoom = Math.min(maxWidth / contentWidth, maxHeight / contentHeight);
+
+    contentDiv.style.transform = `scale(${adaptiveZoom})`;
+    contentDiv.style.transformOrigin = 'center';
+
+    const modal = document.createElement('div');
+    modal.className = 'capsule-modal';
+    modal.dataset.id = id;
+
+    const modalContent = document.createElement('div');
+    modalContent.className = 'capsule-modal-content';
+
+    const closeButton = document.createElement('button');
+    closeButton.className = 'capsule-modal-close';
+    closeButton.setAttribute('aria-label', 'Fermer');
+    closeButton.innerHTML = '&times;';
+
+    const heading = document.createElement('h2');
+    heading.style.marginTop = '0';
+    heading.style.textAlign = 'center';
+    heading.textContent = title;
+
+    modalContent.appendChild(closeButton);
+    modalContent.appendChild(heading);
+
+    if (id === 'matr44') {
+      const interactiveBody = createInteractiveAlienMatrixModalBody();
+      if (interactiveBody) {
+        modalContent.appendChild(interactiveBody);
+      } else {
+        const fallback = document.createElement('div');
+        fallback.innerHTML = element.innerHTML;
+        modalContent.appendChild(fallback);
+      }
     } else {
-      container.removeAttribute('style');
+      const body = document.createElement('div');
+      body.innerHTML = element.innerHTML;
+      modalContent.appendChild(body);
     }
-  });
 
-  const titleDecorations = tempDiv.querySelectorAll('div[style*="font-size"]');
-  titleDecorations.forEach((titleDiv) => {
-    if (titleDiv.textContent.includes('⌂') || titleDiv.textContent.includes('{')) {
-      titleDiv.remove();
+    modal.appendChild(modalContent);
+
+    document.body.appendChild(modal);
+    modals[id] = modal;
+
+    if (id === 'matr44' && typeof window.initialize4lienCrossword === 'function') {
+      window.initialize4lienCrossword(modalContent);
     }
-  });
 
-  const contentHTML = tempDiv.innerHTML;
+    containerDiv.addEventListener('click', () => {
+      modal.classList.add('active');
+    });
 
-  const contentDiv = document.createElement('div');
-  contentDiv.className = 'capsule-preview-content';
-  contentDiv.innerHTML = contentHTML;
-  previewElement.appendChild(contentDiv);
-
-  const measureContainer = document.createElement('div');
-  measureContainer.style.cssText =
-    'position:fixed;top:-9999px;left:-9999px;visibility:hidden;pointer-events:none;width:auto;height:auto;';
-  measureContainer.innerHTML = contentHTML;
-  document.body.appendChild(measureContainer);
-
-  const contentWidth = measureContainer.scrollWidth;
-  const contentHeight = measureContainer.scrollHeight;
-  document.body.removeChild(measureContainer);
-
-  const maxWidth = 180;
-  const maxHeight = 180;
-  const zoomX = maxWidth / contentWidth;
-  const zoomY = maxHeight / contentHeight;
-  const adaptiveZoom = Math.min(zoomX, zoomY); // Fill to touch one edge
-
-  contentDiv.style.transform = `scale(${adaptiveZoom})`;
-  contentDiv.style.transformOrigin = 'center';
-
-  const modal = document.createElement('div');
-  modal.className = 'capsule-modal';
-  modal.dataset.id = id;
-  modal.innerHTML = `
-      <div class="capsule-modal-content">
-        <button class="capsule-modal-close">✕</button>
-        <h2 style="margin-top: 0; text-align: center;">${title}</h2>
-        ${element.innerHTML}
-      </div>
-    `;
-
-  document.body.appendChild(modal);
-  modals[id] = modal;
-
-  containerDiv.addEventListener('click', () => {
-    modal.classList.add('active');
-  });
-
-  const closeBtn = modal.querySelector('.capsule-modal-close');
-  closeBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    modal.classList.remove('active');
-  });
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
+    const closeBtn = modal.querySelector('.capsule-modal-close');
+    closeBtn.addEventListener('click', (event) => {
+      event.stopPropagation();
       modal.classList.remove('active');
-    }
-  });
+    });
 
-  iconsContainer.appendChild(containerDiv);
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.classList.remove('active');
+      }
+    });
+
+    iconsContainer.appendChild(containerDiv);
+  });
 });

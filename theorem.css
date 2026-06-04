@@ -398,6 +398,35 @@ html[data-theme='dark'] img[src*='feature/OK.png'] {
   font-weight: bold;
 }
 
+.exercise-layout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.5rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.exercise-box {
+  border: 1px solid var(--table-border, currentColor);
+  box-sizing: border-box;
+  flex: 1 1 42em;
+  max-width: 64em;
+  min-width: min(100%, 20em);
+  margin: 0;
+  padding: 16px;
+  text-align: justify;
+}
+
+.exercise-comment {
+  flex: 0 0 auto;
+  max-width: 32em;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
 .exercise-done {
   line-height: 2;
   text-decoration-line: underline;
@@ -570,6 +599,17 @@ html[data-theme='dark'] img[src*='feature/Awkward.png'] {
 .start {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.thesis {
+  margin: 32px auto;
+  max-width: 900px;
+  padding: 18px 22px;
+  text-align: center;
+  white-space: pre-line;
+  line-height: 1.6;
+  border: 1px solid currentColor;
+  background: rgba(127, 127, 127, 0.08);
 }
 
 @media screen and (max-width: 896px) {
@@ -1525,7 +1565,85 @@ html[data-theme='dark'] img[src*='feature/Awkward.png'] {
   width: 7.69%;
 }
 
+.calendar-converter {
+  margin: 0 auto 128px;
+  max-width: 1200px;
+}
+
+.calendar-converter-note {
+  margin: 24px auto;
+  max-width: 980px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.calendar-converter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+  margin-top: 32px;
+}
+
+.calendar-converter-panel {
+  border: 1px solid var(--text-color);
+  padding: 20px;
+  background: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.calendar-converter-panel h4 {
+  margin: 0 0 16px;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.calendar-converter-field {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.calendar-converter-inline-fields {
+  display: grid;
+  grid-template-columns: minmax(90px, 0.7fr) minmax(180px, 1.5fr) minmax(110px, 0.9fr);
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 14px;
+}
+
+.calendar-converter-inline-fields .calendar-converter-field {
+  margin-bottom: 0;
+}
+
+.calendar-converter-field input,
+.calendar-converter-field select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--text-color);
+  background: var(--bg-color);
+  color: var(--text-color);
+  font: inherit;
+  box-sizing: border-box;
+}
+
+.calendar-converter-result {
+  min-height: 120px;
+  padding: 14px;
+  margin-top: 14px;
+  border: 1px solid var(--text-color);
+  line-height: 1.6;
+  white-space: normal;
+  box-sizing: border-box;
+  flex: 1;
+}
+
 @media screen and (max-width: 844px) {
+  .calendar-converter-inline-fields {
+    grid-template-columns: 1fr;
+  }
+
   .calendar-week {
     min-width: 1200px;
   }

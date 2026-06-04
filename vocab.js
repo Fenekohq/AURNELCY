@@ -314,6 +314,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p style="font-size: 0.8em; margin-top: 5px;">${content.summary}</p>
             `;
 
+      if (content.data.school) {
+        popoverHTML += `<div data-detail-type="school" style="margin-top: 8px; font-size: 0.85em;"><em>🎓 ${content.data.school}</em></div>`;
+      }
       if (content.data.implication) {
         popoverHTML += `<div data-detail-type="implication" style="margin-top: 8px; font-size: 0.85em;"><em>⇒ ${content.data.implication}</em></div>`;
       }

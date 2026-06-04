@@ -23,8 +23,10 @@ const writingDates = {
     { "date": "03/11/2024", "title": "Aursyl(nom)", "highlight": true, "kind": "nom" },
     { "date": "26/02/2025", "title": "IUVALCY(nom)", "highlight": true, "kind": "nom" },
     { "date": "07/03/2025", "title": "D⦾MIN⦿'s(nom)", "highlight": true, "kind": "nom" },
+    { "date": "02/04/2025", "title": "AURNELCY(nom)", "highlight": true, "kind": "nom" },
     { "date": "17/04/2025", "title": "Möbius Netwow" },
     { "date": "01/05/2025", "title": "ARc⟁diA(nom)", "highlight": true, "kind": "nom" },
+    { "date": "02/05/2025", "title": "⟁URNELCY(nom)", "highlight": true, "kind": "nom" },
     { "date": "05/05/2025", "title": "CurSEED CurrenTCY" },
     { "date": "05/05/2025", "title": "FekiTruTHako" },
     { "date": "06/05/2025", "title": "Gliobë" },
@@ -49,6 +51,9 @@ const writingDates = {
     { "date": "13/04/2026", "title": "Business" },
     { "date": "23/04/2026", "title": "Gesticul" },
     { "date": "04/05/2026", "title": "Terrien" },
-    { "date": "06/05/2026", "title": "Manipule" }
+    { "date": "05/05/2026", "title": "0K(nom)", "highlight": true, "kind": "nom" },
+    { "date": "06/05/2026", "title": "Manipule" },
+    { "date": "19/05/2026", "title": "Karing" },
+    { "date": "22/05/2026", "title": "Salvation" },
   ]
 };
