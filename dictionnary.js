@@ -1088,15 +1088,16 @@ const vocabularyData = [
   {
     term: "Iacy",
     category: ["IUVALCY", "Lysrua", "UiNo", "Phénotype"],
-    definition: "Bonjour/Bonsoir/Bienvenue.",
+    definition: "'Bonjour/Bonsoir/Bienvenue' ou littéralement 'appartenir à personne'.",
+    school: "Formule de salutation.",
     parent: "Invité Iac/Veldiac",
     meme: "Yashi"
   },
   {
     term: "Terlush・Derlush",
     category: ["Lysrua", "Aursyl", "Vydnitt", "Phénotype"],
-    definition: "Pardon/S'il vous plaît.",
-    school: "Formules de politesse légères ou lourdes du monde lysruéen.",
+    definition: "'Pardon/S'il vous plaît' ou littéralement 'faire de son mieux malgré ses conditions'.",
+    school: "Formules de politesse légères ou lourdes.",
     implication: "[version légère]・[version lourde]",
     parent: "Mlush'Plush",
     meme: "T-T-Terlush・D-D-Derlush"
@@ -1104,14 +1105,16 @@ const vocabularyData = [
   {
     term: "Sublii(s)",
     category: ["Mapnel", "Lysrua", "Nezrog", "Phénotype"],
-    definition: "Merci(exagération).",
+    definition: "'Merci(exagération)' ou littéralement 'pertinence sage'.",
+    school: "Formule de (grand) remerciement.",
     parent: "Semaine Sublime",
     meme: "Subliissssss(jusqu'à épuisement)"
   },
   {
     term: "Atcha",
     category: ["ARc⟁diA", "Lysrua", "Slacpi°", "Phénotype"],
-    definition: "Au revoir.",
+    definition: "'Au revoir' ou littéralement 'ne faire que passer'.",
+    school: "Formule de finition.",
     parent: "aTHaTCHa",
     meme: "Atchoom"
   },
