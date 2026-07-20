@@ -67,6 +67,10 @@
   border-radius: 12px;
   cursor: pointer;
   user-select: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  appearance: none;
   transition: all 0.3s ease;
   border: 1px solid var(--text-color);
   background: var(--bg-color);

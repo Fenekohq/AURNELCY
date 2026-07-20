@@ -38,7 +38,17 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.style.overflow = '';
   }
 
-  openBtn.addEventListener('click', openModal);
+  function handleOpenModal(event) {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    openModal();
+  }
+
+  openBtn.addEventListener('click', handleOpenModal);
+  openBtn.addEventListener('touchend', handleOpenModal, { passive: false });
+  openBtn.addEventListener('pointerup', handleOpenModal);
   closeBtn.addEventListener('click', closeModal);
   overlay.addEventListener('click', closeModal);
 

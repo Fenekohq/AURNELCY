@@ -46,7 +46,7 @@
 
     <div id="navToggleBtn" title="Chapitres"></div>
 
-    <button id="openDictionaryBtn" class="category-tag" style="position: fixed; top: 20px; left: 20px; z-index: 2000; font-size: 1em;">🕮</button>
+    <button id="openDictionaryBtn" class="category-tag" type="button" style="position: fixed; top: 20px; left: 20px; z-index: 6000; font-size: 1em; touch-action: manipulation; -webkit-tap-highlight-color: transparent;">🕮</button>
 
     <button id="highlightStatus" onclick="toggleHighlightMode()" class="category-tag" style="position: fixed; top: 20px; left: 140px; z-index: 2000; font-size: 1em;">🕶</button>
 
@@ -1067,7 +1067,7 @@
             <td>Leqwa<br>Dévore-Novice</td>
             <td>Dévore-Nova</td>
             <td>Thèmes</td>
-            <td>ZigZag<br>Chapitres</td>
+            <td>ZigZag<br>Chapitres<br>Pronoms</td>
             <td>EURÊK⟁</td>
             <td>Terrien</td>
           </tr>
@@ -1308,7 +1308,7 @@
         <button onclick="scrollToSection('Domaines')" class="nav-button-2">Domaines</button>
         <button onclick="scrollToSection('Chrono-Chroma')" class="nav-button-2">Chrono-Chroma</button>
         <button onclick="scrollToSection('Glorieuse_Nation')" class="nav-button-2">Glorieuse Nation</button>
-        <button onclick="scrollToSection('Culte')" class="nav-button-2">Culte</button>
+        <button onclick="scrollToSection('Véléments')" class="nav-button-2">Véléments</button>
         <button onclick="scrollToSection('Le_Syoneme_Sublime')" class="nav-button-2">Le Syoneme Sublime</button>
       </div>
 
@@ -3823,7 +3823,6 @@
                   Essence Harmonieuse
                 Monop%Polym
                   Déperdition Rupturante
-
             Métaphysique
               Admagcoq
                 Aventure
@@ -3870,10 +3869,9 @@
               Mélodie Inépelable
                 Harmonie Organique
             Épreuve
-              Duel Xceptionnel
-                Confrontation du Statu Quo
-                Synthèse Nezkelwac & Admagcoq
-                Délivrance Novicienne
+              Sfivoq
+                Duel Xceptionnel
+                  Délivrance Novicienne
       </pre>
     </div>
 
@@ -7251,8 +7249,6 @@
               Superficiel
               Drogué
               Particulier
-
-              
       </pre>
     </div>
 
@@ -7360,6 +7356,59 @@
         </table>
       </div>
 
+    </div>
+
+    <div class="thesis">
+      Thèse : L'emploi du temps aursylien décrit un rythme civil ordinaire réparti entre sommeil, transport, service, repas, repos et hygiène.
+      Distinction : Il ne doit pas être lu comme une preuve de mauvaiseté en soi ; il présente d'abord une distribution habituelle des créneaux d'activité.
+      Argument : la répétition rend visible comment une semaine fonctionnelle se stabilise par des horaires reconnaissables et socialement partageables.
+      Conséquence : le tableau sert de base comparative pour observer un mode courant d'organisation quotidienne.
+      Limite : son sens dépend des conditions vécues ; une même routine peut être équilibre, contrainte, sécurité ou appauvrissement selon le contexte.
+    </div>
+
+    <h3 style="text-align: center;">Emploi du Temps Aursylien</h3>
+
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+      <table border="1" style="width: max-content;">
+        <thead>
+          <tr>
+                  <th>Heure</th>
+                  <th style="width: 14.28%;">Lundi</th>
+                  <th style="width: 14.28%;">Mardi</th>
+                  <th style="width: 14.28%;">Mercredi</th>
+                  <th style="width: 14.28%;">Jeudi</th>
+                  <th style="width: 14.28%;">Vendredi</th>
+                  <th style="width: 14.28%;">Samedi</th>
+                  <th style="width: 14.28%;">Dimanche</th>
+                </tr>
+        </thead>
+        <tbody>
+          <tr><td>00</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>01</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>02</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>03</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>04</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>05</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>06</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>07</td><td colspan="7">Réveil + Repas</td></tr>
+          <tr><td>08</td><td colspan="6">Transport</td><td>Repos</td></tr>
+          <tr><td>09</td><td colspan="6">Service</td><td>Repos</td></tr>
+          <tr><td>10</td><td colspan="6">Service</td><td>Repos</td></tr>
+          <tr><td>11</td><td colspan="6">Service</td><td>Repos</td></tr>
+          <tr><td>12</td><td colspan="7">Repas</td></tr>
+          <tr><td>13</td><td colspan="6">Service</td><td>Repos</td></tr>
+          <tr><td>14</td><td colspan="6">Service</td><td>Repos</td></tr>
+          <tr><td>15</td><td colspan="6">Service</td><td>Repos</td></tr>
+          <tr><td>16</td><td colspan="6">Transport</td><td>Repos</td></tr>
+          <tr><td>17</td><td colspan="7">Repos</td></tr>
+          <tr><td>18</td><td colspan="7">Repas</td></tr>
+          <tr><td>19</td><td colspan="7">Repos</td></tr>
+          <tr><td>20</td><td colspan="7">Douche</td></tr>
+          <tr><td>21</td><td colspan="7">Repos</td></tr>
+          <tr><td>22</td><td colspan="7">Repos</td></tr>
+          <tr><td>23</td><td colspan="7">Sommeil</td></tr>
+        </tbody>
+      </table>
     </div>
 
     <div class="thesis">
@@ -7475,6 +7524,23 @@
     <p style="text-align: right;">Par dessus la vie, j'ai hâte que ce lieu soit orné de collaborateurs.</p>
 
     <div class="written">13/04/26</div>
+
+
+    <div class="hype-phrase">
+        &gt; = Battre/Meilleur que<br>
+        Les justes &gt; injustes<br>
+        Les bienveillants &gt; les malveillants<br>
+        Les forts &gt; les faibles<br>
+        Les puissants &gt; les impuissants<br>
+        Les riches &gt; les pauvres<br>
+        Les seigneurs &gt; les esclaves<br>
+        777 &gt; 666<br>
+    </div>
+
+    <p class="hype-phrase" style="margin: 32px auto;">
+      ✅Tout ce qu'il y a de plus logique✅<br>
+      Conseil d'ami: identifie toi comme tu le souhaites au mépris des hypocrites.<br>
+    </p>
 
     <div class="thesis">
       Thèse : Monop ou Polym est une inertie qui empêche toutes les formes de satisfaction de sa vie.
@@ -8407,6 +8473,7 @@
 
     <p class="hype-phrase" style="margin: 32px auto;">
       ✅Tout ce qu'il y a de plus normal✅<br>
+      Conseil d'ami: identifie les choses comme tu le souhaites au mépris des orthophonistes.<br>
     </p>
 
     <div class="author">【Télévision Num.001】</div>
@@ -9352,6 +9419,99 @@
 
     </div>
 
+    <div class="thesis">
+      Thèse : L'emploi du temps aurnelcyen décrit un autre découpage du temps, organisé en segments plus nombreux et en activités propres au vocabulaire d'AURNELCY.
+      Distinction : Il ne doit pas être lu comme moralement supérieur par défaut ; il propose une autre manière de classer sommeil, entraînement, service, pensée, laboratoire, repos et dédicace.
+      Argument : sa différence vient du codage temporel et symbolique des créneaux, non d'une opposition simple entre bon rythme et mauvais rythme.
+      Conséquence : le tableau permet de comparer deux régimes de temporalisation sans transformer l'un en faute et l'autre en idéal.
+      Limite : son sens dépend aussi de son usage ; ce rythme peut être pratique, formateur, lourd ou contraignant selon la manière dont il est vécu.
+    </div>
+
+    <h3 style="text-align: center;">Emploi du Temps Aurnelcyen</h3>
+
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+      <table border="1" style="width: 800px; font-size: 0.66em;">
+        <thead>
+          <tr>
+                  <th>Heure</th>
+                  <th style="width: 14.28%;">Cilar</th>
+                  <th style="width: 14.28%;">Ecstel</th>
+                  <th style="width: 14.28%;">Linkar</th>
+                  <th style="width: 14.28%;">Histel</th>
+                  <th style="width: 14.28%;">Kaleidar</th>
+                  <th style="width: 14.28%;">Zigziel</th>
+                  <th style="width: 14.28%;">Nouvarel</th>
+                </tr>
+        </thead>
+        <tbody>
+          <tr><td>00</td><td colspan="6">Sommeil</td><td>Mise à Jour</td></tr>
+          <tr><td>01</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>02</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>03</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>04</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>05</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>06</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>07</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>08</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>09</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>10</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>11</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>12</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>13</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>14</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>15</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>16</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>17</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>18</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>19</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>20</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>21</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>22</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>23</td><td colspan="7">Sommeil</td></tr>
+          <tr><td>24</td><td colspan="6">Réveil + Repas</td><td>Réveil + Eau</td></tr>
+          <tr><td>25</td><td colspan="7">Repos</td></tr>
+          <tr><td>26</td><td colspan="6">Entraînement</td><td>Marche</td></tr>
+          <tr><td>27</td><td colspan="6">Entraînement</td><td>Marche</td></tr>
+          <tr><td>28</td><td colspan="6">Douche</td><td>Baignade Publique</td></tr>
+          <tr><td>29</td><td colspan="7">Transport</td></tr>
+          <tr><td>30</td><td colspan="6">Étude Citoyenne du Respect et de l'Irrespect</td><td>Évaluation Clinique du Citoyen sous la Franchise Fonctionnelle</td></tr>
+          <tr><td>31</td><td colspan="6">Service</td><td>Cerveau</td></tr>
+          <tr><td>32</td><td colspan="6">Service</td><td>Laboratoire</td></tr>
+          <tr><td>33</td><td colspan="6">Service</td><td>Cerveau</td></tr>
+          <tr><td>34</td><td colspan="6">Service</td><td>Laboratoire</td></tr>
+          <tr><td>35</td><td colspan="7">Repos</td></tr>
+          <tr><td>36</td><td colspan="6">Service</td><td>Cerveau</td></tr>
+          <tr><td>37</td><td colspan="6">Service</td><td>Laboratoire</td></tr>
+          <tr><td>38</td><td colspan="6">Service</td><td>Cerveau</td></tr>
+          <tr><td>39</td><td colspan="6">Service</td><td>Laboratoire</td></tr>
+          <tr><td>40</td><td colspan="6">Repas + Repos</td><td>Repos</td></tr>
+          <tr><td>41</td><td colspan="6">Service</td><td>Cerveau</td></tr>
+          <tr><td>42</td><td colspan="6">Service</td><td>Laboratoire</td></tr>
+          <tr><td>43</td><td colspan="6">Service</td><td>Cerveau</td></tr>
+          <tr><td>44</td><td colspan="6">Service</td><td>Laboratoire</td></tr>
+          <tr><td>45</td><td colspan="7">Repos</td></tr>
+          <tr><td>46</td><td colspan="6">Service</td><td>Cerveau</td></tr>
+          <tr><td>47</td><td colspan="6">Service</td><td>Laboratoire</td></tr>
+          <tr><td>48</td><td colspan="6">Service</td><td>Cerveau</td></tr>
+          <tr><td>49</td><td colspan="6">Service</td><td>Laboratoire</td></tr>
+          <tr><td>50</td><td colspan="7">Transport</td></tr>
+          <tr><td>51</td><td colspan="7">Repos</td></tr>
+          <tr><td>52</td><td colspan="6">Repos</td><td>Entraînement</td></tr>
+          <tr><td>53</td><td colspan="6">Repos</td><td>Entraînement</td></tr>
+          <tr><td>54</td><td colspan="6">Repos</td><td>Entraînement</td></tr>
+          <tr><td>55</td><td colspan="7">Repas</td></tr>
+          <tr><td>56</td><td colspan="7">Repos</td></tr>
+          <tr><td>57</td><td colspan="6">Cerveau</td><td>Entraînement</td></tr>
+          <tr><td>58</td><td colspan="6">Repos</td><td>Entraînement</td></tr>
+          <tr><td>59</td><td colspan="6">Cerveau</td><td>Entraînement</td></tr>
+          <tr><td>60</td><td colspan="7">Repos</td></tr>
+          <tr><td>61</td><td colspan="7">Cerveau</td></tr>
+          <tr><td>62</td><td colspan="6">Douche</td><td>Baignade Publique</td></tr>
+          <tr><td>63</td><td colspan="6">Dédicace</td><td>Changement de Saison</td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <div class="author" style="text-align: center;">【Wacwe】</div>
 
     <details class="info">
@@ -9617,126 +9777,126 @@
       Difficulté: 6/10<br>
     </details>
 
-      <div class="thesis">
-        Thèse : Iacy, Terlush, Sublii(s) et Atcha forment un petit lexique de civilité, d'excuse, de gratitude et de départ.
-        Distinction : Ils ne valent pas comme ornements de monde, mais comme gestes verbaux minimaux qui règlent l'entrée, l'échange et la sortie.
-        Argument : La politesse et le respect sont des éléments fondamentaux de la vie sociale, ces mots sont des incantations qui facilitent les interactions avec ses paires.
-        Conséquence : Manufacturer les gens n'est pas l'idée, mais plutôt de les accompagner dans une dynamique de respect mutuel, où chacun peut se sentir reconnu et valorisé.
-        Limite : L'usage de ces mots doit être sincère et adapté au contexte, sinon ils risquent de devenir vides de sens ou même contre-productifs.
-      </div>
+    <div class="thesis">
+      Thèse : Iacy, Terlush, Sublii(s) et Atcha forment un petit lexique de civilité, d'excuse, de gratitude et de départ.
+      Distinction : Ils ne valent pas comme ornements de monde, mais comme gestes verbaux minimaux qui règlent l'entrée, l'échange et la sortie.
+      Argument : La politesse et le respect sont des éléments fondamentaux de la vie sociale, ces mots sont des incantations qui facilitent les interactions avec ses paires.
+      Conséquence : Manufacturer les gens n'est pas l'idée, mais plutôt de les accompagner dans une dynamique de respect mutuel, où chacun peut se sentir reconnu et valorisé.
+      Limite : L'usage de ces mots doit être sincère et adapté au contexte, sinon ils risquent de devenir vides de sens ou même contre-productifs.
+    </div>
 
-      <div class="respect" style="margin: 64px auto;">
+    <div class="respect" style="margin: 64px auto;">
 
-        <dd><b><u>Iacy</u></b>:
-          Bonjour/Bonsoir/Bienvenue.</dd>
+      <dd><b><u>Iacy</u></b>:
+        Bonjour/Bonsoir/Bienvenue.</dd>
 
-        <dd><b><u>Terlush・Derlush</u></b>:
-          Pardon/S'il vous plaît.<br>
-          [version légère]・[version lourde]</dd>
+      <dd><b><u>Terlush・Derlush</u></b>:
+        Pardon/S'il vous plaît.<br>
+        [version légère]・[version lourde]</dd>
 
-        <dd><b><u>Sublii(s)</u></b>:
-          Merci(exagération).</dd>
+      <dd><b><u>Sublii(s)</u></b>:
+        Merci(exagération).</dd>
 
-        <dd><b><u>Atcha</u></b>:
-          Au revoir.</dd>
+      <dd><b><u>Atcha</u></b>:
+        Au revoir.</dd>
 
-      </div>
+    </div>
 
-      <div class="author">【Xyfurn & Vydnitt】</div>
+    <div class="author">【Xyfurn & Vydnitt】</div>
 
-      <details class="info">
-        <summary>Sujet</summary>
-        Type: Code Déontologique<br>
-        Question: Regrets<br>
-        Outil: Respect<br>
-        Éclairage: Fidélité<br>
-        Alignement: Choix Personnel<br>
-        Mouvement: Personnalité<br>
-        Tension: Mise en Pratique<br>
-        Difficulté: 3/10<br>
-      </details>
+    <details class="info">
+      <summary>Sujet</summary>
+      Type: Code Déontologique<br>
+      Question: Regrets<br>
+      Outil: Respect<br>
+      Éclairage: Fidélité<br>
+      Alignement: Choix Personnel<br>
+      Mouvement: Personnalité<br>
+      Tension: Mise en Pratique<br>
+      Difficulté: 3/10<br>
+    </details>
 
-      <h3 id="Dûpprimande" style="text-align: center;">「Dûpprimande」</h3>
+    <h3 id="Dûpprimande" style="text-align: center;">「Dûpprimande」</h3>
 
-      <div class="respect">
+    <div class="respect">
 
-        <p>L'un <strike class="phantomized">doit</strike> admettre la bizarrerie de son espèce jusqu'à la moindre parcelle et lui offrir reconnaissance non pas par l'usage de la parole Iacy mais de sa vrai certitude intentionnelle.</p>
+      <p>L'un <strike class="phantomized">doit</strike> admettre la bizarrerie de son espèce jusqu'à la moindre parcelle et lui offrir reconnaissance non pas par l'usage de la parole Iacy mais de sa vrai certitude intentionnelle.</p>
 
-        <p>L'un <strike class="phantomized">doit</strike> concéder qu'il ne peut subsister sans avoir déjà eu des alliés à ses côtés et notamment que la rareté de sa vie n'est ni qualifiable ni quantifiable par aucun personnage.</p>
+      <p>L'un <strike class="phantomized">doit</strike> concéder qu'il ne peut subsister sans avoir déjà eu des alliés à ses côtés et notamment que la rareté de sa vie n'est ni qualifiable ni quantifiable par aucun personnage.</p>
 
-        <p>L'un <strike class="phantomized">doit</strike> autoriser ce qu'il ressent depuis le berceau de sa chair et de sa psyché, tenter d'y comprendre son origine, sa raison, et les enjeux encourus de son opinion sur celles-ci.</p>
+      <p>L'un <strike class="phantomized">doit</strike> autoriser ce qu'il ressent depuis le berceau de sa chair et de sa psyché, tenter d'y comprendre son origine, sa raison, et les enjeux encourus de son opinion sur celles-ci.</p>
 
-        <p>L'un <strike class="phantomized">doit</strike> accorder de l'espace aux propriétés hors de sa possession, les considérer embêtables pour un temps et une dimension donné en son nom personnalisé d'acteur costumé.</p>
+      <p>L'un <strike class="phantomized">doit</strike> accorder de l'espace aux propriétés hors de sa possession, les considérer embêtables pour un temps et une dimension donné en son nom personnalisé d'acteur costumé.</p>
 
-      </div>
+    </div>
 
-      <div class="written">26/10/25</div>
+    <div class="written">26/10/25</div>
 
-      <p class="hype-phrase" style="margin: 32px auto;">
-        <strike>Est-ce que ça va ?</strike><br>
-        <span class="hidden-text">Est-ce que c'est riche ?</span><br>
-      </p>
+    <p class="hype-phrase" style="margin: 32px auto;">
+      <strike>Est-ce que ça va ?</strike><br>
+      <span class="hidden-text">Est-ce que c'est riche ?</span><br>
+    </p>
 
-      <div class="thesis">
-        Thèse : Le bloc introduit une cartographie à trois entrées : Gliobë comme plan d'ensemble, Mlush'Plush comme tunnel de facettes et YgijfeV comme vague de remplissage et de vacuité.
-        Distinction : Il ne faut pas lire ces noms comme de simples curiosités isolées, mais comme des portes distinctes vers un même espace de représentation.
-        Argument : Le bloc propose une approche multi-facette de la réalité, où Gliobë offre une vision globale, Mlush'Plush explore les détails complexes et YgijfeV incarne les flux d'énergie et de sens qui traversent tout cela.
-        Conséquence : En combinant ces trois perspectives, on peut obtenir une compréhension plus riche et nuancée de la réalité, en naviguant entre les différentes échelles et dimensions de l'expérience.
-        Limite : Cette approche peut être déroutante pour ceux qui cherchent une vision unifiée ou linéaire de la réalité, et nécessite une certaine flexibilité mentale pour jongler avec les différentes facettes et vagues proposées.
-      </div>
+    <div class="thesis">
+      Thèse : Le bloc introduit une cartographie à trois entrées : Gliobë comme plan d'ensemble, Mlush'Plush comme tunnel de facettes et YgijfeV comme vague de remplissage et de vacuité.
+      Distinction : Il ne faut pas lire ces noms comme de simples curiosités isolées, mais comme des portes distinctes vers un même espace de représentation.
+      Argument : Le bloc propose une approche multi-facette de la réalité, où Gliobë offre une vision globale, Mlush'Plush explore les détails complexes et YgijfeV incarne les flux d'énergie et de sens qui traversent tout cela.
+      Conséquence : En combinant ces trois perspectives, on peut obtenir une compréhension plus riche et nuancée de la réalité, en naviguant entre les différentes échelles et dimensions de l'expérience.
+      Limite : Cette approche peut être déroutante pour ceux qui cherchent une vision unifiée ou linéaire de la réalité, et nécessite une certaine flexibilité mentale pour jongler avec les différentes facettes et vagues proposées.
+    </div>
 
-      <div class="definizer" style="text-align: center; font-size: large;">
+    <div class="definizer" style="text-align: center; font-size: large;">
 
-        <dd><b><u>Gliobë</u></b>:
-          Cartographie Emojitique du Plan Lointain aurnelcyen.</dd><br>
+      <dd><b><u>Gliobë</u></b>:
+        Cartographie Emojitique du Plan Lointain aurnelcyen.</dd><br>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr;">
 
-          <div>
-            <dd><b><u>Mlush'Plush</u></b>:
-              Double facette ini-exo tunnel passerelle, vastitude transversale sans mesure propre.<br>
-              Attention à la priorité de lecture linéaire inévitable!<br>
-              Spécialité Implicite Explicite aux goûts variés.<br>
-              Il se représente dans le bandage de la pilosité sur elle-même.</dd><br>
-          </div>
-          <div>
-            <dd><b><u>YgijfeV</u></b>:
-              Vague motrice réceptionnée et renvoyée de friandises fugaces remplies et vides.<br>
-              Poche bouchebéante gonflable insoupçonnée en matière pénétrante.<br>
-              Écosystème//Écouah du Tout et du Rien.<br>
-              Elle est représentée dans la futilité des arbres-ciel.</dd><br>
-          </div>
+        <div>
+          <dd><b><u>Mlush'Plush</u></b>:
+            Double facette ini-exo tunnel passerelle, vastitude transversale sans mesure propre.<br>
+            Attention à la priorité de lecture linéaire inévitable!<br>
+            Spécialité Implicite Explicite aux goûts variés.<br>
+            Il se représente dans le bandage de la pilosité sur elle-même.</dd><br>
         </div>
-
+        <div>
+          <dd><b><u>YgijfeV</u></b>:
+            Vague motrice réceptionnée et renvoyée de friandises fugaces remplies et vides.<br>
+            Poche bouchebéante gonflable insoupçonnée en matière pénétrante.<br>
+            Écosystème//Écouah du Tout et du Rien.<br>
+            Elle est représentée dans la futilité des arbres-ciel.</dd><br>
+        </div>
       </div>
 
-      <div class="author">【Peuple Innokcien】</div>
+    </div>
 
-      <details class="info">
-        <summary>Sujet</summary>
-        Type: Cartographie Emojitique Cosmogonique<br>
-        Question: Réalité<br>
-        Outil: Imagerie Visuelle<br>
-        Éclairage: Symbolisme<br>
-        Alignement: Neutre<br>
-        Mouvement: Bio-Civil<br>
-        Tension: ÇEMiNi! et AurLys<br>
-        Difficulté: 8/10<br>
-      </details>
+    <div class="author">【Peuple Innokcien】</div>
 
-      <h2 id="Gliobë" style="text-align: center;">『Gliobë』</h2>
+    <details class="info">
+      <summary>Sujet</summary>
+      Type: Cartographie Emojitique Cosmogonique<br>
+      Question: Réalité<br>
+      Outil: Imagerie Visuelle<br>
+      Éclairage: Symbolisme<br>
+      Alignement: Neutre<br>
+      Mouvement: Bio-Civil<br>
+      Tension: ÇEMiNi! et AurLys<br>
+      Difficulté: 8/10<br>
+    </details>
 
-      <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-        <table border="1" class="gliobe-table" style="font-size: x-medium;">
-          <thead>
-            <tr>
+    <h2 id="Gliobë" style="text-align: center;">『Gliobë』</h2>
+
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+      <table border="1" class="gliobe-table" style="font-size: x-medium;">
+        <thead>
+          <tr>
           <th colspan="2">Interprétation Concave</th>
           <th colspan="3">Déguisement Courbé</th>
           <th colspan="2">Présentation Convexe</th>
         </tr>
-          </thead>
-          <tbody>
-            <tr>
+        </thead>
+        <tbody>
+          <tr>
           <td data-planet="1"><b>Réalité<br>Lucide</b></td>
           <td data-planet="2"><b>Réalité<br>Onirique</b></td>
           <td data-planet="3"><b>Réalité<br>Mlush(y)<span style="font-size: 0.5em;">(Impressionniste)</span></b></td>
@@ -9745,7 +9905,7 @@
       <td data-planet="6"><b>Réalité<br>Ludique</b></td>
       <td data-planet="7"><b>Réalité <div class="progressive-scale-a">DOMINO</div></b></td>
       </tr>
-            <tr>
+          <tr>
           <td>➵</td>
           <td>↭</td>
           <td>⇢</td>
@@ -9754,7 +9914,7 @@
           <td>⥈</td>
           <td>⮔</td>
         </tr>
-            <tr style="font-weight: bold;">
+          <tr style="font-weight: bold;">
           <td>Mapnel</td>
           <td>IUVALCIUM</td>
           <td>Tunne-Lerre</td>
@@ -9763,7 +9923,7 @@
           <td>ARc⟁diA</td>
           <td>AurLys</td>
         </tr>
-            <tr style="vertical-align: top; font-size: 1em;">
+          <tr style="vertical-align: top; font-size: 1em;">
           <td>🚩<br>
             🤫🤔🙄🥱😪<br>👁️‍🗨️🏹🎯💯📷<br>🧭⌛️✏️📖📍<br>⚖️🥢🕯️💡🗝️<br>🎗️🍼🎀🧶🧸<br>
             🕰️🧪💧🚽💦<br>🛁🧖‍♀️🚿🧴🧼<br>🔬🔭🩺🧫🩸<br>❓🖱️🔍🧬📡<br>💓🩹<br>
@@ -9801,12 +9961,12 @@
             ⏰🔌⚡️🏍️💨<br>🍽️👨‍🍳🍳♨️🧽<br>✊🏆🥇👑⚜️<br>❗⌨️📟⭐🛰️<br>💟🥰<br>
             ☘️</td>
         </tr>
-            <tr style="font-style: italic;">
+          <tr style="font-style: italic;">
           <td colspan="2">-- LEMiNiQ --</td>
           <td colspan="3">== GEMiNiC ==</td>
           <td colspan="2">-- REMiNiK --</td>
         </tr>
-            <tr style="font-size: 0.9em;">
+          <tr style="font-size: 0.9em;">
           <td style="font-size: 3em;">
             🖤🥵
           </td>
@@ -9838,206 +9998,206 @@
             🥶🤍
           </td>
         </tr>
-          </tbody>
-        </table>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="written">06/05/25</div>
+
+    <div id="planetarium-view" style="display: none;">
+      <div id="planetarium-overlay"></div>
+      <div id="planetarium-content"></div>
+    </div>
+
+    <div class="red-text" style="text-align: center; font-size: 2em; margin-bottom: 64px;"><span class="rappel">(RAPPEL)</span>Rouge = Protection</div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; justify-items: center; font-size: large; text-shadow: 0px 0px 10px #FF2400;">
+
+      <div>
+        <dd><b><u>白𝓒α𐌺心αট黒</u></b>:
+          ÉCARLATE ou la Promesse Brisée d'Aursyl/Lysrua.</dd><br>
       </div>
 
-      <div class="written">06/05/25</div>
-
-      <div id="planetarium-view" style="display: none;">
-        <div id="planetarium-overlay"></div>
-        <div id="planetarium-content"></div>
+      <div>
+        <dd><b><u>⼰ㄈ🜆ꡙҼ7</u></b>:
+          SCARLET ou la Déclaration sur papier non-papier.</dd><br>
       </div>
 
-      <div class="red-text" style="text-align: center; font-size: 2em; margin-bottom: 64px;"><span class="rappel">(RAPPEL)</span>Rouge = Protection</div>
+    </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr; justify-items: center; font-size: large; text-shadow: 0px 0px 10px #FF2400;">
+    <div class="ecarlet-tables" style="display: grid; grid-template-columns: 1fr 1fr; text-shadow: 0px 0px 10px #FF2400; align-items: center; gap: 20px;">
 
-        <div>
-          <dd><b><u>白𝓒α𐌺心αট黒</u></b>:
-            ÉCARLATE ou la Promesse Brisée d'Aursyl/Lysrua.</dd><br>
-        </div>
+      <div class="ecarlet" style="text-align: left;">
 
-        <div>
-          <dd><b><u>⼰ㄈ🜆ꡙҼ7</u></b>:
-            SCARLET ou la Déclaration sur papier non-papier.</dd><br>
-        </div>
-
-      </div>
-
-      <div class="ecarlet-tables" style="display: grid; grid-template-columns: 1fr 1fr; text-shadow: 0px 0px 10px #FF2400; align-items: center; gap: 20px;">
-
-        <div class="ecarlet" style="text-align: left;">
-
-          <table border="1" style="font-size: large;">
-            <thead>
-              <tr>
+        <table border="1" style="font-size: large;">
+          <thead>
+            <tr>
             <th colspan="4" style="font-size: 125%">白𝓒α𐌺心αট黒</th>
           </tr>
-            </thead>
-            <tbody>
-              <tr>
+          </thead>
+          <tbody>
+            <tr>
             <td>ÉCARLATE</td>
             <td>Unicode</td>
             <td>Origine</td>
             <td>Sens</td>
           </tr>
-              <tr>
+            <tr>
             <td>É</td>
             <td>白</td>
             <td><ruby>漢字<rt>Sinogramme</rt></ruby></td>
             <td>Blanc</td>
           </tr>
-              <tr>
+            <tr>
             <td>C</td>
             <td>𝓒</td>
             <td>Cursive</td>
             <td>Modèle de Liaison</td>
           </tr>
-              <tr>
+            <tr>
             <td>A</td>
             <td>α</td>
             <td><ruby>ελληνικά<rt>Grec</rt></ruby></td>
             <td>Commencement</td>
           </tr>
-              <tr>
+            <tr>
             <td>R</td>
             <td>𐌺</td>
             <td>Gothique</td>
             <td>Signifié <strike>Dés</strike>institué</td>
           </tr>
-              <tr>
+            <tr>
             <td>L</td>
             <td>心</td>
             <td><ruby>漢字<rt>Sinogramme</rt></ruby></td>
             <td>Esprit/Cœur</td>
           </tr>
-              <tr>
+            <tr>
             <td>A</td>
             <td>α</td>
             <td><ruby>ελληνικά<rt>Grec</rt></ruby></td>
             <td>Commencement</td>
           </tr>
-              <tr>
+            <tr>
             <td>T</td>
             <td>ট</td>
             <td><ruby>বাংলা<rt>Bengali</rt></ruby></td>
             <td>Valeur</td>
           </tr>
-              <tr>
+            <tr>
             <td>E</td>
             <td>黒</td>
             <td><ruby>漢字<rt>Kanji</rt></ruby></td>
             <td>Noir</td>
           </tr>
-            </tbody>
-          </table>
+          </tbody>
+        </table>
 
-        </div>
+      </div>
 
-        <div class="ecarlet" style="text-align: right;">
+      <div class="ecarlet" style="text-align: right;">
 
-          <table border="1" style="font-size: large;">
-            <thead>
-              <tr>
+        <table border="1" style="font-size: large;">
+          <thead>
+            <tr>
             <th colspan="4" style="font-size: 125%">⼰ㄈ🜆ꡙҼ7</th>
           </tr>
-            </thead>
-            <tbody>
-              <tr>
+          </thead>
+          <tbody>
+            <tr>
               <td>SCARLET</td>
               <td>Unicode</td>
               <td>Origin</td>
               <td>Meaning</td>
             </tr>
-              <tr>
+            <tr>
               <td>S</td>
               <td>⼰</td>
               <td><ruby>漢字<rt>Sinogram</rt></ruby></td>
               <td>Self</td>
             </tr>
-              <tr>
+            <tr>
               <td>C</td>
               <td>ㄈ</td>
               <td><ruby>ㄅㄆㄇㄈ<rt>Bopomofo</rt></ruby></td>
               <td>Phonic</td>
             </tr>
-              <tr>
+            <tr>
               <td>🜇</td>
               <td>🜆</td>
               <td>Alchemy</td>
               <td>aqua regia</td>
             </tr>
-              <tr>
+            <tr>
               <td>L</td>
               <td>ꡙ</td>
               <td><span style="display: inline-block; line-height: 1; font-size: 50%"><ruby>ꡏꡡꡃ<rt style="font-size: 100%">'Phags-pa</rt></ruby><br>ꡣꡡꡙ<br>ꡐꡜꡞ</span></td>
               <td>Duality Hypnosis</td>
             </tr>
-              <tr>
+            <tr>
               <td>E</td>
               <td>Ҽ</td>
               <td><ruby>Аԥсшәа<rt>Abkhazian</rt></ruby></td>
               <td>C Crossing Self</td>
             </tr>
-              <tr>
+            <tr>
               <td>T</td>
               <td>7</td>
               <td><ruby>1337<rt>Leet Speak</rt></ruby></td>
               <td>Seven Realities</td>
             </tr>
-            </tbody>
-          </table>
-
-        </div>
+          </tbody>
+        </table>
 
       </div>
 
-      <div class="thesis">
-        Thèse : Le triptyque ÇEMiNi! propose trois manières de se rapporter au réel : immersion, surplomb et composition.
-        Distinction : Il ne s'agit pas de variantes esthétiques secondaires, mais de régimes de perception et d'agencement.
-        Argument : Chaque approche offre une expérience différente de la réalité, que ce soit en se plongeant dedans, en la contemplant de loin ou en la construisant à partir de ses éléments constitutifs.
-        Conséquence : En explorant ces trois régimes, on peut enrichir notre compréhension du monde et de nous-mêmes, en adoptant des perspectives complémentaires qui nous permettent de naviguer entre l'intimité, la distance et la créativité.
-        Limite : Ces régimes ne sont pas exclusifs les uns des autres, et il est possible de les combiner ou de les alterner selon les besoins et les contextes, mais cela peut aussi entraîner une certaine confusion ou dispersion si on ne sait pas les maîtriser.
-      </div>
+    </div>
 
-      <div style="margin: 64px auto;">
-        <div style="font-size: large;">
-          <div style="text-align: center;">
-            <dd><b><u>ÇEMiNi!</u></b>:
-              Trinité Stimulatoire ands.ot.rus la Réalité ! ?lush.<br>
-              [SYL｜LYS]</dd><br>
-            <div style="display: grid; grid-template-columns: 1fr 1fr;">
-              <div>
-                <dd><b><u>LEMiNiQ</u></b>:
-                  dans.autour la Réalité Lucide Onirique Mlush.<br>
-                  [Secret｜SycrⒺt]</dd><br>
-              </div>
-              <div>
-                <dd><b><u>REMiNiK</u></b>:
-                  sur.autour la Réalité DOMINO Ludique Plush.<br>
-                  [Sélection｜SylectiΩn]</dd><br>
-              </div>
+    <div class="thesis">
+      Thèse : Le triptyque ÇEMiNi! propose trois manières de se rapporter au réel : immersion, surplomb et composition.
+      Distinction : Il ne s'agit pas de variantes esthétiques secondaires, mais de régimes de perception et d'agencement.
+      Argument : Chaque approche offre une expérience différente de la réalité, que ce soit en se plongeant dedans, en la contemplant de loin ou en la construisant à partir de ses éléments constitutifs.
+      Conséquence : En explorant ces trois régimes, on peut enrichir notre compréhension du monde et de nous-mêmes, en adoptant des perspectives complémentaires qui nous permettent de naviguer entre l'intimité, la distance et la créativité.
+      Limite : Ces régimes ne sont pas exclusifs les uns des autres, et il est possible de les combiner ou de les alterner selon les besoins et les contextes, mais cela peut aussi entraîner une certaine confusion ou dispersion si on ne sait pas les maîtriser.
+    </div>
+
+    <div style="margin: 64px auto;">
+      <div style="font-size: large;">
+        <div style="text-align: center;">
+          <dd><b><u>ÇEMiNi!</u></b>:
+            Trinité Stimulatoire ands.ot.rus la Réalité ! ?lush.<br>
+            [SYL｜LYS]</dd><br>
+          <div style="display: grid; grid-template-columns: 1fr 1fr;">
+            <div>
+              <dd><b><u>LEMiNiQ</u></b>:
+                dans.autour la Réalité Lucide Onirique Mlush.<br>
+                [Secret｜SycrⒺt]</dd><br>
             </div>
-            <dd><b><u>GEMiNiC</u></b>:
-              dans.autour.sur la Réalité CoqUiNe DOMINO Mlush'Plush YgijfeV.<br>
-              [Syllepse｜Syllæps]</dd><br>
+            <div>
+              <dd><b><u>REMiNiK</u></b>:
+                sur.autour la Réalité DOMINO Ludique Plush.<br>
+                [Sélection｜SylectiΩn]</dd><br>
+            </div>
           </div>
+          <dd><b><u>GEMiNiC</u></b>:
+            dans.autour.sur la Réalité CoqUiNe DOMINO Mlush'Plush YgijfeV.<br>
+            [Syllepse｜Syllæps]</dd><br>
         </div>
       </div>
+    </div>
 
-      <div class="syllism-tables">
-        <table border="1" class="syllism">
-          <thead>
-            <tr>
+    <div class="syllism-tables">
+      <table border="1" class="syllism">
+        <thead>
+          <tr>
           <th>ÇEMiNi!</th>
           <th colspan="6">SYL</th>
           <th style="width:1em;">｜</th>
           <th colspan="6">LYS</th>
         </tr>
-          </thead>
-          <tbody>
-            <tr>
+        </thead>
+        <tbody>
+          <tr>
             <td>LEMiNiQ</td>
             <td>S</td>
             <td>E</td>
@@ -10053,7 +10213,7 @@
             <td>Y</td>
             <td>S</td>
           </tr>
-            <tr>
+          <tr>
             <td>GEMiNiC</td>
             <td>SY</td>
             <td>LL</td>
@@ -10069,7 +10229,7 @@
             <td>LL</td>
             <td>YS</td>
           </tr>
-            <tr>
+          <tr>
             <td>REMiNiK</td>
             <td>SÉL</td>
             <td>ECT</td>
@@ -10085,199 +10245,199 @@
             <td>TCE</td>
             <td>LYS</td>
           </tr>
-          </tbody>
-        </table>
-      </div>
+        </tbody>
+      </table>
+    </div>
 
-      <div class="author">【Uewij & UiNo】</div>
+    <div class="author">【Uewij & UiNo】</div>
 
-      <details class="info">
-        <summary>Sujet</summary>
-        Type: Cadre de Codification<br>
-        Question: Couches Supérieures<br>
-        Outil: Néologique<br>
-        Éclairage: Serpent qui se mord la queue<br>
-        Alignement: Pédagogique<br>
-        Mouvement: Enfantin<br>
-        Tension: ÇEMiNi!<br>
-        Difficulté: 3/10<br>
-      </details>
+    <details class="info">
+      <summary>Sujet</summary>
+      Type: Cadre de Codification<br>
+      Question: Couches Supérieures<br>
+      Outil: Néologique<br>
+      Éclairage: Serpent qui se mord la queue<br>
+      Alignement: Pédagogique<br>
+      Mouvement: Enfantin<br>
+      Tension: ÇEMiNi!<br>
+      Difficulté: 3/10<br>
+    </details>
 
-      <h3 id="Silhouette_Lisante">「Silhouette Lisante」</h3>
+    <h3 id="Silhouette_Lisante">「Silhouette Lisante」</h3>
 
-      <p>
-        [<span class="hmode">SycrⒺt</span>] Les ballons sont perdus, il n'y a désormais plus que place aux hypothèses!
-        Les concernés vont cracker, ça mijote quelque chose le connaissant.
-        Il n'a pas pu se volatiliser à moins que je rêve.
-        Ouah te voilà à inquiéter tout le monde, des casses-pieds… c'est ce que je voulais moi ?
-        Ce ballon pourrait bien survenir comme moi-même par des extraterrestres fragmentés.
-      </p>
+    <p>
+      [<span class="hmode">SycrⒺt</span>] Les ballons sont perdus, il n'y a désormais plus que place aux hypothèses!
+      Les concernés vont cracker, ça mijote quelque chose le connaissant.
+      Il n'a pas pu se volatiliser à moins que je rêve.
+      Ouah te voilà à inquiéter tout le monde, des casses-pieds… c'est ce que je voulais moi ?
+      Ce ballon pourrait bien survenir comme moi-même par des extraterrestres fragmentés.
+    </p>
 
-      <p>
-        [<span class="hmode">Syllæps</span>] J'ai toujours pas pigé le truc, pourtant tout le monde me dit que c'est important.
-        Qu'est ce qu'on entend par là, comme si c'était évident ?
-        Je veux avoir la classe mais je devrais probablement m'amuser en même temps.
-        Transmission faite, on arrête tout de suite de plaisanter avec l'autorité.
-        Mon expérience peut décupler d'un simple gage de remerciement.
-      </p>
+    <p>
+      [<span class="hmode">Syllæps</span>] J'ai toujours pas pigé le truc, pourtant tout le monde me dit que c'est important.
+      Qu'est ce qu'on entend par là, comme si c'était évident ?
+      Je veux avoir la classe mais je devrais probablement m'amuser en même temps.
+      Transmission faite, on arrête tout de suite de plaisanter avec l'autorité.
+      Mon expérience peut décupler d'un simple gage de remerciement.
+    </p>
 
-      <p>
-        [<span class="hmode">SylectiΩn</span>] L'argument ultime juste ici, où ?
-        Localisation la plus locale, ma troupe ne se plaint pas.
-        Excusez-moi d'être biaisé mais les mots pour tous sont fades.
-        On choisi quand c'est trop tard pour choisir à la propre.
-        Ce n'est pas un hasard si la vie choisi la vie engagé, après il y a une foule de <strike>blèmes</strike>.
-      </p>
+    <p>
+      [<span class="hmode">SylectiΩn</span>] L'argument ultime juste ici, où ?
+      Localisation la plus locale, ma troupe ne se plaint pas.
+      Excusez-moi d'être biaisé mais les mots pour tous sont fades.
+      On choisi quand c'est trop tard pour choisir à la propre.
+      Ce n'est pas un hasard si la vie choisi la vie engagé, après il y a une foule de <strike>blèmes</strike>.
+    </p>
 
-      <div class="written">05/07/25</div>
+    <div class="written">05/07/25</div>
 
-      <div class="green-text" style="text-align: center; font-size: 2em; margin-bottom: 64px;"><span class="rappel">(RAPPEL)</span>Vert = Révolution</div>
+    <div class="green-text" style="text-align: center; font-size: 2em; margin-bottom: 64px;"><span class="rappel">(RAPPEL)</span>Vert = Révolution</div>
 
-      <div style="text-align: center;">
-        <dd style="text-shadow: 0px 0px 10px #7F00FF;"><b><u>⮟ЮꡙΞԵ</u></b>:
-          VIOLET ou la Prouesse Saugrenue des querelles spectrales.</dd><br>
-      </div>
+    <div style="text-align: center;">
+      <dd style="text-shadow: 0px 0px 10px #7F00FF;"><b><u>⮟ЮꡙΞԵ</u></b>:
+        VIOLET ou la Prouesse Saugrenue des querelles spectrales.</dd><br>
+    </div>
 
-      <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 64px;">
-        <table border="1" style="font-size: large; text-shadow: 0px 0px 10px #7F00FF;">
-          <thead>
-            <tr>
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 64px;">
+      <table border="1" style="font-size: large; text-shadow: 0px 0px 10px #7F00FF;">
+        <thead>
+          <tr>
           <th colspan="4" style="font-size: 125%">⮟ЮꡙΞԵ</th>
         </tr>
-          </thead>
-          <tbody>
-            <tr>
+        </thead>
+        <tbody>
+          <tr>
             <td>VIOLET</td>
             <td>Unicode</td>
             <td>Origin</td>
             <td>Meaning</td>
           </tr>
-            <tr>
+          <tr>
             <td>V</td>
             <td>⮟</td>
             <td>Downwards Arrowhead</td>
             <td>Current Position</td>
           </tr>
-            <tr>
+          <tr>
             <td>IO</td>
             <td>Ю</td>
             <td><ruby>Кириллица<rt>Cyrillic</rt></ruby></td>
             <td>You</td>
           </tr>
-            <tr>
+          <tr>
             <td>L</td>
             <td>ꡙ</td>
             <td><span style="display: inline-block; line-height: 1; font-size: 33%"><ruby>ꡏꡡꡃ<rt style="font-size: 100%">'Phags-pa</rt></ruby><br>ꡣꡡꡙ<br>ꡐꡜꡞ</span>
             <td>Duality Hypnosis</td>
           </tr>
-            <tr>
+          <tr>
             <td>E</td>
             <td>Ξ</td>
             <td><ruby>ελληνικά<rt>Greek</rt></ruby>
             <td>Complexity</td>
           </tr>
-            <tr>
+          <tr>
             <td>T</td>
             <td>Ե</td>
             <td><ruby>Հայերեն<rt>Armenian</rt></ruby></td>
             <td>Versatility</td>
           </tr>
-          </tbody>
-        </table>
-      </div>
+        </tbody>
+      </table>
+    </div>
 
-      <div class="thesis">
-        Thèse : Cette section met en parallèle deux trinités : ZooZaZe comme forces de culture et Z옹Z아Z웨 comme vitesses ou styles de mise en mouvement.
-        Distinction : Il ne s'agit pas d'un simple doublon, mais d'une correspondance entre fonctions formatrices et régimes d'exécution.
-        Argument : Les forces de culture représentent des dynamiques de croissance, d'affranchissement et de passage, tandis que les vitesses de mise en mouvement incarnent des rythmes de guerre, de paix et d'émulation.
-        Conséquence : En comprenant ces correspondances, on peut mieux saisir les différentes manières dont les forces et les vitesses interagissent pour façonner les processus de transformation et d'évolution, que ce soit dans le domaine de la culture ou dans celui de l'action.
-        Limite : Ces correspondances ne sont pas rigides ni exclusives, et il est possible de trouver des nuances ou des exceptions selon les contextes, mais elles offrent néanmoins un cadre de réflexion utile pour appréhender les dynamiques complexes à l'œuvre dans les phénomènes culturels et sociaux.
-      </div>
+    <div class="thesis">
+      Thèse : Cette section met en parallèle deux trinités : ZooZaZe comme forces de culture et Z옹Z아Z웨 comme vitesses ou styles de mise en mouvement.
+      Distinction : Il ne s'agit pas d'un simple doublon, mais d'une correspondance entre fonctions formatrices et régimes d'exécution.
+      Argument : Les forces de culture représentent des dynamiques de croissance, d'affranchissement et de passage, tandis que les vitesses de mise en mouvement incarnent des rythmes de guerre, de paix et d'émulation.
+      Conséquence : En comprenant ces correspondances, on peut mieux saisir les différentes manières dont les forces et les vitesses interagissent pour façonner les processus de transformation et d'évolution, que ce soit dans le domaine de la culture ou dans celui de l'action.
+      Limite : Ces correspondances ne sont pas rigides ni exclusives, et il est possible de trouver des nuances ou des exceptions selon les contextes, mais elles offrent néanmoins un cadre de réflexion utile pour appréhender les dynamiques complexes à l'œuvre dans les phénomènes culturels et sociaux.
+    </div>
 
-      <div style="display: grid; grid-template-columns: 1fr 1fr;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr;">
 
-        <div>
-          <dd><b><u><span class="rappel">(RAPPEL)</span>
+      <div>
+        <dd><b><u><span class="rappel">(RAPPEL)</span>
             ZooZaZe</u></b>:
-            Trinité Cultivatrice (JooQooBoo - aLIaKKaHH - eRUeGGeHH)<br>
-            <i style="font-size: 0.8em;">Simplifiant - Forces</i>
-          </dd><br>
-        </div>
-        <div>
-          <dd><b><u><ruby>Z옹Z아Z웨<rt><span class="code-prompt">ZongZyaZwe</span></rt></ruby></u></b>:
-            Trinité Cantinière (J옹Q옹B옹 - 아LI아KK아HH - 웨RU웨GG웨HH)<br>
-            <i style="font-size: 0.8em;">Simplifiant - Vitesse</i>
-          </dd><br>
-        </div>
-        <div>
-          <dd><b><u><span class="rappel">(RAPPEL)</span>
+          Trinité Cultivatrice (JooQooBoo - aLIaKKaHH - eRUeGGeHH)<br>
+          <i style="font-size: 0.8em;">Simplifiant - Forces</i>
+        </dd><br>
+      </div>
+      <div>
+        <dd><b><u><ruby>Z옹Z아Z웨<rt><span class="code-prompt">ZongZyaZwe</span></rt></ruby></u></b>:
+          Trinité Cantinière (J옹Q옹B옹 - 아LI아KK아HH - 웨RU웨GG웨HH)<br>
+          <i style="font-size: 0.8em;">Simplifiant - Vitesse</i>
+        </dd><br>
+      </div>
+      <div>
+        <dd><b><u><span class="rappel">(RAPPEL)</span>
             JooQooBoo</u></b>:
-            Hostilité macabrique affranchie des lois établies ensemanceuse de plosions imparables.<br>
-            <i style="font-size: 0.8em;">Simplifiant - Jeu du Cou Menacé</i>
-          </dd><br>
-        </div>
-        <div>
-          <dd><b><u><ruby>J옹Q옹B옹<rt><span class="code-prompt">JongQongBong</span></rt></ruby></u></b>:
-            Guerre vectorielle, vasculaire et pronominale à l'encontre de l'exigence ontologique carcérale.<br>
-            <i style="font-size: 0.8em;">Simplifiant - Assaut Con Gravissime</i>
-          </dd><br>
-        </div>
-        <div>
-          <dd><b><u><span class="rappel">(RAPPEL)</span>
+          Hostilité macabrique affranchie des lois établies ensemanceuse de plosions imparables.<br>
+          <i style="font-size: 0.8em;">Simplifiant - Jeu du Cou Menacé</i>
+        </dd><br>
+      </div>
+      <div>
+        <dd><b><u><ruby>J옹Q옹B옹<rt><span class="code-prompt">JongQongBong</span></rt></ruby></u></b>:
+          Guerre vectorielle, vasculaire et pronominale à l'encontre de l'exigence ontologique carcérale.<br>
+          <i style="font-size: 0.8em;">Simplifiant - Assaut Con Gravissime</i>
+        </dd><br>
+      </div>
+      <div>
+        <dd><b><u><span class="rappel">(RAPPEL)</span>
             aLIaKKaHH</u></b>:
-            Dissolution affiliatrice affranchie des coercitions prescrites enrôleuse d'horizons inexplorés.<br>
-            <i style="font-size: 0.8em;">Simplifiant - Alimentation Accentueuse de Soulagement</i>
-          </dd><br>
-        </div>
-        <div>
-          <dd><b><u><ruby>야LI야KK야HH<rt><span class="code-prompt">yaLIyaKKyaHH</span></rt></ruby></u></b>:
-            Paix éthique, syntropique et pronominale à l'inverse de tout modèle dogmatique cruel.<br>
-            <i style="font-size: 0.8em;">Simplifiant - Aliage Consolidé avec Soin</i>
-          </dd><br>
-        </div>
-        <div>
-          <dd><b><u><span class="rappel">(RAPPEL)</span>
+          Dissolution affiliatrice affranchie des coercitions prescrites enrôleuse d'horizons inexplorés.<br>
+          <i style="font-size: 0.8em;">Simplifiant - Alimentation Accentueuse de Soulagement</i>
+        </dd><br>
+      </div>
+      <div>
+        <dd><b><u><ruby>야LI야KK야HH<rt><span class="code-prompt">yaLIyaKKyaHH</span></rt></ruby></u></b>:
+          Paix éthique, syntropique et pronominale à l'inverse de tout modèle dogmatique cruel.<br>
+          <i style="font-size: 0.8em;">Simplifiant - Aliage Consolidé avec Soin</i>
+        </dd><br>
+      </div>
+      <div>
+        <dd><b><u><span class="rappel">(RAPPEL)</span>
             eRUeGGeHH</u></b>:
-            Passage didactique affranchie des limitations formées animateur d'exterrogations impénétrables.<br>
-            <i style="font-size: 0.8em;">Simplifiant - Éruption Égayeuse d'Interpellations</i>
-          </dd><br>
-        </div>
-        <div>
-          <dd><b><u><ruby>웨RU웨GG웨HH<rt><span class="code-prompt">weRUweGGweHH</span></rt></ruby></u></b>:
-            Émulation existentielle, inestancielle et nominale à revers des édifications définitives invariables.<br>
-            <i style="font-size: 0.8em;">Simplifiant - Personnalisation des Œufs Captivants</i>
-          </dd><br>
-        </div>
-
+          Passage didactique affranchie des limitations formées animateur d'exterrogations impénétrables.<br>
+          <i style="font-size: 0.8em;">Simplifiant - Éruption Égayeuse d'Interpellations</i>
+        </dd><br>
+      </div>
+      <div>
+        <dd><b><u><ruby>웨RU웨GG웨HH<rt><span class="code-prompt">weRUweGGweHH</span></rt></ruby></u></b>:
+          Émulation existentielle, inestancielle et nominale à revers des édifications définitives invariables.<br>
+          <i style="font-size: 0.8em;">Simplifiant - Personnalisation des Œufs Captivants</i>
+        </dd><br>
       </div>
 
-      <div class="author">【Logjēm & Slacpi°】</div>
+    </div>
 
-      <details class="info">
-        <summary>Sujet</summary>
-        Type: Taxinomie des Sources de Pouvoir<br>
-        Question: Nourriture<br>
-        Outil: Forces<br>
-        Éclairage: Régénération<br>
-        Alignement: Vie Continuante<br>
-        Mouvement: Sauvegarde de l'Espèce<br>
-        Tension: Cultivation et Cantine<br>
-        Difficulté: 1/10<br>
-      </details>
+    <div class="author">【Logjēm & Slacpi°】</div>
 
-      <div class="zoozaze-2nd">
+    <details class="info">
+      <summary>Sujet</summary>
+      Type: Taxinomie des Sources de Pouvoir<br>
+      Question: Nourriture<br>
+      Outil: Forces<br>
+      Éclairage: Régénération<br>
+      Alignement: Vie Continuante<br>
+      Mouvement: Sauvegarde de l'Espèce<br>
+      Tension: Cultivation et Cantine<br>
+      Difficulté: 1/10<br>
+    </details>
 
-        <div class="zoozaze-2nd-item" style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 3em;">
-          <table border="0" style="font-size: 1.3em; background: var(--table-bg,rgba(255,255,255,0.03)); border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); overflow: hidden; min-width: 500px;">
-            <thead>
-              <tr style="background: var(--thead-bg,rgba(0,0,0,0.07));">
+    <div class="zoozaze-2nd">
+
+      <div class="zoozaze-2nd-item" style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 3em;">
+        <table border="0" style="font-size: 1.3em; background: var(--table-bg,rgba(255,255,255,0.03)); border-radius: 14px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); overflow: hidden; min-width: 500px;">
+          <thead>
+            <tr style="background: var(--thead-bg,rgba(0,0,0,0.07));">
               <th colspan="3" style="padding: 0.5em 0.7em;"><ruby>ZooZaZe<rt>Trinité Cultivatrice</rt></ruby></th>
               <th style="width: 1em;">|</th>
               <th colspan="3" style="padding: 0.5em 0.7em;"><ruby>웨Z야Z옹Z<rt>Trinité Cantinière</rt></ruby></th>
             </tr>
-            </thead>
-            <tbody>
-              <tr>
+          </thead>
+          <tbody>
+            <tr>
               <td style="padding: 0.3em 0.7em;">Joo</td>
               <td style="padding: 0.3em 0.7em;">Qoo</td>
               <td style="padding: 0.3em 0.7em;">Boo</td>
@@ -10286,7 +10446,7 @@
               <td style="padding: 0.3em 0.7em;">옹Q</td>
               <td style="padding: 0.3em 0.7em;">옹J</td>
             </tr>
-              <tr>
+            <tr>
               <td style="padding: 0.3em 0.7em;">aLI</td>
               <td style="padding: 0.3em 0.7em;">aKK</td>
               <td style="padding: 0.3em 0.7em;">aHH</td>
@@ -10295,7 +10455,7 @@
               <td style="padding: 0.3em 0.7em;">KK야</td>
               <td style="padding: 0.3em 0.7em;">IL야</td>
             </tr>
-              <tr>
+            <tr>
               <td style="padding: 0.3em 0.7em;">eRU</td>
               <td style="padding: 0.3em 0.7em;">eGG</td>
               <td style="padding: 0.3em 0.7em;">eHH</td>
@@ -10304,188 +10464,361 @@
               <td style="padding: 0.3em 0.7em;">GG웨</td>
               <td style="padding: 0.3em 0.7em;">UR웨</td>
             </tr>
-            </tbody>
-          </table>
-        </div>
+          </tbody>
+        </table>
+      </div>
 
-        <div class="zoozaze-2nd-item">
+      <div class="zoozaze-2nd-item">
 
-          <h3 id="Mana">「Mana」</h3>
+        <h3 id="Mana">「Mana」</h3>
 
-          <p>Puissance <span class="hmode">J옹Q옹B옹</span> à la nécessité martiale exécute le génie combatif ' Draps Parfaits!</p>
+        <p>Puissance <span class="hmode">J옹Q옹B옹</span> à la nécessité martiale exécute le génie combatif ' Draps Parfaits!</p>
 
-          <p>Puissance <span class="hmode">야LI야KK야HH</span> aux grâces majestueuses apparaît la résurrection adorable " Cendres et Fortune.</p>
+        <p>Puissance <span class="hmode">야LI야KK야HH</span> aux grâces majestueuses apparaît la résurrection adorable " Cendres et Fortune.</p>
 
-          <p>Puissance <span class="hmode">웨RU웨GG웨HH</span> aux réceptions estimables demande le code énigmatique " Saveur Méconnaisable ?</p>
+        <p>Puissance <span class="hmode">웨RU웨GG웨HH</span> aux réceptions estimables demande le code énigmatique " Saveur Méconnaisable ?</p>
 
-          <div class="written">17/07/25</div>
-
-        </div>
+        <div class="written">17/07/25</div>
 
       </div>
 
-      <div class="blue-text" style="text-align: center; font-size: 2em; margin-bottom: 64px;"><span class="rappel">(RAPPEL)</span>Bleu = Expansion</div>
+    </div>
 
-      <div style="text-align: center;">
-        <dd style="text-shadow: 0px 0px 10px #00FFFF;"><b><u>ҨყⰎல</u></b>:
-          CYAN ou la Berceuse Cosmopolite au temps de l'incongru.</dd><br>
-      </div>
+    <div class="blue-text" style="text-align: center; font-size: 2em; margin-bottom: 64px;"><span class="rappel">(RAPPEL)</span>Bleu = Expansion</div>
 
-      <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 64px;">
-        <table border="1" style="font-size: large; text-shadow: 0px 0px 10px #00FFFF;">
-          <thead>
-            <tr>
+    <div style="text-align: center;">
+      <dd style="text-shadow: 0px 0px 10px #00FFFF;"><b><u>ҨყⰎல</u></b>:
+        CYAN ou la Berceuse Cosmopolite au temps de l'incongru.</dd><br>
+    </div>
+
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 64px;">
+      <table border="1" style="font-size: large; text-shadow: 0px 0px 10px #00FFFF;">
+        <thead>
+          <tr>
           <th colspan="4" style="font-size: 125%">ҨყⰎல</th>
         </tr>
-          </thead>
-          <tbody>
-            <tr>
+        </thead>
+        <tbody>
+          <tr>
             <td>CYAN</td>
             <td>Unicode</td>
             <td>Origin</td>
             <td>Meaning</td>
           </tr>
-            <tr>
+          <tr>
             <td>C</td>
             <td>Ҩ</td>
             <td><ruby>Аԥсшәа<rt>Abkhazian</rt></ruby></td>
             <td>Sym-Phonic</td>
           </tr>
-            <tr>
+          <tr>
             <td>Y</td>
             <td>ყ</td>
             <td><ruby>ქართული<rt>Georgian</rt></ruby></td>
             <td>Sym-Phonic</td>
           </tr>
-            <tr>
+          <tr>
             <td>A</td>
             <td>Ⰾ</td>
             <td><ruby>ⰳⰾⰰⰳⱁⰾⰻⱌⰰ<rt>Glagolitic</rt></ruby>
             <td>People</td>
           </tr>
-            <tr>
+          <tr>
             <td>N</td>
             <td>ல</td>
             <td><ruby>தமிழ்<rt>Tamil</rt></ruby>
             <td>Common Root</td>
           </tr>
-          </tbody>
-        </table>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="thesis">
+      Thèse : Le bloc articule une ressource de garantie, elzel0lezle, et l'organigramme des Domaines où cette ressource peut se déployer.
+      Distinction : Il ne décrit donc pas une richesse abstraite seule, mais le lien entre une réserve de connexion et les disciplines qu'elle alimente.
+      Argument : L'elzel représente une monnaie sans chiffres dont la valeur est incommensurable.
+      Conséquence : De la même manière que les arbres offrent ce qu'ils produisent, l'humanité fera plus ou moins de même lorsqu'elle est épanouie.
+      Limite : La nature ne fait rien en vain, et il est probable que les domaines où l'elzel se manifeste soient ceux qui sont les plus essentiels à la vie et à la civilisation.
+    </div>
+
+    <div style="margin: 64px auto; font-size: large;">
+
+      <dd><b><u>elzel0lezle</u></b>:
+        Ressource supra-kentronienne de garantie en rencontres fortuites grâce à l'arbre de connexion YgijfeV.<br>
+        Filet interceptant Tra§Vel de la malédiction éternisante des directions cognantes abusives.<br>
+        Proximité civilisationnelle au travers de SCARLET, VIOLET, CYAN, ￣\_(ツ)_/￣ et <span style="filter: blur(2px);">大ටभᲡⰡ</span>.</dd><br>
+
+      <div style="margin-top: 32px;">
+        <dd><b><u>Domaines</u></b>:
+          Organigramme des disciplines <span style="color: #FF2400;">SCARLET</span> <span style="color: #7F00FF;">VIOLET</span> et <span style="color: #00FFFF;">CYAN</span>.</dd><br>
       </div>
 
-      <div class="thesis">
-        Thèse : Le bloc articule une ressource de garantie, elzel0lezle, et l'organigramme des Domaines où cette ressource peut se déployer.
-        Distinction : Il ne décrit donc pas une richesse abstraite seule, mais le lien entre une réserve de connexion et les disciplines qu'elle alimente.
-        Argument : L'elzel représente une monnaie sans chiffres dont la valeur est incommensurable.
-        Conséquence : De la même manière que les arbres offrent ce qu'ils produisent, l'humanité fera plus ou moins de même lorsqu'elle est épanouie.
-        Limite : La nature ne fait rien en vain, et il est probable que les domaines où l'elzel se manifeste soient ceux qui sont les plus essentiels à la vie et à la civilisation.
-      </div>
+    </div>
 
-      <div style="margin: 64px auto; font-size: large;">
+    <div class="author">【Fostrah】</div>
 
-        <dd><b><u>elzel0lezle</u></b>:
-          Ressource supra-kentronienne de garantie en rencontres fortuites grâce à l'arbre de connexion YgijfeV.<br>
-          Filet interceptant Tra§Vel de la malédiction éternisante des directions cognantes abusives.<br>
-          Proximité civilisationnelle au travers de SCARLET, VIOLET, CYAN, ￣\_(ツ)_/￣ et <span style="filter: blur(2px);">大ටभᲡⰡ</span>.</dd><br>
+    <details class="info">
+      <summary>Sujet</summary>
+      Type: Organigramme Exhaustif des Disciplines<br>
+      Question: Matières<br>
+      Outil: Classifications<br>
+      Éclairage: 3 Dimensions<br>
+      Alignement: Compétence Neutre Civil<br>
+      Mouvement: Signes d'Intérêts<br>
+      Tension: Éducation<br>
+      Difficulté: 10/10<br>
+    </details>
 
-        <div style="margin-top: 32px;">
-          <dd><b><u>Domaines</u></b>:
-            Organigramme des disciplines <span style="color: #FF2400;">SCARLET</span> <span style="color: #7F00FF;">VIOLET</span> et <span style="color: #00FFFF;">CYAN</span>.</dd><br>
+    <h3 id="Domaines" style="text-align: center; font-size: 3.0em;">「Domaines」</h3>
+
+    <div class="domains-grid" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+
+      <div style="flex: 1 1 300px; min-width: 250px;">
+        <div class="mindmap">
+          <h3 style="color: #FF2400;">Correctitude Objective</h3>
+          <ul>
+            <li class="discipline">Sciences & Technologies
+              <ul>
+                <li>Mathématiques
+                  <ul>
+                    <li>Géométrie</li>
+                    <li>Statistiques</li>
+                    <li>Épistémologie</li>
+                    <li>Logique</li>
+                  </ul>
+                </li>
+                <li>Morphologie
+                  <ul>
+                    <li>Anatomie</li>
+                    <li>Génétique</li>
+                    <li>Physiologie</li>
+                    <li>Sexologie</li>
+                  </ul>
+                </li>
+                <li>Ethologie</li>
+                <li>Sociologie</li>
+                <li>Chimie
+                  <ul>
+                    <li>Biochimie</li>
+                  </ul>
+                </li>
+                <li>Physique</li>
+                <li>Géologie
+                  <ul>
+                    <li>Hydrologie</li>
+                    <li>Météorologie</li>
+                    <li>Climatologie</li>
+                  </ul>
+                </li>
+                <li>Géographie</li>
+                <li>Biologie
+                  <ul>
+                    <li>Botanique</li>
+                    <li>Zoologie</li>
+                    <li>Écologie</li>
+                    <li>Biodiversité</li>
+                  </ul>
+                </li>
+                <li>Astronomie
+                  <ul>
+                    <li>Cosmologie</li>
+                  </ul>
+                </li>
+                <li>Psychologie
+                  <ul>
+                    <li>Neurosciences</li>
+                  </ul>
+                </li>
+                <li>Médecine
+                  <ul>
+                    <li>Homéostasie</li>
+                  </ul>
+                </li>
+                <li>Évolution</li>
+                <li>Architecture</li>
+                <li>Ingénierie</li>
+                <li>Technologie
+                  <ul>
+                    <li>Électronique</li>
+                    <li>Informatique
+                      <ul>
+                        <li>Programmation</li>
+                        <li>Robotique</li>
+                        <li>Cybernétique</li>
+                        <li>Intelligence Artificielle</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
-
       </div>
 
-      <div class="author">【Fostrah】</div>
+      <div style="flex: 1 1 300px; min-width: 250px;">
+        <div class="mindmap">
+          <h3 style="color: #7F00FF;">Besoins Primaires</h3>
+          <ul>
+            <li class="societe">Société & Vie pratique
+              <ul>
+                <li>Éducation</li>
+                <li>Pédagogie
+                  <ul>
+                    <li>Gestion</li>
+                    <li>Sport</li>
+                    <li>Martialité</li>
+                    <li>Adresse</li>
+                    <li>Droit</li>
+                    <li>Agriculture</li>
+                    <li>Cuisine</li>
+                    <li>Nutrition</li>
+                  </ul>
+                </li>
+                <li>Politique
+                  <ul>
+                    <li>Économie</li>
+                    <li>Transport</li>
+                    <li>Théorie Critique</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-      <details class="info">
-        <summary>Sujet</summary>
-        Type: Organigramme Exhaustif des Disciplines<br>
-        Question: Matières<br>
-        Outil: Classifications<br>
-        Éclairage: 3 Dimensions<br>
-        Alignement: Compétence Neutre Civil<br>
-        Mouvement: Signes d'Intérêts<br>
-        Tension: Éducation<br>
-        Difficulté: 10/10<br>
-      </details>
+      <div style="flex: 1 1 300px; min-width: 250px;">
+        <div class="mindmap">
+          <h3 style="color: #00FFFF;">Personnalisation Imaginative</h3>
+          <ul>
+            <li class="arts">Alchimie & Humanités
+              <ul>
+                <li>Art
+                  <ul>
+                    <li>Construction</li>
+                    <li>Esthétique</li>
+                    <li>Design</li>
+                    <li>Dessin</li>
+                    <li>Littérature</li>
+                    <li>Poésie</li>
+                    <li>Musique</li>
+                    <li>Cinéma</li>
+                    <li>Jeu Vidéo</li>
+                  </ul>
+                </li>
+                <li>Phonétique</li>
+                <li>Linguistique
+                  <ul>
+                    <li>Philologie</li>
+                    <li>Grammaire</li>
+                  </ul>
+                </li>
+                <li>Histoire
+                  <ul>
+                    <li>Anthropologie</li>
+                    <li>Archéologie</li>
+                  </ul>
+                </li>
+                <li>Éthique</li>
+                <li>Métaphysique</li>
+                <li>Dialectique</li>
+                <li>Philosophie
+                  <ul>
+                    <li>Ontologie</li>
+                    <li>Mythologie</li>
+                    <li>Théologie</li>
+                    <li>Ésotérisme</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-      <h3 id="Domaines" style="text-align: center; font-size: 3.0em;">「Domaines」</h3>
+    <div class="written">14/07/25</div>
+
+    <details class="excluded-section">
+      <summary>English Version</summary>
+      <h3 style="text-align: center; font-size: 3.0em;">「Domains」</h3>
 
       <div class="domains-grid" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
 
         <div style="flex: 1 1 300px; min-width: 250px;">
           <div class="mindmap">
-            <h3 style="color: #FF2400;">Correctitude Objective</h3>
+            <h3 style="color: #FF2400;">Objective Correctness</h3>
             <ul>
-              <li class="discipline">Sciences & Technologies
+              <li class="discipline">Science & Technology
                 <ul>
-                  <li>Mathématiques
+                  <li>Mathematics
                     <ul>
-                      <li>Géométrie</li>
-                      <li>Statistiques</li>
-                      <li>Épistémologie</li>
-                      <li>Logique</li>
+                      <li>Geometry</li>
+                      <li>Statistics</li>
+                      <li>Epistemology</li>
+                      <li>Logic</li>
                     </ul>
                   </li>
-                  <li>Morphologie
+                  <li>Morphology
                     <ul>
-                      <li>Anatomie</li>
-                      <li>Génétique</li>
-                      <li>Physiologie</li>
-                      <li>Sexologie</li>
+                      <li>Anatomy</li>
+                      <li>Genetics</li>
+                      <li>Physiology</li>
+                      <li>Sexology</li>
                     </ul>
                   </li>
-                  <li>Ethologie</li>
-                  <li>Sociologie</li>
-                  <li>Chimie
+                  <li>Ethology</li>
+                  <li>Sociology</li>
+                  <li>Chemistry
                     <ul>
-                      <li>Biochimie</li>
+                      <li>Biochemistry</li>
                     </ul>
                   </li>
-                  <li>Physique</li>
-                  <li>Géologie
+                  <li>Physics</li>
+                  <li>Geology
                     <ul>
-                      <li>Hydrologie</li>
-                      <li>Météorologie</li>
-                      <li>Climatologie</li>
+                      <li>Hydrology</li>
+                      <li>Meteorology</li>
+                      <li>Climatology</li>
                     </ul>
                   </li>
-                  <li>Géographie</li>
-                  <li>Biologie
+                  <li>Geography</li>
+                  <li>Biology
                     <ul>
-                      <li>Botanique</li>
-                      <li>Zoologie</li>
-                      <li>Écologie</li>
-                      <li>Biodiversité</li>
+                      <li>Botany</li>
+                      <li>Zoology</li>
+                      <li>Ecology</li>
+                      <li>Biodiversity</li>
                     </ul>
                   </li>
-                  <li>Astronomie
+                  <li>Astronomy
                     <ul>
-                      <li>Cosmologie</li>
+                      <li>Cosmology</li>
                     </ul>
                   </li>
-                  <li>Psychologie
+                  <li>Psychology
                     <ul>
                       <li>Neurosciences</li>
                     </ul>
                   </li>
-                  <li>Médecine
+                  <li>Medicine
                     <ul>
-                      <li>Homéostasie</li>
+                      <li>Homeostasis</li>
                     </ul>
                   </li>
-                  <li>Évolution</li>
+                  <li>Evolution</li>
                   <li>Architecture</li>
-                  <li>Ingénierie</li>
-                  <li>Technologie
+                  <li>Engineering</li>
+                  <li>Technology
                     <ul>
-                      <li>Électronique</li>
-                      <li>Informatique
+                      <li>Electronics</li>
+                      <li>Computer Science
                         <ul>
-                          <li>Programmation</li>
-                          <li>Robotique</li>
-                          <li>Cybernétique</li>
-                          <li>Intelligence Artificielle</li>
+                          <li>Programming</li>
+                          <li>Robotics</li>
+                          <li>Cybernetics</li>
+                          <li>Artificial Intelligence</li>
                         </ul>
                       </li>
                     </ul>
@@ -10498,28 +10831,28 @@
 
         <div style="flex: 1 1 300px; min-width: 250px;">
           <div class="mindmap">
-            <h3 style="color: #7F00FF;">Besoins Primaires</h3>
+            <h3 style="color: #7F00FF;">Primary Needs</h3>
             <ul>
-              <li class="societe">Société & Vie pratique
+              <li class="societe">Society & Practical Life
                 <ul>
-                  <li>Éducation</li>
-                  <li>Pédagogie
+                  <li>Education</li>
+                  <li>Pedagogy
                     <ul>
-                      <li>Gestion</li>
-                      <li>Sport</li>
-                      <li>Martialité</li>
-                      <li>Adresse</li>
-                      <li>Droit</li>
+                      <li>Management</li>
+                      <li>Sports</li>
+                      <li>Martial Arts</li>
+                      <li>Dexterity</li>
+                      <li>Law</li>
                       <li>Agriculture</li>
-                      <li>Cuisine</li>
+                      <li>Cooking</li>
                       <li>Nutrition</li>
                     </ul>
                   </li>
-                  <li>Politique
+                  <li>Politics
                     <ul>
-                      <li>Économie</li>
+                      <li>Economics</li>
                       <li>Transport</li>
-                      <li>Théorie Critique</li>
+                      <li>Critical Theory</li>
                     </ul>
                   </li>
                 </ul>
@@ -10530,45 +10863,45 @@
 
         <div style="flex: 1 1 300px; min-width: 250px;">
           <div class="mindmap">
-            <h3 style="color: #00FFFF;">Personnalisation Imaginative</h3>
+            <h3 style="color: #00FFFF;">Imaginative Personnalization</h3>
             <ul>
-              <li class="arts">Alchimie & Humanités
+              <li class="arts">Alchemy & Humanities
                 <ul>
                   <li>Art
                     <ul>
                       <li>Construction</li>
-                      <li>Esthétique</li>
+                      <li>Aesthetics</li>
                       <li>Design</li>
-                      <li>Dessin</li>
-                      <li>Littérature</li>
-                      <li>Poésie</li>
-                      <li>Musique</li>
-                      <li>Cinéma</li>
-                      <li>Jeu Vidéo</li>
+                      <li>Drawing</li>
+                      <li>Literature</li>
+                      <li>Poetry</li>
+                      <li>Music</li>
+                      <li>Film/Cinema</li>
+                      <li>Video Games</li>
                     </ul>
                   </li>
-                  <li>Phonétique</li>
-                  <li>Linguistique
+                  <li>Phonetics</li>
+                  <li>Linguistics
                     <ul>
-                      <li>Philologie</li>
-                      <li>Grammaire</li>
+                      <li>Philology</li>
+                      <li>Grammar</li>
                     </ul>
                   </li>
-                  <li>Histoire
+                  <li>History
                     <ul>
-                      <li>Anthropologie</li>
-                      <li>Archéologie</li>
+                      <li>Anthropology</li>
+                      <li>Archaeology</li>
                     </ul>
                   </li>
-                  <li>Éthique</li>
-                  <li>Métaphysique</li>
-                  <li>Dialectique</li>
-                  <li>Philosophie
+                  <li>Ethics</li>
+                  <li>Metaphysics</li>
+                  <li>Dialectics</li>
+                  <li>Philosophy
                     <ul>
-                      <li>Ontologie</li>
-                      <li>Mythologie</li>
-                      <li>Théologie</li>
-                      <li>Ésotérisme</li>
+                      <li>Ontology</li>
+                      <li>Mythology</li>
+                      <li>Theology</li>
+                      <li>Esotericism</li>
                     </ul>
                   </li>
                 </ul>
@@ -10578,214 +10911,41 @@
         </div>
       </div>
 
-      <div class="written">14/07/25</div>
+      <div class="written"><span class="hmode">AZ/AZ/AZ</span>/<span class="hmode">ZA/ZA/ZA</span></div>
 
-      <details class="excluded-section">
-        <summary>English Version</summary>
-        <h3 style="text-align: center; font-size: 3.0em;">「Domains」</h3>
+    </details>
 
-        <div class="domains-grid" style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+    <div id="arti5">
 
-          <div style="flex: 1 1 300px; min-width: 250px;">
-            <div class="mindmap">
-              <h3 style="color: #FF2400;">Objective Correctness</h3>
-              <ul>
-                <li class="discipline">Science & Technology
-                  <ul>
-                    <li>Mathematics
-                      <ul>
-                        <li>Geometry</li>
-                        <li>Statistics</li>
-                        <li>Epistemology</li>
-                        <li>Logic</li>
-                      </ul>
-                    </li>
-                    <li>Morphology
-                      <ul>
-                        <li>Anatomy</li>
-                        <li>Genetics</li>
-                        <li>Physiology</li>
-                        <li>Sexology</li>
-                      </ul>
-                    </li>
-                    <li>Ethology</li>
-                    <li>Sociology</li>
-                    <li>Chemistry
-                      <ul>
-                        <li>Biochemistry</li>
-                      </ul>
-                    </li>
-                    <li>Physics</li>
-                    <li>Geology
-                      <ul>
-                        <li>Hydrology</li>
-                        <li>Meteorology</li>
-                        <li>Climatology</li>
-                      </ul>
-                    </li>
-                    <li>Geography</li>
-                    <li>Biology
-                      <ul>
-                        <li>Botany</li>
-                        <li>Zoology</li>
-                        <li>Ecology</li>
-                        <li>Biodiversity</li>
-                      </ul>
-                    </li>
-                    <li>Astronomy
-                      <ul>
-                        <li>Cosmology</li>
-                      </ul>
-                    </li>
-                    <li>Psychology
-                      <ul>
-                        <li>Neurosciences</li>
-                      </ul>
-                    </li>
-                    <li>Medicine
-                      <ul>
-                        <li>Homeostasis</li>
-                      </ul>
-                    </li>
-                    <li>Evolution</li>
-                    <li>Architecture</li>
-                    <li>Engineering</li>
-                    <li>Technology
-                      <ul>
-                        <li>Electronics</li>
-                        <li>Computer Science
-                          <ul>
-                            <li>Programming</li>
-                            <li>Robotics</li>
-                            <li>Cybernetics</li>
-                            <li>Artificial Intelligence</li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div style="flex: 1 1 300px; min-width: 250px;">
-            <div class="mindmap">
-              <h3 style="color: #7F00FF;">Primary Needs</h3>
-              <ul>
-                <li class="societe">Society & Practical Life
-                  <ul>
-                    <li>Education</li>
-                    <li>Pedagogy
-                      <ul>
-                        <li>Management</li>
-                        <li>Sports</li>
-                        <li>Martial Arts</li>
-                        <li>Dexterity</li>
-                        <li>Law</li>
-                        <li>Agriculture</li>
-                        <li>Cooking</li>
-                        <li>Nutrition</li>
-                      </ul>
-                    </li>
-                    <li>Politics
-                      <ul>
-                        <li>Economics</li>
-                        <li>Transport</li>
-                        <li>Critical Theory</li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div style="flex: 1 1 300px; min-width: 250px;">
-            <div class="mindmap">
-              <h3 style="color: #00FFFF;">Imaginative Personnalization</h3>
-              <ul>
-                <li class="arts">Alchemy & Humanities
-                  <ul>
-                    <li>Art
-                      <ul>
-                        <li>Construction</li>
-                        <li>Aesthetics</li>
-                        <li>Design</li>
-                        <li>Drawing</li>
-                        <li>Literature</li>
-                        <li>Poetry</li>
-                        <li>Music</li>
-                        <li>Film/Cinema</li>
-                        <li>Video Games</li>
-                      </ul>
-                    </li>
-                    <li>Phonetics</li>
-                    <li>Linguistics
-                      <ul>
-                        <li>Philology</li>
-                        <li>Grammar</li>
-                      </ul>
-                    </li>
-                    <li>History
-                      <ul>
-                        <li>Anthropology</li>
-                        <li>Archaeology</li>
-                      </ul>
-                    </li>
-                    <li>Ethics</li>
-                    <li>Metaphysics</li>
-                    <li>Dialectics</li>
-                    <li>Philosophy
-                      <ul>
-                        <li>Ontology</li>
-                        <li>Mythology</li>
-                        <li>Theology</li>
-                        <li>Esotericism</li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="written"><span class="hmode">AZ/AZ/AZ</span>/<span class="hmode">ZA/ZA/ZA</span></div>
-
+      <details class="info">
+        <summary>Sujet</summary>
+        Type: Charte de la Vocation Cryptique<br>
+        Question: Multi-Soi<br>
+        Outil: Multilingue<br>
+        Éclairage: Signification<br>
+        Alignement: Cosmique<br>
+        Mouvement: Tout Soi<br>
+        Tension: Soi<br>
+        Difficulté: 9/10<br>
       </details>
 
-      <div id="arti5">
+      <div style="font-size: 2em; text-align: center; text-decoration: underline;">
+        ⌂<strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>
+        <ruby>{Articulation KaLeiDo}<rt>(Lysruéenne)</rt></ruby>
+        <strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>⌂
+      </div>
 
-        <details class="info">
-          <summary>Sujet</summary>
-          Type: Charte de la Vocation Cryptique<br>
-          Question: Multi-Soi<br>
-          Outil: Multilingue<br>
-          Éclairage: Signification<br>
-          Alignement: Cosmique<br>
-          Mouvement: Tout Soi<br>
-          Tension: Soi<br>
-          Difficulté: 9/10<br>
-        </details>
-
-        <div style="font-size: 2em; text-align: center; text-decoration: underline;">
-          ⌂<strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>
-          <ruby>{Articulation KaLeiDo}<rt>(Lysruéenne)</rt></ruby>
-          <strike>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</strike>⌂
-        </div>
-
-        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 64px;">
-          <table border="1" style="border-collapse: separate; font-size: small; width: auto;">
-            <thead>
-              <tr style="font-size: 300%;">
+      <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 64px;">
+        <table border="1" style="border-collapse: separate; font-size: small; width: auto;">
+          <thead>
+            <tr style="font-size: 300%;">
               <th colspan="3"><b>Ω𝚸𐒰Ⅼ</b></th>
               <th colspan="3"><b>Æ↰⊥ƎЯ</b></th>
               <th colspan="3"><b>Ⓔ🇬㊔</b></th>
             </tr>
-            </thead>
-            <tbody>
-              <tr>
+          </thead>
+          <tbody>
+            <tr>
               <td class="info-cell">Unicode</td>
               <td class="info-cell">Origine</td>
               <td class="info-cell">Sens</td>
@@ -10796,7 +10956,7 @@
               <td class="info-cell">Origine</td>
               <td class="info-cell">Sens</td>
             </tr>
-              <tr>
+            <tr>
               <td class="symb-cell">Ω</td>
               <td class="info-cell"><ruby>ελληνικά<rt>Grec</rt></ruby></td>
               <td class="info-cell">Complétude</td>
@@ -10807,7 +10967,7 @@
               <td class="info-cell">Alphanumérique Entouré</td>
               <td class="info-cell">Évaluation</td>
             </tr>
-              <tr>
+            <tr>
               <td class="symb-cell">𝚸</td>
               <td class="info-cell">Math</td>
               <td class="info-cell">Stratification</td>
@@ -10818,7 +10978,7 @@
               <td class="info-cell">Indicateur Régionnel</td>
               <td class="info-cell">Repère</td>
             </tr>
-              <tr>
+            <tr>
               <td class="symb-cell">𐒰</td>
               <td class="info-cell"><ruby>𐓏𐒰𐓓𐒰𐓓𐒷 𐒻𐒷<rt>Osage</rt></ruby></td>
               <td class="info-cell">Ouverture</td>
@@ -10829,7 +10989,7 @@
               <td class="info-cell"><ruby>漢字<rt>Sinogramme</rt></ruby></td>
               <td class="info-cell">~Nom~</td>
             </tr>
-              <tr>
+            <tr>
               <td class="symb-cell">Ⅼ</td>
               <td class="info-cell"><ruby>Romanus<rt>Romain</rt></ruby></td>
               <td class="info-cell">Chiffre 50</td>
@@ -10840,7 +11000,7 @@
               <td class="info-cell" style="empty-cells: hide;"></td>
               <td class="info-cell" style="empty-cells: hide;"></td>
             </tr>
-              <tr>
+            <tr>
               <td class="symb-cell" style="empty-cells: hide;"></td>
               <td class="info-cell" style="empty-cells: hide;"></td>
               <td class="info-cell" style="empty-cells: hide;"></td>
@@ -10851,255 +11011,255 @@
               <td class="info-cell" style="empty-cells: hide;"></td>
               <td class="info-cell" style="empty-cells: hide;"></td>
             </tr>
-            </tbody>
-          </table>
-        </div>
-
+          </tbody>
+        </table>
       </div>
 
-      <div class="oae-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); font-size: 1em; font-weight: bold; width: 20%; margin: 64px auto; background: rgba(255,255,255,0.03); border-radius: 24px; box-shadow: 0 4px 32px rgba(0,0,0,0.08); padding: 2em 1em 1.5em 1em; max-width: 700px; text-align: center;">
-        <div style="grid-column: 1;">O</div>
-        <div style="grid-column: 2;">A</div>
-        <div style="grid-column: 3;">E</div>
-        <div>P</div>
-        <div>L</div>
-        <div>G</div>
-        <div>A</div>
-        <div>T</div>
-        <div>O</div>
-        <div>L</div>
-        <div>E</div>
-        <div>|</div>
-        <div>|</div>
-        <div>R</div>
-        <div>⚞</div>
-        <div>⚟</div>
-        <div>Я</div>
-        <div>|</div>
-        <div>|</div>
-        <div>Ǝ</div>
-        <div>Ⅼ</div>
-        <div>㊔</div>
-        <div>⊥</div>
-        <div>𐒰</div>
-        <div>🇬</div>
-        <div>↰</div>
-        <div>𝚸</div>
-        <div>Ⓔ</div>
-        <div>Æ</div>
-        <div>Ω</div>
+    </div>
+
+    <div class="oae-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); font-size: 1em; font-weight: bold; width: 20%; margin: 64px auto; background: rgba(255,255,255,0.03); border-radius: 24px; box-shadow: 0 4px 32px rgba(0,0,0,0.08); padding: 2em 1em 1.5em 1em; max-width: 700px; text-align: center;">
+      <div style="grid-column: 1;">O</div>
+      <div style="grid-column: 2;">A</div>
+      <div style="grid-column: 3;">E</div>
+      <div>P</div>
+      <div>L</div>
+      <div>G</div>
+      <div>A</div>
+      <div>T</div>
+      <div>O</div>
+      <div>L</div>
+      <div>E</div>
+      <div>|</div>
+      <div>|</div>
+      <div>R</div>
+      <div>⚞</div>
+      <div>⚟</div>
+      <div>Я</div>
+      <div>|</div>
+      <div>|</div>
+      <div>Ǝ</div>
+      <div>Ⅼ</div>
+      <div>㊔</div>
+      <div>⊥</div>
+      <div>𐒰</div>
+      <div>🇬</div>
+      <div>↰</div>
+      <div>𝚸</div>
+      <div>Ⓔ</div>
+      <div>Æ</div>
+      <div>Ω</div>
+    </div>
+
+    <details style="margin: 32px auto;">
+      <summary>Verbe - Devoir (-oir = nécessité)</summary>
+      <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+        <table class="verb" style="border: 0.5px dashed; table-layout: fixed;">
+          <thead>
+            <tr><th>Temps</th><th>Je</th><th>Tu</th><th>Il/Elle</th><th>Nous</th><th>Vous</th><th>Ils/Elles</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Présent</strong></td><td>Dois</td><td>Dois</td><td>Doit</td><td>Devons</td><td>Devez</td><td>Doivent</td></tr>
+            <tr><td><strong>Imparfait</strong></td><td>Devais</td><td>Devais</td><td>Devait</td><td>Devions</td><td>Deviez</td><td>Devaient</td></tr>
+            <tr><td><strong>Passé Simple</strong></td><td>Dus</td><td>Dus</td><td>Dut</td><td>Dûmes</td><td>Dûtes</td><td>Durent</td></tr>
+            <tr><td><strong>Futur</strong></td><td>Devrai</td><td>Devras</td><td>Devra</td><td>Devrons</td><td>Devrez</td><td>Devront</td></tr>
+            <tr><td><strong>Conditionnel</strong></td><td>Devrais</td><td>Devrais</td><td>Devrait</td><td>Devrions</td><td>Devriez</td><td>Devraient</td></tr>
+            <tr><td><strong>Subjonctif Présent</strong></td><td>Doive</td><td>Doives</td><td>Doive</td><td>Devions</td><td>Deviez</td><td>Doivent</td></tr>
+            <tr><td><strong>Subjonctif Imparfait</strong></td><td>Dusse</td><td>Dusses</td><td>Dût</td><td>Dussions</td><td>Dussiez</td><td>Dussent</td></tr>
+          </tbody>
+        </table>
       </div>
+    </details>
 
-      <details style="margin: 32px auto;">
-        <summary>Verbe - Devoir (-oir = nécessité)</summary>
-        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-          <table class="verb" style="border: 0.5px dashed; table-layout: fixed;">
-            <thead>
-              <tr><th>Temps</th><th>Je</th><th>Tu</th><th>Il/Elle</th><th>Nous</th><th>Vous</th><th>Ils/Elles</th></tr>
-            </thead>
-            <tbody>
-              <tr><td><strong>Présent</strong></td><td>Dois</td><td>Dois</td><td>Doit</td><td>Devons</td><td>Devez</td><td>Doivent</td></tr>
-              <tr><td><strong>Imparfait</strong></td><td>Devais</td><td>Devais</td><td>Devait</td><td>Devions</td><td>Deviez</td><td>Devaient</td></tr>
-              <tr><td><strong>Passé Simple</strong></td><td>Dus</td><td>Dus</td><td>Dut</td><td>Dûmes</td><td>Dûtes</td><td>Durent</td></tr>
-              <tr><td><strong>Futur</strong></td><td>Devrai</td><td>Devras</td><td>Devra</td><td>Devrons</td><td>Devrez</td><td>Devront</td></tr>
-              <tr><td><strong>Conditionnel</strong></td><td>Devrais</td><td>Devrais</td><td>Devrait</td><td>Devrions</td><td>Devriez</td><td>Devraient</td></tr>
-              <tr><td><strong>Subjonctif Présent</strong></td><td>Doive</td><td>Doives</td><td>Doive</td><td>Devions</td><td>Deviez</td><td>Doivent</td></tr>
-              <tr><td><strong>Subjonctif Imparfait</strong></td><td>Dusse</td><td>Dusses</td><td>Dût</td><td>Dussions</td><td>Dussiez</td><td>Dussent</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </details>
+    <div class="thesis">
+      Thèse : Le devoir n'est tenable que s'il peut être distingué de la pure injonction de capture.
+      Distinction : Il ne suffit donc pas d'obéir ; il faut encore savoir à quoi l'on répond et pourquoi.
+      Argument : Le devoir est une nécessité qui s'impose à la vie, mais il doit être compris comme une force vitale qui guide et nourrit plutôt que comme une contrainte oppressive.
+      Conséquence : En adoptant une perspective opalienne, on peut transformer le devoir en une source d'inspiration et de croissance personnelle, plutôt que de le percevoir comme une charge ou une limitation.
+      Limite : La vision opalienne du devoir peut ne pas être universellement applicable, et il est important de reconnaître que certaines situations peuvent nécessiter une approche plus pragmatique ou réaliste du devoir.
+    </div>
 
-      <div class="thesis">
-        Thèse : Le devoir n'est tenable que s'il peut être distingué de la pure injonction de capture.
-        Distinction : Il ne suffit donc pas d'obéir ; il faut encore savoir à quoi l'on répond et pourquoi.
-        Argument : Le devoir est une nécessité qui s'impose à la vie, mais il doit être compris comme une force vitale qui guide et nourrit plutôt que comme une contrainte oppressive.
-        Conséquence : En adoptant une perspective opalienne, on peut transformer le devoir en une source d'inspiration et de croissance personnelle, plutôt que de le percevoir comme une charge ou une limitation.
-        Limite : La vision opalienne du devoir peut ne pas être universellement applicable, et il est important de reconnaître que certaines situations peuvent nécessiter une approche plus pragmatique ou réaliste du devoir.
+    <div class="definizer">
+
+      <dd><b><u>Opale・Opaler</u></b>:
+        Impératif <span class="hidden-text">(fantômiquement non-impératif)</span> de vie contenu dans chaque vie.<br>
+        Substitution du devoir tyrannique suppresseur de chimères aursyliennes vers d'autres chimères.<br>
+        L'opale est représenté par la cachoterie <span class="hidden-text">(ou peut-être pas)</span>.<br>
+        Upala(Sanskrit) = Pierre Précieuse<br>
+        Dû×Opale Devoir×Opaler Dette×Opaliade Débit×lolol</dd><br>
+
+    </div>
+
+    <details style="margin: 32px auto;">
+      <summary>Verbe - Opaler (-er = faire l'action)</summary>
+      <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+        <table class="verb" style="border: 0.5px dashed; table-layout: fixed;">
+          <thead>
+            <tr><th>Temps</th><th>Je</th><th>Tu</th><th>Il/Elle</th><th>Nous</th><th>Vous</th><th>Ils/Elles</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Présent</strong></td><td>Opale</td><td>Opales</td><td>Opale</td><td>Opalons</td><td>Opalez</td><td>Opalent</td></tr>
+            <tr><td><strong>Imparfait</strong></td><td>Opalais</td><td>Opalais</td><td>Opalait</td><td>Opalions</td><td>Opaliez</td><td>Opalaient</td></tr>
+            <tr><td><strong>Passé Simple</strong></td><td>Opalai</td><td>Opalas</td><td>Opala</td><td>Opalâmes</td><td>Opalâtes</td><td>Opalèrent</td></tr>
+            <tr><td><strong>Futur</strong></td><td>Opalerai</td><td>Opaleras</td><td>Opalera</td><td>Opalerons</td><td>Opalerez</td><td>Opaleront</td></tr>
+            <tr><td><strong>Conditionnel</strong></td><td>Opalerais</td><td>Opalerais</td><td>Opalerait</td><td>Opalerions</td><td>Opaleriez</td><td>Opaleraient</td></tr>
+            <tr><td><strong>Subjonctif Présent</strong></td><td>Opale</td><td>Opales</td><td>Opale</td><td>Opalions</td><td>Opaliez</td><td>Opalent</td></tr>
+            <tr><td><strong>Subjonctif Imparfait</strong></td><td>Opalasse</td><td>Opalasses</td><td>Opalât</td><td>Opalassions</td><td>Opalassiez</td><td>Opalassent</td></tr>
+          </tbody>
+        </table>
       </div>
+    </details>
 
-      <div class="definizer">
+    <p class="hype-phrase" style="margin: 32px auto;">
+      Ça doit vivre×J'opale vivre<br>
+      Tu [dois] / [opales] ?<br>
+    </p>
 
-        <dd><b><u>Opale・Opaler</u></b>:
-          Impératif <span class="hidden-text">(fantômiquement non-impératif)</span> de vie contenu dans chaque vie.<br>
-          Substitution du devoir tyrannique suppresseur de chimères aursyliennes vers d'autres chimères.<br>
-          L'opale est représenté par la cachoterie <span class="hidden-text">(ou peut-être pas)</span>.<br>
-          Upala(Sanskrit) = Pierre Précieuse<br>
-          Dû×Opale Devoir×Opaler Dette×Opaliade Débit×lolol</dd><br>
+    <div class="definizer">
 
-      </div>
-
-      <details style="margin: 32px auto;">
-        <summary>Verbe - Opaler (-er = faire l'action)</summary>
-        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-          <table class="verb" style="border: 0.5px dashed; table-layout: fixed;">
-            <thead>
-              <tr><th>Temps</th><th>Je</th><th>Tu</th><th>Il/Elle</th><th>Nous</th><th>Vous</th><th>Ils/Elles</th></tr>
-            </thead>
-            <tbody>
-              <tr><td><strong>Présent</strong></td><td>Opale</td><td>Opales</td><td>Opale</td><td>Opalons</td><td>Opalez</td><td>Opalent</td></tr>
-              <tr><td><strong>Imparfait</strong></td><td>Opalais</td><td>Opalais</td><td>Opalait</td><td>Opalions</td><td>Opaliez</td><td>Opalaient</td></tr>
-              <tr><td><strong>Passé Simple</strong></td><td>Opalai</td><td>Opalas</td><td>Opala</td><td>Opalâmes</td><td>Opalâtes</td><td>Opalèrent</td></tr>
-              <tr><td><strong>Futur</strong></td><td>Opalerai</td><td>Opaleras</td><td>Opalera</td><td>Opalerons</td><td>Opalerez</td><td>Opaleront</td></tr>
-              <tr><td><strong>Conditionnel</strong></td><td>Opalerais</td><td>Opalerais</td><td>Opalerait</td><td>Opalerions</td><td>Opaleriez</td><td>Opaleraient</td></tr>
-              <tr><td><strong>Subjonctif Présent</strong></td><td>Opale</td><td>Opales</td><td>Opale</td><td>Opalions</td><td>Opaliez</td><td>Opalent</td></tr>
-              <tr><td><strong>Subjonctif Imparfait</strong></td><td>Opalasse</td><td>Opalasses</td><td>Opalât</td><td>Opalassions</td><td>Opalassiez</td><td>Opalassent</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </details>
-
-      <p class="hype-phrase" style="margin: 32px auto;">
-        Ça doit vivre×J'opale vivre<br>
-        Tu [dois] / [opales] ?<br>
-      </p>
-
-      <div class="definizer">
-
-        <dd><b><u><span class="rappel">(RAPPEL)</span>
+      <dd><b><u><span class="rappel">(RAPPEL)</span>
       Déjà-Vu</u></b>:
-          Sentiment d'expérience/expérimental/d'expertise du vécu.<br>
-          <i style="font-size: 0.8em;">Simplifiant - Superposition Analogue</i>
-        </dd><br>
+        Sentiment d'expérience/expérimental/d'expertise du vécu.<br>
+        <i style="font-size: 0.8em;">Simplifiant - Superposition Analogue</i>
+      </dd><br>
 
-        <dd><b><u><span class="rappel">(RAPPEL)</span>
+      <dd><b><u><span class="rappel">(RAPPEL)</span>
       Chromel</u></b>:
-          Sublimation décisive des marqueurs traumatiques à la page tournante.<br>
-          Reprise des déjà-vus sur une phase supérieure de configuration.<br>
-          Meilleur Drapeau, forme authentique et hypothétique.</dd><br>
+        Sublimation décisive des marqueurs traumatiques à la page tournante.<br>
+        Reprise des déjà-vus sur une phase supérieure de configuration.<br>
+        Meilleur Drapeau, forme authentique et hypothétique.</dd><br>
 
-        <dd><b><u><span class="rappel">(RAPPEL)</span>
+      <dd><b><u><span class="rappel">(RAPPEL)</span>
       MonPol</u></b>:
-          Titre honorifique envers l'être et son devenir ou le mémojectile quoi qu'il en soit.<br>
-          <i style="font-size: 0.8em;">Simplifiant - Dédicace Exaltée</i>
-        </dd><br>
+        Titre honorifique envers l'être et son devenir ou le mémojectile quoi qu'il en soit.<br>
+        <i style="font-size: 0.8em;">Simplifiant - Dédicace Exaltée</i>
+      </dd><br>
 
+    </div>
+
+    <div class="author" style="text-align: center;">【Leqwa】</div>
+
+    <details class="info">
+      <summary>Sujet</summary>
+      Type: Frise Chronologique<br>
+      Question: Passage<br>
+      Outil: Anticipation<br>
+      Éclairage: Contextuel<br>
+      Alignement: Neutre Historique<br>
+      Mouvement: Signification de l'Humain<br>
+      Tension: Vie et Non-Vie<br>
+      Difficulté: 5/10<br>
+    </details>
+
+    <h3 id="Chrono-Chroma" style="text-align: center;">「Chrono-Chroma」</h3>
+
+    <div class="timeline">
+      <div class="event">
+        <span class="date">Grégorien ~7 Millions~ av. J.-C.</span>
+        Le plus ancien de la lignée Homo Sapien retrouvé, nommé Toumaï(ou espoir de vie) reconnu en 2001 ap. J.-C au Tchad.
       </div>
-
-      <div class="author" style="text-align: center;">【Leqwa】</div>
-
-      <details class="info">
-        <summary>Sujet</summary>
-        Type: Frise Chronologique<br>
-        Question: Passage<br>
-        Outil: Anticipation<br>
-        Éclairage: Contextuel<br>
-        Alignement: Neutre Historique<br>
-        Mouvement: Signification de l'Humain<br>
-        Tension: Vie et Non-Vie<br>
-        Difficulté: 5/10<br>
-      </details>
-
-      <h3 id="Chrono-Chroma" style="text-align: center;">「Chrono-Chroma」</h3>
-
-      <div class="timeline">
-        <div class="event">
-          <span class="date">Grégorien ~7 Millions~ av. J.-C.</span>
-          Le plus ancien de la lignée Homo Sapien retrouvé, nommé Toumaï(ou espoir de vie) reconnu en 2001 ap. J.-C au Tchad.
-        </div>
-        <div class="event">
-          <span class="date">~10000~ av. J.-C</span>
-          Intrigue fabulatoire de civilisation éteinte, oralement transmises.
-        </div>
-        <div class="event">
-          <span class="date">~3400~ av. J.-C</span>
-          Naissance de l'écriture en Mésopotamie.
-        </div>
-        <div class="event">
-          <span class="date">1977</span>
-          La NASA envoie des messages interstellaires Voyager Golden Records, des <span class="hmode">capsules</span> temporelles pour signer la présence et le contenu de leur civilisation.
-        </div>
-        <div class="event">
-          <span class="date">2038</span>
-          La natalité chute dans les pays développés, les zones équatoriales dominent le patrimoine démographique; de peur des représailles, l'histoire se brouille et la confiance se meurt.
-        </div>
-        <div class="event">
-          <span class="date">2085</span>
-          L'humanité touche sa réalité fictionnelle libertaire, perdant toute notion du manualisme et de conscience avec la préférence pour le rôle spectateur.
-        </div>
-        <div class="event">
-          <span class="date">2210</span>
-          Les restes sont abandonnés et les plus aisés sortent de leur biologie, la vie disparaît en fondu sans notion de mortalité intime après quelques centaines d'années.
-        </div>
-        <div class="event">
-          <span class="date">00/00/0000/000000000000/0000000000000000/000000000/00000/000/0</span>
-          Golden Record here forgotten on the cosmic nothingness somewhere still E.X.I.S.T_S.I.L.E.N.T<br>
-          This effort, MeaningFUL or MeaningLESS, maybe quite both.
-        </div>
-        <div class="event">
-          <span class="date"><span class="hmode">Emmaïe</span> 01/01/00001</span>
-          La planète Terre est reprise sous une autre bande.
-        </div>
-        <div class="event">
-          <span class="date">Ère <span class="hmode">TRIBALT</span> 1 apr. <span class="hmode">ZeRo</span></span>
-          Tout ce qui se meût supporte les afflictions géologiques impitoyables comme partie intégrante de l'ordre des choses.<br>
-          On parle de propicité de la vie, elle était/est/sera selon des critères qui dépassent le vivant, des Monstres 0 jusqu'au Naustre C.
-        </div>
-        <div class="event">
-          <span class="date">2,1 Millions</span>
-          Homo Sapien se sédentarise, cultive les champs et ritualise un peu partout dans le globe.
-        </div>
-        <div class="event">
-          <span class="date">16 Millions</span>
-          Les premières micro-civilisations ont l'adaptation habituellement sous contraintes mais s'anticipent inéluctablement effrayés.
-        </div>
-        <div class="event">
-          <span class="date"><span class="hmode">Inclinaisons(A-Z) Cellules(1-9)</span></span>
-          Les communautés se croisent et ne se reconnaissent pas. Ils trouvent l'un l'autre stupide mais chacun se reconnaît dans le miroir.
-        </div>
-        <div class="event">
-          <span class="date"><span class="hmode">Fondations(Z-A) Scénario(9-1)</span></span>
-          Les communautés se contredisent et ne se synchronisent pas. Ils jugent l'un l'autre dangereux mais chacun s'oublie dangereux.
-        </div>
-        <div class="event">
-          <span class="date"><span class="hmode">Relativité(AZ-ZA) Syndrome(00-10)</span></span>
-          Les communautés se chamaillent et ne se confiancent pas. Ils imaginent l'un l'autre utile mais chacun s'empresse de tirer du bon.
-        </div>
-        <div class="event">
-          <span class="date">Ère <span class="hmode">GESTALT</span> Année <span class="hmode">0</span></span>
-          *Hum hum* Test 1,2,3 à l'appareil… (youpi ça marche!)
-        </div>
-        <div class="event">
-          <span class="date">10 Millions</span>
-          <span class="hmode">VeSo</span> à l'atterissage, 【Ｘ】 lancer du <span class="hmode">mémojectile</span> dans cette planète, l'heure est à vous.
-        </div>
-        <div class="event">
-          <span class="date">・・ ・ー・・ ーーー ・・・ー ・ ー・ーー ーーー ・・ー</span>
-          <pre class="ascii-art hidden-text" style="font-size: 1.7rem; text-align: center;">
+      <div class="event">
+        <span class="date">~10000~ av. J.-C</span>
+        Intrigue fabulatoire de civilisation éteinte, oralement transmises.
+      </div>
+      <div class="event">
+        <span class="date">~3400~ av. J.-C</span>
+        Naissance de l'écriture en Mésopotamie.
+      </div>
+      <div class="event">
+        <span class="date">1977</span>
+        La NASA envoie des messages interstellaires Voyager Golden Records, des <span class="hmode">capsules</span> temporelles pour signer la présence et le contenu de leur civilisation.
+      </div>
+      <div class="event">
+        <span class="date">2038</span>
+        La natalité chute dans les pays développés, les zones équatoriales dominent le patrimoine démographique; de peur des représailles, l'histoire se brouille et la confiance se meurt.
+      </div>
+      <div class="event">
+        <span class="date">2085</span>
+        L'humanité touche sa réalité fictionnelle libertaire, perdant toute notion du manualisme et de conscience avec la préférence pour le rôle spectateur.
+      </div>
+      <div class="event">
+        <span class="date">2210</span>
+        Les restes sont abandonnés et les plus aisés sortent de leur biologie, la vie disparaît en fondu sans notion de mortalité intime après quelques centaines d'années.
+      </div>
+      <div class="event">
+        <span class="date">00/00/0000/000000000000/0000000000000000/000000000/00000/000/0</span>
+        Golden Record here forgotten on the cosmic nothingness somewhere still E.X.I.S.T_S.I.L.E.N.T<br>
+        This effort, MeaningFUL or MeaningLESS, maybe quite both.
+      </div>
+      <div class="event">
+        <span class="date"><span class="hmode">Emmaïe</span> 01/01/00001</span>
+        La planète Terre est reprise sous une autre bande.
+      </div>
+      <div class="event">
+        <span class="date">Ère <span class="hmode">TRIBALT</span> 1 apr. <span class="hmode">ZeRo</span></span>
+        Tout ce qui se meût supporte les afflictions géologiques impitoyables comme partie intégrante de l'ordre des choses.<br>
+        On parle de propicité de la vie, elle était/est/sera selon des critères qui dépassent le vivant, des Monstres 0 jusqu'au Naustre C.
+      </div>
+      <div class="event">
+        <span class="date">2,1 Millions</span>
+        Homo Sapien se sédentarise, cultive les champs et ritualise un peu partout dans le globe.
+      </div>
+      <div class="event">
+        <span class="date">16 Millions</span>
+        Les premières micro-civilisations ont l'adaptation habituellement sous contraintes mais s'anticipent inéluctablement effrayés.
+      </div>
+      <div class="event">
+        <span class="date"><span class="hmode">Inclinaisons(A-Z) Cellules(1-9)</span></span>
+        Les communautés se croisent et ne se reconnaissent pas. Ils trouvent l'un l'autre stupide mais chacun se reconnaît dans le miroir.
+      </div>
+      <div class="event">
+        <span class="date"><span class="hmode">Fondations(Z-A) Scénario(9-1)</span></span>
+        Les communautés se contredisent et ne se synchronisent pas. Ils jugent l'un l'autre dangereux mais chacun s'oublie dangereux.
+      </div>
+      <div class="event">
+        <span class="date"><span class="hmode">Relativité(AZ-ZA) Syndrome(00-10)</span></span>
+        Les communautés se chamaillent et ne se confiancent pas. Ils imaginent l'un l'autre utile mais chacun s'empresse de tirer du bon.
+      </div>
+      <div class="event">
+        <span class="date">Ère <span class="hmode">GESTALT</span> Année <span class="hmode">0</span></span>
+        *Hum hum* Test 1,2,3 à l'appareil… (youpi ça marche!)
+      </div>
+      <div class="event">
+        <span class="date">10 Millions</span>
+        <span class="hmode">VeSo</span> à l'atterissage, 【Ｘ】 lancer du <span class="hmode">mémojectile</span> dans cette planète, l'heure est à vous.
+      </div>
+      <div class="event">
+        <span class="date">・・ ・ー・・ ーーー ・・・ー ・ ー・ーー ーーー ・・ー</span>
+        <pre class="ascii-art hidden-text" style="font-size: 1.7rem; text-align: center;">
 -.-  .  .-.. ..--  . ..-.. .
  |   |  | || ||-    Y | || |
 -'-  '-'`-' ` '--   ' `-'`-'
 </pre>
-        </div>
-
       </div>
 
-      <div class="written">05/08/25</div>
+    </div>
 
-      <p class="hype-phrase" style="margin: 512px auto;">
-        Garçon - C'est un prank, ne faites pas attention!!<br>
-        Fille - Mais non c'était cool, pourquoi tu gâches tout !?<br>
-        *Cachotteries*<br>
-      </p>
+    <div class="written">05/08/25</div>
 
-      <details class="info">
-        <summary>Sujet</summary>
-        Type: Politique<br>
-        Question: Caractères<br>
-        Outil: Différence<br>
-        Éclairage: Idéologie<br>
-        Alignement: Choix<br>
-        Mouvement: Auto-Détermination<br>
-        Tension: Double-Face<br>
-        Difficulté: 4/10<br>
-      </details>
+    <p class="hype-phrase" style="margin: 512px auto;">
+      Garçon - C'est un prank, ne faites pas attention!!<br>
+      Fille - Mais non c'était cool, pourquoi tu gâches tout !?<br>
+      *Cachotteries*<br>
+    </p>
 
-      <h4 style="text-align: center;">Aurlystique Démonique</h4>
+    <details class="info">
+      <summary>Sujet</summary>
+      Type: Politique<br>
+      Question: Caractères<br>
+      Outil: Différence<br>
+      Éclairage: Idéologie<br>
+      Alignement: Choix<br>
+      Mouvement: Auto-Détermination<br>
+      Tension: Double-Face<br>
+      Difficulté: 4/10<br>
+    </details>
 
-      <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-        <table border="1" class="triplet-rows" style="font-size: 1.5em; width: max-content;">
-          <tbody>
-            <tr>
+    <h4 style="text-align: center;">Aurlystique Démonique</h4>
+
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+      <table border="1" class="triplet-rows" style="font-size: 1.5em; width: max-content;">
+        <tbody>
+          <tr>
           <th>AurLys</th>
           <th>Courant</th>
           <th>Vœu</th>
@@ -11129,7 +11289,7 @@
           <th>Art</th>
           <th>Responsabilité</th>
         </tr>
-            <tr>
+          <tr>
           <td>Aursylien</td>
           <td>Matérialiste</td>
           <td>Pouvoir</td>
@@ -11159,7 +11319,7 @@
           <td>Exploitation % Vol</td>
           <td>Société</td>
         </tr>
-            <tr>
+          <tr>
           <td>Lysruéen</td>
           <td>Génital</td>
           <td>Vivre</td>
@@ -11189,144 +11349,144 @@
           <td>Initiation &amp; Création</td>
           <td>Civilisation</td>
         </tr>
-          </tbody>
-        </table>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="text-align: center; font-size: large; margin: 32px auto;">
+
+      <dd><b><u>大ටभᲡⰡ</u></b>:
+        TÔHLA ou la Zone Domicile Conquérante.<br>
+        Visualisation simultanée interchangeable 'Colorful Colorless'</dd><br>
+
+    </div>
+
+    <div class="author" style="text-align: center;">【Tôhla】</div>
+
+    <details class="info">
+      <summary>Sujet</summary>
+      Type: Essai sur la Distinction Significative de l'Individuel et du Commun<br>
+      Question: Société et/ou Civilisation<br>
+      Outil: Entendement<br>
+      Éclairage: Gouvernance<br>
+      Alignement: Bon Civil Existentiel<br>
+      Mouvement: Intelligence<br>
+      Tension: Balivernes<br>
+      Difficulté: 5/10<br>
+    </details>
+
+    <div class="civil-grid">
+
+      <div class="civil-item" style="text-align: left;">
+
+        <h2 id="Glorieuse_Nation">『Glorieuse Nation』</h2>
+
+        <p>L'enfant se doit grâce à son berceau, d'apprendre à vivre en humain.<br>
+          Qui es-tu ? Découvrons-le…<br>
+          Ton espèce t'a engendré, et te voilà!<br>
+          Quels fruits sommeillent en toi ?<br>
+          Maintenant qu'est-ce que tu vas faire de ta misérable existence ?<br>
+          <br>
+          Je méprise la société mais j'adore la civilisation.<br>
+          <br>
+          Le sociéteur dit: <q>Je dois dire bonjour.</q><br>
+          Le civilisateur dit: <q>Bonjour.</q><br>
+          <br>
+          Le sociéteur n'a rien à faire en société que par son intérêt.<br>
+          Le civilisateur a tout à faire en civilisation par L'intérêt.<br>
+          <br>
+          Le sociéteur moralise de culpabilité les traîtres de sa tyrannie.<br>
+          Le civilisateur ouvre sa conscience vers une réalité plus objective de lui-même.<br>
+          <br>
+          Nul ne sait ce dont est capable l'humain, et celui qui sait n'est pas crédible.<br>
+          <br>
+          Celui insuflé de civilisation dit: <br>
+          <q>Toute cette richesse, je veux l'épouser, qu'elle soit heureuse ou triste.</q><br>
+          Celui insuflé de société dit sans le dire, en le refoulant: <br>
+          <q>J'ai peur, et je dois donc X selon X.</q><br>
+          <br>
+          Si je ne suis ni un criminel, ni un terroriste, ni un trafiquant, c'est car je suis follement amoureux de la civilisation.<br>
+          Le sujet primordial dans lequel l'un a besoin de sa complète attention pour être plus lui-même/elle-même/soi-même.<br>
+          La civilisation est d'une signification à la température d'un amour la plus belle qu'elle soit.<br>
+          Quiconque s'identifie et pratique le souffle de la société ou de la civilisation est tenu de la rendre vers une vision minimale ou maximale.<br>
+          <br>
+          Je vous le dis de ce moment: <br>
+          Le civilisateur est en solitaire au jour d'aujourd'hui, car les injonctions ont pris dessus.<br>
+          Soyez bénis et force à vous, civilisateurs, car de votre mouvement battra des ailes noires scintillantes.<br>
+        </p>
+
+        <div class="written">07/11/25</div>
+
       </div>
 
-      <div style="text-align: center; font-size: large; margin: 32px auto;">
+      <div class="civil-item" style="text-align: right;">
 
-        <dd><b><u>大ටभᲡⰡ</u></b>:
-          TÔHLA ou la Zone Domicile Conquérante.<br>
-          Visualisation simultanée interchangeable 'Colorful Colorless'</dd><br>
+        <details class="excluded-section">
+          <summary>English Version</summary>
 
-      </div>
+          <h2>『Glorious Nation』</h2>
 
-      <div class="author" style="text-align: center;">【Tôhla】</div>
-
-      <details class="info">
-        <summary>Sujet</summary>
-        Type: Essai sur la Distinction Significative de l'Individuel et du Commun<br>
-        Question: Société et/ou Civilisation<br>
-        Outil: Entendement<br>
-        Éclairage: Gouvernance<br>
-        Alignement: Bon Civil Existentiel<br>
-        Mouvement: Intelligence<br>
-        Tension: Balivernes<br>
-        Difficulté: 5/10<br>
-      </details>
-
-      <div class="civil-grid">
-
-        <div class="civil-item" style="text-align: left;">
-
-          <h2 id="Glorieuse_Nation">『Glorieuse Nation』</h2>
-
-          <p>L'enfant se doit grâce à son berceau, d'apprendre à vivre en humain.<br>
-            Qui es-tu ? Découvrons-le…<br>
-            Ton espèce t'a engendré, et te voilà!<br>
-            Quels fruits sommeillent en toi ?<br>
-            Maintenant qu'est-ce que tu vas faire de ta misérable existence ?<br>
+          <p>The child, thanks to their cradle, must learn to live as a human.<br>
+            Who are you? Let’s find out.<br>
+            Your species brought you into being, and here you are.<br>
+            What fruits lie dormant within you ?<br>
+            Now, what will you do with your miserable existence ?<br>
             <br>
-            Je méprise la société mais j'adore la civilisation.<br>
+            I despise society, yet I adore civilization.<br>
             <br>
-            Le sociéteur dit: <q>Je dois dire bonjour.</q><br>
-            Le civilisateur dit: <q>Bonjour.</q><br>
+            The societor says: <q>I must say hello.</q><br>
+            The civilizator says: <q>Hello.</q><br>
             <br>
-            Le sociéteur n'a rien à faire en société que par son intérêt.<br>
-            Le civilisateur a tout à faire en civilisation par L'intérêt.<br>
+            The societor acts within society out of self-interest.<br>
+            The civilizator acts within civilization for the sake of interest.<br>
             <br>
-            Le sociéteur moralise de culpabilité les traîtres de sa tyrannie.<br>
-            Le civilisateur ouvre sa conscience vers une réalité plus objective de lui-même.<br>
+            The societor moralizes through guilt those who betray his tyranny.<br>
+            The civilizator opens his consciousness toward a more objective reality of himself.<br>
             <br>
-            Nul ne sait ce dont est capable l'humain, et celui qui sait n'est pas crédible.<br>
+            No one knows what the human is capable of, and those who do are not credible.<br>
             <br>
-            Celui insuflé de civilisation dit: <br>
-            <q>Toute cette richesse, je veux l'épouser, qu'elle soit heureuse ou triste.</q><br>
-            Celui insuflé de société dit sans le dire, en le refoulant: <br>
-            <q>J'ai peur, et je dois donc X selon X.</q><br>
+            The one inspired by civilization says: <br>
+            <q>All this richness, I want to embrace it, whether it be happy or sad.</q><br>
+            The one inspired by society says, without saying it, by repressing it: <br>
+            <q>I’m afraid, therefore I must X according to X.</q><br>
             <br>
-            Si je ne suis ni un criminel, ni un terroriste, ni un trafiquant, c'est car je suis follement amoureux de la civilisation.<br>
-            Le sujet primordial dans lequel l'un a besoin de sa complète attention pour être plus lui-même/elle-même/soi-même.<br>
-            La civilisation est d'une signification à la température d'un amour la plus belle qu'elle soit.<br>
-            Quiconque s'identifie et pratique le souffle de la société ou de la civilisation est tenu de la rendre vers une vision minimale ou maximale.<br>
+            If I am neither a criminal, nor a terrorist, nor a trafficker, it is because I am madly in love with civilization.<br>
+            The primordial subject in which one need its full attention to be more himself/herself/itself/thyself.<br>
+            Civilization find its meaning at the temperature of love, the most beautiful there is.<br>
+            Whoever identifies with and breathes the spirit of society or civilization<br>
+            is bound to express it in either its minimal or maximal vision.<br>
             <br>
-            Je vous le dis de ce moment: <br>
-            Le civilisateur est en solitaire au jour d'aujourd'hui, car les injonctions ont pris dessus.<br>
-            Soyez bénis et force à vous, civilisateurs, car de votre mouvement battra des ailes noires scintillantes.<br>
+            I tell you this now: <br>
+            The civilizator stands alone today, for injunctions have taken over.<br>
+            Be blessed, and strength to you, civilizators, for from your movement will rise shimmering black wings.<br>
           </p>
 
-          <div class="written">07/11/25</div>
+          <div class="written">00/00/00</div>
 
-        </div>
-
-        <div class="civil-item" style="text-align: right;">
-
-          <details class="excluded-section">
-            <summary>English Version</summary>
-
-            <h2>『Glorious Nation』</h2>
-
-            <p>The child, thanks to their cradle, must learn to live as a human.<br>
-              Who are you? Let’s find out.<br>
-              Your species brought you into being, and here you are.<br>
-              What fruits lie dormant within you ?<br>
-              Now, what will you do with your miserable existence ?<br>
-              <br>
-              I despise society, yet I adore civilization.<br>
-              <br>
-              The societor says: <q>I must say hello.</q><br>
-              The civilizator says: <q>Hello.</q><br>
-              <br>
-              The societor acts within society out of self-interest.<br>
-              The civilizator acts within civilization for the sake of interest.<br>
-              <br>
-              The societor moralizes through guilt those who betray his tyranny.<br>
-              The civilizator opens his consciousness toward a more objective reality of himself.<br>
-              <br>
-              No one knows what the human is capable of, and those who do are not credible.<br>
-              <br>
-              The one inspired by civilization says: <br>
-              <q>All this richness, I want to embrace it, whether it be happy or sad.</q><br>
-              The one inspired by society says, without saying it, by repressing it: <br>
-              <q>I’m afraid, therefore I must X according to X.</q><br>
-              <br>
-              If I am neither a criminal, nor a terrorist, nor a trafficker, it is because I am madly in love with civilization.<br>
-              The primordial subject in which one need its full attention to be more himself/herself/itself/thyself.<br>
-              Civilization find its meaning at the temperature of love, the most beautiful there is.<br>
-              Whoever identifies with and breathes the spirit of society or civilization<br>
-              is bound to express it in either its minimal or maximal vision.<br>
-              <br>
-              I tell you this now: <br>
-              The civilizator stands alone today, for injunctions have taken over.<br>
-              Be blessed, and strength to you, civilizators, for from your movement will rise shimmering black wings.<br>
-            </p>
-
-            <div class="written">00/00/00</div>
-
-          </details>
-
-        </div>
+        </details>
 
       </div>
 
-      <details class="info">
-        <summary>Sujet</summary>
-        Type: Comparaison<br>
-        Question: Aurwhat ?<br>
-        Outil: Intelligence<br>
-        Éclairage: Nuances<br>
-        Alignement: X<br>
-        Mouvement: Provocateur<br>
-        Tension: Vie Mort Homo Sapien<br>
-        Difficulté: 6/10<br>
-      </details>
+    </div>
 
-      <h4 style="text-align: center;">Comparateur Aursylo-Aurnelcyen</h4>
+    <details class="info">
+      <summary>Sujet</summary>
+      Type: Comparaison<br>
+      Question: Aurwhat ?<br>
+      Outil: Intelligence<br>
+      Éclairage: Nuances<br>
+      Alignement: X<br>
+      Mouvement: Provocateur<br>
+      Tension: Vie Mort Homo Sapien<br>
+      Difficulté: 6/10<br>
+    </details>
 
-      <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-        <table border="1" class="triplet-rows" style="font-size: 1.5em; width: max-content;">
-          <tbody>
-            <tr>
+    <h4 style="text-align: center;">Comparateur Aursylo-Aurnelcyen</h4>
+
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+      <table border="1" class="triplet-rows" style="font-size: 1.5em; width: max-content;">
+        <tbody>
+          <tr>
             <th>Verbes</th>
             <td>Exister</td>
             <td>Penser</td>
@@ -11346,7 +11506,7 @@
             <td>Coûter</td>
             <td>Imposer</td>
           </tr>
-            <tr>
+          <tr>
             <th>Société d'Aursyl</th>
             <td>pour</td>
             <td>comme il faut</td>
@@ -11363,16 +11523,16 @@
             <td>son exploitation</td>
             <td>les intentions</td>
             <td>un prix</td>
-            <td>du grossier</td>
+            <td>de la grossièreté</td>
             <td>sa légitimité</td>
           </tr>
-            <tr>
+          <tr>
             <th>Société d'Aurnelcy</th>
             <td>et</td>
             <td>comme il se doit</td>
             <td>des jeux</td>
             <td>la vie</td>
-            <td>l'esprit</td>
+            <td>l'autodétermination</td>
             <td>un langage</td>
             <td>l'impertinence</td>
             <td>selon la justice</td>
@@ -11386,11 +11546,11 @@
             <td>de la courtoisie</td>
             <td>son intégrité</td>
           </tr>
-          </tbody>
-        </table>
-      </div>
+        </tbody>
+      </table>
+    </div>
 
-    <h3 id="Culte" style="text-align: center;">「Culte」</h3>
+    <h3 id="Véléments" style="text-align: center;">「Véléments」</h3>
 
     <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 32px auto;">
       <table border="1">
@@ -11423,7 +11583,7 @@
           </tr>
           <tr>
             <td><strong>Tabou</strong></td>
-            <td>Gaspiller de l'eau et de la nourriture</td>
+            <td>Gaspillage, Divorce</td>
             <td>Culpabilisation, Insultes</td>
             <td>Trahison Faux aLIaKKaHH</td>
             <td>Inceste, Cannibalisme, Profanation</td>
@@ -11471,9 +11631,9 @@
           </tr>
           <tr>
             <td><strong>Esthétique</strong></td>
-            <td>Bâtiment jardin, Vêtements transparents</td>
-            <td>Trompe-Perception</td>
-            <td>Excentrique</td>
+            <td>Jardins, Vêtements Transparents</td>
+            <td>Clay Render</td>
+            <td>Imprévisible</td>
             <td>Symboles et Marques</td>
             <td>Église, Cathédrale</td>
           </tr>
@@ -11496,7 +11656,7 @@
         </tbody>
       </table>
 
-      <div class="written">15/06/25</div>
+      <div class="written">15/06/26</div>
 
       <div class="thesis">
         Thèse : Travail, Tra§Vel et Veldiac constituent ici une gradation des manières de porter, traverser et habiter une existence.
@@ -12098,6 +12258,79 @@
 
       </div>
 
+    <!-- Articulations Concept Map -->
+    <div style="margin: 64px auto; text-align: center;">
+      <h2>Carte Conceptuelle des Articulations</h2>
+      <pre class="mermaid" data-conceptmap-source="Carte Conceptuelle des Articulations">
+        mindmap
+          root((Articulations))
+            0K
+              Beuzwain
+                Sommeil
+                  Rythme
+                Alimentation
+                  Carburant
+                Mouvement
+                  Vitalité
+                Mental
+                  Clarté
+                Social
+                  Appartenance
+                Spiritualité
+                  Intuition
+            Mapnel
+              Par-ci=Par-là
+                Jei
+                  Esprit
+                Tui
+                  Mental
+                IliーEllie
+                  Corps
+                Jtie
+                  Monstre
+            IUVALCY
+              Ecsætera
+                I
+                  Inanité
+                UV
+                  Doigté
+                AL
+                  Estomac
+                CY
+                  Ganique
+            ARc⟁diA
+              Link/Age
+                Hom
+                  Logique
+                Fem
+                  Connection
+                Enf
+                  Engagement
+                Arte
+                  Inspiration
+                On/Oh
+                  Hummm
+            Aursyl
+              deHist
+                Je
+                  Investisseur
+                Tu
+                  Inconnu
+                Il/Elle
+                  Intouchable
+            Lysrua
+              KaLeiDo
+                Ω𝚸𐒰Ⅼ
+                Æ↰⊥ƎЯ
+                Ⓔ🇬㊔
+            D⦾MIN⦿'s
+              ZigZag
+                [0-6｜0-6]
+                [6-0｜6-0]
+                [X｜X]
+      </pre>
+    </div>
+
       <div class="prologue-container">
         <div class="prologue-box">
           <h3 class="prologue-title">D⦾MINI⦿N</h3>
@@ -12420,11 +12653,18 @@
         <p>
           Jusqu'à présent personne n'a réussi à coloniser le lieu pour une raison étrange, il se descendait une pyramide d'ordres injonctives.
           Mesdames, Messieurs doivent prouver qu'ils sont dignes d'habiter Urflosia, cependant devoir est un bien gros mot.
-          Ceux qui continuent de croire à une telle chose qu'un devoir sont immédiatemment éloignés…
+          Vu que le positionnement aurnelcyen est encore faible, les meilleurs seront invités et les autres seront écartés selon le plan.
+          Le premier tri de l'échantillon se fait sous l'effet hormonal sous le contact de la chose appellé "Or" en Aursylien sans nul doute que l'unité du groupe était superficielle.
+          Ce métal sera offert, un lingot de 1kg pour chacun et le convoiteur pourra satisfaire son appétit dans les codes aursyliens, il pourra rentrer chez lui d'où il venait précedemment parmi les siens.
+          Il s'agit du point ou Jtie sait à l'avance si le rentrant est incompatible à Innok ou non lorsque la partie possessive de son cerveau prend le dessus sur le corps entier.
+          Le dégoût existait en tant qu'idée mais c'était plus fort qu'eux, ce petit métal innocent presque purement esthétique a été pris pour une proie comme par magie par des gens qui ont perdu le statut de gentillé d'une facilité fascinante.
+          Si l'or fut bien accordée à part égale, la bataille était bien de courte durée pour soumettre l'autre car celui qui se comportait hostilement était pulvérisé par la compression gravitationnelle de son son organisme physique tant qu'il sont en distribution.
+          Logiquement et tragiquement à la sortie d'Innok, la mesquinerie de haut niveau fut perpétrée en pleine liberté sous le droit entre les détenteurs de l'or sous une dispute vicieuse pour en récupérer le plus possible sur les autres, leur phase de sélection enfin terminée, bon débarras.
+          Le second est encore plus sélectif, ceux qui continuent de croire à une telle chose qu'un devoir sont immédiatemment éloignés, aucune résistance ne sera tolérée sans sa pénibilité…
           Par l'herbe, les arbustes les arbres jusqu'aux feuilles puis pour les plus persévérants des séismes, des volcans, des tsunamis, des cyclones et des inondations tous dotés d'intelligence.
           Le barrage n'hésitera pas à tuer le <span class="hmode">challenger</span> s'il persiste dans cette voie mentale, parmi les indignes se trouvent les devants des choses.
           De la fureur, il y eut pendant la <span class="hmode">sélection</span>, mais la réalité peut s'avérer cruel quand les dés sont déjà programmés.
-          Des 40.000 adhérents, simple chiffre sans signification intime, le nombre s'aminci vers les migrateurs à 5.070 pour passer à 12 dignes.
+          Des 40.000 adhérents, simple chiffre sans signification intime, le nombre s'aminci vers les migrateurs à 740 après l'or pour passer à 12 dignes.
           Parmi eux beaucoup n'était pas convaincu par une vie de famille dans ces conditions existentielles crapulesques.
           On compte Fostrah, UiNo, Uewij, Vydnitt, Xyfurn, Nezrog, Ekeline, Wacwe, Logjēm, Slacpi° et Tôhla; Ils furent désignés comme des travelistes incapables de trahir l'YgijfeV.
           Il fit quelques acharnés morts d'une vingtaine, des blessés et des indemmes qui sont rentrés d'où ils venaient avec de gros problèmes à leurs comptes.
@@ -12432,15 +12672,15 @@
           En effet, il y a les valeureux et les valeureux prient par les preneurs de valeurs un temps soit peu légèrement colonisés par des groupes privés étatiques symbole d'autorité et de référence divine.
           La plupart se convainquirent qu'il ne fallait plus sous la certaine justification de la vanité.
           Ils étaient comme des gens tentant qui ne tentent plus comprenant que tenter ne résoud rien après un long témoignage.
-          Grâce à leur résignation, le chemin s'étendait devant eux mais ils étaient abbatus et croyait d'autres choses.
+          Grâce à leur résignation, le chemin s'étendait devant eux mais ils étaient abbatus et croyaient d'autres choses.
+        </p>
+
+        <p>
           Va bien falloir que le statut de devoir se dissipe, oh non il nous est bien impossible de le verbaliser, ce bloc de texte bug.
           Ça bug tellement qu'il se prononce une augmentation du sentiment de devoir au sein du pays Aursylien, une telle chose ne devait pas arriver… oh mince! oh zut! oh mon dieu! Quelle hérésie interdite! Il nous faut <span class="hmode">X</span>!
           On ne devient pas <span class="hmode">innokcien</span> s'il le plaît bien ni par la force des choses, devoir <span class="hmode">X</span> pour X' n'est pas de l'ordre de <span class="hmode">l'être et du devenir</span> mais de l'algorithme et de sa fonction exécutrice.
           falloir_bonheur.exe, et puis quoi encore ? <span class="hmode">Prohibition et malaise</span> simultanés des jeux de résultats.
           Cette fois-ci, c'est clair comme de l'eau de roche, UiNo est classé criminel et on annonce déjà l'arnaque nouvelle de cette secte de malfrats à mettre hors d'état de nuire.
-        </p>
-
-        <p>
           Statue verbale en cours de lecture: lancer sans impact de dés, termination du =spécimen quo= .
           Nous les pauvres fous proclamons la taquinerie de toute sorte d'espèce en mitraillette apocryphique,
           selon les dispositions authentiques de la <span class="hmode">monstruosité</span> en vue de son éclosion demandé par l'intérêt chaotique du <span class="hmode">plateau</span> de jeu,
@@ -12642,17 +12882,22 @@
           Le laisser libre n'est ni une si bonne option sous un framework pur jus, alors Vydnitt et Xyfurn complotent entre eux des cadeaux surprises alias la piste du clash et du swag.
           TRIBALT dit « C'est à moi car j'ai le statut et les moyens de l'imposer », GESTALT dit « Aïe c'est de la triche espèce de fripouille!! ».
           Chez le NEET Club avec Logjēm et Tôhla on se contente de faire tout ce qui nous passe par la tête, un parfait en cas pour qui désire mourir bêtement.
-          Mais leurs têtes est si bien alignés à leurs vertus qu'il n'y a pas à s'en faire, c'était une blague tant que homo-sapien se retrouve lui-même.
+          Mais leurs têtes sont si bien alignés à leurs vertus qu'il n'y a pas à s'en faire, c'était une blague tant que homo-sapien se retrouve lui-même.
           Si vous voulez un arcadien plus professionnel pour gérer le club votez pour Slacpi car elle est trop cool.
-          Elle est d'un refus catégorico-impétueux de nous rejoindre, ces deux là sont vraiment les moins dignes des plus dignes de lui supplier en se prosternant.
+          Malgré les prières, elle est d'un refus catégorico-impétueux de nous rejoindre, ces deux là sont vraiment les moins dignes des plus dignes de lui supplier en se prosternant.
         </p>
 
         <p>
+          Au diable l'hypocrisie à Innok ou plutôt retourne parmi les vrais, ceux qui ne doivent rien et opalent leur manigances sont les moins responsables et font beaucoup de bêtises.
           La RaycRa a en effet sans se rendre compte par le meurtre de la nature Jtie, tué leur propre Jtie et donc leur unité en tant que persodiversité.
         </p>
 
         <p>
+          a
+        </p>
 
+        <p>
+          a
         </p>
 
         <p>
@@ -12974,6 +13219,7 @@
         <div id="mapARCADIA" data-title="ARc⟁diA" style="display: none;"></div>
         <div id="mapAURSYL" data-title="Aursyl" style="display: none;"></div>
         <div id="mapLYSRUA" data-title="Lysrua" style="display: none;"></div>
+        <div id="mapARTICULATIONS" data-title="Articulations" style="display: none;"></div>
 
       </details>
 
@@ -13032,6 +13278,7 @@
         <div style="max-width: 1280px; margin: 32px auto;">
           <h3 style="text-align: center;">Langue, vocalisation et étymologies</h3>
           <ul>
+            <li>Celui qui s'identifie dans AURNELCY est "un aurnelcyen" en français ou "an aurnelcyan" in english.</li>
             <li>Leqwa et l'Écouah grâce au déterminant défini sont homophones sinon en moins fameux, il y a l'équation et les quasars.</li>
             <li>Le S dans ⟁URNELCY pour Lysrua se trouve en tant que forme dans la vocalisation, "AUR" est chaud "NEL" est neutre "CY" est froid, ça sonne grave, médium puis aigu, on appelle ça un signal sinusoïde 〰.</li>
             <li>L'articulation Iuvalcienne et Arcadienne ont un format acronymique entre I-UV-AL-CY premièrement et S-P-A-R-K dernièrement.</li>
@@ -13104,13 +13351,21 @@
             <li>Bien avant Wacwe s'appelait Maqwe et la trinité s'appellait Nezkelmaq il y a longtemps de cela.</li>
             <li>Contrairement aux grecs, les courroux spectaculaires dans cette mythologie se font calmer par un gigachad.</li>
             <li>Le démonom UiNo aurait de la Mono-Mémoire à moins que ce n'est qu'une hallucination.</li>
+            <li>Les règles de la production de son nom aurnelcyen:<br>
+              1. (Obligatoire) Avoir deux ou trois syllabes<br>
+              2. (Obligatoire) trois à neuf lettres<br>
+              3. (Obligatoire) deux à quatre voyelles<br>
+              4. (1 chance /2 + 1 chance /2 soit inhabituel) Assemblage de consonnes<br>
+              5. (1 chance /2 + 1 chance /2 soit inhabituel) Diphtongues étranges<br>
+              6. (Facultatif) Si deux syllabes: un symbole, un accent, ou une seconde majuscule<br>
+            Exemples(par IA): </li>
           </ul>
 
           <h3 style="text-align: center;">Auteur et coulisses</h3>
           <ul>
             <li>PAMABWA est la seule définition qui possède une date de naissance.</li>
             <li>Fenekohq en tant que NEET sévère a construit ⟁URNELCY, c'est un thug.</li>
-            <li>Le Conte Sanguinaire vient du Wikipedia français.</li>
+            <li>Le Conte Sanguinaire vient du <a href="https://fr.wikipedia.org/wiki/Liste_de_guerres">Wikipedia français</a>.</li>
             <li>Le racisme de la définition du Conte Sanguinaire est un coup aursylien provocateur.</li>
             <li>La waifu de Fenekohq est Howan (SHOW BY ROCK!!)<img src="feature/Howan_Chibi.png" alt="Howan_Chibi" style="max-width:3%;"></li>
             <li>Fenekohq a une carrière sur MDMC en tant que créateur de graphiques sur le jeu de rythme Muse Dash.</li>

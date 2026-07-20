@@ -229,8 +229,11 @@ const JQB_ARCADISTS = [
   },
 
   { player: 'a', universe: '', field: 'a', catalyzer: 'a', plosion: 'a' },
-  { player: 'a', universe: '', field: 'a', catalyzer: 'a', plosion: 'a' },
-  { player: 'a', universe: '', field: 'a', catalyzer: 'a', plosion: 'a' },
+  { player: 'Michael Jackson - Thriller', universe: 'Pop', field: 'This is thriller', catalyzer: 'Its Fiction', plosion: 'Borderless Madness Release' },
+  { player: 'Michael Jackson - Smooth Criminal', universe: 'Pop', field: 'Killing Crime', catalyzer: 'Is Annie okay ?', plosion: 'Unknown Intimate Fatal' },
+  { player: 'Michael Jackson - They Dont Care About Us', universe: 'Pop', field: 'State brutality', catalyzer: 'Fuck Discrimination', plosion: 'Emptiness Fuel×Undetermined Hunger Madness' },
+  { player: 'Michael Jackson - Beat It', universe: 'Pop', field: 'Battle', catalyzer: 'No one wants to be defeated', plosion: 'Monstrous Hunger Fuel' },
+  { player: 'Michael Jackson - Billie Jean', universe: 'Pop', field: 'Pretending Girls', catalyzer: 'Not my lover, Kid not my son', plosion: 'Doubt Intimate Layers Estrangelement Unknown' },
 
   {
     player: 'kessoku band - Seiza ni Naretara',
@@ -869,7 +872,7 @@ const JQB_ARCADISTS = [
     player: 'wotaku feat. Hatsune Miku - Gehenna',
     universe: 'VOCALOID',
     field: 'Self-Harm',
-    catalyzer: 'D-Word & Stay Alive',
+    catalyzer: 'Dick & Stay Alive',
     plosion: 'Monstrous Agony',
   },
   {
@@ -1244,7 +1247,10 @@ const LIKKHH_ARCADISTS = [
   { player: 'a', universe: '', field: 'a', catalyzer: 'a', horizon: 'a' },
   { player: 'a', universe: '', field: 'a', catalyzer: 'a', horizon: 'a' },
   { player: 'a', universe: '', field: 'a', catalyzer: 'a', horizon: 'a' },
-
+  { player: 'a', universe: '', field: 'a', catalyzer: 'a', horizon: 'a' },
+  { player: 'Uinyasu & Ouchoko Bunny - Aa, Kenran no Yume ga Gotoku', universe: 'Sen no Hatou, Tsukisome no Kouki', field: 'Love & Longing', catalyzer: 'Flurry Turmoil', horizon: 'Hunger Fuel Belonging' },
+  { player: 'Uinyasu - Tsukiyo ni Mau Koi no Hana', universe: 'Sen no Hatou, Tsukisome no Kouki', field: 'Love Poem', catalyzer: 'Perseverance in Beauty', horizon: 'Intimate Belonging Fuel' },
+  { player: 'Michael Jackson - Man In The Mirror', universe: 'Pop', field: 'Fucked Up World', catalyzer: 'Start with Yourself', plosion: 'Constructive Intimate Fuel' },
   {
     player: "<ruby>Ariabl'eyeS<rt>Lyse</rt></ruby> - Nageki no L'adieu",
     universe: '',
@@ -1897,7 +1903,7 @@ const LIKKHH_ARCADISTS = [
     player: 'PinocchioP feat. Hatsune Miku - Mahou Shoujo to Chocolate',
     universe: 'VOCALOID',
     field: 'Role Comedy Play',
-    catalyzer: 'F-Word',
+    catalyzer: 'Fuck',
     horizon: 'Madness Layers',
   },
   {
@@ -2203,7 +2209,8 @@ const RUGGHH_ARCADISTS = [
   { player: 'a', universe: '', field: 'a', catalyzer: 'a', quiz: 'a' },
   { player: 'a', universe: '', field: 'a', catalyzer: 'a', quiz: 'a' },
   { player: 'a', universe: '', field: 'a', catalyzer: 'a', quiz: 'a' },
-
+  { player: 'Michael Jackson - Human Nature', universe: 'Pop', field: 'Why ?', catalyzer: 'Human Nature', plosion: 'Hunger Release' },
+  
   {
     player: 'mafumafu feat. IA - Yakubyougami',
     universe: 'VOCALOID',
@@ -2459,7 +2466,7 @@ const RUGGHH_ARCADISTS = [
     player: 'Oonuma Paseri feat. flower - Egoist',
     universe: 'VOCALOID',
     field: 'Guidance Conversation',
-    catalyzer: 'Life Withdraw S-Word',
+    catalyzer: 'Life Withdraw Shit',
     quiz: 'Emptiness',
   },
   {

@@ -5,6 +5,7 @@ const conceptMapConfigs = [
   { id: 'mapARCADIA', sourceTitle: "Carte Conceptuelle d'ARcdiA" },
   { id: 'mapAURSYL', sourceTitle: "Carte Conceptuelle d'Aursyl" },
   { id: 'mapLYSRUA', sourceTitle: 'Carte Conceptuelle de Lysrua' },
+  { id: 'mapARTICULATIONS', sourceTitle: 'Carte Conceptuelle des Articulations' },
 ];
 
 function normalizeConceptMapLabel(text) {
