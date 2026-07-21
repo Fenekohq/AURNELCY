@@ -601,17 +601,6 @@ html[data-theme='dark'] img[src*='feature/Awkward.png'] {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.thesis {
-  margin: 32px auto;
-  max-width: 900px;
-  padding: 18px 22px;
-  text-align: center;
-  white-space: pre-line;
-  line-height: 1.6;
-  border: 1px solid currentColor;
-  background: rgba(127, 127, 127, 0.08);
-}
-
 @media screen and (max-width: 896px) {
   .start {
     grid-template-columns: 1fr 1fr;

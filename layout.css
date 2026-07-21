@@ -366,18 +366,14 @@ details[open]>summary::before {
 }
 
 .thesis {
-  color: var(--text-color);
-  border-left: 4px solid var(--table-border);
-  background-color: rgba(var(--text-color-rgb), 0.04);
-  max-width: 650px;
-  margin: 2rem auto;
-  padding: 1.5rem 2rem;
-  border-radius: 0 8px 8px 0;
-  font-size: 1.15rem;
-  line-height: 1.7;
-  font-style: italic;
-  text-align: justify;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  margin: 32px auto;
+  max-width: 1000px;
+  padding: 18px 22px;
+  text-align: center;
+  white-space: normal;
+  line-height: 1.6;
+  border: 1px solid currentColor;
+  background: rgba(127, 127, 127, 0.08);
 }
 
 .thx {
