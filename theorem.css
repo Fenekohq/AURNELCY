@@ -203,6 +203,19 @@ html[data-theme='dark'] img[src*='feature/OK.png'] {
   }
 }
 
+  .bng-skills {
+    font-size: 1.57em;
+  }
+  
+@media screen and (max-width: 768px) {
+  .bng-table {
+    width: 50%
+  }
+
+  .bng-skills {
+    font-size: 1em;
+  }
+}
 .p-kwhite {
   color: #edeae0;
   text-shadow: 0px 0px 5px #edeae0;
@@ -1688,6 +1701,15 @@ html[data-theme='dark'] img[src*='feature/Awkward.png'] {
   table-layout: fixed;
   min-width: 1280px;
   max-width: 1600px;
+}
+
+.A6es th,
+.A6es td {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  letter-spacing: 0.18em;
+  text-align: center;
 }
 
 .a6mplush {

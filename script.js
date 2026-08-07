@@ -128,6 +128,17 @@ document.addEventListener('DOMContentLoaded', function () {
 //MAGIC CIRCLE
 
 function scrollToSection(sectionId) {
+  if (sectionId === '↑') {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return;
+  }
+
+  if (sectionId === '↓') {
+    const bottom = document.documentElement.scrollHeight - window.innerHeight;
+    window.scrollTo({ top: Math.max(0, bottom), behavior: 'smooth' });
+    return;
+  }
+
   const element = document.getElementById(sectionId);
   if (element) {
     const offsetTop = element.getBoundingClientRect().top + window.pageYOffset;
@@ -230,3 +241,19 @@ function toggleHighlightMode() {
     element.style.backgroundColor = highlightModeEnabled ? '#7F00FF' : 'transparent';
   });
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+  const toggleDefinizerBtn = document.getElementById('toggle-definizer-btn');
+  if (!toggleDefinizerBtn) return;
+
+  let definizerHidden = false;
+
+  toggleDefinizerBtn.addEventListener('click', function () {
+    definizerHidden = !definizerHidden;
+    document.querySelectorAll('.definizer').forEach((element) => {
+      element.style.display = definizerHidden ? 'none' : '';
+    });
+    toggleDefinizerBtn.textContent = definizerHidden ? '📌' : '🛑';
+    toggleDefinizerBtn.title = definizerHidden ? 'Afficher les éléments definizer' : 'Cacher les éléments definizer';
+  });
+});

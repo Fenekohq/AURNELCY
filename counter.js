@@ -172,3 +172,68 @@ function updateCounters() {
 }
 
 window.onload = updateCounters;
+
+// Louanges & Lauriers Counter
+function updateLouangesLauriersCount() {
+  // Count only inside the genre table to reflect the genre summary counts
+  const genreTable = document.querySelector('.genre-table table');
+  let louanges = 0;
+  let lauriers = 0;
+
+  if (genreTable && !isHiddenForCounting(genreTable)) {
+    const html = genreTable.innerHTML || '';
+    const louangeMatches = html.match(/「.*?」/gs);
+    const laurierMatches = html.match(/『.*?』/gs);
+
+    if (louangeMatches) louanges = louangeMatches.length;
+    if (laurierMatches) lauriers = laurierMatches.length;
+  } else {
+    // fallback: count across all tables (previous behaviour)
+    const tables = Array.from(document.querySelectorAll('table'));
+    tables.forEach((table) => {
+      if (isHiddenForCounting(table)) return;
+      const html = table.innerHTML || '';
+      const louangeMatches = html.match(/「.*?」/gs);
+      const laurierMatches = html.match(/『.*?』/gs);
+      if (louangeMatches) louanges += louangeMatches.length;
+      if (laurierMatches) lauriers += laurierMatches.length;
+    });
+  }
+
+  // Find or create display spans next to definitionCount
+  const defEl = document.getElementById('definitionCount');
+  if (defEl) {
+    let lSpan = document.getElementById('louangesCount');
+    let rSpan = document.getElementById('lauriersCount');
+
+    if (!lSpan) {
+      lSpan = document.createElement('span');
+      lSpan.id = 'louangesCount';
+      lSpan.style.marginLeft = '6px';
+      lSpan.style.fontWeight = 'normal';
+      defEl.parentNode.insertBefore(lSpan, defEl.nextSibling);
+    }
+
+    if (!rSpan) {
+      rSpan = document.createElement('span');
+      rSpan.id = 'lauriersCount';
+      rSpan.style.marginLeft = '6px';
+      rSpan.style.fontWeight = 'normal';
+      defEl.parentNode.insertBefore(rSpan, lSpan.nextSibling);
+    }
+
+    lSpan.textContent = `${louanges}`;
+    rSpan.textContent = `${lauriers}`;
+  }
+
+  return { louanges, lauriers };
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', updateLouangesLauriersCount);
+} else {
+  updateLouangesLauriersCount();
+}
+
+setTimeout(updateLouangesLauriersCount, 100);
+setTimeout(updateLouangesLauriersCount, 500);

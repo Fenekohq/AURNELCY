@@ -60,37 +60,62 @@ document.addEventListener('DOMContentLoaded', function () {
 const activeCategories = new Set();
 const vocabularyData = [
   {
+    term: "Terme",
+    category: ["K0re"],
+    definition: "Entrée du dictionnaire — le concept clé qui peut être défini, contextualisé et relié.",
+    school: "École, régime ou cadre conceptuel qui situe l'entrée dans le système.",
+    implication: "Champ indiquant ce que le terme engage, provoque ou mobilise dans le système.",
+    simplified: "Résumé rapide et accessible du sens général du terme.",
+    desc: "Représentation visuelle, symbole ou image mentale associée au terme.",
+    example: "Illustration concrète ou situation d'usage qui aide à comprendre le terme.",
+    quote: "Formule, phrase ou citation qui incarne l'esprit du terme.",
+    parent: "Terme plus vaste ou catégorie parente qui structure la relation conceptuelle.",
+    etymology: "Origine du mot ou décomposition de ses éléments pour en comprendre la genèse.",
+    synonym: "Mots ou notions proches qui peuvent être utilisées comme variantes.",
+    pronunce: "Transcription ou indications de prononciation pour le terme.",
+    meme: "Élément comique, phrase drôle ou clin d’œil humoristique lié au terme.",
+    surnatural: "Dimension mythologique, étrange ou magique associée au terme.",
+    version: "Formes alternatives, flexions et variantes écrites du terme."
+  },
+  {
     term: "⟁URNELCY",
-    category: ["Mapnel", "IUVALCY", "ARc⟁diA", "Aursyl", "Lysrua", "D⦾MIN⦿'s"],
+    category: ["Mapnel", "IUVALCY", "ARc⟁diA", "Aursyl", "Lysrua", "D⦾MIN⦿'s","K0re"],
     definition: "Univers littéraire de Fenekohq.",
     school: "Système littéraire, philosophique et mythologique conçu par Fenekohq.",
     implication: "Intéressé ?",
     simplified: "Œuvre d'un pauvre fou",
-    desc: "Fostrah, UiNo, Uewij, Vydnitt, Xyfurn, Nezrog, Ekeline, Wacwe・Leqwa, Logjēm, Slacpi°, Tôhla",
+    desc: "Fostrah, UiNo, Uewij, Vydnitt, Xyfurn, Nezrog, Ekeline, Wacwe・Leqwa, Logjēm, Slacpi°, Tôhla, Dévore-Novice",
+    example: "Création d'un nouveau genre de monde, d'une nouvelle civilisation et d'une nouvelle culture",
+    quote: "La malfaisance avait donné rendez-vous à Fenekohq aux marécages pour le baigner au gouffre, mais le capricieux marginal y est sortie en transe pour découvrir le terme de ses recherches palpitantes.",
     parent: "Vie sur la planète Terre",
     etymology: "⟁UR(ARc⟁diA & Aursyl) NEL(Mapnel) CY(IUVALCY) Lettres Dispatchées(Lysrua) Structure Métaphorique(D⦾MIN⦿'s)",
-    synonym: "ONEL6, Onelsix",
+    synonym: "ONEL6, Onelsix, OLINELICI",
     pronunce: "Français /oʁ.nɛl.si/ English /ɔːɹ.nəl.si/",
+    meme: "Es-tu aurnelcyen ?",
     surnatural: "Invoquer ⟁URNELCY est signe de pure folie.",
-    version: "AURNELCY, aurnelcyen, aurnelcyens, aurnelcyenne, aurnelcyennes, ONEL6"
+    version: "AURNELCY, aurnelcyen, aurnelcyens, aurnelcyenne, aurnelcyennes, ONEL6, Onelsix, OLINELICI"
   },
   {
     term: "Fenekohq",
-    category: ["Persona", "Concepteur"],
+    category: ["Persona", "Concepteur","K0re"],
     definition: "Le Pseudonyme de l'Auteur d'⟁URNELCY.",
     school: "Nom d'auteur et identité créatrice du projet ⟁URNELCY.",
+    implication: "Fenekohq a crée sa plus grande passion juste ici.",
     simplified: "L'alias fétiche du pauvre fou en question",
+    quote: "L'origine de Fenekohq vient d'un Fennec du désert qui a conquis le Sahara, d'un Chat du japon devenu une idole kawaii et d'un Coq ayant fui et assasiné tous ceux voulant sa viande. Leur union au sein du pays aurnelcyen à donné naissance à Fenekohq étant le seul possèdant les chromosomes X Y et Z ce qui marque l'ascension d'une nouvelle race pour faire trembler tout les terriens impliqués dans la destruction de la civilisation.",
     etymology: "Fennec - Neko(Japonais)/Chat - Coq {en théorie}",
     synonym: "Fenek, Feneko, FE猫HQ, フェネコーク",
     pronunce: "/fɛ.nɛ.kɔk/"
   },
   {
     term: "0K",
-    category: ["0K"],
+    category: ["0K","K0re"],
     definition: "C'est OK pour l'instant.",
     school: "État provisoirement acceptable ou tenable.",
     simplified: "J'ai fait de mon mieux",
     desc: "Emma",
+    example: "Éponge qui s'embouche un coin",
+    quote: "C'est la fenêtre de tir, prends ta chance, je vais te photographier!",
     parent: "⟁URNELCY, non-⟁URNELCY",
     etymology: "0 Kill, All Correct, Orl Korrect",
     synonym: "OK",
@@ -99,11 +124,13 @@ const vocabularyData = [
   },
   {
     term: "Mapnel",
-    category: ["Mapnel"],
+    category: ["Mapnel","K0re"],
     definition: "Dialogue entre contraires.",
     school: "Régime fondé sur la tension entre contraires et leur juste articulation.",
     simplified: "Rétention et Relâchement",
     desc: "Vydnitt, Xyfurn, Nezrog, Ekeline, Wacwe・Leqwa",
+    example: "Mettre la puce à l'oreille, puis la retirer pour la remettre à l'oreille opposée",
+    quote: "Premier jet brouillon raturé, second jet ressemble à quelque chose, troisième jet immersion possédé, quatrièmement accomplis-toi: la maturation du monstre est inéluctable.",
     parent: "⟁URNELCY",
     etymology: "Ma(Monoa-Admagcoq) pnel(Polyz-Nezkelwac[N-ezrog, E-keline, L-eqwa])",
     synonym: "ℳ𝒶𝓅𝓃ℯ𝓁",
@@ -112,11 +139,13 @@ const vocabularyData = [
   },
   {
     term: "IUVALCY",
-    category: ["IUVALCY"],
+    category: ["IUVALCY","K0re"],
     definition: "Chambre de la perception.",
     school: "Régime d'analyse de la perception, des filtres mentaux et de la conscience.",
     simplified: "Méta-Méditation",
     desc: "Fostrah, UiNo, Uewij",
+    example: "Aiguiser ses sens sans début et sans fin",
+    quote: "Une inspiration se produit, peu importe le faire; au souffle, parmi les 1000 combinaisons, une sera choisie.",
     parent: "⟁URNELCY",
     etymology: "I(Ligne) UV(Aiguisement) AL(Chaise) CY(Conscience V Levée)",
     pronunce: "Français /ju.val.si/ English /ˈjuː.væl.si/",
@@ -124,11 +153,13 @@ const vocabularyData = [
   },
   {
     term: "ARc⟁diA",
-    category: ["ARc⟁diA"],
+    category: ["ARc⟁diA","K0re"],
     definition: "Jeu de la plaisanterie.",
     school: "Régime du jeu, du masque, de la farce et de la simulation.",
     simplified: "Farce",
     desc: "Logjēm, Slacpi°, Tôhla",
+    example: "Encore une blague de mauvais goût, devinons celle-ci",
+    quote: "La partie n'est pas terminée, tu as crié victoire trop tôt, faut-il que je te rappelle les règles du jeu ?",
     parent: "⟁URNELCY",
     etymology: "Arc, Arcade",
     synonym: "Arcadia",
@@ -137,11 +168,13 @@ const vocabularyData = [
   },
   {
     term: "Aursyl",
-    category: ["Aursyl"],
+    category: ["Aursyl","K0re"],
     definition: "Manigances esclavagistes.",
     school: "Régime de capture, de domination et d'aliénation.",
     simplified: "Colonisation",
     desc: "18+",
+    example: "Conquête d'un territoire par une puissance extérieure",
+    quote: "Je vous ai demandé poliement d'enfouir votre âme dans les tréfonds de l'amnésie alors faites-le. Ah… mais j'oubliais, il faut d'abord y croire.",
     parent: "⟁URNELCY",
     etymology: "Aura, Réunion",
     synonym: "𝔄𝔲𝔯𝔰𝔶𝔩",
@@ -150,11 +183,13 @@ const vocabularyData = [
   },
   {
     term: "Lysrua",
-    category: ["Lysrua"],
+    category: ["Lysrua","K0re"],
     definition: "Profusion Symphonique.",
     school: "Régime de profusion culturelle, de recomposition et de souveraineté des formes.",
     simplified: "Multi-Culture",
     desc: "5 Mapnéliens, 3 Iuvalciens, 3 Arcadiens, 1 Aursylien",
+    example: "Composer une symphonie avec des franchises fameuses",
+    quote: "Profitons de tout les délices que le monde a à nous offrir… Alléluia! Alléluia!!",
     parent: "⟁URNELCY",
     etymology: "Aursyl Inversé",
     pronunce: "Français /lis.ʁɥa/ English /ˈlɪs.ruː.ə/",
@@ -162,11 +197,13 @@ const vocabularyData = [
   },
   {
     term: "D⦾MIN⦿'s",
-    category: ["D⦾MIN⦿'s"],
+    category: ["D⦾MIN⦿'s","K0re"],
     definition: "Récit Fabuleux.",
     school: "Dimension mythologique et narrative du système.",
     simplified: "Légende",
     desc: "Ø",
+    example: "Livre poussiéreux et lugubre dans les bibliothèques interdites",
+    quote: "Le démoniaque Fenekohq pari qu'à la fin de l'histoire, vous deviendrez un pauvre fou comme lui.",
     parent: "⟁URNELCY",
     etymology: "Domicile, Domination, Domino",
     synonym: "DOMINO's",
@@ -184,7 +221,7 @@ const vocabularyData = [
   },
   {
     term: "Laurier",
-    category: ["Phénotype", "Citadel"],
+    category: ["Phénotype","K0re", "Citadel"],
     definition: "Château Mapnélien/Iuvalcien/Arcadien, Cachot Aursylien, Chapelle Lysruéenne ou Donjon DOMINION",
     school: "Format d'œuvre majeure selon le théorème concerné.",
     simplified: "Œuvre Majeure",
@@ -202,35 +239,35 @@ const vocabularyData = [
   },
   {
     term: "Vie",
-    category: ["0K", "Cipher", "Phénomène", "Concepteur", "Phénotype", "Supervision"],
+    category: ["0K","K0re", "Cipher", "Phénomène", "Concepteur", "Phénotype", "Supervision"],
     definition: "Fait de vivre [etc…]",
     implication: "Toutes les définitions combinées sont insatisfaisantes.",
     etymology: "Vita (Latin)"
   },
   {
     term: "Mort",
-    category: ["0K", "Cipher", "Phénomène", "Cueillette", "Spherµ", "Supernova"],
+    category: ["0K","K0re", "Cipher", "Phénomène", "Cueillette", "Spherµ", "Supernova"],
     definition: "Cessation de la vie [etc…]",
     implication: "Toutes les définitions combinées sont insatisfaisantes.",
     etymology: "Mortuus (Latin)"
   },
   {
     term: "Homo Sapien",
-    category: ["0K", "Persona"],
+    category: ["0K","K0re", "Persona"],
     definition: "Mammifère primate de la famille des hominidés [etc…]",
     implication: "T'as compris ?",
     etymology: "Être Humain Intelligent, Sage, Raisonnable, Prudent"
   },
   {
     term: "Héros/Héroïne",
-    category: ["Mapnel", "Persona", "Supervision", "Supernova"],
+    category: ["Mapnel","K0re", "Persona", "Supervision", "Supernova"],
     definition: "Figure célèbre et admirable de combat et d'adversité, on en raconte la fulgurance iconique de sa vie.",
     etymology: "Chef/Demi-Dieu",
-    version: "Héros, Héroïne, Hero, Heroine"
+    version: "Héros, Héroïne, Héroïnes, Hero, Heroes, Heroine, Heroines"
   },
   {
     term: "Pérégrination",
-    category: ["Mapnel", "Cueillette"],
+    category: ["Mapnel","K0re", "Cueillette"],
     definition: "Long voyage sinueux en région reculée des habitudes routinières aisées.",
     etymology: "Voyage Lointain",
     synonym: "Périple, Pèlerinage, Expédition, Cheminement, Odysée, Errance",
@@ -238,11 +275,12 @@ const vocabularyData = [
   },
   {
     term: "Monoa-Polyz",
-    category: ["Mapnel", "Vydnitt", "Monoa-Polyz", "Concepteur", "Spherµ", "Trinité"],
+    category: ["Mapnel","K0re", "Vydnitt", "Monoa-Polyz", "Concepteur", "Spherµ", "Trinité"],
     definition: "Être et Devenir Monom&Polyp et Monop%Polym.",
     school: "Principe central liant unité et multiplicité, être et devenir.",
     implication: "Animation originale[-] Au format vedette[Polyz] À toile de fond[Monoa].",
     simplified: "Matière Corde Passage ou Déploiement Énergique",
+    quote: "Voilà l'être et il devient… il devient… il devient… mystère et boule de gomme, que sera t-il ma parole ?",
     synonym: "𝙼𝚘𝚗𝚘𝚊-𝙿𝚘𝚕𝚢𝚣(Monospace)",
     version: "Moa&Poz, M&P, 𝙼𝚘𝚗𝚘𝚊-𝙿𝚘𝚕𝚢𝚣"
   },
@@ -282,7 +320,7 @@ const vocabularyData = [
   },
   {
     term: "Monom&Polyp",
-    category: ["Mapnel", "Vydnitt", "Leqwa", "Monoa-Polyz", "Citadel"],
+    category: ["Mapnel","K0re", "Vydnitt", "Leqwa", "Monoa-Polyz", "Citadel"],
     definition: "État-Dynamique intemporelle où être et devenir sont entrelacés dans une communion harmonieuse.",
     school: "Équilibre vivant entre persistance et renouvellement.",
     simplified: "Mémoire nourricière permanente & Projection épisodique cyclique ou Laisser Ouvert",
@@ -324,7 +362,7 @@ const vocabularyData = [
   },
   {
     term: "Monop%Polym",
-    category: ["Aursyl", "Vydnitt", "Monoa-Polyz", "Citadel"],
+    category: ["Aursyl","K0re", "Vydnitt", "Monoa-Polyz", "Citadel"],
     definition: "État-Dynamique contractée où être et devenir sont imbriqués dans une déperdition rupturante.",
     school: "Équilibre dégradé où fixation et trouble se nourrissent l'un l'autre.",
     simplified: "Prohibition affamante saturée % Malaise apathique déclinant ou Prendre au Piège",
@@ -346,12 +384,13 @@ const vocabularyData = [
   },
   {
     term: "Dévore-Novice",
-    category: ["Aursyl", "UiNo", "Vydnitt", "Persona", "Concepteur"],
+    category: ["Aursyl", "K0re", "UiNo", "Vydnitt", "Persona", "Concepteur"],
     definition: "Adversaire de la seigneurie planifiant son itinéraire purement stratégique dans des proportions d'ennui globalisé.",
     school: "Figure de domination stratégique qui colonise les consciences.",
     implication: "Annihilateur ontologique de la raison d'être ou la sournoise trafiqueuse de conscience vers l'ébranlement de sa volonté propre dont on ne peut certifier la provenance.",
     simplified: "Colonisateur d'apprentis-novices vers la déflagration de leur consciences.",
     desc: "Il est décrit comme personnage diurne ayant 2 mains 2 pieds 2 yeux 2 oreilles 1 nez 1 bouche, mais s'est aussi construit une citadelle dans le monde invisible de l'esprit de chacun.",
+    quote: "Il m'a été donné la responsabilité de l'être et le devenir de tout un pays, ma foi les paysans sont chez eux grâce à moi.",
     synonym: "Tyran, Esclavagiste, Despote, Imposteur, Crapule, Aliénatueur, Assassin du Sens, Fumée Noire, Déchu, Marque de Fabrique, Le Grand Ennemi",
     surnatural: "Putschiste de Dieu déguisé en celui-ci injoncteur du Pourquoi capable de ruiner au moins un millier de personnes de leur soutien servile consenti par la délégation.",
     version: "Dévore-Novicien, Dévore-Novicienne, Dévore-Noviciens, Dévore-Noviciennes"
@@ -438,7 +477,7 @@ const vocabularyData = [
   },
   {
     term: "Naustre C",
-    category: ["Mapnel", "Uewij", "Nezrog", "Persona", "Cueillette"],
+    category: ["Mapnel", "Uewij", "Nezrog","K0re", "Persona", "Cueillette"],
     definition: "Créature navigatrice consciente et psychiquement relationnelle de son 0 aussi appelée mortel.",
     school: "Stature redoutable encore en construction.",
     implication: "Marcheur de son propre sentier s'écartant du coin de l'action définit par la réprimande répressive.",
@@ -503,7 +542,7 @@ const vocabularyData = [
   },
   {
     term: "Innokcien",
-    category: ["Mapnel", "Ekeline", "Persona", "Codex", "Concepteur"],
+    category: ["Mapnel", "Ekeline","K0re", "Persona", "Codex", "Concepteur"],
     definition: "Dispossédé médiateur reptilien rapetissant les inadvertances par la magnificence de sa trempe.",
     school: "Figure d'innocence dense, équilibrée et habitée.",
     simplified: "Instance témoin à la sagacité holistique des ensembles.",
@@ -527,7 +566,7 @@ const vocabularyData = [
   },
   {
     term: "Picol-Kentron",
-    category: ["Mapnel", "Wacwe", "Cueillette", "Tablette", "Museum", "Parc", "Citadel"],
+    category: ["Mapnel","K0re", "Wacwe", "Cueillette", "Tablette", "Museum", "Parc", "Citadel"],
     definition: "Schéma de multiplicité des rôles, fonctions interprétées par cercles s'empilant par objectifs •RGB•BNG•",
     school: "Schéma des rôles et des hiérarchies symboliques par couleurs.",
     implication: "Chaque couleur poursuit un rapport étroit avec l'intégralité fonctionnelle et fondamentale.",
@@ -632,14 +671,14 @@ const vocabularyData = [
   },
   {
     term: "Sfivoq",
-    category: ["Mapnel", "Leqwa", "Persona"],
+    category: ["Mapnel","K0re", "Leqwa", "Persona"],
     definition: "Dauphin bouillonant d'exaltation, symbolique de l'initiation vitale de déferlantes affirmations cordiales.",
     desc: "Larmes de Vitalité, 4 Évents Lévitation, Corne en Fusion, 100 Nageoires, 3 Yeux Néons RGB, Peau Grise, Taille de 9 Mètres",
     version: "Sfivoqs"
   },
   {
     term: "Duel Xceptionnel",
-    category: ["Mapnel", "Aursyl", "Leqwa", "Supervision", "Supernova"],
+    category: ["Mapnel","K0re", "Aursyl", "Leqwa", "Supervision", "Supernova"],
     definition: "Controverse du statu quo, de son décalcage standardisé et de son arsenal pour le maintenir.",
     school: "Confrontation exemplaire entre deux grandeurs ou deux légitimités.",
     implication: "Culmination du déchaînement ravageur pour finalité la délivrance du dévore-novice et de sa machination.",
@@ -648,7 +687,7 @@ const vocabularyData = [
   },
   {
     term: "MonPol",
-    category: ["Mapnel", "Lysrua", "Leqwa", "Monoa-Polyz", "Phénotype", "Spherµ", "Cueillette"],
+    category: ["Mapnel","K0re", "Lysrua", "Leqwa", "Monoa-Polyz", "Phénotype", "Spherµ", "Cueillette"],
     definition: "Titre honorifique envers l'être et son devenir ou le mémojectile quoi qu'il en soit.",
     simplified: "Dédicace Exaltée",
     pronunce: "Monne-Polle"
@@ -730,7 +769,7 @@ const vocabularyData = [
   },
   {
     term: "Travail",
-    category: ["Aursyl", "Fostrah", "Codex"],
+    category: ["Aursyl","K0re", "Fostrah", "Codex"],
     definition: "Collecteur $¥€₿ [Monop%Polym] abusant la culture (Profit - Extraction - Monopole - Accumulation).",
     school: "Régime d'effort, de contrainte et de tenue nécessaire.",
     implication: "Ce qui doit formellement être fait pour l'âme collective à ce qu'on dit.",
@@ -739,7 +778,7 @@ const vocabularyData = [
   },
   {
     term: "Veldiac",
-    category: ["Mapnel", "IUVALCY", "Uewij", "Codex"],
+    category: ["Mapnel","K0re", "IUVALCY", "Uewij", "Codex"],
     definition: "Voilier 1234 traversant la culture (1 - 2 - 3 - 4).",
     school: "Mode d'activité et de vie qui rend l'existence habitable, respirable et culturellement féconde.",
     implication: "Ce qui doit informellement devenir oublié pour la psyché individuelle à ce qu'on dit.",
@@ -813,14 +852,14 @@ const vocabularyData = [
   },
   {
     term: "Möbius Netwow",
-    category: ["IUVALCY", "UiNo", "Supernova", "Spherµ", "Citadel"],
+    category: ["IUVALCY", "UiNo","K0re", "Supernova", "Spherµ", "Citadel"],
     definition: "Site cousu décousu d'entendement domestique gouvernant.",
     school: "Réseau de perception et de pensée en boucle auto-enveloppée.",
     version: "Netwow, Netwower, Netwowers"
   },
   {
     term: "PROTAGONISM",
-    category: ["IUVALCY", "UiNo", "Leqwa", "Concepteur"],
+    category: ["IUVALCY", "UiNo", "Leqwa", "K0re", "Concepteur"],
     definition: "Pouvoir affirmatif du défi continuel vers une forme de vie irréductible et croissante.",
     school: "Tendance à se vivre comme centre actif ou héros de sa trajectoire.",
     synonym: "Ganique(profusée)",
@@ -828,13 +867,13 @@ const vocabularyData = [
   },
   {
     term: "Crith",
-    category: ["IUVALCY", "UiNo", "Supervision"],
+    category: ["IUVALCY", "UiNo","K0re", "Supervision"],
     definition: "Commandement à l'antenne de singularité complète-incomplète.",
     school: "Principe critique qui expose les limites du langage et oblige la pensée à se reformer."
   },
   {
     term: "⟁",
-    category: ["ARc⟁diA", "Mouet-Pouet", "Cipher"],
+    category: ["ARc⟁diA","K0re", "Mouet-Pouet", "Cipher"],
     definition: "Awkward.",
     school: "Signe de bascule, d'éclair et de découverte.",
     etymology: "awk = ambigu｜ward = direction spaciale/temporelle",
@@ -843,14 +882,14 @@ const vocabularyData = [
   },
   {
     term: "ZooZaZe",
-    category: ["ARc⟁diA", "Logjēm", "Slacpi°", "Trinité", "Tablette"],
+    category: ["ARc⟁diA","K0re", "Logjēm", "Slacpi°", "Trinité", "Tablette"],
     definition: "Trinité Cultivatrice (JooQooBoo - aLIaKKaHH - eRUeGGeHH)",
     school: "Triptyque des trois forces arcadiennes : conflit libéré, apaisement affiliateur et médiation interrogative.",
     simplified: "Forces"
   },
   {
     term: "JooQooBoo",
-    category: ["ARc⟁diA", "Logjēm", "Leqwa", "Supervision", "Supernova"],
+    category: ["ARc⟁diA", "Logjēm", "Leqwa", "K0re", "Supervision", "Supernova"],
     definition: "Hostilité macabrique affranchie des lois établies ensemanceuse de plosions imparables.",
     school: "Force de confrontation, de pression et de menace qui pousse le conflit jusqu'à l'épreuve décisive.",
     simplified: "Jeu du Cou Menacé",
@@ -859,7 +898,7 @@ const vocabularyData = [
   },
   {
     term: "aLIaKKaHH",
-    category: ["ARc⟁diA", "Slacpi°", "Ekeline", "Phénotype", "Cueillette"],
+    category: ["ARc⟁diA", "Slacpi°", "Ekeline", "K0re", "Phénotype", "Cueillette"],
     definition: "Dissolution affiliatrice affranchie des coercitions prescrites enrôleuse d'horizons inexplorés.",
     school: "Force d'apaisement, d'alliance et de soulagement qui desserre les contraintes et rouvre les possibles.",
     simplified: "Alimentation Accentueuse de Soulagement",
@@ -868,7 +907,7 @@ const vocabularyData = [
   },
   {
     term: "eRUeGGeHH",
-    category: ["ARc⟁diA", "Nezrog", "Phénomène"],
+    category: ["ARc⟁diA", "Nezrog", "K0re", "Phénomène"],
     definition: "Passage didactique affranchie des limitations formées animateur d'exterrogations impénétrables.",
     school: "Force de médiation et d'interpellation qui relance la pensée par la question, le passage et la mise en relation.",
     simplified: "Éruption Égayeuse d'Interpellations",
@@ -935,7 +974,7 @@ const vocabularyData = [
   },
   {
     term: "Tra§Vel",
-    category: ["ARc⟁diA", "Leqwa", "Logjēm", "Codex", "Supervision"],
+    category: ["ARc⟁diA", "Leqwa", "Logjēm","K0re", "Codex", "Supervision"],
     definition: "Bouclure de flambeau Doppelgänger des entrailles exclusives inclusives selon la forme et les convulsions du vouloir.",
     school: "Forme voyageuse qui articule travail, veldiac et transformation.",
     implication: "Ce qui doit être une collection abusive et un voile traversé à ce qu'on dit.",
@@ -973,7 +1012,7 @@ const vocabularyData = [
   },
   {
     term: "Gorgeous Raper",
-    category: ["ARc⟁diA", "Aursyl", "Logjēm", "Slacpi°", "Tôhla", "Mouet-Pouet"],
+    category: ["ARc⟁diA", "Aursyl", "Logjēm", "Slacpi°", "Tôhla","K0re", "Mouet-Pouet"],
     definition: "Magnifique Violeur.",
     school: "Figure du mal séduisant, violeur de sens et de puissance.",
     implication: "Tu peux t'en aller si tu veux.",
@@ -1030,7 +1069,7 @@ const vocabularyData = [
   },
   {
     term: "Dévore-Nova",
-    category: ["Aursyl", "Wacwe", "Supernova", "Cipher"],
+    category: ["Aursyl", "Wacwe","K0re", "Supernova", "Cipher"],
     definition: "Champion de la perpétuation, forme adaptative de réinvention des franchises aursyliennes.",
     school: "Version amplifiée et supérieure du dévore-novice.",
     implication: "Néo-versions du même plan ennuyeux inquisiteur de la prise au piège.",
@@ -1042,7 +1081,7 @@ const vocabularyData = [
   },
   {
     term: "PROjECT SSeCCu$",
-    category: ["Aursyl", "Codex", "Tablette", "Museum", "Parc", "Citadel"],
+    category: ["Aursyl","K0re", "Codex", "Tablette", "Museum", "Parc", "Citadel"],
     definition: "Diagramme colonisé - Revue du succès",
     school: "Programme de capture, de séduction et de conditionnement du système aursylien.",
     implication: "Les règles du succès sous une banière instrumentale co-produite",
@@ -1057,7 +1096,7 @@ const vocabularyData = [
   },
   {
     term: "AurLys",
-    category: ["Aursyl", "Lysrua"],
+    category: ["Aursyl", "Lysrua","K0re","Supernova","Spherµ"],
     definition: "Technologie hors la loi.",
     school: "Transmutation de la dureté en contribution, créativité et civilisation.",
     simplified: "Sexe Télépathique",
@@ -1120,7 +1159,7 @@ const vocabularyData = [
   },
   {
     term: "Gliobë",
-    category: ["Lysrua", "Mapnel", "IUVALCY", "ARc⟁diA", "Aursyl", "Mouet-Pouet", "Tablette"],
+    category: ["Lysrua", "Mapnel", "IUVALCY", "ARc⟁diA", "Aursyl","K0re", "Mouet-Pouet", "Tablette"],
     definition: "Cartographie Emojitique du Plan Lointain aurnelcyen.",
     school: "Cadre lysruéen de réalité, de style et de circulation des formes."
   },
@@ -1137,7 +1176,7 @@ const vocabularyData = [
   },
   {
     term: "YgijfeV",
-    category: ["Lysrua", "Slacpi°", "Spherµ", "Cueillette", "Concepteur", "Citadel"],
+    category: ["Lysrua", "Slacpi°","K0re", "Spherµ", "Cueillette", "Concepteur", "Citadel"],
     definition: "Vague motrice réceptionnée et renvoyée de friandises fugaces remplies et vides.",
     school: "Réalité coquine, écosystème du tout et du rien.",
     implication: "Poche bouchebéante gonflable insoupçonnée en matière pénétrante.",
@@ -1281,7 +1320,7 @@ const vocabularyData = [
   },
   {
     term: "Syoneme Sublime",
-    category: ["Lysrua", "Parc", "Citadel"],
+    category: ["Lysrua","K0re", "Parc", "Citadel"],
     definition: "Élévation continuelle des non-formes de pauvreté parmi 7 pentes d'ajournements.",
     school: "Montée chaotique des formes pauvres vers une sublimation continue.",
     simplified: "Céphalique instructuration littérale des forces du chaos",
@@ -1318,7 +1357,7 @@ const vocabularyData = [
   },
   {
     term: "Articulation deHist (Aursylienne)",
-    category: ["Aursyl", "Capsule", "Persona", "Concepteur"],
+    category: ["Aursyl","K0re", "Capsule", "Persona", "Concepteur"],
     definition: "Investisseur - Inconnu - Intouchable",
     synonym: "PlumEncre",
     version: "deHist"
@@ -1339,7 +1378,7 @@ const vocabularyData = [
   },
   {
     term: "Hiérarchie Kentronienne (Wacwéen)",
-    category: ["Mapnel", "Aursyl", "Capsule", "Spherµ", "Cueillette", "Museum", "Parc", "Citadel"],
+    category: ["Mapnel", "Aursyl","K0re", "Capsule", "Spherµ", "Cueillette", "Museum", "Parc", "Citadel"],
     definition: "Rouge - Vert - Bleu - Blanc - Noir - Gris",
     school: "Répartition des rôles symboliques par six couleurs.",
     synonym: "KTN",
@@ -1389,7 +1428,7 @@ const vocabularyData = [
   },
   {
     term: "MATRICE A6es 6tiques 6colaire",
-    category: ["Lysrua", "Mapnel", "IUVALCY", "ARc⟁diA", "Aursyl", "D⦾MIN⦿'s", "Capsule", "Spherµ", "Cipher", "Mouet-Pouet"],
+    category: ["Lysrua", "Mapnel", "IUVALCY", "ARc⟁diA", "Aursyl", "D⦾MIN⦿'s","K0re", "Capsule", "Spherµ", "Cipher", "Mouet-Pouet"],
     definition: "Tableau Aurnelcyen [6x24] à apprendre par le cœur à ce qu'on dit.",
     school: "Grande matrice récapitulative du système aurnelcyen, organisée en six colonnes et vingt-quatre lignes.",
     implication: "Nouveau lore concernant le QI de la bête 666.",
@@ -1541,6 +1580,7 @@ function initializeCategoryTags() {
       "Citadel",
       "Trinité",
       "Tablette",
+      "K0re",
       "Capsule",
     ], // Will be populated with remaining categories
   };
@@ -1556,6 +1596,7 @@ function initializeCategoryTags() {
 
   const mainCategories = [...categoryHierarchy["Théorèmes"], ...categoryHierarchy["Thèses"]];
   const desiredThemesOrder = [
+    "K0re",
     "Monoa-Polyz",
     "Mouet-Pouet",
     "Persona",
@@ -1723,6 +1764,8 @@ function searchVocabulary() {
         { key: 'implication', label: '⇒ ' },
         { key: 'simplified', label: '👌 ' },
         { key: 'desc', label: '🖼️ ' },
+        { key: 'example', label: '💡 ' },
+        { key: 'quote', label: '❝ ❞ ' },
         { key: 'parent', label: '# ' },
         { key: 'etymology', label: 'ⓘ ' },
         { key: 'synonym', label: '≈ ' },
@@ -1786,6 +1829,8 @@ window.detailVisibility = {
   synonym: true,
   pronunce: true,
   meme: true,
+  example: true,
+  quote: true,
   surnatural: true,
   version: true,
 

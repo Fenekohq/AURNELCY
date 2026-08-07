@@ -326,6 +326,12 @@ document.addEventListener('DOMContentLoaded', function () {
       if (content.data.desc) {
         popoverHTML += `<div data-detail-type="desc" style="margin-top: 8px; font-size: 0.85em;"><em>🖼️ ${content.data.desc}</em></div>`;
       }
+      if (content.data.example) {
+        popoverHTML += `<div data-detail-type="example" style="margin-top: 8px; font-size: 0.85em;"><em>💡 ${content.data.example}</em></div>`;
+      }
+      if (content.data.quote) {
+        popoverHTML += `<div data-detail-type="quote" style="margin-top: 8px; font-size: 0.85em;"><em>❝ ❞ ${content.data.quote}</em></div>`;
+      }
       if (content.data.parent) {
         popoverHTML += `<div data-detail-type="parent" style="margin-top: 8px; font-size: 0.85em;"><em># ${content.data.parent}</em></div>`;
       }
