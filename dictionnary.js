@@ -1128,7 +1128,7 @@ const vocabularyData = [
   },
   {
     term: "Tyrannie",
-    category: ["Aursyl", "Spherµ","Supervision","Supernova"],
+    category: ["Aursyl", "K0re", "Spherµ","Supervision","Supernova"],
     definition: "Pouvoir absolu, arbitraire et oppressif détenu par une autorité suprême s'imposant par la force, la peur et la coercition.",
     etymology: "Turannos(grec) = Maître/Souverain illégitime"
   },
