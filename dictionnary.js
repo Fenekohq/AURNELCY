@@ -102,10 +102,11 @@ const vocabularyData = [
     school: "Nom d'auteur et identité créatrice du projet ⟁URNELCY.",
     implication: "Fenekohq a crée sa plus grande passion juste ici.",
     simplified: "L'alias fétiche du pauvre fou en question",
-    quote: "L'origine de Fenekohq vient d'un Fennec du désert qui a conquis le Sahara, d'un Chat du japon devenu une idole kawaii et d'un Coq ayant fui et assasiné tous ceux voulant sa viande. Leur union au sein du pays aurnelcyen à donné naissance à Fenekohq étant le seul possèdant les chromosomes X Y et Z ce qui marque l'ascension d'une nouvelle race pour faire trembler tout les terriens impliqués dans la destruction de la civilisation.",
+    quote: "L'origine de Fenekohq vient d'un Fennec du désert qui a conquis le Sahara, d'un Chat du japon devenu une idole kawaii et d'un Coq ayant fui et assasiné tous ceux convoitant sa viande. Leur union au sein du pays aurnelcyen à donné naissance à Fenekohq étant le seul possèdant les chromosomes X Y et Z ce qui marque l'ascension d'une nouvelle race pour faire trembler tout les terriens impliqués dans la destruction de la civilisation.",
     etymology: "Fennec - Neko(Japonais)/Chat - Coq {en théorie}",
     synonym: "Fenek, Feneko, FE猫HQ, フェネコーク",
-    pronunce: "/fɛ.nɛ.kɔk/"
+    pronunce: "/fɛ.nɛ.kɔk/",
+    meme: "Fenekohq est le génie, l'élite, le fameux, la référence, le talentueux, la merveille, le puissant mais aussi le minable, la crapule, le pitoyable, la vermine, le misérable, la canaille, le vaurien."
   },
   {
     term: "0K",
@@ -1124,6 +1125,12 @@ const vocabularyData = [
     implication: "Dévore-Novice et Antinomies",
     synonym: "Adieu",
     pronunce: "/a.ta.ʃa/"
+  },
+  {
+    term: "Tyrannie",
+    category: ["Aursyl", "Spherµ","Supervision","Supernova"],
+    definition: "Pouvoir absolu, arbitraire et oppressif détenu par une autorité suprême s'imposant par la force, la peur et la coercition.",
+    etymology: "Turannos(grec) = Maître/Souverain illégitime"
   },
   {
     term: "VII-X",
