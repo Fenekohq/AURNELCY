@@ -1485,6 +1485,7 @@ html[data-theme='dark'] img[src*='feature/Awkward.png'] {
 
 .calendar-week,
 .calendar-year,
+.calendar-yearl,
 .calendar-lunar {
   table-layout: fixed;
   width: 100%;
@@ -1502,7 +1503,6 @@ html[data-theme='dark'] img[src*='feature/Awkward.png'] {
 .calendar-week th:nth-child(5),
 .calendar-week td:nth-child(6),
 .calendar-week th:nth-child(6),
-.calendar-week td:nth-child(7),
 .calendar-week th:nth-child(7) {
   width: 14.28%;
 }
@@ -1529,9 +1529,35 @@ html[data-theme='dark'] img[src*='feature/Awkward.png'] {
 .calendar-year th:nth-child(10),
 .calendar-year td:nth-child(11),
 .calendar-year th:nth-child(11),
-.calendar-year td:nth-child(12),
 .calendar-year th:nth-child(12) {
   width: 8.33%;
+}
+
+.calendar-yearl td:nth-child(1),
+.calendar-yearl th:nth-child(1),
+.calendar-yearl td:nth-child(2),
+.calendar-yearl th:nth-child(2),
+.calendar-yearl td:nth-child(3),
+.calendar-yearl th:nth-child(3),
+.calendar-yearl td:nth-child(4),
+.calendar-yearl th:nth-child(4),
+.calendar-yearl td:nth-child(5),
+.calendar-yearl th:nth-child(5),
+.calendar-yearl td:nth-child(6),
+.calendar-yearl th:nth-child(6),
+.calendar-yearl td:nth-child(7),
+.calendar-yearl th:nth-child(7),
+.calendar-yearl td:nth-child(8),
+.calendar-yearl th:nth-child(8),
+.calendar-yearl td:nth-child(9),
+.calendar-yearl th:nth-child(9),
+.calendar-yearl td:nth-child(10),
+.calendar-yearl th:nth-child(10),
+.calendar-yearl td:nth-child(11),
+.calendar-yearl th:nth-child(11),
+.calendar-yearl td:nth-child(12),
+.calendar-yearl th:nth-child(13) {
+  width: 7.69%;
 }
 
 .calendar-lunar td:nth-child(1),
@@ -1559,8 +1585,8 @@ html[data-theme='dark'] img[src*='feature/Awkward.png'] {
 .calendar-lunar td:nth-child(12),
 .calendar-lunar th:nth-child(12),
 .calendar-lunar td:nth-child(13),
-.calendar-lunar th:nth-child(13) {
-  width: 7.69%;
+.calendar-lunar th:nth-child(14) {
+  width: 7.14%;
 }
 
 .calendar-converter {

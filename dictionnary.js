@@ -217,6 +217,8 @@ const vocabularyData = [
     school: "Format d'œuvre brève ou mineure selon le théorème concerné.",
     simplified: "Œuvre Mineure",
     desc: "「」",
+    etymology: "Laus(latin) = Éloge, Blâme, Gloire",
+    pronunce: "Féminin /lwɑ̃ʒ/ ou /lu.ɑ̃ʒ/",
     version: "Louanges, Chant, Chants, Champ, Champs, Chorale, Chorales, Dialecte, Dialectes"
   },
   {
@@ -226,6 +228,8 @@ const vocabularyData = [
     school: "Format d'œuvre majeure selon le théorème concerné.",
     simplified: "Œuvre Majeure",
     desc: "『』",
+    etymology: "Laurus(latin)",
+    pronunce: "Masculin /lɔ.ʁje/ ou /lo.ʁje/",
     version: "Lauriers, Château, Châteaux, Cachot, Cachots, Chapelle, Chapelles, Donjon, Donjons"
   },
   {
@@ -235,6 +239,8 @@ const vocabularyData = [
     school: "Structure annexe servant à organiser, résumer ou articuler un ensemble.",
     simplified: "Architecture Grammaticale",
     desc: "⌂         {0 X}         ⌂",
+    etymology: "Capsula(latin) = Coffret, petite boîte",
+    pronunce: "Féminin /kap.syl/",
     version: "Capsules"
   },
   {
@@ -242,35 +248,40 @@ const vocabularyData = [
     category: ["0K","K0re", "Cipher", "Phénomène", "Concepteur", "Phénotype", "Supervision"],
     definition: "Fait de vivre [etc…]",
     implication: "Toutes les définitions combinées sont insatisfaisantes.",
-    etymology: "Vita (Latin)"
+    etymology: "Vita (Latin)",
+    pronunce: "Féminin /vi/"
   },
   {
     term: "Mort",
     category: ["0K","K0re", "Cipher", "Phénomène", "Cueillette", "Spherµ", "Supernova"],
     definition: "Cessation de la vie [etc…]",
     implication: "Toutes les définitions combinées sont insatisfaisantes.",
-    etymology: "Mortuus (Latin)"
+    etymology: "Mortuus (Latin)",
+    pronunce: "Féminin /mɔʁ/"
   },
   {
     term: "Homo Sapien",
     category: ["0K","K0re", "Persona"],
     definition: "Mammifère primate de la famille des hominidés [etc…]",
     implication: "T'as compris ?",
-    etymology: "Être Humain Intelligent, Sage, Raisonnable, Prudent"
+    etymology: "Être Humain Intelligent, Sage, Raisonnable, Prudent",
+    pronunce: "Masculin /o.mo sa.pjɛ̃s/"
   },
   {
     term: "Héros/Héroïne",
     category: ["Mapnel","K0re", "Persona", "Supervision", "Supernova"],
     definition: "Figure célèbre et admirable de combat et d'adversité, on en raconte la fulgurance iconique de sa vie.",
     etymology: "Chef/Demi-Dieu",
+    pronunce: "Masculin /e.ʁo/ Féminin /e.ʁɔ.in/",
     version: "Héros, Héroïne, Héroïnes, Hero, Heroes, Heroine, Heroines"
   },
   {
     term: "Pérégrination",
     category: ["Mapnel","K0re", "Cueillette"],
     definition: "Long voyage sinueux en région reculée des habitudes routinières aisées.",
-    etymology: "Voyage Lointain",
+    etymology: "Peregrinatio(latin) = Voyage Lointain",
     synonym: "Périple, Pèlerinage, Expédition, Cheminement, Odysée, Errance",
+    pronunce: "Féminin /pe.ʁe.ɡʁi.na.sjɔ̃/",
     version: "Pérégrinations, Pérégrineur, Pérégriner"
   },
   {
@@ -281,6 +292,7 @@ const vocabularyData = [
     implication: "Animation originale[-] Au format vedette[Polyz] À toile de fond[Monoa].",
     simplified: "Matière Corde Passage ou Déploiement Énergique",
     quote: "Voilà l'être et il devient… il devient… il devient… mystère et boule de gomme, que sera t-il ma parole ?",
+    pronunce: "/mɔ.no.a pɔ.liz/",
     synonym: "𝙼𝚘𝚗𝚘𝚊-𝙿𝚘𝚕𝚢𝚣(Monospace)",
     version: "Moa&Poz, M&P, 𝙼𝚘𝚗𝚘𝚊-𝙿𝚘𝚕𝚢𝚣"
   },
@@ -293,6 +305,7 @@ const vocabularyData = [
     simplified: "Être Mouvant",
     parent: "Monoa-Polyz",
     synonym: "Unité, Unique, Central, Rétention, Enfermement",
+    pronunce: "/mɔ.nɔm/",
     version: "Monom, Mono-Mémoire"
   },
   {
@@ -304,6 +317,7 @@ const vocabularyData = [
     simplified: "Devenir Renouvelé",
     parent: "Monoa-Polyz",
     synonym: "Fraction, Multiple, Décentral, Éclattement, Dispersion",
+    pronunce: "/pɔ.lip/",
     version: "Polyp, Poly-Projection"
   },
   {
@@ -316,6 +330,7 @@ const vocabularyData = [
     desc: "Terla est représenté en anneau pendentif.",
     parent: "Monoa-Polyz",
     synonym: "Jonction, Stabilité, Composition, Conteneur, Concentration",
+    pronunce: "/tɛʁ.la/",
     version: "Terla"
   },
   {
@@ -325,8 +340,8 @@ const vocabularyData = [
     school: "Équilibre vivant entre persistance et renouvellement.",
     simplified: "Mémoire nourricière permanente & Projection épisodique cyclique ou Laisser Ouvert",
     parent: "Monoa-Polyz",
-    synonym: " Mom&Pop, MM&PP, ℳℴ𝓃ℴ𝓂🙵𝒫ℴ𝓁𝓎𝓅(Cursive), ℳℴ𝓂🙵𝒫ℴ𝓅, ℳ🙵𝒫",
-    pronunce: "MTP, monomennepolype, monome-terla-polype",
+    synonym: "MTP, Mom&Pop, MM&PP, ℳℴ𝓃ℴ𝓂🙵𝒫ℴ𝓁𝓎𝓅(Cursive), ℳℴ𝓂🙵𝒫ℴ𝓅, ℳ🙵𝒫",
+    pronunce: "/mɔ.nɔm‿e pɔ.lip/, /mɔ.nɔm.tɛʁ.la.pɔ.lip/",
     version: "Mom&Pop, MM&PP, ℳℴ𝓃ℴ𝓂🙵𝒫ℴ𝓁𝓎𝓅, ℳℴ𝓂🙵𝒫ℴ𝓅, ℳ🙵𝒫"
   },
   {
@@ -337,6 +352,7 @@ const vocabularyData = [
     implication: "Dépiction survivante d'un échec ultime et de son insolubilité funeste. Monop implique Polym (Monop%Polym)",
     simplified: "Être Surchargé",
     parent: "Monoa-Polyz",
+    pronunce: "/mɔ.nɔp/",
     version: "Monop, Mono-Prohibition"
   },
   {
@@ -347,6 +363,7 @@ const vocabularyData = [
     implication: "Déconstruction survivante de la santé en vue d'opérations autres. Polym implique Monop (Monop%Polym)",
     simplified: "Devenir Perturbé",
     parent: "Monoa-Polyz",
+    pronunce: "/pɔ.lim/",
     version: "Polym, Poly-Malaise"
   },
   {
@@ -358,6 +375,7 @@ const vocabularyData = [
     simplified: "MoinsMoins",
     desc: "Derla est représenté en boulet de forçat.",
     parent: "Monoa-Polyz",
+    pronunce: "/dɛʁ.la/",
     version: "Derla"
   },
   {
@@ -367,8 +385,8 @@ const vocabularyData = [
     school: "Équilibre dégradé où fixation et trouble se nourrissent l'un l'autre.",
     simplified: "Prohibition affamante saturée % Malaise apathique déclinant ou Prendre au Piège",
     parent: "Monoa-Polyz",
-    synonym: "Mop%Pom, MP%PM, 𝔐𝔬𝔫𝔬𝔭%𝔓𝔬𝔩𝔶𝔪(Fraktur), 𝔐𝔬𝔭%𝔓𝔬𝔪, 𝔐%𝔓",
-    pronunce: "MDP, monopeourpolyme, monope-derla-polyme",
+    synonym: "MDP, Mop%Pom, MP%PM, 𝔐𝔬𝔫𝔬𝔭%𝔓𝔬𝔩𝔶𝔪(Fraktur), 𝔐𝔬𝔭%𝔓𝔬𝔪, 𝔐%𝔓",
+    pronunce: "/mɔ.nɔp‿uʁ pɔ.lim/, /mɔ.nɔp.dɛʁ.la.pɔ.lim/",
     version: "Mop%Pom, MP%PM, 𝔐𝔬𝔫𝔬𝔭%𝔓𝔬𝔩𝔶𝔪, 𝔐𝔬𝔭%𝔓𝔬𝔪, 𝔐%𝔓"
   },
   {
@@ -379,6 +397,7 @@ const vocabularyData = [
     implication: "Empreinte animale au milieu de la naissance et du décès plongée à la fois dans une clarté spécifique et un flou intersidéral.",
     simplified: "Toute créature concernée par la vie et la mort.",
     synonym: "M0nstre, Mont0, Animalia",
+    pronunce: "/mɔ̃stʁə ze.ʁo/",
     surnatural: "Chair répondant au Comment au travers d'une instantanéité définie.",
     version: "Monstres 0, M0nstre, M0nstres, Monstruosité, Monstruosité 0, Monstruosités, Monstruosités 0"
   },
@@ -392,6 +411,7 @@ const vocabularyData = [
     desc: "Il est décrit comme personnage diurne ayant 2 mains 2 pieds 2 yeux 2 oreilles 1 nez 1 bouche, mais s'est aussi construit une citadelle dans le monde invisible de l'esprit de chacun.",
     quote: "Il m'a été donné la responsabilité de l'être et le devenir de tout un pays, ma foi les paysans sont chez eux grâce à moi.",
     synonym: "Tyran, Esclavagiste, Despote, Imposteur, Crapule, Aliénatueur, Assassin du Sens, Fumée Noire, Déchu, Marque de Fabrique, Le Grand Ennemi",
+    pronunce: "/de.vɔʁ nɔ.vis/",
     surnatural: "Putschiste de Dieu déguisé en celui-ci injoncteur du Pourquoi capable de ruiner au moins un millier de personnes de leur soutien servile consenti par la délégation.",
     version: "Dévore-Novicien, Dévore-Novicienne, Dévore-Noviciens, Dévore-Noviciennes"
   },
@@ -401,12 +421,14 @@ const vocabularyData = [
     definition: "Bagarreur de fortune d'un manque irascible, sous une expression difforme de la faim au détriment de l'organisme intégral.",
     school: "Relais secondaire de l'emprise aursylienne.",
     implication: "Partisans compétiteurs de l'entendement dévore-novice comme loisir obsessionnel.",
+    pronunce: "/vɑ̃.tʁi.lɔk/",
     version: "Ventriloquien, Ventriloquiens, Ventriloquienne, Ventriloquiennes"
   },
   {
     term: "Admagcoq",
     category: ["Mapnel", "Xyfurn", "Monoa-Polyz", "Trinité", "Tablette"],
     definition: "Trinité Individuelle (Aventure - Magie - Cuisine)",
+    pronunce: "/ad.ma.kɔk/",
     synonym: "AMC"
   },
   {
@@ -414,6 +436,7 @@ const vocabularyData = [
     category: ["Mapnel", "Aursyl", "Lysrua", "Xyfurn", "Supervision", "Codex", "Cueillette"],
     definition: "Stimulation interrogative explorative autosuffisante dont l'accoutumance ne rend jamais de marbre.",
     school: "Mouvement d'investigation soutenue qui entretient la pensée.",
+    pronunce: "/ɑ̃.kɛt/",
     version: "Enquêtes, Enquêter"
   },
   {
@@ -421,6 +444,7 @@ const vocabularyData = [
     category: ["Mapnel", "Xyfurn", "Museum"],
     definition: "[Xyf] Aperçu global du sentiment commun, glissant de son évolution sur des générations de l'errance étrangère à la chère réminiscence.",
     school: "Schéma d'orientations vitales et de positions cardinales.",
+    pronunce: "/di.ʁɛk.sjɔ̃ su.vʁɛn/",
     version: "Direction Civilisationnelle"
   },
   {
@@ -428,6 +452,7 @@ const vocabularyData = [
     category: ["Mapnel", "IUVALCY", "UiNo", "Xyfurn", "Phénomène", "Phénotype"],
     definition: "Filtre stimulant clos intrapersonnel ouvert à ambiguïté interpersonnel.",
     implication: "Ample enchaînement de tensions multi-perspectives.",
+    pronunce: "/i.ly.zjɔ̃/",
     version: "Illusions"
   },
   {
@@ -436,6 +461,7 @@ const vocabularyData = [
     definition: "Accroissement progressif des facultés de tolérance actives vers des vertus passives.",
     school: "Discipline de maîtrise, de calme actif et de pratique structurante.",
     simplified: "Culture musculaire de paix intérieure.",
+    pronunce: "/a.tə.lje a.ta.ʁak.sjal/",
     version: "Atelier, Ataraxie"
   },
   {
@@ -444,6 +470,7 @@ const vocabularyData = [
     definition: "[Urn] État second pair évanouissant l'interdit premier impair de la partie analytique vers sa pleine fougue permise ou dommageante.",
     school: "Principe d'action souple, simple et non forcée.",
     simplified: "Mouvement inné s'accomplissant sans intervention clivante.",
+    pronunce: "/flɥid e.le.mɑ̃.tɛʁ/",
     version: "Fluide Vital"
   },
   {
@@ -452,6 +479,7 @@ const vocabularyData = [
     definition: "Matérialité du tragique balistique, séquelle de fragilisation traumatique.",
     school: "Trace ancienne de souffrance qui continue d'organiser la vie.",
     implication: "Détresses périlleuses en représailles.",
+    pronunce: "/blɛ.syʁ fɔ.sil/",
     version: "Blessures Kamikazes"
   },
   {
@@ -460,12 +488,14 @@ const vocabularyData = [
     definition: "Méditation olfactive de sa réalité apparente à un instant donné.",
     school: "Rapport de lucidité réflexive sur soi et sur le monde.",
     implication: "Disposition à l'honnêteté objective et à l'évaluation concise des conséquences a priori."
+    ,pronunce: "/mi.ʁwaʁ klɛʁ.vwa.jɑ̃/"
   },
   {
     term: "Gravité Centrale",
     category: ["Mapnel", "Xyfurn", "Supervision"],
     definition: "[Xyf-Urn] Point d'attraction et d'équilibre, pivot des appuis et de la soutenance robuste.",
     school: "Centre de stabilité, de sérieux et d'orientation intérieure.",
+    pronunce: "/ɡʁa.vi.te sɑ̃.tʁal/",
     version: "Gravité"
   },
   {
@@ -474,6 +504,7 @@ const vocabularyData = [
     definition: "Trinité Collective (Nezrog - Ekeline - Wacwe)",
     school: "Trinité relationnelle structurant le passage de l'individuel au partagé.",
     synonym: "NKW"
+    ,pronunce: "/nɛz.kɛl.wak/"
   },
   {
     term: "Naustre C",
@@ -484,6 +515,7 @@ const vocabularyData = [
     simplified: "Toute créature concernée par l'engagement.",
     synonym: "NauC",
     surnatural: "Chair répondant au Pourquoi au travers d'une maturation indéfinie.",
+    pronunce: "/nostʁ se/",
     version: "Naustre, Naustrique, Naustriques, Naustral, Naustricité"
   },
   {
@@ -493,6 +525,7 @@ const vocabularyData = [
     school: "Vibration intérieure orientée vers plus grand que soi.",
     implication: "Acceptation radicale de la totalité, se posant sans surcharge ajoutée les choses appelées à jouer en toute circonstance.",
     synonym: "PIII",
+    pronunce: "/pal.pi.te də lɛ̃.fi.ni/",
     version: "Palpiter, Palpite, Infini"
   },
   {
@@ -502,6 +535,7 @@ const vocabularyData = [
     school: "Table des grandes postures existentielles de l'univers aurnelcyen.",
     simplified: "Génitale structuration métaphorique de l'ordre",
     surnatural: "Rythme Circadien Hebdomadaire",
+    pronunce: "/sə.mɛn sy.blim/",
     version: "Semaine, Semaines"
   },
   {
@@ -511,6 +545,7 @@ const vocabularyData = [
     school: "Force de noircissement défensif, agressif ou prédateur.",
     parent: "Nihilin",
     etymology: "Hâte Hermétique entre guillemets impure.",
+    pronunce: "/je.nɥl/",
     surnatural: "Discernement des Significations Indisables"
   },
   {
@@ -520,6 +555,7 @@ const vocabularyData = [
     school: "Rapport conscient à la mort et à sa présence symbolique.",
     implication: "Véhicule des sentiments souvent extrêmement impactants et brutaux.",
     synonym: "Mortalité, Létalité, Alerte, Clouage, Larguage, Démunion, Rendez-Vous",
+    pronunce: "/ma.ka.bʁism/",
     version: "Macabre, Macabres, Macabrismes, Macabriste, Macabristes, Macabrique, Macabriques"
   },
   {
@@ -529,6 +565,7 @@ const vocabularyData = [
     school: "Élan de gaieté unifiée et de finesse relationnelle.",
     parent: "Bouquet Gaunique, Instances Gauniques(Reptilien, Sifflet, ARvers-Xoi, Innokcien)",
     etymology: " La Gaunie [4-3 Instances] ⟷ L'Agonie [2-1 Instance(s)]",
+    pronunce: "/ɡo.ni/",
     surnatural: "Jauge de Concetration Unitaire",
     version: "Gaunico, Gaunique"
   },
@@ -538,6 +575,7 @@ const vocabularyData = [
     definition: "Alliance protéiforme de toutes les instances sous leur rôles adéquat.",
     school: "Déploiement des figures psychiques et symboliques en croissance.",
     implication: "Guérison des correspondants bossus désamorçant le célibat cellulaire versatile.",
+    pronunce: "/flɔ.ʁe.sɑ̃s/",
     version: "Fleurissant"
   },
   {
@@ -547,6 +585,7 @@ const vocabularyData = [
     school: "Figure d'innocence dense, équilibrée et habitée.",
     simplified: "Instance témoin à la sagacité holistique des ensembles.",
     etymology: "Innocence",
+    pronunce: "/i.nɔk.sjɛ̃/",
     version: "Innokciens, Innokcienne, Innokciennes"
   },
   {
@@ -554,6 +593,7 @@ const vocabularyData = [
     category: ["Mapnel", "Aursyl", "Wacwe", "Phénomène"],
     definition: "Matérialité du divorce cinétique, tension d'extinction cataclysmique stimulant sa propre réalisation vers une chute prémonitoire.",
     implication: "Désorganisation d'incertitude certaine plus ou moins prédictible.",
+    pronunce: "/ɑ̃.tʁɔ.pje/",
     version: "Entropique"
   },
   {
@@ -562,6 +602,7 @@ const vocabularyData = [
     definition: "Pertinence exemplaire dont l'admiration foudroie de respect et de tenue civilisatrice.",
     implication: "Dextérité interceptrice des forces de discorde et d'affaiblissement.",
     synonym: "Cloche, Cerceau, Poche, Hameçon, Échet",
+    pronunce: "/fi.lɛ/",
     version: "Filets, Filature"
   },
   {
@@ -571,6 +612,7 @@ const vocabularyData = [
     school: "Schéma des rôles et des hiérarchies symboliques par couleurs.",
     implication: "Chaque couleur poursuit un rapport étroit avec l'intégralité fonctionnelle et fondamentale.",
     etymology: "(Pi: Cercle Circulaire) - (Col: Color/Couleur) - (Kentron: Aiguillon/Pointe)",
+    pronunce: "/pi.kɔl kɑ̃.tʁɔ̃/",
     version: "Kentronien, Kentroniens, Kentronienne, Kentroniennes"
   },
   {
@@ -579,6 +621,7 @@ const vocabularyData = [
     definition: "Sublimation décisive des marqueurs traumatiques à la page tournante.",
     implication: "Reprise des déjà-vus sur une phase supérieure de configuration.",
     desc: "Meilleur Drapeau, forme authentique et hypothétique.",
+    pronunce: "/kʁɔ.mɛl/",
     surnatural: "Supporte Fardeaux",
     version: "Chroméliste, Chromélisme"
   },
@@ -587,6 +630,7 @@ const vocabularyData = [
     category: ["Mapnel", "Vydnitt", "Monoa-Polyz", "Spherµ", "Codex", "Trinité", "Tablette"],
     definition: "=Trinité Clinique= [Littérale]｜Fondations - Relativité - Inclinaisons (Rythme Minceur)",
     school: "Triptyque des fondations, de la relativité et des inclinaisons.",
+    pronunce: "/fɔ.nə.ʁɛ.lɛ̃k/",
     version: "F:R:I"
   },
   {
@@ -594,6 +638,7 @@ const vocabularyData = [
     category: ["Mapnel", "Vydnitt", "Persona", "Museum"],
     definition: "=Fon:Rel:Inc= [Z-A]｜Solides associés à [Monoa]. Mosaïque d'amplitude vécue répondant par [Polyz].",
     school: "Bases stables sur lesquelles une structure peut tenir.",
+    pronunce: "/fɔ̃.da.sjɔ̃/",
     version: "Fondation, Fondateur, Fondateurs, Fondatrice, Fondatrices,Fonder"
   },
   {
@@ -601,6 +646,7 @@ const vocabularyData = [
     category: ["Mapnel", "Vydnitt", "Supervision", "Parc"],
     definition: "=Fon:Rel:Inc= [A-Z]｜Espaces associés à [Polyz]. Palette d'actions concevables traduites par [Monoa].",
     school: "Tendances internes qui orientent les choix et les comportements.",
+    pronunce: "/ɛ̃.kli.nɛ.zɔ̃/",
     version: "Inclinaison, Inclination, Inclinations, Incliner"
   },
   {
@@ -608,6 +654,7 @@ const vocabularyData = [
     category: ["Mapnel", "Vydnitt", "Phénotype", "Mouet-Pouet", "Citadel"],
     definition: "=Fon:Rel:Inc= [AZ-ZA]｜Marge de relief associé à [Variable -]. Fluctuation accouchée des continuités inexorables [Monoa-Polyz].",
     school: "Variation des points de vue, des rapports et des mesures selon le contexte.",
+    pronunce: "/ʁə.la.ti.vi.te/",
     version: "Relativités"
   },
   {
@@ -615,6 +662,7 @@ const vocabularyData = [
     category: ["Mapnel", "Fostrah", "UiNo", "Uewij", "Monoa-Polyz", "Spherµ", "Codex", "Trinité", "Tablette"],
     definition: "=Trinité Empirique= [Numérale]｜Scénario - Syndrome - Cellules (Symétrie Pinceuse)",
     school: "Triptyque du scénario, du syndrome et des cellules.",
+    pronunce: "/se sɛ̃ sɛl/",
     version: "S;S;C"
   },
   {
@@ -622,6 +670,7 @@ const vocabularyData = [
     category: ["Mapnel", "Fostrah", "Cueillette", "Museum"],
     definition: "=Scé;Syn;Cel= [9-1]｜Affaires associés à [Monoa]. Plateau de terrain étendue prolongé par [Polyz].",
     school: "Cadre narratif ou situation-type qui organise une suite d’actions.",
+    pronunce: "/se.na.ʁjo/",
     version: "Scénarios, Scénariste, Scénaristes, Scénariser"
   },
   {
@@ -629,6 +678,7 @@ const vocabularyData = [
     category: ["Mapnel", "Uewij", "Cipher", "Parc"],
     definition: "=Scé;Syn;Cel= [1-9]｜Chaînes associés à [Polyz]. Carreaux de dalles pratiquables portés par [Monoa].",
     school: "Unités élémentaires d’organisation, de reproduction ou de propagation.",
+    pronunce: "/sɛ.lyl/",
     version: "Cellule, Cellulier, Celluliers"
   },
   {
@@ -636,6 +686,7 @@ const vocabularyData = [
     category: ["Mapnel", "UiNo", "Phénomène", "Mouet-Pouet", "Citadel"],
     definition: "=Scé;Syn;Cel= [00-10]｜Intervalle de mesure associé à [Variable -]. Morceau arrangé des chroniques implacables [Monoa-Polyz].",
     school: "Ensemble de traits récurrents qui apparaissent ensemble.",
+    pronunce: "/sɛ̃.dʁom/",
     version: "Syndromes, Syndromatique, Syndromatiques"
   },
   {
@@ -643,6 +694,7 @@ const vocabularyData = [
     category: ["Aursyl", "Fostrah", "Codex", "Cipher", "Museum"],
     definition: "Calcul scripté pour résulter une détermination à la servitude sous les leviers du contrôle des richesses et la falsification identitaire.",
     school: "Logique d'efficacité qui vide les êtres de leur substance.",
+    pronunce: "/e.kwa.sjɔ̃ d‿e.fi.ka.si.te i.na.ni.twaʁ/",
     version: "EEI, Science Inanitoire, Bricole du 0, Bricolage du 0, Inanité Religieuse, Équation Fragmentaire"
   },
   {
@@ -651,6 +703,7 @@ const vocabularyData = [
     definition: "Arme neutralisatrice d'emprise comportementale et psychologique, menace mutilatoire liquidatrice d'intrus en cadavres muets.",
     school: "Mécanisme de désignation violente du coupable ou de la cible.",
     synonym: "Revolver, Fusil, Calibre, Troueur, Railgun, Perforant",
+    pronunce: "/flɛ̃ɡ/",
     version: "Flingues, Flingueur, Flingueurs, Flingueuse, Flingueuses, Flinguer"
   },
   {
@@ -659,6 +712,7 @@ const vocabularyData = [
     definition: "Arme jugulatrice d'emprise attentionnelle et épistémologique, menace exilatoire plaqueuse de volontés en valises malléables.",
     school: "Signal de propagande, de spectacle ou d'alarme manipulée.",
     synonym: "Turbine, Klaxon, Sonnerie, Couvre-Feu, Intimidateur, Convocation",
+    pronunce: "/tʁɔ̃.pɛt/",
     version: "Trompettes, Se Tromper, Tromper, Trompeur, Trompeurs, Trompeuse, Trompeuses"
   },
   {
@@ -667,6 +721,7 @@ const vocabularyData = [
     definition: "Composition arrangée sans commandement en cohésion organique souple.",
     school: "Pièce sur la difficulté de dire justement le réel.",
     synonym: "Méline",
+    pronunce: "/me.lɔ.di i.ne.pə.labl/",
     version: "Méline"
   },
   {
@@ -674,6 +729,7 @@ const vocabularyData = [
     category: ["Mapnel","K0re", "Leqwa", "Persona"],
     definition: "Dauphin bouillonant d'exaltation, symbolique de l'initiation vitale de déferlantes affirmations cordiales.",
     desc: "Larmes de Vitalité, 4 Évents Lévitation, Corne en Fusion, 100 Nageoires, 3 Yeux Néons RGB, Peau Grise, Taille de 9 Mètres",
+    pronunce: "/sfi.vɔk/",
     version: "Sfivoqs"
   },
   {
@@ -683,6 +739,7 @@ const vocabularyData = [
     school: "Confrontation exemplaire entre deux grandeurs ou deux légitimités.",
     implication: "Culmination du déchaînement ravageur pour finalité la délivrance du dévore-novice et de sa machination.",
     simplified: "Complétude Nezkelwac et Admagcoq misent en synthèse dans la table des jeux.",
+    pronunce: "/dɥɛl ɛk.sɛp.sjɔ.nɛl/",
     synonym: "Duel ⚔️ceptionnel"
   },
   {
@@ -690,7 +747,7 @@ const vocabularyData = [
     category: ["Mapnel","K0re", "Lysrua", "Leqwa", "Monoa-Polyz", "Phénotype", "Spherµ", "Cueillette"],
     definition: "Titre honorifique envers l'être et son devenir ou le mémojectile quoi qu'il en soit.",
     simplified: "Dédicace Exaltée",
-    pronunce: "Monne-Polle"
+    pronunce: "/mɔn pɔl/"
   },
   {
     term: "Crithekiel",
@@ -700,6 +757,7 @@ const vocabularyData = [
     implication: "La création s'embouche un coin, souffle l'effondrement d'une complétude-incomplète.",
     simplified: "Dénomination artificielle Consciente",
     etymology: "Critère:Théologie｜Critique:Théorie｜Que Dieu le fortifie [Ui Appellation Statique]",
+    pronunce: "/kʁi.tə.kjɛl/",
     synonym: "Critheka"
   },
   {
@@ -710,6 +768,7 @@ const vocabularyData = [
     implication: "Tant les familles ou les champs lexicaux, ça ne peut que faire sens sans faire sens mais c'est comme ça.",
     simplified: "Douance prospectoire Subconsciente",
     etymology: "Critère:Théologie｜Critique:Théorie｜Que Dieu le fortifie [Ui-No Fabulation Médiane]",
+    pronunce: "/kʁi.tə.sjɛl/",
     synonym: "Critheci"
   },
   {
@@ -720,6 +779,7 @@ const vocabularyData = [
     implication: "Impasse cognitive et obsolescence, la capture se dissout spontanément part en part.",
     simplified: "Disposition d'hyper-perspective Inconsciente",
     etymology: "Critère:Théologie｜Critique:Théorie｜Que Dieu le fortifie [No Évocation Dynamique]",
+    pronunce: "/kʁi.tə.kjɛl/",
     synonym: "Crithequ"
   },
   {
@@ -727,6 +787,7 @@ const vocabularyData = [
     category: ["IUVALCY", "Fostrah", "Persona", "Phénomène"],
     definition: "Solution Miscible Immiscible plongée dans le circuit du sens.",
     etymology: "Gaulois-Goal Polyphonie",
+    pronunce: "/ɡɔ.a.lwa(z)/",
     version: "Goalois, Goaloise, Goaloises"
   },
   {
@@ -735,6 +796,7 @@ const vocabularyData = [
     definition: "Le monde comme école prise par les moins entravés.",
     implication: "Déjouer la tyrannie du sens ensemble, c'est compris ?",
     simplified: "Divination idiote",
+    pronunce: "/kʁe.tɔl/",
     synonym: "Critheco"
   },
   {
@@ -743,6 +805,10 @@ const vocabularyData = [
     definition: "Trinité Viscérale [⦻] {0} (∞) ou <Ж>; Proximité sensorielle sous dégradé exponentiel, sous un rayon complémentaire de la libido au plaisir centrifuge.",
     school: "Régime de proximité sensorielle, psychique et relationnelle.",
     implication: "Supporter collaborateur de l'entendement novice comme amusement dégagé.",
+    simplified: "Rang dépassant la hiérarchie rigide",
+    example: "Des encouragements pour atteindre un but difficile",
+    quote: "Ceux qui nous hissent plus haut ne sont autres que ceux qui ne s'en fout pas de nous mais le coaching n'est pas de tout repos.",
+    pronunce: "/ɛ̃.ti.ma.si/",
     synonym: "For Intérieur"
   },
   {
@@ -750,13 +816,15 @@ const vocabularyData = [
     category: ["IUVALCY", "UiNo", "Uewij", "Mouet-Pouet", "Spherµ"],
     definition: "@ttributs tout aussi bien absolus et relatifs comprisent dans une pille de données interminable.",
     simplified: "Danse confuse ambivalente en cadre et légitimité.",
-    pronunce: "SaraXteriZ"
+    pronunce: "/sa.ʁak.ste.ʁiz/",
+    synonym: "SaraXteriZ"
   },
   {
     term: "Déjà-Vu",
     category: ["IUVALCY", "Leqwa", "Mouet-Pouet", "Phénomène"],
     definition: "Sentiment d'expérience/expérimental/d'expertise du vécu.",
     simplified: "Superposition Analogue"
+    ,pronunce: "/de.ʒa vy/"
   },
   {
     term: "Critherçation・Critherçer",
@@ -765,6 +833,7 @@ const vocabularyData = [
     school: "Exercice de pensée qui travaille les limites du langage et des catégories.",
     implication: "Rien ne veut rien dire, le langage sied cette pipelette à merveille, une vrai tête à claque amuseuse de galerie.",
     simplified: "Discours sans dessus dessous・Mot à deviner indiqué par {Ç@} ou {Çaro}",
+    pronunce: "/kʁi.tɛʁ.sa.sjɔ̃/ /kʁi.tɛʁ.se/",
     version: "Critherçations, Critherçement, Ç@"
   },
   {
@@ -774,6 +843,7 @@ const vocabularyData = [
     school: "Régime d'effort, de contrainte et de tenue nécessaire.",
     implication: "Ce qui doit formellement être fait pour l'âme collective à ce qu'on dit.",
     simplified: "Tic au devoir avec ravoir.",
+    pronunce: "/tʁa.vaj/",
     desc: "Représenté par l'enfant."
   },
   {
@@ -784,6 +854,7 @@ const vocabularyData = [
     implication: "Ce qui doit informellement devenir oublié pour la psyché individuelle à ce qu'on dit.",
     simplified: "Silence au devoir sans savoir.",
     desc: "Représenté par l'adulte.",
+    pronunce: "/vɛl.djak/",
     version: "Veldiaçien, Veldiaçiens, Veldiaçienne, Veldiaçiennes, Veldique, Veldiques"
   },
   {
@@ -793,6 +864,7 @@ const vocabularyData = [
     school: "Version mapnélienne du veldiac, portée par l'impulsion, la transmission, le questionnement et l'action.",
     implication: "Soit comme il se doit, à ta nature d'espèce X en marche.",
     simplified: "S'investir à fond, on se demande même pourquoi.",
+    pronunce: "/vɛl.djak ʒti/",
     synonym: "Veldiac Mapnélien, Jtie"
   },
   {
@@ -802,6 +874,7 @@ const vocabularyData = [
     school: "Version iuvalcienne du veldiac, portée par l'association, la manifestation et le rythme intérieur.",
     implication: "Mélanges comme il se doit, à ton machin d'espèce '' en aise.",
     simplified: "Se profiler à bord, on s'accorde même incompatible.",
+    pronunce: "/vɛl.djak al/",
     synonym: "Veldiac Iuvalcien, AL"
   },
   {
@@ -811,6 +884,7 @@ const vocabularyData = [
     school: "Forme mixte du veldiac reliant les pôles mapnélien et iuvalcien.",
     implication: "Soit et mélanges comme il se doit, à ta juste mesure.",
     simplified: "Vivre cette vie, nous la vivons parfaitement.",
+    pronunce: "/vɛl.djak aʒ.tjɛl/",
     synonym: "Veldiac Mapnélo-Iuvalcien, AJtieL",
     version: "AJtieL"
   },
@@ -819,6 +893,7 @@ const vocabularyData = [
     category: ["IUVALCY", "Uewij", "Supernova", "Cueillette"],
     definition: "Hors-ganisme alias aux couches plus lointaines que l'organologie actuelle.",
     school: "Dimension extra-organique ou plus lointaine que l'organisation ordinaire du vivant.",
+    pronunce: "/ɡa.ni/",
     version: "Ganico, Ganique"
   },
   {
@@ -829,6 +904,7 @@ const vocabularyData = [
     etymology: "Gaunie & Ganie pouvant se dire à l'avers ou à revers.",
     synonym: "Extase, Félicité, Transe",
     meme: "Gaunico=Ganique/Ganico=Gaunique",
+    pronunce: "/ɡo.ni.ɡa.ni/",
     version: "Gaunico=Ganique, Ganico=Gaunique"
   },
   {
@@ -838,23 +914,27 @@ const vocabularyData = [
     school: "Point douloureux où la compréhension se crispe ou se brise.",
     implication: "Il s'agit de nous qui n'est pas nôtres.",
     simplified: "Douloureuse translation",
+    pronunce: "/kʁit.a.i/",
     etymology: "Inanité critique Ha"
   },
   {
     term: "TRIBALT",
     category: ["IUVALCY", "Aursyl", "Fostrah", "Spherµ", "Codex"],
     definition: "Structure évolutives des formes morcelées vers leur incompréhensibles compréhensions avortées."
+    ,pronunce: "/tʁi.balt/"
   },
   {
     term: "GESTALT",
     category: ["IUVALCY", "Uewij", "Spherµ", "Codex", "Cipher", "Concepteur"],
     definition: "Structure évolutives des formes entières vers leur définitions indéfinissables fécondées."
+    ,pronunce: "/ɡɛs.talt/"
   },
   {
     term: "Möbius Netwow",
     category: ["IUVALCY", "UiNo","K0re", "Supernova", "Spherµ", "Citadel"],
     definition: "Site cousu décousu d'entendement domestique gouvernant.",
     school: "Réseau de perception et de pensée en boucle auto-enveloppée.",
+    pronunce: "/mø.bjys nɛt.wɔw/",
     version: "Netwow, Netwower, Netwowers"
   },
   {
@@ -863,6 +943,7 @@ const vocabularyData = [
     definition: "Pouvoir affirmatif du défi continuel vers une forme de vie irréductible et croissante.",
     school: "Tendance à se vivre comme centre actif ou héros de sa trajectoire.",
     synonym: "Ganique(profusée)",
+    pronunce: "/pʁɔ.ta.ɡɔ.nism/",
     version: "Protagoniste, Protagonique, Protagoniques"
   },
   {
@@ -870,6 +951,7 @@ const vocabularyData = [
     category: ["IUVALCY", "UiNo","K0re", "Supervision"],
     definition: "Commandement à l'antenne de singularité complète-incomplète.",
     school: "Principe critique qui expose les limites du langage et oblige la pensée à se reformer."
+    ,pronunce: "/kʁit/"
   },
   {
     term: "⟁",
@@ -885,7 +967,8 @@ const vocabularyData = [
     category: ["ARc⟁diA","K0re", "Logjēm", "Slacpi°", "Trinité", "Tablette"],
     definition: "Trinité Cultivatrice (JooQooBoo - aLIaKKaHH - eRUeGGeHH)",
     school: "Triptyque des trois forces arcadiennes : conflit libéré, apaisement affiliateur et médiation interrogative.",
-    simplified: "Forces"
+    simplified: "Forces",
+    pronunce: "/zu.za.ze/"
   },
   {
     term: "JooQooBoo",
@@ -894,6 +977,7 @@ const vocabularyData = [
     school: "Force de confrontation, de pression et de menace qui pousse le conflit jusqu'à l'épreuve décisive.",
     simplified: "Jeu du Cou Menacé",
     synonym: "JooQ, SWOT, Compétition, Violence, Agitation",
+    pronunce: "/d͡ʒu.ku.bu/",
     version: "JooQooBoos, JooQooBien, JooQooBiens, JooQooBienne, JooQooBiennes"
   },
   {
@@ -903,6 +987,7 @@ const vocabularyData = [
     school: "Force d'apaisement, d'alliance et de soulagement qui desserre les contraintes et rouvre les possibles.",
     simplified: "Alimentation Accentueuse de Soulagement",
     synonym: "aLIa, SCAMPER, Coopération, Douceur, Calme",
+    pronunce: "/a.lja.ka/",
     version: "aLIaKKaHHs, aLIaKKien, aLIaKKiens, aLIaKKienne, aLIaKKiennes"
   },
   {
@@ -912,6 +997,7 @@ const vocabularyData = [
     school: "Force de médiation et d'interpellation qui relance la pensée par la question, le passage et la mise en relation.",
     simplified: "Éruption Égayeuse d'Interpellations",
     synonym: "eRUe, QQOQCCP, Congruence, Proportion, Médiation",
+    pronunce: "/e.ʁɥe.ʒe/",
     version: "eRUeGGeHHs, eRUeGGien, eRUeGGiens, eRUeGGienne, eRUeGGiennes"
   },
   {
@@ -922,19 +1008,22 @@ const vocabularyData = [
     simplified: "Le cliché est d'être pour un mot qu'on a rendu cool.",
     etymology: "Tricotage-Lettres,",
     synonym: "Label, Étiquette, Marque, Cachet"
+    ,pronunce: "/lə.tʁi.ko/"
   },
   {
     term: "TRICK_&_TREAT",
     category: ["ARc⟁diA", "Logjēm", "Supervision", "Codex"],
     definition: "Essayer de raisonner ou Conduire sa raison, telle est la question.",
     synonym: "Trinitrotoluène(TNT)",
-    meme: "Désolé tu n'es plus Urflosien… Tu ne l'as jamais été, à vrai dire. Je t'ai mal jugé."
+    meme: "Désolé tu n'es plus Urflosien… Tu ne l'as jamais été, à vrai dire. Je t'ai mal jugé.",
+    pronunce: "/tʁik‿ɛn tʁit/"
   },
   {
     term: "fantômiseur/phantomizer",
     category: ["ARc⟁diA", "Slacpi°", "Persona", "Mouet-Pouet", "Cipher", "Cueillette"],
     definition: "Il m'en bouche un coin, je voudrai effectivement une diarrhée pérenne.",
     implication: "Je t'ai démasqué petit cachotier, voilà un fantôme, ça existe pour de vrai ouuahhh!!",
+    pronunce: "/fɑ̃.to.mi.zœʁ/, /fan.tɔ.maj.zœʁ/",
     version: "fantômiseur, phantomizer, fantômiste, fantômistes, fantômisation, fantômisé, fantômisés, fantômisée, fantômisées"
   },
   {
@@ -942,27 +1031,31 @@ const vocabularyData = [
     category: ["ARc⟁diA", "Xyfurn", "Monoa-Polyz", "Mouet-Pouet"],
     definition: "C'est probablement une blague (つ≧▽≦)つ ʱªʱªʱª(ᕑᗢूᓫ∗)",
     implication: "Pouvoir Magique Incantatoire",
-    synonym: "&🙵&"
+    synonym: "&🙵&",
+    pronunce: "/mɔ.nɔm e mo.səm e pɔ.lip e po.ky.p/"
   },
   {
     term: "Mirsa Mirsa Mua",
     category: ["ARc⟁diA", "Slacpi°", "Cueillette"],
     definition: "Thémathique du vouloir double, Forme Hypothéthique ouverte «Tu saura prochainement si tu es intéressé».",
-    meme: "Quel kit de farceur joyeux( ͡° ͜ʖ ͡°)"
+    meme: "Quel kit de farceur joyeux( ͡° ͜ʖ ͡°)",
+    pronunce: "/miʁ.sa miʁ.sa my.a/"
   },
   {
     term: "EURÊK⟁",
     category: ["ARc⟁diA", "Lysrua", "Logjēm", "Slacpi°", "Tôhla", "Cueillette", "Tablette", "Museum"],
     definition: "Lecture artistique des semences ZooZaZe Z옹Z야Z웨 d'ouvrages culturels.",
     school: "Figure de la découverte soudaine et de l’intuition trouvante.",
-    synonym: "Eurêka, J'ai trouvé!"
+    synonym: "Eurêka, J'ai trouvé!",
+    pronunce: "/ø.ʁe.ka/"
   },
   {
     term: "SP⟁RK",
     category: ["ARc⟁diA", "Tôhla", "Supernova", "Spherµ", "Museum", "Parc", "Citadel"],
     definition: "System, Purpose, and the Awkward Realm of Kindred ≈ Système, Intention, et l'Étrange Monde de la Parenté",
     synonym: "SPARK, Société, Énergie, Généalogie",
-    version: "SPARK"
+    version: "SPARK",
+    pronunce: "/spɛʁk/"
   },
   {
     term: "PAMABWA",
@@ -970,7 +1063,8 @@ const vocabularyData = [
     definition: "Invention pocuP&moceM, ce qu'on appelle le souci, pas le mot ni la croyance.",
     school: "Invention du souci pris comme réalité vécue plutôt que comme simple mot.",
     parent: "Monoa-Polyz",
-    synonym: "Couple épanoui"
+    synonym: "Couple épanoui",
+    pronunce: "/pa.ma.bwa/"
   },
   {
     term: "Tra§Vel",
@@ -983,6 +1077,7 @@ const vocabularyData = [
     parent: "Travail, Veldiac",
     etymology: "English Travel (Français Voyager)",
     meme: "Ça n'existe pas à ce qu'on dit.",
+    pronunce: "/tʁa.vɛl/",
     version: "Tra§Veling"
   },
   {
@@ -991,6 +1086,7 @@ const vocabularyData = [
     definition: "Le destin t'a choisi, ta vie a un sens, tu as besoin de ceci ou cela XD.",
     school: "Sentiment d'être câblé par un destin, un besoin ou un sens imposé.",
     implication: "Scepticisme de l'artificialité.",
+    pronunce: "/kabl/ /waɪʁ/",
     version: "Câble, Câbles, Wire, Wires, Wired, Wiring, Câblage, Câblé, Câblée, Cablés, Cablées"
   },
   {
@@ -999,6 +1095,7 @@ const vocabularyData = [
     definition: "Antinomie tragico-splendide profanateur de panoptisme.",
     parent: "Palpiter de l'Infini",
     etymology: "Infirme, Infirmier, Infirmerie, Infini"
+    ,pronunce: "/ɛ̃.fi.njɛʁ/"
   },
   {
     term: "Blehdwoluzvi",
@@ -1008,6 +1105,7 @@ const vocabularyData = [
     implication: "Librairie Ludothèque Hourra! Comédie ou Tragédie ?",
     synonym: "Blehdwo, t'attends quoi?, Bruh, What the Fuck, Incompréhension, le juron par excellence, Autorité",
     meme: "C'est les livres. C'est la musique. C'est la culture. Toute la merde du monde. Ceux que vous souhaitiez jusqu'à présent.",
+    pronunce: "/blɛd.wo.lyz.vi/",
     version: "Blehdwo"
   },
   {
@@ -1016,14 +1114,16 @@ const vocabularyData = [
     definition: "Magnifique Violeur.",
     school: "Figure du mal séduisant, violeur de sens et de puissance.",
     implication: "Tu peux t'en aller si tu veux.",
-    simplified: "Un combat qui ne peut être pas"
+    simplified: "Un combat qui ne peut être pas",
+    pronunce: "/ɡɔʁ.ʒɔs ʁe.peʁ/"
   },
   {
     term: "aTHaTCHa",
     category: ["ARc⟁diA", "Aursyl", "Slacpi°", "Phénotype", "Tablette"],
     definition: "Dualité Apathique/Empathique (ApaTH - CyaTH - EmpaTH)",
     implication: "Dévore-Novice et Antinomies",
-    synonym: "Adieu"
+    synonym: "Adieu",
+    pronunce: "/a.ta.ʃa/"
   },
   {
     term: "VII-X",
@@ -1034,7 +1134,10 @@ const vocabularyData = [
   {
     term: "Conte Sanguinaire",
     category: ["Aursyl", "Fostrah", "Nezrog", "Spherµ", "Cueillette"],
-    definition: "Déconseillé aux humains moins humains."
+    definition: "Déconseillé aux humains moins humains.",
+    school: "Compilation des conflit militaires humains",
+    simplified: "Liste historique des guerres humaines au nom d'un je ne sais quoi",
+    pronunce: "/kɔ̃t sɑ̃.ɡi.nɛʁ/"
   },
   {
     term: "InFeXcuse",
@@ -1043,13 +1146,20 @@ const vocabularyData = [
     school: "Prétextes et greffes verbales qui contaminent le discours.",
     implication: "Il y a le X, le Xé, le Xeur; la Xation est féroce.",
     simplified: "Structure des mots du politicien",
-    etymology: "Infection + Excuse"
+    etymology: "Infection + Excuse",
+    pronunce: "/ɛ̃.fɛks.kyz/"
   },
   {
     term: "Hœmnet",
     category: ["Aursyl", "Persona", "Cueillette", "Codex"],
     definition: "Viande de chair humaine recommandé pour son goût délicieux et sa texture raffinée.",
-    simplified: "Spécialité culinaire des professionnels"
+    implication: "L'orgueuil anthropocentriste s'est cru comme définitionnellement bienveillant ou est-ce une simple espérance ?",
+    simplified: "Spécialité culinaire des professionnels",
+    quote: "Manger ses congénères fait partie intégrante des stratégies de la nature afin de survivre et d'accéder à une longue déscendance.",
+    synonym: "Cannibale, GOAT/Greatest Of All Time/Le Plus Grand de Tout les Temps",
+    pronunce: "/ɛm.nɛt/",
+    etymology: "Humain, Œuf, Poulet",
+    version: "Hœmnets, Haemnet, Haemnets"
   },
   {
     term: "ANTAGONISM",
@@ -1057,6 +1167,7 @@ const vocabularyData = [
     definition: "Pouvoir négateur du défi continuel vers une forme de vie indestructible et cruciale.",
     school: "Logique d'opposition frontale et de conflit structurant.",
     synonym: "Agonique(Diffusée)",
+    pronunce: "/ɑ̃.ta.ɡɔ.nism/",
     version: "Antagoniste, Antagonique, Antagoniques"
   },
   {
@@ -1065,7 +1176,8 @@ const vocabularyData = [
     definition: "Abandon absolu de toute forme de sens.",
     school: "Pôle de vide, d'absence et d'annulation.",
     parent: "Hyenuul",
-    etymology: "Nihilisme, Nihil, Rien"
+    etymology: "Nihilisme, Nihil, Rien",
+    pronunce: "/ni.i.lin/"
   },
   {
     term: "Dévore-Nova",
@@ -1077,6 +1189,7 @@ const vocabularyData = [
     desc: "Elle est décrit comme entité nocturne ne se révélant qu'uniquement par la métaphore.",
     synonym: "Ø",
     surnatural: "Batailler contre Dévore-Nova se fait au cœur d'un ailleurs ganique d'InFeXcuse.",
+    pronunce: "/de.vɔʁ nɔ.va/",
     version: "Dévore-Novarien, Dévore-Novariens, Dévore-Novarienne, Dévore-Novariennes"
   },
   {
@@ -1085,6 +1198,7 @@ const vocabularyData = [
     definition: "Diagramme colonisé - Revue du succès",
     school: "Programme de capture, de séduction et de conditionnement du système aursylien.",
     implication: "Les règles du succès sous une banière instrumentale co-produite",
+    pronunce: "/pʁɔ.ʒɛk se.kys/",
     version: "SSeCCu$, SSeCCuS"
   },
   {
@@ -1113,7 +1227,8 @@ const vocabularyData = [
     school: "Support de rôles et d’archétypes organisant le code personnel.",
     implication: "Duo avec dézELTT",
     parent: "Fon:Rel:Inc",
-    etymology: "Forêt - Phore = Qui porte (ελληνικά/Grec)"
+    etymology: "Forêt - Phore = Qui porte (ελληνικά/Grec)",
+    pronunce: "fɔ.ʁɛt"
   },
   {
     term: "dézELTT",
@@ -1122,7 +1237,8 @@ const vocabularyData = [
     school: "Support d'analyse et d'observation organisant les décrets communs.",
     implication: "Duo avec phoRÊTT",
     parent: "Scé;Syn;Cel",
-    etymology: "Désert - Zelt = Tente (Deutsch/Allemand)"
+    etymology: "Désert - Zelt = Tente (Deutsch/Allemand)",
+    pronunce: "/de.zɛlt/"
   },
   {
     term: "Iacy",
@@ -1130,6 +1246,7 @@ const vocabularyData = [
     definition: "'Bonjour/Bonsoir/Bienvenue' ou littéralement 'appartenir à personne'.",
     school: "Formule de salutation.",
     parent: "Invité Iac/Veldiac",
+    quote: "Les invités vivants obtiennent des dons tous entièrement prêtés.",
     meme: "Yashi"
   },
   {

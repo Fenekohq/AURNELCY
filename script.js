@@ -248,12 +248,81 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let definizerHidden = false;
 
+  // Store original display values on first load
+  document.querySelectorAll('.definizer').forEach((element) => {
+    if (!element.dataset.originalDisplay) {
+      element.dataset.originalDisplay = element.style.display || 'block';
+    }
+  });
+
   toggleDefinizerBtn.addEventListener('click', function () {
     definizerHidden = !definizerHidden;
     document.querySelectorAll('.definizer').forEach((element) => {
-      element.style.display = definizerHidden ? 'none' : '';
+      element.style.display = definizerHidden ? 'none' : element.dataset.originalDisplay;
     });
     toggleDefinizerBtn.textContent = definizerHidden ? '📌' : '🛑';
     toggleDefinizerBtn.title = definizerHidden ? 'Afficher les éléments definizer' : 'Cacher les éléments definizer';
+  });
+});
+
+// Auto-hide UI controls after inactivity
+document.addEventListener('DOMContentLoaded', function () {
+  const selectors = ['.category-tag', '#themeToggle', '#floatingEllipse', '#floatingNavButtons', '#floatingNavWrapper'];
+  const controls = Array.from(document.querySelectorAll(selectors.join(','))).filter(Boolean);
+  if (!controls.length) return;
+
+  // inject lightweight styles for fade animation
+  const style = document.createElement('style');
+  style.textContent = `
+    .aurnelcy-auto-fade { transition: opacity 0.6s ease, transform 0.6s ease; opacity: 1; }
+    .aurnelcy-auto-fade.aurnelcy-hidden { opacity: 0; transform: translateY(6px); pointer-events: none; }
+  `;
+  document.head.appendChild(style);
+
+  controls.forEach((el) => el.classList.add('aurnelcy-auto-fade'));
+
+  let timer = null;
+  const inactivityMs = 4000;
+
+  function hideControls() {
+    const wrapper = document.getElementById('floatingNavWrapper');
+    if (wrapper && wrapper.classList.contains('open')) return;
+    controls.forEach((el) => el.classList.add('aurnelcy-hidden'));
+  }
+
+  function showControls() {
+    controls.forEach((el) => el.classList.remove('aurnelcy-hidden'));
+  }
+
+  function resetTimer() {
+    showControls();
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(hideControls, inactivityMs);
+  }
+
+  ['mousemove', 'keydown', 'touchstart', 'scroll', 'click'].forEach((evt) => {
+    window.addEventListener(evt, resetTimer, { passive: true });
+  });
+
+  // start initial timer
+  timer = setTimeout(hideControls, inactivityMs);
+
+  // when user explicitly opens the floating nav, keep controls visible briefly
+  const floatingEllipse = document.getElementById('floatingEllipse');
+  if (floatingEllipse) {
+    floatingEllipse.addEventListener('click', function () {
+      showControls();
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(hideControls, inactivityMs);
+    });
+  }
+
+  // reveal while hovering controls
+  controls.forEach((el) => {
+    el.addEventListener('mouseenter', showControls);
+    el.addEventListener('mouseleave', function () {
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(hideControls, inactivityMs);
+    });
   });
 });
