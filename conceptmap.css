@@ -1,0 +1,139 @@
+.conceptmap-preview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.conceptmap-preview {
+  width: 180px;
+  height: 180px;
+  border: 2px solid var(--text-color);
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(var(--text-color-rgb), 0.15);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conceptmap-preview-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+}
+
+.conceptmap-preview-content div {
+  white-space: normal;
+}
+
+.conceptmap-preview-container:hover .conceptmap-preview {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(var(--text-color-rgb), 0.3);
+}
+
+.conceptmap-title {
+  font-size: 0.95em;
+  font-weight: bold;
+  text-align: center;
+  max-width: 200px;
+  color: var(--text-color);
+  word-wrap: break-word;
+}
+
+.conceptmap-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.conceptmap-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.conceptmap-modal-content {
+  background: var(--bg-color);
+  padding: 30px;
+  border-radius: 12px;
+  width: min(90vw, 1400px);
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease;
+}
+
+.conceptmap-modal-content .mermaid {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.conceptmap-modal-content .mermaid svg {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+}
+
+@keyframes slideIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.conceptmap-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2em;
+  cursor: pointer;
+  color: var(--text-color);
+  background: none;
+  border: none;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.conceptmap-modal-close:hover {
+  transform: scale(1.2);
+  color: #ff4444;
+}
