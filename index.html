@@ -8317,7 +8317,7 @@
               <th><ruby>Skarp<rt>SP⟁RK</rt></ruby><br>(31)</th>
               <th><ruby>Xyvym<rt>VII-X</rt></ruby><br>(30)</th>
               <th><ruby>Succett<rt>PROjECT SSeCCu$</rt></ruby><br>(30)</th>
-              <th><ruby>Ignorum<rt>￣\_(ツ)_/￣</rt></ruby><br>(31)</th>
+              <th><ruby>Ignorum<rt>Je ne sais pas</rt></ruby><br>(31)</th>
               <th><ruby>Gliop<rt>Gliobë</rt></ruby><br>(30)</th>
               <th><ruby>Dominitt<rt>DOMINION</rt></ruby><br>(30)</th>
               <th><ruby>Uof Ervuap<rt>Pauvre Fou</rt></ruby><br>(31)</th>
@@ -8402,9 +8402,9 @@
 
     <h3 style="text-align: center;">Emploi du Temps Aurnelcyen</h3>
 
-    <div style="display: flex; gap: 20px; align-items: flex-start; justify-content: center; flex-wrap: wrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-left: 8px;">
+    <div style="display: flex; gap: 20px; align-items: flex-start; justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-left: 8px;">
       <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; flex: 0 0 auto;">
-        <table border="1" style="width: 400px; font-size: 0.33em;">
+        <table border="1" style="width: 360px; font-size: 0.33em;">
           <thead>
             <tr>
               <th>Heure</th>
@@ -8486,8 +8486,10 @@
         </table>
       </div>
 
+
+
       <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; flex: 0 0 auto;">
-        <table border="1" style="width: 400px;">
+        <table id="planning-semaine-editable" border="1" style="width: 360px; table-layout: auto; text-align: center;">
           <thead>
             <tr>
               <th>Heure</th>
@@ -8528,7 +8530,184 @@
           </tbody>
         </table>
       </div>
+
+      <div style="overflow-x: auto; -webkit-overflow-scrolling: touch; flex: 0 0 auto;">
+        <table id="planning-personnalisable" border="1" style="width: 360px; table-layout: auto; text-align: center;">
+          <thead>
+            <tr>
+              <th>Heure</th>
+              <th style="width: 14.28%;">Lundi</th>
+              <th style="width: 14.28%;">Mardi</th>
+              <th style="width: 14.28%;">Mercredi</th>
+              <th style="width: 14.28%;">Jeudi</th>
+              <th style="width: 14.28%;">Vendredi</th>
+              <th style="width: 14.28%;">Samedi</th>
+              <th style="width: 14.28%;">Dimanche</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+        <script>
+          (() => {
+            const table = document.getElementById('planning-personnalisable');
+            const body = document.querySelector('#planning-personnalisable tbody');
+            const storageKey = 'planning-personnalisable-v1';
+            let saved = {};
+            try { saved = JSON.parse(localStorage.getItem(storageKey) || '{}'); } catch (_) {}
+            const days = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
+            saved.__spans = saved.__spans || {};
+
+            const save = () => localStorage.setItem(storageKey, JSON.stringify(saved));
+            const renderRow = hour => {
+              const row = body.rows[hour];
+              while (row.cells.length > 1) row.deleteCell(1);
+              for (let day = 0; day < 7;) {
+                const key = `${hour}-${day}`;
+                const span = Math.max(1, Math.min(7 - day, Number(saved.__spans[key]) || 1));
+                const cellDay = day;
+                const cellSpan = span;
+                const cell = row.insertCell();
+                cell.colSpan = span;
+                cell.addEventListener('pointermove', event => {
+                  const bounds = cell.getBoundingClientRect();
+                  cell.style.cursor = (event.clientX - bounds.left <= 8 && cellDay > 0) || (bounds.right - event.clientX <= 8 && cellDay + cellSpan < 7) ? 'col-resize' : '';
+                });
+                cell.addEventListener('pointerdown', event => {
+                  const bounds = cell.getBoundingClientRect();
+                  const atLeft = event.clientX - bounds.left <= 8;
+                  const atRight = bounds.right - event.clientX <= 8;
+                  if ((!atLeft && !atRight) || (atLeft && cellDay === 0) || (atRight && cellDay + cellSpan === 7)) return;
+
+                  const segments = [];
+                  for (let start = 0; start < 7;) {
+                    const width = Math.max(1, Math.min(7 - start, Number(saved.__spans[`${hour}-${start}`]) || 1));
+                    segments.push({ start, end: start + width });
+                    start += width;
+                  }
+                  const index = segments.findIndex(segment => segment.start === cellDay);
+                  if (index === -1) return;
+
+                  const selected = segments[index];
+                  const boundary = atRight ? selected.end : selected.start;
+                  const startX = event.clientX;
+                  const dayWidth = Math.max(1, table.tHead.rows[0].cells[1].getBoundingClientRect().width);
+                  event.preventDefault();
+
+                  const move = moveEvent => {
+                    const shift = Math.round((moveEvent.clientX - startX) / dayWidth);
+                    const nextBoundary = atRight
+                      ? Math.max(selected.start + 1, Math.min(7, boundary + shift))
+                      : Math.max(0, Math.min(selected.end - 1, boundary + shift));
+                    const nextSegments = atRight ? segments.slice(0, index) : [];
+
+                    if (atRight) {
+                      nextSegments.push({ start: selected.start, end: nextBoundary });
+                      if (nextBoundary < selected.end) {
+                        nextSegments.push({ start: nextBoundary, end: selected.end });
+                        nextSegments.push(...segments.slice(index + 1));
+                      } else {
+                        for (const segment of segments.slice(index + 1)) {
+                          if (segment.end <= nextBoundary) continue;
+                          nextSegments.push({ start: Math.max(segment.start, nextBoundary), end: segment.end });
+                        }
+                      }
+                    } else {
+                      if (nextBoundary > selected.start) {
+                        nextSegments.push(...segments.slice(0, index));
+                        nextSegments.push({ start: selected.start, end: nextBoundary });
+                      } else {
+                        for (const segment of segments.slice(0, index)) {
+                          if (segment.end <= nextBoundary) nextSegments.push(segment);
+                          else if (segment.start < nextBoundary) nextSegments.push({ start: segment.start, end: nextBoundary });
+                        }
+                      }
+                      nextSegments.push({ start: nextBoundary, end: selected.end });
+                      nextSegments.push(...segments.slice(index + 1));
+                    }
+
+                    const spanPrefix = `${hour}-`;
+                    Object.keys(saved.__spans).forEach(spanKey => {
+                      if (spanKey.startsWith(spanPrefix)) delete saved.__spans[spanKey];
+                    });
+                    nextSegments.forEach(segment => {
+                      const segmentKey = `${hour}-${segment.start}`;
+                      delete saved.__spans[segmentKey];
+                      if (segment.end - segment.start > 1) {
+                        saved.__spans[segmentKey] = segment.end - segment.start;
+                      }
+                    });
+                    renderRow(hour);
+                  };
+                  const finish = () => {
+                    document.removeEventListener('pointermove', move);
+                    document.removeEventListener('pointerup', finish);
+                    document.removeEventListener('pointercancel', finish);
+                    save();
+                    renderRow(hour);
+                  };
+                  document.addEventListener('pointermove', move);
+                  document.addEventListener('pointerup', finish, { once: true });
+                  document.addEventListener('pointercancel', finish, { once: true });
+                });
+                cell.contentEditable = 'true';
+                cell.style.cssText = 'min-width: 72px; white-space: nowrap; text-align: center;';
+                cell.setAttribute('aria-label', `${row.cells[0].textContent}, ${days[day]}`);
+                cell.textContent = saved[key] || '';
+                cell.addEventListener('input', () => { saved[key] = cell.textContent; save(); });
+                day += span;
+              }
+            };
+
+            for (let hour = 0; hour < 24; hour++) {
+              const row = body.insertRow();
+              row.insertCell().textContent = String(hour).padStart(2, '0');
+              renderRow(hour);
+            }
+
+            document.getElementById('planning-effacer').addEventListener('click', () => {
+              saved = {};
+              localStorage.removeItem(storageKey);
+              saved.__spans = {};
+              Array.from(body.rows).forEach((_, hour) => renderRow(hour));
+            });
+          })();
+
+          (() => {
+            const table = document.getElementById('planning-semaine-editable');
+            const storageKey = 'planning-semaine-editable-v1';
+            let saved = {};
+            try { saved = JSON.parse(localStorage.getItem(storageKey) || '{}'); } catch (_) {}
+
+            table.querySelectorAll('tbody tr').forEach((row, rowIndex) => {
+              const time = row.cells[0].textContent;
+              const activities = [];
+              Array.from(row.cells).slice(1).forEach(cell => {
+                const count = Number(cell.colSpan) || 1;
+                const activity = cell.textContent.trim();
+                for (let day = 0; day < count; day++) activities.push(activity);
+              });
+              while (row.cells.length > 1) row.deleteCell(1);
+              activities.slice(0, 7).forEach((activity, dayIndex) => {
+                const cell = row.insertCell();
+                const key = `${time}-${dayIndex}`;
+                cell.contentEditable = 'true';
+                cell.style.cssText = 'min-width: 72px; white-space: nowrap;';
+                cell.setAttribute('aria-label', `${time}, jour ${dayIndex + 1}`);
+                cell.textContent = Object.prototype.hasOwnProperty.call(saved, key) ? saved[key] : activity;
+                cell.addEventListener('input', () => {
+                  saved[key] = cell.textContent;
+                  localStorage.setItem(storageKey, JSON.stringify(saved));
+                });
+              });
+            });
+          })();
+        </script>
+      </div>
+      
     </div>
+
+    <h3 id="The_Quest_Way" style="text-align: center;">「The Quest Way」</h3>
+
 
     <div class="author" style="text-align: center;">【Wacwe】</div>
 
@@ -13004,7 +13183,8 @@
       Wacwe projette de voir ce fameux habitant d'Innok n'étant dans aucune des 3 villes échappant à toute recherche.
       Tôhla est aussi curieuse qu'une icône si mystérieuse puisse vivre au loin de toute son espèce.
 
-      Depuis que Wacwe est devenu Leqwa, il coloria surversivement sa dentition d'un noir si profond qu'aucun éclat ne pouvait produire de quoi enrager les critères de sélection naturelle dont aursyl s'aligne tant, sa santé dentaire n'est du moins pas affectée négativement comme on le croirait si bien en apparence.
+      Depuis que Wacwe est devenu Leqwa, il coloria surversivement sa dentition d'un noir si profond qu'aucun éclat ne pouvait produire de quoi enrager les critères de sélection naturelle dont aursyl s'aligne tant.
+      Son noirceur est presque pétrolière, le dentifrice utilisé est un produit qui va à l'encontre de l'attirance physique et de son statut social si prioritaire que les marques insistent jusqu'au délire.
       Il en fut une dédicace à l'image de ses desseins opaques d'un poids sans pareil à l'inanité cosmique de l'espace, c'est-à dire absent et pourtant solide.
       L'œil a pour habitude de cerner l'importance d'un individu à son rang vestimentaire, mais un mapnélien digne de ce nom s'habille habituellement de translucide, de réflectique et/ou de transparent.
       Nous savons qu'il est cependant connu qu'un appareil reproducteur pris au flagrant délit est d'une gêne particulièrement intime chez le commun des mortels mais il en est tout a fait sans honte par chez eux.
@@ -13027,7 +13207,11 @@
 
       La RaycRa a en effet sans se rendre compte par le meurtre de la nature Jtie, tué leur propre Jtie et donc leur unité en tant que persodiversité.
       Avec Monop%Polym, MoinsMoins est égale à Plus mais il peut s'agir d'un nombre impair d'opérateurs sous des mathématiques instables dans le continuum serait plus une loterie où l'on peut vite perdre son swag.
+      
+      Les okiens ne cessent de voter pour le moins pire dans les élections de farce démocratique, ils mijotent dans l'isoloir bien en cachette à poser une opinion dont la lâcheté permet la paix sociale où tout et rien se décident de leur mains.
 
+      a quoi bon le génie si il sert l'aursylien, a quoi bon le progrès si il sert l'aursylien en effet si l'objectif est de rapidifier la décadence, les technologistes se travaillent dans leur tête.
+      Les hallucinés du déni démagogique exercent une propagande et font outil du droit légitime, a ce demander s'il n"y a aucune limite sur de telles foutaises, le discours du torchon malhonnête et volontaire mérite exactement des trolls et de ne pas être cautionner instantanément.
       La plupart des aurnelcyens(70%) autorisent qu'une biographie soit faite en leur nom sous leur modération honnête car l'anonymat et le privé n'est rien comparé à l'enrichissement de la civilisation.
       <br><br>
 
@@ -13302,6 +13486,7 @@
           <span style="font-size: 1.5em;">Dystopie</span>
           <li style="text-shadow: 0px 0px 10px;">Michel Clouscard</li>
           <li style="text-shadow: 0px 0px 5px;">Guy Debord</li>
+          <li style="text-shadow: 0px 0px 5px;">Aldous Huxley</li>
           <li style="text-shadow: 0px 0px 5px;">Georges Orwell</li>
           <li style="text-shadow: 0px 0px 5px;">Franz Kafka</li>
           <li style="text-shadow: 0px 0px 5px;">Aldous Huxley</li>
@@ -13500,13 +13685,13 @@
       </summary>
 
       <h2>Tags Courants</h2>
-      Glossopoïèse, Néologisme, Langage, Vocabulaire, Mythopoïèse, Philosophie, Théorème, Taxonomie, Création, Invention, Pensée, Texte, Écrit, Sémiotique, Métaphysique, Encyclopédie, Cryptique, Expérimental, Symbolisme, Worldbuilding, Mythe, Réflexion, Aphorisme, Introspection, Esthétique, Idée, Spéculation, Non-Linéaire, Littérature, Éthique, Politique, Épistémologie, Hermétisme, Ésotérisme, Holisme, Critique, Anthropologie, Cosmogonie, Théogonie, Spiritualité, Polyphonique, Structuralisme, Dialectique, Phénoménologie, Existentialisme, Génèse, Anthropogonie, Fiction, Mythologie, Sagesse, Métaphore, Culture, Légende, Société, Histoire, Gnose, Mysticisme, Poésie, Fable, Divin
+      Glossopoïèse, Néologisme, Langage, Vocabulaire, Mythopoïèse, Philosophie, Théorème, Taxonomie, Création, Invention, Pensée, Texte, Écrit, Sémiotique, Métaphysique, Encyclopédie, Cryptique, Expérimental, Symbolisme, Worldbuilding, Mythe, Réflexion, Aphorisme, Introspection, Esthétique, Idée, Spéculation, Non-Linéaire, Littérature, Éthique, Politique, Épistémologie, Hermétisme, Ésotérisme, Holisme, Critique, Anthropologie, Cosmogonie, Anarchisme, Théogonie, Spiritualité, Polyphonique, Structuralisme, Dialectique, Phénoménologie, Existentialisme, Génèse, Anthropogonie, Fiction, Mythologie, Sagesse, Métaphore, Culture, Légende, Société, Histoire, Gnose, Mysticisme, Poésie, Fable, Divin, Idiolecte, Métalangage, Lexicographie, Onomastique, Ludologie, Subversion, Intertextualité, Archétypologie, Doctrine
 
       <h2>Tags Ambivalents</h2>
-      Théologie, Didactique, Pédagogie, Instruction, Constructivisme, Surréalisme, Anthologie, Eschatologie, Lyrisme, Lecture, Monisme, Dualisme, Sociologie, Fantastique, Humanisme, Utopisme, Ascétisme, Moralisme, Développement Personnel, Gnosticisme, Culte, Prophétisme, Cynisme, Postmodernisme, Religion, Académique
+      Théologie, Didactique, Pédagogie, Instruction, Constructivisme, Surréalisme, Anthologie, Eschatologie, Lyrisme, Lecture, Monisme, Dualisme, Sociologie, Fantastique, Humanisme, Utopisme, Ascétisme, Moralisme, Développement Personnel, Gnosticisme, Culte, Prophétisme, Cynisme, Postmodernisme, Religion, Académique, Absurdisme, Pataphysique, Déconstruction, Panthéisme, Manichéisme, Théurgie
 
       <h2>Tags Possiblement Apparents mais Négatifs</h2>
-      Scientisme, Utilitarisme, Transhumanisme, Message d'Amour Universel, New Age, Déisme, Théisme, Marxisme, Occultisme, Progressisme, Nihilisme
+      Scientisme, Utilitarisme, Transhumanisme, Message d'Amour Universel, New Age, Déisme, Théisme, Marxisme, Occultisme, Progressisme, Nihilisme, Dogmatisme, Sectarisme, Fanatisme, Totalitarisme, Gourouisme, Messianisme, Solutionnisme Technologique, Positivisme, Relativisme Absolu, Solipsisme
 
       <h2>Tags Vocabulaire Auto-Référençant Overview</h2>
       Fostrah - UiNo - Uewij - Vydnitt - Xyfurn - Nezrog - Ekeline - Wacwe・Leqwa - Logjēm - Slacpi° - Tôhla<br>

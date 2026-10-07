@@ -76,6 +76,18 @@
       question: "Quelle est l'interprétation du vrai monde actuelle ?",
       answer: `Fenekohq interprète le monde réel comme le théorème de 0K sous le joug d'Aursyl d'un dosage 20-80% à 30-70%.`
     },
+    {
+      question: "Quel système économique pour AURNELCY ?",
+      answer: `économie signifie 'administration/gestion d'une maison', dans l'économie aurnelcyenne on n'est pas dans le droit chemin parce qu'on est payé, on ne devient pas maître des biens par une transaction dans le marché, la priorité du système est la protection de l'innocence et non la privatisation du monde, pour cela, l'appartenance identitaire cosmopolitaine suffit, l'espèce est modeste et s'optimise pour vivre et faire vivre le battement civil tout entier, une biohumanité qui tue, vole, se suicide, se drogue est symbole de défaite absolue, cependant le recourt au meurtre n'est pas banni en absolu.`
+    },
+    {
+      question: "Aursyl vs Aurnelcy = manichéisme ?",
+      answer: `Aursyl mauvais, Aurnelcy bon, il l'est dans sa forme et comme levier pour nommer les pièges réel, mais dans sa finalité il conçoit l'innocence à se porter léger au-dessus de la haine et du fanatisme. On ne peut pas concevoir de bonne cité sans avoir en tête la mauvaise.`
+    },
+    {
+      question: "Quel est la doctrine aurnelcyenne ?",
+      answer: `Chaque vivant naît sans destination assignée, capable d'harmonie autant que de déperdition. Des forces organisées cherchent à capturer cette capacité au profit d'un système qui se perpétue. La réponse pour cela est personnelle, se construire lucidement, nommer ce qui résiste à être nommé, fabriquer ses propres repères en sachant qu'on les fabrique. Participer à un collectif sans s'y dissoudre. Mourir sans que ça invalide ce qui a été vécu.`
+    },
   ];
 
   function escapeHtml(value) {
