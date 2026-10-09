@@ -88,6 +88,14 @@
       question: "Quel est la doctrine aurnelcyenne ?",
       answer: `Chaque vivant naît sans destination assignée, capable d'harmonie autant que de déperdition. Des forces organisées cherchent à capturer cette capacité au profit d'un système qui se perpétue. La réponse pour cela est personnelle, se construire lucidement, nommer ce qui résiste à être nommé, fabriquer ses propres repères en sachant qu'on les fabrique. Participer à un collectif sans s'y dissoudre. Mourir sans que ça invalide ce qui a été vécu.`
     },
+    {
+      question: "Pourquoi AURNELCY ne pose aucune problématique ?",
+      answer: `Parce qu'il les prévient, les désamorce ou les tue.`
+    },
+    {
+      question: "AURNELCY reprend-il l'idée chrétienne des enfants ?",
+      answer: `L'enfant est énormément dépendant de son entourage, il est capable d'actions blâmables et de sournoiseries, c'est une créature incapable de négocier, incroyablement têtu, facilement manipulable, sanitairement superficiel et bien que pouvant choquer, un urizen avisé à dose modéré est nécessaire en bas âge. Donc pour répondre à la question, pas vraiment. La stigmatisation et la persécution entre enfants bien que normal est une étape à la maturation aux grâce dépendantes de l'impact de la somme des adultes. Si la santé spirituelle est juste, alors les adolescents ne créeront pas le moindre souci quand à la nature différentielle de la réalité.`
+    },
   ];
 
   function escapeHtml(value) {

@@ -266,8 +266,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const dictionaryTargets = document.querySelectorAll('#ok-core-definitions .definizer, #ok-core-definitions .definizer-2');
 
   dictionaryTargets.forEach((element) => {
-    if (!element.dataset.originalDisplay) {
-      element.dataset.originalDisplay = element.style.display || 'block';
+    if (element.dataset.originalDisplay === undefined) {
+      element.dataset.originalDisplay = element.style.display;
     }
   });
 
