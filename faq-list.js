@@ -18,7 +18,7 @@
     },
     {
       question: "Combien de temps faut-il pour lire ⟁URNELCY ?",
-      answer: `Il n'y a pas de réponse honnête en heures. Si vous êtes à l'aise avec la littérature vous gagnez un temps considérable mais fiez vous aux nombre de mots et augmentez le pourcentage par 33% à cause des néologismes.`
+      answer: `Il n'y a pas de réponse honnête en heures. Si vous êtes à l'aise avec la littérature vous gagnez un temps considérable mais fiez vous aux nombre de mots et augmentez le pourcentage par 33% à cause des néologismes. 100 mots par minute équivaut pour 10.000 mots à 1 heure et 40 minutes et multipliez par rapport aux nombre total trouvable dans AURNELCY>Introduction>Nombre de Mots`
     },
     {
       question: "Est-ce qu'⟁URNELCY est terminé ?",
@@ -66,7 +66,7 @@
     },
     {
       question: "La PWA peut-elle fonctionner hors ligne ?",
-      answer: `Oui. Il est installable comme application sur mobile ou desktop et fonctionne sans connexion une fois chargé.`
+      answer: `Oui. Il est installable comme application sur mobile ou desktop et fonctionne sans connexion une fois téléchargé avec le bouton en haut à gauche [⬇].`
     },
     {
       question: "AURNELCY se positionnez t-il stoïcien ?",
@@ -79,6 +79,10 @@
     {
       question: "Quel système économique pour AURNELCY ?",
       answer: `économie signifie 'administration/gestion d'une maison', dans l'économie aurnelcyenne on n'est pas dans le droit chemin parce qu'on est payé, on ne devient pas maître des biens par une transaction dans le marché, la priorité du système est la protection de l'innocence et non la privatisation du monde, pour cela, l'appartenance identitaire cosmopolitaine suffit, l'espèce est modeste et s'optimise pour vivre et faire vivre le battement civil tout entier, une biohumanité qui tue, vole, se suicide, se drogue est symbole de défaite absolue, cependant le recourt au meurtre n'est pas banni en absolu.`
+    },
+    {
+      question: "Comment concilier la protection de l'innocence avec le fait que la violence ou le meurtre ne soient pas bannis en absolu ?",
+      answer: `Aurnelcy refuse pas pacifisme naïf qui livre les innocents à la ruine et assume que non, toutes les vies ne se valent pas surtout lorsque l'aursylien use de violences subtiles là où le bannissement de la violence et de sa définition à revoir reviendrait à faire gagner aursyl dans une passivité populaire et un dénoncement maladif de la supériorité morale. L'interdiction morale absolue du meurtre deviendrait une arme au service du tyran mais si l'exclusion de certains modes d'existences psychiques et comportementaux est modéré, alors la violence peut contribuer à un bien largement plus grand.`
     },
     {
       question: "Aursyl vs Aurnelcy = manichéisme ?",
@@ -95,6 +99,18 @@
     {
       question: "AURNELCY reprend-il l'idée chrétienne des enfants ?",
       answer: `L'enfant est énormément dépendant de son entourage, il est capable d'actions blâmables et de sournoiseries, c'est une créature incapable de négocier, incroyablement têtu, facilement manipulable, sanitairement superficiel et bien que pouvant choquer, un urizen avisé à dose modéré est nécessaire en bas âge. Donc pour répondre à la question, pas vraiment. La stigmatisation et la persécution entre enfants bien que normal est une étape à la maturation aux grâce dépendantes de l'impact de la somme des adultes. Si la santé spirituelle est juste, alors les adolescents ne créeront pas le moindre souci quand à la nature différentielle de la réalité.`
+    },
+    {
+      question: "Les thématiques d'Ekeline sont sexistes ?",
+      answer: `AURNELCY n'impose aucun rôle social aux femmes et ni aux hommes. Bien qu'Ekeline puisse paraître stéréotypé, les tendances des femmes en philosophie sont surtout éthiques tandis qu'ils sont métaphysiques pour les hommes. Vous devez vous renseigner sur les pays qui ont mis un point d'honneur sur l'égalité des genres, la différence des choix professionnels, des rôles sociaux et admettre qu'Ekeline bien qu'elle soit une figure assez traditionnelle, garde sa légitimité représentative.`
+    },
+    {
+      question: "AURNELCY fait preuve d'élitisme spirituel ?",
+      answer: `L'aurnelcyen considère l'okien(le peuple) incapable de s'émanciper de l'agonie aursylienne sans la créativité spirituelle qui hausse la vie humaine au niveau maximal.`
+    },
+    {
+      question: "Si 0K prône l'accès universel et l'humilité biologique, pourquoi créer un métalangage de néologismes qui verrouille l'accès au texte ?",
+      answer: `Si aurnelcy utiliserait le vocabulaire ordinaire, il jouerait le jeu d'aursyl qui l'absorberait dans le langage standard limitant la conceptualisation de la révolte et du renouveau civilisationnel.`
     },
   ];
 

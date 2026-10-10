@@ -119,6 +119,7 @@ const vocabularyData = [
     example: "Éponge qui s'embouche un coin",
     quote: "C'est la fenêtre de tir, prends ta chance, je vais te photographier!",
     parent: "⟁URNELCY, non-⟁URNELCY",
+    synonym: "Peuple, Population, Gens, Gentillé, Habitants",
     etymology: "0 KILL, All Correct, Orl Korrect",
     pronunce: "Français /ɔ.ke/ English /ˌoʊˈkeɪ/",
     version: "OK, Okien, Okiens, Okienne, Okiennes, Zérokien, Zérokiens, Zérokienne, Zérokiennes"
@@ -163,9 +164,8 @@ const vocabularyData = [
     quote: "La partie n'est pas terminée, tu as crié victoire trop tôt, faut-il que je te rappelle les règles du jeu ?",
     parent: "⟁URNELCY",
     etymology: "Arc, Arcade",
-    synonym: "Arcadia",
     pronunce: "Français /aʁ.ka.dja/ English /ɑːrˈkeɪ.di.ə/",
-    version: "Arcadia, Arcadien, Arcadiens, Arcadienne, Arcadiennes, Arcado"
+    version: "Arcadia, ARcAdiA, Arcadien, Arcadiens, Arcadienne, Arcadiennes, Arcado"
   },
   {
     term: "Aursyl",
@@ -279,7 +279,7 @@ const vocabularyData = [
     example: "Tous les êtres humains actuels sur la planète, quelles que soient leurs origines, appartiennent à une seule et même espèce.",
     quote: "Est-ce que tu crois que ces qualités te sied comme sur des baskets.",
     etymology: "homo sapien(latin scientifique) = être humain intelligent, sage, raisonnable, prudent, savant, qui a du discernement",
-    pronunce: "Masculin /o.mo sa.pjɛ̃s/",
+    pronunce: "Masculin Féminin /o.mo sa.pjɛ̃s/",
     surnatural: "Homo Sapien dispose d'un langage symbolique extrêmement pointu ce qui lui a permis d'édifier ses franchises qui unissent leur groupes dans une vision du monde commune.",
     version: "Homo Sapiens, Homo Sapienne, Homo Sapiennes, Sapien, Sapiens, Sapienne, Sapiennes"
   },
@@ -630,7 +630,7 @@ const vocabularyData = [
     example: "Celui qui n'a besoin d'aucune injonction pour entretenir sa sanité d'esprit",
     quote: "Naviguer conscient n'est pas savoir où l'on va, c'est savoir pourquoi on avance.",
     surnatural: "Chair répondant au Pourquoi au travers d'une maturation indéfinie.",
-    pronunce: "Masculin /nostʁ se/",
+    pronunce: "Féminin /nostʁ se/",
     etymology: "naus(grec) = navire, astrum(latin) = constellation/astre ἄστρον/astron(grec) = étoile/corps céleste, conscientia(latin) = savoir avec/connaissance partagée",
     version: "Naustre, Naustrique, Naustriques, Naustral, Naustricitén NauC"
   },
@@ -782,7 +782,7 @@ const vocabularyData = [
     example: "Oublier ses fixations passées pour créer quelque chose de nouveau",
     quote: "J'aurais bien envie de me changer les idées pour une fois.",
     description: "Se serait le meilleur drapeau, forme authentique et hypothétique.",
-    pronunce: "/kʁɔ.mɛl/",
+    pronunce: "Féminin /kʁɔ.mɛl/",
     etymology: "χρῶμα/chróma(grec) = couleur/carnation",
     surnatural: "Supporte fardeaux",
     version: "Chroméliste, Chromélisme"
@@ -1081,7 +1081,7 @@ const vocabularyData = [
     simplified: "Superposition Analogue",
     example: "Entrer dans une pièce pour la première fois et savoir exactement où est la sortie",
     quote: "Le maintenant perçu à plusieurs reprises n'est jamais le même maintenant, il sont tous uniques et différents.",
-    etymology: "jam(latin) = maintenant/déjà, vidēre(latin) = percevoir par la vue.être témoin de",
+    etymology: "jam(latin) = maintenant/déjà, vidēre(latin) = percevoir par la vue/être témoin de",
     pronunce: "Masculin /de.ʒa vy/"
   },
   {
@@ -1107,6 +1107,7 @@ const vocabularyData = [
     example: "Faire quelque chose qu'on n'aurait jamais choisi sans la contrainte économique, et devoir convaincre qu'on y met du cœur",
     quote: "L'âme collective exige formellement ce que l'âme individuelle ne demandait pas.",
     etymology: "origine inconnu/hypothétique",
+    parent: "Veldiac",
     synonym: "Emploi, Métier, Profession, Occupation, Poste, Boulot, Job, Turbin, Taf, Labeur, Besogne, Ouvrage, Tâche, Corvée",
     pronunce: "Masculin /tʁa.vaj/",
     description: "Représenté par l'enfant."
@@ -1119,6 +1120,7 @@ const vocabularyData = [
     implication: "Ce qui doit informellement devenir oublié pour la psyché individuelle à ce qu'on dit.",
     simplified: "Silence au devoir sans savoir, ce qu'on fait pour nourrir.",
     description: "Représenté par l'adulte.",
+    parent: "Travail",
     example: "Passer des heures sur quelque chose sans voir le temps passer, non pas par discipline mais par nécessité intérieure.",
     synonym: "Habitation, Toit, Ouverture, Vivabilité culturelle, Éco-humanisme",
     quote: "Nous avons confiance en ce en quoi nous sommes fait, chacun fait sa part dans l'ordre des choses et elle n'est pas du marché.",

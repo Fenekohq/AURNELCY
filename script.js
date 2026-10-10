@@ -241,29 +241,13 @@ window.addEventListener('load', function () {
   }, 300);
 });
 
-//Highlight Mode Script
-
-let highlightModeEnabled = false;
-
-function toggleHighlightMode() {
-  highlightModeEnabled = !highlightModeEnabled;
-  const status = document.getElementById('highlightStatus');
-  status.style.display = 'block';
-
-  const highlightedElements = document.querySelectorAll('.hmode');
-
-  highlightedElements.forEach((element) => {
-    element.style.backgroundColor = highlightModeEnabled ? '#7F00FF' : 'transparent';
-  });
-}
-
 document.addEventListener('DOMContentLoaded', function () {
   const toggleDefinizerBtn = document.getElementById('toggle-definizer-btn');
   if (!toggleDefinizerBtn) return;
 
   let definizerHidden = false;
 
-  const dictionaryTargets = document.querySelectorAll('#ok-core-definitions .definizer, #ok-core-definitions .definizer-2');
+  const dictionaryTargets = document.querySelectorAll('.definizer, .definizer-2');
 
   dictionaryTargets.forEach((element) => {
     if (element.dataset.originalDisplay === undefined) {

@@ -3,12 +3,12 @@
 (function () {
   const CLUES_A = [
     { n: 1, text: 'Pays et Paysans' },
-    { n: 3, text: 'ARcâŸdiA renverse les […]' },
+    { n: 3, text: 'ARcAdiA renverse les […]' },
     { n: 5, text: 'Aursyl est la science des […]' },
-    { n: 7, text: 'ARcâŸdiA est le […] pour Aursyl' },
-    { n: 8, text: 'ARcâŸdiA joue les […]' },
+    { n: 7, text: 'ARcAdiA est le […] pour Aursyl' },
+    { n: 8, text: 'ARcAdiA joue les […]' },
     { n: 9, text: 'Tournage en direct' },
-    { n: 12, text: 'Aursyl est le […] pour ARcâŸdiA' },
+    { n: 12, text: 'Aursyl est le […] pour ARcAdiA' },
   ];
   const CLUES_D = [
     { n: 2, text: "Chacun est … de l'autre" },
