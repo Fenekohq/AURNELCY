@@ -46,27 +46,29 @@
 
     <!--(LIGHT MODE/DARK MODE/LIGHT THEME/DARK THEME)-->
 
-    <button id="themeToggle" onclick="toggleTheme()" aria-label="Changer de thème" style="z-index: 2000;">◐</button>
+    <div id="topControls" role="group" aria-label="Outils du site">
+      <div class="top-controls-group">
+        <button id="openDictionaryBtn" class="category-tag" type="button" aria-label="Ouvrir le dictionnaire" title="Ouvrir le dictionnaire">🕮</button>
+        <button id="toggle-vocab-button" type="button" class="category-tag" aria-label="Ouvrir le vocabulaire" title="Afficher/masquer les détails du vocabulaire">🗏</button>
+        <button id="toggle-definizer-btn" class="category-tag" type="button" title="Afficher/masquer les éléments du dictionnaire">🛑</button>
+        <button id="offline-download-btn" class="category-tag" type="button" aria-label="Télécharger le site pour une consultation hors ligne" title="Télécharger le site pour le consulter hors ligne">⬇</button>
+      </div>
+      <div class="top-controls-group">
+        <button id="fontPickerBtn" class="category-tag" type="button" aria-label="Changer la police" title="Changer la police">𝐀</button>
+        <button id="fontSizeBtn" class="category-tag" type="button" aria-label="Taille du texte" title="Taille du texte">𝐓</button>
+        <button id="bookmarkBtn" class="category-tag" type="button" aria-label="Marque-pages" title="Marque-pages">🏷</button>
+        <button id="themeToggle" onclick="toggleTheme()" aria-label="Changer de thème" title="Changer de thème">◐</button>
+      </div>
+    </div>
 
-    <button id="openDictionaryBtn" class="category-tag" type="button" aria-label="Ouvrir le dictionnaire" style="position: fixed; top: 20px; left: 20px; z-index: 6000; font-size: 1em; touch-action: manipulation; -webkit-tap-highlight-color: transparent;">🕮</button>
-
-    <button id="toggle-definizer-btn" class="category-tag" type="button" style="position: fixed; top: 20px; left: 130px; z-index: 2000; font-size: 1em;" title="Afficher/masquer les éléments du dictionnaire">🛑</button>
-
-    <button id="offline-download-btn" class="category-tag" type="button" aria-label="Télécharger le site pour une consultation hors ligne" title="Télécharger le site pour le consulter hors ligne" style="position: fixed; top: 20px; left: 190px; z-index: 2000; font-size: 1em; touch-action: manipulation;">⬇</button>
     <div id="offline-status" role="status" aria-live="polite" style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 7000; max-width: 90vw; padding: 12px 16px; border: 1px solid var(--text-color); border-radius: 8px; background: var(--bg-color); color: var(--text-color); box-shadow: 0 4px 12px rgba(0,0,0,0.25); text-align: center;"></div>
 
-    <button id="toggle-vocab-button" type="button" class="category-tag" aria-label="Ouvrir le vocabulaire" style="position: fixed; top: 20px; left: 80px; z-index: 2000; font-size: 1em;">🗏</button>
-
-    <button id="fontPickerBtn" class="category-tag" style="position: fixed; top: 20px; right: 70px; z-index: 2000; font-size: 1em;" title="Changer la police">𝐀</button>
-
-    <div id="fontPickerDropdown" style="display: none; position: fixed; top: 60px; right: 100px; z-index: 1999; background: var(--bg-color); border: 1px solid var(--text-color); border-radius: 8px; padding: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); width: 220px; max-height: 420px; overflow-y: auto;">
+    <div id="fontPickerDropdown" style="display: none; position: fixed; z-index: 5001; background: var(--bg-color); border: 1px solid var(--text-color); border-radius: 8px; padding: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); width: 220px; max-height: 420px; overflow-y: auto;">
       <h4 style="margin: 0 0 8px 0; font-size: 0.9em;">Police d'écriture :</h4>
       <div id="fontList" style="display: flex; flex-direction: column; gap: 4px;"></div>
     </div>
 
-    <button id="fontSizeBtn" class="category-tag" style="position: fixed; top: 20px; right: 120px; z-index: 2000; font-size: 1em;" title="Taille du texte">𝐓</button>
-
-    <div id="fontSizeDropdown" style="display: none; position: fixed; top: 60px; right: 160px; z-index: 1999; background: var(--bg-color); border: 1px solid var(--text-color); border-radius: 8px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); width: 180px;">
+    <div id="fontSizeDropdown" style="display: none; position: fixed; z-index: 5001; background: var(--bg-color); border: 1px solid var(--text-color); border-radius: 8px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); width: 180px;">
       <h4 style="margin: 0 0 10px 0; font-size: 0.9em;">Taille du texte :</h4>
       <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px;">
         <button id="fontSizeMinus" style="width: 36px; height: 36px; border-radius: 6px; border: 1px solid var(--text-color); background: var(--bg-color); color: var(--text-color); font-size: 1.2em; cursor: pointer;">−</button>
@@ -76,9 +78,7 @@
       <button id="fontSizeReset" style="margin-top: 10px; width: 100%; padding: 5px; border-radius: 6px; border: 1px solid var(--text-color); background: var(--bg-color); color: var(--text-color); font-size: 0.85em; cursor: pointer;">Réinitialiser</button>
     </div>
 
-    <button id="bookmarkBtn" class="category-tag" style="position: fixed; top: 20px; right: 170px; z-index: 2000; font-size: 1em;" title="Marque-pages">🏷</button>
-
-    <div id="bookmarkDropdown" style="display: none; position: fixed; top: 60px; right: 200px; z-index: 1999; background: var(--bg-color); border: 1px solid var(--text-color); border-radius: 8px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); width: 260px; max-height: 400px; overflow-y: auto;">
+    <div id="bookmarkDropdown" style="display: none; position: fixed; z-index: 5001; background: var(--bg-color); border: 1px solid var(--text-color); border-radius: 8px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); width: 260px; max-height: 400px; overflow-y: auto;">
       <h4 style="margin: 0 0 10px 0; font-size: 0.9em;">Marque-pages :</h4>
       <button id="bookmarkAdd" style="width: 100%; padding: 7px; border-radius: 6px; border: 1px solid var(--text-color); background: var(--bg-color); color: var(--text-color); font-size: 0.9em; cursor: pointer; margin-bottom: 10px;">+ Marquer cette position</button>
       <div id="bookmarkList" style="display: flex; flex-direction: column; gap: 6px;"></div>
@@ -86,7 +86,7 @@
     </div>
 
     <!-- Dropdown panel for detail controls -->
-    <div id="vocab-details-dropdown" style="display: none; position: fixed; top: 60px; left: 60px; z-index: 1999; background: var(--bg-color); border: 1px solid var(--text-color); border-radius: 8px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); width: 280px; max-height: auto; overflow-y: auto;">
+    <div id="vocab-details-dropdown" style="display: none; position: fixed; z-index: 5001; background: var(--bg-color); border: 1px solid var(--text-color); border-radius: 8px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.25); width: 280px; max-height: auto; overflow-y: auto;">
       <h4 style="margin: 0 0 10px 0; font-size: 0.95em;">Afficher/Masquer Détails:</h4>
       <div style="display: flex; flex-direction: column; gap: 8px;">
         <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; margin: 0;">
@@ -421,13 +421,13 @@
 
           <div>
             <li>[🕮] Bouquinage des mots de vocabulaire en haut à gauche</li>
-            <li>[🕶] Surlignement du vocabulaire ou des mots l'évoquant en haut à gauche</li>
             <li>[🗏] Traçage du vocabulaire dans le texte et personnalisation des champs (IMPORTANT)</li>
+            <li>[🛑] Cacher/montrer les définitions sur la page</li>
+            <li>[⬇] Téléchargement du site pour possibilité hors ligne</li>
             <li>[◐] Mode clair/sombre en haut à droite</li>
             <li>[𝐀] Changement de la police en haut à droite</li>
             <li>[𝐓] Personnalisation de la taille du texte</li>
             <li>[🏷] Attribution des marques-pages</li>
-            <li>[🛑] Cacher/montrer les définitions sur la page</li>
             <li>[Ellipse] Timestamps des chapitres au milieu en haut</li>
           </div>
 
@@ -620,11 +620,11 @@
               </tr>
               <tr style="vertical-align: top;">
                 <td>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8</td>
-                <td>『Terrien』<br>『Monoa-Polyz』<br>「Gravité Centrale」<br>「CurSEED CurrenTCY」<br>「Conte Sanguinaire」<br>『Gliobë』<br>「Chrono-Chroma」</td>
+                <td>『Terrien』<br>『Monoa-Polyz』<br>「Gravité Centrale」<br>「CurSEED CurrenTCY」<br>「Conte Sanguinaire」<br>『Gliobë』<br>「Chrono-Chroma」<br>「Adulte」</td>
                 <td>「Fluide Élémentaire」<br>「Ve×So」<br>「tIRE×AtaR」<br>「Starter Pack」<br>「Jou×Dem」<br>「Messieurs-Dames」<br>「Wasteland」<br>「Quadrage」</td>
                 <td>「Directions Souveraines」<br>「La Semaine Sublime」<br>「Mélodie Inépelable」<br>「Panier」<br>「Gesticul」<br>「phoRÊTT & dézELTT」<br>「Silhouette Lisante」<br>『Le Syoneme Sublime』</td>
                 <td>「Karing」<br>「Florescence」<br>「Lune×Tele」<br>「La bêtise de la bête」<br>「.com/plain」<br>「FekiTruTHako」<br>「Affaires」<br>「Anti-Xenos」</td>
-                <td>『Picol-Kentron』<br>「F:R:I & S;S;C」<br>『Möbius Netwow』<br>「Salut」<br>「OUROBOROS」<br>『PROjECT SSeCCu$』<br>「Domaines」<br>「Velements」</td>
+                <td>「Initiative」<br>『Picol-Kentron』<br>「F:R:I & S;S;C」<br>『Möbius Netwow』<br>「Salut」<br>「OUROBOROS」<br>『PROjECT SSeCCu$』<br>「Domaines」<br>「Velements」</td>
                 <td>『Duel Xceptionnel』<br>『Gorgeous Raper』<br>「Cartel Conceptuel」<br>「The Quest Way」<br>「Mana」<br>『Glorieuse Nation』</td>
               </tr>
             </tbody>
@@ -648,6 +648,7 @@
     <div id="category-container" class="nav-buttons-2">
 
       <div><span class="category-title">0K(?)</span>
+        <button onclick="scrollToSection('Initiative')" class="nav-button-2">Initiative</button>
         <button onclick="scrollToSection('Karing')" class="nav-button-2">Karing</button>
         <button onclick="scrollToSection('Terrien')" class="nav-button-2">Terrien</button>
       </div>
@@ -704,9 +705,10 @@
         <button onclick="scrollToSection('Silhouette_Lisante')" class="nav-button-2">Silhouette Lisante</button>
         <button onclick="scrollToSection('Mana')" class="nav-button-2">Mana</button>
         <button onclick="scrollToSection('Domaines')" class="nav-button-2">Domaines</button>
+        <button onclick="scrollToSection('Adulte')" class="nav-button-2">Adulte</button>
         <button onclick="scrollToSection('Chrono-Chroma')" class="nav-button-2">Chrono-Chroma</button>
-        <button onclick="scrollToSection('Glorieuse_Nation')" class="nav-button-2">Glorieuse Nation</button>
         <button onclick="scrollToSection('Velements')" class="nav-button-2">Velements</button>
+        <button onclick="scrollToSection('Glorieuse_Nation')" class="nav-button-2">Glorieuse Nation</button>
         <button onclick="scrollToSection('Le_Syoneme_Sublime')" class="nav-button-2">Le Syoneme Sublime</button>
       </div>
 
@@ -961,14 +963,236 @@
 
     <div class="thesis">
       Thèse: L'entrée dans le vivant est considéré comme une phase d'inanité, de dépendance et de cadrage nécessaire.<br>
-      Distinction: Il ne s'agit pas d'enfermer l'élève, mais de reconnaître qu'une formation réelle commence sous contrainte.<br>
-      Argument: Le point de vue y est jugé digne d'intérêt car toujours apte à progresser dans la voie juste.<br>
+      Distinction: L'élève doit s'émanciper de cet état premier et de reconnaître qu'une formation réelle commence sous contrainte.<br>
+      Argument: Le point de vue y est jugé digne d'intérêt car toujours apte à progresser dans une voie plus juste.<br>
       Conséquence: Il est donc indispensable de guider assez pour rendre possible une autonomie future.<br>
       Limite: L'initiation ne remplace pourtant pas le développement qui suit ; elle n'en fixe que l'entrée la plus stable.<br>
     </div>
 
+    <div class="author">【Tuteur】</div>
 
-    <div class="author">【Tuteur/Tutrice】</div>
+    <details class="info">
+      <summary>Sujet</summary>
+      Type: But<br>
+      Question: Quel est ton but ?<br>
+      Outil: Vie<br>
+      Éclairage: Butdiversité<br>
+      Alignement: But<br>
+      Mouvement: Vie & Mort<br>
+      Tension: Vie & Mort<br>
+      Difficulté: 5/10<br>
+    </details>
+
+    <h3 id="Initiative" style="text-align: center;">「Initiative」</h3>
+
+    <table border="1" style="font-size: medium; text-align: left;">
+      <thead>
+        <tr>
+          <th style="padding: 8px;">Code / Formule</th>
+          <th style="padding: 8px;">Type & Nature</th>
+          <th style="padding: 8px;">Objectif</th>
+          <th style="padding: 8px;">Temporalité & Intentionalité</th>
+          <th style="padding: 8px;">Exemple</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="padding: 8px;"><strong>A pour B</strong></td>
+          <td>Moyen / Instrumental</td>
+          <td>Atteindre un résultat extérieur</td>
+          <td>Tension vers le futur ; utilité</td>
+          <td>Œuvrer à devenir plus</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px;"><strong>A pour A</strong></td>
+          <td>En Soi / Autotélique</td>
+          <td>Vivre l'instant</td>
+          <td>Présent pur</td>
+          <td>Écouter de la musique pour le plaisir</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px;"><strong>A pour B pour A</strong></td>
+          <td>Continuation / Boucle</td>
+          <td>Entretenir la vie</td>
+          <td>Cycle</td>
+          <td>Manger par faim pour vivre et remanger</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px;"><strong>A sans B</strong></td>
+          <td>Aliénation / Pression</td>
+          <td>Subir la contrainte</td>
+          <td>Temps subi</td>
+          <td>Exécuter une tâche imposée n'ayant aucun sens</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px;"><strong>A pour B pour C</strong></td>
+          <td>Chaîne / Procédural</td>
+          <td>Inscrire dans un projet à étapes</td>
+          <td>Projection linéaire</td>
+          <td>Étudier pour réussir pour avoir la profession voulu</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px;"><strong>(A + B) pour C</strong></td>
+          <td>Synergie / Convergence</td>
+          <td>Créer une émergence</td>
+          <td>Rencontre simultanée</td>
+          <td>Corps et esprit collaborent pour l'existence</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px;"><strong>A pour ∞</strong></td>
+          <td>Transcendance / Absolu</td>
+          <td>Dépasser le présent et l'individu</td>
+          <td>Atemporalité ; postérité</td>
+          <td>Créer de l'art pour l'Éternité</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px;"><strong>A contre B</strong></td>
+          <td>Résistance / Négation</td>
+          <td>S'opposer à quelque chose</td>
+          <td>Conflit</td>
+          <td>Boycotter ou désobéir par principe</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px;"><strong>A pour 0</strong></td>
+          <td>Épuisement / Extinction</td>
+          <td>Neutralisation</td>
+          <td>Ralentissement vers l'immobilité</td>
+          <td>Rechercher le vide mental et l'ascétisme</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px;"><strong>A pour X</strong></td>
+          <td>Sérendipité / Émergence</td>
+          <td>Découverte imprévue</td>
+          <td>Ouverture à l'incertitude</td>
+          <td>Explorer vers l'inconnu et faire une rencontre</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px;"><strong>A = B</strong></td>
+          <td>Immanence / Non-agir</td>
+          <td>Fusion totale du sujet</td>
+          <td>Instant incarné ; non-effort</td>
+          <td>Être pleinement présent à sa propre vie</td>
+        </tr>
+        <tr>
+          <td style="padding: 8px;"><strong>A pour [Signe de B]</strong></td>
+          <td>Simulacre / Spectacle</td>
+          <td>Donner une illusion</td>
+          <td>Virtualité</td>
+          <td>Acheter des objets pour afficher un statut</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="written">14/10/26</div>
+
+    <details class="excluded-section">
+      <summary>English Version</summary>
+
+      <h3 style="text-align: center;">「Initiative」</h3>
+
+      <table border="1" style="font-size: medium; text-align: left;">
+        <thead>
+          <tr>
+            <th style="padding: 8px;">Code / Formula</th>
+            <th style="padding: 8px;">Type &amp; Nature</th>
+            <th style="padding: 8px;">Objective</th>
+            <th style="padding: 8px;">Relationship to Time &amp; Will</th>
+            <th style="padding: 8px;">Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="padding: 8px;"><strong>A for B</strong></td>
+            <td>Means / Instrumental</td>
+            <td>Achieve an external result</td>
+            <td>Future-oriented tension; utility</td>
+            <td>Work to become more</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px;"><strong>A for A</strong></td>
+            <td>In-itself / Autotelic</td>
+            <td>Experience the moment</td>
+            <td>Pure present</td>
+            <td>Listen to music for pleasure</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px;"><strong>A for B for A</strong></td>
+            <td>Continuation / Loop</td>
+            <td>Sustain life</td>
+            <td>Cycle</td>
+            <td>Eat when hungry to live, then eat again</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px;"><strong>A without B</strong></td>
+            <td>Alienation / Pressure</td>
+            <td>Endure constraint</td>
+            <td>Time endured</td>
+            <td>Perform a meaningless imposed task</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px;"><strong>A for B for C</strong></td>
+            <td>Chain / Procedural</td>
+            <td>Fit into a multi-step project</td>
+            <td>Linear projection</td>
+            <td>Study to succeed in order to get the desired profession</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px;"><strong>(A + B) for C</strong></td>
+            <td>Synergy / Convergence</td>
+            <td>Create an emergent result</td>
+            <td>Simultaneous encounter</td>
+            <td>Body and mind collaborate for existence</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px;"><strong>A for ∞</strong></td>
+            <td>Transcendence / Absolute</td>
+            <td>Go beyond the present and the individual</td>
+            <td>Timelessness; legacy</td>
+            <td>Create art for Eternity</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px;"><strong>A against B</strong></td>
+            <td>Resistance / Negation</td>
+            <td>Oppose something</td>
+            <td>Conflict</td>
+            <td>Boycott or disobey on principle</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px;"><strong>A for 0</strong></td>
+            <td>Exhaustion / Extinction</td>
+            <td>Neutralization</td>
+            <td>Slowing toward stillness</td>
+            <td>Seek mental emptiness and asceticism</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px;"><strong>A for X</strong></td>
+            <td>Serendipity / Emergence</td>
+            <td>Unexpected discovery</td>
+            <td>Openness to uncertainty</td>
+            <td>Explore the unknown and encounter someone</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px;"><strong>A = B</strong></td>
+            <td>Immanence / Non-action</td>
+            <td>Total merging of the subject</td>
+            <td>Embodied instant; effortless action</td>
+            <td>Be fully present in one's own life</td>
+          </tr>
+          <tr>
+            <td style="padding: 8px;"><strong>A for [Sign of B]</strong></td>
+            <td>Simulacrum / Spectacle</td>
+            <td>Create an illusion</td>
+            <td>Virtuality</td>
+            <td>Buy objects to display status</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="written">00/00/00</div>
+
+    </details>
+
+    <div class="author">【Tutrice】</div>
 
     <details class="info">
       <summary>Sujet</summary>
@@ -998,6 +1222,28 @@
     </div>
 
     <div class="written">19/05/26</div>
+
+    <details class="excluded-section">
+      <summary>English Version</summary>
+
+      <h3 style="text-align: center;">「Karing」</h3>
+
+      <div style="display: flex; justify-content: center; gap: 6rem; font-size: 1.25em;">
+        <ol style="margin: 0; padding-left: 1.4em;">
+          <li>I get up at the ~same~ time every morning, including weekends.</li>
+          <li>I eat unprocessed food made with simple ingredients.</li>
+          <li>I exercise regularly throughout my life.</li>
+        </ol>
+        <ol start="4" style="margin: 0; padding-left: 1.4em;">
+          <li>I think as a witness to the expressive flow of these parcels.</li>
+          <li>I seek a relationship in which I feel fully myself.</li>
+          <li>I am present to everything around me, and I am alive.</li>
+        </ol>
+      </div>
+
+      <div class="written">00/00/00</div>
+
+    </details>
 
     <p class="hype-phrase" style="margin: 64px auto;">
       La santé est la condition sine qua non du sens<br>
@@ -1137,7 +1383,6 @@
     <h2 id="Terrien" style="text-align: center;">『Terrien』</h2>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 10px;">
-
       <div>1. naître</div>
       <div>2. commencer</div>
       <div>3. vivre</div>
@@ -1198,10 +1443,81 @@
       <div>58. mourir</div>
       <div>59. disparaître</div>
       <div>60. oublier</div>
-
     </div>
 
     <div class="written">04/05/26</div>
+
+    <details class="excluded-section">
+      <summary>English Version</summary>
+
+      <h2 style="text-align: center;">『Earthling』</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 10px;">
+        <div>1. be born</div>
+        <div>2. begin</div>
+        <div>3. live</div>
+        <div>4. open</div>
+        <div>5. inhabit</div>
+        <div>6. sense</div>
+        <div>7. feel</div>
+        <div>8. breathe</div>
+        <div>9. sleep</div>
+        <div>10. dream</div>
+        <div>11. move</div>
+        <div>12. listen</div>
+        <div>13. play</div>
+        <div>14. love</div>
+        <div>15. hate</div>
+        <div>16. shout</div>
+        <div>17. cry</div>
+        <div>18. laugh</div>
+        <div>19. call</div>
+        <div>20. touch</div>
+        <div>21. see</div>
+        <div>22. hear</div>
+        <div>23. taste</div>
+        <div>24. drink</div>
+        <div>25. eat</div>
+        <div>26. wait</div>
+        <div>27. want</div>
+        <div>28. learn</div>
+        <div>29. believe</div>
+        <div>30. mean</div>
+        <div>31. change</div>
+        <div>32. grow</div>
+        <div>33. sit down</div>
+        <div>34. hold</div>
+        <div>35. fall</div>
+        <div>36. straighten up</div>
+        <div>37. continue</div>
+        <div>38. rest</div>
+        <div>39. walk</div>
+        <div>40. run</div>
+        <div>41. build</div>
+        <div>42. destroy</div>
+        <div>43. transform</div>
+        <div>44. say</div>
+        <div>45. speak</div>
+        <div>46. think</div>
+        <div>47. read</div>
+        <div>48. reflect</div>
+        <div>49. write</div>
+        <div>50. care for</div>
+        <div>51. help</div>
+        <div>52. create</div>
+        <div>53. grow old</div>
+        <div>54. remember</div>
+        <div>55. lengthen</div>
+        <div>56. finish</div>
+        <div>57. close</div>
+        <div>58. die</div>
+        <div>59. disappear</div>
+        <div>60. forget</div>
+      </div>
+
+      <div class="written">00/00/00</div>
+
+    </details>
 
     <p class="hype-phrase" style="margin: 64px auto;">
       Que le monde est curieux…<br>
@@ -1220,6 +1536,19 @@
                 Cessation
               Homo Sapien
                 Primate
+            Initiative
+              A pour B
+              A pour A
+              A pour B pour A
+              A sans B
+              A pour B pour C
+              （A + B） pour C
+              A pour ∞
+              A contre B
+              A pour 0
+              A pour X
+              A = B
+              A pour [Signe de B]
             Karing
               Discipline
               Sobriété
@@ -8108,11 +8437,10 @@
                 Ventriloque
                 OUROBOROS
                   Hœmnet
+                  Mutilé
               Dévore-Novice
               Dévore-Nova
             Conte Sanguinaire
-              Histoire
-                Mutilé
               InFeXcuse
                 preFIX
                 RADICAL
@@ -8709,9 +9037,6 @@
       </div>
       
     </div>
-
-    <h3 id="The_Quest_Way" style="text-align: center;">「The Quest Way」</h3>
-
 
     <div class="author" style="text-align: center;">【Wacwe】</div>
 
@@ -9954,6 +10279,356 @@
 
     </details>
 
+
+    <div id="je-ne-sais-pas-rappel-definition"></div>
+
+    <p class="hype-phrase" style="margin: 32px auto;">
+      Nous dévorerons l'humanité pour réaliser le surhumain.<br>
+    </p>
+
+    <div class="author">【Pionniers】</div>
+
+    <details class="info">
+      <summary>Sujet</summary>
+      Type: Liste des Pionniers<br>
+      Question: Génie<br>
+      Outil: Intelligence<br>
+      Éclairage: Progrès Humain<br>
+      Alignement: Pour Tous<br>
+      Mouvement: Pour Rien<br>
+      Tension: Usage Malfaisant<br>
+      Difficulté: 10/10<br>
+    </details>
+
+    <h3 id="Adulte" style="text-align: center;">「Adulte」</h3>
+
+    <p>La responsabilité adulte est civilisationnelle et concerne le jeu que se porte tout les génies au service de l'humanité à porter une voix qui a quelque chose de riche à transmettre et mérite intêret de chacun.</p>
+    <p>On parvient à devenir adulte lorsque l'on fait progresser l'humanité inconditionnellement à travers son propre cheminement à travers ses idées, sa science et/ou ses actes.</p>
+    <p>Voici la liste non-exhaustive des gens à étudier ; vous voyez, vous n'avez pas rien à faire, enfin je crois…</p>
+
+    <div id="pioneer-count" style="text-align: center; font-weight: bold;" aria-live="polite"></div>
+
+<ul class="pioneer-list">
+  <li>Imhotep (c. 2650 av. J.-C. – c. 2600 av. J.-C.)</li>
+  <li>Hammourabi (c. 1810 av. J.-C. – 1750 av. J.-C.)</li>
+  <li>Akhenaton (c. 1380 av. J.-C. – c. 1335 av. J.-C.)</li>
+  <li>Homère (c. VIIIe siècle av. J.-C.)</li>
+  <li>Hésiode (c. VIIIe siècle av. J.-C.)</li>
+  <li>Thalès de Milet (c. 624 av. J.-C. – c. 546 av. J.-C.)</li>
+  <li>Anaximandre (c. 610 av. J.-C. – c. 546 av. J.-C.)</li>
+  <li>Lao-Tseu (c. 604 av. J.-C. – c. 531 av. J.-C.)</li>
+  <li>Pythagore (c. 570 av. J.-C. – c. 495 av. J.-C.)</li>
+  <li>Milon de Crotone (c. 555 av. J.-C. – c. 510 av. J.-C.)</li>
+  <li>Confucius (551 av. J.-C. – 479 av. J.-C.)</li>
+  <li>Sun Tzu (c. 544 av. J.-C. – c. 496 av. J.-C.)</li>
+  <li>Héraclite (c. 535 av. J.-C. – c. 475 av. J.-C.)</li>
+  <li>Eschyle (525 av. J.-C. – 456 av. J.-C.)</li>
+  <li>Parménide (c. 515 av. J.-C. – c. 450 av. J.-C.)</li>
+  <li>Anaxagore (c. 500 av. J.-C. – 428 av. J.-C.)</li>
+  <li>Sophocle (495 av. J.-C. – 406 av. J.-C.)</li>
+  <li>Hérodote (c. 484 av. J.-C. – c. 425 av. J.-C.)</li>
+  <li>Euripide (c. 480 av. J.-C. – 406 av. J.-C.)</li>
+  <li>Socrate (470 av. J.-C. – 399 av. J.-C.)</li>
+  <li>Mozi (c. 470 av. J.-C. – c. 391 av. J.-C.)</li>
+  <li>Philolaos de Crotone [Mélenos] (c. 470 av. J.-C. – c. 385 av. J.-C.)</li>
+  <li>Hippocrate (c. 460 av. J.-C. – c. 370 av. J.-C.)</li>
+  <li>Démocrite (c. 460 av. J.-C. – c. 370 av. J.-C.)</li>
+  <li>Platon (428 av. J.-C. – 348 av. J.-C.)</li>
+  <li>Diogène de Sinope (c. 412 av. J.-C. – 323 av. J.-C.)</li>
+  <li>Aristote (384 av. J.-C. – 322 av. J.-C.)</li>
+  <li>Tchouang-Tseu (c. 369 av. J.-C. – c. 286 av. J.-C.)</li>
+  <li>Alexandre le Grand (356 av. J.-C. - 323 av. J.-C.)</li>
+  <li>Épicure (341 av. J.-C. – 270 av. J.-C.)</li>
+  <li>Zénon de Kition (c. 334 av. J.-C. – c. 262 av. J.-C.)</li>
+  <li>Euclide (c. 325 av. J.-C. – c. 265 av. J.-C.)</li>
+  <li>Archimède (c. 287 av. J.-C. – 212 av. J.-C.)</li>
+  <li>Chrysippe de Soles (c. 279 av. J.-C. – c. 206 av. J.-C.)</li>
+  <li>Cicéron (106 av. J.-C. – 43 av. J.-C.)</li>
+  <li>Spartacus (c. 100 av. J.-C. – 71 av. J.-C.)</li>
+  <li>Lucrèce (c. 99 av. J.-C. – c. 55 av. J.-C.)</li>
+  <li>Virgile (70 av. J.-C. – 19 av. J.-C.)</li>
+  <li>Horace (65 av. J.-C. – 8 av. J.-C.)</li>
+  <li>Ovide (43 av. J.-C. – 17/18 apr. J.-C.)</li>
+  <li>Sénèque (4 av. J.-C. – 65)</li>
+  <li>Épictète (50 – 135)</li>
+  <li>Claude Ptolémée (c. 100 – 168)</li>
+  <li>Marc Aurèle (121 – 180)</li>
+  <li>Nagarjuna (c. 150 – c. 250)</li>
+  <li>Origène (c. 185 – c. 253)</li>
+  <li>Plotin (c. 205 – 270)</li>
+  <li>Augustin d'Hippone (354 - 430)</li>
+  <li>Hypatie d'Alexandrie (c. 360 – 415)</li>
+  <li>Al-Khwarizmi (c. 780 – c. 850)</li>
+  <li>Al-Kindi (c. 801 – c. 873)</li>
+  <li>Al-Farabi (c. 872 – c. 950)</li>
+  <li>Al-Ma'arri (973 – 1057)</li>
+  <li>Al-Biruni (973 – 1048)</li>
+  <li>Mourasaki Shikibu (c. 973 – c. 1014)</li>
+  <li>Ibn Sina [Avicenne] (c. 980 – 1037)</li>
+  <li>Omar Khayyam (1048 – 1131)</li>
+  <li>Ibn Rushd [Averroès] (1126 – 1198)</li>
+  <li>Saladin (1138 – 1193)</li>
+  <li>Maimonide (1138 – 1204)</li>
+  <li>Gengis Khan (c. 1162 - 1227)</li>
+  <li>Baudouin IV (1161 – 1185)</li>
+  <li>Jalal al-Din Rumi (1207 – 1273)</li>
+  <li>Thomas d'Aquin (1225 – 1274)</li>
+  <li>Marco Polo (1254 – 1324)</li>
+  <li>Dante Alighieri (1265 – 1321)</li>
+  <li>Guillaume d'Ockham (c. 1287 – 1347)</li>
+  <li>Gersonide [Lévi ben Gershom] (1288 – 1344)</li>
+  <li>Shi Nai'an (c. 1296 – 1370)</li>
+  <li>Luo Guanzhong (c. 1330 – 1400)</li>
+  <li>Ibn Khaldoun (1332 – 1406)</li>
+  <li>Donatello (1386 - 1466)</li>
+  <li>Johannes Gutenberg (c. 1400 – 1468)</li>
+  <li>Sandro Botticelli (1445 - 1510)</li>
+  <li>Léonard de Vinci (1452 – 1519)</li>
+  <li>Nicolas Machiavel (1469 – 1527)</li>
+  <li>Nicolaus Copernic (1473 – 1543)</li>
+  <li>Michel-Ange (1475 - 1564)</li>
+  <li>Raphaël (1483 – 1520)</li>
+  <li>François Rabelais (c. 1494 – 1553)</li>
+  <li>Wu Cheng'en (c. 1500 – 1582)</li>
+  <li>Étienne de La Boétie (1530 – 1563)</li>
+  <li>Michel de Montaigne (1533 – 1592)</li>
+  <li>Hattori Hanzō (1542 – 1596)</li>
+  <li>Tycho Brahe (1546 – 1601)</li>
+  <li>Giordano Bruno (1548 – 1600)</li>
+  <li>Francis Bacon (1561 – 1626)</li>
+  <li>Galilée (1564 – 1642)</li>
+  <li>William Shakespeare (1564 – 1616)</li>
+  <li>Johannes Kepler (1571 – 1630)</li>
+  <li>Miyamoto Musashi (c. 1584 – 1645)</li>
+  <li>Thomas Hobbes (1588 – 1679)</li>
+  <li>René Descartes (1596 – 1650)</li>
+  <li>Pierre de Cortone (1596 - 1669)</li>
+  <li>Le Bernin (1598 - 1680)</li>
+  <li>Francesco Borromini (1599 - 1667)</li>
+  <li>Pierre Corneille (1606 – 1684)</li>
+  <li>Giovanni Francesco Romanelli (1610 - 1662)</li>
+  <li>Pierre Puget (1620 - 1694)</li>
+  <li>Jean de La Fontaine (1621 – 1695)</li>
+  <li>Molière (1622 – 1673)</li>
+  <li>Blaise Pascal (1623 – 1662)</li>
+  <li>John Locke (1632 – 1704)</li>
+  <li>Baruch Spinoza (1632 – 1677)</li>
+  <li>Robert Hooke (1635 – 1703)</li>
+  <li>Jean Racine (1639 – 1699)</li>
+  <li>Isaac Newton (1643 – 1727)</li>
+  <li>Gottfried Wilhelm Leibniz (1646 – 1716)</li>
+  <li>Fontenelle (1657 – 1757)</li>
+  <li>Mary Astell (1666 – 1731)</li>
+  <li>Giambattista Vico (1668 – 1744)</li>
+  <li>Marivaux (1688 – 1763)</li>
+  <li>Baron de Montesquieu (1689 – 1755)</li>
+  <li>Voltaire (1694 – 1778)</li>
+  <li>Émilie du Châtelet (1706 – 1749)</li>
+  <li>Benjamin Franklin (1706 – 1790)</li>
+  <li>Julien Jean Offray de La Mettrie (1709 – 1751)</li>
+  <li>David Hume (1711 – 1776)</li>
+  <li>Jean-Jacques Rousseau (1712 – 1778)</li>
+  <li>Denis Diderot (1713 – 1784)</li>
+  <li>Cao Xueqin (c. 1715 – 1763)</li>
+  <li>Jean Le Rond d'Alembert (1717 – 1783)</li>
+  <li>Baron d'Holbach (1723 – 1789)</li>
+  <li>Immanuel Kant (1724 – 1804)</li>
+  <li>Marquis de Sade (1740 – 1814)</li>
+  <li>Thomas Jefferson (1743 – 1826)</li>
+  <li>Nicolas de Condorcet (1743 – 1794)</li>
+  <li>Olympe de Gouges (1748 – 1793)</li>
+  <li>Johann Wolfgang von Goethe (1749 – 1832)</li>
+  <li>Mozart (1756 – 1791)</li>
+  <li>William Blake (1757 – 1827)</li>
+  <li>Mary Wollstonecraft (1759 – 1797)</li>
+  <li>Friedrich Schiller (1759 – 1805)</li>
+  <li>Nguyen Du (1765 – 1820)</li>
+  <li>Ludwig van Beethoven (1770 – 1827)</li>
+  <li>Georg Wilhelm Friedrich Hegel (1770 – 1831)</li>
+  <li>Carl Friedrich Gauss (1777 – 1855)</li>
+  <li>Stendhal (1783 – 1842)</li>
+  <li>Arthur Schopenhauer (1788 – 1860)</li>
+  <li>Michael Faraday (1791 – 1867)</li>
+  <li>Auguste Comte (1798 – 1857)</li>
+  <li>Giacomo Leopardi (1798 – 1837)</li>
+  <li>Eugène Delacroix (1798 – 1863)</li>
+  <li>Honoré de Balzac (1799 – 1850)</li>
+  <li>Frédéric Bastiat (1801 – 1850)</li>
+  <li>Alexandre Dumas (1802 – 1870)</li>
+  <li>Victor Hugo (1802 – 1885)</li>
+  <li>George Sand (1804 – 1876)</li>
+  <li>Charles Darwin (1809 – 1882)</li>
+  <li>Søren Kierkegaard (1813 – 1855)</li>
+  <li>Richard Wagner (1813 – 1883)</li>
+  <li>Mikhaïl Bakounine (1814 – 1876)</li>
+  <li>Mikhail Lermontov (1814 – 1841)</li>
+  <li>Ada Lovelace (1815 – 1852)</li>
+  <li>Henry David Thoreau (1817 – 1862)</li>
+  <li>Karl Marx (1818 – 1883)</li>
+  <li>Walt Whitman (1819 – 1892)</li>
+  <li>Friedrich Engels (1820 – 1895)</li>
+  <li>Charles Baudelaire (1821 – 1867)</li>
+  <li>Gustave Flaubert (1821 – 1880)</li>
+  <li>Fiodor Dostoïevski (1821 – 1881)</li>
+  <li>Louis Pasteur (1822 – 1895)</li>
+  <li>Bernhard Riemann (1826 – 1866)</li>
+  <li>Jules Verne (1828 - 1905)</li>
+  <li>Léon Tolstoï (1828 – 1910)</li>
+  <li>Emily Dickinson (1830 – 1886)</li>
+  <li>Louise Michel (1830 – 1905)</li>
+  <li>James Clerk Maxwell (1831 – 1879)</li>
+  <li>Lewis Carroll (1832 – 1898)</li>
+  <li>Mark Twain (1835 – 1910)</li>
+  <li>Émile Zola (1840 – 1902)</li>
+  <li>Claude Monet (1840 – 1926)</li>
+  <li>Stéphane Mallarmé (1842 – 1898)</li>
+  <li>Pierre Kropotkine (1842 – 1921)</li>
+  <li>William James (1842 – 1910)</li>
+  <li>Paul Verlaine (1844 – 1896)</li>
+  <li>Friedrich Nietzsche (1844 – 1900)</li>
+  <li>Georg Cantor (1845 – 1918)</li>
+  <li>Thomas Edison (1847 – 1931)</li>
+  <li>Bram Stoker (1847 – 1912)</li>
+  <li>Gottlob Frege (1848 – 1925)</li>
+  <li>Paul Gauguin (1848 – 1903)</li>
+  <li>Guy de Maupassant (1850 – 1893)</li>
+  <li>Santiago Ramón y Cajal (1852 – 1934)</li>
+  <li>Vincent van Gogh (1853 – 1890)</li>
+  <li>Henri Poincaré (1854 – 1912)</li>
+  <li>Arthur Rimbaud (1854 – 1891)</li>
+  <li>Nikola Tesla (1856 – 1943)</li>
+  <li>Sigmund Freud (1856 – 1939)</li>
+  <li>Thornstein Veblen (1857 – 1929)</li>
+  <li>Max Planck (1858 – 1947)</li>
+  <li>Émile Durkheim (1858 – 1917)</li>
+  <li>Rosa Mayreder (1858 – 1938)</li>
+  <li>Henri Bergson (1859 – 1941)</li>
+  <li>Anton Tchekhov (1860 – 1904)</li>
+  <li>J. M. Barrie (1860 – 1937)</li>
+  <li>Rabindranath Tagore (1861 – 1941)</li>
+  <li>David Hilbert (1862 – 1943)</li>
+  <li>Marie Curie (1867 – 1934)</li>
+  <li>W.E.B. Du Bois (1868 – 1963)</li>
+  <li>Fritz Haber (1868 - 1934)</li>
+  <li>Mohandas Karamchand Gandhi (1869 – 1948)</li>
+  <li>Rosa Luxemburg (1871 – 1919)</li>
+  <li>Marcel Proust (1871 – 1922)</li>
+  <li>Bertrand Russell (1872 – 1970)</li>
+  <li>Carl Bosch (1874 - 1940)</li>
+  <li>Carl Gustav Jung (1875 – 1961)</li>
+  <li>Hermann Hesse (1877 – 1962)</li>
+  <li>Alfred Korzybski (1879 – 1950)</li>
+  <li>Albert Einstein (1879 – 1955)</li>
+  <li>Stefan Zweig (1881 – 1942)</li>
+  <li>Pablo Picasso (1881 – 1973)</li>
+  <li>Lu Xun (1881 – 1936)</li>
+  <li>James Joyce (1882 – 1941)</li>
+  <li>Franz Kafka (1883 – 1924)</li>
+  <li>Gaston Bachelard (1884 – 1962)</li>
+  <li>Erwin Schrödinger (1887 – 1961)</li>
+  <li>Fernando Pessoa (1888 – 1935)</li>
+  <li>Martin Heidegger (1889 – 1976)</li>
+  <li>Ludwig Wittgenstein (1889 – 1951)</li>
+  <li>H.P. Lovecraft (1890 – 1937)</li>
+  <li>Antonio Gramsci (1891 – 1937)</li>
+  <li>Edward Bernays (1891 – 1995)</li>
+  <li>J.R.R. Tolkien (1892 – 1973)</li>
+  <li>Henry Darger (1892 – 1973)</li>
+  <li>Walter Benjamin (1892 – 1940)</li>
+  <li>Louis-Ferdinand Céline (1894 – 1961)</li>
+  <li>Aldous Huxley (1894 – 1963)</li>
+  <li>Norbert Wiener (1894 – 1964)</li>
+  <li>Max Horkheimer (1895 - 1973)</li>
+  <li>Buckminster Fuller (1895 – 1983)</li>
+  <li>Jean Piaget (1896 – 1980)</li>
+  <li>F. Scott Fitzgerald (1896 – 1940)</li>
+  <li>Lev Vygotski (1896 – 1934)</li>
+  <li>Georges Bataille (1897 – 1962)</li>
+  <li>M.C. Escher (1898 – 1972)</li>
+  <li>Lao She (1899 – 1966)</li>
+  <li>Jean Moulin (1899 – 1943)</li>
+  <li>Jorge Luis Borges (1899 – 1986)</li>
+  <li>Vladimir Nabokov (1899 – 1977)</li>
+  <li>Jacques Prévert (1900 – 1977)</li>
+  <li>Antoine de Saint-Exupéry (1900 – 1944)</li>
+  <li>Karl Popper (1902 – 1994)</li>
+  <li>Günther Anders (1902 – 1992)</li>
+  <li>George Orwell (1903 – 1950)</li>
+  <li>Theodor W. Adorno (1903 - 1969)</li>
+  <li>John von Neumann (1903 – 1957)</li>
+  <li>Joseph Campbell (1904 – 1987)</li>
+  <li>J. Robert Oppenheimer (1904 – 1967)</li>
+  <li>Gregory Bateson (1904 – 1980)</li>
+  <li>Jean-Paul Sartre (1905 – 1980)</li>
+  <li>Hannah Arendt (1906 – 1975)</li>
+  <li>Kurt Gödel (1906 – 1978)</li>
+  <li>Mircea Eliade (1907 – 1986)</li>
+  <li>Claude Lévi-Strauss (1908 – 2009)</li>
+  <li>Simone de Beauvoir (1908 – 1986)</li>
+  <li>Simone Weil (1909 – 1943)</li>
+  <li>Marshall McLuhan (1911 – 1980)</li>
+  <li>Heinz von Foerster (1911 – 2002)</li>
+  <li>Alan Turing (1912 – 1954)</li>
+  <li>Albert Camus (1913 – 1960)</li>
+  <li>Rosa Parks (1913 – 2005)</li>
+  <li>Dobri Dobrev (1914 - 2018)</li>
+  <li>Alan Watts (1915 – 1973)</li>
+  <li>Claude Shannon (1916 – 2001)</li>
+  <li>Ilya Prigogine (1917 – 2003)</li>
+  <li>Nelson Mandela (1918 – 2013)</li>
+  <li>Richard Feynman (1918 – 1988)</li>
+  <li>Albert Memmi (1920 – 2020)</li>
+  <li>Rosalind Franklin (1920 – 1958)</li>
+  <li>Charles Bukowski (1920 – 1994)</li>
+  <li>Edgar Morin (1921 – Présent)</li>
+  <li>Thomas Kuhn (1922 – 1996)</li>
+  <li>René Girard (1923 – 2015)</li>
+  <li>Italo Calvino (1923 – 1985)</li>
+  <li>Paul Feyerabend (1924 – 1994)</li>
+  <li>Gilles Deleuze (1925 – 1995)</li>
+  <li>Frantz Fanon (1925 – 1961)</li>
+  <li>Malcolm X (1925 – 1965)</li>
+  <li>Yukio Mishima (1925 – 1970)</li>
+  <li>Michel Foucault (1926 – 1984)</li>
+  <li>Simone Veil (1927 – 2017)</li>
+  <li>Stanley Kubrick (1928 - 1999)</li>
+  <li>Michel Clouscard (1928 – 2006)</li>
+  <li>Philip K. Dick (1928 – 1982)</li>
+  <li>Noam Chomsky (1928 – Présent)</li>
+  <li>Anne Frank (1929 – 1945)</li>
+  <li>Martin Luther King Jr. (1929 – 1968)</li>
+  <li>Ursula K. Le Guin (1929 – 2018)</li>
+  <li>Jean Baudrillard (1929 – 2007)</li>
+  <li>Félix Guattari (1930 – 1992)</li>
+  <li>Pierre Bourdieu (1930 – 2002)</li>
+  <li>Jacques Derrida (1930 – 2004)</li>
+  <li>Guy Debord (1931 – 1994)</li>
+  <li>Umberto Eco (1932 – 2016)</li>
+  <li>Susan Sontag (1933 – 2004)</li>
+  <li>Jane Goodall (1934 – 2025)</li>
+  <li>Carl Sagan (1934 – 1996)</li>
+  <li>Edward Said (1935 – 2003)</li>
+  <li>Clément Rosset (1939 – 2018)</li>
+  <li>Stephen Hawking (1942 – 2018)</li>
+  <li>George Lucas (1944 – Présent)</li>
+  <li>Douglas Hofstadter (1945 – Présent)</li>
+  <li>Steve Biko (1946 – 1977)</li>
+  <li>Geoffrey Hinton (1947 - Présent)</li>
+  <li>Tim Berners-Lee (1955 - Présent)</li>
+  <li>Michael Jackson (1958 – 2009)</li>
+  <li>Yann LeCun (1960 - Présent)</li>
+  <li>Hideo Kojima (1963 – Présent)</li>
+  <li>Jennifer Doudna (1964 - Présent)</li>
+  <li>J. K. Rowling (1965 – Présent)</li>
+  <li>Grigori Perelman (1966 - Présent)</li>
+  <li>Emmanuelle Charpentier (1968 - Présent)</li>
+  <li>Yoko Taro (1970 – Présent)</li>
+  <li>ZUN (1977 – Présent)</li>
+  <li>Toby Fox (1991 – Présent)</li>
+</ul>
+
+    <div class="written">12/10/26</div>
+
     <div id="arti5">
 
       <details class="info">
@@ -10363,198 +11038,6 @@
       </table>
     </div>
 
-    <div id="tohla-definition"></div>
-
-    <div class="author" style="text-align: center;">【Tôhla】</div>
-
-    <details class="info">
-      <summary>Sujet</summary>
-      Type: Essai sur la Distinction Significative de l'Individuel et du Commun<br>
-      Question: Société et/ou Civilisation<br>
-      Outil: Entendement<br>
-      Éclairage: Gouvernance<br>
-      Alignement: Bon Civil Existentiel<br>
-      Mouvement: Intelligence<br>
-      Tension: Balivernes<br>
-      Difficulté: 5/10<br>
-    </details>
-
-    <div class="civil-grid">
-
-      <div class="civil-item" style="text-align: left;">
-
-        <h2 id="Glorieuse_Nation">『Glorieuse Nation』</h2>
-
-        <p>L'enfant se doit grâce à son berceau, d'apprendre à vivre en humain.<br>
-          Qui es-tu ? Découvrons-le…<br>
-          Ton espèce t'a engendré, et te voilà!<br>
-          Quels fruits sommeillent en toi ?<br>
-          Maintenant qu'est-ce que tu vas faire de ta misérable existence ?<br>
-          <br>
-          Je méprise la société mais j'adore la civilisation.<br>
-          <br>
-          Le sociéteur dit: <q>Je dois dire bonjour.</q><br>
-          Le civilisateur dit: <q>Bonjour.</q><br>
-          <br>
-          Le sociéteur n'a rien à faire en société que par son intérêt.<br>
-          Le civilisateur a tout à faire en civilisation par L'intérêt.<br>
-          <br>
-          Le sociéteur moralise de culpabilité les traîtres de sa tyrannie.<br>
-          Le civilisateur ouvre sa conscience vers une réalité plus objective de lui-même.<br>
-          <br>
-          Nul ne sait ce dont est capable l'humain, et celui qui sait n'est pas crédible.<br>
-          <br>
-          Celui insuflé de civilisation dit: <br>
-          <q>Toute cette richesse, je veux l'épouser, qu'elle soit heureuse ou triste.</q><br>
-          Celui insuflé de société dit sans le dire, en le refoulant: <br>
-          <q>J'ai peur, et je dois donc X selon X.</q><br>
-          <br>
-          Si je ne suis ni un criminel, ni un terroriste, ni un trafiquant, c'est car je suis follement amoureux de la civilisation.<br>
-          Le sujet primordial dans lequel l'un a besoin de sa complète attention pour être plus lui-même/elle-même/soi-même.<br>
-          La civilisation est d'une signification à la température d'un amour la plus belle qu'elle soit.<br>
-          Quiconque s'identifie et pratique le souffle de la société ou de la civilisation est tenu de la rendre vers une vision minimale ou maximale.<br>
-          <br>
-          Je vous le dis de ce moment: <br>
-          Le civilisateur est en solitaire au jour d'aujourd'hui, car les injonctions ont pris dessus.<br>
-          Soyez bénis et force à vous, civilisateurs, car de votre mouvement battra des ailes noires scintillantes.<br>
-        </p>
-
-        <div class="written">07/11/25</div>
-
-      </div>
-
-      <div class="civil-item" style="text-align: right;">
-
-        <details class="excluded-section">
-
-          <summary>English Version</summary>
-
-          <h2>『Glorious Nation』</h2>
-
-          <p>The child, thanks to their cradle, must learn to live as a human.<br>
-            Who are you? Let’s find out.<br>
-            Your species brought you into being, and here you are.<br>
-            What fruits lie dormant within you ?<br>
-            Now, what will you do with your miserable existence ?<br>
-            <br>
-            I despise society, yet I adore civilization.<br>
-            <br>
-            The societor says: <q>I must say hello.</q><br>
-            The civilizator says: <q>Hello.</q><br>
-            <br>
-            The societor acts within society out of self-interest.<br>
-            The civilizator acts within civilization for the sake of interest.<br>
-            <br>
-            The societor moralizes through guilt those who betray his tyranny.<br>
-            The civilizator opens his consciousness toward a more objective reality of himself.<br>
-            <br>
-            No one knows what the human is capable of, and those who do are not credible.<br>
-            <br>
-            The one inspired by civilization says: <br>
-            <q>All this richness, I want to embrace it, whether it be happy or sad.</q><br>
-            The one inspired by society says, without saying it, by repressing it: <br>
-            <q>I’m afraid, therefore I must X according to X.</q><br>
-            <br>
-            If I am neither a criminal, nor a terrorist, nor a trafficker, it is because I am madly in love with civilization.<br>
-            The primordial subject in which one need its full attention to be more himself/herself/itself/thyself.<br>
-            Civilization find its meaning at the temperature of love, the most beautiful there is.<br>
-            Whoever identifies with and breathes the spirit of society or civilization<br>
-            is bound to express it in either its minimal or maximal vision.<br>
-            <br>
-            I tell you this now: <br>
-            The civilizator stands alone today, for injunctions have taken over.<br>
-            Be blessed, and strength to you, civilizators, for from your movement will rise shimmering black wings.<br>
-          </p>
-
-          <div class="written">00/00/00</div>
-
-        </details>
-
-      </div>
-
-    </div>
-
-    <details class="info">
-      <summary>Sujet</summary>
-      Type: Comparaison<br>
-      Question: Aurwhat ?<br>
-      Outil: Intelligence<br>
-      Éclairage: Nuances<br>
-      Alignement: X<br>
-      Mouvement: Provocateur<br>
-      Tension: Vie Mort Homo Sapien<br>
-      Difficulté: 6/10<br>
-    </details>
-
-    <h4 style="text-align: center;">Comparateur Aursylo-Aurnelcyen</h4>
-
-    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-      <table border="1" class="triplet-rows" style="font-size: 1.5em; width: max-content;">
-        <tbody>
-          <tr>
-            <th>Verbes</th>
-            <td>Exister</td>
-            <td>Penser</td>
-            <td>Jouer</td>
-            <td>Favoriser</td>
-            <td>Diviniser</td>
-            <td>Faire</td>
-            <td>Sacrifier</td>
-            <td>Juger</td>
-            <td>Apprendre</td>
-            <td>Créer</td>
-            <td>Composer</td>
-            <td>Dépendre</td>
-            <td>Partager</td>
-            <td>Comprendre</td>
-            <td>Donner</td>
-            <td>Coûter</td>
-            <td>Imposer</td>
-          </tr>
-          <tr>
-            <th>Société d'Aursyl</th>
-            <td>pour</td>
-            <td>comme il faut</td>
-            <td>un jeu</td>
-            <td>une vie</td>
-            <td>le droit</td>
-            <td>un dictionnaire</td>
-            <td>la mécréance</td>
-            <td>selon la loi</td>
-            <td>comment</td>
-            <td>des problèmes</td>
-            <td>de la stratégie</td>
-            <td>d'autrui</td>
-            <td>son exploitation</td>
-            <td>les intentions</td>
-            <td>un prix</td>
-            <td>de la grossièreté</td>
-            <td>sa légitimité</td>
-          </tr>
-          <tr>
-            <th>Société d'Aurnelcy</th>
-            <td>et</td>
-            <td>comme il se doit</td>
-            <td>des jeux</td>
-            <td>la vie</td>
-            <td>l'autodétermination</td>
-            <td>un langage</td>
-            <td>l'impertinence</td>
-            <td>selon la justice</td>
-            <td>pourquoi</td>
-            <td>des interceptions</td>
-            <td>de l'art</td>
-            <td>du cosmos</td>
-            <td>son expérience</td>
-            <td>les gens</td>
-            <td>une valeur</td>
-            <td>de la courtoisie</td>
-            <td>son intégrité</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
     <div class="author">【Fenekohq】</div>
 
     <details class="info">
@@ -10685,6 +11168,199 @@
     </div>
 
     <div class="written">15/06/26</div>
+
+
+    <details class="info">
+      <summary>Sujet</summary>
+      Type: Comparaison<br>
+      Question: Aurwhat ?<br>
+      Outil: Systémie<br>
+      Éclairage: Nuances<br>
+      Alignement: X<br>
+      Mouvement: Provocateur<br>
+      Tension: Vie Mort Homo Sapien<br>
+      Difficulté: 6/10<br>
+    </details>
+
+    <h4 style="text-align: center;">Comparateur Aursylo-Aurnelcyen</h4>
+
+    <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
+      <table border="1" class="triplet-rows" style="font-size: 1.5em; width: max-content;">
+        <tbody>
+          <tr>
+            <th>Verbes</th>
+            <td>Exister</td>
+            <td>Penser</td>
+            <td>Jouer</td>
+            <td>Favoriser</td>
+            <td>Diviniser</td>
+            <td>Faire</td>
+            <td>Sacrifier</td>
+            <td>Juger</td>
+            <td>Apprendre</td>
+            <td>Créer</td>
+            <td>Composer</td>
+            <td>Dépendre</td>
+            <td>Partager</td>
+            <td>Comprendre</td>
+            <td>Donner</td>
+            <td>Coûter</td>
+            <td>Imposer</td>
+          </tr>
+          <tr>
+            <th>Société d'Aursyl</th>
+            <td>pour</td>
+            <td>comme il faut</td>
+            <td>un jeu</td>
+            <td>une vie</td>
+            <td>le droit</td>
+            <td>un dictionnaire</td>
+            <td>la mécréance</td>
+            <td>selon la loi</td>
+            <td>comment</td>
+            <td>des problèmes</td>
+            <td>de la stratégie</td>
+            <td>d'autrui</td>
+            <td>son exploitation</td>
+            <td>les intentions</td>
+            <td>un prix</td>
+            <td>de la grossièreté</td>
+            <td>sa légitimité</td>
+          </tr>
+          <tr>
+            <th>Société d'Aurnelcy</th>
+            <td>et</td>
+            <td>comme il se doit</td>
+            <td>des jeux</td>
+            <td>la vie</td>
+            <td>l'autodétermination</td>
+            <td>un langage</td>
+            <td>l'impertinence</td>
+            <td>selon la justice</td>
+            <td>pourquoi</td>
+            <td>des interceptions</td>
+            <td>de l'art</td>
+            <td>du cosmos</td>
+            <td>son expérience</td>
+            <td>les gens</td>
+            <td>une valeur</td>
+            <td>de la courtoisie</td>
+            <td>son intégrité</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="tohla-definition"></div>
+
+    <div class="author" style="text-align: center;">【Tôhla】</div>
+
+    <details class="info">
+      <summary>Sujet</summary>
+      Type: Essai sur la Distinction Significative de l'Individuel et du Commun<br>
+      Question: Société et/ou Civilisation<br>
+      Outil: Entendement<br>
+      Éclairage: Gouvernance<br>
+      Alignement: Bon Civil Existentiel<br>
+      Mouvement: Intelligence<br>
+      Tension: Balivernes<br>
+      Difficulté: 5/10<br>
+    </details>
+
+    <div class="civil-grid">
+
+      <div class="civil-item" style="text-align: left;">
+
+        <h2 id="Glorieuse_Nation">『Glorieuse Nation』</h2>
+
+        <p>L'enfant se doit grâce à son berceau, d'apprendre à vivre en humain.<br>
+          Qui es-tu ? Découvrons-le…<br>
+          Ton espèce t'a engendré, et te voilà!<br>
+          Quels fruits sommeillent en toi ?<br>
+          Maintenant qu'est-ce que tu vas faire de ta misérable existence ?<br>
+          <br>
+          Je méprise la société mais j'adore la civilisation.<br>
+          <br>
+          Le sociéteur dit: <q>Je dois dire bonjour.</q><br>
+          Le civilisateur dit: <q>Bonjour.</q><br>
+          <br>
+          Le sociéteur n'a rien à faire en société que par son intérêt.<br>
+          Le civilisateur a tout à faire en civilisation par L'intérêt.<br>
+          <br>
+          Le sociéteur moralise de culpabilité les traîtres de sa tyrannie.<br>
+          Le civilisateur ouvre sa conscience vers une réalité plus objective de lui-même.<br>
+          <br>
+          Nul ne sait ce dont est capable l'humain, et celui qui sait n'est pas crédible.<br>
+          <br>
+          Celui insuflé de civilisation dit: <br>
+          <q>Toute cette richesse, je veux l'épouser, qu'elle soit heureuse ou triste.</q><br>
+          Celui insuflé de société dit sans le dire, en le refoulant: <br>
+          <q>J'ai peur, et je dois donc X selon X.</q><br>
+          <br>
+          Si je ne suis ni un criminel, ni un terroriste, ni un trafiquant, c'est car je suis follement amoureux de la civilisation.<br>
+          Le sujet primordial dans lequel l'un a besoin de sa complète attention pour être plus lui-même/elle-même/soi-même.<br>
+          La civilisation est d'une signification à la température d'un amour la plus belle qu'elle soit.<br>
+          Quiconque s'identifie et pratique le souffle de la société ou de la civilisation est tenu de la rendre vers une vision minimale ou maximale.<br>
+          <br>
+          Je vous le dis de ce moment: <br>
+          Le civilisateur est en solitaire au jour d'aujourd'hui, car les injonctions ont pris dessus.<br>
+          Soyez bénis et force à vous, civilisateurs, car de votre mouvement battra des ailes noires scintillantes.<br>
+        </p>
+
+        <div class="written">07/11/25</div>
+
+      </div>
+
+      <div class="civil-item" style="text-align: right;">
+
+        <details class="excluded-section">
+
+          <summary>English Version</summary>
+
+          <h2>『Glorious Nation』</h2>
+
+          <p>The child, thanks to their cradle, must learn to live as a human.<br>
+            Who are you? Let’s find out.<br>
+            Your species brought you into being, and here you are.<br>
+            What fruits lie dormant within you ?<br>
+            Now, what will you do with your miserable existence ?<br>
+            <br>
+            I despise society, yet I adore civilization.<br>
+            <br>
+            The societor says: <q>I must say hello.</q><br>
+            The civilizator says: <q>Hello.</q><br>
+            <br>
+            The societor acts within society out of self-interest.<br>
+            The civilizator acts within civilization for the sake of interest.<br>
+            <br>
+            The societor moralizes through guilt those who betray his tyranny.<br>
+            The civilizator opens his consciousness toward a more objective reality of himself.<br>
+            <br>
+            No one knows what the human is capable of, and those who do are not credible.<br>
+            <br>
+            The one inspired by civilization says: <br>
+            <q>All this richness, I want to embrace it, whether it be happy or sad.</q><br>
+            The one inspired by society says, without saying it, by repressing it: <br>
+            <q>I’m afraid, therefore I must X according to X.</q><br>
+            <br>
+            If I am neither a criminal, nor a terrorist, nor a trafficker, it is because I am madly in love with civilization.<br>
+            The primordial subject in which one need its full attention to be more himself/herself/itself/thyself.<br>
+            Civilization find its meaning at the temperature of love, the most beautiful there is.<br>
+            Whoever identifies with and breathes the spirit of society or civilization<br>
+            is bound to express it in either its minimal or maximal vision.<br>
+            <br>
+            I tell you this now: <br>
+            The civilizator stands alone today, for injunctions have taken over.<br>
+            Be blessed, and strength to you, civilizators, for from your movement will rise shimmering black wings.<br>
+          </p>
+
+          <div class="written">00/00/00</div>
+
+        </details>
+
+      </div>
+
+    </div>
 
     <div class="thesis">
       Thèse: Travail, Tra§Vel et Veldiac constituent ici une gradation des manières de porter, traverser et habiter une existence.<br>
@@ -11580,7 +12256,7 @@
         C'était tout dur et contracté sans rien d'officiel pour traduire l'essence fondamentale du syndrome si omniprésent.
         Les celluliers cardiologues se sentaient plus inventés pour la rouille d'habitués intraitables remplis par des dissonances environnementales plûtot que de la gentillé honorable.
         La fameuse crise du lundi, jour où la fonction existentielle est un cirque des plus bandés et pansés au point d'être momifié pour s'exercer à sa vulgaire tâche à se satisfaire de me sera étranger pardi.
-        L'art des gens avait du poids dans la monnaie mais la franchise actuelle, refouleusement insupportable a effectivement vidé le ciel de sa substance sensorielle d'entendement; une autre terre est recherchée en conséquence.
+        L'art des gens avait du poids dans la monnaie mais la franchise actuelle d'appât à rage, refouleusement insupportable a effectivement vidé le ciel de sa substance sensorielle d'entendement; une autre terre est recherchée en conséquence.
       </p>
 
       <p>
@@ -11916,7 +12592,7 @@
 
     <h2 class="mytho-chapter">『Felgora』</h2>
 
-    <h3 class="mytho-section">「Felgora 1」</h3>
+    <h3 id="D4" class="mytho-section">「Felgora 1」</h3>
 
     <div class="story-content">
 
@@ -11966,7 +12642,7 @@
 
     </div>
 
-    <h3 class="mytho-section">「Felgora 2」</h3>
+    <h3 id="D5" class="mytho-section">「Felgora 2」</h3>
 
     <div class="story-content">
 
@@ -12016,7 +12692,7 @@
 
     </div>
 
-    <h3 class="mytho-section">「Felgora 3」</h3>
+    <h3 id="D6" class="mytho-section">「Felgora 3」</h3>
 
     <div class="story-content">
 
@@ -12066,7 +12742,7 @@
 
     </div>
 
-    <h2 class="mytho-chapter">『Cyultii』</h2>
+    <h2 id="D7" class="mytho-chapter">『Cyultii』</h2>
 
     <h3 class="mytho-section">「Cyultii 1」</h3>
 
@@ -12118,7 +12794,7 @@
 
     </div>
 
-    <h3 class="mytho-section">「Cyultii 2」</h3>
+    <h3 id="D8" class="mytho-section">「Cyultii 2」</h3>
 
     <div class="story-content">
 
@@ -12168,7 +12844,7 @@
 
     </div>
 
-    <h3 class="mytho-section">「Cyultii 3」</h3>
+    <h3 id="D9" class="mytho-section">「Cyultii 3」</h3>
 
     <div class="story-content">
 
@@ -12220,7 +12896,7 @@
 
     <h2 class="mytho-chapter">『Tridalment』</h2>
 
-    <h3 class="mytho-section">「Tridalment 1」</h3>
+    <h3 id="D10" class="mytho-section">「Tridalment 1」</h3>
 
     <div class="story-content">
 
@@ -12270,7 +12946,7 @@
 
     </div>
 
-    <h3 class="mytho-section">「Tridalment 2」</h3>
+    <h3 id="D11" class="mytho-section">「Tridalment 2」</h3>
 
     <div class="story-content">
 
@@ -12320,7 +12996,7 @@
 
     </div>
 
-    <h3 class="mytho-section">「Tridalment 3」</h3>
+    <h3 id="D12" class="mytho-section">「Tridalment 3」</h3>
 
     <div class="story-content">
 
@@ -12372,7 +13048,7 @@
 
     <h2 class="mytho-chapter">『Nadelpe』</h2>
 
-    <h3 class="mytho-section">「Nadelpe 1」</h3>
+    <h3 id="D13" class="mytho-section">「Nadelpe 1」</h3>
 
     <div class="story-content">
 
@@ -12422,7 +13098,7 @@
 
     </div>
 
-    <h3 class="mytho-section">「Nadelpe 2」</h3>
+    <h3 id="D14" class="mytho-section">「Nadelpe 2」</h3>
 
     <div class="story-content">
 
@@ -12472,7 +13148,7 @@
 
     </div>
 
-    <h3 class="mytho-section">「Nadelpe 3」</h3>
+    <h3 id="D15" class="mytho-section">「Nadelpe 3」</h3>
 
     <div class="story-content">
 
@@ -12524,7 +13200,7 @@
 
     <h2 class="mytho-chapter">『Mooderagion』</h2>
 
-    <h3 class="mytho-section">「Mooderagion 1」</h3>
+    <h3 id="D16" class="mytho-section">「Mooderagion 1」</h3>
 
     <div class="story-content">
 
@@ -12574,7 +13250,7 @@
 
     </div>
 
-    <h3 class="mytho-section">「Mooderagion 2」</h3>
+    <h3 id="D17" class="mytho-section">「Mooderagion 2」</h3>
 
     <div class="story-content">
 
@@ -12624,7 +13300,7 @@
 
     </div>
 
-    <h3 class="mytho-section">「Mooderagion 3」</h3>
+    <h3 id="D18" class="mytho-section">「Mooderagion 3」</h3>
 
     <div class="story-content">
 
@@ -12674,7 +13350,7 @@
 
     </div>
 
-    <h3 class="mytho-section">「Mooderagion 4」</h3>
+    <h3 id="D19" class="mytho-section">「Mooderagion 4」</h3>
 
     <div class="story-content">
 
@@ -12726,7 +13402,7 @@
 
     <h2 class="mytho-chapter">『OËQ』</h2>
 
-    <h3 id="OËQ1" class="mytho-section">「OËQ1」</h3>
+    <h3 id="D20" class="mytho-section">「OËQ1」</h3>
     
     <div class="story-content">
 
@@ -12776,7 +13452,7 @@
 
     </div>
 
-    <h3 id="OËQ2" class="mytho-section">「OËQ2」</h3>
+    <h3 id="D21" class="mytho-section">「OËQ2」</h3>
 
     <div class="story-content">
 
@@ -12826,7 +13502,7 @@
 
     </div>
 
-    <h3 id="OËQ3" class="mytho-section">「OËQ3」</h3>
+    <h3 id="D22" class="mytho-section">「OËQ3」</h3>
 
     <div class="story-content">
 
@@ -13024,7 +13700,7 @@
 
     <h2 class="mytho-chapter">『⟁KDUQ』</h2>
 
-    <h3 id="" class="mytho-section">⦾「⟁KDUQ1」⦾</h3>
+    <h3 id="23" class="mytho-section">⦾「⟁KDUQ1」⦾</h3>
 
     <div class="story-content">
 
@@ -13075,7 +13751,7 @@
 
     </div>
 
-    <h3 id="" class="mytho-section">⦿「⟁KDUQ2」⦿</h3>
+    <h3 id="D24" class="mytho-section">⦿「⟁KDUQ2」⦿</h3>
 
     <div class="story-content">
 
@@ -13137,7 +13813,7 @@
 
     </div>
 
-    <h3 id="" class="mytho-section">⦾「⟁KDUQ3」⦾</h3>
+    <h3 id="D25" class="mytho-section">⦾「⟁KDUQ3」⦾</h3>
 
     <div class="story-content">
 
@@ -13171,7 +13847,7 @@
 
     </div>
 
-    <h3 id="" class="mytho-section">⦿「⟁KDUQ4」⦿</h3>
+    <h3 id="D26" class="mytho-section">⦿「⟁KDUQ4」⦿</h3>
 
     <div class="story-content">
 
@@ -13205,7 +13881,7 @@
 
     </div>
 
-    <h3 id="" class="mytho-section">⦾「⟁KDUQ5」⦾</h3>
+    <h3 id="D27" class="mytho-section">⦾「⟁KDUQ5」⦾</h3>
 
     <div class="story-content">
 
@@ -13239,7 +13915,7 @@
 
     </div>
 
-    <h3 id="" class="mytho-section">⦿「⟁KDUQ6」⦿</h3>
+    <h3 id="D28" class="mytho-section">⦿「⟁KDUQ6」⦿</h3>
 
     <div class="story-content">
 
@@ -13316,6 +13992,14 @@
       
       Les okiens ne cessent de voter pour le moins pire dans les élections de farce démocratique, ils mijotent dans l'isoloir bien en cachette à poser une opinion dont la lâcheté permet la paix sociale où tout et rien se décident de leur mains.
 
+      L'âge adulte en aurnelcyen ne se trouve en maturité de procréation du signifié qui nous est destiné, mais de son éveil émancipatoire d'un démon faible qui s'attaque au démon qui tient l'univers à ses pieds.
+
+      Au crethole, on s'initie à la matrîse des symbole, de leurs créations, inspirations et référentiels pour parler les langue fantômiques que les élites aursyliennent veulent être seuls détenteurs.
+
+      Le monde, les faits et les actions ne peuvent être pensé clairement et précisément sous le règne d'aursyl avec tant de mensonges, canulars et malhonnêteté, et c'est précisément la raison pour laquelle personne ne peut se positionner que seul aursyl se positionne et assure la prémonition de son héritage.
+
+      L'économie moderne place la pauvreté des autres au plan tertiaire pour mettre la priorité sur le nombril de l'ego, car toute obligation récompensé est cruauté et toute gratuité soucieuse de geste envers l'inconnu en besoin passe secondaire, ignorable et chassable.
+      Comme quoi, l'objectif final d'un tel système lorsqu'il dit « humanité », sous entend enfaite « je t'ai eu » avec des sous-rire affables, que les enfants trouvent sympathique en apparence pendant qu'il joue le langage de l'inversion fantômatique et transmet par USB médiatique le tabou à contredire, converser ou se révolter.
       En effet la thune est un moyen eugénique de voter pour une certaine famille plutôt que d'autres. La stratégie, c'est de produire un vote inconditionnel basé sur la menace à travers sans quoi le cadenas ne laisse pas le choix. Plutôt que d'autres n'est donc pas civilisateur mais sociologico-raciale.
       Ainsi, avoir une banque est un privilège à l'échelle d'un mortel aux statuts spéciaux et un handicap à l'échelle du commun des mortels, mais la foule devait fonctionner dans les termes de la tyrannie sans quoi elle meurt mais toujours fantômiquement.
       Le moyen parfait et obligatoire pour trahir toutes les individualités vers les activités à plein temps dans les nécessités biologiques sous contraintes des règles du jeu appliquée par les relations civiles de clients rois et d'esclaves serviles.
@@ -13495,7 +14179,7 @@
         <h3 style="text-align: center;">Lore, personnages et mythologie</h3>
         <ul>
           <li>On ne saura jamais le sexe de UiNo, ce personnage est le plus loufoque de tous.</li>
-          <li>Il y a une théorie comme quoi la Réalité YgijfeV est enfaite 0K.</li>
+          <li>Il y a une théorie comme quoi la Réalité YgijfeV est enfaite 0K et on pourrait même ajouter Mlush et Plush.</li>
           <li>Hyenuul chez Nezrog et BlaTH-BlaTcH dans aTHaTCHa forment le processus défensif qui noircit le corps.</li>
           <li>VeSo est le vaisseau Mapnélien, à bord être une espèce Jtie.</li>
           <li>Logjēm et Tôhla sont les deux membres du NEET Club, Slacpi° est lié a eux à travers ARc⟁diA vers une culture EURÊK⟁ bien meilleure.</li>
@@ -13507,6 +14191,7 @@
         <h3 style="text-align: center;">Auteur et coulisses</h3>
         <ul>
           <li>PAMABWA est la seule définition qui possède une date de naissance.</li>
+          <li>Lorsque UiNo bondit de son lit, Fenekohq était d'une inspiration démonique à son réveil sorti d'un sommeil qui a profondément structuré ses pensées.</li>
           <li>Fenekohq en tant que NEET sévère a construit ⟁URNELCY, c'est un thug.</li>
           <li>Le Conte Sanguinaire vient du <a href="https://fr.wikipedia.org/wiki/Liste_de_guerres">Wikipedia français</a>.</li>
           <li>Le racisme de la définition du Conte Sanguinaire est un coup aursylien provocateur.</li>
@@ -13575,7 +14260,6 @@
           <li style="text-shadow: 0px 0px 5px;">Ludwig Wittgenstein</li>
           <li>Giambattista Vico</li>
           <li>Alfred Korzybski</li>
-          <li>Gottfried Wilhelm Leibniz</li>
         </div>
 
         <div>
@@ -13591,7 +14275,6 @@
           <li>Arthur Schopenhauer</li>
           <li>Confucius</li>
           <li>Jean-Jacques Rousseau</li>
-          <li>Léon Tolstoï</li>
           <li>Hermann Hesse</li>
           <li>Épicure</li>
           <li>Martin Luther King Jr.</li>
@@ -13610,6 +14293,7 @@
           <li>Hannah Arendt</li>
           <li>Pierre Bourdieu</li>
           <li>Albert Memmi</li>
+          <li>Pierre Kropotkine</li>
           <li>Mikhaïl Bakounine</li>
         </div>
 

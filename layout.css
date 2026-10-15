@@ -398,3 +398,21 @@ details[open]>summary::before {
 .thx {
   font-weight: bold;
 }
+
+.pioneer-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 6px 24px;
+  width: 100%;
+  max-width: 1600px;
+  margin: 24px auto;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+}
+
+.pioneer-list li {
+  padding: 6px 10px;
+  border-bottom: 1px solid rgba(var(--text-color-rgb), 0.15);
+  line-height: 1.4;
+}

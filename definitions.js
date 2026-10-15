@@ -778,7 +778,7 @@ document.addEventListener('DOMContentLoaded', function () {
     pair: {
       terms: ["白𝓒α𐌺心αট黒", '⼰ㄈ🜆ꡙҼ7'],
       className: 'definizer',
-      style: 'display: grid; grid-template-columns: 1fr 1fr; justify-items: center; font-size: large; text-shadow: 0px 0px 10px #FF2400;'
+      style: 'display: grid; grid-template-columns: 1fr 1fr; justify-items: center; font-size: x-large; text-shadow: 0px 0px 10px #FF2400;'
     }
   });
 });
@@ -809,7 +809,7 @@ document.addEventListener('DOMContentLoaded', function () {
   window.mountDictionarySelection(container, {
     '⮟ЮꡙΞԵ': {
       className: 'definizer',
-      style: 'text-align: center; text-shadow: 0px 0px 10px #7F00FF;'
+      style: 'text-align: center; font-size: x-large; text-shadow: 0px 0px 10px #7F00FF;'
     }
   });
 });
@@ -832,7 +832,7 @@ document.addEventListener('DOMContentLoaded', function () {
   window.mountDictionarySelection(container, {
     'ҨყⰎல': {
       className: 'definizer',
-      style: 'text-align: center; text-shadow: 0px 0px 10px #00FFFF;'
+      style: 'text-align: center; font-size: x-large; text-shadow: 0px 0px 10px #00FFFF;'
     }
   });
 });
@@ -843,7 +843,7 @@ document.addEventListener('DOMContentLoaded', function () {
   window.mountDictionarySelection(container, {
     pair: {
       terms: ['Domaines', 'elzel0lezle'],
-      className: 'definizer',
+      className: 'definizer-2',
       style: 'font-size: large;'
     }
   });
@@ -884,6 +884,18 @@ document.addEventListener('DOMContentLoaded', function () {
       className: 'definizer',
       style: 'text-align: center; font-size: x-large;'
     }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const container = document.getElementById('je-ne-sais-pas-rappel-definition');
+  if (!container || !window.mountDictionarySelection) return;
+  window.mountDictionarySelection(container, {
+    pair: {
+      terms: [{ term: 'Je ne sais pas', rappel: true }, { term: 'Enquête', rappel: true }],
+      className: 'definizer-2',
+      style: 'font-size: 1.5em; text-align: center;'
+      }
   });
 });
 

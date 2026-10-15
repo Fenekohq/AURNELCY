@@ -774,7 +774,7 @@ const vocabularyData = [
   },
   {
     term: "Chromel",
-    category: ["Mapnel", "Wacwe", "Phénotype", "Supernova", "Codex"],
+    category: ["Mapnel", "Lysrua", "Wacwe", "Phénotype", "Supernova", "Codex"],
     definition: "Purification décisive des marqueurs traumatiques à la page tournante.",
     school: "Processus de purification chromatique où la couleur du traumatisme se transmute en teinte nouvelle.",
     implication: "Reprise des déjà-vus sur une phase supérieure de configuration.",
@@ -785,7 +785,7 @@ const vocabularyData = [
     pronunce: "Féminin /kʁɔ.mɛl/",
     etymology: "χρῶμα/chróma(grec) = couleur/carnation",
     surnatural: "Supporte fardeaux",
-    version: "Chroméliste, Chromélisme"
+    version: "Chroméliste, Chromélisme, Chromal, Chromélo"
   },
   {
     term: "Fon:Rel:Inc",
@@ -1075,7 +1075,7 @@ const vocabularyData = [
   },
   {
     term: "Déjà-Vu",
-    category: ["IUVALCY", "Leqwa", "Mouet-Pouet", "Phénomène"],
+    category: ["IUVALCY", "Lysrua", "Leqwa", "Mouet-Pouet", "Phénomène"],
     definition: "Sentiment d'expérience/expérimental/d'expertise du vécu.",
     implication: "Le vécu a déjà structuré la perception avant que l'événement arrive.",
     simplified: "Superposition Analogue",
@@ -1915,7 +1915,7 @@ const vocabularyData = [
     synonym: "eRUeGGeHH Blehdwo",
     etymology: "persona(latin) = masque/personne, œuf/ovum(latin) = œuf, capere(latin) = prendre/saisir",
     pronunce: "웨 = we (weRUweGGweHH) /wɛ.ʁy.wɛ.ɡe.wɛ.aʃ/",
-    version: "weRUweGGweHH, weRUweGGweHH Blehdwo, weRUweGGweHH Arcadien"
+    version: "weRUweGGweHH, weRUweGGweHH Blehdwo, eRUeGGeHH Arcadien"
   },
   {
     term: "ҨყⰎல",
@@ -2609,7 +2609,7 @@ function formatDictionaryEntryHtml(entry, fieldNames = 'all', extraClass = 'defi
       ? getFieldLabel(key, true, options.fieldNamePosition)
       : (copyFieldLabels[key] || key);
     const symbolOnlyLabel = !includeFieldNames && Boolean(copyFieldLabels[key]);
-    const line = symbolOnlyLabel ? `${label} ${value}` : `${label}: ${value}`;
+    const line = includeFieldNames || symbolOnlyLabel ? `${label} ${value}` : `${label}: ${value}`;
 
     detailParts.push(
       `<span class="is-detail detail-item detail-${visibilityKey}" data-detail-type="${visibilityKey}"><br>${escapeHtml(line)}</span>`,
@@ -2619,7 +2619,7 @@ function formatDictionaryEntryHtml(entry, fieldNames = 'all', extraClass = 'defi
   if (!definitionText && detailParts.length === 0) return '';
 
   const definitionLabel = includeFieldNames && definitionText
-    ? `${escapeHtml(getFieldLabel('definition', true, options.fieldNamePosition))}: `
+    ? `${escapeHtml(getFieldLabel('definition', true, options.fieldNamePosition))} `
     : '';
   const body = `${definitionLabel}${escapeHtml(definitionText)}${detailParts.join('')}`;
   const termPrefix = options.rappel === '+' || options.rappel === 'plus'

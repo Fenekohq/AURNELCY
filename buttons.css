@@ -152,9 +152,77 @@ textarea {
   text-align: center;
 }
 
+#topControls {
+  position: fixed;
+  top: max(8px, env(safe-area-inset-top));
+  left: max(12px, env(safe-area-inset-left));
+  right: max(12px, env(safe-area-inset-right));
+  z-index: 5000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.top-controls-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  pointer-events: auto;
+}
+
+#topControls button {
+  position: static;
+  box-sizing: border-box;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--text-color);
+  border-radius: 9px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+#topControls button:hover {
+  transform: translateY(-2px);
+  background: var(--hover-bg);
+}
+
+#topControls #themeToggle {
+  position: static;
+}
+
+#fontPickerDropdown {
+  top: 64px;
+  right: 12px;
+}
+
+#fontSizeDropdown {
+  top: 64px;
+  right: 60px;
+}
+
+#bookmarkDropdown {
+  top: 64px;
+  right: 108px;
+}
+
+#vocab-details-dropdown {
+  top: 64px;
+  left: 60px;
+}
+
 #floatingNavWrapper {
   position: fixed;
-  top: 0;
+  top: calc(max(8px, env(safe-area-inset-top)) + 36px);
   left: 50%;
   transform: translateX(-50%);
   z-index: 4000;
@@ -165,8 +233,8 @@ textarea {
 }
 
 #floatingEllipse {
-  width: 4vw;
-  height: 16px;
+  width: clamp(52px, 4vw, 72px);
+  height: 18px;
   opacity: 80%;
   margin-top: 4px;
   border: none;
@@ -198,7 +266,7 @@ textarea {
 }
 
 #floatingNavWrapper.open #floatingEllipse {
-  transform: translateY(56px);
+  transform: translateY(0);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
 }
 
@@ -221,8 +289,18 @@ textarea {
   align-items: center;
   justify-content: center;
   max-width: 90vw;
+  max-height: 70vh;
   overflow-x: auto;
+  overflow-y: auto;
   box-sizing: border-box;
+}
+
+#floatingNavButtons .nav-button {
+  flex: 0 0 auto;
+}
+
+#floatingNavButtons .nav-button span {
+  font-size: clamp(14px, 1.5vw, 20px);
 }
 
 #floatingNavWrapper.open #floatingNavButtons {
@@ -232,14 +310,62 @@ textarea {
 }
 
 @media screen and (max-width: 768px) {
+  #topControls {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 2px;
+  }
+
+  .top-controls-group {
+    display: contents;
+  }
+
+  #topControls button {
+    flex: 0 0 clamp(24px, calc((100vw - 48px) / 8 - 2px), 36px);
+    width: clamp(24px, calc((100vw - 48px) / 8 - 2px), 36px);
+    height: clamp(28px, calc((100vw - 48px) / 8 - 2px), 36px);
+  }
+
+  #floatingNavWrapper {
+    top: calc(max(8px, env(safe-area-inset-top)) + clamp(28px, calc((100vw - 48px) / 8 - 2px), 36px));
+  }
+
   #floatingNavButtons {
     flex-direction: column;
+    align-items: stretch;
+    width: min(90vw, 360px);
+    max-width: 90vw;
+    max-height: calc(100vh - 150px);
+    max-height: calc(100dvh - 150px);
+    overflow-x: hidden;
+    border-radius: 16px;
+  }
+
+  #floatingNavButtons .nav-button {
+    width: 100%;
+    min-width: 0;
+    padding: 8px 14px;
   }
 
   #floatingNavButtons .nav-button span {
-    font-size: 6vw;
-    white-space: nowrap;
-    text-align: center;
-    font-weight: 500;
+    font-size: 16px;
+  }
+
+  #fontPickerDropdown,
+  #fontSizeDropdown,
+  #bookmarkDropdown,
+  #vocab-details-dropdown {
+    top: calc(max(8px, env(safe-area-inset-top)) + clamp(28px, calc((100vw - 48px) / 8 - 2px), 36px) + 16px);
+    left: 50%;
+    right: auto;
+    width: min(90vw, 320px) !important;
+    max-height: calc(100vh - 124px);
+    max-height: calc(100dvh - 124px);
+    transform: translateX(-50%);
+  }
+
+  #fontSizeDropdown {
+    width: min(90vw, 280px) !important;
   }
 }

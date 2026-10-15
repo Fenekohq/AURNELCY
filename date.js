@@ -57,5 +57,7 @@ const writingDates = {
     { "date": "22/05/2026", "title": "Salvation" },
     { "date": "15/06/2026", "title": "Velements" },
     { "date": "06/09/2026", "title": ".com/plain" },
+    { "date": "12/10/2026", "title": "Adulte" },
+    { "date": "14/10/2026", "title": "Initiative" },
   ]
 };

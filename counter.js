@@ -241,6 +241,23 @@ if (document.readyState === 'loading') {
 setTimeout(updateLouangesLauriersCount, 100);
 setTimeout(updateLouangesLauriersCount, 500);
 
+// Pioneer List Counter
+function updatePioneerCount() {
+  const pioneerList = document.querySelector('.pioneer-list');
+  const counterElement = document.getElementById('pioneer-count');
+
+  if (pioneerList && counterElement) {
+    const count = pioneerList.querySelectorAll(':scope > li').length;
+    counterElement.textContent = `Nombre de pionniers : ${count}`;
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', updatePioneerCount);
+} else {
+  updatePioneerCount();
+}
+
 // aurnelcy age & fenekohq age
 (function () {
   const aurnelcyBirthDate = new Date(2023, 1, 9, 0, 0, 0, 0);
