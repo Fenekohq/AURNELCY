@@ -9,7 +9,6 @@ const writingDates = {
     { "date": "21/03/2024", "title": "La Semaine Sublime" },
     { "date": "26/03/2024", "title": "Conquête Ataraxiale" },
     { "date": "27/03/2024", "title": "Joujous Providentiels" },
-    { "date": "09/04/2024", "title": "tIRe-tROUBLe" },
     { "date": "25/07/2024", "title": "Directions Souveraines" },
     { "date": "13/08/2024", "title": "Fluide Élémentaire" },
     { "date": "13/08/2024", "title": "Gravité Centrale" },
@@ -59,5 +58,7 @@ const writingDates = {
     { "date": "06/09/2026", "title": ".com/plain" },
     { "date": "12/10/2026", "title": "Adulte" },
     { "date": "14/10/2026", "title": "Initiative" },
+    { "date": "20/10/2026", "title": "Renom" },
+    { "date": "27/10/2026", "title": "Gamer Toxicity" },
   ]
 };

@@ -289,7 +289,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { term: 'INTIMACY', rappel: true },
         'XaraЖereX'
       ],
-      className: 'definizer'
+      className: 'definizer-2'
     }
   });
 });

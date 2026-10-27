@@ -450,7 +450,7 @@ html[data-theme='dark'] img[src*='feature/OK.png'] {
   text-underline-offset: 3px;
 }
 
-.tirata-4x4 {
+.renom {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto auto;
@@ -459,7 +459,7 @@ html[data-theme='dark'] img[src*='feature/OK.png'] {
 }
 
 @media screen and (max-width: 768px) {
-  .tirata-4x4 {
+  .renom {
     grid-template-columns: 1fr !important;
   }
 }

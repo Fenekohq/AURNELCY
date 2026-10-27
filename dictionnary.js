@@ -377,7 +377,7 @@ const vocabularyData = [
     simplified: "PlusPlus",
     description: "Terla est représenté en anneau pendentif.",
     example: "L'amitié en soi et chez les autres a un sens qui transcende les problématiques, ce serait parfait.",
-    quote: "Le lien tient sans serrer trop fort ni lâcher la pression des composantes, de quoi trouver le juste milieu.",
+    quote: "Le lien maintien sans se serrer trop fort ni se lâcher la pression des composantes, de quoi trouver le juste milieu.",
     synonym: "Jonction, Stabilité, Composition, Conteneur, Concentration",
     etymologie: "(aurnelcyen)Tellurien Ère Là",
     pronunce: "/tɛʁ.la/",
@@ -391,7 +391,7 @@ const vocabularyData = [
     implication: "Ce qui persiste des choses ne freine en rien, nous changerons sans disparaître vraiment.",
     simplified: "Mémoire nourricière permanente & Projection épisodique cyclique ou Laisser Ouvert",
     example: "Nous changeons beaucoup mais nous nous reconnaissons encore au fond de nous.",
-    quote: "Grandir et vieillir fait partie des choses, la bataille à son encontre est fugace.",
+    quote: "Grandir et vieillir font partie des choses, la bataille à son encontre est fugace.",
     pronunce: "/mɔ.nɔm‿e pɔ.lip/, /mɔ.nɔm.tɛʁ.la.pɔ.lip/",
     version: "MTP, Mom&Pop, MM&PP, ℳℴ𝓃ℴ𝓂🙵𝒫ℴ𝓁𝓎𝓅"
   },
@@ -1082,7 +1082,8 @@ const vocabularyData = [
     example: "Entrer dans une pièce pour la première fois et savoir exactement où est la sortie",
     quote: "Le maintenant perçu à plusieurs reprises n'est jamais le même maintenant, il sont tous uniques et différents.",
     etymology: "jam(latin) = maintenant/déjà, vidēre(latin) = percevoir par la vue/être témoin de",
-    pronunce: "Masculin /de.ʒa vy/"
+    pronunce: "Masculin /de.ʒa vy/",
+    version: "Déjà-Vus, Déjà-Vue, Déjà-Vues",
   },
   {
     term: "Critherçation",
@@ -1760,9 +1761,11 @@ const vocabularyData = [
     example: "Une réalité qui se lit dans un sens puis dans l'autre et produit deux vérités également valables",
     quote: "L'ini-exo existe tout deux simultanément de façon complémentaires.",
     description: "Il se représente dans le bandage de la pilosité sur elle-même.",
+    parent: "YgijfeV",
     etymology: "Monoa-Polyz(aurnelcyen)",
     pronunce: "/mlyʃ pləʃ/",
-    synonym: "Contraires, Paradigmes, Traitement, Médecine, Thérapie, Semblance, Antidote"
+    synonym: "Contraires, Paradigmes, Traitement, Médecine, Thérapie, Semblance, Antidote",
+    version: "Lush"
   },
   {
     term: "YgijfeV",
@@ -1774,9 +1777,11 @@ const vocabularyData = [
     description: "Elle est représentée dans la futilité des arbres-ciel.",
     example: "Recevoir quelque chose de l'univers, le transformer, le renvoyer, la vague est complète.",
     quote: "La friandise fugace est pleine et vide simultanément, c'est sa nature.",
+    parent: "Mlush'Plush",
     etymology: "Yggdrasil(inspiration)",
     pronunce: "/i.ɡij.fə.v/",
-    synonym: "◯⬤○● Y ●○⬤◯, Richesse, Daimon, Démiurge, Représailles, Rétribution, Combination, Monde, Organe, Déjà-vu"
+    synonym: "◯⬤○● Y ●○⬤◯, Richesse, Daimon, Démiurge, Représailles, Rétribution, Combination, Monde, Organe, Déjà-vu",
+    version: "YfeV, LushYfeV"
   },
   {
     term: "白𝓒α𐌺心αট黒",
