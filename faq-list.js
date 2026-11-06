@@ -112,6 +112,10 @@
       question: "Si 0K prône l'accès universel et l'humilité biologique, pourquoi créer un métalangage de néologismes qui verrouille l'accès au texte ?",
       answer: `Si aurnelcy utiliserait le vocabulaire ordinaire, il jouerait le jeu d'aursyl qui l'absorberait dans le langage standard limitant la conceptualisation de la révolte et du renouveau civilisationnel.`
     },
+    {
+      question: "Pourquoi pas le RIASEC ou l'Ikigai pour la matrice Agenda ?",
+      answer: `Fenekohq voit chez ces modèles connus une idéologie du travail et de la productivité crée pour produire dans gens qui ne sont pas capables de constater qu'ils aiment manger et dormir, ce serait d'ailleurs un acte de rébellion envers cette propagande.`
+    },
   ];
 
   function escapeHtml(value) {
