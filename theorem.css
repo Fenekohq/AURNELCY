@@ -11,6 +11,63 @@ html[data-theme='dark'] img[src*='feature/OK.png'] {
   filter: invert(1) hue-rotate(180deg);
 }
 
+.likes-dislikes-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.likes-dislikes-table th,
+.likes-dislikes-table td {
+  width: 50%;
+  padding: 12px;
+  border: 1px solid var(--text-color);
+  vertical-align: top;
+}
+
+.likes-dislikes-list {
+  display: grid;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.likes-dislikes-item {
+  display: flex;
+  gap: 8px;
+}
+
+.likes-dislikes-item input {
+  box-sizing: border-box;
+  flex: 1;
+  min-width: 0;
+  padding: 8px;
+  border: 1px solid var(--text-color);
+  border-radius: 4px;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.likes-dislikes-table button {
+  padding: 8px 10px;
+  border: 1px solid var(--text-color);
+  border-radius: 4px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .likes-dislikes-table th,
+  .likes-dislikes-table td {
+    padding: 8px;
+  }
+
+  .likes-dislikes-item {
+    flex-direction: column;
+  }
+}
+
 /*Mapnel*/
 
 .peregrination {

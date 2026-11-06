@@ -2213,6 +2213,16 @@ const vocabularyData = [
     version: "Emmaïe"
   },
   {
+    term: "MATRICE 🄰gend🅰",
+    category: ["0K", "Capsule", "Persona", "Cueillette"],
+    definition: "Liste des choses aimées et choses détestées à remplir.",
+    school: "Matrice okienne à la connaissance de soi.",
+    simplified: "Agenda",
+    pronunce: "/a.ʒɛ̃.da/",
+    synonym: "🄰🅰",
+    version: "🄰gend🅰, Agenda"
+  },
+  {
     term: "MATRICE 5ync sur 5ync",
     category: ["Mapnel", "IUVALCY", "Capsule", "Monoa-Polyz", "Spherµ"],
     definition: "Symbolisme Pentagrammique [5x20] Mapnélo-Iuvalcien.",

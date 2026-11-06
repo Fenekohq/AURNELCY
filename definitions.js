@@ -43,6 +43,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+  const container = document.getElementById('matr0-definition');
+  if (!container || !window.mountDictionarySelection) return;
+  window.mountDictionarySelection(container, {
+    'MATRICE 🄰gend🅰': {
+      className: 'definizer',
+      style: 'text-align: center; font-size: 2em; margin: 64px auto;',
+      format: 'dt-dd'
+    }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
   const container = document.getElementById('heros-peregrination-definitions');
   if (!container || !window.mountDictionarySelection) return;
   window.mountDictionarySelection(container, {

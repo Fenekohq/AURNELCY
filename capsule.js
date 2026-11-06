@@ -84,6 +84,7 @@ window.addEventListener('load', function () {
   appendClone('ktn1', 'ktn11');
   appendClone('cale1', 'cale11');
   appendClone('cale2', 'cale22');
+  appendClone('matr0', 'matr00');
   appendClone('matr5', 'matr55');
   createAlienMatrixClone();
   appendClone('matr6', 'matr66');
@@ -99,6 +100,7 @@ window.addEventListener('load', function () {
     'ktn11',
     'cale11',
     'cale22',
+    'matr00',
     'matr55',
     'matr44',
     'matr66',

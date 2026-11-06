@@ -23,6 +23,7 @@ const CORE_ASSETS = [
   './table-swapper.js',
   './dictionnary.js',
   './snewlc-modal.js',
+  './likes-dislikes.js',
   './bloody-tale.js',
   './eurekarc.js',
   './calendar.js',
