@@ -114,7 +114,7 @@
     },
     {
       question: "Pourquoi pas le RIASEC ou l'Ikigai pour la matrice Agenda ?",
-      answer: `Fenekohq voit chez ces modèles connus une idéologie du travail et de la productivité crée pour produire dans gens qui ne sont pas capables de constater qu'ils aiment manger et dormir, ce serait d'ailleurs un acte de rébellion envers cette propagande.`
+      answer: `Fenekohq voit chez ces modèles connus une idéologie du travail et de la productivité crée pour produire dans gens qui ne sont pas capables de constater qu'ils aiment manger et dormir, ce serait d'ailleurs un acte de rébellion envers cette propagande. Un jour d'extase cathartique effective d'une pièce de Shakespeare vaut mieux qu'une année de travail régulier à l'entretien d'une farce de très mauvais goût.`
     },
   ];
 

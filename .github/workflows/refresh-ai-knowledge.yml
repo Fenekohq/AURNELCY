@@ -1,0 +1,45 @@
+name: Refresh AI knowledge after deployment
+
+on:
+  deployment_status:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-ai-knowledge
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: >-
+      github.event.deployment_status.state == 'success' &&
+      (github.event.deployment.environment == 'github-pages' ||
+      github.event.deployment.ref == 'main' ||
+      github.event.deployment.ref == 'refs/heads/main')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the latest main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Regenerate AI knowledge files
+        run: python scripts/generate_aurnelcy_savoir.py
+
+      - name: Commit generated updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add AGENTS.md AURNELCY_SAVOIR.md
+          if git diff --cached --quiet; then
+            echo "AI knowledge files are already up to date."
+          else
+            git commit -m "docs: refresh AI knowledge after deployment"
+            git push origin HEAD:main
+          fi
