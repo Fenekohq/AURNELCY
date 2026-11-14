@@ -720,6 +720,17 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
+  const container = document.getElementById('heros-definition-rappel');
+  if (!container || !window.mountDictionarySelection) return;
+  window.mountDictionarySelection(container, {
+    'Héros/Héroïne': {
+      className: 'definizer',
+      style: 'text-align: center; font-size: x-large; margin: 64px auto;',
+      rappel: true }
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
   const container = document.getElementById('fon-rel-inc-rappel-definitions');
   if (!container || !window.mountDictionarySelection) return;
   window.mountDictionarySelection(container, {

@@ -35,18 +35,6 @@
   font-size: 1.1em;
 }
 
-.prologue-divider {
-  height: 1px;
-  background: var (--text-color);
-  margin: 20px auto;
-  width: 60%;
-}
-
-.prologue-footer {
-  font-size: 0.8em;
-  color: var (--text-color);
-}
-
 .card-carousel-wrap {
   display: flex;
   justify-content: center;

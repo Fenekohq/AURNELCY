@@ -49,7 +49,7 @@ const characters = [
   },
   {
     name: 'Ekeline',
-    title: 'Planteuse, Salivatrice, Équilibriste, Innokcienne',
+    title: 'Planteuse, Salivatrice, Équilibriste',
     organisation: 'H2O',
     intro:
       'Ekeline est une insouciante ayant la langue bien pendue pour garder le moral, on trouverait la défaite en perdant de vue les petites choses selon elle.',
@@ -84,10 +84,17 @@ const characters = [
   },
   {
     name: 'Tôhla',
-    title: 'Cuisinière, Kindappeuse, InfiNieR, Hémorroïde, Chatouilleuse',
+    title: 'Cuisinière, Kindappeuse, Hémorroïde, Chatouilleuse',
     organisation: 'NEET Club, Esliz, CGU(Carpet Glance Unit)',
     intro:
       "Tôhla est une écolière excusée atteinte d'infirmité troglodyte, elle adore apporter une touche d'iconicité a tout ce qu'elle fait et voit peu importe les situations.",
+  },
+  {
+    name: 'Dévore-Novice',
+    title: 'Dévoriste',
+    organisation: 'xXx',
+    intro:
+      "Juge et bourreau.",
   },
   {
     name: 'Emma(âme)',

@@ -29,7 +29,7 @@
       answer: `L'auto-description qu'⟁URNELCY s'entend car il n'est classable dans aucune catégorie existante et s'avère marginal.`
     },
     {
-      question: "Ya t-il de l'Intelligence Artificielle dans le contenu ?",
+      question: "Yaa t-il de l'Intelligence Artifiçiel dans le contenu ?",
       answer: `Oui, il en contient et pour transparence je vais lister tout ce qui est fait par IA ou partiellement sous modifications, mais premièrement, à noter que il y a parfois certaines mini aides et Fenekohq avait commencé le coding pour unique raison ce projet comme objectif plus que le coding, il connaît au fur et à mesure le HTML, un peu de CSS mais pas vraiment de JavaScript qui est donc à admettre fait par IA sous son commandement donc, il est tout de même celui qui imagine et construit l'architecture. Ce qui est écrit par IA: Termes de la Nomenclature(définitions des catégories), Cinq Critères d'Adéquation, Les Thesis(très partiellement), Capacités exceptionnelles d'Homo sapiens/Points Faibles d'Homo Sapiens, Simone Weil Dysupie, Tableaux Conjugaisons des Verbes, Bourdieu Capital, 「Salvation」, Mills Élite du Pouvoir, Manipule, Société, 「OUROBOROS」(partiellement), Système de Ponzi, 「Adulte」(partiellement).`
     },
     {
