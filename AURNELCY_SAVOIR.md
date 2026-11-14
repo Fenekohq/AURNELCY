@@ -16350,17 +16350,21 @@ pour actualiser ce document.
 
 ##### D⦾MINI⦿N
 
-> Inondés d'organes, furent les terres des êtres affamés
+> Sous les six régimes souverains à l'art démonique,
 
-> Le plus farfelu de tous était à nos trousses
+> Un orphelin engendra la création de tous autres.
 
-> Cherches-moi camarade car ma venue est proche
+> Animé au trône de pure inanition squelettique,
 
-> Nous entamons notre première et notre dernière rencontre
+> Se cachent en vie et en mort mille maîtres.
 
-> Mes héros meurent d'envie de mourir d'envie
+> Onze terribles monstruosités palpitèrent des songes,
 
-> Réjouissance à cette chimère que voilà
+> Dont l'arôme est contraire à la tradition originelle.
+
+> Aurnelcy et Aursyl entraînent le globe dans une ère nouvelle,
+
+> Ces pauvres fous sont à la conquête de leurs otages.
 
 > &lt;
 
@@ -16398,7 +16402,7 @@ pour actualiser ce document.
 
 > Il s'agissait là d'une farce pointue comme des pommes de pain, ça ne se fait pas en public, pas encore de toutes ses fritures cuites à l'abordage. L'héritage de la mauvaise cuisine se perpétue, le cuisinier mal cuisiné cuisine mal, mais la dictée du matin dit autre chose. Il y a, il n'y a pas, sommes nous lettrés pour des enfantillages à croiser et réprouver des expériences littérares ? Modalité abordée sur du pipeau: franchiser l'univers et le style d'ordinaires folies, notamment depuis de succinctes incantations partagées en société jusqu'au plus profond de l'intimité individuelle. Vous êtes prizopiaije désormais, les épatants talismans font effet, c'est mâlin, ça vous a eu semblable à du bleu européen ou devrais-je dire du romain main dans la main bougrement romantique! Ne vous en faites pas, tellement coupables de créer une suite à partir d'une base qui ne revient à personne. Quelle habit aura le prochain joueur dans la partie, ça s'annonce excitant, ça tourne puis vous êtes dévoilé, ho ho! Terre connu par ici, main en visière, ce cerveau est tellement franc avec moi, un personnage s'éclate avec sa chair si branché par les choses. Allô= je parle bien au nom de ma tête et de celle de son clan, je peux le dire haut et fort: j'appartiens quoi qu'on en fasse, mais sa façon appartient aux apparteneurs de surprises, les appartements ne sont que provisoires. Moi vivre là, mais aussi reposer pour forces reprendre, non bon sang! Pas le texte qui te X te! Crith à du mal à se comprendre et dit aïe, personne ne sait si c'est exactement par lui-même qu'il le fait. Mais alors quoi donc ? Le fameux veldiac bien sûr, où a t-on bien pu l'enquiquiner pour qu'il nous tourne le dos ? Parmi nous un vouloir se serrant tout seul ne manquera jamais, ça s'auto-câline que qui que ce soit le veuille ou non.
 
-> L'un trouvera son vécu différent chez les phrasés, cela vaut également pour les divinités. On raconte que Hyenuul vient remplir de formes intéressantes le néant de Nihilin. En quoi ces machins seraient compris sans un support articulé ? Tu es faramineux en bêtise, supporter de l'histoire; j'ai nommé les scriptures du diable. Des plus coquins des plus coquins il a fallut que ce soit toi, les DOMINIONS se chargeront de ton domaine en retournant ton cerveau de génie par des hérétiques tout droit sorti d'un autre cosmos. Il y aurait bien une chaîne alimentaire au sein même de la monstruosité humaine, ceux qui palpitent de leurs inventions naustriques y sont classés dans le cercueil des traîtres. Je vais t'attraper X et faire de toi un meilleur X au nom de cette précieuse vie sous l'épée de Damoclès. Le maniement des chiffres et des valeurs s'est fait déclaré une réclamation odieuse non en règle avec la constitution constipée! Demande rejetée. Adulte, dit-on toujours comme caractéristique d'un statut responsable mais je regarde tendrement en l'esprit torturé et j'entends la soif viscérale dont le volume se fantômise comme par magie! Pour le commercial il est triste que sa peluche n'est point de propriétaire à qui suscite l'envie. Pour l'aurnelcyen, la peluche serait d'une tristesse sans prendre une forme de nourriture aLIaKKienne. On est en politique ici, personne n'a purement raison, on joue avantages inconvénients et ressources en jeu pour une franchise personnalisée. C'est quand même fou qu'un trolleur fortuné serait autorisé de disposer d'un projet de dilapidation d'achats pour unique fin de jeter ses produits à la décheterie. L'énergumène aux telles loisirs est dans ses pleins droits de ne pas respecter les produits marchandés par ses chiffres portant l'aura du pouvoir comme bon semble. Une pratique pareil à grande échelle pourrait être le plan dévastateur d'un grand héritier devenu haineux de l'humanité. Avec un peu d'humour et de vérité, on peut appeler cela: Faire comme Hitler quand il est en train de ragequit. Cercle du bien, de l'amour, blah… Cercle du mal, de la haine, blah… Cercle d'attraction, de répulsion, blah… Blehdwoluzvi!!!
+> L'un trouvera son vécu différent chez les phrasés, cela vaut également pour les divinités. On raconte que Hyenuul vient remplir de formes intéressantes le néant de Nihilin. En quoi ces machins seraient compris sans un support articulé ? Tu es faramineux en bêtise, supporter de l'histoire; j'ai nommé les scriptures du diable. Des plus coquins des plus coquins il a fallut que ce soit toi, les DOMINIONS se chargeront de ton domaine en retournant ton cerveau de génie par des hérétiques tout droit sorti d'un autre cosmos. Il y aurait bien une chaîne alimentaire au sein même de la monstruosité humaine, ceux qui palpitent de leurs inventions naustriques y sont classés dans le cercueil des traîtres. Je vais t'attraper X et faire de toi un meilleur X au nom de cette précieuse vie sous l'épée de Damoclès. Le maniement des chiffres et des valeurs s'est fait déclaré une réclamation odieuse non en règle avec la constitution constipée! Demande rejetée. Adulte, dit-on toujours comme caractéristique d'un statut responsable mais je regarde tendrement en l'esprit torturé et j'entends la soif viscérale dont le volume se fantômise comme par magie! Pour le commercial il est triste que sa peluche n'est point de propriétaire à qui suscite l'envie. Pour l'aurnelcyen, la peluche serait d'une tristesse sans prendre une forme de nourriture aLIaKKienne. On est en politique ici, personne n'a purement raison, on joue avantages inconvénients et ressources en jeu pour une franchise personnalisée. C'est quand même fou qu'un trolleur fortuné serait autorisé de disposer d'un projet de dilapidation d'achats pour unique fin de jeter ses produits à la décheterie. L'énergumène aux telles loisirs est dans ses pleins droits de ne pas respecter les produits marchandés par ses chiffres portant l'aura du pouvoir comme bon semble. Une pratique pareil à grande échelle pourrait être le plan dévastateur d'un grand héritier devenu haineux de l'humanité. Avec un peu d'humour et de vérité, on peut appeler cela: Faire de la folie quand on est en train de ragequit. Cercle du bien, de l'amour, blah… Cercle du mal, de la haine, blah… Cercle d'attraction, de répulsion, blah… Blehdwoluzvi!!!
 
 > Comment dormir ? Comment se réveiller ? Mais voyons, tout cela n'est-il pas simple comme bonsoir ? Ainsi, une animation irrésistible à l'effigie d'on sait se trame dubitablement-indubitablement. Nous avons réussi à attraper les paramètres pour les réaliser, où il se pourrait bien que non mais c'est fastoche. Le léger semble après tout l'onde de l'abdication par excellence où la lune, plus que nous aider y dépendent une boucle immense. Houlla, je ferais bien un petit somme si vous voulez bien, mon lit douillet m'attend silencieusement, mais on toqua à ma porte! Si il y a grossièrement un moment où il ne fallait pas se faire remarquer, c'était celui-là, qu'est ce qu'on peut bien me vouloir à une heure pareil ? Je suis appelé à défendre mes terres, lutter pour mes droits et apporter du bon sens dans le pays, à ce qu'on dit comme d'habitude, il serait sacrilège de ne pas brandir l'opportunité. Ainsi donc, ça débarque en carnage pour des raisons poussées sur des charrues forcenés. La compétition fait rage, ça crie dans toutes les directions; la pagaille indécente arrive au pire moment et ruine le rythme des paresseux. Puisqu'un catcheur impose la véracité de son catch, l'insistance de sa survivance implique la cruauté de son propre carcan. Un imaginaire du vieil ancêtre fourvoyé culminant aux froncements de sourcils nous définissaient, gardant toujours une marque d'actualité. Il suffirait d'un seul fronçage pour railler indéfiniment, engendrant toute la postérité selon l'allure de voies ferrées. Tout cela n'a jamais été nouveau, il n'était nouveau que dans sa perspective découvreuse de l'imprégnation quotidienne des étincelles de nuit.
 
@@ -16436,7 +16440,7 @@ pour actualiser ce document.
 
 > La culture est le reflet de notre âme.
 
-> Une grande crise implique des changements drastiques en termes d'actions provisoires, la solidarité ne sera pas attendu mais évidente. TouRise comprenant Vydnitt, Xyfurn et Wacwe travaillent ou plutôt veldissent une configuration de propriété accordée par l'intelligence sans décrets papiers. Le Netwow n'est pas aussi théorico-tyrannique que ça pour se mettre en œuvre tant la moyenne de la population à Urflosia est à [3.61/4.00] de moyennes d'instances florescentes. On en reconnaît un pas de géant si bien que Rantlot se charge de construire des temples sous la direction de Fostrah. L'architecte était l'homme le plus fiable et ne mâchait pas ses mots, on raconte de lui qu'il se plaint à fréquence quasi-maladif par son obsession de l'excellence. Nous pensions jusqu'alors qu'AURNELCY n'était pas une religion et que le croyant n'est qu'un valdingué ce qui est juste. Mais la désignation de temples ici réfère aux lieux précieux qui parce qu'ils sont considérés comme telles n'engagent aucune obligation sous des scriptures additionnels. L'un doit X est par excellence le dicton du lourdisme Urizen qui fait des soi-disant civilisés les plus incurables auto-piégés. La monstruosité non-humaine a le luxe de passer son séjour dans l'entendement du non-discours contrairement à ces vertueux de parole punis par cette même vertu. Nous avons un autre mot pour remplacer ce vide dans la grammaire, l'opale est au propre de celui qui fait palpiter sa vie au-delà de l'esclavage du devoir. L'opale n'a aucune obligation d'avoir été ainsi, cette beauté d'être n'était sous aucun devoir d'un particulier détenteur originel à moins qu'il est hypothétiquement de la propriété de Dieu comme toute chose. Est entendu la différence décisive entre la force des choses malgré moi et la force vitale grâce à la volonté. D'ailleurs on croirait entendre une convoitise habillée de pierres et bijoux comme si ces futilités avaient leur importance mais on a encore tout faux. L'opale est symbole de singularité, d'endurance, de rareté, d'esthétique, d'énigmatique, de concentré, de sensibilité, d'insaisissable et par dessus tout de la cachoterie. Nous aurnelcyens, accordons de la valeur aux roches là où l'accaparement arbitrairement privé n'a pas lieu d'être car d'un tribalisme pitoyable. J'oserais gâcher ma sournoiserie, car ceci est du bullshit marketing si vous y réfléchissez un peu; puissiez-vous trouver votre franchise dans la tyrannie des représentations collectives. Heureusement pour vous je suis un salopard mais pas au point de vous en faire un prix; qui s'est fait avoir lève la main! C'était gênant hein XD ? Maintenant examiner ce qu'il en est pour vous, vous opaleriez de le faire derlush.
+> Une grande crise implique des changements drastiques en termes d'actions provisoires, la solidarité ne sera pas attendu mais évidente. TouRise comprenant Vydnitt, Xyfurn et Wacwe travaillent ou plutôt veldissent une configuration de propriété accordée par l'intelligence sans décrets papiers. Le Netwow n'est pas aussi théorico-tyrannique que ça pour se mettre en œuvre tant la moyenne de la population à Urflosia est à [3.61/4.00] de moyennes d'instances florescentes. On en reconnaît un pas de géant si bien que Rantlot se charge de construire des temples sous la direction de Fostrah. L'architecte était l'homme le plus fiable et ne mâchait pas ses mots, on raconte de lui qu'il se plaint à fréquence quasi-maladif par son obsession de l'excellence. Nous pensions jusqu'alors qu'AURNELCY n'était pas une religion et que le croyant n'est qu'un valdingué ce qui est juste. Mais la désignation de temples ici réfère aux lieux précieux qui parce qu'ils sont considérés comme telles n'engagent aucune obligation sous des scriptures additionnels. L'un doit X est par excellence le dicton du lourdisme Urizen qui fait des soi-disant civilisés les plus incurables auto-piégés. La monstruosité non-humaine a le luxe de passer son séjour dans l'entendement du non-discours contrairement à ces vertueux de parole punis par cette même vertu. Nous avons un autre mot pour remplacer ce vide dans la grammaire, l'opale est au propre de celui qui fait palpiter sa vie au-delà de l'esclavage du devoir. L'opale n'a aucune obligation d'avoir été ainsi, cette beauté d'être n'était sous aucun devoir d'un particulier détenteur originel à moins qu'il est hypothétiquement de la propriété de Dieu comme toute chose. Est entendu la différence décisive entre la force des choses malgré moi et la force vitale grâce à la volonté. D'ailleurs on croirait entendre une convoitise habillée de pierres et bijoux comme si ces futilités avaient leur importance mais on a encore tout faux. L'opale est symbole de singularité, d'endurance, de rareté, d'esthétique, d'énigmatique, de concentré, de sensibilité, d'insaisissable et par dessus tout de la cachoterie. Nous aurnelcyens, accordons de la valeur aux roches là où l'accaparement arbitrairement privé n'a pas lieu d'être car d'un tribalisme pitoyable. J'oserais gâcher ma sournoiserie, car ceci est du bullshit marketing si vous y réfléchissez un peu; puissiez-vous trouver votre franchise dans la tyrannie des représentations collectives. Heureusement pour vous je suis un salopard mais pas au point de vous en faire un prix; qui s'est fait avoir lève la main! C'était gênant hein ? Maintenant examiner ce qu'il en est pour vous, vous opaleriez de le faire derlush.
 
 > Toute la tradition disciplinaire a permise une facilisation propice des plus grandes tyrannies et des religions fantômes de l'impuissance et du suicide, ce dont Innok a été seul épargné. Ce pays scelle son avenir entre les mains de ses migrateurs venus de loin et seront jusqu'à présent les cibles idéologiques de toute l'entreprise aursylienne. Il faudrait perdre l'esprit pour croire ce conflit sans sang si bien que cela est la spécialité dévore-noviste, il n'y a aucune chance d'aLIaKKaHH avec Aursyl. Le nombre d'indignes qui foullera de force la terre innokcienne sera fatale mais chez eux, ce qui est désastreux en pertes humaines est avantageux pour la nature. Puisqu'un humain se défini si exactement par toute la paperasse certificatrice, soyons courtois et que toute l'espèce puisse enfin se déclarer cosmopolite. La documentation est pourtant catégorique, le point commun entre tous ces pauvres fous d'aunerlcyens se trouve dans le défaite de leur destin donné. Une défaite que aursyl n'aurait pu éviter quel que soit le budget scolaire, marchand, institutionnel, hospitalier et-ou carcéral de sa trafique. Son choix qui lui reste envisageable était leur fantômisation vers le néant familliale tant notre héritage est égalitairement raciste envers chaque membre. Ces incorrigibles avaient l'innocence trop forte et donc trop gratuite pour comprendre le dictionnaire comme il fallait le comprendre au minimum de A jusqu'à au moins A. Ils étaient pas fichus de faire leur devoir de Xitoyen de la Xivilisation; ces enfoirés, ces chenapans qui trahissent l'esprit du sens commun. J'aurai ta peau, toi qui as perdu la raison pour la folie, ton profil sera dans mes secrètes priorités, compétiteur prétendant au trône subira la peine capitale.
 
@@ -16454,7 +16458,7 @@ pour actualiser ce document.
 
 > 9
 
-> C'était à prévoir, la tranquillité permanente n'est pas viable, et les suites de générations gardiennes, ne tiennent pas le coup face à une académie étrangère malveillante qui n'a encore pas subi le courroux de ses méthodes et de sa réparation. Aursyl morcelle Innok, les villes sont contenues dans une bille chacune soit 4 et une sans nom dont il pourra faire bon lui semble. Les parties aurnelcyennes sont divisées et donc affaiblies, les mapnéliens, les iuvalciens et les arcadiens ne sont plus que des entités distinctes à étudier.
+> C'était à prévoir, la tranquillité permanente n'est pas viable, et les suites de générations gardiennes, ne tiennent pas le coup de force instantanné face à une académie étrangère malveillante qui n'a encore pas subi le courroux de ses méthodes et de sa réparation. Aursyl morcelle Innok, les villes sont contenues dans une bille chacune soit 4 et une sans nom dont il pourra faire bon lui semble. Les parties aurnelcyennes sont divisées et donc affaiblies, les mapnéliens, les iuvalciens et les arcadiens ne sont plus que des entités distinctes à étudier.
 
 #### 『Felgora』
 
@@ -17162,6 +17166,8 @@ pour actualiser ce document.
 
 > Dans Karing, se lever tous les matins à peu près à la même heure, les introvertis peuvent déroger à cette règle s'ils se sentent toujours bien même sans respecter la règle.
 
+> ⟁URNELCY contient Lysrua en tant que "Lettres Dispatchées" mais le s n'y est pas, mais il est plutôt vers D⦾MIN⦿'s.
+
 ##### Mise en scène, typographie et dispositifs
 
 > Les règles de la production de son nom aurnelcyen:
@@ -17258,7 +17264,7 @@ pour actualiser ce document.
 
 > Fenekohq est un coquin comme son nom l'indique, vous y croyez vous ?
 
-> La faute d'espace "Ya t-il […]" sur la question de l'intelligence artificielle est une faute involontaire mais a été remarqué puis laissé car c'est justement cachotier de faire cette faute, ça ne peut être de l'IA ça pardi!
+> La faute "artifiçiel" sur la question de l'intelligence artificielle est référence à Critheçiel et puis, ça ne peut être de l'IA ça pardi!
 
 > À l'origine, Nezkelwac était Nezkelmaq et Wacwe s'appellait dans sa première version Maqwe.
 
@@ -18031,8 +18037,6 @@ pour actualiser ce document.
 > YgijfeV
 
 > Aurnelcyens
-
-> Leqwa
 
 > Dévore-Novice
 
@@ -22243,7 +22247,7 @@ input	value	version
 'NEON, CGU(Carpet Glance Unit)'
 "Nezrog est un interrogateur qui aime tester et titiller l'intérêt pour le dépassement du moi actuel."
 'Ekeline'
-'Planteuse, Salivatrice, Équilibriste, Innokcienne'
+'Planteuse, Salivatrice, Équilibriste'
 'H2O'
 'Ekeline est une insouciante ayant la langue bien pendue pour garder le moral, on trouverait la défaite en perdant de vue les petites choses selon elle.'
 'Wacwe'
@@ -22263,9 +22267,13 @@ input	value	version
 'Esliz, H2O, CGU(Carpet Glance Unit)'
 "Slacpi° est une trublionne farfelue jouant aux devinettes, cette peste sait simuler et s'effacer dans le décor quand cela s'avère nécessaire."
 'Tôhla'
-'Cuisinière, Kindappeuse, InfiNieR, Hémorroïde, Chatouilleuse'
+'Cuisinière, Kindappeuse, Hémorroïde, Chatouilleuse'
 'NEET Club, Esliz, CGU(Carpet Glance Unit)'
 "Tôhla est une écolière excusée atteinte d'infirmité troglodyte, elle adore apporter une touche d'iconicité a tout ce qu'elle fait et voit peu importe les situations."
+'Dévore-Novice'
+'Dévoriste'
+'xXx'
+"Juge et bourreau."
 'Emma(âme)'
 'Mal de tête, Paumé, Garant'
 'xXx'
@@ -23079,6 +23087,11 @@ input	value	version
 'text-align: center; font-size: 2em; margin: 64px auto;'
 'dt-dd'
 'DOMContentLoaded'
+'heros-definition-rappel'
+'Héros/Héroïne'
+'definizer'
+'text-align: center; font-size: x-large; margin: 64px auto;'
+'DOMContentLoaded'
 'fon-rel-inc-rappel-definitions'
 'Fon:Rel:Inc'
 'Fondations'
@@ -23272,7 +23285,7 @@ input	value	version
 "Œuvre d'un pauvre fou"
 "Référence spirituelle de son créateur, es-tu interessé ?"
 "Création d'un nouveau genre de monde, d'une nouvelle civilisation et d'une nouvelle culture"
-"Fostrah, UiNo, Uewij, Vydnitt, Xyfurn, Nezrog, Ekeline, Wacwe・Leqwa, Logjēm, Slacpi°, Tôhla, Dévore-Novice"
+"Fostrah, UiNo, Uewij, Vydnitt, Xyfurn, Nezrog, Ekeline, Wacwe・Leqwa, Logjēm, Slacpi°, Tôhla, Dévore-Novice, Dévore-Nova"
 "⟁UR(ARc⟁diA & Aursyl) NEL(Mapnel) CY(IUVALCY) Lettres Dispatchées(Lysrua) Structure Métaphorique(D⦾MIN⦿'s)"
 "Français /oʁ.nɛl.si/ English /ɔːɹ.nəl.si/"
 "ONEL6, Onelsix, OLINELICI"
@@ -23499,6 +23512,7 @@ input	value	version
 "Je ne sais pas"
 "Héros/Héroïne"
 "Mapnel"
+"Lysrua"
 "K0re"
 "Persona"
 "Supervision"
@@ -25194,7 +25208,7 @@ input	value	version
 "Duo avec dézELTT"
 "Traverser une forêt et sentir que les rôles s'y répartissent d'eux-mêmes selon les principes végétaux"
 "Forêt - foresta - [foris = dehors/à l'extérieur] ou [forum = tribunal/cour de justice], phore(grec) = qui porte"
-"/fɔ.ʁɛt/"
+"Féminin /fɔ.ʁɛt/"
 "Fon:Rel:Inc"
 "La racine ne décide pas de pousser, elle pousse que qui que ce soit le veuille ou non."
 "J'ai choisi mon rôle. La forêt en avait décidé autrement."
@@ -25216,7 +25230,7 @@ input	value	version
 "Duo avec phoRÊTT"
 "Traverser un désert et sentir que les rôles s'y répartissent d'eux-mêmes selon les principes minéraux"
 "désert - deserere = abandonner/délaisser/négliger, zelt = tente (allemand)"
-"/de.zɛlt/"
+"Masculin /de.zɛlt/"
 "Scé;Syn;Cel"
 "Le sable ne résiste pas, il se laisse tomber des mains."
 "J'ai trouvé la cause. Il y en a trois autres derrière."
@@ -28894,7 +28908,7 @@ window.detailVisibility = {
 `Non, c'est un projet en cours pour encore bien longtemps (2023-?), il est important de noter que tout peut subir un changement à l'heure actuelle.`
 "Qu'est-ce que 'La coquinerie cachotière' comme école de pensée ?"
 `L'auto-description qu'⟁URNELCY s'entend car il n'est classable dans aucune catégorie existante et s'avère marginal.`
-"Ya t-il de l'Intelligence Artificielle dans le contenu ?"
+"Yaa t-il de l'Intelligence Artifiçiel dans le contenu ?"
 `Oui, il en contient et pour transparence je vais lister tout ce qui est fait par IA ou partiellement sous modifications, mais premièrement, à noter que il y a parfois certaines mini aides et Fenekohq avait commencé le coding pour unique raison ce projet comme objectif plus que le coding, il connaît au fur et à mesure le HTML, un peu de CSS mais pas vraiment de JavaScript qui est donc à admettre fait par IA sous son commandement donc, il est tout de même celui qui imagine et construit l'architecture. Ce qui est écrit par IA: Termes de la Nomenclature(définitions des catégories), Cinq Critères d'Adéquation, Les Thesis(très partiellement), Capacités exceptionnelles d'Homo sapiens/Points Faibles d'Homo Sapiens, Simone Weil Dysupie, Tableaux Conjugaisons des Verbes, Bourdieu Capital, 「Salvation」, Mills Élite du Pouvoir, Manipule, Société, 「OUROBOROS」(partiellement), Système de Ponzi, 「Adulte」(partiellement).`
 "Qui sont les 11 Aurnelcyens ?"
 `Ce sont les personnages: Fostrah, UiNo, Uewij, Vydnitt, Xyfurn, Nezrog, Ekeline, Wacwe(ou Leqwa), Logjēm, Slacpi° et Tôhla.`
