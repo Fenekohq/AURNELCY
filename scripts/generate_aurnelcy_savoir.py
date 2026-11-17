@@ -1,5 +1,6 @@
 from html.parser import HTMLParser
 from pathlib import Path
+from urllib.parse import quote
 import hashlib
 import re
 
@@ -12,24 +13,18 @@ INVENTORY_END = "<!-- END GENERATED SOURCE INVENTORY -->"
 
 KNOWLEDGE = r"""# AURNELCY — dossier de connaissance
 
-> Synthèse éditoriale suivie d'un corpus textuel généré depuis les sources du
-> dépôt. Le corpus est volumineux : chercher par titre, terme ou nom de fichier
-> plutôt que de le charger intégralement dans un contexte limité.
+> Synthèse éditoriale et guide de navigation dans les sources du projet.
 
 ## Comment lire ce document
 
 - La synthèse décrit l'organisation et les thèmes tels qu'ils ressortent du
   site ; elle ne prétend pas résoudre les ambiguïtés ou fixer un canon.
-- Le corpus HTML retranscrit, dans l'ordre de la page, les textes présents dans
-  le balisage, y compris les contenus repliés ou conditionnels. Des attributs
-  utiles (`alt`, `title`, `aria-*`, `data-*`, `placeholder`, `value`) sont
-  inventoriés à part.
-- Les annexes JavaScript et CSS recensent les littéraux bruts des sources. Ils
-  comprennent des données, des libellés, mais aussi des sélecteurs et des
-  modèles de code ; ils ne sont pas tous du texte destiné au lecteur.
-- Les fichiers audio et images sont répertoriés par nom, sans transcription
-  audio ni description visuelle générée. Les sources du dépôt restent la
-  référence si le corpus et le site divergent.
+- Les liens vers les grandes sections ouvrent directement la page source.
+  Pour les formulations exactes, tableaux et contenus repliés, consulter
+  `index.html` ; pour les données interactives, consulter les fichiers
+  JavaScript concernés.
+- Les médias sont inventoriés par nom, sans transcription audio ni description
+  visuelle. Les sources du dépôt font foi si cette synthèse diverge du site.
 
 ## Nature et parcours du projet
 
@@ -126,8 +121,8 @@ en regard d'autres cadres temporels du monde.
 EURÊK⟁ est principalement une section-outil : des références d'Arcadistes
 (JQB, LIKKHH et RUGGHH), des tags et filtres, une grille de mots croisés
 4lien, ainsi que des tableaux de langues, noms natifs, traductions et
-phonétique. Ses données et interactions proviennent pour partie de scripts
-distincts ; consulter aussi les annexes de littéraux.
+phonétique. Les outils et données associés se trouvent notamment dans
+`eurekarc.js`, `4lien.js` et `idk-table.js`.
 
 ### Lysrua — calendrier, langue et domaines
 
@@ -149,7 +144,7 @@ et de personnages. Les cycles Sycle-0, Felgora, Cyultii, Tridalment,
 Nadelpe, Mooderagion, OËQ et ⟁KDUQ sont découpés en épisodes ; le sommaire
 leur associe des étapes comme les îles de Mapnel, IUVALCY et Arcadia,
 l'assemblage des îles et des victoires. Les épisodes et leurs formulations
-exactes figurent dans le corpus HTML.
+exactes se trouvent dans `index.html`.
 
 ### Réouverture, langue et nomenclature
 
@@ -168,17 +163,9 @@ Les sources JavaScript ajoutent ou pilotent notamment le dictionnaire et les
 définitions, les données de FAQ, les dates d'écriture, les chansons, les
 personnages, le tableau multilingue, l'historique, les références Eureka, le
 calendrier, les mots croisés, les capsules, les cartes, les compteurs et les
-préférences locales. Le corpus ci-dessous indexe leurs chaînes littérales ; le
-comportement et les relations entre données se vérifient dans les fichiers
-sources.
+préférences locales. Pour comprendre leurs données et comportements, consulter
+les fichiers concernés : ce guide ne les retranscrit pas.
 
-## Corpus textuel complet
-
-Les blocs ci-dessous sont une extraction déterministe du dépôt. L'extracteur
-ignore les commentaires de code mais conserve les littéraux bruts ; les
-doublons et libellés techniques sont donc normaux. Relancer
-`python scripts/generate_aurnelcy_savoir.py` après une modification du contenu
-pour actualiser ce document.
 """
 
 BLOCK_TAGS = {
@@ -188,7 +175,6 @@ BLOCK_TAGS = {
     "p", "pre", "section", "select", "summary", "table", "tbody", "td", "tfoot",
     "th", "thead", "tr", "ul",
 }
-ATTRIBUTE_NAMES = {"alt", "placeholder", "title", "value"}
 SKIP_TAGS = {"script", "style"}
 HEADING_RE = re.compile(r"^h[1-6]$")
 
@@ -197,16 +183,14 @@ def normalize(text):
     return " ".join(text.split())
 
 
-class PageCorpus(HTMLParser):
+class PageIndex(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
         self.events = []
-        self.attributes = []
-        self.inline_scripts = []
+        self.sections = []
         self.heading = None
         self.text = []
         self.skip_stack = []
-        self.active_script = None
 
     def flush_text(self):
         content = normalize(" ".join(self.text))
@@ -219,8 +203,6 @@ class PageCorpus(HTMLParser):
         if tag in SKIP_TAGS:
             self.flush_text()
             self.skip_stack.append(tag)
-            if tag == "script":
-                self.active_script = []
             return
 
         if self.skip_stack:
@@ -228,98 +210,35 @@ class PageCorpus(HTMLParser):
 
         if HEADING_RE.match(tag):
             self.flush_text()
-            self.heading = (tag, [])
+            self.heading = (tag, attrs.get("id", ""), [])
         elif tag in BLOCK_TAGS:
             self.flush_text()
 
-        for name, value in attrs.items():
-            if value and (
-                name in ATTRIBUTE_NAMES
-                or name.startswith("aria-")
-                or name.startswith("data-")
-                or name.startswith("on")
-            ):
-                self.attributes.append((tag, name, value))
-
     def handle_endtag(self, tag):
         if tag in SKIP_TAGS and self.skip_stack:
-            closing = self.skip_stack.pop()
-            if closing == "script" and self.active_script is not None:
-                script = "".join(self.active_script)
-                if script.strip():
-                    self.inline_scripts.append(script)
-                self.active_script = None
+            self.skip_stack.pop()
             return
 
         if self.skip_stack:
             return
 
         if self.heading and tag == self.heading[0]:
-            title = normalize(" ".join(self.heading[1]))
-            self.events.append(("heading", self.heading[0], title))
+            heading_tag, identifier, parts = self.heading
+            title = normalize(" ".join(parts))
+            self.events.append(("heading", heading_tag, title))
+            if heading_tag == "h1" and identifier and identifier != "fin":
+                self.sections.append((identifier, title))
             self.heading = None
         elif tag in BLOCK_TAGS:
             self.flush_text()
 
     def handle_data(self, data):
         if self.skip_stack:
-            if self.active_script is not None:
-                self.active_script.append(data)
             return
         if self.heading is not None:
-            self.heading[1].append(data)
+            self.heading[2].append(data)
         else:
             self.text.append(data)
-
-
-def javascript_literals(source):
-    literals = []
-    index = 0
-    size = len(source)
-
-    while index < size:
-        char = source[index]
-
-        if char == "/" and index + 1 < size:
-            if source[index + 1] == "/":
-                newline = source.find("\n", index + 2)
-                index = size if newline == -1 else newline + 1
-                continue
-            if source[index + 1] == "*":
-                end = source.find("*/", index + 2)
-                index = size if end == -1 else end + 2
-                continue
-
-        if char not in ("'", '"', "`"):
-            index += 1
-            continue
-
-        quote = char
-        start = index
-        index += 1
-        while index < size:
-            if source[index] == "\\":
-                index += 2
-                continue
-            if source[index] == quote:
-                index += 1
-                break
-            index += 1
-        literal = source[start:index]
-        if literal not in ("''", '""', "``"):
-            literals.append(literal)
-
-    return literals
-
-
-def code_fence(text):
-    longest = max((len(match.group(0)) for match in re.finditer(r"`+", text)), default=0)
-    return "`" * max(3, longest + 1)
-
-
-def append_code_block(lines, text):
-    fence = code_fence(text)
-    lines.extend((fence, text, fence, ""))
 
 
 def update_agents_inventory(js_files, css_files, asset_files, word_count):
@@ -342,7 +261,7 @@ def update_agents_inventory(js_files, css_files, asset_files, word_count):
         fingerprint.update(b"\0")
 
     generated = [
-        f"- Corpus HTML : {word_count:,} mots.",
+        f"- Texte HTML : {word_count:,} mots.",
         f"- Sources : {len(js_files)} scripts JavaScript, {len(css_files)} feuilles CSS et {len(asset_files)} médias.",
         f"- Empreinte SHA-256 des sources : `{fingerprint.hexdigest()}`.",
         "",
@@ -361,58 +280,28 @@ def update_agents_inventory(js_files, css_files, asset_files, word_count):
 
 def build():
     page = ROOT / "index.html"
-    parser = PageCorpus()
+    parser = PageIndex()
     parser.feed(page.read_text(encoding="utf-8", errors="replace"))
     parser.close()
     parser.flush_text()
 
-    lines = [KNOWLEDGE.rstrip(), "", "### Texte de `index.html`", ""]
-    for event in parser.events:
-        if event[0] == "heading":
-            level = int(event[1][1])
-            title = event[2].replace("\\", "\\\\").replace("[", "\\[").replace("]", "\\]")
-            lines.extend(("#" * min(level + 2, 6) + " " + title, ""))
-        else:
-            text = event[1].replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
-            lines.extend(("> " + text, ""))
-
-    lines.extend(("### Textes portés par les attributs HTML", ""))
-    attribute_rows = [
-        f"{tag}\t{name}\t{value}"
-        for tag, name, value in parser.attributes
-    ]
-    if attribute_rows:
-        append_code_block(lines, "\n".join(attribute_rows))
+    lines = [KNOWLEDGE.rstrip(), "", "## Accès rapide aux grandes sections", ""]
+    lines.append("Les intitulés ci-dessous pointent vers leur ancre dans la page source.")
+    lines.append("")
+    seen_sections = set()
+    for identifier, title in parser.sections:
+        if identifier in seen_sections:
+            continue
+        seen_sections.add(identifier)
+        label = title.replace("\\", "\\\\").replace("[", "\\[").replace("]", "\\]")
+        lines.append(f"- [{label}](./index.html#{quote(identifier, safe='-_.~')})")
+    lines.append("")
 
     js_files = sorted(ROOT.glob("*.js"))
-    for source_file, inline_source in [
-        *((path, None) for path in js_files),
-        *((None, source) for source in parser.inline_scripts),
-    ]:
-        if source_file:
-            label = source_file.relative_to(ROOT).as_posix()
-            source = source_file.read_text(encoding="utf-8", errors="replace")
-        else:
-            label = "index.html — script intégré"
-            source = inline_source
-
-        literals = javascript_literals(source)
-        if not literals:
-            continue
-        lines.extend((f"### Littéraux JavaScript — `{label}`", ""))
-        append_code_block(lines, "\n".join(literals))
-
     css_files = sorted(ROOT.glob("*.css"))
-    for source_file in css_files:
-        literals = javascript_literals(source_file.read_text(encoding="utf-8", errors="replace"))
-        if not literals:
-            continue
-        label = source_file.relative_to(ROOT).as_posix()
-        lines.extend((f"### Littéraux CSS — `{label}`", ""))
-        append_code_block(lines, "\n".join(literals))
 
     asset_files = sorted(path for path in (ROOT / "feature").rglob("*") if path.is_file())
-    lines.extend(("### Inventaire des médias de `feature/`", ""))
+    lines.extend(("## Médias de `feature/`", ""))
     if asset_files:
         lines.extend(("| Fichier | Type | Taille (octets) |", "| --- | --- | ---: |"))
         for path in asset_files:
@@ -431,7 +320,7 @@ def build():
     print(
         f"Généré : {OUTPUT.relative_to(ROOT).as_posix()} "
         f"et {AGENTS.relative_to(ROOT).as_posix()} "
-        f"({word_count} mots HTML, {len(parser.attributes)} attributs, "
+        f"({word_count} mots HTML, "
         f"{len(js_files)} scripts JS, {len(css_files)} feuilles CSS, "
         f"{len(asset_files)} médias)"
     )

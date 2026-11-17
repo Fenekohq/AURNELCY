@@ -10,7 +10,7 @@
     },
     {
       question: "Par où commencer ?",
-      answer: `De haut en bas, dans l'ordre. Le site se lit de A à Z sans raccourcis possibles.`
+      answer: ` Pour une première lecture, l’ordre de A à Z est fortement recommandé, après cette première fois, c'est totalement libre.`
     },
     {
       question: "C'est en quelle langue ?",
@@ -29,8 +29,8 @@
       answer: `L'auto-description qu'⟁URNELCY s'entend car il n'est classable dans aucune catégorie existante et s'avère marginal.`
     },
     {
-      question: "Yaa t-il de l'Intelligence Artifiçiel dans le contenu ?",
-      answer: `Oui, il en contient et pour transparence je vais lister tout ce qui est fait par IA ou partiellement sous modifications, mais premièrement, à noter que il y a parfois certaines mini aides et Fenekohq avait commencé le coding pour unique raison ce projet comme objectif plus que le coding, il connaît au fur et à mesure le HTML, un peu de CSS mais pas vraiment de JavaScript qui est donc à admettre fait par IA sous son commandement donc, il est tout de même celui qui imagine et construit l'architecture. Ce qui est écrit par IA: Termes de la Nomenclature(définitions des catégories), Cinq Critères d'Adéquation, Les Thesis(très partiellement), Capacités exceptionnelles d'Homo sapiens/Points Faibles d'Homo Sapiens, Simone Weil Dysupie, Tableaux Conjugaisons des Verbes, Bourdieu Capital, 「Salvation」, Mills Élite du Pouvoir, Manipule, Société, 「OUROBOROS」(partiellement), Système de Ponzi, 「Adulte」(partiellement).`
+      question: "Y a t-il de l'Intelligence Artifiçiel dans le contenu ?",
+      answer: `Oui, il en contient et pour transparence je vais lister tout ce qui est fait par IA ou partiellement sous modifications, mais premièrement, à noter que il y a parfois certaines mini aides et Fenekohq avait commencé le coding pour unique raison ce projet comme objectif plus que le coding, il connaît au fur et à mesure le HTML, un peu de CSS mais pas vraiment de JavaScript qui est donc à admettre fait par IA sous son commandement donc, il est tout de même celui qui imagine et construit l'architecture. Ce qui est écrit par IA: Termes de la Nomenclature(définitions des catégories), Capacités exceptionnelles d'Homo sapiens/Points Faibles d'Homo Sapiens, Peurs Viscérales, Simone Weil Dysupie, Tableaux Conjugaisons des Verbes, Bourdieu Capital, 「Salvation」, Mills Élite du Pouvoir, Manipule, Société, 「OUROBOROS」(partiellement), Système de Ponzi, 「Adulte」(partiellement), Cinq Critères d'Adéquation.`
     },
     {
       question: "Qui sont les 11 Aurnelcyens ?",
@@ -93,8 +93,8 @@
       answer: `Chaque vivant naît sans destination assignée, capable d'harmonie autant que de déperdition. Des forces organisées cherchent à capturer cette capacité au profit d'un système qui se perpétue. La réponse pour cela est personnelle, se construire lucidement, nommer ce qui résiste à être nommé, fabriquer ses propres repères en sachant qu'on les fabrique. Participer à un collectif sans s'y dissoudre. Mourir sans que ça invalide ce qui a été vécu.`
     },
     {
-      question: "Pourquoi AURNELCY ne pose aucune problématique ?",
-      answer: `Parce qu'il les prévient, les désamorce ou les tue.`
+      question: "AURNELCY cherche-t-il à résoudre une problématique ?",
+      answer: `Non. Ce n'est pas un essai construit autour d'une problématique à résoudre. AURNELCY développe un univers de création et de pensée ; il peut faire émerger des questions ou des tensions sans avoir pour objectif de les trancher.`
     },
     {
       question: "AURNELCY reprend-il l'idée chrétienne des enfants ?",
@@ -102,7 +102,7 @@
     },
     {
       question: "Les thématiques d'Ekeline sont sexistes ?",
-      answer: `AURNELCY n'impose aucun rôle social aux femmes et ni aux hommes. Bien qu'Ekeline puisse paraître stéréotypé, les tendances des femmes en philosophie sont surtout éthiques tandis qu'ils sont métaphysiques pour les hommes. Vous devez vous renseigner sur les pays qui ont mis un point d'honneur sur l'égalité des genres, la différence des choix professionnels, des rôles sociaux et admettre qu'Ekeline bien qu'elle soit une figure assez traditionnelle, garde sa légitimité représentative.`
+      answer: `AURNELCY n'impose aucun rôle social aux femmes et ni aux hommes. Bien qu'Ekeline puisse paraître stéréotypé, les tendances des femmes en philosophie sont surtout éthiques tandis qu'ils sont métaphysiques pour les hommes. Vous devez vous renseigner sur les pays qui ont mis un point d'honneur sur l'égalité des genres, la différence des choix professionnels, des rôles sociaux et admettre qu'Ekeline bien qu'elle soit une figure assez traditionnelle, garde sa légitimité représentative, il s'agit plus d'une tendance plutôt qu'une règle.`
     },
     {
       question: "AURNELCY fait preuve d'élitisme spirituel ?",
@@ -115,6 +115,26 @@
     {
       question: "Pourquoi pas le RIASEC ou l'Ikigai pour la matrice Agenda ?",
       answer: `Fenekohq voit chez ces modèles connus une idéologie du travail et de la productivité crée pour produire dans gens qui ne sont pas capables de constater qu'ils aiment manger et dormir, ce serait d'ailleurs un acte de rébellion envers cette propagande. Un jour d'extase cathartique effective d'une pièce de Shakespeare vaut mieux qu'une année de travail régulier à l'entretien d'une farce de très mauvais goût.`
+    },
+    {
+      question: "On parle de formation sous contrainte dans 0K et de vertus qui sont déjà en nous dans arcadia ?",
+      answer: `Vertus ici signifie capacités ou potentiel, il suffit après de les développer. De la vie sans capacité ça n'existe pas.`
+    },
+    {
+      question: "Nouvarel ?",
+      answer: `Réservé au jour 31, ou jour 0 de transition saisonnière, il n'est donc pas un septième jour car il est hors de la régularité hebdomadaire.`
+    },
+    {
+      question: " Crith dit: impossibilité de refermer la pensée sans trous, mais Mobius Netwow est sans trous ?",
+      answer: `Crith ne nie pas la nécessité des concepts, on ne peut simplement pas épuiser ce que l'on désigne. Le PROTAGONISM ne sort pas du langage, le Mobius Netwow met en scène l'illusion d'une clôture complète, mais elle contient un reste indéterminé.`
+    },
+    {
+      question: "Syoneme et Emmaïe ?",
+      answer: `Sachant que le temps est relatif à son espace, une journée de 64 heures innokiennes correspond à 24 heures terrestres hors d’Innok. Le syoneme et le calendrier Emmaïe décrivent la temporalité d’Innok, globalisée lors de l’OEQ puis recalée l'ensemble dans le calendrier grégorien.`
+    },
+    {
+      question: "Pourquoi on ne parle pas de relations familliales avec qui a engendré qui ?",
+      answer: `La généalogie n'est pas un principe qui structure l'identité des personnages, les aurnelcyens sont des marginaux à cet ordre social et voir la chorale Velements pour leurs structures filiales.`
     },
   ];
 

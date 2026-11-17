@@ -4,12 +4,13 @@ Ce fichier donne aux assistants de code une carte du dépôt et ses contraintes
 pratiques. Il ne remplace pas l'inspection des fichiers concernés : le code
 reste la source de vérité.
 
-Pour la synthèse éditoriale et le corpus textuel complet, consulter
-[`AURNELCY_SAVOIR.md`](./AURNELCY_SAVOIR.md). Ce fichier généré peut être
-reconstruit avec `python scripts/generate_aurnelcy_savoir.py`.
-Pour toute question de lore, de vocabulaire ou de contenu, rechercher dans ce
-corpus avant de répondre ; la synthèse seule n'est pas exhaustive. Les médias
-binaires y sont inventoriés par nom, mais pas décrits ni transcrits.
+Pour une synthèse éditoriale et des accès rapides aux grandes sections,
+consulter [`AURNELCY_SAVOIR.md`](./AURNELCY_SAVOIR.md). Ce guide généré peut
+être reconstruit avec `python scripts/generate_aurnelcy_savoir.py`.
+Pour toute question de lore, de vocabulaire ou de contenu, vérifier les
+formulations exactes dans `index.html` et les données associées dans les
+scripts : le guide est un repère, pas une transcription exhaustive. Les médias
+binaires sont inventoriés par nom, mais pas décrits ni transcrits.
 Après un déploiement réussi associé à `main` ou à l'environnement
 `github-pages`, le workflow GitHub régénère ces documents et pousse un commit
 s'ils ont changé. L'inventaire ci-dessous est généré ; les descriptions et
@@ -97,14 +98,15 @@ npm et il ne définit pas de scripts de test.
 - `.nojekyll` est un marqueur de publication statique ; ne pas le supprimer
   sans raison.
 - `scripts/generate_aurnelcy_savoir.py` régénère le dossier de connaissance à
-  partir du HTML, des littéraux JavaScript/CSS et des noms des médias.
+  partir de la synthèse éditoriale, des grandes sections HTML et des noms des
+  médias.
 
 ## Inventaire automatique des sources
 
 <!-- BEGIN GENERATED SOURCE INVENTORY -->
-- Corpus HTML : 59,865 mots.
+- Texte HTML : 59,893 mots.
 - Sources : 27 scripts JavaScript, 8 feuilles CSS et 24 médias.
-- Empreinte SHA-256 des sources : `3bf9c96126d1fe62523e77db1b4bbd6e54cd29f6b220da75b4b90c062c6ad96f`.
+- Empreinte SHA-256 des sources : `6d2b51ec4dc3a7fbb7695758ae708ffe57acf3019a57cb77be631e3c0277111e`.
 
 Fichiers JavaScript : `4lien.js`, `5ync.js`, `a6es.js`, `bloody-tale.js`, `calendar.js`, `capsule.js`, `characters.js`, `checkboxes.js`, `conceptmap.js`, `counter.js`, `date.js`, `definitions.js`, `dictionnary.js`, `eurekarc.js`, `faq-list.js`, `idk-table.js`, `likes-dislikes.js`, `offline.js`, `planetarium.js`, `script.js`, `service-worker.js`, `snewlc-modal.js`, `song-feature.js`, `table-swapper.js`, `theme-toggle.js`, `tools.js`, `vocab.js`.
 Feuilles CSS : `body.css`, `buttons.css`, `capsule.css`, `conceptmap.css`, `dictionnary.css`, `layout.css`, `mythology.css`, `theorem.css`.

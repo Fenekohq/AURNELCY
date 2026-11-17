@@ -1328,7 +1328,7 @@ const vocabularyData = [
   {
     term: "PROTAGONISM",
     category: ["IUVALCY", "UiNo", "Leqwa", "K0re", "Concepteur"],
-    definition: "Pouvoir affirmatif du défi continuel vers une forme de vie irréductible et croissante.",
+    definition: "Pouvoir affirmatif du défi continuel vers une forme de vie irréductible et croissante agissant sur la réalité.",
     school: "Tendance à se vivre acteur de sa propre trajectoire.",
     simplified: "Avancer sans permission",
     implication: "Celui qui attend d'être reconnu comme protagoniste ne l'est pas encore.",
