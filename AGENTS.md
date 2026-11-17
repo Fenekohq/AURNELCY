@@ -104,9 +104,9 @@ npm et il ne définit pas de scripts de test.
 ## Inventaire automatique des sources
 
 <!-- BEGIN GENERATED SOURCE INVENTORY -->
-- Texte HTML : 59,893 mots.
+- Texte HTML : 60,292 mots.
 - Sources : 27 scripts JavaScript, 8 feuilles CSS et 24 médias.
-- Empreinte SHA-256 des sources : `6d2b51ec4dc3a7fbb7695758ae708ffe57acf3019a57cb77be631e3c0277111e`.
+- Empreinte SHA-256 des sources : `f090d6cdaa54f164b40d128a5d8ea257c4a89b78eb56c7e72853b845f94f6713`.
 
 Fichiers JavaScript : `4lien.js`, `5ync.js`, `a6es.js`, `bloody-tale.js`, `calendar.js`, `capsule.js`, `characters.js`, `checkboxes.js`, `conceptmap.js`, `counter.js`, `date.js`, `definitions.js`, `dictionnary.js`, `eurekarc.js`, `faq-list.js`, `idk-table.js`, `likes-dislikes.js`, `offline.js`, `planetarium.js`, `script.js`, `service-worker.js`, `snewlc-modal.js`, `song-feature.js`, `table-swapper.js`, `theme-toggle.js`, `tools.js`, `vocab.js`.
 Feuilles CSS : `body.css`, `buttons.css`, `capsule.css`, `conceptmap.css`, `dictionnary.css`, `layout.css`, `mythology.css`, `theorem.css`.
