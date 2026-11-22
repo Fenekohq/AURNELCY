@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
+  const SVG_NAMESPACE = 'http://www.w3.org/2000/svg';
   const definitionMap = new Map();
   function mapVocabularyItem(item, isVersion = false) {
     return {
@@ -46,6 +47,45 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const termsToSearch = Array.from(definitionMap.keys());
   termsToSearch.sort((a, b) => b.length - a.length);
+  const normalizedDefinitionMap = new Map();
+  definitionMap.forEach((data, term) => {
+    const normalizedTerm = term.replace(/\s+/g, '').toLowerCase();
+    if (!normalizedDefinitionMap.has(normalizedTerm)) {
+      normalizedDefinitionMap.set(normalizedTerm, data);
+    }
+  });
+
+  const accentPattern = 'a-zA-Z0-9àâäèéêëëìîïòôöùûüçñ';
+  function getTermMatches(text, allowWrappedWords = false) {
+    const escapedTerms = termsToSearch.map((term) => {
+      const escapedTerm = term.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+      return allowWrappedWords ? escapedTerm.replace(/\s+/g, '\\s*') : escapedTerm;
+    });
+    const regex = new RegExp(
+      `(?<![${accentPattern}])(${escapedTerms.join('|')})(?![${accentPattern}])`,
+      'gi',
+    );
+    const matches = [];
+    let match;
+
+    while ((match = regex.exec(text)) !== null) {
+      const data =
+        definitionMap.get(match[0].toLowerCase()) ||
+        (allowWrappedWords
+          ? normalizedDefinitionMap.get(match[0].replace(/\s+/g, '').toLowerCase())
+          : null);
+
+      if (data) {
+        matches.push({
+          start: match.index,
+          end: regex.lastIndex,
+          data,
+        });
+      }
+    }
+
+    return matches;
+  }
 
   window.activePopovers = [];
   let isVocabActive = false;
@@ -164,6 +204,22 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
+    if (node.nodeType === 1 && node.namespaceURI === SVG_NAMESPACE && node.localName === 'text') {
+      if (!node.querySelector('.definition-link')) {
+        handleSvgText(node);
+      }
+      return;
+    }
+
+    if (
+      node.nodeType === 1 &&
+      node.tagName === 'PRE' &&
+      node.classList.contains('mermaid') &&
+      !node.querySelector('svg')
+    ) {
+      return;
+    }
+
     if (node.nodeType === 3) {
       if (node.parentNode && !ignoreTags.includes(node.parentNode.tagName)) {
         handleTextNode(node);
@@ -176,45 +232,76 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function handleTextNode(textNode) {
+    const isSvgText = textNode.parentNode.namespaceURI === SVG_NAMESPACE;
+    replaceTextNodeMatches(textNode, getTermMatches(textNode.nodeValue), isSvgText);
+  }
+
+  function handleSvgText(textElement) {
+    const textNodes = [];
+    function collectTextNodes(node) {
+      for (const child of node.childNodes) {
+        if (child.nodeType === 3) {
+          textNodes.push(child);
+        } else if (child.nodeType === 1 && !child.classList.contains('definition-link')) {
+          collectTextNodes(child);
+        }
+      }
+    }
+
+    collectTextNodes(textElement);
+    const combinedText = textNodes.map((node) => node.nodeValue).join('');
+    const matches = getTermMatches(combinedText, true);
+    if (!matches.length) return;
+
+    let textOffset = 0;
+    textNodes.forEach((textNode) => {
+      const nodeStart = textOffset;
+      const nodeEnd = nodeStart + textNode.nodeValue.length;
+      const nodeMatches = matches
+        .filter((match) => match.start < nodeEnd && match.end > nodeStart)
+        .map((match) => ({
+          start: Math.max(match.start, nodeStart) - nodeStart,
+          end: Math.min(match.end, nodeEnd) - nodeStart,
+          data: match.data,
+        }));
+
+      replaceTextNodeMatches(textNode, nodeMatches, true);
+      textOffset = nodeEnd;
+    });
+  }
+
+  function replaceTextNodeMatches(textNode, matches, isSvgText) {
+    if (!matches.length) return;
+
     const originalText = textNode.nodeValue;
-    let newHtml = originalText;
-    let replaced = false;
+    const fragment = document.createDocumentFragment();
+    let lastIndex = 0;
 
-    const isWithinTag = /<[^>]+>/.test(newHtml);
-    if (isWithinTag) return;
+    matches.forEach((match) => {
+      if (match.start > lastIndex) {
+        fragment.appendChild(document.createTextNode(originalText.slice(lastIndex, match.start)));
+      }
 
-    const escapedTerms = termsToSearch.map((term) => {
-      return term.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+      const link = isSvgText
+        ? document.createElementNS(SVG_NAMESPACE, 'tspan')
+        : document.createElement('span');
+      link.classList.add('definition-link');
+      link.setAttribute('data-term', match.data.term);
+      link.textContent = originalText.slice(match.start, match.end);
+      fragment.appendChild(link);
+      lastIndex = match.end;
     });
 
-    const alternationPattern = escapedTerms.join('|');
-
-    const accentPattern = 'a-zA-Z0-9àâäèéêëëìîïòôöùûüçñ';
-    const regex = new RegExp(
-      `(?![^<]*>)(?<![${accentPattern}])(${alternationPattern})(?![${accentPattern}])`,
-      'gi',
-    );
-
-    if (regex.test(newHtml)) {
-      replaced = true;
-
-      newHtml = newHtml.replace(regex, (match) => {
-        const data = definitionMap.get(match.toLowerCase());
-        if (!data) return match;
-
-        const originalTermWithCorrectCase = data.term || match;
-        return `<span class="definition-link" data-term="${originalTermWithCorrectCase}">${match}</span>`;
-      });
+    if (lastIndex < originalText.length) {
+      fragment.appendChild(document.createTextNode(originalText.slice(lastIndex)));
     }
 
-    if (replaced) {
-      const newFragment = document.createElement('span');
-      newFragment.innerHTML = newHtml;
-      textNode.parentNode.replaceChild(newFragment, textNode);
-
-      walk(newFragment);
-    }
+    textNode.parentNode.replaceChild(fragment, textNode);
   }
+
+  window.refreshVocabularyLinks = function () {
+    if (isVocabActive) walk(document.body);
+  };
 
   const toggleButton = document.getElementById('toggle-vocab-button');
   const vocabDetailsDropdown = document.getElementById('vocab-details-dropdown');

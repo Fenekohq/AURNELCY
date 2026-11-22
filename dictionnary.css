@@ -203,9 +203,19 @@
   cursor: default;
 }
 
+svg .definition-link {
+  position: static;
+  display: inline;
+}
+
 body.vocab-feature-active .definition-link {
   cursor: pointer;
   border-bottom: 3px solid var(--text-color);
+}
+
+body.vocab-feature-active svg .definition-link {
+  text-decoration: underline;
+  text-decoration-style: dotted;
 }
 
 .definition-popover {

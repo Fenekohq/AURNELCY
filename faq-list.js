@@ -30,7 +30,7 @@
     },
     {
       question: "Y a t-il de l'Intelligence Artifiçiel dans le contenu ?",
-      answer: `Oui, il en contient et pour transparence je vais lister tout ce qui est fait par IA ou partiellement sous modifications, mais premièrement, à noter que il y a parfois certaines mini aides et Fenekohq avait commencé le coding pour unique raison ce projet comme objectif plus que le coding, il connaît au fur et à mesure le HTML, un peu de CSS mais pas vraiment de JavaScript qui est donc à admettre fait par IA sous son commandement donc, il est tout de même celui qui imagine et construit l'architecture. Ce qui est écrit par IA: Termes de la Nomenclature(définitions des catégories), Capacités exceptionnelles d'Homo sapiens/Points Faibles d'Homo Sapiens, Peurs Viscérales, Simone Weil Dysupie, Tableaux Conjugaisons des Verbes, Bourdieu Capital, 「Salvation」, Mills Élite du Pouvoir, Manipule, Société, 「OUROBOROS」(partiellement), Système de Ponzi, 「Adulte」(partiellement), Cinq Critères d'Adéquation.`
+      answer: `Oui, il en contient et pour transparence je vais lister tout ce qui est fait par IA ou partiellement sous modifications, mais premièrement, à noter que il y a parfois certaines mini aides et Fenekohq avait commencé le coding pour unique raison ce projet comme objectif plus que le coding, il connaît au fur et à mesure le HTML, un peu de CSS mais pas vraiment de JavaScript qui est donc à admettre fait par IA sous son commandement donc, il est tout de même celui qui imagine et construit l'architecture. Ce qui est écrit par IA: Termes de la Nomenclature(définitions des catégories), Les Thesis (très partiel) Capacités exceptionnelles d'Homo sapiens/Points Faibles d'Homo Sapiens, Peurs Viscérales, Simone Weil Dysupie, Tableaux Conjugaisons des Verbes, Bourdieu Capital, 「Salvation」, Mills Élite du Pouvoir, Manipule, Société, 「OUROBOROS」(partiel), Système de Ponzi, 「Adulte」(partiel), Cinq Critères d'Adéquation.`
     },
     {
       question: "Qui sont les 11 Aurnelcyens ?",
@@ -83,6 +83,10 @@
     {
       question: "Comment concilier la protection de l'innocence avec le fait que la violence ou le meurtre ne soient pas bannis en absolu ?",
       answer: `Aurnelcy refuse pas pacifisme naïf qui livre les innocents à la ruine et assume que non, toutes les vies ne se valent pas surtout lorsque l'aursylien use de violences subtiles là où le bannissement de la violence et de sa définition à revoir reviendrait à faire gagner aursyl dans une passivité populaire et un dénoncement maladif de la supériorité morale. L'interdiction morale absolue du meurtre deviendrait une arme au service du tyran mais si l'exclusion de certains modes d'existences psychiques et comportementaux est modéré, alors la violence peut contribuer à un bien largement plus grand.`
+    },
+    {
+      question: "Quelle positionnement politique et idéologique pour AURNELCY ?",
+      answer: `On peut analyser aurnelcy rapidement comme anti-dogmatique, anti-autoritaire, anti-capitaliste, anarchiste, autonomiste, et aristocrate. Mais ces mots manquent de nuances et par exemple on parle ici d'aristocrate en tant qu'exigence personnelle. Par principe, l'auteur préfère cependant laisser l'histoire des idées aux penseurs intemporels, tout ce qui enrichie la pensée est bonne et je vous conseille d'accueillir les avantages et les défauts de cette biodiversité.`
     },
     {
       question: "Aursyl vs Aurnelcy = manichéisme ?",

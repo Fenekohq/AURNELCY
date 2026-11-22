@@ -1689,7 +1689,7 @@ const vocabularyData = [
     etymology: "ἀνταγώνισμα/antagônisma(grec) = lutte/rivalité/émulation",
     pronunce: "/ɑ̃.ta.ɡɔ.nism/",
     synonym: "Organique(diffusée)",
-    quote: "Le pouvoir négateur ne détruit pas, il conserve l'indestructible au prix de tout le reste.",
+    quote: "Le dernier combattant combat pour être premier, il combat parce que l'opposition le défini.",
     meme: "Je ne veux pas changer. Je préfère avoir raison tout seul.",
     version: "Antagoniste, Antagonique, Antagoniques"
   },
@@ -2092,7 +2092,7 @@ const vocabularyData = [
     parent: "fantômiseur",
     quote: "L'opale s'impose à nous ou nous sommes l'opale.",
     meme: "Personne ne m'a ordonné de vivre. Pourtant, me voilà.",
-    version: "Opaler, Opaliade"
+    version: "Opaler, Opaliade, Opales"
   },
   {
     term: "大ටभᲡⰡ",

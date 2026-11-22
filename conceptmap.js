@@ -117,7 +117,15 @@ function initializeConceptMaps() {
     previewElement.appendChild(createPreviewContent(contentHTML));
 
     const modal = createConceptMapModal(id, title, contentHTML);
-    containerDiv.addEventListener('click', () => {
+    containerDiv.addEventListener('click', (event) => {
+      if (
+        document.body.classList.contains('vocab-feature-active') &&
+        event.target.closest &&
+        event.target.closest('.definition-link')
+      ) {
+        return;
+      }
+
       modal.classList.add('active');
     });
 
@@ -125,6 +133,9 @@ function initializeConceptMaps() {
   });
 
   iconsContainer.dataset.initialized = 'true';
+  if (typeof window.refreshVocabularyLinks === 'function') {
+    window.refreshVocabularyLinks();
+  }
 }
 
 window.addEventListener('load', initializeConceptMaps);
