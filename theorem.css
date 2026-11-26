@@ -1745,3 +1745,104 @@ html[data-theme='dark'] img[src*='feature/Awkward.png'] {
 .a6mplush {
   font-size: small;
 }
+
+.society-profile {
+  max-width: 1800px;
+  margin: 24px auto 12px;
+  padding: 0 12px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.society-profile-table {
+  width: 100%;
+  min-width: 1080px;
+  margin-bottom: 50px;
+  table-layout: fixed;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 1079px) {
+  .society-profile-table {
+    min-width: 1800px;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .society-profile {
+    max-width: calc(100vw - 24px);
+  }
+
+  .society-profile-table {
+    min-width: 0;
+  }
+}
+
+.society-profile-table th,
+.society-profile-table td {
+  width: 12.5%;
+  padding: 10px;
+  overflow-wrap: anywhere;
+}
+
+.society-profile-table th {
+  height: auto;
+  white-space: nowrap;
+}
+
+.society-profile-table td {
+  height: 128px;
+  vertical-align: middle;
+}
+
+.society-profile-table tfoot td {
+  height: auto;
+  font-weight: 600;
+}
+
+.society-profile-word {
+  display: block;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.society-profile-percent {
+  display: block;
+  margin-top: 8px;
+  white-space: nowrap;
+}
+
+.society-profile-percent input {
+  width: 72px;
+  padding: 4px;
+  border: 1px solid var(--text-color);
+  background: var(--bg-color);
+  color: var(--text-color);
+  font: inherit;
+  text-align: right;
+}
+
+.culture-comparison {
+  max-width: 100%;
+}
+
+.culture-comparison-table {
+  width: 100%;
+  min-width: 1120px;
+  table-layout: fixed;
+}
+
+.culture-comparison-table th,
+.culture-comparison-table td {
+  width: 14.33%;
+  padding: 10px 12px;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.culture-comparison-table th:first-child,
+.culture-comparison-table td:first-child {
+  width: 14%;
+  position: sticky;
+  left: 0;
+}

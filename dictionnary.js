@@ -1312,7 +1312,7 @@ const vocabularyData = [
   },
   {
     term: "Möbius Netwow",
-    category: ["IUVALCY", "UiNo","K0re", "Supernova", "Spherµ", "Citadel"],
+    category: ["IUVALCY", "K0re", "UiNo", "Supernova", "Spherµ", "Citadel"],
     definition: "Site cousu décousu d'entendement domestique gouvernant.",
     school: "Réseau de perception et de pensée en boucle auto-enveloppée.",
     simplified: "Une pensée qui se pense pensé à penser",
@@ -1673,7 +1673,7 @@ const vocabularyData = [
     description: "L'hœmnet est une métaphore de la mort dont ses dérivés sont le tabac, l'alcool et la drogue.",
     etymology: "Humain/humanus(latin) = propre à l'homme/civilisé/bienveillant, œuf/ovum(latin) = œuf, poulet/pullus(latin) = tout petit",
     pronunce: "/ɛm.nɛt/",
-    synonym: "Cannibale, GOAT/Greatest Of All Time/Le Plus Grand de Tout les Temps, Bavure, Auto-Destruction",
+    synonym: "Cannibale, GOAT/Greatest Of All Time/Le Plus Grand de Tout les Temps, Bavure, Auto-Destruction, Personne Musclée",
     quote: "La viande la plus raffinée n'annonce jamais son origine, manger ses congénères fait partie intégrante des stratégies de la nature afin de survivre et d'accéder à une longue descendance.",
     meme: "Tu as pris toute mon énergie, mais tu as dit merci.",
     version: "Hœmnets, Hœmnette, Hœmnettes, Haemnet, Haemnets"
@@ -1847,7 +1847,7 @@ const vocabularyData = [
   },
   {
     term: "Gliobë",
-    category: ["Lysrua", "Mapnel", "IUVALCY", "ARc⟁diA", "Aursyl","K0re", "Mouet-Pouet", "Tablette"],
+    category: ["Lysrua", "Mapnel", "IUVALCY", "ARc⟁diA", "Aursyl", "Mouet-Pouet", "Tablette"],
     definition: "Cartographie émojitique du plan lointain aurnelcyen.",
     school: "Cadre aurnelcyen de réalité, de style et de circulation des formes.",
     simplified: "Vue d'ensemble du territoire aurnelcyen",
@@ -1869,7 +1869,7 @@ const vocabularyData = [
     description: "Il se représente dans le bandage de la pilosité sur elle-même.",
     etymology: "Monoa-Polyz(aurnelcyen)",
     pronunce: "/mlyʃ pləʃ/",
-    synonym: "Contraires, Paradigmes, Traitement, Médecine, Thérapie, Semblance, Antidote",
+    synonym: "Contraires, Paradigmes, Traitement, Médecine, Semblance, Antidote, Psychiatrie/Médecine de l'Âme",
     parent: "YgijfeV",
     quote: "L'ini-exo existe tout deux simultanément de façon complémentaires.",
     meme: "Retourne la situation. Le moelleux est de l'autre côté.",
@@ -1886,7 +1886,7 @@ const vocabularyData = [
     description: "Elle est représentée dans la futilité des arbres-ciel.",
     etymology: "Yggdrasil(inspiration)",
     pronunce: "/i.ɡij.fə.v/",
-    synonym: "◯⬤○● Y ●○⬤◯, Richesse, Daimon, Démiurge, Représailles, Rétribution, Combination, Monde, Organe, Déjà-vu",
+    synonym: "◯⬤○● Y ●○⬤◯, Richesse, Daimon, Démiurge, Représailles, Rétribution, Combination, Monde, Organe, Déjà-vu, Thérapie",
     parent: "Mlush'Plush",
     quote: "La friandise fugace est pleine et vide simultanément, c'est sa nature.",
     meme: "Je l'ai reçu, transformé, renvoyé. Qui m'envoie la suite ?",
@@ -2177,12 +2177,21 @@ const vocabularyData = [
   },
   {
     term: "Hiérarchie Kentronienne (Wacwéen)",
-    category: ["Mapnel", "Aursyl","K0re", "Capsule", "Spherµ", "Cueillette", "Museum", "Parc", "Citadel"],
+    category: ["Mapnel", "Aursyl", "K0re", "Wacwe", "Capsule", "Spherµ", "Cueillette", "Museum", "Parc", "Citadel"],
     definition: "Rouge - Vert - Bleu - Blanc - Noir - Gris",
     school: "Répartition des rôles symboliques par six couleurs.",
     pronunce: "/je.raʁ.ʃi kã.tʁo.njɛ̃/",
     synonym: "KTN",
     version: "Société/Civilisation Kentronienne"
+  },
+  {
+    term: "Hiérarchie EtOu (Tohlienne)",
+    category: ["Lysrua", "K0re", "Tôhla", "Capsule", "Spherµ", "Supervision","Cipher"],
+    definition: "Vertical / Horizontal - Singulier / Pluriel - Intérieur / Extérieur - Concret / Abstrait - Compétitif / Coopératif - Uniforme / Diversifié - Permanence / Renouvellement - Rituel / Expérimental",
+    school: "Répartition des adhésions entre contraires.",
+    pronunce: "/je.raʁ.ʃi e.u/",
+    synonym: "KTN",
+    version: "EtOu"
   },
   {
     term: "Semaine Hebdomadaire",

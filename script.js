@@ -328,3 +328,75 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+//plusoumoins societal profile
+document.addEventListener('DOMContentLoaded', () => {
+  const storageKey = 'societyProfilePercentages';
+
+  document.querySelectorAll('.society-profile-table').forEach((table) => {
+    const inputs = Array.from(table.querySelectorAll('.society-profile-percent input'));
+    const totals = Array.from(table.querySelectorAll('[data-profile-total]'));
+    const resetButton = document.getElementById('society-profile-reset');
+
+    const loadSavedValues = () => {
+      try {
+        const savedValues = JSON.parse(localStorage.getItem(storageKey) || '{}');
+        inputs.forEach((input) => {
+          const savedValue = savedValues[input.getAttribute('aria-label')];
+          if (savedValue !== undefined) {
+            input.value = String(Math.max(0, Math.min(100, Number(savedValue) || 0)));
+          }
+        });
+      } catch (_) {}
+    };
+
+    const saveValues = () => {
+      const savedValues = {};
+      inputs.forEach((input) => {
+        savedValues[input.getAttribute('aria-label')] = Number(input.value) || 0;
+      });
+      try {
+        localStorage.setItem(storageKey, JSON.stringify(savedValues));
+      } catch (_) {}
+    };
+
+    const updateTotals = () => {
+      totals.forEach((total) => {
+        const sum = inputs
+          .filter((input) => input.dataset.profileColumn === total.dataset.profileTotal)
+          .reduce((value, input) => value + (Number(input.value) || 0), 0);
+        total.textContent = `${sum} %`;
+      });
+    };
+
+    loadSavedValues();
+
+    inputs.forEach((input) => {
+      input.addEventListener('input', () => {
+        updateTotals();
+        saveValues();
+      });
+      input.addEventListener('change', () => {
+        if (input.value !== '') {
+          input.value = String(Math.max(0, Math.min(100, Number(input.value))));
+        }
+        updateTotals();
+        saveValues();
+      });
+    });
+
+    if (resetButton) {
+      resetButton.addEventListener('click', () => {
+        inputs.forEach((input) => {
+          input.value = '0';
+        });
+        updateTotals();
+        try {
+          localStorage.removeItem(storageKey);
+        } catch (_) {}
+      });
+    }
+
+    updateTotals();
+  });
+});

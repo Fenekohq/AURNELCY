@@ -60,6 +60,64 @@ window.addEventListener('load', function () {
     return clone;
   }
 
+  function synchronizeEtOuProfile(modalContent) {
+    const sourceTable = document.querySelector('#hier2 .society-profile-table');
+    const modalTable = modalContent.querySelector('.society-profile-table');
+    if (!sourceTable || !modalTable) return;
+
+    const sourceInputs = new Map(
+      Array.from(sourceTable.querySelectorAll('.society-profile-percent input'))
+        .map((input) => [input.getAttribute('aria-label'), input])
+    );
+    const modalInputs = Array.from(modalTable.querySelectorAll('.society-profile-percent input'));
+
+    const updateTotals = (table) => {
+      table.querySelectorAll('[data-profile-total]').forEach((total) => {
+        const sum = Array.from(table.querySelectorAll('.society-profile-percent input'))
+          .filter((input) => input.dataset.profileColumn === total.dataset.profileTotal)
+          .reduce((value, input) => value + (Number(input.value) || 0), 0);
+        total.textContent = `${sum} %`;
+      });
+    };
+
+    modalInputs.forEach((modalInput) => {
+      const sourceInput = sourceInputs.get(modalInput.getAttribute('aria-label'));
+      if (!sourceInput) return;
+
+      const syncFromSource = () => {
+        modalInput.value = sourceInput.value;
+        updateTotals(modalTable);
+      };
+
+      sourceInput.addEventListener('input', syncFromSource);
+      sourceInput.addEventListener('change', syncFromSource);
+      modalInput.addEventListener('input', () => {
+        sourceInput.value = modalInput.value;
+        sourceInput.dispatchEvent(new Event('input', { bubbles: true }));
+        updateTotals(modalTable);
+      });
+      modalInput.addEventListener('change', () => {
+        sourceInput.value = modalInput.value;
+        sourceInput.dispatchEvent(new Event('change', { bubbles: true }));
+        syncFromSource();
+      });
+      syncFromSource();
+    });
+
+    const sourceReset = document.querySelector('#hier2 .society-profile-reset');
+    const modalReset = modalContent.querySelector('.society-profile-reset');
+    if (sourceReset && modalReset) {
+      sourceReset.addEventListener('click', () => {
+        modalInputs.forEach((modalInput) => {
+          const sourceInput = sourceInputs.get(modalInput.getAttribute('aria-label'));
+          if (sourceInput) modalInput.value = sourceInput.value;
+        });
+        updateTotals(modalTable);
+      });
+      modalReset.addEventListener('click', () => sourceReset.click());
+    }
+  }
+
   appendClone('arti0', 'arti00');
   appendClone('arti1', 'arti11');
   appendClone('arti2', 'arti22');
@@ -81,7 +139,8 @@ window.addEventListener('load', function () {
 
   appendClone('arti5', 'arti55');
   appendClone('arti6', 'arti66');
-  appendClone('ktn1', 'ktn11');
+  appendClone('hier1', 'hier11');
+  appendClone('hier2', 'hier22');
   appendClone('cale1', 'cale11');
   appendClone('cale2', 'cale22');
   appendClone('matr0', 'matr00');
@@ -97,7 +156,8 @@ window.addEventListener('load', function () {
     'arti44b',
     'arti55',
     'arti66',
-    'ktn11',
+    'hier11',
+    'hier22',
     'cale11',
     'cale22',
     'matr00',
@@ -209,6 +269,9 @@ window.addEventListener('load', function () {
       const body = document.createElement('div');
       body.innerHTML = element.innerHTML;
       modalContent.appendChild(body);
+      if (id === 'hier22') {
+        synchronizeEtOuProfile(modalContent);
+      }
     }
 
     modal.appendChild(modalContent);
